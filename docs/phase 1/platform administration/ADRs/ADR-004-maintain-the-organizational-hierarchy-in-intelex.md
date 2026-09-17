@@ -1,7 +1,9 @@
 ---
-status: proposed
-date: null
-deciders: []
+status: accepted
+date: 2026-09-17
+deciders:
+  - Amy Roth
+  - Mike Tran
 consulted:
   - Dave McLean
   - Jeremiah Soto
@@ -36,7 +38,7 @@ External systems contain employee, office, department, position, and resource in
 
 Chosen option: **Maintain hierarchy nodes and parent-child roll-ups within Intelex while integrations supply relevant atomic records, stable source identifiers, and assignments.**
 
-Source systems should provide consistent identifiers for employees, positions, work locations or establishments where available, and operating resources where integrated. An external source may later govern a specific branch, but no integration will initially control the complete Intelex hierarchy.
+Source systems will provide consistent identifiers for employees, positions, work locations or establishments where available, and operating resources where integrated. Boomi will transform source attributes into the hierarchy assignment codes expected by Intelex. Boomi will not own the Intelex hierarchy nodes or parent-child roll-ups themselves.
 
 ## Consequences
 
@@ -45,9 +47,10 @@ Source systems should provide consistent identifiers for employees, positions, w
 * Stable identifiers allow integrations to match and update atomic records.
 * Intelex requires an identified administrative owner and change-control process.
 * Hierarchy changes may require coordinated updates to integration mappings.
+* Source-system department structures do not need to reproduce the Intelex reporting and security hierarchy exactly.
 
 ## More Information
 
-The workshop did not select a final hierarchy owner. Ownership, identifier standards, and maintenance procedures must be defined before production data is loaded. The structure should use the minimum useful number of levels and keep comparable concepts at consistent depths where practical.
+An Intelex administrative owner, identifier standards, and maintenance procedures must be defined before production data is loaded. The structure should use the minimum useful number of levels and keep comparable concepts at consistent depths where practical.
 
-Transcript references: 0:22:30–0:25:42 and 1:00:40–1:01:47.
+Transcript references: organizational-structure workshop 0:22:30–0:25:42 and 1:00:40–1:01:47; integration and inspections workshop 0:17:40–0:23:14.

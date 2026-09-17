@@ -1,5 +1,6 @@
 ---
-status: proposed
+status: accepted
+date: 2026-09-17
 deciders:
   - Whitney Goller
   - Mike Tran
@@ -45,9 +46,11 @@ Chosen option: **Support mobile execution with offline continuity and later sync
 * Conflict handling and synchronization status must be understandable.
 * Mobile forms must remain usable for long checklists.
 * Desktop and mobile access must operate on the same inspection record.
+* Offline data is scoped to the authenticated user; a shared tablet cannot switch users while disconnected.
+* Users must establish the mobile session while connected and synchronize regularly to receive configuration changes and upload queued records.
 
 ## More Information
 
-Synchronization rules, conflict resolution, attachment limits, and the exact boundary between draft and submitted records require detailed design.
+Synchronization rules, conflict resolution, attachment limits, and the exact boundary between draft and submitted records require detailed design. A kiosk-style shared-device profile is technically possible but was not selected for the field inspection model.
 
-Transcript references: 04:27–07:22 and 27:46–28:13.
+Transcript references: inspections preparation workshop 04:27–07:22 and 27:46–28:13; integration and inspections workshop 1:44:00–1:49:48.

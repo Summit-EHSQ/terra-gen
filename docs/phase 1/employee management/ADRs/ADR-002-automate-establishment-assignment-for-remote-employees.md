@@ -1,7 +1,9 @@
 ---
-status: proposed
-date: null
-deciders: []
+status: accepted
+date: 2026-09-17
+deciders:
+  - Amy Roth
+  - Mike Tran
 consulted:
   - Dave McLean
   - Jeremiah Soto
@@ -38,7 +40,7 @@ A significant portion of the workforce is remote. The HR system identifies remot
 
 Chosen option: **Automate remote employee establishment assignment through a documented, deterministic ruleset.**
 
-The rules will use available residence, work-location, jurisdiction, and reporting-chain data. The preferred long-term source may be the HR system. Until that is practical, the rules may execute in the integration transformation layer or Intelex; the execution tier remains an integration-design decision. Results must permit review and authorized correction.
+The rules will use available residence, work-location, jurisdiction, and reporting-chain data. Work location will provide the primary establishment input, with explicit transformation rules for remote employees and exceptions. The rules will execute in Boomi before the employee payload is delivered to Intelex. Results must permit review and authorized correction.
 
 ## Consequences
 
@@ -47,9 +49,10 @@ The rules will use available residence, work-location, jurisdiction, and reporti
 * Complete and current HR data becomes a dependency.
 * Regulatory exceptions may expand the rules over time.
 * Manual corrections could be overwritten unless override precedence is defined.
+* Boomi becomes the governed location for maintaining and testing the transformation logic.
 
 ## More Information
 
 The detailed decision table should address California residents, employees assigned to operating establishments, remote employees outside California, reporting chains that reach different establishments, incomplete source data, and approved overrides.
 
-Transcript references: 2:02:51–2:04:54, 2:24:05–2:27:15, 2:32:29–2:33:13, and 2:42:43–2:45:14.
+Transcript references: organizational-structure workshop 2:02:51–2:04:54, 2:24:05–2:27:15, 2:32:29–2:33:13, and 2:42:43–2:45:14; integration and inspections workshop 0:18:05–0:23:14.

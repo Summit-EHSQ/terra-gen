@@ -1,5 +1,6 @@
 ---
-status: proposed
+status: accepted
+date: 2026-09-17
 deciders:
   - Whitney Goller
   - Mike Tran
@@ -34,7 +35,9 @@ Current inspection checklists contain subquestions that appear based on earlier 
 
 ## Decision Outcome
 
-Chosen option: **Support conditional questions and branching within a checklist**, because existing programs require different follow-up information based on earlier responses. Checklist configuration will determine when dependent questions appear and the inspection record will retain their relationship to the triggering answer.
+Chosen option: **Support question-specific response sets and conditional branching within a checklist**, because existing programs require different follow-up information and answer types based on context. Checklist configuration will determine when dependent questions appear and the inspection record will retain their relationship to the triggering answer.
+
+Branching will normally be limited to one practical follow-up tier. A question may use yes/no, pass/fail, not applicable, text, date, or another suitable response type without forcing the same response set across the checklist. Significant negative responses may require both a comment and an action plan; a not-applicable response may require a comment where misuse would conceal that a required check was skipped.
 
 ## Consequences
 
@@ -43,9 +46,10 @@ Chosen option: **Support conditional questions and branching within a checklist*
 * Checklist authors must define and test branching rules.
 * Reports must distinguish unanswered questions from questions that were not applicable.
 * Mobile and offline behavior must apply the same branching rules.
+* Question authors must word applicability and compliance questions so that response semantics remain unambiguous.
 
 ## More Information
 
-The complete branching rules, supported nesting depth, and cross-section branching were not defined.
+The platform can support more complex logic, but the workshop deliberately favored restrained branching over deeply nested questionnaires.
 
-Transcript references: 07:37–08:59 and 10:22–10:56.
+Transcript references: inspections preparation workshop 07:37–08:59 and 10:22–10:56; integration and inspections workshop 2:55:26–3:03:56.

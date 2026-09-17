@@ -1,5 +1,6 @@
 ---
-status: proposed
+status: accepted
+date: 2026-09-17
 deciders:
   - Whitney Goller
   - Mike Tran
@@ -35,7 +36,7 @@ The standard one-way inspection submission process does not provide the review r
 
 ## Decision Outcome
 
-Chosen option: **Configure review stages and routing by inspection program and site**, because requirements vary across programs and locations. Initial health and safety and environmental compliance inspections will route to their respective functional reviewers before finalization, using designated site or functional roles where practical.
+Chosen option: **Configure review activation, reviewer routing, and review due period by inspection program**, because requirements vary across programs and locations. Where review is enabled, routing will normally use a designated site or functional role, such as Site Health and Safety Coordinator. Supervisor- or submitter-based routing remains available where appropriate; named-person routing and technical expressions will not be the normal pattern.
 
 ## Consequences
 
@@ -44,9 +45,10 @@ Chosen option: **Configure review stages and routing by inspection program and s
 * Future programs can use different review patterns.
 * Site-to-reviewer assignments must be maintained.
 * Notifications, return reasons, status transitions, and finalization rules require definition.
+* An overdue review remains actionable and generates reminders rather than becoming locked.
 
 ## More Information
 
 A possible second-stage site review was discussed as a future scenario, not a confirmed requirement. The configuration should accommodate it without activating it by default.
 
-Transcript references: 17:14–22:09.
+Transcript references: inspections preparation workshop 17:14–22:09; integration and inspections workshop 2:06:29–2:10:24, 2:15:59–2:18:50, and 2:53:28–2:54:23.

@@ -1,7 +1,9 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-17
-deciders: []
+deciders:
+  - Amy Roth
+  - Mike Tran
 consulted:
   - Amy Roth
   - Whitney Goller
@@ -38,6 +40,8 @@ Chosen option: **Use individual recurrence for self-service courses and schedule
 
 Common monthly or seasonal topics may still be addressed through safety meetings. A material policy change may trigger an organization-wide rescheduling of the associated course, but ordinary self-service recurrence will not be forced into a common monthly schedule.
 
+For recurring courses, the next due date will be calculated by adding the configured course frequency to the employee's most recent completion date, not to the original assignment date or prior due date. Historical person-course completion dates will be loaded to seed this calculation.
+
 ## Consequences
 
 * Individual recurrence may reduce unnecessary early repetition.
@@ -45,9 +49,10 @@ Common monthly or seasonal topics may still be addressed through safety meetings
 * Managers must adapt from a cohort calendar to employee-level compliance dates.
 * Historical completion dates must be migrated to seed the first accurate due dates.
 * A pre-due activation and notification window remains to be configured.
+* Early or late completion moves the next due date because recurrence follows actual completion.
 
 ## More Information
 
 Transcript references: 15:59–16:22, 18:23–21:43, 22:00–24:14, 30:00–32:09, and 1:00:07–1:01:13.
 
-The later workshop superseded the earlier direction to preserve both scheduling models equally. It favored strict completion-based recurrence for self-service training and rejected a general grace period. A roughly 30–45 day activation window was discussed but not finalized. Latest workshop references: 00:05:12–00:34:01 and 01:16:37–01:20:46. See ADR-001, ADR-003, and ADR-009.
+The later workshop superseded the earlier direction to preserve both scheduling models equally. It favored strict completion-based recurrence for self-service training and rejected a general grace period. A roughly 30–45 day activation window was discussed but not finalized. Latest Training Management workshop references: 00:05:12–00:34:01 and 01:16:37–01:20:46. Integration and inspections workshop references: 0:42:49–0:49:26. See ADR-001, ADR-003, and ADR-009.

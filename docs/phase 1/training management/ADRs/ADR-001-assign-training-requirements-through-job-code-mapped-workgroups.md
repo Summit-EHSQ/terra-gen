@@ -1,7 +1,9 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-17
-deciders: []
+deciders:
+  - Amy Roth
+  - Mike Tran
 consulted:
   - Amy Roth
   - Whitney Goller
@@ -44,6 +46,8 @@ Each workgroup contains a reusable set of courses. Employees and courses may par
 
 The employee integration will carry position codes as well as employee records. A new position code must be identified for configuration, and an employee position-code change must cause profile-derived assignments to be reassessed. The mapping does not need to be one-to-one: several granular HR position codes may share an Intelex profile.
 
+When a sufficiently complete pre-start employee record is received, its configured position code will place the employee into the applicable workgroups and create training requirements before the start date. An unconfigured position code will not silently receive an arbitrary training bundle.
+
 ## Consequences
 
 * Shared requirement sets can reduce repeated assignment maintenance.
@@ -52,6 +56,7 @@ The employee integration will carry position codes as well as employee records. 
 * Automated assignment rules depend on complete and stable employee and position-code data.
 * New position codes require an administrative notification or work queue before they can be used reliably.
 * Profile changes must distinguish source-derived assignments from approved manual exceptions.
+* Pre-start assignments may appear overdue when the employee first gains access; that condition is accepted rather than adding an initial grace-period customization.
 
 ## More Information
 
@@ -59,4 +64,4 @@ Transcript references: 07:55–08:16, 09:04–09:39, 12:11–12:49, 15:59–16:4
 
 Existing applicability rules were described, but their precise Intelex configuration was not approved. The later organizational-structure workshop established position codes as the likely source input for employee profiles and confirmed that position changes should cascade into profile-derived assignments. The profile catalogue, mapping ownership, and exception-preservation rules remain to be defined.
 
-Additional transcript references from the organizational-structure workshop: 2:21:49–2:23:08 and 2:27:15–2:32:29. Latest Training Management workshop references: 2:25:06–2:32:25. See ADR-002 and ADR-006.
+Additional transcript references from the organizational-structure workshop: 2:21:49–2:23:08 and 2:27:15–2:32:29. Latest Training Management workshop references: 2:25:06–2:32:25. Integration and inspections workshop references: 0:38:17–0:51:25. See ADR-002 and ADR-006.
