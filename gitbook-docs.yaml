@@ -1,0 +1,42 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+version: 1
+site:
+  title: Terra-Gen Solution Design Documentation
+  structure:
+    - type: section
+      key: section-phase-1
+      title: Phase 1
+      path: phase-1
+      default: true
+      children:
+        - type: space
+          key: space-employee-management
+          title: Employee Management
+          path: employee-management
+          default: true
+          content:
+            directory: "./docs/phase 1/employee management"
+        - type: space
+          key: space-incident-management
+          title: Incident Management
+          path: incident-management
+          content:
+            directory: "./docs/phase 1/incident management"
+        - type: space
+          key: space-inspections
+          title: Inspections
+          path: inspections
+          content:
+            directory: "./docs/phase 1/inspections"
+        - type: space
+          key: space-platform-administration
+          title: Intelex Platform Administration
+          path: platform-administration
+          content:
+            directory: "./docs/phase 1/platform administration"
+        - type: space
+          key: space-training-management
+          title: Training and Competency Management
+          path: training-management
+          content:
+            directory: "./docs/phase 1/training management"
