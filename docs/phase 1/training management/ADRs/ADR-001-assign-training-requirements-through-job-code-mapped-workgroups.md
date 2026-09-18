@@ -15,7 +15,7 @@ primary_application: Training Management
 secondary_applications: Competency Management, Employee Management, Integration Management
 ---
 
-# Assign Training Requirements through Job-Code-Mapped Workgroups
+# Assign Training Requirements through Position-Code-Mapped Workgroups
 
 ## Context and Problem Statement
 
@@ -40,7 +40,7 @@ Training applicability differs between corporate, office, field, location-specif
 
 ## Decision Outcome
 
-Chosen option: **Map HR job or position codes to combinations of reusable Intelex workgroups**, because common training bundles must be reused across many granular HR codes. Designations and approved exceptions may add requirements beyond the mapped workgroups.
+Chosen option: **Map HR position codes to combinations of reusable Intelex workgroups**, because common training bundles must be reused across many granular HR codes. Paylocity job codes are reserved for prevailing-wage activities and will not be used as the employee training-profile key. Designations and approved exceptions may add requirements beyond the mapped workgroups.
 
 Each workgroup contains a reusable set of courses. Employees and courses may participate in multiple workgroups. When overlapping workgroups contain the same course, Training Management must create only one employee-course requirement.
 

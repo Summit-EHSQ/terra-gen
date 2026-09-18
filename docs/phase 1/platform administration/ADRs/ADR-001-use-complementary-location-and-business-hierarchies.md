@@ -1,7 +1,8 @@
 ---
-status: proposed
-date: null
-deciders: []
+status: accepted
+date: 2026-09-18
+deciders:
+  - Amy Roth
 consulted:
   - Dave McLean
   - Vanessa Newmarker
@@ -12,7 +13,7 @@ primary_application: Intelex Platform Administration
 secondary_applications: Incident Management, Training Management, Inspections, Document Control, Environmental Compliance
 ---
 
-# Use Establishments as the Initial Location Hierarchy and Keep Asset Taxonomy Separate
+# Use a Single Establishment-Based Location Hierarchy and Keep Asset Taxonomy Separate
 
 ## Context and Problem Statement
 
@@ -39,7 +40,7 @@ Terra-Gen combines physical establishments, operating resources, technologies, c
 
 Chosen option: **Use the Location Structure for establishments at initial go-live and keep the operational asset taxonomy separate from security.**
 
-The Location Structure will initially remain relatively flat, with recognized establishments rolling up to Terra-Gen. Employees will be integrated to an establishment. Intelex may contain manually maintained roll-up nodes where useful, but the integration does not require or govern them. Sites, resources, technologies, and equipment will be represented through governed operational reference data for application context and reporting. A Business Hierarchy may be introduced later only when a reliable source and validated application use cases exist.
+The Location Structure will initially remain relatively flat, with recognized establishments rolling up to Terra-Gen. Employees will be integrated to an establishment primarily from Paylocity Work Location, with separately governed transformation rules for remote workers. Department and subdepartment values will not form a second security hierarchy at initial go-live. Intelex may contain manually maintained roll-up nodes where useful, but the integration does not require or govern them. Sites, resources, technologies, and equipment will be represented through governed operational reference data for application context and reporting. A Business Hierarchy may be introduced later only when a reliable source and validated application use cases exist.
 
 ## Consequences
 
@@ -49,6 +50,7 @@ The Location Structure will initially remain relatively flat, with recognized es
 * Management reporting lines are not represented by the initial hierarchy.
 * Cross-establishment roles require controlled login assignments or security exceptions.
 * A future Business Hierarchy requires a separate validation and adoption decision.
+* Remote-worker mappings must be documented, tested, and governed with the employee integration.
 
 ## More Information
 

@@ -2,6 +2,25 @@
 
 This file records material changes to the Phase 1 architecture decision records and their supporting source artifacts. Dates identify when the documentation was updated; source meeting dates are identified separately.
 
+## 2026-09-18
+
+### Added
+
+* Added twelve Document Control ADRs covering standard-product configuration, centralized administration, scope, related documents, classification, location applicability, security, authoring boundaries, numbering, approvals, release, and phased migration.
+* Added Platform Administration ADR-007 for shared tasks and security-aware reporting.
+* Added Platform Administration ADR-008 for first-year platform change governance.
+
+### Changed
+
+* Revised Training Management ADR-004 to place simple read-and-attest obligations in Document Control while retaining quizzes, SCORM, instruction, and substantive learning in Training Management.
+* Revised Training Management ADR-013 to distinguish governed source content in Document Control from executable course copies in Training Management.
+* Revised Platform Administration ADR-005 to apply location- and function-scoped roles to Document Control approvals and administrative substitution.
+* Reviewed all existing Phase 1 ADRs against the Document Control workshop. No existing ADR was contradicted or superseded strongly enough to remove.
+
+### Removed
+
+* Moved the Incident Management component and its supporting artifacts to Phase 2 because the application is not part of the Phase 1 implementation scope.
+
 ## 2026-09-17
 
 ### Added
@@ -103,6 +122,29 @@ Source meeting: **Organizational Structure and Location Hierarchy Workshop**; me
 | ADR-002 | Proposed | Apply Intersection-Based Record Visibility |
 | ADR-003 | Proposed | Separate Employee Home and Access Assignments |
 | ADR-004 | Proposed | Maintain the Organizational Hierarchy in Intelex |
+| ADR-005 | Accepted | Use Location-Scoped Roles for Workflow Routing |
+| ADR-006 | Accepted | Provide Controlled External Support Access |
+| ADR-007 | Proposed | Use Shared Tasks and Security-Aware Reporting |
+| ADR-008 | Proposed | Establish First-Year Platform Change Governance |
+
+### Document Control
+
+Source meeting: **Document Control Design Workshop**, meeting date not supplied in the transcript artifact.
+
+| ADR | Status | Decision |
+| --- | --- | --- |
+| ADR-001 | Accepted | Preserve the Standard Document Control Configuration |
+| ADR-002 | Accepted | Use Centralized Document Control Administration |
+| ADR-003 | Accepted | Scope Document Control by Governance Need |
+| ADR-004 | Accepted | Register Supporting Files as Related Controlled Documents |
+| ADR-005 | Accepted | Classify Documents with Independent Controlled Taxonomies |
+| ADR-006 | Accepted | Use Location Placement and Shortcuts for Applicability |
+| ADR-007 | Accepted | Apply Document Security by Exception |
+| ADR-008 | Accepted | Author Externally and Control Release Candidates in Intelex |
+| ADR-009 | Proposed | Use Intelex-Managed Document Numbering |
+| ADR-010 | Proposed | Use Configurable Sequential Approval Processes |
+| ADR-011 | Accepted | Require Deliberate Release and Distribution |
+| ADR-012 | Proposed | Migrate Corporate Documents before Site Content |
 
 ### Employee Management
 
@@ -124,9 +166,9 @@ Source meeting: **Organizational Structure and Location Hierarchy Workshop**; me
 
 ## Documentation Totals
 
-* Inspections: 10 active ADRs.
+* Inspections: 17 active ADRs.
 * Training Management and Competency Management: 14 active ADRs.
-* Intelex Platform Administration: 4 active ADRs.
-* Employee Management: 2 active ADRs.
-* Incident Management: 2 active ADRs.
-* Phase 1 total: 32 active ADRs.
+* Intelex Platform Administration: 8 active ADRs.
+* Document Control: 12 active ADRs.
+* Employee Management: 6 active ADRs.
+* Phase 1 total: 57 active ADRs.

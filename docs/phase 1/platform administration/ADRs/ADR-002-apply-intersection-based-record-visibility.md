@@ -1,6 +1,9 @@
 ---
-status: proposed
+status: superseded
 date: null
+superseded_by:
+  - Platform Administration ADR-001
+  - Incident Management ADR-003
 deciders: []
 consulted:
   - Dave McLean
@@ -12,7 +15,7 @@ primary_application: Intelex Platform Administration
 secondary_applications: Incident Management, Training Management, Inspections, Environmental Compliance
 ---
 
-# Apply Intersection-Based Record Visibility
+# Apply Intersection-Based Record Visibility (Superseded)
 
 ## Context and Problem Statement
 
@@ -51,6 +54,6 @@ Application permissions remain independent from record scope. Inspections will i
 
 ## More Information
 
-This ADR no longer establishes intersection-based visibility as the universal go-live model. The capability remains available for later application-specific adoption. Sensitive fields may also require controls beyond record visibility.
+This ADR is superseded. Initial security uses the single establishment hierarchy defined in Platform Administration ADR-001. Sensitive incident access uses application permissions, designated viewer groups, and temporary workflow-derived access as defined in Incident Management ADR-003. Intersection security remains a future capability rather than an adopted initial architecture.
 
 Transcript references: organizational-structure workshop 1:36:17–1:39:33, 1:47:04–1:51:33, 2:08:56–2:16:11, and 2:19:22–2:21:32; integration and inspections workshop 0:01:35–0:06:09, 1:19:31–1:20:18, and 2:28:27–2:43:07.

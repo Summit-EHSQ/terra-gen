@@ -1,52 +1,58 @@
 ---
-status: proposed
-date: 2026-09-17
-deciders: []
-consulted:
+status: accepted
+date: 2026-09-18
+deciders:
   - Amy Roth
+consulted:
   - Whitney Goller
   - Paul Niemer
   - Dave McLean
-informed: []
+informed:
+  - Matthew Voss
 primary_application: Competency Management
-secondary_applications: Training Management
+secondary_applications: Training Management, Intelex Platform Administration
 ---
 
-# Build Qualifications as a Separate Layer over Training Management
+# Track Qualifications through a Standalone Configurable Requirement Workflow
 
 ## Context and Problem Statement
 
-Some qualifications require formal training followed by sequenced practical assessments performed by authorized trainers. Training Management does not provide the dependency, assessor ownership, and evidence model needed for these activities.
+Qualifications may depend on internal instruction, third-party courses, certificates, practical evaluations, skills demonstrations, experience, and authorized attestations. These activities are not represented consistently in Training Management, and direct integration would not cover all evidence sources without substantial complexity.
 
 ## Decision Drivers
 
-* Recognize qualifications requiring multiple components.
-* Include practical and evaluated requirements alongside courses.
-* Reuse underlying training across competencies.
-* Continue tracking training that does not support a competency.
+* Support internal and third-party qualification activities.
+* Represent sequenced practical and evaluated requirements.
+* Avoid forcing every requirement into the course catalogue.
+* Provide one view of qualification progress and current validity.
+* Keep the framework configurable across qualification types.
 
 ## Considered Options
 
-* Represent a qualification as a separate container linked to reusable training and assessment requirements.
-* Track a standalone certification result without structured prerequisite relationships.
-* Treat each training completion as sufficient evidence of competency.
+* Derive qualification status directly from Training Management.
+* Add every qualification activity as a Training Management course.
+* Track only a standalone final certification result.
+* Track qualifications through a standalone configurable requirement workflow.
 
 ## Decision Outcome
 
-Chosen option: **Represent a qualification as a separate container linked to reusable training and assessment requirements**, because qualification can depend on courses, evaluations, practical activities, experience, and authorized sign-offs acting together.
+Chosen option: **Track qualifications through a standalone configurable requirement workflow.**
 
-Underlying training may support multiple qualifications and may also exist independently. Qualification assessments are not modeled as employee self-service courses. Completion of all prerequisite courses activates the first applicable assessor-owned task, and subsequent assessment tasks activate in their configured order.
+Each qualification will define a configurable list of activities. An activity may represent instruction, a certificate, an evaluation, a skills demonstration, experience, or an authorized attestation. Activities may define dependencies, pass/fail outcomes, permitted attempts, responsible roles, and a completion window.
+
+Training may still be delivered and recorded in Training Management. In the initial architecture, however, a Training Management record will not directly set qualification status. A qualification administrator will confirm the applicable activity from objective evidence in the same manner as externally delivered training. Verified completion of every required activity establishes the qualification effective date.
 
 ## Consequences
 
-* Qualification status can be traced to its supporting requirements.
-* Shared training can contribute to more than one competency.
-* Business logic must evaluate the combined requirement state.
-* Custom workflow is required to sequence assessments and assign assessor responsibility.
-* Attainment and continued validity remain separately governed.
+* Qualification progress can include mixed internal and external evidence sources.
+* The qualification workflow is not dependent on Training Management integration.
+* Some completion information may be represented in both applications.
+* Administrators must verify evidence and maintain qualification configuration.
+* Complex program rules must be expressed as explicit parameters.
+* The framework can later support external assessors without making them an initial dependency.
 
 ## More Information
 
-Transcript references: 30:29–31:39, 33:04–35:53, 39:42–40:13, and 48:53–49:24.
+This decision supersedes the earlier design in this ADR that treated qualification as a layer directly linked to Training Management requirements. Detailed digital conversion of assessment forms remains optional later scope and may require a change order. Initial certification will be validated before advanced recertification and lapse behavior is implemented. See ADR-007, ADR-008, ADR-009, and ADR-015.
 
-The later workshop confirmed this as an independent layer because Training Management cannot sequence course dependencies. Latest workshop references: 02:32:37–02:49:17 and 03:06:57–03:13:52. Detailed digital assessment forms remain optional later scope; the initial pattern may use assessor confirmation plus attached evidence. See ADR-007, ADR-008, and ADR-009.
+Latest workshop references: 02:46:50–03:06:26.

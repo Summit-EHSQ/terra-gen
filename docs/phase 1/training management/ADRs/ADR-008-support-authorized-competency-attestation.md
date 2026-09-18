@@ -35,7 +35,7 @@ Some competent-person designations depend on a site manager's judgement of exper
 
 Chosen option: **Allow an authorized person to attest that applicable competency criteria have been met**, because some designations rely on manager judgement of work history and skills.
 
-Attestation may evidence experiential criteria or support a designation. It does not automatically remove other training requirements. Whether attestation grants the competency directly or satisfies one component within its requirement bundle remains unresolved.
+Attestation is a configurable qualification-requirement type that may evidence experiential criteria or support a designation. It does not automatically remove other requirements. The record must identify the authorized attestor and include objective evidence unless a later qualification-specific rule explicitly permits otherwise. Attestation grants the qualification directly only when the governing definition makes it the final required activity.
 
 ## Consequences
 

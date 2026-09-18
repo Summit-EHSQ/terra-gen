@@ -38,15 +38,18 @@ Chosen option: **Configure validity and renewal requirements from the governing 
 
 The effective qualification date is normally the completion date of the final required assessment. A supporting course becoming overdue changes qualification status only when the applicable policy explicitly makes current completion a condition of continued qualification. Initial and subsequent qualification cycles may reference different requirement sets.
 
+Each qualification may define a validity period and an advance-notification period. Expiry will be calculated from the verified effective date. When renewal is completed early, the next validity period begins from the newly verified completion date. Upcoming and overdue work will route to the designated responsible role.
+
 ## Consequences
 
 * Qualification status can reflect the actual policy rather than an assumed global rule.
 * Initial and renewal cycles remain traceably linked while permitting different requirements.
 * Each qualification policy must be interpreted and configured explicitly.
 * Reinstatement after overdue training or qualification expiry requires program-specific rules.
+* Reminder timing and ownership can vary by qualification.
 
 ## More Information
 
 Transcript references: 35:03–35:53 and 45:45–48:27.
 
-The latest workshop superseded the earlier proposed earliest-component-expiry rule. References: 02:50:59–02:55:20 and 03:10:28–03:25:52. The discussion confirmed that some renewal cycles omit initial-only steps, but the complete cross-program rule set remains to be developed from the actual policies. No grace periods, expiry notifications, or escalation ownership were agreed. See ADR-002, ADR-006, and ADR-007.
+The latest workshops superseded the earlier proposed earliest-component-expiry rule. The discussion confirmed configurable expiry and advance reminders, while exact reminder values and escalation recipients remain qualification-specific. Initial certification will be implemented and validated before advanced recertification, lapse, and reinstatement logic. See ADR-002, ADR-006, ADR-007, and ADR-015.

@@ -21,18 +21,6 @@ site:
               content:
                 directory: "./docs/phase 1/employee management"
         - type: section
-          key: section-incident-management
-          title: Incident Management
-          path: incident-management
-          children:
-            - type: space
-              key: space-incident-management
-              title: Documentation
-              path: documentation
-              default: true
-              content:
-                directory: "./docs/phase 1/incident management"
-        - type: section
           key: section-inspections
           title: Inspections
           path: inspections
@@ -68,3 +56,20 @@ site:
               default: true
               content:
                 directory: "./docs/phase 1/training management"
+    - type: section-group
+      key: section-group-phase-2
+      title: Phase 2
+      children:
+        - type: section
+          key: section-incident-management
+          title: Incident Management
+          path: incident-management
+          default: true
+          children:
+            - type: space
+              key: space-incident-management
+              title: Documentation
+              path: documentation
+              default: true
+              content:
+                directory: "./docs/phase 2/incident management"

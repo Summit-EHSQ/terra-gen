@@ -14,11 +14,11 @@ primary_application: Employee Management
 secondary_applications: Training Management, Intelex Platform Administration, Integration Management
 ---
 
-# Use Position Codes as Provisioning Profile Inputs
+# Use Position Codes as Inputs to Training and Provisioning Profiles
 
 ## Context and Problem Statement
 
-Configuring every employee's hierarchy access, application groups, and training assignments individually would be difficult to maintain. Position codes are expected to help determine training work groups and provisioning profiles, but the latest source-data review did not confirm that a stable position code is available in the current HR extract. The source catalogue is also granular and new codes may appear over time.
+Configuring every employee's training and validated provisioning assignments individually would be difficult to maintain. Position codes will help determine training work groups and may support other validated provisioning rules. Paylocity reporting can provide the position code, although availability of a stable identifier through the production integration interface still requires technical validation. The source catalogue is granular and new codes may appear over time.
 
 ## Decision Drivers
 
@@ -39,11 +39,11 @@ Configuring every employee's hierarchy access, application groups, and training 
 
 Chosen option: **Integrate position codes with employee data and map them to reusable Intelex provisioning profiles.**
 
-This decision remains proposed until Paylocity confirms that a stable position-code identifier is available through its API. Position descriptions will not be treated as an equivalent stable key without validation.
+This decision remains proposed until Paylocity confirms that a stable position-code identifier is available through its production integration interface. Position descriptions will not be treated as an equivalent stable key without validation.
 
-A profile may define default login hierarchy assignments, application or security-group memberships, and training work groups. Several position codes may map to one profile. Position codes will exist as governed reference records in Intelex rather than being treated only as unvalidated text from the integration.
+A profile will define training work groups and may define other provisioning assignments only where the corresponding business rules have been validated. Several position codes may map to one profile. Position codes will exist as governed reference records in Intelex rather than being treated only as unvalidated text from the integration.
 
-A new position code will produce an administrative notification or work item so its rules can be defined. An employee received with an unconfigured code will remain in the EDIS staging process, or be created only as a minimal non-user employee record, until the code has been configured. When an employee's code changes, the system will reassess profile-derived assignments.
+A new position code will produce an administrative notification or work item so its rules can be defined. Basic employee provisioning may proceed when sufficient identity and establishment data exist, but position-code-derived training assignments will remain incomplete until the code is mapped. When an employee's code changes, the system will reassess profile-derived assignments.
 
 ## Consequences
 
@@ -53,7 +53,7 @@ A new position code will produce an administrative notification or work item so 
 * The granular HR catalogue may require significant mapping work.
 * Implementation depends on confirmation of a stable source identifier.
 * Automatic changes must preserve approved manual exceptions where appropriate.
-* A new position code may delay full user provisioning and training assignment until an administrator completes its configuration.
+* A new position code may delay training assignment without necessarily delaying basic employee or user creation.
 
 ## More Information
 

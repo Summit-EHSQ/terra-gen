@@ -2,28 +2,28 @@
 
 This directory contains the governed solution-design record for the Terra-Gen Intelex implementation. It preserves architectural decisions, the evidence supporting those decisions, and the history of material documentation changes.
 
-The current documentation covers Phase 1 design across Employee Management, Incident Management, Inspections, Intelex Platform Administration, and Training and Competency Management.
+The current documentation covers Phase 1 design across Document Control, Employee Management, Inspections, Intelex Platform Administration, and Training and Competency Management. Phase 2 currently contains the initial Incident Management design.
 
 ## How to Use This Documentation
 
 - To understand the current design for an application, start with its architecture decision records (ADRs) in the [documentation map](#documentation-map).
 - To verify why a decision was made, review the transcript references in the ADR's **More Information** section and then consult the corresponding source artifact.
 - To distinguish an approved direction from an unresolved proposal, check the ADR's `status` and `date` metadata.
-- To see how the documented baseline has evolved, consult the [Phase 1 change log](<phase 1/CHANGELOG.md>).
+- To see how the documented baseline has evolved, consult the [Phase 1 change log](CHANGELOG.md).
 - To identify work that still requires validation or detailed design, review proposed ADRs and the [known gaps and open design areas](#known-gaps-and-open-design-areas).
 
 ## Documentation Status
 
-The working Phase 1 collection currently contains 45 ADRs: 23 accepted and 22 proposed.
+The working Phase 1 collection currently contains 57 active ADRs: 36 accepted and 21 proposed. It also retains one superseded Platform Administration ADR for history. Phase 2 currently contains three Incident Management ADRs: one accepted and two proposed.
 
-| Domain | Accepted | Proposed | Total |
-| --- | ---: | ---: | ---: |
-| Employee Management | 5 | 1 | 6 |
-| Incident Management | 0 | 2 | 2 |
-| Inspections | 11 | 6 | 17 |
-| Intelex Platform Administration | 3 | 3 | 6 |
-| Training and Competency Management | 4 | 10 | 14 |
-| **Phase 1 total** | **23** | **22** | **45** |
+| Domain | Accepted | Proposed | Superseded | Active | Files |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Document Control | 10 | 2 | 0 | 12 | 12 |
+| Employee Management | 5 | 1 | 0 | 6 | 6 |
+| Inspections | 11 | 6 | 0 | 17 | 17 |
+| Intelex Platform Administration | 4 | 3 | 1 | 7 | 8 |
+| Training and Competency Management | 6 | 9 | 0 | 15 | 15 |
+| **Phase 1 total** | **36** | **21** | **1** | **57** | **58** |
 
 These counts describe the current repository contents and should be updated whenever ADRs are added, removed, or change status. The phase change log is the chronological record and may temporarily describe an earlier baseline while a documentation update is in progress.
 
@@ -33,18 +33,27 @@ These counts describe the current repository contents and should be updated when
 
 | Domain | Scope | Decisions | Source artifacts |
 | --- | --- | --- | --- |
-| Employee Management | Employee integration, pre-hire provisioning, identity, employee profiles, and establishment assignment | [Browse ADRs](<phase 1/employee management/ADRs/>) | [Browse meeting transcripts](<phase 1/employee management/raw artifacts/meeting_transcripts/>) |
-| Incident Management | Incident attribution and the initial boundary for contractor access | [Browse ADRs](<phase 1/incident management/ADRs/>) | [Browse meeting transcripts](<phase 1/incident management/raw artifacts/meeting_transcripts/>) |
-| Inspections | Program configuration, mobile execution, review, corrective actions, reporting, asset context, and migration from SafetyCulture | [Browse ADRs](<phase 1/inspections/ADRs/>) | [Browse meeting transcripts](<phase 1/inspections/raw artifacts/meeting_transcripts/>) |
-| Intelex Platform Administration | Organizational and location structures, record visibility, workflow roles, and controlled support access | [Browse ADRs](<phase 1/platform administration/ADRs/>) | [Browse meeting transcripts](<phase 1/platform administration/raw artifacts/meeting_transcripts/>) |
-| Training and Competency Management | Training assignments, recurrence, delivery methods, qualifications, content governance, and historical records | [Browse ADRs](<phase 1/training management/ADRs/>) | [Browse meeting transcripts](<phase 1/training management/raw artifacts/meeting_transcripts/>) |
+| Document Control | Controlled-document administration, classification, applicability, security, authoring, numbering, approval, release, distribution, and migration | [Component overview](<document control/README.md>) | [Browse meeting transcripts](<document control/raw artifacts/meeting_transcripts/>) |
+| Employee Management | Employee integration, pre-hire provisioning, identity, employee profiles, and establishment assignment | [Component overview](<employee management/README.md>) | [Browse meeting transcripts](<employee management/raw artifacts/meeting_transcripts/>) |
+| Inspections | Program configuration, mobile execution, review, corrective actions, reporting, asset context, and migration from SafetyCulture | [Component overview](<inspections/README.md>) | [Browse meeting transcripts](<inspections/raw artifacts/meeting_transcripts/>) |
+| Intelex Platform Administration | Organizational and location structures, record visibility, workflow roles, and controlled support access | [Component overview](<platform administration/README.md>) | [Browse meeting transcripts](<platform administration/raw artifacts/meeting_transcripts/>) |
+| Training and Competency Management | Training assignments, recurrence, delivery methods, qualifications, content governance, and historical records | [Component overview](<training management/README.md>) | [Browse meeting transcripts](<training management/raw artifacts/meeting_transcripts/>) |
 
-See the [Phase 1 change log](<phase 1/CHANGELOG.md>) for additions, revisions, removals, and the recorded baseline at each documentation update.
+See the [Phase 1 change log](CHANGELOG.md) for additions, revisions, removals, and the recorded baseline at each documentation update.
+
+### Phase 2
+
+| Domain | Scope | Decisions | Source artifacts |
+| --- | --- | --- | --- |
+| Incident Management | Incident attribution, privacy-aware access, and the initial boundary for contractor participation | [Component overview](<../phase 2/incident management/README.md>) | [Browse meeting transcripts](<../phase 2/incident management/raw artifacts/meeting_transcripts/>) |
+
+See the [Phase 2 overview](<../phase 2/README.md>) for the current scope and status.
 
 ## Cross-Domain Architecture
 
-Several Phase 1 decisions form shared foundations or cross application boundaries:
+Several decisions form shared foundations or cross-application boundaries across the phases:
 
+- Document Control governs controlled content, applicability, approval, release, and distribution used by other applications.
 - Employee data supplies identity, position, profile, establishment, and employment-status inputs used across Intelex.
 - Platform hierarchies provide shared establishment and operational-resource context for security, workflow, inspections, incidents, and reporting.
 - Location-scoped roles support workflow routing without embedding named individuals in application configuration.
@@ -72,7 +81,7 @@ ADR numbers are scoped to a domain. For example, Inspections ADR-001 and Trainin
 | `deprecated` | A retained historical decision that is no longer recommended for new work. |
 | `rejected` | An option that was explicitly considered and not adopted. |
 
-Only `proposed` and `accepted` are currently used in the active Phase 1 ADR collection. Other statuses are reserved for maintaining the decision history without deleting records.
+Only `proposed` and `accepted` are used by active ADRs. Platform Administration ADR-002 is retained as `superseded`; the other historical statuses are not currently used.
 
 ### ADR Metadata and Content
 
@@ -114,7 +123,8 @@ The documentation hierarchy follows this pattern:
 ```text
 docs/
   README.md
-  phase 1/
+  phase <number>/
+    README.md
     CHANGELOG.md
     <domain>/
       ADRs/
@@ -123,6 +133,8 @@ docs/
         meeting_transcripts/
           YYYY-MM-DD-<meeting-slug>.md
 ```
+
+Non-documentation test content is stored separately under `content/`. The current repository contains two supplied packaged-learning ZIP files under `content/phase 1/training management/`; they support the compatibility validation described by Training Management ADR-010.
 
 Apply the following conventions when extending it:
 
@@ -153,7 +165,8 @@ Changes to a transcript, an accepted ADR, or an ADR's evidentiary interpretation
 
 ## Change History
 
-- [Phase 1 change log](<phase 1/CHANGELOG.md>)
+- [Phase 1 change log](CHANGELOG.md)
+- Phase 2 does not yet have a separate change log.
 
 The change log records material documentation changes. Git history remains the detailed record of individual edits.
 

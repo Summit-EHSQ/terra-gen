@@ -12,7 +12,7 @@ primary_application: Intelex Platform Administration
 secondary_applications: Employee Management, Incident Management, Training Management
 ---
 
-# Separate Employee Home and Access Assignments
+# Separate Employee Attribution from Exceptional Access Assignments
 
 ## Context and Problem Statement
 
@@ -35,20 +35,20 @@ An employee's physical or administrative home does not necessarily describe the 
 
 ## Decision Outcome
 
-Chosen option: **Maintain separate home and login assignments for the Location Structure and Business Hierarchy.**
+Chosen option: **Maintain the employee's home establishment separately from exceptional access assignments.**
 
-Home assignments describe where the employee belongs for attribution and reporting. Login assignments describe the hierarchy branches whose records the employee may access. Login assignments may default from home assignments when the scopes match; supervisors, central functions, and matrix roles may receive different login assignments.
+The home establishment describes where the employee belongs for attribution and reporting. Where a central function or cross-establishment role requires broader access, that access will be granted explicitly through controlled login-location assignments, application permissions, or governed security groups. The initial design does not provision Home Business Hierarchy and Login Business Hierarchy values because no second security hierarchy has been adopted.
 
 ## Consequences
 
 * Employee attribution remains accurate when responsibilities span locations.
 * Access can change without falsifying the employee's work location.
-* Employee provisioning must manage four hierarchy values.
+* Employee provisioning must maintain an accurate home establishment and any approved access exceptions.
 * Role changes must remove or revise stale login assignments.
 * Administrators need clear definitions for home and login values.
 
 ## More Information
 
-The employee model contains Home Location, Login Location, Home Business Hierarchy, and Login Business Hierarchy. Application permissions and group memberships remain separate controls.
+Application permissions, workflow assignments, and group memberships remain separate controls. This ADR does not authorize broad access to sensitive incident records merely because a user has establishment access.
 
 Transcript references: 0:15:53–0:16:36, 1:43:25–1:44:05, and 2:13:50–2:17:51.
