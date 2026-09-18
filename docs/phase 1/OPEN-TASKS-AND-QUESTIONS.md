@@ -1,8 +1,10 @@
-# Phase 1 Open Tasks and Material Design Questions
+# Open Tasks and Material Design Questions
 
 Review date: 2026-09-18
 
-This backlog consolidates the open work and unanswered questions that materially affect the design or construction of the Phase 1 solutions. It is based on all 57 active Phase 1 ADRs, the phase change log, the repository guidance, and the available meeting transcripts. Repeated transcript copies were compared by SHA-256 and reviewed once where applicable.
+This register retains the Phase 1 delivery backlog at its existing path and adds a separate Phase 2 section for material Incident Management work discovered in the repository-wide review. Phase 2 items are not Phase 1 commitments; their priorities apply within Phase 2. Shared foundations and the interim inspection-to-incident handoff remain Phase 1 concerns.
+
+Evidence reviewed: 58 Phase 1 ADR files (57 active: 36 accepted and 21 proposed; one superseded), three Phase 2 ADRs (one accepted and two proposed), all repository and domain overviews, the phase change log, publication configuration, and the seven unique meeting transcripts represented by 19 files. SHA-256 comparison confirmed identical copies of each shared meeting; there were no conflicting transcript copies. Both supplied training ZIPs were inspected at the manifest level: each declares SCORM 1.2. Package contents and workshop demonstrations do not establish target-environment compatibility. No deployed configuration, integration contract, UAT results, or production migration evidence was found.
 
 The list excludes ordinary build activity already determined by accepted decisions. An accepted ADR can still produce an open task where its detailed implementation, ownership, or operating rule has not been settled. A proposed ADR is included where approval or validation is still material.
 
@@ -11,6 +13,16 @@ Priority meanings:
 * **P0 — design blocker:** resolves a shared data model, integration contract, security boundary, or core operating rule needed before dependent configuration can be finalized.
 * **P1 — implementation-critical:** needed to build, validate, migrate, or operate an agreed solution safely.
 * **P2 — governance/future boundary:** needed for sustainable operation or a deliberately deferred capability.
+
+Sources below use repository-relative paths through reference links, resolved relative to this register. ADR citations refer to **Decision Outcome**, **Consequences**, and **More Information** unless a narrower section is stated. Current ADR metadata governs status; older change-log tables and transcript proposals do not override it. Explicit work is stated in the sources; derived work is the remaining design or validation needed to implement that direction. Detailed test scenarios are proposed completion evidence, not claims of newly approved requirements.
+
+| Scope | P0 | P1 | P2 | Total |
+| --- | ---: | ---: | ---: | ---: |
+| Phase 1 and shared foundations | 15 | 24 | 4 | 43 |
+| Phase 2 only | 2 | 2 | 0 | 4 |
+| **Total** | **17** | **26** | **4** | **47** |
+
+The broadest dependencies are the governed operational taxonomy, application access and master-data ownership, the employee integration contract, and the policy-backed course/qualification catalogues. Migration readiness depends on validating those foundations and the relevant product behavior.
 
 ## Cross-Domain and Platform Foundations
 
@@ -22,17 +34,21 @@ Priority meanings:
 
 **Why material:** This controls incident attribution, inspection scope and frequency, regulatory roll-ups, technology reporting, equipment-specific inspection options, and future asset integration.
 
-**Sources:** Platform Administration ADR-001; Incident Management ADR-001; Inspections ADR-012, ADR-016, and ADR-017.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
 
-### P0 — Approve the initial hierarchy and application security model
+**Sources:** [Platform Administration ADR-001]; [Incident Management ADR-001]; [Inspections ADR-012], [Inspections ADR-016], and [Inspections ADR-017].
 
-**Open task:** Obtain decision-maker approval for Platform Administration ADR-001 through ADR-003 and document the initial per-application visibility model, including Location Structure assignments, home versus login assignments, broad central roles, and controlled exceptions. Validate the design with representative local, regional, central, supervisor, and matrix-role users.
+### P0 — Finalize application access and exceptional employee assignments
 
-**Unanswered questions:** Is establishment-only visibility sufficient for every Phase 1 application? Which application, if any, requires a second hierarchy at go-live? What reliable source would populate that hierarchy? Which sensitive incident fields require protection beyond record-level visibility? How are stale access assignments removed after transfers?
+**Open task:** Approve or revise Platform Administration ADR-003 and document each Phase 1 application's permissions, establishment-based scope, home attribution, and exceptional login assignments or groups. Validate representative local, regional, central, supervisor, and matrix-role users, including removal of obsolete access after transfers. Use the accepted single establishment hierarchy; keep the asset taxonomy outside security.
+
+**Unanswered questions:** Which roles need access across establishments and to which applications? Which exception grants survive a profile change, and who approves or removes them? How will positive and negative access tests demonstrate the agreed scope? A second hierarchy is a future adoption decision, not an unanswered initial-go-live choice; incident-specific privacy is tracked in Phase 2 below.
 
 **Why material:** The answers determine provisioning fields, record visibility, test cases, exception groups, and privacy controls across the platform.
 
-**Sources:** Platform Administration ADR-001, ADR-002, and ADR-003; Employee Management ADR-001.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Sources:** [Platform Administration ADR-001] and [Platform Administration ADR-003]; [Employee Management ADR-001]. [Platform Administration ADR-002] is superseded and is historical context only.
 
 ### P0 — Define operational ownership for Intelex master data and roles
 
@@ -42,7 +58,9 @@ Priority meanings:
 
 **Why material:** Accepted designs depend on manually governed Intelex structures; missing ownership can break security, routing, reporting, and integrations.
 
-**Sources:** Platform Administration ADR-004 and ADR-005; repository README ownership guidance.
+**Evidence:** Derived operating or validation work needed to make the cited accepted direction usable; detailed controls and completion criteria still require agreement.
+
+**Sources:** [Platform Administration ADR-004] and [Platform Administration ADR-005]; [Documentation portal], **Ownership and Review**.
 
 ### P1 — Complete the external-support access control design
 
@@ -50,27 +68,33 @@ Priority meanings:
 
 **Unanswered questions:** Which provider and implementation roles are permitted, who approves access, what audit evidence is available, and how often is access reviewed?
 
-**Source:** Platform Administration ADR-006.
+**Evidence:** Derived operating or validation work needed to make the cited accepted direction usable; detailed controls and completion criteria still require agreement.
+
+**Source:** [Platform Administration ADR-006].
 
 ## Employee Integration and Provisioning
 
 ### P0 — Confirm a stable Paylocity position-code identifier
 
-**Open task:** Validate through the Paylocity API that a stable position-code identifier is available and include it in the Boomi-to-EDIS employee contract. Do not substitute mutable position descriptions without evidence.
+**Open task:** Validate through the production Paylocity integration interface that a stable position-code identifier is available and include it in the Boomi-to-EDIS employee contract. Reporting availability alone is insufficient; do not substitute mutable position descriptions without evidence.
 
 **Unanswered questions:** Which source field is stable across description changes and reorganization? Are historical and newly created codes exposed consistently? What happens if a code is merged or retired?
 
 **Why material:** Employee provisioning profiles and training workgroup assignment depend on this key; Employee Management ADR-001 cannot be accepted without it.
 
-**Source:** Employee Management ADR-001.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Employee Management ADR-001].
 
 ### P0 — Design the provisioning-profile catalogue and exception rules
 
-**Open task:** Define reusable profiles and map position codes to default Location/Business login assignments, application/security groups, and training workgroups. Establish mapping ownership, effective dates, approval, manual-exception precedence, and behavior for code changes.
+**Open task:** Define reusable profiles and map stable position codes to training workgroups and only those additional provisioning assignments whose business rules have been validated. Establish governed position-code reference records, mapping ownership, effective dates, approval, manual-exception precedence, and behavior for code changes. Do not provision Business Hierarchy assignments in the initial model.
 
-**Unanswered questions:** Which defaults belong in one profile? Can one employee receive multiple profiles? Which manual exceptions survive an automated reassessment? How are removals distinguished from additions? What notification and service target apply when a new code appears?
+**Unanswered questions:** Which additional defaults are justified beyond training? Which manual exceptions survive reassessment, and how are removals distinguished from additions? What notification, response target, and minimum identity/establishment data permit basic provisioning while an unknown position code awaits mapping? How will overlapping workgroups produce one employee-course requirement? Paylocity prevailing-wage job codes are not the training-profile key.
 
-**Source:** Employee Management ADR-001; Training Management ADR-001.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Employee Management ADR-001]; [Training Management ADR-001].
 
 ### P0 — Finalize employee deactivation and lifecycle semantics
 
@@ -80,15 +104,19 @@ Priority meanings:
 
 **Why material:** The integration is accepted, but the production contract is incomplete without deterministic deactivation behavior.
 
-**Sources:** Employee Management ADR-003; Training Management ADR-014.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Sources:** [Employee Management ADR-003]; [Training Management ADR-014].
 
 ### P0 — Build and validate the remote-employee establishment decision table
 
 **Open task:** Convert the accepted methodology into testable Boomi rules covering California residents, employees tied to operating establishments, remote employees outside California, reporting chains, incomplete data, and approved overrides.
 
-**Unanswered questions:** What is the precedence among residence, work location, jurisdiction, and reporting chain? Who approves exceptions? How is an override stored so the next daily feed does not overwrite it? What happens when required inputs are missing?
+**Unanswered questions:** With work location already selected as the primary input, which residence, jurisdiction, and reporting-chain conditions override or transform it for remote employees? Who approves exceptions? How is an override stored so the next daily feed does not overwrite it? What happens when required inputs are missing?
 
-**Source:** Employee Management ADR-002.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Employee Management ADR-002].
 
 ### P1 — Finalize pre-start readiness and identity matching rules
 
@@ -96,7 +124,9 @@ Priority meanings:
 
 **Unanswered questions:** Which downstream processes may run before email/SSO identity exists? What prevents duplicate user creation when email arrives later? Will the upstream process automatically populate the Entra email in Paylocity?
 
-**Sources:** Employee Management ADR-004 and ADR-006.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Sources:** [Employee Management ADR-004] and [Employee Management ADR-006].
 
 ### P1 — Choose and validate the EDIS transport and integration operations
 
@@ -104,7 +134,9 @@ Priority meanings:
 
 **Unanswered questions:** Is the initially scoped SFTP transport approved? What constitutes successful end-to-end reconciliation? How are partial failures replayed without duplicate side effects?
 
-**Source:** Employee Management ADR-003.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Employee Management ADR-003].
 
 ### P1 — Implement the employee-integration correction process
 
@@ -112,7 +144,9 @@ Priority meanings:
 
 **Unanswered questions:** Which non-fatal errors are allowed to continue? When should a record be held instead? When can notification frequency be reduced, and who decides?
 
-**Source:** Employee Management ADR-005.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Employee Management ADR-005].
 
 ### P1 — Validate the SAML identifier and mobile/offline access behavior
 
@@ -120,7 +154,9 @@ Priority meanings:
 
 **Unanswered questions:** Is email sufficiently stable, or should UPN/another claim be used? What happens to cached mobile access after an account is disabled? What device-management rules apply to shared or replaced devices?
 
-**Source:** Employee Management ADR-006; Inspections ADR-001.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Employee Management ADR-006]; [Inspections ADR-001].
 
 ## Inspections
 
@@ -130,7 +166,9 @@ Priority meanings:
 
 **Unanswered questions:** What exactly makes an inspection count toward a requirement? How are partial periods, newly added sites, late completions, reopened inspections, and failed inspections treated? When is a requirement yellow/at risk versus red/overdue?
 
-**Source:** Inspections ADR-008.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Inspections ADR-008].
 
 ### P0 — Decide the SafetyCulture migration and cutover plan
 
@@ -138,7 +176,9 @@ Priority meanings:
 
 **Unanswered questions:** Which historical records move versus remain accessible elsewhere? How are open actions carried forward? How long will both systems operate, and what proves each program is ready to retire in SafetyCulture?
 
-**Source:** Inspections ADR-010.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Inspections ADR-010].
 
 ### P1 — Complete mobile/offline synchronization design and testing
 
@@ -146,15 +186,19 @@ Priority meanings:
 
 **Unanswered questions:** Which records and reference data are cached? What happens when configuration changes while an inspection is offline? How are simultaneous edits resolved? Is any shared-device mode required despite the selected user-specific model?
 
-**Source:** Inspections ADR-001.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Inspections ADR-001].
 
 ### P1 — Finalize per-program inspection configuration
 
-**Open task:** For each initial program, define checklist sections, answer sets, conditional branches, required comments, action triggers, review steps, reviewer roles, resubmission rules, equipment/site selectors, and categorical outcomes. Include negative-response semantics and not-applicable controls.
+**Open task:** Approve a configuration catalogue for each initial program covering checklist sections, answer sets, restrained branching, required comments, action triggers, review periods and reminders, reviewer roles, resubmission, equipment/site selectors, and categorical outcomes. Retain the accepted complete sectioned checklists, hidden scores, direct actions, already-complete correction pathway, and independent inspection/action lifecycles. Validate the catalogue with representative inspections.
 
-**Unanswered questions:** Which responses require a comment, an action, or both? Which reviews are required by program and site? Are multiple approval levels needed anywhere? What evidence is mandatory for closure, and where are photographs optional versus required?
+**Unanswered questions:** Which responses require a comment, an action, or both? Which reviews and due periods apply by program/site, and which roles receive reminders and escalations? What are the final outcome and open-action classification labels? Where is evidence beyond the accepted action-completion comment needed? A second review is a future option unless a specific requirement justifies it; photographs are not universally mandatory.
 
-**Sources:** Inspections ADR-002 through ADR-006, ADR-011 through ADR-015.
+**Evidence:** Derived operating or validation work needed to make the cited accepted direction usable; detailed controls and completion criteria still require agreement.
+
+**Sources:** [Inspections ADR-002], [Inspections ADR-003], [Inspections ADR-004], [Inspections ADR-005], [Inspections ADR-006], [Inspections ADR-011], [Inspections ADR-012], [Inspections ADR-013], [Inspections ADR-014], [Inspections ADR-015].
 
 ### P1 — Design the official inspection PDF and record controls
 
@@ -162,23 +206,49 @@ Priority meanings:
 
 **Unanswered questions:** Can Merge Templates expose every required child and attachment relationship? Where is the generated file retained? Is an electronic signature legally or operationally required? What happens when a finalized inspection or related action changes after PDF generation?
 
-**Source:** Inspections ADR-007.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Inspections ADR-007].
+
+### P1 — Define external-inspection intake and actionable report context
+
+**Open task:** Define the initial externally supplied inspection types, responsible internal intake roles, required party/date/report data, optional review routes, and action-entry standards. Validate that an assignee can understand and resolve a report-derived action without a structured checklist question, and that reporting distinguishes external reports from internal checklist inspections.
+
+**Unanswered questions:** Which external programs enter the initial catalogue? Who translates report recommendations into assigned actions and checks completeness? What report page, recommendation identifier, description, and attachment access are needed to preserve source context? How are report revisions reconciled?
+
+**Evidence:** Explicit accepted external-report pathway; derived ownership, context, and validation work. A general user-facing bulk action importer was not agreed.
+
+**Sources:** [Inspections ADR-002], [Inspections ADR-005], [Inspections ADR-009], and [Inspections ADR-015]; [Day 2 afternoon transcript], 00:06:34–00:25:32.
+
+### P1 — Define the interim near-miss handoff before Incident Management goes live
+
+**Open task:** Approve operating guidance for observations that meet incident or near-miss criteria while Phase 1 Inspections is live and Phase 2 Incident Management is unavailable. Identify the interim system/process, reporting responsibility, escalation, and retained cross-reference; define the later handoff without assuming automated creation or linking.
+
+**Unanswered questions:** Where must the event be reported during the phase gap, who confirms receipt, and how is duplicate action ownership avoided? What minimum reference will connect the inspection and event now and after Phase 2 cutover? Which later linking behavior is actually required?
+
+**Evidence:** Derived delivery dependency from the accepted application boundary and explicit Phase 2 scope. The interim destination and automation are not yet selected.
+
+**Sources:** [Inspections ADR-014]; [Phase 2 overview], **Phase Boundary**; [Incident Management overview], **Dependencies and Boundaries**.
 
 ### P1 — Approve the KPI catalogue and dashboard specifications
 
 **Open task:** Obtain approval for Inspections ADR-009 and define formulas, dimensions, filters, targets, thresholds, audiences, refresh frequency, and drill-through for deficiencies, expected-versus-completed inspections, timeliness, repeat negatives, actions, and trends.
 
-**Unanswered questions:** Which measures are authoritative? How are repeat failures matched across checklist revisions? Should an inspection with any negative response be classified as failed, and does later action closure change that label? Which views are establishment-, resource-, asset-, technology-, supervisor-, or program-based?
+**Unanswered questions:** Which measures are authoritative? How are repeat failures matched across checklist revisions? For types requiring an overall outcome, how are the accepted negative-response failure rule, final label, and independently changing action classification represented? How are external reports without question-level responses counted without inventing pass/fail data? Which views use establishment, resource, asset, technology, supervisor, or program dimensions?
 
-**Source:** Inspections ADR-009 and ADR-015.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
 
-### P1 — Define combined regulatory reporting from atomic inspections
+**Source:** [Inspections ADR-004], [Inspections ADR-009], and [Inspections ADR-015].
 
-**Open task:** Validate the governing plans and approve or reject Inspections ADR-016. For every required combined filing, define the set-selection method, date range, completeness checks, response-combination rules, action presentation, approval, and output format.
+### P2 — Resolve the scope and rules for combined regulatory reporting
+
+**Open task:** Validate the governing plans and approve or revise Inspections ADR-016, separating the atomic-record direction from the additional combined-output capability. Confirm whether any filing requires that output for the initial release; if so, elevate the dependent work before cutover. Otherwise retain it as deferred scope. For an authorized combined output, define record selection, date range, completeness, response combination, actions, approval, and format.
 
 **Unanswered questions:** Will regulators accept a consolidated output built from separate atomic inspections? When responses differ, is the least-favorable answer always appropriate? Can a plan be filed with a missing site inspection or open action? Is the combined report in Phase 1 scope?
 
-**Source:** Inspections ADR-016.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Inspections ADR-016].
 
 ### P2 — Define the boundary for future findings and formal audits
 
@@ -186,51 +256,83 @@ Priority meanings:
 
 **Unanswered questions:** What business requirements would justify adding the Finding layer, and how would existing response-linked actions migrate or coexist?
 
-**Source:** Inspections ADR-005.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Inspections ADR-005].
 
 ## Training and Competency Management
 
 ### P0 — Approve the proposed training and competency architecture
 
-**Open task:** Obtain decision-maker approval for Training Management ADR-003 through ADR-009 and ADR-012 through ADR-014, with particular attention to common requirements across delivery methods, atomic course boundaries, the separate qualification layer, qualification variants, attestation, policy-driven validity, TPC retirement, content versioning, and employment-status history.
+**Open task:** Obtain approval or revision of the nine proposed Training Management ADRs: ADR-003, ADR-004, ADR-005, ADR-007, ADR-008, ADR-009, ADR-012, ADR-013, and ADR-014. Resolve delivery equivalence, atomic courses, variants, attestation, policy-driven validity, TPC retirement, content versioning, and employment-status history within the accepted standalone qualification workflow and centralized evidence-completion model in ADR-006 and ADR-015.
 
 **Unanswered questions:** Are any proposed directions contested by the business or constrained by licensing/product capability? Which parts are Phase 1 commitments versus later enhancements?
 
-**Why material:** Ten proposed ADRs collectively define the core data and workflow model; treating them as approved would overstate the current baseline.
+**Why material:** Nine proposals still affect the core model. The standalone qualification workflow and mandatory objective evidence are accepted; neither automatic Training Management completion of qualification steps nor a provisional-entry verification stage belongs in the initial design.
 
-**Sources:** Training Management ADR-003 through ADR-009 and ADR-012 through ADR-014.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Sources:** [Training Management ADR-003], [Training Management ADR-004], [Training Management ADR-005], [Training Management ADR-006], [Training Management ADR-007], [Training Management ADR-008], [Training Management ADR-009] and [Training Management ADR-012], [Training Management ADR-013], [Training Management ADR-014], [Training Management ADR-015].
 
 ### P0 — Build the governed course, workgroup, and requirement catalogue
 
-**Open task:** Inventory current LMS/TPC content, monthly plans, onboarding items, documents, live sessions, quizzes, and practicals. Split independently governed topics into atomic courses; define roll-ups; map job/position codes to reusable workgroups; and specify effective dates, recurrence, audience, delivery alternatives, completion authority, and satisfaction rules.
+**Open task:** Inventory current LMS/TPC content, monthly plans, onboarding items, documents, live sessions, quizzes, and practicals. Define the proposed atomic-course catalogue and roll-ups; map position codes to reusable workgroups; and specify audience, delivery equivalence, completion authority, assessment thresholds, retry rules, and multi-component satisfaction. Keep qualification-only activities in the standalone qualification catalogue rather than automatically creating courses for every activity.
 
 **Unanswered questions:** Which topics are genuinely equivalent across live and self-service delivery? Which site-specific variants must remain separate? What exactly completes an orientation or monthly program roll-up? Which requirements contain multiple mandatory components rather than alternatives? Who owns ongoing catalogue maintenance?
 
-**Sources:** Training Management ADR-001 through ADR-005.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Sources:** [Training Management ADR-001], [Training Management ADR-002], [Training Management ADR-003], [Training Management ADR-004], [Training Management ADR-005].
 
 ### P0 — Derive qualification definitions and renewal rules from policy
 
-**Open task:** For each qualification, interpret the governing policy and configure the initial requirements, sequenced practical assessments, authorized assessors, evidence, effective date, duration, continuing training conditions, renewal-only requirements, reinstatement, grace period, notification, and escalation rules.
+**Open task:** Obtain the governing policies and assessment forms, approve qualification definitions, and validate initial certification first. Define activities, dependency order, pass/fail and attempt limits, completion windows, assessors, required evidence, verified effective date, and duration. Separately document policy-specific renewal, lapse, reinstatement, reminder, and escalation rules and a gate for implementing advanced behavior after initial certification is validated.
 
-**Unanswered questions:** Which qualifications are one-time versus recurring? Does overdue supporting training suspend a qualification? Which initial steps are omitted at renewal? When does validity begin? What restores validity after lapse, and must work authorization be blocked meanwhile?
+**Unanswered questions:** Which qualifications are one-time versus recurring? Which activities and attempts are required for each scope? Does policy make current supporting training a continuing condition, and how will an administrator verify it without direct Training Management status integration? Which steps differ at renewal, and what restores validity after lapse? How will verified activity dates and delayed evidence entry establish the effective date? Under proposed ADR-009, early renewal starts the next validity period from the newly verified completion date.
 
-**Source:** Training Management ADR-006, ADR-007, and ADR-009.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Training Management ADR-006], [Training Management ADR-007], [Training Management ADR-009], and [Training Management ADR-015].
 
 ### P0 — Design authorized competency attestation
 
-**Open task:** Decide whether attestation directly grants a qualification or satisfies one requirement; define authorized roles, criteria, evidence, form fields, approval, permissions, revocation, and audit trail.
+**Open task:** Approve and detail qualification-specific attestation criteria, authorized attestors, evidence, fields, permissions, correction/revocation, and audit trail. Follow the accepted administrator-completion and mandatory-evidence controls. Under proposed ADR-008, attestation is an activity and grants qualification only when it completes the final required activity.
 
-**Unanswered questions:** Who is allowed to attest for whom and for which qualification? What minimum work-history or experience evidence is retained? Is a digital assessment form required in Phase 1, or is confirmation plus attachment sufficient?
+**Unanswered questions:** Who may attest for whom and for which criteria? What objective work-history or experience evidence supports the attestation, and how is attestor authority verified? Detailed digital assessment forms remain optional later scope and may require a change order; their absence does not remove the evidence requirement.
 
-**Source:** Training Management ADR-008.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Training Management ADR-008] and [Training Management ADR-015].
+
+### P1 — Validate initial qualification completion and evidence operations
+
+**Open task:** Prototype and validate a representative sequenced qualification under ADR-006 and ADR-015. Name the responsible administrator role and substitutes; define evidence intake, queue monitoring, result/effective-date entry, correction history, and evidence access/retention. Demonstrate that each completed activity has objective evidence and that internal training evidence is verified just like external evidence before qualification status changes.
+
+**Unanswered questions:** Who receives and processes certificates, sign-in sheets, and assessments? What processing target prevents delayed evidence from leaving progress stale? How are failed attempts, replacement evidence, mistaken completion, and administrator absence handled? What proves readiness to proceed to advanced renewal/lapse behavior?
+
+**Evidence:** Explicit accepted workflow and mandatory evidence; derived operating controls and validation endpoint. There is no separate provisional-entry/verification stage, no direct Training Management status integration, and no approved evidence exception.
+
+**Sources:** [Training Management ADR-006] and [Training Management ADR-015]; [Platform Administration ADR-005].
+
+### P1 — Configure training activation windows and validate historical due-date seeding
+
+**Open task:** Define the pre-due activation and notification window, recipients, and reminder behavior for recurring courses; specify and test the person-course completion-date mapping used to seed initial due dates from migration. Verify overlap deduplication, pre-start assignment, early/late completion, and the proposed live-session-to-self-service make-up sequence. The TPC migration task owns extraction, loading, and cutover.
+
+**Unanswered questions:** What activation window applies to each course, and what happens when historical completion dates are missing, conflicting, or only available as aggregate program dates? Who resolves those exceptions? When does self-service become available after the final preferred live session, and how are remaining learners notified?
+
+**Evidence:** Explicit remaining activation-window and historical-date work; derived reconciliation tests. The discussed 30–45 days is not finalized. Recurrence from actual completion and acceptance of pre-start overdue assignments are already settled; a general grace period is not reopened.
+
+**Sources:** [Training Management ADR-001], [Training Management ADR-002], [Training Management ADR-003], and [Training Management ADR-005]; [Day 2 morning transcript], 00:38:17–00:51:25.
 
 ### P1 — Validate SCORM and custom learning-package compatibility
 
-**Open task:** Obtain representative incident-management and fleet-safety packages, confirm the Intelex-supported SCORM specification, and test launch, navigation, completion, pass/fail/result reporting, retry, bookmarking, version replacement, and browser/mobile behavior.
+**Open task:** Test the supplied Incident Reporting and Fleet Safety packages in the target Intelex environment, confirm supported SCORM behavior, and retain launch, navigation, completion/result, retry, bookmarking, version-replacement, and applicable browser/mobile test results. Both repository manifests declare SCORM 1.2; obtaining these two samples is complete, but compatibility validation remains open.
 
-**Unanswered questions:** Which SCORM versions and data elements are supported? Do both representative packages work without repackaging? What authoring or remediation capability is needed if they fail?
+**Unanswered questions:** Does the configured Intelex player correctly support the SCORM 1.2 data elements used by each package? Do both packages satisfy the intended requirement and report completion/results without repackaging? What remediation is needed if they fail?
 
-**Source:** Training Management ADR-010 and the 2026-09-08 training-prep transcript at 53:16–54:38.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Training Management ADR-010]; [training-prep transcript] at 53:16–54:38; [Day 3 morning transcript] at 00:00:30–00:03:39 (content demonstration, not a documented end-to-end acceptance test); [Incident Reporting sample] and [Fleet Safety sample], each `imsmanifest.xml` / `metadata/schemaversion`.
 
 ### P1 — Finalize the TPC retirement and content migration plan
 
@@ -238,7 +340,9 @@ Priority meanings:
 
 **Unanswered questions:** How much historical completion detail must move into Intelex? Can course and content versions be reconstructed? What third-party content rights survive the move? When can TPC be switched off?
 
-**Source:** Training Management ADR-012.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Training Management ADR-012].
 
 ### P1 — Design exact training-content version traceability
 
@@ -246,7 +350,9 @@ Priority meanings:
 
 **Unanswered questions:** Is version binding automatic at completion or an explicit course-version association? How are embedded links and replaced SCORM packages preserved? Which changes reschedule requirements, who decides, and how is that decision evidenced?
 
-**Source:** Training Management ADR-013.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Training Management ADR-013].
 
 ### P1 — Establish the MARCOM content refresh operating model
 
@@ -254,7 +360,9 @@ Priority meanings:
 
 **Unanswered questions:** Does the provider expose notifications, feeds, APIs, or only manual downloads? Can updates be automated? Does replacement create a new course/content version, and can it trigger retraining without damaging prior completion evidence?
 
-**Source:** Training Management ADR-011.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Source:** [Training Management ADR-011].
 
 ### P1 — Configure employment-status, rehire, and leave behavior for training
 
@@ -262,7 +370,9 @@ Priority meanings:
 
 **Unanswered questions:** Are due dates paused, preserved, or recalculated during leave? Which missed training is due immediately on return? Which audiences may see leave status? What happens when HR supplies a new identifier for a rehire?
 
-**Source:** Training Management ADR-014.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Training Management ADR-014].
 
 ## Document Control
 
@@ -270,25 +380,41 @@ Priority meanings:
 
 **Open task:** Confirm the document-control administrators and site coordinators; define the initial folder classes, document types and subtypes, restricted folders, governing groups, ownership rules, and taxonomy-change process.
 
-**Unanswered questions:** Which business domains are included at go-live? Which content requires exceptional security? Who approves new taxonomy values and ownership changes? Will any second organizational hierarchy be available and supportable?
+**Unanswered questions:** Which business domains are included at go-live? Which content requires exceptional security? Who approves new taxonomy values and ownership changes? How will applicability and restricted folders be governed using the accepted single establishment hierarchy?
 
-**Sources:** Document Control ADR-002, ADR-005, and ADR-007; Platform Administration ADR-001 and ADR-002.
+**Evidence:** Derived operating or validation work needed to make the cited accepted direction usable; detailed controls and completion criteria still require agreement.
+
+**Sources:** [Document Control ADR-002], [Document Control ADR-005], and [Document Control ADR-007]; [Platform Administration ADR-001].
 
 ### P0 — Finalize document lifecycle and approval controls
 
-**Open task:** Approve Document Control ADR-009, ADR-010, and ADR-012; define the numbering format, lifecycle set, review frequencies, permissible overrides, approval templates, mandatory domain routes, segregation-of-duties rules, role assignments, release service levels, and rejection/resubmission behavior.
+**Open task:** Approve or revise Document Control ADR-009 and ADR-010; define the numbering format, lifecycle set, periodic-review frequencies and ownership, permissible overrides, approval templates, mandatory domain routes, segregation of duties, role assignments, release service levels, rejection/resubmission, and obsolete-content handling. Validate these controls in the accepted ADR-012 pilot.
 
 **Unanswered questions:** Which documents may use configurable approvals? Where are fixed routes mandatory? May an owner approve and release the same record? Which roles require substitutes? What differentiates an administrative revision from a material revision operationally?
 
-**Sources:** Document Control ADR-001, ADR-009, ADR-010, and ADR-011; Platform Administration ADR-005.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Sources:** [Document Control ADR-001], [Document Control ADR-009], [Document Control ADR-010], [Document Control ADR-011], and [Document Control ADR-012]; [Platform Administration ADR-005].
 
 ### P1 — Build the document migration inventory and cutover plan
 
-**Open task:** Inventory candidate policies, procedures, work instructions, forms, site plans, training source files, SCORM packages, and interim SDS files; select the initial corporate and site scope; map legacy numbers; populate metadata and relationships; set the bulk-load cutoff; and define validation and post-cutoff loading responsibilities.
+**Open task:** Following pilot findings, inventory candidate policies, procedures, work instructions, forms, site plans, training sources, SCORM packages, and interim SDS files; approve production scope and sequencing by readiness; map legacy identifiers and historical release context; populate metadata and relationships; establish a controlled source-change window; and reconcile the production load. Define post-cutoff loading ownership and document-class formatting changes, including removal of static approval signatures where applicable. Corporate-first migration is no longer an architectural prerequisite.
 
 **Unanswered questions:** Which document is authoritative where duplicates exist? Which legacy identifiers must remain visible? Which related-document notifications are required in each direction? How will documents managed outside Intelex during transition be reconciled?
 
-**Sources:** Document Control ADR-003, ADR-004, ADR-006, ADR-009, and ADR-012.
+**Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
+
+**Sources:** [Document Control ADR-003], [Document Control ADR-004], [Document Control ADR-006], [Document Control ADR-008], [Document Control ADR-009], and [Document Control ADR-012].
+
+### P1 — Complete the representative document migration pilot
+
+**Open task:** Select approximately 20–30 representative corporate and site documents, upload them to staging with stable identifiers, populate and load the metadata workbook, and exercise revision, periodic review, approval, and change-request behavior. Record defects, configuration changes, acceptance results, and the decision to retain or discard pilot content before production loading.
+
+**Unanswered questions:** Which document classes and applicability/security cases must the pilot cover? Who prepares and checks the metadata? What acceptance criteria authorize the production process, and how will test content be distinguished from authoritative production records?
+
+**Evidence:** Explicit accepted pilot direction; derived acceptance and reconciliation controls. Its approval is not open, but completion evidence is absent. The transcript-reference limitation below must be repaired without silently reverting the accepted ADR.
+
+**Sources:** [Document Control ADR-012]; [Document Control ADR-008], [Document Control ADR-009], [Document Control ADR-010], [Document Control ADR-011]; [Document Control overview], **Current Direction** and **Open Work**.
 
 ### P1 — Define acknowledgment, distribution, and training-impact rules
 
@@ -296,7 +422,9 @@ Priority meanings:
 
 **Unanswered questions:** Who determines revision materiality? What evidence is required before acknowledgment? Which changes require retraining? How will users and auditors retrieve a complete history spanning acknowledgments and course completions?
 
-**Sources:** Document Control ADR-011; Training Management ADR-004 and ADR-013.
+**Evidence:** Derived operating or validation work needed to make the cited accepted direction usable; detailed controls and completion criteria still require agreement.
+
+**Sources:** [Document Control ADR-011]; [Training Management ADR-004] and [Training Management ADR-013].
 
 ### P1 — Validate document search, file behavior, and restricted access
 
@@ -304,17 +432,21 @@ Priority meanings:
 
 **Unanswered questions:** Which file types require additional handling or OCR? Are print restrictions useful enough to configure given reader-dependent enforcement? What monitoring proves restricted content and shortcuts remain correctly scoped?
 
-**Sources:** Document Control ADR-006, ADR-007, and ADR-008.
+**Evidence:** Derived operating or validation work needed to make the cited accepted direction usable; detailed controls and completion criteria still require agreement.
+
+**Sources:** [Document Control ADR-006], [Document Control ADR-007], and [Document Control ADR-008].
 
 ## Governance and Closure
 
-### P0 — Define first-year platform change governance
+### P2 — Define first-year platform change governance
 
-**Open task:** Approve Platform Administration ADR-008 and define the intake channel, triage owner, participants, cadence, decision rights, security review, prioritization method, implementation handoff, and roadmap reporting.
+**Open task:** Approve Platform Administration ADR-008 and define the intake channel, triage owner, participants, cadence, decision rights, security review, prioritization, implementation handoff, and roadmap reporting. Include Jeremiah Soto in defining the model as the ADR specifies. This operating-governance task does not block the accepted initial architecture; design-critical ownership remains tracked above.
 
 **Unanswered questions:** Which changes can administrators approve directly? Which require business, security, or sponsor approval? How are urgent changes handled? Who owns the consolidated pipeline?
 
-**Source:** Platform Administration ADR-008.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Platform Administration ADR-008].
 
 ### P1 — Specify shared task and management dashboards
 
@@ -322,7 +454,9 @@ Priority meanings:
 
 **Unanswered questions:** How many supervisor levels are required for each leadership audience? Which location-scoped task views are granted to general managers? When may a report be scheduled under another user's security context?
 
-**Source:** Platform Administration ADR-007.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Platform Administration ADR-007].
 
 ### P1 — Establish an ADR approval and design-closure process
 
@@ -330,7 +464,9 @@ Priority meanings:
 
 **Unanswered questions:** Who has final authority in each domain? What evidence is required to accept an ADR? How will cross-domain conflicts be resolved and material changes communicated?
 
-**Source:** Repository README status and ownership guidance.
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Source:** [Documentation portal], **Status Definitions** and **Ownership and Review**.
 
 ### P2 — Maintain a decision-to-delivery traceability matrix
 
@@ -338,13 +474,155 @@ Priority meanings:
 
 **Unanswered questions:** Which project system will hold execution ownership and dates? What definition of done proves that a design question is closed rather than merely discussed?
 
-**Source:** Repository README update and traceability guidance.
+**Evidence:** Derived governance work from repository traceability guidance; no execution system, owner, or delivery date is established.
+
+**Source:** [Documentation portal], **Updating the Documentation** and **Source Artifacts and Traceability**.
+
+## Phase 2 — Incident Management (Outside Phase 1 Delivery Scope)
+
+### P0 — Finalize incident attribution against the shared taxonomy
+
+**Open task:** Approve or revise Incident Management ADR-001 and document the incident establishment/resource contract using the governed taxonomy tracked above. Define eligible record types, establishment filtering, employee defaults, authorized overrides, validation, and audit behavior; validate representative cross-establishment events.
+
+**Unanswered questions:** Which operational entities are selectable and how are invalid combinations prevented? Who can correct attribution, what reason is retained, and how do changes affect regulatory and operational reports?
+
+**Evidence:** Explicit proposed direction and unresolved detailed model. This consumes the shared taxonomy rather than commissioning a second taxonomy.
+
+**Sources:** [Incident Management ADR-001]; [Inspections ADR-017]; [Platform Administration ADR-001].
+
+### P0 — Define and validate incident privacy and workflow-access rules
+
+**Open task:** Name approved persistent-viewer groups and their membership owners, define temporary access for each workflow task, and validate access grant/removal, reassignment, completion, and reporting under representative personas. Include sensitive fields and attachments in the permission assessment.
+
+**Unanswered questions:** Which EHS, investigator, senior-manager, and exception roles retain visibility? What access is necessary during each task and what survives task completion? What additional field or attachment controls are needed, and how is scheduled reporting prevented from exposing unauthorized records?
+
+**Evidence:** Explicit accepted persistent-versus-temporary access boundary; derived permission matrix and negative tests. Filtered views are not security controls.
+
+**Sources:** [Incident Management ADR-003]; [Platform Administration ADR-003] and [Platform Administration ADR-007].
+
+### P1 — Approve contractor-event ownership and the external-system boundary
+
+**Open task:** Approve or revise Incident Management ADR-002; define minimum contractor-event data, internal entry/investigation ownership, authoritative attachments, reconciliation, and contractor KPI ownership across Intelex and existing contractor platforms. Record the trigger for revisiting self-service, isolated security, and automated KPI ingestion after the internal workflow and system boundary are stable.
+
+**Unanswered questions:** Which contractor records must be retained in Intelex and which remain external? Who enters and updates them, resolves duplicates, and owns KPI definitions? What evidence would justify extending contractor access later?
+
+**Evidence:** Explicit unresolved boundary and proposed deferral. Contractor logins and automated KPI ingestion are not initial build requirements.
+
+**Sources:** [Incident Management ADR-002]; [Incident Management overview], **Open Work**; [Day 1 morning transcript], 02:33:20–02:40:52.
+
+### P1 — Establish the detailed Phase 2 incident workflow baseline
+
+**Open task:** Conduct scoped incident discovery and produce reviewed decisions for intake, classification, investigation, regulatory reporting, corrective-action ownership, and inspection handoff, with a Phase 2 delivery boundary and validation criteria. Apply the accepted privacy design and the attribution and contractor decisions above.
+
+**Unanswered questions:** Which incident processes and reporting outputs are in the initial Phase 2 release? What roles, stage transitions, required evidence, and escalation rules govern them? Which requirements need domain approval before implementation can be specified?
+
+**Evidence:** Explicit missing design areas in the Phase 2 overview; derived discovery deliverable. This item does not assert any particular new workflow or delivery milestone.
+
+**Sources:** [Phase 2 overview], **Scope**; [Incident Management overview], **Scope** and **Open Work**; [Inspections ADR-014].
+
+## Reconciliation and Evidence Limitations
+
+### Resolved or superseded portions removed from open work
+
+* **Hierarchy choice:** Platform Administration ADR-001 is accepted; ADR-002 is superseded. Removed approval of the old universal intersection model and the initial second-hierarchy question. Application permissions and exceptions remain open.
+* **Training architecture:** Training Management ADR-006 is accepted and replaces direct training-driven qualification status with a standalone workflow. ADR-015 accepts mandatory evidence and one administrator completion interaction. The approval item now covers nine proposals rather than ten; qualification policy, attestation, and operational details remain open.
+* **Training samples:** Both requested ZIPs are present and declare SCORM 1.2. Removed sample acquisition; retained target-environment playback and completion validation.
+* **Document migration:** Document Control ADR-012 is accepted and replaces corporate-first sequencing with a representative pilot followed by a metadata-driven production load. Removed its approval request and the fixed sequencing assumption; pilot and cutover work remain open.
+* **Inspection behavior:** Inspections ADR-004 and ADR-015 already settle categorical negative-response outcomes and independent action closure. Removed the broad questions reopening those choices; retain labels, per-type semantics, measures, and escalation details.
+* **Priorities:** First-year platform governance moves from P0 to P2 because it governs sustainable operation, while immediate master-data ownership stays P0. Combined regulatory output moves from P1 to P2 in line with ADR-016's unconfirmed, lower-priority scope, subject to elevation if a required initial filing depends on it.
+
+No whole prior task is marked delivered solely because its architecture is accepted. All 38 prior task themes are retained with corrections; five Phase 1 items make previously missing or insufficiently separated work explicit, and four Phase 2 items extend coverage without changing phase commitments.
+
+### Source conflicts and missing evidence
+
+* **Stale change-log baseline:** [Phase 1 change log], **Current ADR Baseline** and **Documentation Totals**, still shows older training/platform statuses and titles and omits Training ADR-015. The active total of 57 happens to remain correct because one new ADR and one superseded ADR offset each other. This review uses current ADR files and the documentation portal, not those older tables.
+* **Missing or ambiguous source references:** [Document Control ADR-012] cites “Latest workshop” 00:50:54–01:02:40, but the stored [Day 3 morning transcript] in that interval discusses classification, shortcuts, and administration rather than the 20–30 document pilot. [Training Management ADR-006] and [Training Management ADR-015] cite later qualification decisions without identifying a matching stored workshop; [Day 1 afternoon transcript] at 02:46:50–03:06:26 still discusses the earlier training-linked design, while Day 3 morning ends before the promised competency overflow. Locate and link the later source or recorded approval under the existing ADR closure/traceability work. Accepted ADR status is retained; the supporting transcript trail is incomplete.
+* **Residual terminology:** Proposed Inspections ADR-007 and ADR-016 still mention “findings”; accepted ADR-005 removes the formal Finding layer from current inspections. Interpret report needs as response deficiencies or external-report context and direct actions, and reconcile the wording during those proposals' review rather than silently reintroducing a Finding object.
+* **Unavailable validation and policy artifacts:** The repository contains design evidence and packaged-learning samples, but not production payload examples, completed acceptance tests, signed-off migration inventories, or the governing qualification policies/forms discussed in workshops. Package presence and narrated demonstrations are not proof of implementation closure. Obtain policy evidence through the qualification-definition task; do not infer regulatory requirements from workshop examples.
+* **Publication coverage:** [GitBook configuration] does not currently expose Document Control or the phase-level register. This is a documentation-discoverability limitation, not a new architecture blocker; the repository remains authoritative.
 
 ## Recommended Resolution Sequence
 
-1. Resolve the site/resource/asset taxonomy, hierarchy/security approvals, and master-data ownership.
-2. Finalize the employee integration contract: position code, lifecycle/deactivation, remote assignment, identity, and exceptions.
-3. Approve the proposed inspection, training, and competency ADRs that depend on those foundations.
-4. Complete program-level configuration catalogues and policy interpretations.
-5. Validate product and integration capabilities: mobile/offline, Merge Templates, SCORM, SAML, EDIS transport, and version traceability.
-6. Decide migration/cutover for SafetyCulture and TPC, then define reporting, operational support, and governance controls.
+1. Finalize the shared site/resource/asset taxonomy, application permissions and access exceptions, and named master-data/role ownership within the accepted single-establishment model.
+2. Finalize the employee contract: stable position identifier, mappings, minimal-record behavior, lifecycle/deactivation, remote assignment, identity, transport, and reconciliation.
+3. Resolve the remaining proposed domain decisions and obtain governing policies; define inspection programmes, course/workgroup catalogues, and initial qualification requirements without coupling qualification status directly to Training Management.
+4. Validate product and integration dependencies: SAML/EDIS, mobile/offline, inspection PDFs, supplied SCORM packages, version traceability, recurrence seeding, and the initial evidence-based qualification workflow. Complete the document pilot before committing its production migration process.
+5. Complete SafetyCulture, TPC, and document production migration plans; validate reports, operating ownership, and the interim near-miss handoff before relevant cutovers. Establish first-year governance in time for operational change intake.
+6. Within Phase 2, resolve attribution and privacy controls, contractor-system boundaries, and detailed incident workflows. Revisit combined regulatory outputs, formal Findings, a second security hierarchy, digital assessment forms, and advanced qualification behavior only against their documented scope/validation gates.
+
+[Document Control ADR-001]: <document control/ADRs/ADR-001-preserve-standard-document-control-configuration.md#decision-outcome>
+[Document Control ADR-002]: <document control/ADRs/ADR-002-use-centralized-document-control-administration.md#decision-outcome>
+[Document Control ADR-003]: <document control/ADRs/ADR-003-scope-document-control-by-governance-need.md#decision-outcome>
+[Document Control ADR-004]: <document control/ADRs/ADR-004-register-supporting-files-as-related-controlled-documents.md#decision-outcome>
+[Document Control ADR-005]: <document control/ADRs/ADR-005-classify-documents-with-independent-controlled-taxonomies.md#decision-outcome>
+[Document Control ADR-006]: <document control/ADRs/ADR-006-use-location-placement-and-shortcuts-for-applicability.md#decision-outcome>
+[Document Control ADR-007]: <document control/ADRs/ADR-007-apply-document-security-by-exception.md#decision-outcome>
+[Document Control ADR-008]: <document control/ADRs/ADR-008-author-externally-and-control-release-candidates-in-intelex.md#decision-outcome>
+[Document Control ADR-009]: <document control/ADRs/ADR-009-use-intelex-managed-document-numbering.md#decision-outcome>
+[Document Control ADR-010]: <document control/ADRs/ADR-010-use-configurable-sequential-approval-processes.md#decision-outcome>
+[Document Control ADR-011]: <document control/ADRs/ADR-011-require-deliberate-release-and-distribution.md#decision-outcome>
+[Document Control ADR-012]: <document control/ADRs/ADR-012-migrate-corporate-documents-before-site-content.md#decision-outcome>
+[Employee Management ADR-001]: <employee management/ADRs/ADR-001-use-position-codes-as-provisioning-profile-inputs.md#decision-outcome>
+[Employee Management ADR-002]: <employee management/ADRs/ADR-002-automate-establishment-assignment-for-remote-employees.md#decision-outcome>
+[Employee Management ADR-003]: <employee management/ADRs/ADR-003-integrate-employees-through-boomi-and-edis.md#decision-outcome>
+[Employee Management ADR-004]: <employee management/ADRs/ADR-004-provision-employees-before-their-start-date.md#decision-outcome>
+[Employee Management ADR-005]: <employee management/ADRs/ADR-005-monitor-employee-integration-errors-daily.md#decision-outcome>
+[Employee Management ADR-006]: <employee management/ADRs/ADR-006-authenticate-through-microsoft-entra-id.md#decision-outcome>
+[Inspections ADR-001]: <inspections/ADRs/ADR-001-support-mobile-and-offline-inspection-execution.md#decision-outcome>
+[Inspections ADR-002]: <inspections/ADRs/ADR-002-configure-inspection-behavior-by-program.md#decision-outcome>
+[Inspections ADR-003]: <inspections/ADRs/ADR-003-support-conditional-questions-and-branching.md#decision-outcome>
+[Inspections ADR-004]: <inspections/ADRs/ADR-004-disable-numeric-scoring.md#decision-outcome>
+[Inspections ADR-005]: <inspections/ADRs/ADR-005-use-responses-and-direct-actions-without-formal-findings.md#decision-outcome>
+[Inspections ADR-006]: <inspections/ADRs/ADR-006-add-configurable-review-and-approval-workflow.md#decision-outcome>
+[Inspections ADR-007]: <inspections/ADRs/ADR-007-generate-branded-portable-inspection-records.md#decision-outcome>
+[Inspections ADR-008]: <inspections/ADRs/ADR-008-track-configurable-site-inspection-frequency.md#decision-outcome>
+[Inspections ADR-009]: <inspections/ADRs/ADR-009-report-inspection-outcomes-and-trends.md#decision-outcome>
+[Inspections ADR-010]: <inspections/ADRs/ADR-010-replace-safetyculture-incrementally.md#decision-outcome>
+[Inspections ADR-011]: <inspections/ADRs/ADR-011-enforce-complete-sectioned-checklists.md#decision-outcome>
+[Inspections ADR-012]: <inspections/ADRs/ADR-012-configure-equipment-references-by-program.md#decision-outcome>
+[Inspections ADR-013]: <inspections/ADRs/ADR-013-record-immediate-corrections-as-completed-actions.md#decision-outcome>
+[Inspections ADR-014]: <inspections/ADRs/ADR-014-route-near-misses-to-incident-management.md#decision-outcome>
+[Inspections ADR-015]: <inspections/ADRs/ADR-015-separate-inspection-and-action-lifecycles.md#decision-outcome>
+[Inspections ADR-016]: <inspections/ADRs/ADR-016-record-atomic-inspections-and-consolidate-regulatory-reporting.md#decision-outcome>
+[Inspections ADR-017]: <inspections/ADRs/ADR-017-use-governed-site-and-asset-taxonomy.md#decision-outcome>
+[Platform Administration ADR-001]: <platform administration/ADRs/ADR-001-use-complementary-location-and-business-hierarchies.md#decision-outcome>
+[Platform Administration ADR-002]: <platform administration/ADRs/ADR-002-apply-intersection-based-record-visibility.md#decision-outcome>
+[Platform Administration ADR-003]: <platform administration/ADRs/ADR-003-separate-employee-home-and-access-assignments.md#decision-outcome>
+[Platform Administration ADR-004]: <platform administration/ADRs/ADR-004-maintain-the-organizational-hierarchy-in-intelex.md#decision-outcome>
+[Platform Administration ADR-005]: <platform administration/ADRs/ADR-005-use-location-scoped-roles-for-workflow-routing.md#decision-outcome>
+[Platform Administration ADR-006]: <platform administration/ADRs/ADR-006-provide-controlled-external-support-access.md#decision-outcome>
+[Platform Administration ADR-007]: <platform administration/ADRs/ADR-007-use-shared-tasks-and-security-aware-reporting.md#decision-outcome>
+[Platform Administration ADR-008]: <platform administration/ADRs/ADR-008-establish-first-year-platform-change-governance.md#decision-outcome>
+[Training Management ADR-001]: <training management/ADRs/ADR-001-assign-training-requirements-through-job-code-mapped-workgroups.md#decision-outcome>
+[Training Management ADR-002]: <training management/ADRs/ADR-002-use-individual-recurrence-for-self-service-training.md#decision-outcome>
+[Training Management ADR-003]: <training management/ADRs/ADR-003-use-a-common-course-requirement-across-delivery-methods.md#decision-outcome>
+[Training Management ADR-004]: <training management/ADRs/ADR-004-match-completion-authority-to-the-training-requirement.md#decision-outcome>
+[Training Management ADR-005]: <training management/ADRs/ADR-005-model-independently-governed-training-topics-as-atomic-courses.md#decision-outcome>
+[Training Management ADR-006]: <training management/ADRs/ADR-006-build-qualifications-as-a-separate-layer-over-training-management.md#decision-outcome>
+[Training Management ADR-007]: <training management/ADRs/ADR-007-use-separate-qualification-definitions-for-materially-different-scopes.md#decision-outcome>
+[Training Management ADR-008]: <training management/ADRs/ADR-008-support-authorized-competency-attestation.md#decision-outcome>
+[Training Management ADR-009]: <training management/ADRs/ADR-009-define-qualification-validity-and-renewal-from-governing-policy.md#decision-outcome>
+[Training Management ADR-010]: <training management/ADRs/ADR-010-validate-existing-custom-learning-packages-before-adoption.md#decision-outcome>
+[Training Management ADR-011]: <training management/ADRs/ADR-011-establish-an-ongoing-marcom-content-refresh-process.md#decision-outcome>
+[Training Management ADR-012]: <training management/ADRs/ADR-012-replace-tpc-with-intelex-training-management.md#decision-outcome>
+[Training Management ADR-013]: <training management/ADRs/ADR-013-version-training-content-for-audit-traceability.md#decision-outcome>
+[Training Management ADR-014]: <training management/ADRs/ADR-014-preserve-training-history-across-employment-status-changes.md#decision-outcome>
+[Training Management ADR-015]: <training management/ADRs/ADR-015-require-objective-evidence-and-centralized-qualification-completion.md#decision-outcome>
+[Incident Management ADR-001]: <../phase 2/incident management/ADRs/ADR-001-capture-establishment-and-operational-resource.md#decision-outcome>
+[Incident Management ADR-002]: <../phase 2/incident management/ADRs/ADR-002-defer-contractor-self-service-and-isolated-security.md#decision-outcome>
+[Incident Management ADR-003]: <../phase 2/incident management/ADRs/ADR-003-limit-persistent-incident-visibility-and-use-workflow-access.md#decision-outcome>
+
+[Documentation portal]: <README.md>
+[Phase 1 change log]: <CHANGELOG.md>
+[Phase 2 overview]: <../phase 2/README.md>
+[Incident Management overview]: <../phase 2/incident management/README.md>
+[Document Control overview]: <document control/README.md>
+[GitBook configuration]: <../../gitbook-docs.yaml>
+[Day 1 morning transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-morning.md>
+[Day 1 afternoon transcript]: <training management/raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-afternoon.md>
+[Day 2 morning transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>
+[Day 2 afternoon transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-afternoon.md>
+[Day 3 morning transcript]: <document control/raw artifacts/meeting_transcripts/2026-09-17-terra-gen-summit-ehsq-design-workshop-day-3-morning.md>
+[training-prep transcript]: <training management/raw artifacts/meeting_transcripts/2026-09-08-terra-gen-summit-ehsq-training-mgmt-design-prep.md>
+[Incident Reporting sample]: <../../content/phase 1/training management/Terra Gen Incident Reporting.zip>
+[Fleet Safety sample]: <../../content/phase 1/training management/Terra-Gen Fleet Safety Training (provided by Karla 062026).zip>

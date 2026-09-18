@@ -51,7 +51,7 @@ ADR **More Information** sections identify the relevant timestamps.
 - Establish triggers for reconsidering contractor self-service and isolated security.
 - Create additional ADRs as the detailed incident workflow is designed.
 
-Track these items in the Phase 2 delivery backlog when that register is established.
+Track these items in the [Phase 2 section of the shared open-task register](<../../phase 1/OPEN-TASKS-AND-QUESTIONS.md#phase-2--incident-management-outside-phase-1-delivery-scope>). They remain outside Phase 1 delivery scope.
 
 ## Maintaining This Component
 

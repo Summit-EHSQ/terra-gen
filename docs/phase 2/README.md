@@ -12,7 +12,7 @@ The current Phase 2 material establishes foundational Incident Management decisi
 
 The working Phase 2 collection contains three Incident Management ADRs: one accepted and two proposed.
 
-The phase currently has no separate change log or consolidated open-task register; open work is recorded in the Incident Management component overview and ADRs.
+The phase currently has no separate change log or register file. Material open work is tracked in the [Phase 2 section of the shared open-task register](<../phase 1/OPEN-TASKS-AND-QUESTIONS.md#phase-2--incident-management-outside-phase-1-delivery-scope>), with priorities and scope kept separate from Phase 1.
 
 | Domain | Accepted | Proposed | Total |
 | --- | ---: | ---: | ---: |

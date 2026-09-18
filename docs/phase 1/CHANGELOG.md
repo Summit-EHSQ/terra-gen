@@ -4,6 +4,14 @@ This file records material changes to the Phase 1 architecture decision records 
 
 ## 2026-09-18
 
+### Open-task register re-review
+
+* Reconciled the [open-task register](OPEN-TASKS-AND-QUESTIONS.md) against current ADR files, repository guidance, seven unique meetings, and the supplied learning-package manifests. Retained all 38 previous task themes while removing resolved or superseded portions.
+* Added five explicit Phase 1 tracking items for external-inspection intake, the interim near-miss handoff, qualification evidence operations, training activation/historical due-date seeding, and the document migration pilot. Added four separately scoped Phase 2 Incident Management items.
+* Corrected the single-hierarchy/access baseline, nine remaining training proposals, standalone qualification/evidence model, available SCORM 1.2 samples, and accepted pilot-led document migration. Reclassified first-year governance and unconfirmed combined regulatory output as P2.
+* The register now contains 47 items: 17 P0, 26 P1, and four P2. Phase 1/shared work accounts for 43; four apply only to Phase 2. Added linked sources, evidence classifications, resolved-portion notes, and a dependency-aware resolution sequence.
+* Flagged stale baseline tables below, ambiguous or missing later workshop references, residual formal-Finding wording, missing validation artifacts, and incomplete publication coverage. Current ADR metadata and the documentation portal remain authoritative; this register update does not change any ADR status or approve new implementation scope.
+
 ### Added
 
 * Added twelve Document Control ADRs covering standard-product configuration, centralized administration, scope, related documents, classification, location applicability, security, authoring boundaries, numbering, approvals, release, and phased migration.
