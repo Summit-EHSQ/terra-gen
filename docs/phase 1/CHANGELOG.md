@@ -2,6 +2,24 @@
 
 This file records material changes to the Phase 1 architecture decision records and their supporting source artifacts. Dates identify when the documentation was updated; source meeting dates are identified separately.
 
+## 2026-09-25
+
+### Employee integration technical design
+
+* Added the [Paylocity Employee Integration Technical Requirements and Clarifications](<employee management/raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>) source artifact.
+* Revised Employee Management ADR-001 to define exact Position Code resolution, administrator notification, provisioning rules, the Position Code and Published Position Code structure, single-stage publication workflow, captured-version relation, and published-configuration gate.
+* Revised Employee Management ADR-003 to replace the EDIS/SFTP transport with Boomi custom-object staging and a consolidated APIHub request to `EmployeeUserAccess`.
+* Revised Employee Management ADR-004, ADR-005, and ADR-006 to align pre-start provisioning references, monitoring, and SSO terminology with the API-based integration.
+* Updated the Employee Management component overview, source evidence, and related entries in the consolidated open-task register.
+
+## 2026-09-21
+
+### Transcript change-request review
+
+* Added the [change-order and change-request register](../change-orders-and-requests.md), reviewing all 19 stored transcript copies across seven unique meetings.
+* Recorded 81 changes, enhancements and material alternatives, including 12 explicit scope, cost or licensing discussions, with source references and dispositions. Retained declined and deferred options and separated baseline capabilities from commercial changes.
+* Reconciled current ADR status without changing any ADR or source transcript. No formal commercial approval is inferred from workshop agreement or accepted design status.
+
 ## 2026-09-18
 
 ### Open-task register re-review

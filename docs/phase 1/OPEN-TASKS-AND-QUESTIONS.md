@@ -74,27 +74,27 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 ## Employee Integration and Provisioning
 
-### P0 — Confirm a stable Paylocity position-code identifier
+### P0 — Validate the Paylocity Position Code contract
 
-**Open task:** Validate through the production Paylocity integration interface that a stable position-code identifier is available and include it in the Boomi-to-EDIS employee contract. Reporting availability alone is insufficient; do not substitute mutable position descriptions without evidence.
+**Open task:** Validate that Boomi supplies the agreed Paylocity Position Code Text consistently, and verify that the configured Intelex lookup and uniqueness rules preserve exact, case-sensitive values through creation and update.
 
-**Unanswered questions:** Which source field is stable across description changes and reorganization? Are historical and newly created codes exposed consistently? What happens if a code is merged or retired?
+**Unanswered questions:** How are historical, merged, and retired codes represented by Paylocity? Does the Intelex uniqueness implementation distinguish case exactly as required under production collation behavior?
 
-**Why material:** Employee provisioning profiles and training workgroup assignment depend on this key; Employee Management ADR-001 cannot be accepted without it.
-
-**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
-
-**Source:** [Employee Management ADR-001].
-
-### P0 — Design the provisioning-profile catalogue and exception rules
-
-**Open task:** Define reusable profiles and map stable position codes to training workgroups and only those additional provisioning assignments whose business rules have been validated. Establish governed position-code reference records, mapping ownership, effective dates, approval, manual-exception precedence, and behavior for code changes. Do not provision Business Hierarchy assignments in the initial model.
-
-**Unanswered questions:** Which additional defaults are justified beyond training? Which manual exceptions survive reassessment, and how are removals distinguished from additions? What notification, response target, and minimum identity/establishment data permit basic provisioning while an unknown position code awaits mapping? How will overlapping workgroups produce one employee-course requirement? Paylocity prevailing-wage job codes are not the training-profile key.
+**Why material:** Initial Employee provisioning is blocked until the exact Position Code resolves to a successfully published configuration.
 
 **Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
 
-**Source:** [Employee Management ADR-001]; [Training Management ADR-001].
+**Sources:** [Employee Management ADR-001]; [Paylocity integration requirements].
+
+### P0 — Implement and validate Position Code publishing and provisioning rules
+
+**Open task:** Configure the Position Code and Published Position Code objects, the Paylocity Employee Record's captured-version relation, single-stage publication workflow, first-publication backfill, filtered group grids, Role Assignment children, notification controls, publication gate, predecessor copying, and transactional replacement of the active master configuration. Do not provision Business Hierarchy assignments through the Position Code profile unless a later decision explicitly adds them.
+
+**Unanswered questions:** Can the configured Action Handler transaction roll back scalar and relational copies together? Who owns publishing and setup-response service levels? How will overlapping workgroups produce one employee-course requirement? Paylocity prevailing-wage job codes are not the provisioning Position Code.
+
+**Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
+
+**Sources:** [Employee Management ADR-001]; [Training Management ADR-001]; [Paylocity integration requirements].
 
 ### P0 — Finalize employee deactivation and lifecycle semantics
 
@@ -128,15 +128,15 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 **Sources:** [Employee Management ADR-004] and [Employee Management ADR-006].
 
-### P1 — Choose and validate the EDIS transport and integration operations
+### P1 — Validate APIHub integration operations
 
-**Open task:** Complete IT/security review of SFTP versus REST, finalize the logical employee payload, error and retry behavior, reconciliation, monitoring, and production support ownership.
+**Open task:** Validate Boomi custom-object POST/PATCH behavior, Action Handler ordering, publication gating, the calculated long-text Groups payload, APIHub POST/PATCH selection, Employee relation establishment, error and retry behavior, reconciliation, monitoring, and production support ownership.
 
-**Unanswered questions:** Is the initially scoped SFTP transport approved? What constitutes successful end-to-end reconciliation? How are partial failures replayed without duplicate side effects?
+**Unanswered questions:** What constitutes successful end-to-end reconciliation? How are failed or timed-out requests replayed without duplicate Employees? How is a successful `EmployeeUserAccess` POST reconciled if the subsequent Employee-to-Paylocity relation handler fails?
 
 **Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
 
-**Source:** [Employee Management ADR-003].
+**Sources:** [Employee Management ADR-003]; [Paylocity integration requirements].
 
 ### P1 — Implement the employee-integration correction process
 
@@ -150,7 +150,7 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 ### P1 — Validate the SAML identifier and mobile/offline access behavior
 
-**Open task:** Confirm whether email, UPN, or another immutable organizational identifier appears in the Entra SAML assertion and matches the EDIS username. Test browser login, account disablement, mobile authentication, PIN setup, offline access, timeout behavior, and device-user separation.
+**Open task:** Confirm whether email, UPN, or another immutable organizational identifier appears in the Entra SAML assertion and matches the username staged on the Paylocity Employee Record and sent to `EmployeeUserAccess`. Test browser login, account disablement, mobile authentication, PIN setup, offline access, timeout behavior, and device-user separation.
 
 **Unanswered questions:** Is email sufficiently stable, or should UPN/another claim be used? What happens to cached mobile access after an account is disabled? What device-management rules apply to shared or replaced devices?
 
@@ -623,6 +623,7 @@ No whole prior task is marked delivered solely because its architecture is accep
 [Day 2 morning transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>
 [Day 2 afternoon transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-afternoon.md>
 [Day 3 morning transcript]: <document control/raw artifacts/meeting_transcripts/2026-09-17-terra-gen-summit-ehsq-design-workshop-day-3-morning.md>
+[Paylocity integration requirements]: <employee management/raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>
 [training-prep transcript]: <training management/raw artifacts/meeting_transcripts/2026-09-08-terra-gen-summit-ehsq-training-mgmt-design-prep.md>
 [Incident Reporting sample]: <../../content/phase 1/training management/Terra Gen Incident Reporting.zip>
 [Fleet Safety sample]: <../../content/phase 1/training management/Terra-Gen Fleet Safety Training (provided by Karla 062026).zip>

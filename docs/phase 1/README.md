@@ -10,6 +10,7 @@ The current documentation covers Phase 1 design across Document Control, Employe
 - To verify why a decision was made, review the transcript references in the ADR's **More Information** section and then consult the corresponding source artifact.
 - To distinguish an approved direction from an unresolved proposal, check the ADR's `status` and `date` metadata.
 - To see how the documented baseline has evolved, consult the [Phase 1 change log](CHANGELOG.md).
+- To review change orders, requested enhancements, and discussed alternatives across the available meetings, consult the [transcript change register](../change-orders-and-requests.md). It distinguishes design agreement from commercial authorization.
 - To identify work that still requires validation or detailed design, review proposed ADRs and the [known gaps and open design areas](#known-gaps-and-open-design-areas).
 
 ## Documentation Status

@@ -17,7 +17,7 @@ secondary_applications: Intelex Platform Administration, Intelex Mobile
 
 ## Context and Problem Statement
 
-Intelex user accounts must authenticate consistently with the Microsoft identity environment. The username populated through EDIS must match the identifier supplied in the SAML assertion. Email is the likely identifier, but final identity configuration must confirm it.
+Intelex user accounts must authenticate consistently with the Microsoft identity environment. The username staged on the Paylocity Employee Record and sent through APIHub to `EmployeeUserAccess` must match the identifier supplied in the SAML assertion. Email is the likely identifier, but final identity configuration must confirm it.
 
 ## Decision Drivers
 
@@ -50,5 +50,7 @@ Email will be used unless technical validation establishes another source-suppor
 ## More Information
 
 A separate external support URL was accepted for authorized product and implementation support. Its access controls should be documented as part of platform administration rather than employee authentication.
+
+The current account-provisioning sequence is defined in [Paylocity Employee Integration Technical Requirements and Clarifications](<../raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>) and Employee Management ADR-003.
 
 Transcript references: 0:10:59–0:12:36 and 1:37:57–1:54:48.

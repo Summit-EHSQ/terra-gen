@@ -52,4 +52,6 @@ The pre-start record must contain the employee identifier, name, future hire dat
 
 The preferred upstream improvement is to place the provisioned Entra email address into Paylocity automatically. That improvement strengthens but does not block the Intelex integration.
 
+The current custom staging, published Position Code gate, and APIHub request sequence are defined in [Paylocity Employee Integration Technical Requirements and Clarifications](<../raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>) and Employee Management ADR-003.
+
 Transcript references: 0:27:57–0:38:44 and 0:50:44–0:55:47.

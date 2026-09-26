@@ -17,7 +17,7 @@ secondary_applications: Integration Management, Workflow Management
 
 ## Context and Problem Statement
 
-EDIS can receive malformed values, invalid dates, unknown list values, or references to supervisors who do not exist. Intelex logs processing errors in a back-office screen, but the standard process does not proactively notify administrators. Non-fatal reference errors may also affect downstream workflow routing.
+The Boomi-to-Paylocity-Employee-Record-to-APIHub process can receive malformed values, invalid dates, unknown Position Codes, unpublished Position Code configurations, or references to supervisors and locations that do not exist. Errors may occur during custom-record validation, Action Handler calculation, APIHub execution, or `EmployeeUserAccess` validation. Without consolidated monitoring, a failure in any one of these stages could leave an employee unprovisioned or only partially prepared for downstream use.
 
 ## Decision Drivers
 
@@ -37,7 +37,7 @@ EDIS can receive malformed values, invalid dates, unknown list values, or refere
 
 Chosen option: **Send a daily employee-integration error summary to the responsible administration team during initial operation.**
 
-Records with non-fatal errors may continue processing, but the unresolved validation or reference problem will remain visible for correction.
+The summary will cover Boomi delivery, Paylocity Employee Record validation and calculation, unpublished Position Code blocks, APIHub requests, `EmployeeUserAccess` responses, and failures to establish the Employee-to-Paylocity relation. Records with non-fatal errors may continue processing, but the unresolved validation or reference problem will remain visible for correction.
 
 ## Consequences
 
@@ -49,5 +49,7 @@ Records with non-fatal errors may continue processing, but the unresolved valida
 ## More Information
 
 The notification frequency may be reduced after error patterns and operational response are understood. Workflow fallback does not replace correction of the underlying employee data.
+
+The current integration sequence and its validation gates are defined in [Paylocity Employee Integration Technical Requirements and Clarifications](<../raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>) and Employee Management ADR-003.
 
 Transcript references: 0:56:18–1:02:12.
