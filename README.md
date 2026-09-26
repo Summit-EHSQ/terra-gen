@@ -10,7 +10,6 @@ Start with the [documentation portal](<docs/phase 1/README.md>). It provides the
 - `docs/phase 2/` contains the current Incident Management design documentation.
 - Each domain keeps architecture decision records in `ADRs/` and supporting meeting transcripts in `raw artifacts/meeting_transcripts/`.
 - `content/phase 1/training management/` contains two supplied packaged-learning samples for compatibility testing: **Terra Gen Incident Reporting** and **Terra-Gen Fleet Safety Training**. Their presence is test input, not evidence that Intelex compatibility has been validated.
-- [`gitbook-docs.yaml`](gitbook-docs.yaml) configures the GitBook publication structure. The repository documentation remains authoritative if the publication configuration does not yet expose a domain.
 
 ## Current Snapshot
 
