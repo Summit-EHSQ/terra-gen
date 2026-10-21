@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Terra-Gen Phase 1 EHSQ employee portal mockup." />
+    <title>Terra-Gen | EHSQ Portal</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="app-shell">
+      <div class="main-column">
+        <main id="main" tabindex="-1">
+          <section class="view active" id="view-home" aria-labelledby="page-title">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow" id="todayLabel"></p>
+                <h1 id="page-title">Good morning, Dave.</h1>
+                <p>Here’s what needs your attention.</p>
+              </div>
+              <button class="primary-button" data-open-inspection><span>＋</span> Start inspection</button>
+            </div>
+
+            <section class="attention-panel" aria-label="Priority summary">
+              <div class="attention-copy">
+                <span class="pulse" aria-hidden="true"></span>
+                <div><strong>3 items need attention today</strong><p>One training requirement is overdue and two tasks are due by end of shift.</p></div>
+              </div>
+              <button class="text-button" data-view-link="tasks">Review my work <span>→</span></button>
+            </section>
+
+            <div class="metric-grid">
+              <article class="metric-card"><div class="metric-top"><span>Open tasks</span><span class="mini-glyph">✓</span></div><strong>7</strong><p><b class="warning-text">2 due today</b> · 1 overdue</p></article>
+              <article class="metric-card"><div class="metric-top"><span>Training status</span><span class="mini-glyph">◇</span></div><strong>92%</strong><p><b class="good-text">23 complete</b> · 2 remaining</p></article>
+              <article class="metric-card"><div class="metric-top"><span>Inspections</span><span class="mini-glyph">◎</span></div><strong>4</strong><p>Scheduled in the next 7 days</p></article>
+              <article class="metric-card"><div class="metric-top"><span>Document reviews</span><span class="mini-glyph">▤</span></div><strong>3</strong><p>Awaiting your approval</p></article>
+              <article class="metric-card"><div class="metric-top"><span>Hazards reported</span><span class="mini-glyph hazard-glyph">△</span></div><strong>5</strong><p><b class="warning-text">2 awaiting action</b> · this month</p></article>
+              <article class="metric-card"><div class="metric-top"><span>Incident work</span><span class="mini-glyph incident-glyph">!</span></div><strong>2</strong><p>Workflow tasks assigned to you</p></article>
+            </div>
+
+            <div class="content-grid">
+              <section class="panel work-panel">
+                <div class="panel-heading"><div><h2>My work</h2><p>Prioritized across all applications</p></div><button class="filter-button" id="filterButton">All work <span>⌄</span></button></div>
+                <div class="work-list" id="workList">
+                  <article class="work-item" data-category="training" data-status="overdue">
+                    <div class="app-icon training-icon">◇</div><div class="work-copy"><div class="work-title"><strong>Annual Electrical Safety Refresher</strong><span class="status overdue">Overdue</span></div><p>Training · Due Sep 24</p></div><button class="row-button">Resume</button>
+                  </article>
+                  <article class="work-item" data-category="inspections" data-status="today">
+                    <div class="app-icon inspection-icon">◎</div><div class="work-copy"><div class="work-title"><strong>Battery Energy Storage — Weekly</strong><span class="status today">Due today</span></div><p>Inspection · Edwards Sanborn · 18 questions</p></div><button class="row-button" data-open-inspection>Start</button>
+                  </article>
+                  <article class="work-item" data-category="documents" data-status="today">
+                    <div class="app-icon document-icon">▤</div><div class="work-copy"><div class="work-title"><strong>Hot Work Permit Procedure</strong><span class="status today">Due today</span></div><p>Document approval · Revision 4.0</p></div><button class="row-button">Review</button>
+                  </article>
+                  <article class="work-item" data-category="tasks" data-status="upcoming">
+                    <div class="app-icon task-icon">✓</div><div class="work-copy"><div class="work-title"><strong>Verify corrective action: BESS-204</strong><span class="status upcoming">Sep 29</span></div><p>Task · Assigned by Sarah Chen</p></div><button class="row-button">Open</button>
+                  </article>
+                  <article class="work-item" data-category="hazards" data-status="today">
+                    <div class="app-icon hazard-icon">△</div><div class="work-copy"><div class="work-title"><strong>Review exposed cable tray observation</strong><span class="status today">Due today</span></div><p>Hazard ID · Mojave Wind · HZ-2026-041</p></div><button class="row-button" data-view-link="hazards">Review</button>
+                  </article>
+                  <article class="work-item" data-category="incidents" data-status="upcoming">
+                    <div class="app-icon incident-icon">!</div><div class="work-copy"><div class="work-title"><strong>Complete supervisor review: INC-2026-018</strong><span class="status upcoming">Sep 30</span></div><p>Incident Management · Workflow access</p></div><button class="row-button" data-view-link="incidents">Open</button>
+                  </article>
+                </div>
+                <button class="panel-footer" data-view-link="tasks">View all 7 items <span>→</span></button>
+              </section>
+
+              <aside class="right-stack">
+                <section class="panel quick-panel">
+                  <div class="panel-heading"><div><h2>Quick actions</h2><p>Common work, one click away</p></div></div>
+                  <button data-open-inspection><span class="quick-icon">◎</span><span><strong>Start an inspection</strong><small>Online or offline</small></span><b>→</b></button>
+                  <button data-view-link="documents"><span class="quick-icon">▤</span><span><strong>Find a document</strong><small>Current controlled versions</small></span><b>→</b></button>
+                  <button data-view-link="training"><span class="quick-icon">◇</span><span><strong>View my training</strong><small>Requirements and history</small></span><b>→</b></button>
+                  <button data-view-link="hazards"><span class="quick-icon">△</span><span><strong>Report a hazard</strong><small>Capture and assign an action</small></span><b>→</b></button>
+                  <button data-view-link="incidents"><span class="quick-icon">!</span><span><strong>Report an incident</strong><small>Private, guided intake</small></span><b>→</b></button>
+                </section>
+
+                <section class="panel snapshot-panel">
+                  <div class="panel-heading"><div><h2>Site snapshot</h2><p>Mojave Operations · September</p></div></div>
+                  <div class="snapshot-row"><span>Inspection completion</span><strong>96%</strong></div><div class="bar"><i style="width:96%"></i></div>
+                  <div class="snapshot-row"><span>Training compliance</span><strong>92%</strong></div><div class="bar"><i style="width:92%"></i></div>
+                  <div class="snapshot-meta"><span><b>3</b> open actions</span><span><b>0</b> high risk</span></div>
+                </section>
+              </aside>
+            </div>
+
+            <section class="application-section" aria-labelledby="applications-title">
+              <div class="section-heading"><div><p class="eyebrow">Intelex applications</p><h2 id="applications-title">Go to an application</h2></div><span>Access and records shown are based on your role.</span></div>
+              <div class="application-grid">
+                <button data-view-link="documents"><span class="app-mark document-icon">▤</span><span><strong>Document Control</strong><small>Controlled content and approvals</small></span><b>→</b></button>
+                <button data-view-link="training"><span class="app-mark training-icon">◇</span><span><strong>Training Management</strong><small>Requirements and qualifications</small></span><b>→</b></button>
+                <button data-view-link="inspections"><span class="app-mark inspection-icon">◎</span><span><strong>Inspections</strong><small>Field checklists and reviews</small></span><b>→</b></button>
+                <button data-view-link="hazards"><span class="app-mark hazard-icon">△</span><span><strong>Hazard ID</strong><small>Observations and corrective actions</small></span><b>→</b></button>
+                <button data-view-link="incidents"><span class="app-mark incident-icon">!</span><span><strong>Incident Management</strong><small>Report, investigate and follow up</small></span><b>→</b></button>
+                <button data-view-link="tasks"><span class="app-mark task-icon">✓</span><span><strong>My tasks</strong><small>Work assigned across applications</small></span><b>→</b></button>
+              </div>
+            </section>
+          </section>
+
+          <section class="view" id="view-tasks" aria-labelledby="tasks-title">
+            <button class="back-link" data-view-link="home">← EHSQ overview</button>
+            <div class="page-heading compact"><div><p class="eyebrow">Shared task management</p><h1 id="tasks-title">My tasks</h1><p>Actions, approvals and requirements from every application.</p></div><button class="primary-button">＋ Create task</button></div>
+            <div class="toolbar"><div class="segmented"><button class="active">Open <span>7</span></button><button>Completed</button></div><input type="search" placeholder="Filter tasks" aria-label="Filter tasks" /></div>
+            <section class="panel data-panel"><div class="data-head"><span>Work item</span><span>Application</span><span>Due</span><span>Priority</span><span></span></div><div id="taskRows"></div></section>
+          </section>
+
+          <section class="view module-view" id="view-documents" aria-labelledby="documents-title">
+            <button class="back-link" data-view-link="home">← EHSQ overview</button>
+            <div class="module-hero document-hero"><div><p class="eyebrow">Document Control</p><h1 id="documents-title">The right document, every time.</h1><p>Find current controlled content, review assigned changes and track approvals without chasing copies.</p></div><button class="primary-button light">＋ Submit document</button></div>
+            <div class="module-grid"><section class="panel module-main"><div class="panel-heading"><div><h2>Controlled documents</h2><p>Released content applicable to Mojave Operations</p></div><button class="filter-button">All categories ⌄</button></div><div class="doc-search"><span>⌕</span><input placeholder="Search title, number or keyword" /></div><div class="document-list" id="documentList"></div></section><aside class="panel stats-list"><h2>My document work</h2><button><span>Awaiting my approval</span><strong>3</strong></button><button><span>Drafts in progress</span><strong>2</strong></button><button><span>Reviews due this month</span><strong>5</strong></button></aside></div>
+          </section>
+
+          <section class="view module-view" id="view-training" aria-labelledby="training-title">
+            <button class="back-link" data-view-link="home">← EHSQ overview</button>
+            <div class="module-hero training-hero"><div><p class="eyebrow">Training Management</p><h1 id="training-title">Your learning, clearly mapped.</h1><p>Complete assigned training, understand what renews next and keep a reliable record of achievement.</p></div><div class="hero-score"><strong>92%</strong><span>Current compliance</span></div></div>
+            <div class="module-grid"><section class="panel module-main"><div class="panel-heading"><div><h2>My requirements</h2><p>Based on your role and workgroups</p></div><button class="filter-button">All requirements ⌄</button></div><div class="course-list" id="courseList"></div></section><aside class="panel credential-panel"><p class="eyebrow">Qualification</p><h2>BESS Authorized Worker</h2><div class="ring"><span>4/5</span></div><p>One practical assessment remains. Current evidence is valid through June 2027.</p><button class="row-button wide">View qualification</button></aside></div>
+          </section>
+
+          <section class="view module-view" id="view-inspections" aria-labelledby="inspections-title">
+            <button class="back-link" data-view-link="home">← EHSQ overview</button>
+            <div class="module-hero inspection-hero"><div><p class="eyebrow">Inspections</p><h1 id="inspections-title">Ready for the field.</h1><p>Run complete, sectioned checklists online or offline and turn response-level issues directly into accountable actions.</p></div><button class="primary-button light" data-open-inspection>＋ Start inspection</button></div>
+            <div class="module-grid"><section class="panel module-main"><div class="panel-heading"><div><h2>Scheduled inspections</h2><p>Assigned and upcoming at your sites</p></div><button class="filter-button">Next 30 days ⌄</button></div><div class="inspection-list" id="inspectionList"></div></section><aside class="panel stats-list"><h2>September</h2><button><span>Completed on time</span><strong>24</strong></button><button><span>Awaiting review</span><strong>2</strong></button><button><span>Open actions</span><strong>3</strong></button><div class="offline-note"><span>↓</span><p><strong>Offline ready</strong>2 checklists synced to this device.</p></div></aside></div>
+          </section>
+
+          <section class="view module-view" id="view-hazards" aria-labelledby="hazards-title">
+            <button class="back-link" data-view-link="home">← EHSQ overview</button>
+            <div class="module-hero hazard-hero"><div><p class="eyebrow">Hazard ID</p><h1 id="hazards-title">See it. Share it. Make it safer.</h1><p>Capture a field observation in moments, record the immediate control and route follow-up work to the right owner.</p></div><button class="primary-button light" data-open-hazard>＋ Report hazard</button></div>
+            <div class="module-grid"><section class="panel module-main"><div class="panel-heading"><div><h2>Hazards I can see</h2><p>Open observations and recently controlled hazards</p></div><button class="filter-button">Open hazards ⌄</button></div><div class="hazard-list" id="hazardList"></div></section><aside class="panel stats-list"><h2>September</h2><button><span>Hazards reported</span><strong>5</strong></button><button><span>Controlled immediately</span><strong>3</strong></button><button><span>Actions still open</span><strong>2</strong></button><div class="offline-note amber-note"><span>△</span><p><strong>Keep it quick</strong>Record what you saw and the immediate control first. Follow-up can be assigned next.</p></div></aside></div>
+          </section>
+
+          <section class="view module-view" id="view-incidents" aria-labelledby="incidents-title">
+            <button class="back-link" data-view-link="home">← EHSQ overview</button>
+            <div class="module-hero incident-hero"><div><p class="eyebrow">Incident Management · Phase 2 concept</p><h1 id="incidents-title">A guided, privacy-aware response.</h1><p>Report events with the correct establishment and operational resource, then give each participant access only to the work they need to complete.</p></div><button class="primary-button light" data-open-incident>＋ Report incident</button></div>
+            <div class="privacy-banner"><span>◈</span><div><strong>Incident access is task-based.</strong><p>You may see a record while you have assigned workflow work. Sensitive details remain limited to authorized roles.</p></div></div>
+            <div class="module-grid"><section class="panel module-main"><div class="panel-heading"><div><h2>My incident work</h2><p>Records visible through your current role or workflow assignment</p></div><button class="filter-button">Active work ⌄</button></div><div class="incident-list" id="incidentList"></div></section><aside class="panel context-card"><p class="eyebrow">Attribution example</p><h2>Person and place stay distinct</h2><dl><div><dt>OSHA establishment</dt><dd>Palm Springs</dd></div><div><dt>Operational resource</dt><dd>Edwards Sanborn BESS</dd></div><div><dt>Affected person</dt><dd>Employee record default</dd></div></dl><p>This separation supports legal reporting and operational analysis without treating them as the same structure.</p></aside></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="inspectionModal" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+        <p class="eyebrow">New inspection</p><h2 id="modal-title">Choose a checklist</h2><p class="modal-intro">Your selection will download for offline use automatically.</p>
+        <label>Site<select><option>Edwards Sanborn</option><option>Mojave Wind</option><option>Sanborn Solar</option></select></label>
+        <label>Inspection program<select><option>Battery Energy Storage — Weekly</option><option>Solar Site Housekeeping</option><option>Wind Turbine Safety Walkdown</option></select></label>
+        <div class="modal-summary"><span>18 required questions</span><span>~12 minutes</span><span>Offline enabled</span></div>
+        <button class="primary-button modal-start" id="modalStart">Begin inspection →</button>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite">Inspection started and saved to this device.</div>
+    <div class="modal-backdrop" id="simpleModal" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="simple-modal-title">
+        <button class="modal-close" id="simpleModalClose" aria-label="Close">×</button>
+        <p class="eyebrow" id="simpleModalEyebrow">New record</p><h2 id="simple-modal-title">Report a hazard</h2><p class="modal-intro" id="simpleModalIntro">Start with the essentials. You can add supporting detail after the record is saved.</p>
+        <label>Operational resource<select><option>Edwards Sanborn BESS</option><option>Mojave Wind</option><option>Sanborn Solar</option></select></label>
+        <label>What happened?<textarea id="simpleModalText" placeholder="Describe what you observed"></textarea></label>
+        <button class="primary-button modal-start" id="simpleModalStart">Save draft →</button>
+      </section>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

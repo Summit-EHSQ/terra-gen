@@ -55,6 +55,8 @@ The resource or site is separate from the OSHA establishment used by the Locatio
 
 ## More Information
 
+Target logical model and implementation rules, generalized for cross-application operational activity targets: [Solution Specification: Configurable Operational Activity Targets](ADR-008-solution-specification-configurable-site-inspection-frequency.md).
+
 The health and safety requirement discussed is at least two inspections per year per site. In this ADR, “site” means the operational resource or plant against which the inspection obligation is measured; it does not automatically mean the OSHA establishment. A reporting-only alternative was considered but cannot identify a required inspection when no corresponding record exists. The red-yellow-green example may guide presentation but does not establish final threshold logic.
 
 Transcript references: 23:19–26:56 in the Inspections workshop; 1:33:02–1:42:56 in the organizational-structure workshop; integration and inspections workshop 0:36:39–0:46:35 and 1:12:30–1:14:16.

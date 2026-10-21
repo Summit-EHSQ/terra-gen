@@ -1,0 +1,8 @@
+{
+  "name": "terra-gen-ehsq-portal-mockup",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
