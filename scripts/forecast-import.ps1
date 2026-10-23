@@ -156,34 +156,89 @@ function Get-CategoryMarker {
     return "[$importNamespace:category:$(ConvertTo-Slug -Value $Category)]"
 }
 
-function Get-ImplementationDescription {
-    param([Parameter(Mandatory = $true)] $Task)
+function ConvertTo-RichTextFragment {
+    param([AllowEmptyString()][string] $Value)
 
-    return @(
-        Get-TaskMarker -TaskId $Task.Id
-        "Source: ADR-008 Technical Implementation Plan"
-        "Category: $($Task.Category)"
-        ''
-        "Objective: $($Task.Objective)"
-        ''
-        "Detailed scope: $($Task.DetailedScope)"
-        ''
-        "Deliverable: $($Task.Deliverable)"
-        ''
-        "Strict technical prerequisites: $($Task.Prerequisites)"
-        ''
-        "Blocked status: $($Task.BlockedStatus)"
-        ''
-        "Recommended implementer role: $($Task.Implementer)"
-        "Recommended reviewer/approver role: $($Task.Reviewer)"
-        "Role rationale: $($Task.RoleRationale)"
-        ''
-        "Acceptance criteria: $($Task.Acceptance)"
-        ''
-        "Specification references: $($Task.References)"
-        ''
-        "Assumptions and open questions: $($Task.Assumptions)"
-    ) -join "`n"
+    $encoded = [System.Net.WebUtility]::HtmlEncode($Value)
+    return [regex]::Replace($encoded, '`([^`]+)`', '<span><code>$1</code></span>')
+}
+
+function Get-ExistingRichTextPreamble {
+    param([AllowNull()][string] $Description)
+
+    if ([string]::IsNullOrWhiteSpace($Description)) {
+        return ''
+    }
+
+    $match = [regex]::Match(
+        $Description,
+        '(?is)^\s*<div[^>]*>(?<preamble>.*?)(?=<strong>Category:</strong>)'
+    )
+    if (-not $match.Success) {
+        return ''
+    }
+
+    $preamble = $match.Groups['preamble'].Value
+    $plainText = [System.Net.WebUtility]::HtmlDecode(($preamble -replace '<[^>]+>', ' '))
+    $plainText = ($plainText -replace '\s+', ' ').Trim()
+    if ([string]::IsNullOrWhiteSpace($plainText)) {
+        return ''
+    }
+
+    $plainText = $plainText -replace '(?i)^note:\s*', ''
+    return '<strong>Note:</strong><br/>' + (ConvertTo-RichTextFragment $plainText)
+}
+
+function Get-ImplementationDescription {
+    param(
+        [Parameter(Mandatory = $true)] $Task,
+        [AllowEmptyString()][string] $PreambleHtml = ''
+    )
+
+    $marker = ConvertTo-RichTextFragment (Get-TaskMarker -TaskId $Task.Id)
+    $sections = @(
+        [pscustomobject]@{ Label = 'Category'; Value = $Task.Category }
+        [pscustomobject]@{ Label = 'Objective'; Value = $Task.Objective }
+        [pscustomobject]@{ Label = 'Detailed scope'; Value = $Task.DetailedScope }
+        [pscustomobject]@{ Label = 'Deliverable'; Value = $Task.Deliverable }
+        [pscustomobject]@{ Label = 'Strict technical prerequisites'; Value = $Task.Prerequisites }
+        [pscustomobject]@{ Label = 'Blocked status'; Value = $Task.BlockedStatus }
+        [pscustomobject]@{ Label = 'Recommended implementer role'; Value = $Task.Implementer }
+        [pscustomobject]@{ Label = 'Recommended reviewer/approver role'; Value = $Task.Reviewer }
+        [pscustomobject]@{ Label = 'Role rationale'; Value = $Task.RoleRationale }
+        [pscustomobject]@{ Label = 'Acceptance criteria'; Value = $Task.Acceptance }
+        [pscustomobject]@{ Label = 'Specification references'; Value = $Task.References }
+        [pscustomobject]@{ Label = 'Assumptions and open questions'; Value = $Task.Assumptions }
+    )
+
+    $content = [System.Collections.Generic.List[string]]::new()
+    if (-not [string]::IsNullOrWhiteSpace($PreambleHtml)) {
+        $content.Add($PreambleHtml.Trim())
+    }
+    foreach ($section in $sections) {
+        $label = ConvertTo-RichTextFragment $section.Label
+        $value = ConvertTo-RichTextFragment $section.Value
+        $content.Add("<strong>${label}:</strong><br/>$value")
+    }
+    $content.Add('<strong>Source:</strong><br/>ADR-008 Technical Implementation Plan')
+    $content.Add("<span><code>$marker</code></span>")
+
+    return '<div>' + ($content -join '<br/><br/>') + '</div>'
+}
+
+function Get-CategoryDescription {
+    param(
+        [Parameter(Mandatory = $true)][string] $Category,
+        [Parameter(Mandatory = $true)][string[]] $Children
+    )
+
+    $marker = ConvertTo-RichTextFragment (Get-CategoryMarker -Category $Category)
+    $childText = ConvertTo-RichTextFragment ($Children -join ', ')
+    return '<div>' +
+        '<strong>Purpose:</strong><br/>Organizational parent task for implementation-plan tasks in this category.' +
+        '<br/><br/><strong>Child plan tasks:</strong><br/>' + $childText +
+        '<br/><br/><strong>Source:</strong><br/>ADR-008 Technical Implementation Plan' +
+        '<br/><br/><span><code>' + $marker + '</code></span></div>'
 }
 
 function Find-ByMarker {
@@ -219,6 +274,29 @@ function Assert-NoUnmanagedTitleConflict {
     if ($conflicts.Count -gt 0) {
         throw "An unmanaged Forecast task already uses the title '$Title'. Resolve the conflict before importing."
     }
+}
+
+function Find-ByTitleAndParent {
+    param(
+        [Parameter(Mandatory = $true)][object[]] $ExistingTasks,
+        [Parameter(Mandatory = $true)][string] $Title,
+        [AllowNull()] $ExpectedParentId
+    )
+
+    return @($ExistingTasks | Where-Object {
+        if ($_.title -ne $Title) {
+            return $false
+        }
+
+        $actualParentId = $null
+        if ($_.PSObject.Properties.Name -contains 'parent_task_id') {
+            $actualParentId = $_.parent_task_id
+        }
+
+        return (($null -eq $ExpectedParentId -and $null -eq $actualParentId) -or
+            ($null -ne $ExpectedParentId -and $null -ne $actualParentId -and
+                [long] $actualParentId -eq [long] $ExpectedParentId))
+    })
 }
 
 $planTasks = Get-PlanTasks -Path $PlanPath
@@ -288,7 +366,11 @@ Write-Host "Mode: $(if ($Apply) { 'APPLY' } else { 'DRY RUN' })"
 foreach ($category in $categories) {
     $title = $category
     $marker = Get-CategoryMarker -Category $category
+    $expectedParentId = if ($null -ne $categoryParent) { [long] $categoryParent.id } else { $null }
     $matches = @(Find-ByMarker -ExistingTasks $existingTasks -Marker $marker)
+    if ($matches.Count -eq 0) {
+        $matches = @(Find-ByTitleAndParent -ExistingTasks $existingTasks -Title $title -ExpectedParentId $expectedParentId)
+    }
     if ($matches.Count -gt 1) {
         throw "Multiple managed category tasks found for '$category'."
     }
@@ -298,18 +380,19 @@ foreach ($category in $categories) {
         if ($matches[0].PSObject.Properties.Name -contains 'parent_task_id') {
             $actualParentId = $matches[0].parent_task_id
         }
-        $expectedParentId = if ($null -ne $categoryParent) { [long] $categoryParent.id } else { $null }
         if (($null -eq $expectedParentId -and $null -ne $actualParentId) -or
             ($null -ne $expectedParentId -and [long] $actualParentId -ne $expectedParentId)) {
             throw "Managed category task '$category' is not nested under the expected parent task."
         }
 
-        Assert-NoUnmanagedTitleConflict -ExistingTasks $existingTasks -Title $title -Marker $marker
+        $children = @($planTasks | Where-Object Category -eq $category | ForEach-Object Id)
+        $description = Get-CategoryDescription -Category $category -Children $children
         $action = 'Skipped'
-        if ($matches[0].title -ne $title) {
+        if ($matches[0].title -ne $title -or $matches[0].description -ne $description) {
             if ($Apply) {
                 $updated = Invoke-ForecastRequest -Method PUT -Path "/v3/tasks/$($matches[0].id)" -Body @{
-                    title = $title
+                    title       = $title
+                    description = $description
                 }
                 $matches[0] = $updated
                 $action = 'Updated'
@@ -331,12 +414,7 @@ foreach ($category in $categories) {
     }
 
     $children = @($planTasks | Where-Object Category -eq $category | ForEach-Object Id)
-    $description = @(
-        $marker
-        'Source: ADR-008 Technical Implementation Plan'
-        'Purpose: Organizational parent task for implementation-plan tasks in this category.'
-        "Child plan tasks: $($children -join ', ')"
-    ) -join "`n"
+    $description = Get-CategoryDescription -Category $category -Children $children
 
     $categoryBody = @{
         title       = $title
@@ -358,18 +436,39 @@ foreach ($category in $categories) {
 foreach ($task in $planTasks) {
     $title = "$($task.Id) — $($task.Name)"
     $marker = Get-TaskMarker -TaskId $task.Id
+    $expectedParentId = [long] $categoryIds[$task.Category]
     $matches = @(Find-ByMarker -ExistingTasks $existingTasks -Marker $marker)
+    if ($matches.Count -eq 0) {
+        $matches = @(Find-ByTitleAndParent -ExistingTasks $existingTasks -Title $title -ExpectedParentId $expectedParentId)
+    }
     if ($matches.Count -gt 1) {
         throw "Multiple managed implementation tasks found for '$($task.Id)'."
     }
 
     if ($matches.Count -eq 1) {
-        $expectedParentId = [long] $categoryIds[$task.Category]
         if ($matches[0].PSObject.Properties.Name -notcontains 'parent_task_id' -or
             [long] $matches[0].parent_task_id -ne $expectedParentId) {
             throw "Managed task '$($task.Id)' is not nested under the expected category task $expectedParentId."
         }
-        $results.Add([pscustomobject]@{ Type = 'Implementation'; Key = $task.Id; Title = $title; Action = 'Skipped'; ForecastId = $matches[0].id })
+
+        $preamble = Get-ExistingRichTextPreamble -Description $matches[0].description
+        $description = Get-ImplementationDescription -Task $task -PreambleHtml $preamble
+        $action = 'Skipped'
+        if ($matches[0].title -ne $title -or $matches[0].description -ne $description) {
+            if ($Apply) {
+                $updated = Invoke-ForecastRequest -Method PUT -Path "/v3/tasks/$($matches[0].id)" -Body @{
+                    title       = $title
+                    description = $description
+                }
+                $matches[0] = $updated
+                $action = 'Updated'
+            }
+            else {
+                $action = 'WouldUpdate'
+            }
+        }
+
+        $results.Add([pscustomobject]@{ Type = 'Implementation'; Key = $task.Id; Title = $title; Action = $action; ForecastId = $matches[0].id })
         continue
     }
 
@@ -403,8 +502,8 @@ $summary = $results | Group-Object Action | Sort-Object Name | ForEach-Object {
 Write-Host "Summary: $($summary -join ', ')"
 
 if (-not $Apply) {
-    if (@($results | Where-Object Action -eq 'WouldCreate').Count -gt 0) {
-        Write-Host 'No Forecast data was changed. Run again with -Apply to create the listed tasks.'
+    if (@($results | Where-Object Action -in @('WouldCreate', 'WouldUpdate')).Count -gt 0) {
+        Write-Host 'No Forecast data was changed. Run again with -Apply to create or update the listed tasks.'
     }
     else {
         Write-Host 'No Forecast data was changed. All managed tasks already exist with the expected hierarchy.'

@@ -393,7 +393,7 @@ Both objects are localizable, administrator-maintained shared catalogues. Reconc
 | Active? | Yes/No | Y | `TRUE` | Catalogue Administrator editable; always visible | Deactivation prevents new selection; existing references remain valid |
 | Sort | Float | N | None | Catalogue Administrator editable; always visible | Controls presentation order |
 | Symbol | Text, max 30 | N | `NULL` | Catalogue Administrator editable; always visible | Reporting label; existing snapshots retain their Unit relationship |
-| Decimal Places | Integer, range 0–6 | Y | `0` | Catalogue Administrator editable until first use; always visible | Controls reporting format; stable after first use |
+| Decimal Places | Float | Y | `0` | Catalogue Administrator editable until first use; always visible | Controls reporting format; stable after first use |
 
 | Code | Name | Active? | Sort | Symbol | Decimal Places |
 |---|---|---:|---:|---|---:|
@@ -408,7 +408,7 @@ Both objects are localizable, administrator-maintained shared catalogues. Reconc
 | Name | Text, max 255; localizable | Y | None | Specialist Administrator editable; always visible | Display field |
 | Active? | Yes/No | Y | `TRUE` | Specialist Administrator editable; always visible | Activation requires a validated recurrence expression; deactivation prevents new selection only |
 | Sort | Float | N | None | Specialist Administrator editable; always visible | Controls presentation order |
-| Recurrence Expression | Text, max length unresolved; `displayas="recurrence"` | Y | None | Specialist Administrator editable; always visible | Intelex recurrence expression; validation mechanism and syntax require tenant confirmation; stable after first use |
+| Recurrence Expression | Text, `displayas="recurrence" editas="recurrence"`, | Y | None | Specialist Administrator editable; always visible | Intelex recurrence expression; validation mechanism and syntax require tenant confirmation; stable after first use |
 | Anchor Required? | Yes/No | Y | `FALSE` | Specialist Administrator editable; always visible | Controls Target Scope Assignment.Period Anchor Date; stable after first use |
 
 Weekly, monthly, quarterly, and annual records are required by known examples, but their expression strings are unresolved pending a tenant syntax and boundary prototype; fabricated values are deliberately not presented as loadable seed data.
