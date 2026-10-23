@@ -22,6 +22,10 @@ Training courses and completions form the foundation for qualifications, but the
 - Validate custom learning packages before adoption and govern ongoing MARCOM refreshes.
 - Require objective evidence and centralized administrator completion for qualification steps.
 - Proposed: replace TPC while preserving version traceability and employee history.
+- Proposed: maintain a reusable MARCOM catalogue, source course packages from it, and cascade updated packages to linked courses; historical and in-progress content handling remains unresolved.
+- Proposed catalogue model: one language-specific Entry per provider Product Code, retained Content Releases with an explicit current pointer, and previous-filename Alias children. Three-digit IDs remain searchable attributes because they repeat across industries.
+- MARCOM Classification, MARCOM Industry, and MARCOM Topic are separate catalogue objects; each Content Release references one record in each catalogue and preserves its original provider labels.
+- Proposed: constrain the initial API-assisted catalogue load to non-personal course data in test and deactivate temporary credentials afterward.
 
 ## Decision Register
 
@@ -42,6 +46,17 @@ Training courses and completions form the foundation for qualifications, but the
 | [ADR-013](ADRs/ADR-013-version-training-content-for-audit-traceability.md) | Proposed | Version Training Content for Audit Traceability |
 | [ADR-014](ADRs/ADR-014-preserve-training-history-across-employment-status-changes.md) | Proposed | Preserve Training History across Employment Status Changes |
 | [ADR-015](ADRs/ADR-015-require-objective-evidence-and-centralized-qualification-completion.md) | Accepted | Require Objective Evidence and Centralized Qualification Completion |
+| [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md) | Proposed | Use a Reusable MARCOM Content Catalogue |
+| [ADR-017](ADRs/ADR-017-source-and-refresh-course-packages-from-the-marcom-catalogue.md) | Proposed | Source and Refresh Course Packages from the MARCOM Catalogue |
+| [ADR-018](ADRs/ADR-018-constrain-api-assisted-marcom-catalogue-loading.md) | Proposed | Constrain API-Assisted MARCOM Catalogue Loading |
+
+See the [October 23 ADR reconciliation plan](ADR-RECONCILIATION-2026-10-23.md) for the disposition of every prior ADR, new candidates, and evidence gaps.
+
+The [metadata follow-up reconciliation](ADR-RECONCILIATION-2026-10-23-METADATA.md) refines ADR-013/016/017/018. [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md) contains the target object model, relationship diagram, field mapping, and release rules; the [metadata analysis](MARCOM-METADATA-ANALYSIS-2026-10-23.md) records 358 English and 194 Spanish entries and import anomalies.
+
+The [MARCOM Course Catalog Technical Specification](MARCOM-COURSE-CATALOG-TECHNICAL-SPECIFICATION.md) translates ADR-016/017 into a proposed logical model, canonical field contracts, concrete catalogue seed values, automation, permissions, import rules, and acceptance criteria. No `.ipack` baseline is available; tenant metadata and execution mechanisms remain verification gates.
+
+The [MARCOM Course Catalog Implementation Plan](MARCOM-COURSE-CATALOG-IMPLEMENTATION-PLAN.md) contains 21 assignable configuration tasks, minimum implementer and reviewer roles, technical dependencies, blocked external inputs, and coverage of all 80 field definitions. Catalogue configuration values are included; provider-content migration, formal testing, and deployment are separate workstreams.
 
 ## Dependencies and Boundaries
 
@@ -52,6 +67,8 @@ Training courses and completions form the foundation for qualifications, but the
 
 ## Source Evidence
 
+- [MARCOM Course File Name and Metadata Guide](<raw artifacts/MARCOM Adaptive Learning Course File Name and Metadata Guide 09 10 26.xlsx>) — only `English language` and `Spanish language` analyzed; both discontinued tabs excluded. Provider SCORM descriptions document adaptive chapter test-out intent; target compatibility remains untested.
+- [MARCOM Requirements Knowledge Transfer, October 23, 2026](<raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>) — internal direction; client approval is not established.
 - [Training Management Design Prep, September 8, 2026](<raw artifacts/meeting_transcripts/2026-09-08-terra-gen-summit-ehsq-training-mgmt-design-prep.md>)
 - [Design Workshop Day 1 — Afternoon, September 15, 2026](<raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-afternoon.md>)
 - [Design Workshop Day 2 — Morning, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>)
@@ -62,7 +79,7 @@ ADR **More Information** sections identify the relevant timestamps.
 
 ## Open Work
 
-- Approve or revise the nine proposed training and competency ADRs.
+- Approve or revise the twelve proposed training and competency ADRs.
 - Build the governed course, workgroup, requirement, and delivery-equivalence catalogue.
 - Derive qualification definitions, assessor authority, validity, renewal, lapse, and reinstatement rules from policy.
 - Design authorized competency attestation and its evidence model.
@@ -71,6 +88,7 @@ ADR **More Information** sections identify the relevant timestamps.
 - Define TPC inventory, migration, coexistence, cutover, historical-data treatment, and decommissioning.
 - Prototype exact course, document, quiz, and SCORM version traceability.
 - Establish the MARCOM refresh operating model.
+- Review the proposed Entry/Release/Alias schema, separate MARCOM Classification/Industry/Topic catalogue objects, and full metadata mapping; confirm provider key stability, current-release designation, release retention, course-version package propagation, asset availability, and import anomalies. Existing Training Management functionality owns learner attempts, completions, and historical evidence. Validate provider-described adaptive chapter test-out in actual English/Spanish packages and confirm release notifications.
 - Configure assignment and history behavior for termination, leave, rehire, and job changes.
 
 Track these items in the [consolidated open-task register](../OPEN-TASKS-AND-QUESTIONS.md).

@@ -408,7 +408,7 @@ Both objects are localizable, administrator-maintained shared catalogues. Reconc
 | Name | Text, max 255; localizable | Y | None | Specialist Administrator editable; always visible | Display field |
 | Active? | Yes/No | Y | `TRUE` | Specialist Administrator editable; always visible | Activation requires a validated recurrence expression; deactivation prevents new selection only |
 | Sort | Float | N | None | Specialist Administrator editable; always visible | Controls presentation order |
-| Recurrence Expression | Text, `displayas="recurrence" editas="recurrence"`, | Y | None | Specialist Administrator editable; always visible | Intelex recurrence expression; validation mechanism and syntax require tenant confirmation; stable after first use |
+| Recurrence Expression | Text, `displayas="recurrence" editas="recurrence"` | Y | None | Specialist Administrator editable; always visible | Intelex recurrence expression; validation mechanism and syntax require tenant confirmation; stable after first use |
 | Anchor Required? | Yes/No | Y | `FALSE` | Specialist Administrator editable; always visible | Controls Target Scope Assignment.Period Anchor Date; stable after first use |
 
 Weekly, monthly, quarterly, and annual records are required by known examples, but their expression strings are unresolved pending a tenant syntax and boundary prototype; fabricated values are deliberately not presented as loadable seed data.

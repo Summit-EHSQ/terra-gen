@@ -15,7 +15,7 @@ The current documentation covers Phase 1 design across Document Control, Employe
 
 ## Documentation Status
 
-The working Phase 1 collection currently contains 57 active ADRs: 36 accepted and 21 proposed. It also retains one superseded Platform Administration ADR for history. Phase 2 currently contains three Incident Management ADRs: one accepted and two proposed.
+The working Phase 1 collection currently contains 60 active ADRs: 36 accepted and 24 proposed. It also retains one superseded Platform Administration ADR for history. Phase 2 currently contains three Incident Management ADRs: one accepted and two proposed.
 
 | Domain | Accepted | Proposed | Superseded | Active | Files |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -23,8 +23,8 @@ The working Phase 1 collection currently contains 57 active ADRs: 36 accepted an
 | Employee Management | 5 | 1 | 0 | 6 | 6 |
 | Inspections | 11 | 6 | 0 | 17 | 17 |
 | Intelex Platform Administration | 4 | 3 | 1 | 7 | 8 |
-| Training and Competency Management | 6 | 9 | 0 | 15 | 15 |
-| **Phase 1 total** | **36** | **21** | **1** | **57** | **58** |
+| Training and Competency Management | 6 | 12 | 0 | 18 | 18 |
+| **Phase 1 total** | **36** | **24** | **1** | **60** | **61** |
 
 These counts describe the current repository contents and should be updated whenever ADRs are added, removed, or change status. The phase change log is the chronological record and may temporarily describe an earlier baseline while a documentation update is in progress.
 

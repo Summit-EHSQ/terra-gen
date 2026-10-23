@@ -2,6 +2,10 @@
 
 Review date: 2026-09-18
 
+Targeted update: 2026-10-23 — reconciled training approval, content traceability, and MARCOM refresh entries with the [MARCOM knowledge-transfer transcript] and proposed ADR-016 through ADR-018. The inventory and repository-wide review findings below retain their original review scope.
+
+Metadata follow-up: analyzed [MARCOM metadata guide] active English/Spanish tabs (552 entries total), excluding both discontinued tabs. Proposed ADR-016 now specifies Entry/Release/Alias objects plus the separately required MARCOM Classification, MARCOM Industry, and MARCOM Topic catalogue objects; source analysis and model decisions remain proposals, not load or compatibility results.
+
 This register retains the Phase 1 delivery backlog at its existing path and adds a separate Phase 2 section for material Incident Management work discovered in the repository-wide review. Phase 2 items are not Phase 1 commitments; their priorities apply within Phase 2. Shared foundations and the interim inspection-to-incident handoff remain Phase 1 concerns.
 
 Evidence reviewed: 58 Phase 1 ADR files (57 active: 36 accepted and 21 proposed; one superseded), three Phase 2 ADRs (one accepted and two proposed), all repository and domain overviews, the phase change log, publication configuration, and the seven unique meeting transcripts represented by 19 files. SHA-256 comparison confirmed identical copies of each shared meeting; there were no conflicting transcript copies. Both supplied training ZIPs were inspected at the manifest level: each declares SCORM 1.2. Package contents and workshop demonstrations do not establish target-environment compatibility. No deployed configuration, integration contract, UAT results, or production migration evidence was found.
@@ -264,15 +268,15 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 ### P0 — Approve the proposed training and competency architecture
 
-**Open task:** Obtain approval or revision of the nine proposed Training Management ADRs: ADR-003, ADR-004, ADR-005, ADR-007, ADR-008, ADR-009, ADR-012, ADR-013, and ADR-014. Resolve delivery equivalence, atomic courses, variants, attestation, policy-driven validity, TPC retirement, content versioning, and employment-status history within the accepted standalone qualification workflow and centralized evidence-completion model in ADR-006 and ADR-015.
+**Open task:** Obtain approval or revision of the twelve proposed Training Management ADRs: ADR-003, ADR-004, ADR-005, ADR-007, ADR-008, ADR-009, ADR-012, ADR-013, ADR-014, ADR-016, ADR-017, and ADR-018. Resolve delivery equivalence, atomic courses, variants, attestation, policy-driven validity, TPC retirement, content versioning, employment-status history, MARCOM catalogue/propagation, and initial load controls within the accepted standalone qualification workflow and centralized evidence-completion model in ADR-006 and ADR-015.
 
 **Unanswered questions:** Are any proposed directions contested by the business or constrained by licensing/product capability? Which parts are Phase 1 commitments versus later enhancements?
 
-**Why material:** Nine proposals still affect the core model. The standalone qualification workflow and mandatory objective evidence are accepted; neither automatic Training Management completion of qualification steps nor a provisional-entry verification stage belongs in the initial design.
+**Why material:** Twelve proposals still affect the core model. The standalone qualification workflow and mandatory objective evidence are accepted; neither automatic Training Management completion of qualification steps nor a provisional-entry verification stage belongs in the initial design.
 
 **Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
 
-**Sources:** [Training Management ADR-003], [Training Management ADR-004], [Training Management ADR-005], [Training Management ADR-006], [Training Management ADR-007], [Training Management ADR-008], [Training Management ADR-009] and [Training Management ADR-012], [Training Management ADR-013], [Training Management ADR-014], [Training Management ADR-015].
+**Sources:** [Training Management ADR-003], [Training Management ADR-004], [Training Management ADR-005], [Training Management ADR-006], [Training Management ADR-007], [Training Management ADR-008], [Training Management ADR-009] and [Training Management ADR-012], [Training Management ADR-013], [Training Management ADR-014], [Training Management ADR-015], [Training Management ADR-016], [Training Management ADR-017], [Training Management ADR-018].
 
 ### P0 — Build the governed course, workgroup, and requirement catalogue
 
@@ -346,23 +350,23 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 ### P1 — Design exact training-content version traceability
 
-**Open task:** Select and prototype the mechanism that binds a completion to the exact course, document, quiz, and SCORM version. Define the document-release training-impact assessment, version publication, retraining decision, historical preservation, and audit-report process.
+**Open task:** Confirm the use of existing Training Management functionality for historical completion evidence and resolve the remaining exact controlled-document version association. Define the document-release training-impact assessment, version publication, retraining decision, historical preservation, and audit-report process. Review MARCOM catalogue release retention and package propagation to course versions under ADR-016/017. Per the user's 2026-10-23 clarification, learner-evidence functionality is already built in Training Management and is not additional MARCOM catalogue scope.
 
 **Unanswered questions:** Is version binding automatic at completion or an explicit course-version association? How are embedded links and replaced SCORM packages preserved? Which changes reschedule requirements, who decides, and how is that decision evidenced?
 
 **Evidence:** Explicit proposal, deferral, or unresolved design detail in the cited sources; completion criteria are derived where the sources do not specify them.
 
-**Source:** [Training Management ADR-013].
+**Source:** [Training Management ADR-013] and [Training Management ADR-017]; [MARCOM knowledge-transfer transcript], 0:03–2:56 and 16:47–17:45.
 
 ### P1 — Establish the MARCOM content refresh operating model
 
-**Open task:** Verify provider distribution capabilities; choose the feasible detection/delivery mechanism; and assign ownership, cadence, validation, replacement, rollback, and completion-history impact procedures. Evaluate the offered content-loading library without assuming production adoption.
+**Open task:** Verify provider distribution capabilities; choose the feasible detection/delivery mechanism; and assign ownership, cadence, validation, replacement, rollback, and completion-history impact procedures. Review ADR-016's language-specific Entry, retained Release, and previous-filename Alias objects, field capacities, full metadata mapping, and source anomalies. Confirm provider Product Code stability and current-release publication authority. Validate ADR-017 propagation and ADR-018's keyed, repeatable active-sheet test load, client course mapping, non-personal-data boundary, and temporary-key deactivation responsibility/evidence. Evaluate the offered content-loading library without assuming production adoption.
 
-**Unanswered questions:** Does the provider expose notifications, feeds, APIs, or only manual downloads? Can updates be automated? Does replacement create a new course/content version, and can it trigger retraining without damaging prior completion evidence?
+**Unanswered questions:** Does the provider expose notifications, feeds, APIs, or only manual downloads? Can updates be automated? Does replacement create a new course/content version, and can it trigger retraining without damaging prior completion evidence? Who designates the usable Current Release, and will the proposed retention model be approved? How will the seven unheaded English regulation-like cells be resolved and actual package/auxiliary assets supplied? Provider SCORM descriptions now explicitly describe chapter test-out; can representative English/Spanish packages demonstrate adaptive navigation, resumption, and correct completion/results in Intelex? Future translation linking requires a verified map, not ID/title matching.
 
 **Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
 
-**Source:** [Training Management ADR-011].
+**Source:** [Training Management ADR-011], [Training Management ADR-016], [Training Management ADR-017], and [Training Management ADR-018]; [MARCOM knowledge-transfer transcript], 0:03–5:58, 7:01–16:47, and 16:47–18:21. October 23 entries record internal proposals; they do not demonstrate approval or implementation. The evidence-review inventory at the top of this register remains the historical September review scope.
 
 ### P1 — Configure employment-status, rehire, and leave behavior for training
 
@@ -608,6 +612,11 @@ No whole prior task is marked delivered solely because its architecture is accep
 [Training Management ADR-013]: <training management/ADRs/ADR-013-version-training-content-for-audit-traceability.md#decision-outcome>
 [Training Management ADR-014]: <training management/ADRs/ADR-014-preserve-training-history-across-employment-status-changes.md#decision-outcome>
 [Training Management ADR-015]: <training management/ADRs/ADR-015-require-objective-evidence-and-centralized-qualification-completion.md#decision-outcome>
+[Training Management ADR-016]: <training management/ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md#decision-outcome>
+[Training Management ADR-017]: <training management/ADRs/ADR-017-source-and-refresh-course-packages-from-the-marcom-catalogue.md#decision-outcome>
+[Training Management ADR-018]: <training management/ADRs/ADR-018-constrain-api-assisted-marcom-catalogue-loading.md#decision-outcome>
+[MARCOM knowledge-transfer transcript]: <training management/raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>
+[MARCOM metadata guide]: <training management/raw artifacts/MARCOM Adaptive Learning Course File Name and Metadata Guide 09 10 26.xlsx>
 [Incident Management ADR-001]: <../phase 2/incident management/ADRs/ADR-001-capture-establishment-and-operational-resource.md#decision-outcome>
 [Incident Management ADR-002]: <../phase 2/incident management/ADRs/ADR-002-defer-contractor-self-service-and-isolated-security.md#decision-outcome>
 [Incident Management ADR-003]: <../phase 2/incident management/ADRs/ADR-003-limit-persistent-incident-visibility-and-use-workflow-access.md#decision-outcome>

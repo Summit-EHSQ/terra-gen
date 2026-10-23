@@ -2,6 +2,45 @@
 
 This file records material changes to the Phase 1 architecture decision records and their supporting source artifacts. Dates identify when the documentation was updated; source meeting dates are identified separately.
 
+## 2026-10-23
+
+### MARCOM Course Catalog implementation plan
+
+* Added the [implementation plan](<training management/MARCOM-COURSE-CATALOG-IMPLEMENTATION-PLAN.md>) for the current technical specification, retaining Display Field's use of MARCOM Language.Name and a literal pipe separator.
+* Defined 21 configuration assignments with minimum implementer and reviewer roles, complete task records, a synchronized summary, strict technical dependency diagram, eight non-task external-input groups, and coverage of all 80 fields across nine objects.
+* Separated ordinary configuration from complex file/publication/update/import/security behavior. Included 158 initial catalogue configuration records while excluding actual provider-content loading, discovery, tenant verification, formal testing, deployment, and estimates. Tasks depending on missing external inputs are marked blocked; no tenant work or ADR status change is claimed.
+
+### MARCOM Course Catalog technical specification
+
+* Updated Catalogue Entry.Display Field to use the selected MARCOM Language's Name rather than Code, for example `Back Safety | English | cst_bak_adl_en`.
+* Simplified consultant-facing terminology: text fields use Text, the display separator shows a literal pipe character with an example, storage details are expressed in plain language, and table abbreviations are explained. Field names and model behavior remain unchanged.
+* Added the [technical specification](<training management/MARCOM-COURSE-CATALOG-TECHNICAL-SPECIFICATION.md>) using Training Management ADR-016/017 as the primary design references. It preserves the six business objects and specifies two proposed normalized selectors plus the affected existing Training Course Version fields.
+* Defined canonical field-level contracts, a complete relationship diagram, 1 Classification / 11 Industry / 142 Topic initial values from the active workbook tabs, publication and package-propagation rules, permissions, load reconciliation, traceability, and acceptance criteria.
+* Preserved the absent-baseline limitation: no `.ipack`, tenant metadata, executable formulas, deployment, or runtime test result is claimed. Existing Training Management retains all learner-evidence responsibilities; no ADR status totals changed.
+
+### MARCOM catalogue scope clarification
+
+* Defined MARCOM Classification, MARCOM Industry, and MARCOM Topic as separate catalogue objects at the user's request. Updated ADR-016's object table, relationship diagram, field mappings, and cardinalities, plus ADR-018's load dependencies; replaced optional lookup-object wording.
+* Removed the conceptual learner-evidence entity and its relationship from the catalogue model following the user's clarification that this functionality is already built in Training Management.
+* Aligned proposed ADR-013/016/017, the metadata reconciliation plan, domain overview, and open-task entry: the catalogue retains provider content releases and supplies packages to course versions; Training Management owns learner attempts, completions, and historical evidence. No new evidence object or attempt/completion integration is catalogue scope.
+
+### MARCOM metadata and target catalogue model — proposed refinement
+
+* Archived the supplied MARCOM metadata workbook unchanged and analyzed only the active English (358 entries) and Spanish (194 entries) tabs; excluded both discontinued tabs.
+* Saved a [metadata analysis](<training management/MARCOM-METADATA-ANALYSIS-2026-10-23.md>) and [follow-up reconciliation plan](<training management/ADR-RECONCILIATION-2026-10-23-METADATA.md>) accounting for all 18 existing Training Management ADRs.
+* Refined proposed ADR-016 to define language-specific Catalogue Entries keyed by provider/Product Code, retained Content Releases, and Previous Filename Aliases; added a complete field mapping and relationship diagram. Repeated three-digit IDs cannot serve as unique keys.
+* Aligned proposed ADR-013/017/018 with explicit current-release selection, historical release references, active-sheet import reconciliation, whitespace normalization with raw-value preservation, and unmapped-cell review.
+* Recorded provider metadata describing adaptive chapter test-out in SCORM; retained actual English/Spanish package behavior and completion reporting as validation work. No accepted ADR or status total changed.
+
+### Training Management MARCOM reconciliation — proposed change set
+
+* Added the [October 23 internal MARCOM knowledge-transfer transcript](<training management/raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>), preserving the supplied text and recording the ambiguous meeting time explicitly.
+* Saved an [ADR reconciliation plan](<training management/ADR-RECONCILIATION-2026-10-23.md>) covering all 15 prior ADRs and five grounded candidates.
+* Added proposed Training Management ADR-016 for a reusable MARCOM catalogue, ADR-017 for source selection and automatic package propagation, and ADR-018 for the initial API-assisted load's data and credential boundaries.
+* Revised proposed ADR-013 to expose the unresolved boundary between latest-package propagation and exact historical-content traceability. Retained its historical date and all accepted ADRs unchanged.
+* Recorded provider notifications and adaptive learning as unresolved; no client approval, product capability, tenant build, or load completion is inferred.
+* Updated current status totals and related training open-work entries. Phase 1 now has 60 active ADRs (36 accepted, 24 proposed) plus one superseded historical record; older baseline tables below remain historical snapshots.
+
 ## 2026-09-25
 
 ### Employee integration technical design

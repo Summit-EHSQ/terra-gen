@@ -13,8 +13,8 @@ Start with the [documentation portal](<docs/phase 1/README.md>). It provides the
 
 ## Current Snapshot
 
-- Phase 1: 57 active ADRs (36 accepted, 21 proposed) plus one superseded historical ADR.
+- Phase 1: 60 active ADRs (36 accepted, 24 proposed) plus one superseded historical ADR.
 - Phase 2: 3 active Incident Management ADRs (1 accepted, 2 proposed).
-- Source evidence: 19 transcript files representing 7 unique meetings; shared workshop copies are byte-for-byte identical across the domains that use them.
+- Source evidence: 20 transcript files representing 8 unique meetings; shared workshop copies are byte-for-byte identical across the domains that use them.
 
 ADR status is authoritative. A proposed ADR or an item discussed in a transcript must not be treated as an approved implementation requirement.
