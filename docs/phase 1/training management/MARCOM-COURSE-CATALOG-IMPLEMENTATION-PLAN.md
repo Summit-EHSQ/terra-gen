@@ -15,9 +15,11 @@ Training Management is reused. The build covers eight new-or-reused object defin
 
 Initial catalogue values are configuration: 158 specified records are included. Actual loading of 552 provider Entries/releases, packages, aliases, historical data, and customer course mappings is excluded migration work. Import definitions and processing configuration are included without executing that loading workstream.
 
-Use the minimum implementer role shown. Every recommended reviewer/approver is the **Senior Consultant**, acting as Product Build Manager; no named approver was supplied. Review does not create a dependency edge. Routine assignments are bounded; CFG-15 retains its coupled update/retry logic to avoid competing update paths. No hour estimates or critical-path claim is made.
+Use the minimum implementer role shown. Every recommended reviewer/approver is the **Senior Consultant**, acting as Product Build Manager; no named approver was supplied. Review does not create a dependency edge. Routine assignments are bounded. Former CFG-15 (automatic course updates/retry) is retired after the user's pinning decision; its ID is not reused. There are 20 active tasks. No hour estimates or critical-path claim is made.
 
-Dependency basis: create catalogue and content object definitions first, then references after every target exists. Current Release remains nullable, avoiding a circular Entry/Release build dependency. Configure field-dependent forms and logic after their fields; publication after validation/file/display functions; propagation after publication and source resolution. Reports depend on fields, not completion of the automation that later populates them. Forms have no workflow-stage dependency.
+Dependency basis: create catalogue and content object definitions first, then references after every target exists. Current Release remains nullable, avoiding a circular Entry/Release build dependency. Configure field-dependent forms and logic after their fields; publication after validation/file/display functions; guarded course selection after its fields and file operations exist. No catalogue event depends on or invokes a course-update process. Reports depend on fields, not completion of the automation that later populates them. Forms have no workflow-stage dependency.
+
+Current adoption direction: [user-provided pinning decision](<raw artifacts/2026-10-23-marcom-course-version-pinning-decision.md>). The training team manually creates a Course Version to adopt a newer release. Capture content on Create/Update only for a populated and changed MARCOM Course; ordinary saves and catalogue updates preserve existing content.
 
 ## 2. Task summary
 
@@ -30,20 +32,19 @@ Dependency basis: create catalogue and content object definitions first, then re
 | CFG-05 | Field configuration | Configure the Previous Filename Fields | **Objective:** Store each former filename without merging unrelated products.<br><br>**Detailed scope:** Configure Catalogue Entry, Former Filename, Filename Key, and First Source Release as specified in section 7.3. Set requiredness, lengths, and read-only outputs; disable both inverses. Apply the supplied supported uniqueness setting for Entry plus Filename Key. CFG-10 supplies key normalization and owner checks. | Associate Consultant |
 | CFG-06 | Field configuration | Configure the Course Version Fields | **Objective:** Let existing course versions hold their source and resolved MARCOM package.<br><br>**Detailed scope:** Reuse or configure the five section 7.9 fields: Has E-learning?, E-learning Source, MARCOM Course, Resolved MARCOM Release, and E-learning Package. Preserve unrelated Training Management fields and inheritance. Apply ordinary defaults and protected outputs; disable all three relationship inverses. CFG-09 adds form behavior and CFG-13 resolves packages. | Associate Consultant |
 | CFG-07 | Initial configuration | Set Up the Initial Catalogue Values | **Objective:** Supply the selection values required by the feature.<br><br>**Detailed scope:** Create the exact section 7.4–7.8 configuration values: 1 Classification, 11 Industries, 142 Topics, 2 Languages, and 2 Content Sources. Preserve Codes, Names, Active?, Sort, and the initial label-to-Code mapping. Reuse matching Codes without duplicates. Do not load provider Entries, release data, packages, aliases, or customer course mappings. | Associate Consultant |
-| CFG-08 | Forms | Configure the MARCOM Administration Forms | **Objective:** Make entries, draft releases, and former filenames practical to administer.<br><br>**Detailed scope:** Configure Entry, Release, and Alias forms and navigation. Group metadata, taxonomies, assets, source details, and publication fields clearly; apply Spanish-title conditions, active-value filters, generated-field read-only presentation, and draft/published presentation. Keep pricing and provider-hosted descriptions in suitable administration views and use the supplied safe Objectives HTML renderer. CFG-14/15 add publication/retry buttons with their handlers. | Senior Associate Consultant |
-| CFG-09 | Forms | Configure the Course Version Form | **Objective:** Make manual and MARCOM content setup clear for course authors.<br><br>**Detailed scope:** Apply no-e-learning, MANUAL, and MARCOM visibility/requiredness rules to the existing form. Present the MARCOM selector with title, Language.Name, Industry, Topic, and Product Code; protect generated package fields. Configure the supplied confirmation mechanism before replacement, delegating processing to CFG-13, and retain native course-version editing restrictions. | Senior Associate Consultant |
+| CFG-08 | Forms | Configure the MARCOM Administration Forms | **Objective:** Make entries, draft releases, and former filenames practical to administer.<br><br>**Detailed scope:** Configure Entry, Release, and Alias forms and navigation. Group metadata, taxonomies, assets, source details, and publication fields clearly; apply Spanish-title conditions, active-value filters, generated-field read-only presentation, and draft/published presentation. Keep pricing and provider-hosted descriptions in suitable administration views and use the supplied safe Objectives HTML renderer. CFG-14 adds the publication button; there is no course-refresh/retry button. | Senior Associate Consultant |
+| CFG-09 | Forms | Configure the Course Version Form | **Objective:** Make manual and MARCOM content setup clear for course authors.<br><br>**Detailed scope:** Apply no-e-learning, MANUAL, and MARCOM visibility/requiredness rules to the existing form. Present the MARCOM selector with title, Language.Name, Industry, Topic, and Product Code; protect generated package fields. Configure the supplied confirmation mechanism before replacement, delegating processing to CFG-13, and retain native course-version editing restrictions. Explain that the training user manually creates a new Course Version to adopt a newer release of the same MARCOM course; an unchanged selection must not refresh on save. | Senior Associate Consultant |
 | CFG-10 | Business logic | Configure Entry and Filename Rules | **Objective:** Protect provider identities and generate a readable Entry display.<br><br>**Detailed scope:** Configure AH-01 and Alias key rules: preserve raw values, trim comparison values, preserve case and leading zeros, enforce supplied uniqueness controls, freeze reconciled identity, and validate Alias release ownership. Configure the Entry display updater from current release or the specified draft fallback using Reference Title, Language.Name, and Product Code Key with pipe separators and spaces. Prevent handler-written values from repeatedly triggering the same logic. | Consultant |
 | CFG-11 | Automation | Configure Release Validation and Protection | **Objective:** Allow draft changes while preventing changes to published metadata and files.<br><br>**Detailed scope:** Configure AH-02 before every Release create/update, including direct API and attachment edits. Validate owner, required references, Spanish title, positive duration, copyright, discount indicator, and source-cell disposition. Derive Copyright Year, Copyright Month, and Quantity Discounts Available?; invoke CFG-10 for display updates and CFG-12 for checksum/source functions. Protect all published values and allow Published On writes only through trusted CMD-01 context. | Senior Consultant |
-| CFG-12 | Automation | Configure File Checksums and Source Details | **Objective:** Populate file checksums and reliable import-source details.<br><br>**Detailed scope:** Configure the supplied native file operations used by release handlers, publication, course resolution, and import. Calculate Package Digest from SCORM bytes and Source Workbook Digest from original workbook bytes. Populate Source Workbook, Source Sheet, Source Row, Imported On, and Unmapped Source Cells through the import context. Provide the supported package copy/association and verification operations for CFG-13/14, keeping optional assets separate and adding no file-history object. | Consultant |
-| CFG-13 | Automation | Configure Course Content Selection | **Objective:** Supply the exact selected current package to the course version safely.<br><br>**Detailed scope:** Configure AH-03 on Has E-learning?, E-learning Source, and MARCOM Course. Apply MANUAL/MARCOM Codes, source-change confirmation, clearing rules, active/usable selection, and owner checks. Use CFG-12 to save Resolved MARCOM Release with the exact E-learning Package as one controlled change. Recheck the current pointer, preserve the old working pair on failure, prevent repeated internal updates, and leave learner history in Training Management. | Senior Consultant |
-| CFG-14 | Automation | Configure Publish Release | **Objective:** Make a validated release current as one controlled catalogue change.<br><br>**Detailed scope:** Configure CMD-01 and its Administrator-only Publish Release button. Recheck actor access and concurrent edits; validate package/checksum, Entry, active selections, metadata, and source-cell decisions. Set Published On once with Entry.Current Release; invoke the display updater. Support repeat publication and explicit rollback to a retained published release without editing it. Provide the post-save invocation point for CFG-15 and native error reporting; add no workflow. | Senior Consultant |
-| CFG-15 | Automation | Configure Course Package Updates and Retry | **Objective:** Bring linked courses onto current content while keeping failures recoverable.<br><br>**Detailed scope:** Configure AH-04 at CMD-01 post-save and the authorized retry action. Select only courses referencing the exact Entry in MARCOM mode; reuse AH-03. Before each write recheck Entry.Active?, Current Release, and course changes. Skip matches, retain prior working pairs on failure, stop or re-resolve outdated requests, and record failed native IDs through existing diagnostics. Use the supplied native course-update and optional request-driven batch mechanism; add no recurring service. | Senior Consultant |
-| CFG-16 | Security | Configure Basic MARCOM Permissions | **Objective:** Give each responsibility its ordinary object and field access.<br><br>**Detailed scope:** Configure straightforward Administrator, Integration, Author, and existing Learner permissions across the specified objects/fields. Permit author selection without provider editing, restrict Integration to specified import/update fields, and limit pricing/provider-hosted views appropriately. Preserve existing learner execution access. Leave conditional published-record, attachment, and trusted-action enforcement to CFG-17; use supplied group mappings. | Associate Consultant |
-| CFG-17 | Security | Configure Protected Record and File Access | **Objective:** Enforce publication and attachment boundaries beyond the forms.<br><br>**Detailed scope:** Configure supplied record, relationship, action, and file controls around published Releases, generated course fields, CMD-01, and retry. Prevent extra access through direct URL/API/export/navigation paths; restrict Integration and trusted publication context while retaining native learner execution. Enable existing audit on mutable objects/relationships and native failure visibility. Add no custom security or audit object. | Senior Consultant |
-| CFG-18 | Integration | Configure the MARCOM Import Mappings | **Objective:** Map both active workbook tabs to their correct fields and catalogue values.<br><br>**Detailed scope:** Configure English language and Spanish language mappings with their different column positions. Map Entry identity, all release metadata/expected filenames, source locators, and fixed catalogue Codes. Preserve raw whitespace, text IDs, month/year, nulls, descriptions/objectives, unheaded coordinates, and the two observed multi-filename cases. Exclude discontinued tabs. Prepare configuration only; do not execute provider-content or customer-course loading. | Consultant |
-| CFG-19 | Integration | Configure Repeatable Metadata Import | **Objective:** Make metadata processing safe to repeat without duplicate provider records.<br><br>**Detailed scope:** Configure processing behind CFG-18 using identity/Alias, release-protection, and file/source functions. Match or create Entries, reuse unchanged draft/published business content, create new drafts for changed content, and reconcile aliases. Exclude source locators/timestamps from content comparisons. Configure native diagnostics for keys, unknown mappings, missing assets, unmapped cells, row totals, language subtotals, and readiness. Preserve released content and create no current pointer from a filename. Actual migration/loading remains excluded. | Senior Consultant |
+| CFG-12 | Automation | Configure File Checksums and Source Details | **Objective:** Populate file checksums and reliable import-source details.<br><br>**Detailed scope:** Configure the supplied native file operations used by release handlers, publication, guarded course selection, and import. Calculate Package Digest from SCORM bytes and Source Workbook Digest from original workbook bytes. Populate Source Workbook, Source Sheet, Source Row, Imported On, and Unmapped Source Cells through the import context. Provide the supported package copy/association and verification operations for CFG-13/14, keeping optional assets separate and adding no file-history object. | Consultant |
+| CFG-13 | Automation | Configure Course Content Selection | **Objective:** Pin the exact release and package only when a non-empty MARCOM Course selection is created or changed.<br><br>**Detailed scope:** Configure AH-03 on Course Version Create and Update with the mandatory guard: MARCOM Course is not null and ISCHANGED for that field. Treat the first non-empty Create selection as changed. Resolve the selected Entry's usable Current Release and use CFG-12 to store its exact reference/file together. An unchanged selection on Update must retain its pinned pair without rereading latest content, including after catalogue publication or deactivation. Keep source-clearing/manual-mode validation separate from resolution, prevent internal-output recursion, and preserve the previous saved pair on eligible-save failure. Do not create Course Versions or refresh content from catalogue events. | Senior Consultant |
+| CFG-14 | Automation | Configure Publish Release | **Objective:** Make a validated release current as one controlled catalogue change.<br><br>**Detailed scope:** Configure CMD-01 and its Administrator-only Publish Release button. Recheck actor access and concurrent edits; validate package/checksum, Entry, active selections, metadata, and source-cell decisions. Set Published On once with Entry.Current Release and update the Name-based display. Support safe repeat publication and explicit catalogue rollback without editing retained bytes. Record native errors. Publication changes the catalogue only: do not invoke a course-update handler, create a Course Version, or enqueue refresh work. | Senior Consultant |
+| CFG-16 | Security | Configure Basic MARCOM Permissions | **Objective:** Give each responsibility its ordinary object and field access.<br><br>**Detailed scope:** Configure straightforward Administrator, Integration, Author, and existing Learner permissions across the specified objects/fields. Permit author selection without provider editing, restrict Integration to catalogue import fields without Course Version creation or pinned-file writes, and limit pricing/provider-hosted views appropriately. Preserve existing learner execution access. Leave conditional published-record, attachment, and trusted-action enforcement to CFG-17; use supplied group mappings. | Associate Consultant |
+| CFG-17 | Security | Configure Protected Record and File Access | **Objective:** Enforce publication and attachment boundaries beyond the forms.<br><br>**Detailed scope:** Configure supplied record, relationship, action, and file controls around published Releases, generated course fields, CMD-01, and guarded AH-03 output writes. Prevent extra access through direct URL/API/export/navigation paths; restrict Integration and trusted publication context while retaining native learner execution. Enable existing audit on mutable objects/relationships and native failure visibility. Add no custom security or audit object. | Senior Consultant |
+| CFG-18 | Integration | Configure the MARCOM Import Mappings | **Objective:** Map both active workbook tabs to their correct fields and catalogue values.<br><br>**Detailed scope:** Configure English language and Spanish language mappings with their different column positions. Map Entry identity, all release metadata/expected filenames, source locators, and fixed catalogue Codes. Preserve raw whitespace, text IDs, month/year, nulls, descriptions/objectives, unheaded coordinates, and the two observed multi-filename cases. Exclude discontinued tabs. Prepare configuration only; do not execute provider-content or customer-course loading. No mapping may create Training Course Versions or change their pinned content. | Consultant |
+| CFG-19 | Integration | Configure Repeatable Metadata Import | **Objective:** Make metadata processing safe to repeat without duplicate provider records.<br><br>**Detailed scope:** Configure processing behind CFG-18 using identity/Alias, release-protection, and file/source functions. Match or create Entries, reuse unchanged draft/published business content, create new drafts for changed content, and reconcile aliases. Exclude source locators/timestamps from content comparisons. Configure native diagnostics for keys, unknown mappings, missing assets, unmapped cells, row totals, language subtotals, and readiness. Preserve released content and create no current pointer from a filename. Actual migration/loading remains excluded. Import processing must never create or update Training Course Versions, including when an existing catalogue Entry acquires a newer release. | Senior Consultant |
 | CFG-20 | Reports | Configure the Catalogue Reports | **Objective:** Make inventory, release history, and package readiness visible.<br><br>**Detailed scope:** Configure catalogue browsing, release-history, and current-package-readiness reports on objects holding the references. Show title, Language.Name, product identifier, Classification, Industry, Topic, and current release where relevant; restrict raw source/pricing details to administration views. Read relationships without enabling inverse grids. | Senior Associate Consultant |
-| CFG-21 | Reports | Configure the Follow-up Reports | **Objective:** Show ambiguous filenames and courses using a different release.<br><br>**Detailed scope:** Configure the Alias report grouping Filename Key across different Entries and the Course Version report comparing Resolved MARCOM Release with MARCOM Course.Current Release. Restrict the latter to MARCOM mode with an available current release and expose affected IDs and native diagnostic links. Configure reports only, without another update path, scheduler, or tracking object. | Consultant |
+| CFG-21 | Reports | Configure the Follow-up Reports | **Objective:** Show ambiguous filenames and catalogue content differences for manual adoption.<br><br>**Detailed scope:** Configure the Alias report grouping Filename Key across Entries and an informational Course Version comparison of pinned Resolved MARCOM Release against MARCOM Course.Current Release. Limit comparison to MARCOM mode with an available current release and show the exact identities. A difference is expected for pinned courses and is not a failed-update condition. Offer no automatic refresh/retry or Course Version creation action; the training user manually creates a Course Version to adopt new content. | Consultant |
 
 ## 3. External inputs and constraints
 
@@ -53,11 +54,11 @@ These are inputs from the separate project process, not assignments. They have n
 |---|---|---|
 | E-MAP | Verified application/object/field names and IDs, native reuse and shared-catalogue ownership decisions, and existing platform inheritance. No .ipack baseline was supplied. | CFG-01–07 directly; later assignments use their outputs. |
 | E-TYPE | Supported field lengths/types, numeric/timezone settings, attachment field limits, and uniqueness settings for specified keys. | CFG-01, CFG-03–06. |
-| E-EXP | Supported default/calculation syntax, related-field report expressions, form conditions/confirmation, handler invocation, and safe Objectives HTML rendering. Display calculation must use Language.Name. | CFG-08–11, CFG-13, CFG-20–21. |
+| E-EXP | Supported default/calculation syntax, related-field report expressions, form conditions/confirmation, handler invocation including Create/Update ISCHANGED evaluation, and safe Objectives HTML rendering. Display calculation must use Language.Name. | CFG-08–11, CFG-13, CFG-20–21. |
 | E-FILE | Supported native file reading/checksum/copy-or-association operations and access behavior preserving exact package bytes. | CFG-12 and CFG-17; downstream logic uses CFG-12 outputs. |
-| E-CONTROL | Supplied uniqueness/locking, complete-or-no-change catalogue/course updates, trusted publication context, native audit/error outputs, and source-cell disposition mechanism. | CFG-10–11, CFG-13–15, CFG-17, CFG-19. |
-| E-COURSE | Resolved native Course Version edit/update or successor mechanism, form restrictions, and any request-driven batch mechanism. A changed field contract requires a revised specification before affected build work. | CFG-09, CFG-13, CFG-15. |
-| E-ACCESS | Actual group/role mapping and object, field, command, record, file, Integration, audit, and diagnostic access decisions; existing learner execution rights. | CFG-14–17 and CFG-20. |
+| E-CONTROL | Supplied uniqueness/locking, complete-or-no-change catalogue/course updates, trusted publication context, native audit/error outputs, and source-cell disposition mechanism. | CFG-10–11, CFG-13–14, CFG-17, CFG-19. |
+| E-COURSE | User has supplied the pinned-content/native-version direction. Remaining input: actual Course Version field mapping, native edit permissions, and initial Create/Update ISCHANGED evaluation for MARCOM Course. No automatic update/successor/batch decision is required. | CFG-09, CFG-13. |
+| E-ACCESS | Actual group/role mapping and object, field, command, record, file, Integration, audit, and diagnostic access decisions; existing learner execution rights. | CFG-14, CFG-16–17 and CFG-20. |
 | E-IMPORT | Selected supported import runtime, workbook/file interface, endpoints/authentication contract where used, import context, and native diagnostic mechanism. The source workbook mapping itself is already supplied. | CFG-12, CFG-18–19. |
 
 ## 4. Implementation tasks
@@ -303,7 +304,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Make entries, draft releases, and former filenames practical to administer.
 
-**Detailed scope:** Configure Entry, Release, and Alias forms and navigation. Group metadata, taxonomies, assets, source details, and publication fields clearly; apply Spanish-title conditions, active-value filters, generated-field read-only presentation, and draft/published presentation. Keep pricing and provider-hosted descriptions in suitable administration views and use the supplied safe Objectives HTML renderer. CFG-14/15 add publication/retry buttons with their handlers.
+**Detailed scope:** Configure Entry, Release, and Alias forms and navigation. Group metadata, taxonomies, assets, source details, and publication fields clearly; apply Spanish-title conditions, active-value filters, generated-field read-only presentation, and draft/published presentation. Keep pricing and provider-hosted descriptions in suitable administration views and use the supplied safe Objectives HTML renderer. CFG-14 adds the publication button; there is no course-refresh/retry button.
 
 **Deliverable:** Three administration forms with specified selection and visibility behavior.
 
@@ -337,7 +338,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Make manual and MARCOM content setup clear for course authors.
 
-**Detailed scope:** Apply no-e-learning, MANUAL, and MARCOM visibility/requiredness rules to the existing form. Present the MARCOM selector with title, Language.Name, Industry, Topic, and Product Code; protect generated package fields. Configure the supplied confirmation mechanism before replacement, delegating processing to CFG-13, and retain native course-version editing restrictions.
+**Detailed scope:** Apply no-e-learning, MANUAL, and MARCOM visibility/requiredness rules to the existing form. Present the MARCOM selector with title, Language.Name, Industry, Topic, and Product Code; protect generated package fields. Configure the supplied confirmation mechanism before replacement, delegating processing to CFG-13, and retain native course-version editing restrictions. Explain that the training user manually creates a new Course Version to adopt a newer release of the same MARCOM course; an unchanged selection must not refresh on save.
 
 **Deliverable:** Updated course-authoring form and confirmation behavior.
 
@@ -438,7 +439,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Populate file checksums and reliable import-source details.
 
-**Detailed scope:** Configure the supplied native file operations used by release handlers, publication, course resolution, and import. Calculate Package Digest from SCORM bytes and Source Workbook Digest from original workbook bytes. Populate Source Workbook, Source Sheet, Source Row, Imported On, and Unmapped Source Cells through the import context. Provide the supported package copy/association and verification operations for CFG-13/14, keeping optional assets separate and adding no file-history object.
+**Detailed scope:** Configure the supplied native file operations used by release handlers, publication, guarded course selection, and import. Calculate Package Digest from SCORM bytes and Source Workbook Digest from original workbook bytes. Populate Source Workbook, Source Sheet, Source Row, Imported On, and Unmapped Source Cells through the import context. Provide the supported package copy/association and verification operations for CFG-13/14, keeping optional assets separate and adding no file-history object.
 
 **Deliverable:** Reusable supported attachment operations and checksum/source population.
 
@@ -470,11 +471,11 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Category:** Automation
 
-**Objective:** Supply the exact selected current package to the course version safely.
+**Objective:** Pin the exact release and package only when a non-empty MARCOM Course selection is created or changed.
 
-**Detailed scope:** Configure AH-03 on Has E-learning?, E-learning Source, and MARCOM Course. Apply MANUAL/MARCOM Codes, source-change confirmation, clearing rules, active/usable selection, and owner checks. Use CFG-12 to save Resolved MARCOM Release with the exact E-learning Package as one controlled change. Recheck the current pointer, preserve the old working pair on failure, prevent repeated internal updates, and leave learner history in Training Management.
+**Detailed scope:** Configure AH-03 on Course Version Create and Update with the mandatory guard: MARCOM Course is not null and ISCHANGED for that field. Treat the first non-empty Create selection as changed. Resolve the selected Entry's usable Current Release and use CFG-12 to store its exact reference/file together. An unchanged selection on Update must retain its pinned pair without rereading latest content, including after catalogue publication or deactivation. Keep source-clearing/manual-mode validation separate from resolution, prevent internal-output recursion, and preserve the previous saved pair on eligible-save failure. Do not create Course Versions or refresh content from catalogue events.
 
-**Deliverable:** AH-03 source resolution and package-replacement behavior.
+**Deliverable:** AH-03 guarded Create/Update pinning with unchanged-save preservation.
 
 **Strict technical prerequisites:** CFG-06, CFG-12
 
@@ -484,17 +485,18 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Recommended reviewer/approver role:** Senior Consultant
 
-**Role rationale:** Coordinated file/reference updates, concurrent edits, and failure preservation require advanced automation.
+**Role rationale:** Saving the selected file/reference together, enforcing change detection through UI/API, and preserving previous values on failure require advanced automation; no bulk update process is included.
 
-**Specification references:** Sections 7.9; 8 AH-03 and source-change handling
+**Specification references:** Sections 7.9; 8.2; later user pinning decision
 
 **Assumptions and open questions:** None; unresolved external results are identified in Blocked status.
 
 **Acceptance criteria:**
 
-- Selecting a usable Entry supplies its exact package and matching release reference together.
-- Manual courses remain independent; failed or unconfirmed replacement preserves the working configuration.
-- Source switching follows section 7.9 without changing learner history.
+- Create with a non-null new selection captures current release/file; Update with a different non-null selection does the same.
+- Publish a newer catalogue release, then save the existing Course Version without changing MARCOM Course: the old reference/file remain unchanged.
+- Creating a new Course Version manually and selecting the same Entry captures the new current release; catalogue import/publication never creates a Course Version.
+- Clearing/source switching does not bypass the guard; failed save preserves the prior saved pair and internal output writes do not run resolution again.
 
 ### CFG-14 — Configure Publish Release
 
@@ -506,9 +508,9 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Make a validated release current as one controlled catalogue change.
 
-**Detailed scope:** Configure CMD-01 and its Administrator-only Publish Release button. Recheck actor access and concurrent edits; validate package/checksum, Entry, active selections, metadata, and source-cell decisions. Set Published On once with Entry.Current Release; invoke the display updater. Support repeat publication and explicit rollback to a retained published release without editing it. Provide the post-save invocation point for CFG-15 and native error reporting; add no workflow.
+**Detailed scope:** Configure CMD-01 and its Administrator-only Publish Release button. Recheck actor access and concurrent edits; validate package/checksum, Entry, active selections, metadata, and source-cell decisions. Set Published On once with Entry.Current Release and update the Name-based display. Support safe repeat publication and explicit catalogue rollback without editing retained bytes. Record native errors. Publication changes the catalogue only: do not invoke a course-update handler, create a Course Version, or enqueue refresh work.
 
-**Deliverable:** Publish Release command/button and controlled current-release update.
+**Deliverable:** Catalogue-only Publish Release command/button and controlled current pointer.
 
 **Strict technical prerequisites:** CFG-08, CFG-10, CFG-11, CFG-12
 
@@ -520,7 +522,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Role rationale:** Publication permissions, concurrent changes, and complete-or-no-change behavior require Senior Consultant authority.
 
-**Specification references:** Sections 7.1–7.2; 8 CMD-01 steps 1–4; 10
+**Specification references:** Sections 7.1–7.2; 8.1; 10
 
 **Assumptions and open questions:** None; unresolved external results are identified in Blocked status.
 
@@ -529,40 +531,7 @@ These are inputs from the separate project process, not assignments. They have n
 - Rejected publication preserves the previous pointer and timestamp.
 - Successful publication saves both values together, updates the Name-based display, and does not restamp a published release.
 - Only authorized Administrators can publish or select a retained release for rollback.
-
-### CFG-15 — Configure Course Package Updates and Retry
-
-**Task ID:** CFG-15
-
-**Title:** Configure Course Package Updates and Retry
-
-**Category:** Automation
-
-**Objective:** Bring linked courses onto current content while keeping failures recoverable.
-
-**Detailed scope:** Configure AH-04 at CMD-01 post-save and the authorized retry action. Select only courses referencing the exact Entry in MARCOM mode; reuse AH-03. Before each write recheck Entry.Active?, Current Release, and course changes. Skip matches, retain prior working pairs on failure, stop or re-resolve outdated requests, and record failed native IDs through existing diagnostics. Use the supplied native course-update and optional request-driven batch mechanism; add no recurring service.
-
-**Deliverable:** AH-04, authorized retry, and native per-course failure reporting.
-
-**Strict technical prerequisites:** CFG-13, CFG-14
-
-**Blocked status:** Blocked by missing E-COURSE, E-CONTROL, E-ACCESS. Also waiting for CFG-13, CFG-14.
-
-**Recommended implementer role:** Senior Consultant
-
-**Recommended reviewer/approver role:** Senior Consultant
-
-**Role rationale:** Multi-record updates and safe recovery from partial failure require advanced automation. Update and retry rules stay together to avoid conflicting update paths.
-
-**Specification references:** Sections 8 AH-04; CMD-01 steps 5–6; 10
-
-**Assumptions and open questions:** None; unresolved external results are identified in Blocked status.
-
-**Acceptance criteria:**
-
-- Only linked MARCOM courses for this Entry change; another industry or language sharing an ID is unaffected.
-- Failure preserves the old package/reference pair; retry uses the current pointer without duplicate work.
-- Deactivation stops further updates and native course-version restrictions are honored.
+- Successful publication or rollback leaves existing Course Version count, pinned releases, and package files unchanged.
 
 ### CFG-16 — Configure Basic MARCOM Permissions
 
@@ -574,7 +543,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Give each responsibility its ordinary object and field access.
 
-**Detailed scope:** Configure straightforward Administrator, Integration, Author, and existing Learner permissions across the specified objects/fields. Permit author selection without provider editing, restrict Integration to specified import/update fields, and limit pricing/provider-hosted views appropriately. Preserve existing learner execution access. Leave conditional published-record, attachment, and trusted-action enforcement to CFG-17; use supplied group mappings.
+**Detailed scope:** Configure straightforward Administrator, Integration, Author, and existing Learner permissions across the specified objects/fields. Permit author selection without provider editing, restrict Integration to catalogue import fields without Course Version creation or pinned-file writes, and limit pricing/provider-hosted views appropriately. Preserve existing learner execution access. Leave conditional published-record, attachment, and trusted-action enforcement to CFG-17; use supplied group mappings.
 
 **Deliverable:** Basic object and field permissions for the feature.
 
@@ -607,13 +576,13 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Enforce publication and attachment boundaries beyond the forms.
 
-**Detailed scope:** Configure supplied record, relationship, action, and file controls around published Releases, generated course fields, CMD-01, and retry. Prevent extra access through direct URL/API/export/navigation paths; restrict Integration and trusted publication context while retaining native learner execution. Enable existing audit on mutable objects/relationships and native failure visibility. Add no custom security or audit object.
+**Detailed scope:** Configure supplied record, relationship, action, and file controls around published Releases, generated course fields, CMD-01, and guarded AH-03 output writes. Prevent extra access through direct URL/API/export/navigation paths; restrict Integration and trusted publication context while retaining native learner execution. Enable existing audit on mutable objects/relationships and native failure visibility. Add no custom security or audit object.
 
 **Deliverable:** Server-side record/file/action protection and native audit settings.
 
-**Strict technical prerequisites:** CFG-11, CFG-13, CFG-14, CFG-15, CFG-16
+**Strict technical prerequisites:** CFG-11, CFG-13, CFG-14, CFG-16
 
-**Blocked status:** Blocked by missing E-ACCESS, E-CONTROL, E-FILE. Also waiting for CFG-11, CFG-13, CFG-14, CFG-15, CFG-16.
+**Blocked status:** Blocked by missing E-ACCESS, E-CONTROL, E-FILE. Also waiting for CFG-11, CFG-13, CFG-14, CFG-16.
 
 **Recommended implementer role:** Senior Consultant
 
@@ -640,7 +609,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Map both active workbook tabs to their correct fields and catalogue values.
 
-**Detailed scope:** Configure English language and Spanish language mappings with their different column positions. Map Entry identity, all release metadata/expected filenames, source locators, and fixed catalogue Codes. Preserve raw whitespace, text IDs, month/year, nulls, descriptions/objectives, unheaded coordinates, and the two observed multi-filename cases. Exclude discontinued tabs. Prepare configuration only; do not execute provider-content or customer-course loading.
+**Detailed scope:** Configure English language and Spanish language mappings with their different column positions. Map Entry identity, all release metadata/expected filenames, source locators, and fixed catalogue Codes. Preserve raw whitespace, text IDs, month/year, nulls, descriptions/objectives, unheaded coordinates, and the two observed multi-filename cases. Exclude discontinued tabs. Prepare configuration only; do not execute provider-content or customer-course loading. No mapping may create Training Course Versions or change their pinned content.
 
 **Deliverable:** Complete source-to-field mapping definitions for two active tabs.
 
@@ -674,7 +643,7 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Objective:** Make metadata processing safe to repeat without duplicate provider records.
 
-**Detailed scope:** Configure processing behind CFG-18 using identity/Alias, release-protection, and file/source functions. Match or create Entries, reuse unchanged draft/published business content, create new drafts for changed content, and reconcile aliases. Exclude source locators/timestamps from content comparisons. Configure native diagnostics for keys, unknown mappings, missing assets, unmapped cells, row totals, language subtotals, and readiness. Preserve released content and create no current pointer from a filename. Actual migration/loading remains excluded.
+**Detailed scope:** Configure processing behind CFG-18 using identity/Alias, release-protection, and file/source functions. Match or create Entries, reuse unchanged draft/published business content, create new drafts for changed content, and reconcile aliases. Exclude source locators/timestamps from content comparisons. Configure native diagnostics for keys, unknown mappings, missing assets, unmapped cells, row totals, language subtotals, and readiness. Preserve released content and create no current pointer from a filename. Actual migration/loading remains excluded. Import processing must never create or update Training Course Versions, including when an existing catalogue Entry acquires a newer release.
 
 **Deliverable:** Repeatable import behavior with native reconciliation/error outputs.
 
@@ -739,11 +708,11 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Category:** Reports
 
-**Objective:** Show ambiguous filenames and courses using a different release.
+**Objective:** Show ambiguous filenames and catalogue content differences for manual adoption.
 
-**Detailed scope:** Configure the Alias report grouping Filename Key across different Entries and the Course Version report comparing Resolved MARCOM Release with MARCOM Course.Current Release. Restrict the latter to MARCOM mode with an available current release and expose affected IDs and native diagnostic links. Configure reports only, without another update path, scheduler, or tracking object.
+**Detailed scope:** Configure the Alias report grouping Filename Key across Entries and an informational Course Version comparison of pinned Resolved MARCOM Release against MARCOM Course.Current Release. Limit comparison to MARCOM mode with an available current release and show the exact identities. A difference is expected for pinned courses and is not a failed-update condition. Offer no automatic refresh/retry or Course Version creation action; the training user manually creates a Course Version to adopt new content.
 
-**Deliverable:** Alias-ambiguity and course-release-difference reports.
+**Deliverable:** Alias-ambiguity and catalogue-content-difference reports without update actions.
 
 **Strict technical prerequisites:** CFG-05, CFG-06
 
@@ -755,18 +724,19 @@ These are inputs from the separate project process, not assignments. They have n
 
 **Role rationale:** Cross-object comparisons and grouping ambiguous identities require broader technical judgment.
 
-**Specification references:** Sections 7.3; 8 AH-04; 10
+**Specification references:** Sections 7.3; 8.2; 10
 
 **Assumptions and open questions:** None; unresolved external results are identified in Blocked status.
 
 **Acceptance criteria:**
 
-- Alias ambiguity shows every affected Entry rather than choosing a first match.
-- The release-difference report excludes MANUAL and blank-current configurations and identifies mismatches accurately.
+- Alias ambiguity lists every affected Entry rather than silently choosing a match.
+- The comparison excludes MANUAL/blank-current configurations, labels different current content as information, and does not treat an older pinned release as an error.
+- Viewing or acting on the report cannot automatically create or refresh Course Versions.
 
 ## 5. Strict technical dependency diagram
 
-Only implementation-task prerequisites appear. External inputs, review, staffing, migration, and formal testing have no nodes or edges. A line means the predecessor supplies configuration needed by the successor, not a preferred staffing sequence.
+Only active implementation-task prerequisites appear. External inputs and retired CFG-15 have no nodes or edges.
 
 ```mermaid
 flowchart TD
@@ -784,7 +754,6 @@ flowchart TD
     CFG12["CFG-12: Configure File Checksums and Source Details"]
     CFG13["CFG-13: Configure Course Content Selection"]
     CFG14["CFG-14: Configure Publish Release"]
-    CFG15["CFG-15: Configure Course Package Updates and Retry"]
     CFG16["CFG-16: Configure Basic MARCOM Permissions"]
     CFG17["CFG-17: Configure Protected Record and File Access"]
     CFG18["CFG-18: Configure the MARCOM Import Mappings"]
@@ -817,14 +786,11 @@ flowchart TD
     CFG10 --> CFG14
     CFG11 --> CFG14
     CFG12 --> CFG14
-    CFG13 --> CFG15
-    CFG14 --> CFG15
     CFG05 --> CFG16
     CFG06 --> CFG16
     CFG11 --> CFG17
     CFG13 --> CFG17
     CFG14 --> CFG17
-    CFG15 --> CFG17
     CFG16 --> CFG17
     CFG03 --> CFG18
     CFG04 --> CFG18
@@ -842,8 +808,8 @@ flowchart TD
 
 ## 6. Assumptions and exclusions
 
-- CFG task IDs and AH-01/AH-02/AH-03/AH-04/CMD-01 identify plan/specification items, not invented tenant system names. Use supplied actual names, IDs, syntax, and interfaces. Do not introduce a new provider integration or security group by assumption.
-- All 21 assignments are proposed, not completed. No critical path or environment schedule is inferred. Reviewer support does not create artificial task predecessors.
+- CFG task IDs and AH-01/AH-02/AH-03/CMD-01 identify plan/specification items, not invented tenant system names. Use supplied actual names, IDs, syntax, and interfaces. Do not introduce a new provider integration or security group by assumption.
+- All 20 active assignments are proposed, not completed. No critical path or environment schedule is inferred. Reviewer support does not create artificial task predecessors.
 - Catalogue Code, Name, Active?, and Sort remain on each separate concrete object; no catalogue inheritance, consumer inverse, or externally owned base-object change is introduced.
 - Discovery, tenant verification, uncertainty-resolving prototypes, estimates, scheduling, migration/backfill, formal testing, deployment, training, documentation, and project governance are excluded workstreams. Compatibility and learner-regression results are supplied separately; this plan configures the specified feature without claiming those results.
 - Initial configuration includes only the five supplied catalogue value sets. Actual 552-row provider loading, asset loading, customer mapping, and temporary import-credential session/deactivation are separate loading work. Small representative records used to prove configuration behavior are implementation checks, not bulk migration or formal testing.
@@ -861,18 +827,18 @@ flowchart TD
 | Entry 9 fields, Release 42 fields, Alias 4 fields | Configure all rows | CFG-03/04/05 |
 | Existing Course Version, 5 affected fields | Modify/reuse specified fields only | CFG-06 |
 | Eleven relationship fields | Targets exist first; inverse disabled | CFG-03/04/05/06 |
-| Entry, Release, Alias, and course forms | Configure conditions and layout | CFG-08/09; CFG-14/15 actions |
+| Entry, Release, Alias, and course forms | Configure conditions and layout | CFG-08/09; CFG-14 publication action; no refresh action |
 | AH-01, Alias key/owner rules, Entry Display Field | Configure business logic | CFG-10; Name and pipe retained |
 | AH-02 metadata, publication protection | Configure | CFG-11 |
 | Checksum/source fields and reusable file operations | Configure | CFG-12 |
-| AH-03 source resolution | Configure | CFG-13 |
+| AH-03 guarded selection-time pinning | Configure | CFG-13 |
 | CMD-01 and explicit current release | Configure | CFG-14 |
-| AH-04 and safe retry | Configure | CFG-15 |
+| Former AH-04 automatic updates/retry | Removed from current target | CFG-15 retired; no replacement automation |
 | Ordinary and nuanced security | Separate by complexity | CFG-16/17 |
-| Native audit and execution diagnostics | Reuse/configure | CFG-14/15/17/19; no custom evidence objects |
+| Native audit and execution diagnostics | Reuse/configure | CFG-14/17/19; no custom evidence objects |
 | Source mapping, normalization, matching, and rerun outputs | Configure processing only | CFG-18/19; migration excluded |
 | Catalogue browsing, release history, readiness | Configure reports | CFG-20 |
-| Alias ambiguity and course release differences | Configure reports | CFG-21 |
+| Alias ambiguity and catalogue-content-difference information | Configure reports | CFG-21 |
 | 1 Classification, 11 Industries, 142 Topics, 2 Languages, 2 Sources | Create 158 configuration records | CFG-07 |
 | Workflow, Event Service, scheduled provider integration | Not specified | Not applicable; no task |
 | Native learner delivery/evidence, recurrence, qualifications | Reuse without structural change | No new implementation task |
@@ -976,13 +942,13 @@ Every field has one field-creation/configuration owner below. Later behavior, fo
 | MCC-005 | CFG-03/04/11/12/14/17 |
 | MCC-006 | CFG-01/06/07/09/13 |
 | MCC-007 | CFG-06/12/13 |
-| MCC-008 | CFG-13/14/15/21 |
-| MCC-009 | CFG-01/03/08/09/11/13/14/15 |
+| MCC-008 | CFG-13/14/21; manual adoption, no automatic Course Version changes |
+| MCC-009 | CFG-01/03/08/09/11/13/14 |
 | MCC-010 | Existing Training Management; no learner-evidence build task |
 | MCC-011 | CFG-07/18/19 configuration and reconciliation outputs; actual source load excluded |
 | MCC-012 | CFG-04/12/13/14/17 preserve files/checksums; compatibility testing separate |
-| MCC-013 | CFG-01–21 collectively; unresolved capabilities remain external inputs |
+| MCC-013 | All active CFG tasks except retired CFG-15; unresolved capabilities remain external inputs |
 
 ## 8. Plan validation
 
-The summary and detailed records come from the same task definitions. Validation checks 21 unique tasks in the same order; exact matching category, name, objective, detailed scope, and implementer; every required task field and reviewer; an acyclic dependency graph with diagram edges matching the prerequisite fields; and exactly one configuration owner for each of the 80 fields across nine objects. Catalogue values, forms, five handler/command contracts, native reuse, security, reports, and import-processing configuration are covered. External inputs have no task/dependency/diagram nodes. No estimates, standalone discovery, formal test, or migration task is included. Runtime configuration has not been performed.
+Validation checks 20 active tasks with unchanged IDs other than retired CFG-15; exact summary/detail agreement; complete task fields and role assignments; a cycle-free graph with edges matching active prerequisites; and all 80 fields across nine objects. The four current handler/command contracts are AH-01, AH-02, AH-03, and CMD-01. No AH-04, automatic successor, catalogue-driven refresh/retry, or related dependency remains active. Catalogue-content-difference reporting is informational. External input E-COURSE now covers native field/permission and ISCHANGED details, not an unresolved adoption decision. Initial configuration, migration exclusions, and other external limitations remain. No runtime implementation is claimed.

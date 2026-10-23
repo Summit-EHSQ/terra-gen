@@ -1,5 +1,7 @@
 # ADR Reconciliation Plan
 
+Historical reconciliation snapshot: subsequent [pinning reconciliation](ADR-RECONCILIATION-2026-10-23-PINNING.md) replaces automatic course-content propagation with user-controlled adoption and a specific stored release/file. Earlier findings below are historical, not the current update requirement.
+
 Metadata follow-up, 2026-10-23. Builds on the [call reconciliation](ADR-RECONCILIATION-2026-10-23.md). Evidence: the supplied [MARCOM workbook](<raw artifacts/MARCOM Adaptive Learning Course File Name and Metadata Guide 09 10 26.xlsx>), only `English language` rows 1–359 and `Spanish language` rows 1–195. The two `DiscontinueNotReplaced` tabs are excluded. [Analysis and exact locators](MARCOM-METADATA-ANALYSIS-2026-10-23.md) distinguish observed data from proposed model rules.
 
 | Existing/Candidate ADR | Current status | New finding | Disposition | Target ADR | Evidence | Rationale |
@@ -49,4 +51,4 @@ Validation passed: archived workbook bytes and SHA-256 match the source; active-
 
 ## Proposed ADR Text
 
-Complete changed records: [ADR-013](ADRs/ADR-013-version-training-content-for-audit-traceability.md), [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md), [ADR-017](ADRs/ADR-017-source-and-refresh-course-packages-from-the-marcom-catalogue.md), and [ADR-018](ADRs/ADR-018-constrain-api-assisted-marcom-catalogue-loading.md).
+Complete changed records: [ADR-013](ADRs/ADR-013-version-training-content-for-audit-traceability.md), [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md), [ADR-017](ADRs/ADR-017-pin-marcom-content-to-training-course-versions.md), and [ADR-018](ADRs/ADR-018-constrain-api-assisted-marcom-catalogue-loading.md).

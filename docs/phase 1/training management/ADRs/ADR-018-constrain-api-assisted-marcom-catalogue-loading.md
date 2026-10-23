@@ -67,3 +67,5 @@ The following are architectural analysis:
 [KT — MARCOM Requirements Knowledge Transfer, October 23, 2026](<../raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>), 4:00–5:58, 7:01–8:37, 11:37–16:47, and 16:47–17:45. Timing and estimated effort are planning discussion, not architectural commitments.
 
 Related: [ADR-016](ADR-016-use-a-reusable-marcom-content-catalogue.md) and [ADR-011](ADR-011-establish-an-ongoing-marcom-content-refresh-process.md). This ADR records proposed controls; it does not authorize this assistant to access a tenant or perform a load.
+
+[Subsequent pinning decision](<../raw artifacts/2026-10-23-marcom-course-version-pinning-decision.md>), Supplied decision paragraph 4: catalogue imports and release publication must not create Training Course Versions or update their pinned release/file. Import retries reconcile catalogue data only; customer course adoption remains a manual Training Management action under ADR-017.

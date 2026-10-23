@@ -6,7 +6,7 @@ solution: MARCOM Course Catalog
 primary_application: Training Management
 related_adrs:
   - ADR-016-use-a-reusable-marcom-content-catalogue.md
-  - ADR-017-source-and-refresh-course-packages-from-the-marcom-catalogue.md
+  - ADR-017-pin-marcom-content-to-training-course-versions.md
 model_state: proposed-target
 baseline_package: null
 ---
@@ -15,9 +15,9 @@ baseline_package: null
 
 ## 1. Outcome and design boundary
 
-Provide a reusable MARCOM content inventory in Training Management. Administrators load provider metadata and packages, course authors select a language-specific catalogue entry, and the selected entry's usable current release supplies the SCORM package to the Training Course Version. Changing the current release propagates content to the courses linked to that same entry.
+Provide a reusable MARCOM content inventory in Training Management. Administrators maintain provider metadata and retained packages. When a user creates a Training Course Version and selects a MARCOM Course, the system captures that Entry's usable Current Release and its file. The same guarded resolution applies on Update only when MARCOM Course changes. Catalogue updates neither alter existing Training Course Versions nor create new ones; adopting a new release of the same provider course requires a user-created Course Version.
 
-The primary design authorities are [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md) and [ADR-017](ADRs/ADR-017-source-and-refresh-course-packages-from-the-marcom-catalogue.md). Their six business objects are retained: MARCOM Catalogue Entry, MARCOM Content Release, MARCOM Previous Filename Alias, MARCOM Classification, MARCOM Industry, and MARCOM Topic. This specification adds two small selector catalogues as **proposed technical normalization**: MARCOM Language and E-learning Content Source. Reuse semantically identical native catalogues if verified; do not create duplicates. The latter may be shared with manual e-learning setup but is defined here until a shared authority is identified.
+The primary design authorities are [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md) and [ADR-017](ADRs/ADR-017-pin-marcom-content-to-training-course-versions.md). Their six business objects are retained: MARCOM Catalogue Entry, MARCOM Content Release, MARCOM Previous Filename Alias, MARCOM Classification, MARCOM Industry, and MARCOM Topic. This specification adds two small selector catalogues as **proposed technical normalization**: MARCOM Language and E-learning Content Source. Reuse semantically identical native catalogues if verified; do not create duplicates. The latter may be shared with manual e-learning setup but is defined here until a shared authority is identified.
 
 Existing Training Management owns learner delivery, attempts, completions, and historical learner evidence. This feature supplies course content; it does not add learner-evidence records, assessment workflows, assignments, recurrences, qualification integration, an adaptive-learning engine, or a hosted MARCOM LMS integration. Classification, Industry, and Topic are distinct catalogue objects, as requested. No abstraction parent or catalogue inheritance is introduced.
 
@@ -28,7 +28,7 @@ No `.ipack` or verified existing object model is present. The **baseline is unav
 | Source | Locators and use |
 |---|---|
 | ADR-016 | Objects, keys, relationships, complete source mapping, and release/import rules |
-| ADR-017 | Course-version source selection, stable entry link, current-release resolution, and propagation |
+| ADR-017 | Course-version source selection, stable entry link, and pinned release/file under the changed-selection guard |
 | [Metadata analysis](MARCOM-METADATA-ANALYSIS-2026-10-23.md) | Counts, lengths, key collisions, whitespace, aliases, and unheaded-cell exceptions |
 | [MARCOM guide](<raw artifacts/MARCOM Adaptive Learning Course File Name and Metadata Guide 09 10 26.xlsx>) | `English language!A1:Y359` and `Spanish language!A1:Z195` only; both discontinued tabs excluded |
 | User clarifications, 2026-10-23 | Existing Training Management provides learner evidence; Classification/Industry/Topic must be separate catalogue objects |
@@ -48,22 +48,22 @@ Names in field tables are exact **proposed display names**; diagram names are sh
 | MCC-004 | Preserve all named metadata, separate descriptions/objective formats, filenames, optional values, and source provenance. | ADR-016 source mapping |
 | MCC-005 | Retain independently governed releases and select current explicitly; never infer latest from copyright or filename. | ADR-016 |
 | MCC-006 | Allow no e-learning, manual upload, or MARCOM-library content through course-version setup. | ADR-017 |
-| MCC-007 | Select the stable Entry and populate its exact current package and Resolved MARCOM Release on the course version. | ADR-017 |
-| MCC-008 | Cascade a current-release change only to courses selecting that Entry, with retry-safe updates and visible failures. | ADR-017 |
+| MCC-007 | Store the exact selected Current Release and its package on the Course Version; keep them pinned on ordinary saves. | ADR-017; later user update decision |
+| MCC-008 | Resolve only on Create/Update when MARCOM Course is non-null and changed; never create or update Course Versions from catalogue changes. | ADR-017; later user update decision |
 | MCC-009 | Preserve inactive catalogue references and historical package releases; block inappropriate new selections. | Proposed lifecycle control supporting ADR-016 |
 | MCC-010 | Reuse existing Training Management learner-evidence capability without extending its model. | User scope clarification |
 | MCC-011 | Load active English/Spanish tabs only; reconcile 358 + 194 rows, aliases, and anomalies. | ADR-016; supporting ADR-018 |
 | MCC-012 | Preserve asset bytes, verify attachment identity, and validate provider-described adaptive SCORM behavior in the tenant. | ADR-016/017; metadata English T2, Spanish U2 |
 | MCC-013 | Use native audit/security/execution mechanisms; define every proposed field, relationship, and seed value. | Modelling/specification rules applied to this target |
 
-Refinements: the earlier optional-list interpretation of Classification/Industry/Topic is replaced by separate catalogue objects. Learner-evidence modelling has been removed per user clarification. Retained provider releases remain proposed design scope; the original call's stretch-goal wording is not treated as approval. Language and content-source catalogues refine single-value selection fields without changing the selected business behavior. The existing accepted ADR set remains unchanged.
+Refinements: separate Classification/Industry/Topic objects and the existing learner-evidence boundary remain. The later [pinning decision](<raw artifacts/2026-10-23-marcom-course-version-pinning-decision.md>), Supplied decision paragraphs 2–5, replaces automatic package distribution with a stored selection-time release/file. MCC-007/008 are refined accordingly. AH-04 and its retry action are removed from the current target; the implementation plan retires CFG-15 without reusing its ID. All existing ADR statuses and the 80-field inventory are unchanged.
 
 ## 4. Native capability assessment and assumptions
 
 | Capability | Reuse decision | Required tenant check |
 |---|---|---|
-| Native training course/version and SCORM package storage | Reuse; modify only the field contract in section 7.9 | Actual object/field identities; package ownership/copy semantics; editable versus released versions |
-| Native audit and execution diagnostics | Reuse for edits, publication attempts, propagation failures, and retries | Actor/time, old/new values, errors, permissions, query/report availability |
+| Native training course/version and SCORM package storage | Reuse; pin provider release/file at eligible selection | Actual field identities, native Create/Update change detection, and attachment-copy mechanics; no automatic successor-version mechanism required |
+| Native audit and execution diagnostics | Reuse for edits, publication attempts, and guarded course-selection saves | Actor/time, old/new values, errors, permissions, query/report availability |
 | Learner evidence and execution | Already built per user; outside catalogue implementation | Regression-test existing behavior during package changes; no new evidence schema |
 | Provider catalogue/release metadata | ADR-016 establishes separate business responsibility | Reuse an existing equivalent object if found; native attachment revisioning must preserve the required package and metadata identity before substituting for Content Release |
 | Governed Classification/Industry/Topic | Distinct objects required by user | Check for existing objects of exactly these semantic domains before adding |
@@ -165,7 +165,7 @@ Each Current Release must belong to its declaring Entry; a release cannot be cur
 
 All field definitions are **Proposed**. Native IDs/audit fields are inherited from the unverified platform and are not custom redeclarations. No other custom field, hidden helper, or inverse grid is implied. All objects have **Parent: no proposed parent; native platform base unresolved**. The tables describe directly declared target fields or the explicitly affected existing course-version fields.
 
-**Roles:** Administrator = proposed MARCOM catalogue administration permission; Author = existing authorized course configurator; Integration = limited import/propagation principal. These are permission responsibilities, not claims that named security groups already exist. Ordinary learners have only the existing access needed to run assigned course packages.
+**Roles:** Administrator = proposed MARCOM catalogue administration permission; Author = existing authorized course configurator; Integration = limited import principal. These are permission responsibilities, not claims that named security groups already exist. Ordinary learners have only the existing access needed to run assigned course packages.
 
 **Field types:** Text is a standard Intelex text field; no encoding option needs to be configured. Long Text identifies text that needs more space, with a proposed limit of 16,384 characters. All lengths and number limits are proposed and must be checked in the tenant. Reject values that exceed the supported limit rather than cutting them off. Integer means a whole number. Float is the numeric field used for sorting. Decimal allows 18 digits in total, including 2 decimal places, for prices. File means one existing Intelex attachment field; supported file sizes still need confirmation. Date/Time uses timezone support so users see their local time. Descriptions of defaulting and calculation behavior are design instructions, not ready-to-paste Intelex formulas.
 
@@ -183,10 +183,10 @@ All field definitions are **Proposed**. Native IDs/audit fields are inherited fr
 | Provider Product Code | Text, max 100 | Y | None; EN L / ES M | Administrator/Integration on creation; immutable after reconciliation | Import raw value; never derive from filename or three-digit ID; retained identity |
 | Product Code Key | Text, max 100 | Y | Trim surrounding whitespace from Provider Product Code | Read only; visible to Administrator/Integration | Create/Update identity handler populates before uniqueness check; exact case preserved; never auto-rekeys an existing Entry |
 | Provider Course ID | Text, max 100 | Y | None; EN A / ES A | Administrator/Integration before reconciliation; read only afterward | Import as text preserving leading zeros; non-unique; identity correction requires reviewed import mapping |
-| Language | M:1 to MARCOM Language; each Entry exactly 1; inverse disabled | Y | None; import maps trimmed English/Spanish to Code en/es | Administrator/Integration before first release; new filter Active?=TRUE; retained afterward | Stable Entry dimension; never changed by package propagation |
+| Language | M:1 to MARCOM Language; each Entry exactly 1; inverse disabled | Y | None; import maps trimmed English/Spanish to Code en/es | Administrator/Integration before first release; new filter Active?=TRUE; retained afterward | Stable Entry dimension; unchanged by catalogue release updates |
 | Source Language | Text, max 100 | Y | None; exact EN G / ES H | Administrator/Integration on import; read only after reconciliation | Retain original whitespace/spelling alongside Language; not a translated display value |
-| Active? | Yes/No | Y | TRUE | Administrator editable; Integration only on explicit instruction | FALSE blocks new course selection and current-release publication/propagation; preserves existing references and supplied packages; absence in a load never sets FALSE |
-| Current Release | M:1 to MARCOM Content Release; each Entry 0..1; each Release current for 0..1 Entry; inverse disabled | N | NULL | Read only; set by Publish Release; filter own Entry and Published On populated | Publish sets atomically after validation; cannot point to another Entry; triggers propagation; keep prior pointer on failure |
+| Active? | Yes/No | Y | TRUE | Administrator editable; Integration only on explicit instruction | FALSE blocks new course selection and current-release publication; preserves existing pinned references/files and ordinary saves; absence in a load never sets FALSE |
+| Current Release | M:1 to MARCOM Content Release; each Entry 0..1; each Release current for 0..1 Entry; inverse disabled | N | NULL | Read only; set by Publish Release; filter own Entry and Published On populated | Publish updates the catalogue pointer after validation; future eligible selections use it; existing Course Versions are untouched |
 | Display Field | Text, max 1,024 | Y | Reference Title + Language.Name + Product Code Key, separated by ` \| `; omit blank parts | Read only; visible to administrators/authors | Release-save/display handler sets from current release, otherwise most recently imported draft with record ID to resolve a tie; initial create uses mapped title and the selected MARCOM Language's Name; no usable-package implication |
 
 Display example: `Back Safety | English | cst_bak_adl_en`. Language.Name is the Name of the selected MARCOM Language record. The separator is a pipe character (`|`) with a space on each side.
@@ -491,7 +491,7 @@ Initial values:
 |---|---|---:|---|---|---|
 | Code | Text, max 100 | Y | None; seed | Administrator on create; immutable once referenced | Only MANUAL and MARCOM enable defined handlers; unsupported code blocks course activation |
 | Name | Text, max 255; localizable | Y | None; seed | Administrator editable | Display only; never controls automation |
-| Active? | Yes/No | Y | TRUE | Administrator editable | FALSE blocks new source selection; preserves existing configurations and retry completion |
+| Active? | Yes/No | Y | TRUE | Administrator editable | FALSE blocks new source selection; preserves existing source configurations and pinned content |
 | Sort | Float | N | NULL; seed | Administrator editable | Presentation ordering only |
 
 Initial values:
@@ -507,11 +507,11 @@ Initial values:
 
 | Field | Type / relationship | Req | Default / calculation | Editability and visibility | Automation / lifecycle |
 |---|---|---:|---|---|---|
-| Has E-learning? | Yes/No; reuse native equivalent | Y | FALSE on new configuration unless native requirement specifies otherwise | Author editable when native course-version rules permit | Course-source handler watches changes; FALSE clears source, MARCOM references and configured package only after explicit source-change validation; no learner-history deletion |
-| E-learning Source | M:1 to E-learning Content Source; each Course Version 0..1; inverse disabled | Conditional | NULL; no silent default to MARCOM | Visible/editable and required when Has E-learning?=TRUE; filter Active?=TRUE for new selection; hidden/cleared when FALSE | Watch source changes; compare stable Code; source switch requires explicit confirmation if replacing a package; active native version edit restrictions still apply |
-| MARCOM Course | M:1 to MARCOM Catalogue Entry; each Course Version 0..1; inverse disabled | Conditional | NULL | Visible/editable and required when Has E-learning?=TRUE and Source.Code=MARCOM; new filter Entry.Active?=TRUE and usable Current Release; retained if later inactive; otherwise hidden/cleared | Course-source handler resolves exact selected Entry; never joins by three-digit ID, topic, title, or language suffix |
-| Resolved MARCOM Release | M:1 to MARCOM Content Release; each Course Version 0..1; inverse disabled | Conditional | NULL until source handler resolves MARCOM Course.Current Release | Read only; visible/required in MARCOM mode before save/activation can succeed; cleared outside MARCOM mode | Source/propagation handler atomically sets with E-learning Package; owner must equal MARCOM Course; do not treat this mutable course reference as learner evidence |
-| E-learning Package | Native File, one SCORM ZIP; reuse existing execution attachment; size limit unresolved | Conditional | NULL | In MANUAL mode Author uploads and package is required before native activation; in MARCOM mode read only, required, handler-populated; hidden/cleared when Has E-learning?=FALSE | Source handler copies/associates exact Resolved MARCOM Release.SCORM Package bytes using verified native file mechanism; source transitions clear old generated package before accepting a distinct manual upload; preserve native learning history |
+| Has E-learning? | Yes/No; reuse native equivalent | Y | FALSE on new configuration unless native requirement specifies otherwise | Author editable when native course-version rules permit | Existing source validation clears only permitted course configuration when FALSE; changing this flag alone cannot refresh an unchanged MARCOM Course |
+| E-learning Source | M:1 to E-learning Content Source; each Course Version 0..1; inverse disabled | Conditional | NULL; no silent default to MARCOM | Required/visible when Has E-learning?=TRUE; active-value filter for new selection; hidden/cleared when FALSE | Apply source-switch validation; MARCOM resolution additionally requires MARCOM Course non-null and changed; a source-only save cannot refresh it |
+| MARCOM Course | M:1 to MARCOM Catalogue Entry; each Course Version 0..1; inverse disabled | Conditional | NULL | Visible/editable and required in MARCOM mode; new selection filter Entry.Active?=TRUE with usable Current Release; retain inactive existing selection on unchanged saves; hidden/cleared outside MARCOM mode | On Create/Update resolve only when populated and changed (ISCHANGED); initial non-empty Create selection counts as changed; never resolve from a catalogue event |
+| Resolved MARCOM Release | M:1 to MARCOM Content Release; each Course Version 0..1; inverse disabled | Conditional | NULL until eligible MARCOM selection is saved | Read only; required in MARCOM mode before save/activation succeeds; clear outside MARCOM mode | Store the selected Entry's Current Release only under AH-03's populated-and-changed guard; preserve on unchanged saves; owner must equal MARCOM Course |
+| E-learning Package | Native File, one SCORM ZIP; reuse existing execution attachment; size limit unresolved | Conditional | NULL | MANUAL: Author uploads; MARCOM: read only and populated at eligible selection; required before native activation; hidden/cleared when no e-learning | Use only pinned Resolved MARCOM Release.SCORM Package bytes; save package/reference together; no live current-pointer lookup or catalogue-triggered refresh; preserve native history |
 
 Initial values:
 
@@ -519,28 +519,40 @@ No new Training Course Version records are created by loading the provider catal
 
 ## 8. Configuration, handlers, and publication behavior
 
-These are proposed automation contracts, not deployable expressions or verified platform APIs. Use native Action Handlers for synchronous field validation/update and native execution diagnostics. No Event Service, scheduled polling cadence, custom workflow stage, or provider-notification service is introduced. A request-driven propagation batch may be required after validation of tenant limits; it must use the same logic and native diagnostics, not a new business object.
+These are design instructions, not ready-to-paste platform expressions. Use native Action Handlers, audit, and diagnostics. There is no catalogue-to-course update handler, course-version generator, refresh action, update-retry queue, Event Service, or scheduled propagation batch. Earlier AH-04 is removed and must not be configured.
 
 | ID | Mechanism and exact trigger | Behavior and failure boundary |
 |---|---|---|
-| AH-01 | Entry Create/Update Action Handler; watches Producer, Provider Product Code, Provider Course ID, Language, Source Language | Normalize comparison key without altering raw source. Enforce identity uniqueness and freeze existing reconciled identity. Reject key change/collision before commit. Handler-written Product Code Key must not recursively invoke the identity mutation path. |
-| AH-02 | Release Create/Update Action Handler; runs before every creation/update of any field enumerated in section 7.2 | Apply immutability guard to every field/attachment, including direct API edits. Only the validated Publish Release context may stamp Published On. Derive Copyright Year/Month on Copyright Text change, Quantity Discounts Available? on Source Discount Indicator change, and Package Digest on SCORM Package change. Derived-field writes cannot retrigger derivation. Validate title/taxonomy/owner rules; refresh Entry.Display Field if this is the current or chosen draft display release. |
-| CMD-01 | Explicit Publish Release command, Administrator only; not a workflow transition | Recheck actor, lock Entry/release, validate complete package and metadata, freeze release, set Current Release, then request propagation. Follow ordered steps below. Errors before catalogue commit leave pointer and release publication unchanged. |
-| AH-03 | Course Version Create/Update Action Handler; watches Has E-learning?, E-learning Source, MARCOM Course | Enforce section 7.9 conditions. In MARCOM mode, lock/recheck selected Entry.Current Release, validate ownership/readiness, and populate Resolved MARCOM Release and E-learning Package together. Internal writes to these outputs do not invoke another source-switch cycle. Reject invalid selection before saving inconsistent content. |
-| AH-04 | Entry Current Release change through CMD-01 only | Enumerate Course Versions where Source.Code=MARCOM and MARCOM Course is exactly this Entry; apply AH-03 resolution checking that the record has not changed since it was read. No unrelated course or language is selected. Skip an already matching release/package. Native diagnostics identify per-course failure and permit authorized retry. |
+| AH-01 | Entry Create/Update; watches Producer, Provider Product Code, Provider Course ID, Language, Source Language | Preserve raw values, populate Product Code Key, enforce identity uniqueness/freeze, prevent recursion. |
+| AH-02 | Release Create/Update; before every change to any section 7.2 field | Protect published fields/assets through UI/API; trusted CMD-01 alone can set Published On. Derive copyright parts, discount Boolean, and file checksum from their specified inputs. Refresh Entry.Display Field from the chosen current/draft release using Language.Name. Never write Course Versions. |
+| CMD-01 | Administrator-only Publish Release command; not a workflow action | Validate and freeze a release, stamp Published On once, and set Entry.Current Release as one catalogue change. Update Entry display only. Do not create, refresh, or enqueue a Training Course Version. |
+| AH-03 | Course Version Create and Update; resolve package only when MARCOM Course is non-null and changed (ISCHANGED) | Initial non-empty Create selection is the initial change. Resolve a usable Current Release of the selected Entry and save its exact reference/file together. An unchanged selection preserves the pinned pair without rereading latest content. Internal output-field writes must not retrigger resolution. |
 
-CMD-01 ordered behavior:
+### 8.1 Publish Release
 
-1. Validate current Administrator membership and native access to Entry, release, and assets. Use the platform's supported record lock or check for intervening edits; reject a stale form with a refresh-and-retry message.
-2. Validate Entry.Active?=TRUE, all three taxonomy references active for this new publication, matching Catalogue Entry, required metadata, correctly matched SCORM file contents and checksum, and recorded decisions for source cells that have no mapped field. A filename alone is insufficient. Verify representative package compatibility separately; document any approved validation evidence using existing native mechanisms.
-3. If the release is already published and already current, treat the operation as retry-safe; do not restamp Published On. A published older release may be explicitly made current by an authorized Administrator after validation, providing controlled rollback without editing old bytes.
-4. In one catalogue transaction, set Published On when first publishing and set Entry.Current Release. Do not claim transaction support until tenant validation; if unavailable, use a supported atomic mechanism before release. Refresh Entry.Display Field from the newly current release.
-5. After catalogue commit, request AH-04 propagation. Catalogue publication and per-course updates are distinct consistency boundaries: each course package/reference pair must commit together. A partial cascade does not erase the successfully published release or pretend every course succeeded.
-6. Report failed native course IDs, preserve their previous working package/reference pair, and let Administrator retry propagation against the **current** pointer. Before each write, recheck that the Entry is active and still points to the intended release; deactivation stops new propagation without changing existing packages, and stale work must re-resolve or stop. New assignments/launches remain governed by Training Management; no catalogue attempt/completion behavior is added.
+1. Recheck Administrator membership and access; use the supplied supported lock/change check for the Entry and release.
+2. Validate Entry.Active?=TRUE, active taxonomy references for new publication, owner, required metadata, SCORM bytes/checksum, and recorded source-cell decisions. A filename alone is not usable content.
+3. For first publication, stamp Published On and set Entry.Current Release together. If already published/current, retain the existing timestamp. An authorized rollback may select a retained published release without editing its bytes.
+4. Refresh Catalogue Entry.Display Field using Language.Name. On failure, preserve the previous catalogue pointer/publication state. Native diagnostics record the failure. No course records are selected or updated; a later catalogue change affects future eligible selections only.
 
-Changing the current package does not itself reschedule requirements, alter recurrence, or approve rewriting a native immutable course version. **Release gate:** verify whether the existing Course Version can be updated through a supported content-update operation. If immutable native versions require a successor, identify the native successor-and-reference-update mechanism before implementing AH-04; do not bypass native controls or silently reduce propagation scope. This tenant-dependent choice is unresolved, as ADR-017 states.
+### 8.2 Guarded course selection and pinning
 
-Source-change handling is an application form validation/confirmation interaction, not an approval workflow. Reject unconfirmed overwrites. On confirmed MARCOM-to-MANUAL change, clear MARCOM Course, Resolved MARCOM Release, and the generated package; require an explicit manual upload. MANUAL-to-MARCOM replaces the manual package only after the new release resolves successfully. Selecting another MARCOM Entry replaces the package/reference pair atomically. Has E-learning?=FALSE clears only course content configuration through native permitted editing; the existing application retains learner history.
+The user supplied `ISCHANGED` as the required change-detection condition. Configure that condition against the actual MARCOM Course field on both Create and Update; do not invent its internal name or function argument syntax. Confirm that an initially populated relationship on Create is treated as changed. Native Course Version permissions remain applicable.
+
+| Save/event | Required result |
+|---|---|
+| Create with a non-empty MARCOM Course selection | Capture that Entry's usable Current Release and file at this save; disregard any inherited/copied resolved output in favor of the initial selected release. |
+| Update with a changed, non-empty MARCOM Course | Validate new selection and replace resolved release/file together; preserve previously saved values if validation/save fails. |
+| Update with the same MARCOM Course | Preserve the existing pinned pair, even if a newer catalogue release exists or the selected Entry was later deactivated. Do not run a latest-content lookup. |
+| MARCOM Course cleared or source changed to MANUAL/no e-learning | Apply the existing explicit source-change/confirmation rules and clear the no-longer-applicable MARCOM references; do not invoke non-null resolution. |
+| Catalogue import, package upload, release publication, or Current Release change | No Training Course Version creation/update and no package refresh. |
+| User adopts a newer release of the same MARCOM course | User manually creates a new Training Course Version and selects the MARCOM Course; the initial selection captures latest at its save. |
+
+The stable MARCOM Course selector identifies the provider product; Resolved MARCOM Release identifies the exact retained version. Package execution must use only the pinned release's file, not an attachment resolved through Entry.Current Release at launch. Copy/associate through the verified native mechanism that preserves the original bytes.
+
+Eligible source resolution validates MARCOM mode, selection ownership, active/usable new selection, and the supported record-change protection before saving release/file together. If Current Release changes while resolution is being saved, use the supplied consistency mechanism to capture a valid single release/file pair; never leave a mismatched pair. No background retry may refresh already saved courses. Retry of a failed user save is the same guarded operation, not a catalogue update service.
+
+MANUAL uploads and confirmed source clearing remain as specified in section 7.9. Switching modes cannot bypass the populated-and-changed selection guard. Selecting a different Entry is a real relationship change; an ordinary save or source-only change with the same populated Entry is not. To adopt a newer release for the same Entry, create a new Course Version manually. Existing Training Management retains learner routing to native Course Versions, history, recurrence, and completion behavior; the stated latest-version behavior is supplied by the user, not a new catalogue feature.
 
 ## 9. Source mapping and load contract
 
@@ -564,12 +576,12 @@ Supporting ADR-018 retains the non-personal-data boundary, development-build/tes
 
 | Responsibility | Permitted behavior | Enforcement |
 |---|---|---|
-| Administrator | Manage concrete catalogue records, Entries, drafts, publication, current pointer through command, and retry | Object/field/action permissions plus actor recheck at command time; native audit; published release immutability applies even to ordinary administration |
-| Integration | Import mapped source data/assets and run authorized propagation | Limited object/field allowlist; same validation as UI; no identity overwrite or unrestricted publication; temporary import credential revoked after session per ADR-018 |
+| Administrator | Manage concrete catalogue records, Entries, drafts, publication and current pointer through command | Object/field/action permissions plus actor recheck at command time; native audit; published release immutability applies even to ordinary administration |
+| Integration | Import mapped catalogue source data/assets only through permitted fields | Limited object/field allowlist and native validation; no automatic Course Version creation, pinned-content updates, or unrestricted publication |
 | Author | Browse permitted catalogue metadata, select usable Entry, maintain manual package when allowed | No direct mutation of provider packages, Current Release, or Resolved MARCOM Release; native course-version edit rules |
 | Learner | Execute assigned course through existing Training Management | Existing course/attachment permissions; catalogue administrative records are not automatically exposed |
 
-Use reports on the object that holds the relationship for release history, current package readiness, product-code/language/industry/topic catalogue browsing, aliases with ambiguous matches, and Course Versions whose Resolved MARCOM Release differs from MARCOM Course.Current Release. No inverse consumer grid is enabled on a catalogue. Restrict raw provider-hosted descriptions and reference pricing to appropriate administration views; do not turn reference price into a learner purchasing flow. Test direct URLs, API edits, exports, attachment access, and relationship navigation as well as forms.
+Use source-object reports for catalogue browsing, release history, package readiness, alias ambiguity, and Course Versions whose pinned release differs from the Entry's current release. The last comparison is **catalogue-content difference information for manual adoption**, not a failed-update queue. It must not create or refresh course versions or expose an automatic-refresh action. Keep inverse consumers disabled and apply the specified role/attachment visibility.
 
 ## 11. Change summary and impacts
 
@@ -580,11 +592,11 @@ Because no baseline metadata is available, “Add/reuse” means a target requir
 | MCC-CH01 | Add/reuse | Entry, Release, Alias | Unverified | Stable identity, retained package releases, former filenames | MCC-001/002/004/005 | Separate provider content responsibilities | High in logical need; implementation unresolved |
 | MCC-CH02 | Add/reuse | Classification, Industry, Topic | User requires separate objects; tenant unknown | Three independent localizable catalogues, complete seeds | MCC-003/009 | Reuse/reference values rather than text selectors | High |
 | MCC-CH03 | Add/reuse | Language, E-learning Content Source | Native equivalents unknown | Two normalized selector catalogues | MCC-002/006/013 | Stable codes and localization | Proposed technical refinement |
-| MCC-CH04 | Modify/reuse | Five Course Version fields | Existing application; fields unknown | Manual/library selection and resolved package pair | MCC-006/007/008 | Preserve stable source selection while distributing current bytes | High in behavior; native metadata unresolved |
+| MCC-CH04 | Modify/reuse | Five Course Version fields | Existing native metadata unverified | Pin the selected release/file on guarded Create/Update | MCC-006/007/008 | Training team manually controls adoption | User-directed behavior; syntax/mapping unresolved |
 | MCC-CH05 | No structural change | Existing learner evidence | Already built per user | Remains solely in Training Management | MCC-010 | Avoid duplicate functionality | User-confirmed scope |
-| MCC-CH06 | Add/reuse | Handlers and Publish Release command | Unknown | Native validation, explicit current pointer, retry-safe cascade | MCC-005/008/012/013 | Consistent ownership, immutability, and failure visibility | Proposed; prototype required |
+| MCC-CH06 | Add/reuse | AH-01/02/03 and CMD-01 | Unknown tenant mapping | Catalogue publication plus guarded course selection only | MCC-005/008/012/013 | Remove AH-04 and automatic course creation/update | Direction resolved; native syntax/mechanics need confirmation |
 
-No shared base-object changes or inheritance migrations are proposed. Existing taxonomies found in a tenant must be checked for semantic equivalence before reuse; do not reparent external objects. Reports/imports must use new stable reference identities and mapping Codes. Package storage and retention volume increase with releases; native file copy/reference behavior must preserve bytes without unmanaged duplication. Manual-upload courses must continue to function and must not receive MARCOM propagation.
+No shared base-object changes or inheritance migrations are proposed. Reuse semantically equivalent native catalogues only under their owning authority. Retained releases/files must remain accessible to pinned course references. Catalogue release/current-pointer changes do not alter existing course content; a training user manually creates a new Course Version to adopt new content. Manual uploads remain independent.
 
 ## 12. Requirement traceability
 
@@ -598,8 +610,8 @@ Statuses describe the **design**, never implementation completion.
 | MCC-004 | Release and Alias | Full column mappings, separate formats/files, raw provenance | Satisfied |
 | MCC-005 | Entry.Current Release and Release | Explicit publication/current pointer and immutable bytes | Requires confirmation |
 | MCC-006 | Content Source and Course Version | Conditional manual/MARCOM fields with clearing/replacement rules | Satisfied |
-| MCC-007 | Course Version and AH-03 | Resolve exact current release/package pair | Requires confirmation |
-| MCC-008 | AH-04 and native diagnostics | Scope by Entry identity; saving each course's package and release reference together, with safe retries | Requires confirmation |
+| MCC-007 | Course Version and AH-03 | Store exact selection-time release/file and retain it on unchanged saves | Requires confirmation |
+| MCC-008 | AH-03; removed AH-04 | Non-null/changed guard; no catalogue-driven Course Version creation/update | Requires confirmation |
 | MCC-009 | Active? fields and selection filters | Block new use; preserve existing references/history | Satisfied |
 | MCC-010 | Existing Training Management | No new learner-evidence objects/fields | Satisfied |
 | MCC-011 | Initial data and import contract | Active-sheet counts, complete taxonomy seeds, alias/unmapped exceptions | Satisfied |
@@ -618,19 +630,19 @@ Statuses describe the **design**, never implementation completion.
 | AC-06 — Draft readiness | Metadata-only Entry/draft can be browsed for mapping; it cannot supply a runnable package or become current from filename alone. |
 | AC-07 — Publication | Reject missing assets, invalid ownership, inactive new taxonomy selections, unresolved anomalies, stale actor/concurrency; no partial catalogue commit. Published bytes/metadata cannot be edited; rollback selects an old valid release without modifying it. |
 | AC-08 — Manual mode | Manual upload works through existing Training Management; MARCOM fields clear on confirmed source change; no library update overwrites a manual course. |
-| AC-09 — MARCOM mode | Selecting usable Entry supplies matching SCORM bytes and exact Resolved MARCOM Release; another industry/language with shared ID is never substituted. |
-| AC-10 — Cascade/retry | All Course Versions selecting the changed Entry are updated through the supported native mechanism; per-course package/reference pair is atomic. Simulate partial failure and concurrent republish; prior working pair remains on failed rows and retry converges to the current release without duplicates. |
-| AC-11 — Deactivation | Inactive Entry/taxonomy/selector cannot be newly selected as specified; existing references and packages remain intact. No deactivation is inferred from excluded/missing source rows. |
+| AC-09 — MARCOM pinning | Create with populated MARCOM Course resolves current release/file; Update with a different populated selection resolves it; outputs belong to the same Entry/release. |
+| AC-10 — Controlled adoption | Publish/import a newer MARCOM release: existing course count, pinned reference, and package remain unchanged. An unrelated save with the same selection does not refresh it. A manually created Course Version selecting the same Entry captures the new current release. Include initial Create ISCHANGED and generated-field recursion checks. |
+| AC-11 — Deactivation | Inactive values block new selections/publication as specified, but unchanged saved course references/files remain valid and unrefreshed. No deactivation is inferred from excluded/missing source rows. |
 | AC-12 — Learner regression | Existing attempts, completion reporting, history, recurrence, and qualifications behave under native Training Management rules after package changes; no new catalogue evidence schema is created. |
 | AC-13 — SCORM behavior | Representative actual English/Spanish packages launch, resume, demonstrate provider-described chapter test-out where applicable, and report completion/results correctly in the configured player. Provider metadata alone cannot pass this test. |
-| AC-14 — Access and retention | Unauthorized UI/API/direct URL/attachment changes fail; authorized publication and propagation have native actor/time/error evidence; old package digests/bytes remain retrievable. |
+| AC-14 — Access and retention | Unauthorized edits to published assets or pinned outputs fail; native audit retains catalogue publication and eligible course-selection results; retained pinned bytes/digests remain retrievable. |
 | AC-15 — Field/seed reconciliation | Every designed field is in exactly one owning table; all nine inventory objects have separate numbered sections; all concrete catalogue seed records have individual rows; no unverified executable formulas. |
 
 ## 14. Validation results and release gates
 
 Document-level validation passed: all nine inventory objects have their own numbered field-contract section; 80 field rows use the required six-column format with one field per row and explicit requiredness; all 11 relationship rows state targets/cardinality and inverse disabled and match the 11 diagram associations. All source-derived taxonomy names match the active-tab union exactly (1 Classification, 11 Industries, 142 Topics), with unique proposed Codes and individual seed rows. Selector seeds are defined under their owning objects. Local file links and Git whitespace checks passed. Mermaid structure was checked against the field relationships; no graphical rendering is claimed.
 
-Runtime validation has **not been performed**. Object IDs, actual field names/types/limits, existing inheritance, native equivalent catalogue ownership, file operations, handler invocation/recursion, transaction/locking support, and Course Version update strategy require tenant confirmation.
+Runtime validation has **not been performed**. Object IDs, actual field names/types/limits, existing inheritance, native equivalent catalogue ownership, file operations, handler invocation/recursion, transaction/locking support, and Create/Update change detection require tenant confirmation.
 
 Structural review: no proposed inheritance parents/cycles, no M:N/junction requirement, no designed inverse grid, no custom audit/run/state/evidence object, and no executable formula is claimed. Required Release owner references are creatable because Entry.Current Release is nullable. Alias owner/source-release consistency and Current Release ownership require explicit validation. Display names and diagram names are matched in section 5; the field tables provide the full definitions where the diagram omits ordinary fields.
 
@@ -638,7 +650,9 @@ Release gates:
 
 1. Verify/reuse native capability and map the proposed field contract to real metadata; verify composite uniqueness, localized Name behavior, and inverse suppression.
 2. Confirm supported draft-to-immutable release and atomic current-pointer transaction, asset digest/copy/reference behavior, and permission enforcement.
-3. Resolve the supported course-version content update/successor mechanism and demonstrate complete retry-safe propagation, including stale-current-pointer protection.
+3. Confirm exact Create/Update ISCHANGED behavior for MARCOM Course and demonstrate that an unchanged selection/catalogue event cannot refresh or create Course Versions. Verify native package association preserves the pinned file; no automatic successor-version/update mechanism is required.
 4. Resolve source anomalies/actual package availability and run representative compatibility and learner-regression tests. Confirm publisher responsibility; provider release notifications remain outside this implementation until a separate mechanism is established.
 
 The proposed contract is complete as a logical field design; it is not an implementation-ready tenant configuration until these named metadata/execution gates are closed. ADR statuses and approved baseline history are unchanged.
+
+Revision evidence: [user-provided update decision](<raw artifacts/2026-10-23-marcom-course-version-pinning-decision.md>), Supplied decision paragraphs 2–5; [pinning reconciliation](ADR-RECONCILIATION-2026-10-23-PINNING.md). Earlier automatic-distribution requirements and AH-04 are replaced, not implemented. No field was added/removed by this revision.

@@ -1,5 +1,7 @@
 # ADR Reconciliation Plan
 
+Historical reconciliation snapshot: subsequent [pinning reconciliation](ADR-RECONCILIATION-2026-10-23-PINNING.md) replaces automatic course-content propagation with user-controlled adoption and a specific stored release/file. Earlier findings below are historical, not the current update requirement.
+
 Review date: 2026-10-23. Source: [MARCOM Requirements Knowledge Transfer, October 23](<raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>) (hereafter **KT**). This is a proposed repository change set, not client approval or evidence of implementation. Existing statuses remain authoritative.
 
 This plan records the call-only reconciliation. The subsequent [metadata follow-up plan](ADR-RECONCILIATION-2026-10-23-METADATA.md) refines ADR-013/016/017/018 and narrows several gaps below; consult it for the current proposed data model.
@@ -60,5 +62,5 @@ The complete proposed bodies are saved separately for review:
 
 - [ADR-013 — revised draft](ADRs/ADR-013-version-training-content-for-audit-traceability.md)
 - [ADR-016 — MARCOM catalogue](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md)
-- [ADR-017 — linked package updates](ADRs/ADR-017-source-and-refresh-course-packages-from-the-marcom-catalogue.md)
+- [ADR-017 — linked package updates](ADRs/ADR-017-pin-marcom-content-to-training-course-versions.md)
 - [ADR-018 — initial catalogue load](ADRs/ADR-018-constrain-api-assisted-marcom-catalogue-loading.md)

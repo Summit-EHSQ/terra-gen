@@ -4,6 +4,13 @@ This file records material changes to the Phase 1 architecture decision records 
 
 ## 2026-10-23
 
+### MARCOM course updates — pin content and adopt manually
+
+* Recorded the [user-provided update decision](<training management/raw artifacts/2026-10-23-marcom-course-version-pinning-decision.md>) and [pinning reconciliation](<training management/ADR-RECONCILIATION-2026-10-23-PINNING.md>), covering all 18 existing Training Management ADRs and three grounded decision candidates.
+* Revised ADR-013/016/017/018 and renamed ADR-017 to **Pin MARCOM Content to Training Course Versions**, retaining its ID and proposed status. A Course Version captures the specific current MARCOM release/file only on Create/Update with a populated, changed MARCOM Course selection; ordinary saves retain the existing pair.
+* Removed catalogue-driven course updates and automatic Course Version creation. New catalogue content is adopted when the training user manually creates a Course Version and selects the MARCOM Course. Native learner-history functionality remains in Training Management.
+* Revised the specification, reports, implementation plan, indexes, and affected open questions. Retired AH-04 and CFG-15 without reusing their IDs; the plan now has 20 active tasks. Retained all 80 field definitions, nine object definitions, 11 relationships, catalogue seed values, accepted ADRs, and original raw evidence. Earlier change-log/reconciliation descriptions remain historical.
+
 ### MARCOM Course Catalog implementation plan
 
 * Added the [implementation plan](<training management/MARCOM-COURSE-CATALOG-IMPLEMENTATION-PLAN.md>) for the current technical specification, retaining Display Field's use of MARCOM Language.Name and a literal pipe separator.
