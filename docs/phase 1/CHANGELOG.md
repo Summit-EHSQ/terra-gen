@@ -2,6 +2,17 @@
 
 This file records material changes to the Phase 1 architecture decision records and their supporting source artifacts. Dates identify when the documentation was updated; source meeting dates are identified separately.
 
+## 2026-10-28
+
+### Training Setup Q&A — proposed ADR additions and migration clarification
+
+* Registered the supplied **Terra-Gen Training Setup Q&A, October 28, 2026, 3:30 PM ET** transcript with meeting metadata and identical copies in Employee Management and Training Management; the supplied transcript body is preserved unchanged.
+* Saved the [October 28 reconciliation plan](<training management/ADR-RECONCILIATION-2026-10-28.md>), accounting for all 24 existing Employee/Training ADRs, eight related Platform Administration ADRs, and three new candidates.
+* Added proposed Training Management ADR-019 for independent position, location, and individual assignment sources; ADR-020 for a rehearsed cumulative production history load; and ADR-021 for qualification deferral pending program and scope reassessment.
+* Revised proposed ADR-012 to connect TPC replacement with historical-reference prerequisites, migration rehearsal, and the distinction between imported completions and current applicability. Preserved its original date and status.
+* Retained accepted due-date, pre-start, recurrence, and qualification decisions. Recorded location-audience uncertainty, incomplete exception counts, provisional dates/commercial evidence, and pre-existing Employee ADR/specification conflicts without rewriting accepted history.
+* Updated source links, decision registers, open work in the component overview, and current documentation totals. Phase 1 now has 63 active ADRs (36 accepted, 27 proposed), plus one superseded historical record. Older totals below remain historical snapshots.
+
 ## 2026-10-23
 
 ### MARCOM course updates — pin content and adopt manually

@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "scope": [
+    "IMP-01"
+  ],
+  "reviewKind": "scoped-revision",
+  "scopeReason": "The user requested revision of IMP-01 and the planner skill. The remaining 33 tasks have not been redrafted or certified against this new content contract.",
+  "unchangedTaskHashes": {
+    "IMP-03": "a1e6361c4280f289bef50709d222b09526e85d8509dd4082ffbf27df40b381ab",
+    "IMP-04": "b91dc35b85fa730a43bc76bc09024f5ab531c7f7d6ed233a6ea3e2ea4ef62c27",
+    "IMP-05": "1b9b1ec45c0a1d2ee41770e0f2578ff177f86f5733e96ec160e63d496f950563",
+    "IMP-08": "6f042387883e454a8f3c6ac1def3bbd65f497f6f0bffb6ca66435753b01c4b52",
+    "IMP-09": "fafb89b35752fcb167c39ad4e333e55f937e4a23f9ce57f57d2dcd17b7216b88",
+    "IMP-10": "e4a70e02947f3726c4c31cf29a29590026b03c99f3e06f61111fbd4c4e5e8fcf",
+    "IMP-14": "1b5278269a39c52da7e7216b8dc6e99eaaf656a8973de6f0a106231ba846f13c",
+    "IMP-16": "560e8d735922c595ed7c4c2b9e6fe289a5388bb5ccc0a54acaf18b2337968702",
+    "IMP-20": "91ccf0a08b9719d81c4a2154bb315784e12864f02217ad733e14142865e25dff",
+    "IMP-24": "805e9e3176120a3175f67c26921ce89ab7e56b5729c9e8e8fa2999e25cf6946b",
+    "IMP-28": "ba5f166114f1d7055243bc181b31514792325bb5f0007924f67a3499bd4e5f7f",
+    "IMP-30": "5e22ffa40d4bbe1a51b6d805cae8bcac3a67ee4c5991f9f61649664a621a4adf",
+    "IMP-31": "80b630780b65dd95f245d6c677f728a527d41271372b579ac7fdfe5148447480",
+    "IMP-34": "06d8ea90b46e2cfa1581102b33feb7951d4ad9de6ecc618550578cff1c0bb387",
+    "IMP-35": "021004213d1d1c840229e03914b1463c95638acade340bdc0c29ffb8144c665a",
+    "IMP-36": "1fdbfb4d226f50644ab69424ec7219145e92886e77b5bd2e34f91d7998c6b118",
+    "IMP-39": "835db9b68f12563493cbff94b98c1a8576c3af2684fbcbce62e8841470f6d657",
+    "IMP-40": "7e3f388ad75a1126f5dbcd520fb2b8ff135759ba3f25e3e9e921894f111da31f",
+    "IMP-41": "c15793f5ee1171946a5c0e5d7537a063c875bedbb4a7cbafd2ed6496b75facbf",
+    "IMP-42": "3c023f33dc4f5af8744498d19e7afd5da2010b0abd7ec965b6123863e0c0e7be",
+    "IMP-43": "31326b8a15a84e81163888ee6bc858d6069e02b859edd5249388e370213d1dcf",
+    "IMP-44": "61bc1f3fbfeac0624d61da858c1132ea7aa674f2e5269eed33ea786f07005032",
+    "IMP-45": "f66875a5e951e59d1552cb703f65bb95195b1ff0e847ac5197e87e3408ac6fb9",
+    "IMP-47": "2472e0ba519a205777ac43ffa09ca0544611578e4af2c0d4a4c7fe73c4daf0ce",
+    "IMP-50": "9f73c1def2c6adf38062c1249d78f63b56f24acdfa6a26aa5baca9182f484365",
+    "IMP-51": "2678048c469a6dd1695fbc59f7a4bc9e2b99ef75f02834d25f763a2cefddca82",
+    "IMP-52": "7d0259cca6ed8ddb2209441361e3edd65b6f660e75345c83ec3e06ae514c446a",
+    "IMP-53": "b5f27071f3973e56e5f0c3bc2d00b48e374a82c0907de2f3e44eadccdd74b8a5",
+    "IMP-54": "c247dadec56c6304de34d2132df125657eba184f67ad291fb8c61cc638d7a685",
+    "IMP-55": "f49395fe46637e6cb081d9a3f52ae1019b3e164b5bf5785de2374076f7d12db9",
+    "IMP-56": "8887222b9d298972623686202a4aad5ac4355010c29b56ac65abafe5934e7e7c",
+    "IMP-57": "4e7e353268dec8920ea9bc179e9253fef8c6cc8b358c7b78d82367e60a2803e5",
+    "IMP-58": "b19781e6833c7c7feb54c2dd2c739b8782f9c54acd6af6658c8ccba79f617d57"
+  },
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "taskHash": "f75b70bbe557f52ccebff15a83ee5813d7e6bc93f0debfcf84188decbe820d3b",
+      "renderedTaskHash": "73de65389668adc9eefb012f5f3382bf3df49492a842d88b2dda345ccf29f2a8",
+      "evidenceReview": "Compared all four new object definitions, sixteen field declarations and fourteen seed records with the current technical specification and target-model.json. These are proposed new objects without fabricated GUIDs, not modifications to installed lists. New-list access rules are reproduced in full. Removed the existing-route/decision/equipment/Corrective identification exercise, its acceptance criterion and G03 blocker; no existing options are being changed by this task. Reviewed the rendered detailed assignment with references hidden. Administrator and system principal identities remain explicitly missing and block only permission bindings. This review does not claim those identities are supplied or that any tenant behavior has been tested.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create four independent reference lists, their sixteen fields, fourteen named entries and the specified access permissions.",
+          "mechanism": "Four new Inspections objects, their fields, entries and object access configuration"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Inspection Source as a new independent object in Inspections.",
+          "mechanism": "Insp_InspectionSourceObject object definition"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Response Outcome as a new independent object in Inspections.",
+          "mechanism": "Insp_ResponseOutcomeObject object definition"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Inspection Outcome as a new independent object in Inspections.",
+          "mechanism": "Insp_OutcomeObject object definition"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Inspection Classification as a new independent object in Inspections.",
+          "mechanism": "Insp_ClassificationObject object definition"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Set the listed localization, abstract, workflow, Location, security, audit, attachment, display and sort parameters on each new object.",
+          "mechanism": "Native object parameters and generated detail/inventory views on all four objects"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add mandatory non-localizable unique Code Text fields with maximum length 100 and no default.",
+          "mechanism": "Code field definition on each of the four new objects"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add mandatory localizable Name Text fields with maximum length 255 and no default.",
+          "mechanism": "Name field definition on each of the four new objects"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add mandatory Active Yes/No fields defaulting TRUE, with the stated availability semantics for reference-list values.",
+          "mechanism": "Active field definition and reference-list value availability settings"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add optional Sort Float fields with no default and use them for ascending ordering.",
+          "mechanism": "Sort field definitions and OrderProperty on the four new objects"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Create the Internal source entry with Code INTERNAL, Active TRUE and Sort 10.",
+          "mechanism": "Insp_InspectionSourceObject reference entry INTERNAL"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Create the External source entry with Code EXTERNAL, Active TRUE and Sort 20.",
+          "mechanism": "Insp_InspectionSourceObject reference entry EXTERNAL"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Create the Unanswered response entry with Code UNANSWERED, Active TRUE and Sort 10.",
+          "mechanism": "Insp_ResponseOutcomeObject reference entry UNANSWERED"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Create the Not applicable response entry with Code NOT_APPLICABLE, Active TRUE and Sort 20.",
+          "mechanism": "Insp_ResponseOutcomeObject reference entry NOT_APPLICABLE"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Create the Informational response entry with Code INFORMATIONAL, Active TRUE and Sort 30.",
+          "mechanism": "Insp_ResponseOutcomeObject reference entry INFORMATIONAL"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Create the Negative response entry with Code NEGATIVE, Active TRUE and Sort 40.",
+          "mechanism": "Insp_ResponseOutcomeObject reference entry NEGATIVE"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Create the Positive response entry with Code POSITIVE, Active TRUE and Sort 50.",
+          "mechanism": "Insp_ResponseOutcomeObject reference entry POSITIVE"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Create the Not assessed inspection outcome with Code NOT_ASSESSED, Active TRUE and Sort 10.",
+          "mechanism": "Insp_OutcomeObject reference entry NOT_ASSESSED"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Create the Pass inspection outcome with Code PASS, Active TRUE and Sort 20.",
+          "mechanism": "Insp_OutcomeObject reference entry PASS"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Create the Nonconforming inspection outcome with Code NONCONFORMING, Active TRUE and Sort 30.",
+          "mechanism": "Insp_OutcomeObject reference entry NONCONFORMING"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Create the Not applicable inspection outcome with Code NOT_APPLICABLE, Active TRUE and Sort 40.",
+          "mechanism": "Insp_OutcomeObject reference entry NOT_APPLICABLE"
+        },
+        {
+          "path": "configurationRows.20",
+          "requiredChange": "Create the In progress classification with Code IN_PROGRESS, Active TRUE and Sort 10.",
+          "mechanism": "Insp_ClassificationObject reference entry IN_PROGRESS"
+        },
+        {
+          "path": "configurationRows.21",
+          "requiredChange": "Create the Complete with open actions classification with Code COMPLETE_OPEN_ACTIONS, Active TRUE and Sort 20.",
+          "mechanism": "Insp_ClassificationObject reference entry COMPLETE_OPEN_ACTIONS"
+        },
+        {
+          "path": "configurationRows.22",
+          "requiredChange": "Create the Complete with all actions closed classification with Code COMPLETE_RESOLVED, Active TRUE and Sort 30.",
+          "mechanism": "Insp_ClassificationObject reference entry COMPLETE_RESOLVED"
+        },
+        {
+          "path": "configurationRows.23",
+          "requiredChange": "Grant ordinary users read-only access to the four newly created lists.",
+          "mechanism": "New reference-object access rights for ordinary application users"
+        },
+        {
+          "path": "configurationRows.24",
+          "requiredChange": "Grant reference maintenance rights to the supplied authorized program-administrator groups.",
+          "mechanism": "New reference-object maintenance rights; actual group identities remain a permission-only supplied input"
+        },
+        {
+          "path": "configurationRows.25",
+          "requiredChange": "Grant system processing read and reference-assignment rights to the newly created lists.",
+          "mechanism": "New reference-object access rights bound to the supplied system-processing security context"
+        }
+      ]
+    }
+  ]
+}

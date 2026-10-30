@@ -1,0 +1,209 @@
+{
+  "packageSha256": "e8045aefb2a54503bfa59584b9eb9de137d9c4a7e959ff84acf35f65d07692ef",
+  "graphs": 19,
+  "items": 972,
+  "objects": 87,
+  "includedObjects": 43,
+  "dependencyObjects": 44,
+  "fields": 472,
+  "referenceFields": 175,
+  "relationshipDefinitions": 148,
+  "inheritanceEdges": 35,
+  "duplicateSerializationIds": [],
+  "duplicateRecords": [],
+  "unresolvedSerializationReferences": [],
+  "unresolvedTypes": [],
+  "unresolvedOwners": [],
+  "inheritanceConflicts": [],
+  "inheritanceCycles": [],
+  "shadowedFieldNames": [
+    {
+      "object": "Insp_EquipInspectionObject",
+      "field": "Id",
+      "base": "CLF_ChecklistAnswerObject"
+    }
+  ],
+  "relationshipIssues": [
+    {
+      "relation": "136",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "136",
+      "field": "CAPAs",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "607",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "607",
+      "field": "Tasks",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1099",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1099",
+      "field": "Costs",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1181",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1181",
+      "field": "TeamMembers",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1212",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1212",
+      "field": "Activites",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1265",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1265",
+      "field": "ChildLocations",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1398",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1398",
+      "field": "ProgressNotes",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1619",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1619",
+      "field": "QuestionAnswers",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1714",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1714",
+      "field": "Costs",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1718",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1718",
+      "field": "EventActionPlan",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "1806",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "1806",
+      "field": "Evidence",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "2038",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "2038",
+      "field": "CFWFindings",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "2340",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "2340",
+      "field": "RootCauses",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "2386",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "2386",
+      "field": "RelatedCAR",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "2398",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "2398",
+      "field": "LessonsLearned",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "2413",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "2413",
+      "field": "CauseAnalysis",
+      "issue": "Inverse has no matching exported start-side property"
+    },
+    {
+      "relation": "2634",
+      "issue": "Start-side property count",
+      "count": 0
+    },
+    {
+      "relation": "2634",
+      "field": "CAREvent",
+      "issue": "Inverse has no matching exported start-side property"
+    }
+  ],
+  "parseProblems": [],
+  "fieldSectionCoverage": 87,
+  "fieldRowCoverage": 472,
+  "workflowSchemas": 5,
+  "handlers": 52,
+  "views": 121,
+  "profiles": 65,
+  "formFieldOccurrences": 853,
+  "embeddedReferencesChecked": 25,
+  "embeddedReferenceIssues": [],
+  "formExtractionMethod": "565 base XML-like markup occurrences tokenized; 288 profile occurrences parsed from JSON. Native view fragments are not guaranteed well-formed XML."
+}

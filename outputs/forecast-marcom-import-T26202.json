@@ -1,0 +1,169 @@
+{
+  "project_id": 605488,
+  "parent_company_task_id": 26202,
+  "parent_internal_id": 16953106,
+  "source_plan": "C:\\Users\\DaveMcLean\\OneDrive - Summit EHSQ Inc\\Documents\\GitHub\\terra-gen\\docs\\phase 1\\training management\\MARCOM-COURSE-CATALOG-IMPLEMENTATION-PLAN.md",
+  "source_sha256": "fc4565b6d26ac56e3e4fe23ee480caec7364459326b693ac2d42348e51b2b044",
+  "tasks": [
+    {
+      "plan_id": "CFG-01",
+      "id": 16953798,
+      "company_task_id": 26207,
+      "title": "CFG-01 — Create the Catalogue Objects",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-02",
+      "id": 16953799,
+      "company_task_id": 26208,
+      "title": "CFG-02 — Create the MARCOM Content Objects",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-03",
+      "id": 16953801,
+      "company_task_id": 26209,
+      "title": "CFG-03 — Configure the Catalogue Entry Fields",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-04",
+      "id": 16953802,
+      "company_task_id": 26210,
+      "title": "CFG-04 — Configure the Content Release Fields",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-05",
+      "id": 16953804,
+      "company_task_id": 26211,
+      "title": "CFG-05 — Configure the Previous Filename Fields",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-06",
+      "id": 16953805,
+      "company_task_id": 26212,
+      "title": "CFG-06 — Configure the Course Version Fields",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-07",
+      "id": 16953806,
+      "company_task_id": 26213,
+      "title": "CFG-07 — Set Up the Initial Catalogue Values",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-08",
+      "id": 16953808,
+      "company_task_id": 26214,
+      "title": "CFG-08 — Configure the MARCOM Administration Forms",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-09",
+      "id": 16953809,
+      "company_task_id": 26215,
+      "title": "CFG-09 — Configure the Course Version Form",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-10",
+      "id": 16953811,
+      "company_task_id": 26216,
+      "title": "CFG-10 — Configure Entry and Filename Rules",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-11",
+      "id": 16953812,
+      "company_task_id": 26217,
+      "title": "CFG-11 — Configure Release Validation and Protection",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-12",
+      "id": 16953813,
+      "company_task_id": 26218,
+      "title": "CFG-12 — Configure File Checksums and Source Details",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-13",
+      "id": 16953814,
+      "company_task_id": 26219,
+      "title": "CFG-13 — Configure Course Content Selection",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-14",
+      "id": 16953815,
+      "company_task_id": 26220,
+      "title": "CFG-14 — Configure Publish Release",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-16",
+      "id": 16953816,
+      "company_task_id": 26221,
+      "title": "CFG-16 — Configure Basic MARCOM Permissions",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-17",
+      "id": 16953817,
+      "company_task_id": 26222,
+      "title": "CFG-17 — Configure Protected Record and File Access",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-18",
+      "id": 16953818,
+      "company_task_id": 26223,
+      "title": "CFG-18 — Configure the MARCOM Import Mappings",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-19",
+      "id": 16953819,
+      "company_task_id": 26224,
+      "title": "CFG-19 — Configure Repeatable Metadata Import",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-20",
+      "id": 16953820,
+      "company_task_id": 26225,
+      "title": "CFG-20 — Configure the Catalogue Reports",
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-21",
+      "id": 16953822,
+      "company_task_id": 26226,
+      "title": "CFG-21 — Configure the Follow-up Reports",
+      "operation": "created",
+      "verified": true
+    }
+  ]
+}

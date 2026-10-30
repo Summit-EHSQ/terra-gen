@@ -48,6 +48,7 @@ The [Workflow section](ADR-001-004-technical-specification-employee-provisioning
 
 ## Source Evidence
 
+- [Training Setup Q&A, October 28, 2026, 3:30 PM ET](<raw artifacts/meeting_transcripts/2026-10-28-terra-gen-training-setup-qa.md>) — identical source copy in Training Management. The [October 28 reconciliation](<../training management/ADR-RECONCILIATION-2026-10-28.md>) records assignment/location dependencies and outstanding formal reconciliation of Employee ADRs with the accepted specification; it does not change Employee ADR statuses.
 - [Design Workshop Day 1 — Morning, September 15, 2026](<raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-morning.md>)
 - [Design Workshop Day 2 — Morning, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>)
 - [Design Workshop Day 2 — Afternoon, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-afternoon.md>)

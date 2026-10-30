@@ -1,0 +1,9 @@
+{
+  "taskSummaryAndDetails": 63,
+  "predecessorAndDiagramEdges": 191,
+  "changedFieldCoverage": 184,
+  "handlerCoverage": 52,
+  "viewProfileCoverage": 186,
+  "sourceFilesUnchanged": true,
+  "errors": []
+}

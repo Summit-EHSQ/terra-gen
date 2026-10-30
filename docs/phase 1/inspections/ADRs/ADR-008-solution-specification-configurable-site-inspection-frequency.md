@@ -3,7 +3,7 @@ status: proposed
 related_adr: ADR-008-track-configurable-site-inspection-frequency.md
 solution: Configurable Operational Activity Targets
 initial_source_application: Inspections
-last_revised: 2026-10-21
+last_revised: 2026-10-27
 ---
 
 # Solution Specification: Operational Activity Targets
@@ -30,11 +30,13 @@ No Intelex `.ipack` is present. This is therefore a **proposed target logical In
 
 ## 3. Requirements and supersession
 
+The 2026-10-27 revision refines OAT-003 to enterprise and Location scope only, superseding the earlier finer-grained target scope described in ADR-008 for this solution. Phase 1 measures the annual inspection obligation per Location.
+
 | ID | Requirement |
 |---|---|
 | OAT-001 | Store targets separately from source records and report periods with zero activity. |
 | OAT-002 | Do not create future draft Inspections to represent requirements. |
-| OAT-003 | Support At Least and At Most numeric targets at enterprise, Location, or Operational Resource scope. |
+| OAT-003 | Support At Least and At Most numeric targets at enterprise or Location scope. |
 | OAT-004 | Support eligibility criteria beyond date and scope, including type, checklist, status, and outcome. |
 | OAT-005 | Support future concrete sources without redesigning the target model. |
 | OAT-006 | Support record counting and numeric value summing. |
@@ -92,7 +94,6 @@ All system names are proposed and all stable IDs are unresolved. Because no pack
 | Target Contribution | `TargetContribution` | — | Period-to-activity attributed junction / Proposed |
 | Inspection | Tenant-defined | Tenant-defined | Phase 1 source record / Existing external dependency; package metadata unresolved |
 | Location | Tenant-defined | Tenant-defined | Establishment or equivalent scope / Existing shared dependency; package metadata unresolved |
-| Operational Resource | Tenant-defined | Tenant-defined | Resource, plant, or site within Location / Existing shared dependency; package metadata unresolved |
 | Workgroup | Tenant-defined | Tenant-defined | Reminder recipient / Native or shared dependency; package metadata unresolved |
 | Time Zone | Tenant-defined | Tenant-defined | Period boundary authority / Native or shared dependency; package metadata unresolved |
 | User | Tenant-defined | Tenant-defined | Publish actor / Native dependency; package metadata unresolved |
@@ -117,7 +118,6 @@ class Target_Activity
 class Target_Contribution
 class Inspection
 class Location
-class Operational_Resource
 class Workgroup
 class Time_Zone
 class User
@@ -164,13 +164,11 @@ Activity_Target_Rule --> Scope_Basis : Scope Basis
 Activity_Target_Rule --> Target_Direction : Target Direction
 Target_Scope_Assignment "0..*" --> "1" Activity_Target_Rule : Activity Target Rule
 Target_Scope_Assignment --> Location : Location
-Target_Scope_Assignment --> Operational_Resource : Operational Resource
 Target_Scope_Assignment --> Workgroup : Responsible Workgroup
 Target_Scope_Assignment --> Workgroup : Escalation Workgroup
 Activity_Target_Period "0..*" --> "1" Target_Scope_Assignment : Assignment
 Activity_Target_Period --> Source_Measure_Version : Measure Version
 Activity_Target_Period --> Location : Location
-Activity_Target_Period --> Operational_Resource : Operational Resource
 Activity_Target_Period --> Unit_of_Measure : Unit
 Activity_Target_Period --> Target_Direction : Target Direction
 Activity_Target_Period --> Compliance_Status : Compliance Status
@@ -178,7 +176,6 @@ Activity_Target_Period --> Calculation_Health : Calculation Health
 Target_Activity --> Source_Measure_Version : Measure Version
 Target_Activity "0..*" --> "1" Inspection : Inspection Source Record
 Target_Activity --> Location : Location
-Target_Activity --> Operational_Resource : Operational Resource
 Target_Activity --> Unit_of_Measure : Unit
 Target_Activity --> Evaluation_Status : Evaluation Status
 Target_Contribution "0..*" --> "1" Activity_Target_Period : Period
@@ -262,7 +259,6 @@ Initial values:
 | `DIM_VALUE` | Value | `TRUE` | 20 |
 | `DIM_ACTIVITY_DATE` | Activity Date | `TRUE` | 30 |
 | `DIM_LOCATION` | Location | `TRUE` | 40 |
-| `DIM_OPERATIONAL_RESOURCE` | Operational Resource | `TRUE` | 50 |
 
 #### 7.1.4 Dimension Value Type
 
@@ -321,7 +317,6 @@ Initial values:
 |---|---|---:|---:|
 | `SCOPE_ENTERPRISE` | Enterprise | `TRUE` | 10 |
 | `SCOPE_LOCATION` | Location | `TRUE` | 20 |
-| `SCOPE_OPERATIONAL_RESOURCE` | Operational Resource | `TRUE` | 30 |
 
 #### 7.1.8 Target Direction
 
@@ -448,7 +443,7 @@ Native audit is enabled. Name is the display field.
 | Sort | Float | Y | Next available sort value within Source Measure | Configuration Administrator editable; always visible | Publish copies to Dimension Version.Sort; determines compiler order |
 | Active? | Yes/No | Y | `TRUE` | Configuration Administrator editable; always visible | `FALSE` omits the row from future Publish; existing versions remain valid |
 
-Publish requires exactly one active Activity Date, at most one Location and Operational Resource, exactly one Value for Sum, and no Value for Count.
+Publish requires exactly one active Activity Date, at most one Location, exactly one Value for Sum, and no Value for Count.
 
 #### 7.3.3 Source Measure Criterion
 
@@ -538,8 +533,7 @@ All version records are system-created, immutable, audited, and hidden from ordi
 | Field | Type / relationship | Req | Default / calculation | Editability and visibility | Automation / lifecycle |
 |---|---|---:|---|---|---|
 | Activity Target Rule | M:1 to Activity Target Rule; inverse grid `Scope Assignments` | Y | Parent Rule from create context | Read only after first period; always visible | Period Generator reads rule configuration |
-| Location | M:1 to Location; no inverse | Conditional | `NULL` | Target Administrator editable and required when Rule.Scope Basis.Code is `SCOPE_LOCATION` or `SCOPE_OPERATIONAL_RESOURCE`; hidden and cleared for `SCOPE_ENTERPRISE` | Period Generator snapshots to Period.Location; locks after first period |
-| Operational Resource | M:1 to Operational Resource; no inverse | Conditional | `NULL` | Target Administrator editable and required only when Rule.Scope Basis.Code=`SCOPE_OPERATIONAL_RESOURCE`; filter to selected Location; hidden and cleared otherwise | Save validates Location ownership; Period Generator snapshots to Period.Operational Resource; locks after first period |
+| Location | M:1 to Location; no inverse | Conditional | `NULL` | Target Administrator editable and required when Rule.Scope Basis.Code is `SCOPE_LOCATION`; hidden and cleared for `SCOPE_ENTERPRISE` | Period Generator snapshots to Period.Location; locks after first period |
 | Effective From | Date | Y | None | Target Administrator editable; always visible | Inclusive start; locks after first period |
 | Effective Through | Date | N | `NULL` | Target Administrator editable; always visible | Inclusive end; null means open-ended; must be on/after Effective From; locks after first period |
 | Period Anchor Date | Date | Conditional | `NULL` | Editable, visible, and required when Rule.Recurrence Definition.Anchor Required?=`TRUE`; hidden and cleared when `FALSE` | Period Generator uses for anchored boundaries; locks after first period |
@@ -559,8 +553,7 @@ All version records are system-created, immutable, audited, and hidden from ordi
 | Source Measure Version | M:1 to Source Measure Version; inverse grid `Activity Target Periods` | Y | Assignment.Activity Target Rule.Source Measure.Active Version at creation | Read only; always visible | Period Generator snapshot; immutable |
 | Period Start | Date | Y | Period Generator recurrence calculation | Read only; always visible | Inclusive boundary in Rule.Business Time Zone; immutable |
 | Period End | Date | Y | Period Generator recurrence calculation | Read only; always visible | Inclusive boundary in Rule.Business Time Zone; immutable |
-| Location | M:1 to Location; no inverse | Conditional | Stored snapshot of Assignment.Location | Read only; visible and populated for `SCOPE_LOCATION` and `SCOPE_OPERATIONAL_RESOURCE`; hidden and `NULL` for Enterprise | Period Generator sets once; immutable |
-| Operational Resource | M:1 to Operational Resource; no inverse | Conditional | Stored snapshot of Assignment.Operational Resource | Read only; visible and populated only for `SCOPE_OPERATIONAL_RESOURCE`; hidden and `NULL` otherwise | Period Generator sets once; immutable |
+| Location | M:1 to Location; no inverse | Conditional | Stored snapshot of Assignment.Location | Read only; visible and populated for `SCOPE_LOCATION`; hidden and `NULL` for Enterprise | Period Generator sets once; immutable |
 | Required Value | Decimal, precision/scale unresolved | Y | Stored snapshot of Rule.Required Value | Read only; always visible | Period Generator sets once; immutable |
 | Target Direction | M:1 to Target Direction; inverse disabled | Y | Stored snapshot of Rule.Target Direction | Read only; always visible; inactive existing reference retained | Period Generator sets once; immutable |
 | Unit of Measure | M:1 to Unit of Measure; inverse disabled | Y | Stored snapshot of Source Measure Version.Unit of Measure | Read only; always visible; inactive existing reference retained | Period Generator sets once; immutable |
@@ -587,7 +580,6 @@ Target Activity is system-created, audited, and read-only to users.
 | Evaluation Expression | Long Text, maximum length unresolved; executable Intelex expression text | Y | Stored copy of Source Measure Version.Compiled Expression at create | Read only; specialist-visible | Evaluation Event Service snapshots once; local Target Activity `EVAL()` input; immutable |
 | Activity Date | Date | Y | Extracted using published `DIM_ACTIVITY_DATE` mapping | Read only; always visible | Evaluation Event Service refreshes on source re-evaluation; native audit preserves prior value |
 | Location | M:1 to Location; no inverse | N | Extracted using published `DIM_LOCATION` mapping; `NULL` when no mapping | Read only; visible when populated or relevant to reporting | Evaluation Event Service refreshes on re-evaluation; audit preserves prior value |
-| Operational Resource | M:1 to Operational Resource; no inverse | N | Extracted using published `DIM_OPERATIONAL_RESOURCE` mapping; `NULL` when no mapping | Read only; visible when populated or relevant; must belong to Location | Evaluation Event Service refreshes on re-evaluation; audit preserves prior value |
 | Evaluated Value | Calculated Decimal, precision/scale unresolved | N | Continuing `EVAL()` of local Evaluation Expression in Target Activity context; exact Intelex invocation unresolved | Read only; always visible | `NULL` means nonqualifying; zero is valid; Evaluation Event Service saves record to trigger recalculation |
 | Unit of Measure | M:1 to Unit of Measure; inverse disabled | Y | Stored copy of Source Measure Version.Unit of Measure at create | Read only; always visible; inactive existing reference retained | Evaluation Event Service snapshots once; immutable |
 | Evaluation Status | M:1 to Evaluation Status; inverse disabled | Y | `EVAL_PENDING` | Read only; always visible; inactive existing reference retained | Evaluation Event Service sets `EVAL_SUCCESSFUL` or `EVAL_FAILED` after attempted calculation |
@@ -628,15 +620,7 @@ These objects are included to make the inventory-to-contract mapping complete. T
 
 **Directly declared fields:** None in this solution. References to Location are outgoing M:1 fields on proposed local objects, with no inverse grids on Location.
 
-#### 7.7.3 Operational Resource
-
-**Authority:** Existing shared tenant object; package metadata and stable ID are unresolved.
-
-**Parent:** Tenant-defined and unresolved.
-
-**Directly declared fields:** None in this solution. References to Operational Resource are outgoing M:1 fields on proposed local objects, with no inverse grids on Operational Resource.
-
-#### 7.7.4 Workgroup
+#### 7.7.3 Workgroup
 
 **Authority:** Existing native or shared tenant object; package metadata and stable ID are unresolved.
 
@@ -644,7 +628,7 @@ These objects are included to make the inventory-to-contract mapping complete. T
 
 **Directly declared fields:** None in this solution. The reminder-recipient relationship is declared on Target Scope Assignment, with no inverse grid on Workgroup.
 
-#### 7.7.5 Time Zone
+#### 7.7.4 Time Zone
 
 **Authority:** Existing native or shared tenant object; package metadata and stable ID are unresolved.
 
@@ -652,7 +636,7 @@ These objects are included to make the inventory-to-contract mapping complete. T
 
 **Directly declared fields:** None in this solution. The period-boundary authority relationship is declared on Target Scope Assignment, with no inverse grid on Time Zone.
 
-#### 7.7.6 User
+#### 7.7.5 User
 
 **Authority:** Existing native tenant object; package metadata and stable ID are unresolved.
 
@@ -666,7 +650,7 @@ Dimensions are compiler metadata, not Target Activity children:
 
 - Criterion dimensions identify fields used to decide eligibility.
 - Value identifies the numeric source field returned by Sum.
-- Activity Date, Location, and Operational Resource identify values copied to Target Activity for period matching.
+- Activity Date and Location identify values copied to Target Activity for period matching.
 
 This is how Target Activity considers criteria beyond Location and date: the compiled expression contains the published criteria and references those source fields through `Inspection Source Record`; date and scope are separately extracted and matched to periods.
 
@@ -732,7 +716,7 @@ For each candidate/version pair, upsert by activity uniqueness, copy the express
 
 ### 9.4 Contribution Reconciliation Event Service
 
-Run after evaluation and on a separately approved reconciliation cadence. A Target Activity matches a period when status is Successful, value is non-null, Source Measure Version matches, Activity Date is inclusively within the period, and required Location/Operational Resource snapshots match.
+Run after evaluation and on a separately approved reconciliation cadence. A Target Activity matches a period when status is Successful, value is non-null, Source Measure Version matches, Activity Date is inclusively within the period, and Location snapshots match when the period is Location-scoped; enterprise periods do not filter by Location.
 
 Lock each period, upsert the unique contribution, update changed values, remove stale contributions, sum current contributions into Actual Value, derive status/health, and stamp Last Reconciled On. Retry is safe.
 
@@ -781,10 +765,10 @@ Reporting grains are: Period for zero-activity and compliance; Contribution for 
 |---|---|
 | Source Measure | Qualifying Inspections |
 | Source / aggregation / unit | Inspection / Count / Records |
-| Dimensions | Verified actual date, Location, Operational Resource, type, checklist, workflow status, and outcome as needed |
+| Dimensions | Verified actual date, Location, type, checklist, workflow status, and outcome as needed |
 | Criteria | Approved completion and program criteria using verified system names and canonical values |
 | Rule | At least 2 Records per approved annual Recurrence Definition |
-| Scope | One assignment per required Location/Operational Resource combination |
+| Scope | One assignment per required Location |
 
 ### 11.2 Future sources
 
@@ -803,6 +787,7 @@ A weekly Hazard ID target adds `Hazard ID Source Record`; a quarterly Near Miss 
 | CHG-007 | Add | Numeric values | Count only | Count and Sum contributions | OAT-006 | High |
 | CHG-008 | Add | Catalogue family | Inline values | Governed stable-Code relationships | Implementation rules | High pending tenant inheritance check |
 | CHG-009 | Reuse | Evidence/reminders | Possible custom records | Native audit, logs, reminders | OAT-012 | High pending retention check |
+| CHG-010 | Modify | Target scope | Earlier finer-grained site scope | Enterprise and Location only; one Phase 1 assignment per Location | OAT-003; user direction 2026-10-27 | High |
 
 ## 13. Traceability
 
@@ -825,7 +810,7 @@ A weekly Hazard ID target adds `Hazard ID Source Record`; a quarterly Near Miss 
 
 Inspection receives only an optional inverse `Target Activities` grid if its owner approves it; Target Activity remains the relationship owner. No target workflow or stored target field is added to Inspection. Corrections can re-evaluate activities and periods, with audit retaining prior values.
 
-Operational Resource must have an authoritative relationship to Location. Assignments and evaluation reject mismatches. Optional inverse grids on shared objects require their owner's approval.
+Optional inverse grids on shared objects require their owner's approval.
 
 Index or optimize the four uniqueness keys and source modified metadata, Activity Date, version, period dates, scope, evaluation status, and health. Load-test volume and retention before fixing cadence.
 
@@ -846,7 +831,7 @@ Rollback disables services and reminders while retaining audited evidence. Delet
 
 | ID | Scenario | Expected result |
 |---|---|---|
-| AT-001 | Annual resource target with no inspections | Period exists at zero; no Inspection is created |
+| AT-001 | Annual Location target with no inspections | Period exists at zero; no Inspection is created |
 | AT-002 | Publish valid Count measure | Complete immutable graph and exactly one Active Version |
 | AT-003 | Publish invalid field/operator | No partial or active version |
 | AT-004 | Concurrent Publish retry | Version uniqueness and atomic activation hold |
@@ -859,7 +844,7 @@ Rollback disables services and reminders while retaining audited evidence. Delet
 | AT-011 | Run every service twice | No duplicate period, activity, or contribution |
 | AT-012 | One activity matches two targets | One activity has two independently attributed contributions |
 | AT-013 | Publish new version mid-period | Existing period retains old version; new periods resolve new version |
-| AT-014 | Resource outside Location | Save/generation rejected before children are created |
+| AT-014 | Location-scoped assignment missing Location | Save/generation rejected before periods are created |
 | AT-015 | One expression fails | Failed activity retained, no contribution, log evidence, health warning/failure |
 | AT-016 | User lacks Inspection access | Target navigation/export discloses no unauthorized source data |
 | AT-017 | Unsatisfied target reaches At-Risk On | Status At Risk and native reminder to current responsible members |

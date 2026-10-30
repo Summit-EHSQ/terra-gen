@@ -12,7 +12,8 @@ Training courses and completions form the foundation for qualifications, but the
 
 ## Current Direction
 
-- Assign training through reusable workgroups derived from position or job codes.
+- Assign training through reusable workgroups derived from position codes.
+- Proposed: combine position-based workgroups with independent location-based courses and individual exceptions under ADR-019. Confirm that establishment-based employee placement identifies the intended training audience before configuring location assignments.
 - Use individual completion-based recurrence for self-service training.
 - Represent equivalent live and self-service delivery against a common course requirement where appropriate.
 - Match completion authority and evidence to the nature of each requirement.
@@ -22,6 +23,8 @@ Training courses and completions form the foundation for qualifications, but the
 - Validate custom learning packages before adoption and govern ongoing MARCOM refreshes.
 - Require objective evidence and centralized administrator completion for qualification steps.
 - Proposed: replace TPC while preserving version traceability and employee history.
+- Proposed: rehearse history migration in test, then perform one planned cumulative production load under ADR-020, with employee/course prerequisites for included inactive history.
+- Proposed: defer qualification/certification delivery and reassess program requirements and scope before restarting under ADR-021. Existing qualification decisions remain retained design inputs.
 - Use a reusable MARCOM catalogue and pin a specific provider release/file when the Training Course Version selects or changes its MARCOM Course. A catalogue update leaves existing courses unchanged; the training user manually creates a Course Version to adopt a newer release.
 - Proposed catalogue model: one language-specific Entry per provider Product Code, retained Content Releases with an explicit current pointer, and previous-filename Alias children. Three-digit IDs remain searchable attributes because they repeat across industries.
 - MARCOM Classification, MARCOM Industry, and MARCOM Topic are separate catalogue objects; each Content Release references one record in each catalogue and preserves its original provider labels.
@@ -49,6 +52,11 @@ Training courses and completions form the foundation for qualifications, but the
 | [ADR-016](ADRs/ADR-016-use-a-reusable-marcom-content-catalogue.md) | Proposed | Use a Reusable MARCOM Content Catalogue |
 | [ADR-017](ADRs/ADR-017-pin-marcom-content-to-training-course-versions.md) | Proposed | Pin MARCOM Content to Training Course Versions |
 | [ADR-018](ADRs/ADR-018-constrain-api-assisted-marcom-catalogue-loading.md) | Proposed | Constrain API-Assisted MARCOM Catalogue Loading |
+| [ADR-019](ADRs/ADR-019-combine-independent-position-location-and-individual-training-assignments.md) | Proposed | Combine Independent Position, Location, and Individual Training Assignments |
+| [ADR-020](ADRs/ADR-020-migrate-training-history-through-a-rehearsed-cumulative-production-load.md) | Proposed | Migrate Training History through a Rehearsed Cumulative Production Load |
+| [ADR-021](ADRs/ADR-021-defer-qualification-delivery-pending-program-and-scope-reassessment.md) | Proposed | Defer Qualification Delivery Pending Program and Scope Reassessment |
+
+See the [October 28 ADR reconciliation plan](ADR-RECONCILIATION-2026-10-28.md) for the Training Setup Q&A changes, retained decisions, location-audience dependency, and existing Employee Management documentation conflicts.
 
 See the [October 23 ADR reconciliation plan](ADR-RECONCILIATION-2026-10-23.md) for the disposition of every prior ADR, new candidates, and evidence gaps.
 
@@ -67,6 +75,7 @@ The [MARCOM Course Catalog Implementation Plan](MARCOM-COURSE-CATALOG-IMPLEMENTA
 
 ## Source Evidence
 
+- [Training Setup Q&A, October 28, 2026, 3:30 PM ET](<raw artifacts/meeting_transcripts/2026-10-28-terra-gen-training-setup-qa.md>) — shared with Employee Management; assignment sources, initial due dates, history migration, and qualification deferral.
 - [MARCOM Course File Name and Metadata Guide](<raw artifacts/MARCOM Adaptive Learning Course File Name and Metadata Guide 09 10 26.xlsx>) — only `English language` and `Spanish language` analyzed; both discontinued tabs excluded. Provider SCORM descriptions document adaptive chapter test-out intent; target compatibility remains untested.
 - [MARCOM Requirements Knowledge Transfer, October 23, 2026](<raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>) — internal direction; client approval is not established.
 - [Training Management Design Prep, September 8, 2026](<raw artifacts/meeting_transcripts/2026-09-08-terra-gen-summit-ehsq-training-mgmt-design-prep.md>)
@@ -79,7 +88,10 @@ ADR **More Information** sections identify the relevant timestamps.
 
 ## Open Work
 
-- Approve or revise the twelve proposed training and competency ADRs.
+- Approve or revise the fifteen proposed training and competency ADRs.
+- Confirm location-assignment audiences and overlapping assignment behavior under ADR-019, including remote employees whose establishment differs from their physical workplace.
+- Establish the history retention period, sample coverage, cumulative cutover extract, inactive employee/course references, rejected-row handling, and reconciliation under ADR-020.
+- Confirm the qualification deferral amendment and complete program/scope reassessment before restarting delivery under ADR-021; the qualification design tasks below remain inputs to that deferred workstream.
 - Build the governed course, workgroup, requirement, and delivery-equivalence catalogue.
 - Derive qualification definitions, assessor authority, validity, renewal, lapse, and reinstatement rules from policy.
 - Design authorized competency attestation and its evidence model.

@@ -1,0 +1,36 @@
+{
+  "revision": 2,
+  "deferredIds": [
+    "IMP-02",
+    "IMP-06",
+    "IMP-07",
+    "IMP-12",
+    "IMP-13",
+    "IMP-27",
+    "IMP-29",
+    "IMP-32",
+    "IMP-33"
+  ],
+  "reuseIds": [
+    "IMP-15",
+    "IMP-38",
+    "IMP-48",
+    "IMP-49"
+  ],
+  "oldTaskCount": 63,
+  "sourceHashes": {
+    "baseline": "375243d4dafd76f6f23aeab89320b4d02232ff1e85d45f2e08af859b29b78720"
+  },
+  "stats": {
+    "objects": 92,
+    "coreObjectSections": 28,
+    "fieldRows": 508,
+    "newLocalObjects": 4,
+    "externalInterfaces": 1,
+    "newLocalFields": 31,
+    "modifiedFields": 80,
+    "changedFields": 111,
+    "retainedFields": 392,
+    "externalInterfaceFields": 5
+  }
+}

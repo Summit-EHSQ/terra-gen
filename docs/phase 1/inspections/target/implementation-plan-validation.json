@@ -1,0 +1,14 @@
+{
+  "revision": 2,
+  "taskSummaryAndDetails": 34,
+  "consultantLanguageTasks": 34,
+  "explicitExistingFieldModifications": 61,
+  "unchangedFieldContexts": 19,
+  "explicitExistingElementRows": 88,
+  "predecessorAndDiagramEdges": 89,
+  "changedFieldCoverage": 111,
+  "handlerCoverage": 52,
+  "viewProfileCoverage": 186,
+  "sourceFilesUnchanged": true,
+  "errors": []
+}

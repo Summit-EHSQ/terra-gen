@@ -1,0 +1,30 @@
+{
+  "consultantLanguageTasks": 34,
+  "explicitExistingFieldModifications": 61,
+  "unchangedFieldContexts": 19,
+  "explicitExistingElementRows": 88,
+  "revision": 2,
+  "objects": 92,
+  "coreObjectSections": 28,
+  "fieldRows": 508,
+  "changedFieldRows": 111,
+  "retainedFieldRows": 392,
+  "newLocalFields": 31,
+  "externalInterfaceFields": 5,
+  "nativeSchemas": 2,
+  "nativeStages": 5,
+  "nativeActions": 5,
+  "tasks": 34,
+  "previousTasks": 63,
+  "technicalEdges": 89,
+  "sourceHandlers": 52,
+  "sourceViewsProfiles": 186,
+  "linksChecked": 127,
+  "errors": [],
+  "findings": [
+    "Existing published calculations, native publisher/generator and branch clear-on-hide are deliberately reused; their historic/concurrency limitations are not represented as corrected.",
+    "G01–G08 remain supplied configuration inputs. Missing native expressions/recipient binding, uploaded-report metadata and initial completed event order block only affected assignments.",
+    "Existing read-only mechanisms or scalar attributes omitted from the export remain unchanged; this is not a full tenant rebuild or runtime certification.",
+    "No tenant configuration, formula execution, formal testing, deployment or historical migration was performed."
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "project_id": 605488,
+  "parent_company_task_id": 26202,
+  "parent_internal_id": 16953106,
+  "categories": [
+    {
+      "title": "Object configuration",
+      "id": 16953835,
+      "company_task_id": 26227,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Field configuration",
+      "id": 16953836,
+      "company_task_id": 26228,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Initial configuration",
+      "id": 16953837,
+      "company_task_id": 26229,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Forms",
+      "id": 16953838,
+      "company_task_id": 26230,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Business logic",
+      "id": 16953839,
+      "company_task_id": 26231,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Automation",
+      "id": 16953840,
+      "company_task_id": 26232,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Security",
+      "id": 16953841,
+      "company_task_id": 26233,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Integration",
+      "id": 16953842,
+      "company_task_id": 26234,
+      "operation": "created",
+      "verified": true
+    },
+    {
+      "title": "Reports",
+      "id": 16953843,
+      "company_task_id": 26235,
+      "operation": "created",
+      "verified": true
+    }
+  ],
+  "moves": [
+    {
+      "plan_id": "CFG-01",
+      "id": 16953798,
+      "company_task_id": 26207,
+      "title": "CFG-01 — Create the Catalogue Objects",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953835,
+      "category": "Object configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-02",
+      "id": 16953799,
+      "company_task_id": 26208,
+      "title": "CFG-02 — Create the MARCOM Content Objects",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953835,
+      "category": "Object configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-03",
+      "id": 16953801,
+      "company_task_id": 26209,
+      "title": "CFG-03 — Configure the Catalogue Entry Fields",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953836,
+      "category": "Field configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-04",
+      "id": 16953802,
+      "company_task_id": 26210,
+      "title": "CFG-04 — Configure the Content Release Fields",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953836,
+      "category": "Field configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-05",
+      "id": 16953804,
+      "company_task_id": 26211,
+      "title": "CFG-05 — Configure the Previous Filename Fields",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953836,
+      "category": "Field configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-06",
+      "id": 16953805,
+      "company_task_id": 26212,
+      "title": "CFG-06 — Configure the Course Version Fields",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953836,
+      "category": "Field configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-07",
+      "id": 16953806,
+      "company_task_id": 26213,
+      "title": "CFG-07 — Set Up the Initial Catalogue Values",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953837,
+      "category": "Initial configuration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-08",
+      "id": 16953808,
+      "company_task_id": 26214,
+      "title": "CFG-08 — Configure the MARCOM Administration Forms",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953838,
+      "category": "Forms",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-09",
+      "id": 16953809,
+      "company_task_id": 26215,
+      "title": "CFG-09 — Configure the Course Version Form",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953838,
+      "category": "Forms",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-10",
+      "id": 16953811,
+      "company_task_id": 26216,
+      "title": "CFG-10 — Configure Entry and Filename Rules",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953839,
+      "category": "Business logic",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-11",
+      "id": 16953812,
+      "company_task_id": 26217,
+      "title": "CFG-11 — Configure Release Validation and Protection",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953840,
+      "category": "Automation",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-12",
+      "id": 16953813,
+      "company_task_id": 26218,
+      "title": "CFG-12 — Configure File Checksums and Source Details",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953840,
+      "category": "Automation",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-13",
+      "id": 16953814,
+      "company_task_id": 26219,
+      "title": "CFG-13 — Configure Course Content Selection",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953840,
+      "category": "Automation",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-14",
+      "id": 16953815,
+      "company_task_id": 26220,
+      "title": "CFG-14 — Configure Publish Release",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953840,
+      "category": "Automation",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-16",
+      "id": 16953816,
+      "company_task_id": 26221,
+      "title": "CFG-16 — Configure Basic MARCOM Permissions",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953841,
+      "category": "Security",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-17",
+      "id": 16953817,
+      "company_task_id": 26222,
+      "title": "CFG-17 — Configure Protected Record and File Access",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953841,
+      "category": "Security",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-18",
+      "id": 16953818,
+      "company_task_id": 26223,
+      "title": "CFG-18 — Configure the MARCOM Import Mappings",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953842,
+      "category": "Integration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-19",
+      "id": 16953819,
+      "company_task_id": 26224,
+      "title": "CFG-19 — Configure Repeatable Metadata Import",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953842,
+      "category": "Integration",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-20",
+      "id": 16953820,
+      "company_task_id": 26225,
+      "title": "CFG-20 — Configure the Catalogue Reports",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953843,
+      "category": "Reports",
+      "operation": "moved",
+      "verified": true
+    },
+    {
+      "plan_id": "CFG-21",
+      "id": 16953822,
+      "company_task_id": 26226,
+      "title": "CFG-21 — Configure the Follow-up Reports",
+      "old_parent_task_id": 16953106,
+      "parent_task_id": 16953843,
+      "category": "Reports",
+      "operation": "moved",
+      "verified": true
+    }
+  ]
+}
