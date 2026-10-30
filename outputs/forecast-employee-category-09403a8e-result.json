@@ -1,0 +1,348 @@
+{
+  "project_id": 605488,
+  "project_name": "[T&M] Terra-Gen | Phase 1 - Work Management",
+  "parent_task": "T25797",
+  "parent_id": 16891569,
+  "status": "complete",
+  "started_utc": "2026-10-28T19:08:04.0114633Z",
+  "created_containers": [
+    {
+      "id": 16966671,
+      "number": "T26290",
+      "title": "Catalogues and initial configuration records"
+    },
+    {
+      "id": 16966673,
+      "number": "T26291",
+      "title": "Application and object configuration"
+    },
+    {
+      "id": 16966674,
+      "number": "T26292",
+      "title": "Fields and relationships"
+    },
+    {
+      "id": 16966675,
+      "number": "T26293",
+      "title": "Configure workflow — simple"
+    },
+    {
+      "id": 16966676,
+      "number": "T26294",
+      "title": "Security"
+    },
+    {
+      "id": 16966677,
+      "number": "T26295",
+      "title": "Forms"
+    },
+    {
+      "id": 16966678,
+      "number": "T26296",
+      "title": "Automation and services"
+    },
+    {
+      "id": 16966679,
+      "number": "T26297",
+      "title": "Notifications and automation"
+    },
+    {
+      "id": 16966680,
+      "number": "T26298",
+      "title": "Configure workflow — full"
+    },
+    {
+      "id": 16966681,
+      "number": "T26299",
+      "title": "Integrations"
+    },
+    {
+      "id": 16966684,
+      "number": "T26300",
+      "title": "Reports"
+    }
+  ],
+  "reused_containers": [],
+  "moved": [
+    {
+      "id": 16966639,
+      "number": "T26261",
+      "title": "[CFG-01] Create the Catalogue Objects",
+      "category": "Catalogues and initial configuration records",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966671
+    },
+    {
+      "id": 16966640,
+      "number": "T26262",
+      "title": "[CFG-02] Create the Profile Objects",
+      "category": "Application and object configuration",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966673
+    },
+    {
+      "id": 16966641,
+      "number": "T26263",
+      "title": "[CFG-03] Configure Position Code Fields",
+      "category": "Fields and relationships",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966674
+    },
+    {
+      "id": 16966642,
+      "number": "T26264",
+      "title": "[CFG-04] Configure Published Position Code Fields",
+      "category": "Fields and relationships",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966674
+    },
+    {
+      "id": 16966643,
+      "number": "T26265",
+      "title": "[CFG-05] Configure Authoring Role Assignments",
+      "category": "Fields and relationships",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966674
+    },
+    {
+      "id": 16966644,
+      "number": "T26266",
+      "title": "[CFG-06] Configure Published Role Assignments",
+      "category": "Fields and relationships",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966674
+    },
+    {
+      "id": 16966645,
+      "number": "T26267",
+      "title": "[CFG-07] Configure Employee Setup Fields",
+      "category": "Fields and relationships",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966674
+    },
+    {
+      "id": 16966646,
+      "number": "T26268",
+      "title": "[WF-01] Configure Position Code Workflow — Simple",
+      "category": "Configure workflow — simple",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966675
+    },
+    {
+      "id": 16966647,
+      "number": "T26269",
+      "title": "[SEC-01] Configure Basic Object Permissions",
+      "category": "Security",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966676
+    },
+    {
+      "id": 16966648,
+      "number": "T26270",
+      "title": "[SEC-02] Configure Record and Field Permissions",
+      "category": "Security",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966676
+    },
+    {
+      "id": 16966649,
+      "number": "T26271",
+      "title": "[SEC-03] Configure Native Audit",
+      "category": "Security",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966676
+    },
+    {
+      "id": 16966650,
+      "number": "T26272",
+      "title": "[UI-01] Configure the Catalogue Forms",
+      "category": "Forms",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966677
+    },
+    {
+      "id": 16966651,
+      "number": "T26273",
+      "title": "[UI-02] Configure the Position Code Form",
+      "category": "Forms",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966677
+    },
+    {
+      "id": 16966652,
+      "number": "T26274",
+      "title": "[UI-03] Configure Published Version Forms",
+      "category": "Forms",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966677
+    },
+    {
+      "id": 16966653,
+      "number": "T26275",
+      "title": "[UI-04] Configure Employee Support Fields",
+      "category": "Forms",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966677
+    },
+    {
+      "id": 16966654,
+      "number": "T26276",
+      "title": "[AUT-01] Configure the Employee Position Code Action Handler",
+      "category": "Automation and services",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966678
+    },
+    {
+      "id": 16966655,
+      "number": "T26277",
+      "title": "[AUT-04] Configure the Setup Notification",
+      "category": "Notifications and automation",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966679
+    },
+    {
+      "id": 16966656,
+      "number": "T26278",
+      "title": "[AUT-05] Configure Published Version Copies",
+      "category": "Automation and services",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966678
+    },
+    {
+      "id": 16966657,
+      "number": "T26279",
+      "title": "[AUT-06] Configure Source Employee Assignment",
+      "category": "Automation and services",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966678
+    },
+    {
+      "id": 16966658,
+      "number": "T26280",
+      "title": "[AUT-07] Configure the Publish Routine",
+      "category": "Automation and services",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966678
+    },
+    {
+      "id": 16966659,
+      "number": "T26281",
+      "title": "[WF-02] Configure Position Code Workflow — Full",
+      "category": "Configure workflow — full",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966680
+    },
+    {
+      "id": 16966660,
+      "number": "T26282",
+      "title": "[AUT-08] Configure Initial Membership Preparation",
+      "category": "Automation and services",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966678
+    },
+    {
+      "id": 16966661,
+      "number": "T26283",
+      "title": "[AUT-09] Configure the Employee Preparation Service",
+      "category": "Automation and services",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966678
+    },
+    {
+      "id": 16966662,
+      "number": "T26284",
+      "title": "[INT-01] Configure Establishment Rules",
+      "category": "Integrations",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966681
+    },
+    {
+      "id": 16966663,
+      "number": "T26285",
+      "title": "[INT-02] Configure Direct Employee Delivery",
+      "category": "Integrations",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966681
+    },
+    {
+      "id": 16966665,
+      "number": "T26286",
+      "title": "[INT-03] Configure Employee Delivery Retry",
+      "category": "Integrations",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966681
+    },
+    {
+      "id": 16966666,
+      "number": "T26287",
+      "title": "[INT-04] Configure Account Activation",
+      "category": "Integrations",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966681
+    },
+    {
+      "id": 16966667,
+      "number": "T26288",
+      "title": "[RPT-01] Configure Employee Setup Views",
+      "category": "Reports",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966684
+    },
+    {
+      "id": 16966668,
+      "number": "T26289",
+      "title": "[INIT-01] Configure Initial Position Code Profiles",
+      "category": "Catalogues and initial configuration records",
+      "previous_parent_id": 16891569,
+      "parent_id": 16966671
+    }
+  ],
+  "skipped_moves": [],
+  "verified_containers": [
+    16966671,
+    16966673,
+    16966674,
+    16966675,
+    16966676,
+    16966677,
+    16966678,
+    16966679,
+    16966680,
+    16966681,
+    16966684
+  ],
+  "verified_tasks": [
+    16966639,
+    16966640,
+    16966641,
+    16966642,
+    16966643,
+    16966644,
+    16966645,
+    16966646,
+    16966647,
+    16966648,
+    16966649,
+    16966650,
+    16966651,
+    16966652,
+    16966653,
+    16966654,
+    16966655,
+    16966656,
+    16966657,
+    16966658,
+    16966659,
+    16966660,
+    16966661,
+    16966662,
+    16966663,
+    16966665,
+    16966666,
+    16966667,
+    16966668
+  ],
+  "failed": [],
+  "completed_utc": "2026-10-28T19:09:08.2725124Z",
+  "rerun_check": "Exact category containers and expected task parents now match; rerun would reuse containers and skip all moves."
+}

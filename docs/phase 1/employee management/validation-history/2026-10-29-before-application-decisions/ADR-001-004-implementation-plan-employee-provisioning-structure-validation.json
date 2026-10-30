@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "activeTasks": 18,
+  "retiredTasks": 11,
+  "dependencyEdges": 46,
+  "summaryMatchesDetails": true,
+  "contentGatePassed": true,
+  "allTasksReviewed": true,
+  "adapterPreservesOperativeContent": true,
+  "errors": [],
+  "limits": "Recorded semantic review and document/graph consistency, not independent semantic certification or live tenant behavior."
+}

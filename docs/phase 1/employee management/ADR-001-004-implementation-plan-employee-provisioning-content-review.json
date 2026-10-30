@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-10-29",
+  "sourceSnapshotSha256": "b3d5a08b01b592c886e6fe638306a492c82a648813d7f2452c206d22fbb59e93",
+  "sourceMarkdownSha256": "69b3b508556b97be8135162194f9e741a3c70a6b1b29898b9667d79f55bde184",
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "stableTaskId": "CFG-01",
+      "taskHash": "462513fda02eb3db31eee4e4f6c41c0ba501e7dc3efaef04bfc2af1861044118",
+      "renderedTaskHash": "a0a36aaa5c349ff3b212fe0fcc9bc78a422ac869eb7d58badd904c0939b36731",
+      "evidenceReview": "User explicitly selected a NEW Employee Integration Manager application, Administrators-only object visibility and no Audit Trail. The task now creates that application with the two catalogues, retains exact field/seed settings from specification 6, and assigns no audit retention. Native Code/capacity/permission bindings remain technical inputs, not unresolved placement or access policy.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the named application and its complete governed catalogue setup.",
+          "mechanism": "New Employee Integration Manager application, two catalogue objects, forms and Administrator grants."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create Employee Integration Manager and its two Administrators-only catalogues.",
+          "mechanism": "Application/object configuration with Audit Trail disabled and native identities."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add four precisely typed fields and referenced-Code/inactive controls.",
+          "mechanism": "Catalogue Code/Name/Active?/Sort field settings and supplied protection binding."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create the four exact initial Code/Name/Active?/Sort combinations.",
+          "mechanism": "Two initial records per catalogue using stable Code values."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add four-field maintenance screens and displayed ordering.",
+          "mechanism": "Catalogue forms; consumer tasks own selector filtering."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Grant Administrator catalogue rights and deny non-Administrator visibility.",
+          "mechanism": "Catalogue permissions across form/API/import/search/export; no Support-group grant or audit setup."
+        }
+      ]
+    },
+    {
+      "id": "IMP-02",
+      "stableTaskId": "CFG-02",
+      "taskHash": "a0bfcbfa4886d96a37a893fcfeca26b7ed35d8a412b8ff39eb066c8957f379af",
+      "renderedTaskHash": "63eebc6e8e90de85a0d600a269381e966c332794799a7c85dd22c6f7aa838753",
+      "evidenceReview": "All four profile objects now explicitly belong to the new application created by the catalogue/application predecessor. This adds one real dependency. No native object is moved, no equivalent custom definition is assumed absent, no non-Administrator visibility is granted and Audit Trail stays disabled. System-name collision binding remains a technical input.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add four governed profile object definitions within the new application.",
+          "mechanism": "Profile object additions consuming the predecessor-created Employee Integration Manager."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the four named profile objects with Administrator visibility only.",
+          "mechanism": "Employee Integration Manager profile definitions, no inheritance and Audit Trail disabled."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Configure published objects with no workflow.",
+          "mechanism": "Published Position Code and published Role object parameters."
+        }
+      ]
+    },
+    {
+      "id": "IMP-03",
+      "stableTaskId": "CFG-03",
+      "taskHash": "2932bf9e43a59f955856f9d852431b203aca51a2340dc10ae3ee5b0aa1eb97c5",
+      "renderedTaskHash": "039084b0867e507f1d7a0da47885c90b6475d23f3ff579ffae6678afe2614915",
+      "evidenceReview": "Reread all authoring instructions against the October 29 confirmation and specification 7/9/11. Initial Setup active/nonterminal, Administrators responsibility, no automatic Due Date and Publish-to-Completed are settled parameters. The last step now configures protected controls instead of audit. Native identifiers/filter/read-only/Completed-link bindings remain local technical inputs, with no pending workflow or support-group policy approval.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add Administrator authoring fields, form and the confirmed initial workflow.",
+          "mechanism": "Position Code schema and form/stage scaffold without Audit Trail setup."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add Code, rule, Groups and current-version fields with exact settings.",
+          "mechanism": "Position Code field/relationship configuration and supplied case-sensitive controls."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add independent origin/sent controls with FALSE manual defaults.",
+          "mechanism": "Two read-only required Yes/No authoring fields."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create the confirmed stage/responsibility/no-due-date Publish scaffold.",
+          "mechanism": "Position Code Initial Setup active stage and Completed terminal configuration."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add working state containers and three subtype-specific Groups grids.",
+          "mechanism": "Authoring form using one Groups relation and the native subtype predicates."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add Administrator-only history/source/current controls and Publish placement.",
+          "mechanism": "Authoring form over the three distinct inverse outputs and protected working state."
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Configure read-only system controls and editable Completed working settings.",
+          "mechanism": "Authoring form control rules; no Audit Trail or retention configuration."
+        }
+      ]
+    },
+    {
+      "id": "IMP-04",
+      "stableTaskId": "CFG-04",
+      "taskHash": "8b33dd0fc029e64583c0aa4b4ccff604bc38ef79bb2bac33ca1fd50884737a22",
+      "renderedTaskHash": "f367cbedcbf15a1ecce0f0f3467cddca7dd23d766c491420de5e4a63fb2ad0fd",
+      "evidenceReview": "Publication fields and requiredness are unchanged and remain fully included. The review screen is now expressly Administrators-only in Employee Integration Manager; non-Administrator review access is not an open policy choice. Scoped uniqueness and display/form bindings remain unverified technical inputs; Role and Employee inverse predecessors remain valid.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add version storage, owner history and its read-only review screen.",
+          "mechanism": "Published Position Code fields, scoped constraint and form."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add required owner/positive number/rule and optional Groups storage.",
+          "mechanism": "Published Position Code field definitions and supplied composite uniqueness."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add an Administrators-only code/version review screen and related controls.",
+          "mechanism": "Published display expression and review form consuming child/Employee inverses."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Remove manual creation/edit/Draft commands from the proposed screen.",
+          "mechanism": "New published form and history-control command configuration."
+        }
+      ]
+    },
+    {
+      "id": "IMP-05",
+      "stableTaskId": "CFG-05",
+      "taskHash": "fc3c7343f2a69bcf14a0ef7bb325eae10b7c9578f7f8fa49bcfcd089dc66f543",
+      "renderedTaskHash": "899d0239b107a88e8a924c7600a1229349acce9adc9d85714c182eab32540837",
+      "evidenceReview": "Both three-field association structures and deferred Role boundary remain unchanged. The small forms are now Administrator-only and Audit Trail is explicitly disabled; audit setup/retention is removed from scope and inputs. Owner-scoped uniqueness and Role selector bindings remain technical inputs, not approval of an executable Role assignment feature.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add both Administrator-only Role structures and forms without Audit Trail.",
+          "mechanism": "Authoring/published Role association fields, inverses and deferred-entry control."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add authoring owner/Role/basis fields and owner-scoped uniqueness.",
+          "mechanism": "Position Code Role Assignment and its owner inverse/filter."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add immutable published owner/Role/basis fields and uniqueness.",
+          "mechanism": "Published Position Code Role Assignment and its owner inverse."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add protected Administrator Role forms with Audit Trail disabled.",
+          "mechanism": "Authoring and read-only child forms, fixed owner and deferred-entry restriction."
+        }
+      ]
+    },
+    {
+      "id": "IMP-06",
+      "stableTaskId": "CFG-07",
+      "taskHash": "4fab1f209eb5e17cbd45cd5d124da80371b7645187eee9ca7bb190df35a6d3b5",
+      "renderedTaskHash": "82662cd62ea849026a4d0d7d2f95951d0e887674635ebcc5f7bf618e2afc9060",
+      "evidenceReview": "Reread all seven extension settings and inverses against specification 13.4. Native Employee stays in its existing application; only its new support section is Administrator-only. The previous Employee audit change is removed and baseline IsAuditEnabled=FALSE is not altered. Actual form/inverse/timezone/write-once bindings remain technical inputs.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add Employee profile references and an Administrator-only support display.",
+          "mechanism": "Seven native Employee extensions and three inverses, without changing Employee audit."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add integration origin, current Position Code and distinct source helper.",
+          "mechanism": "SysEmployeeEntity new Yes/No and two M:1 fields with named inverses."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add captured version, two initial location references and zoned timestamp.",
+          "mechanism": "Four new Employee preparation fields and conditional checkpoint requiredness."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Configure form protection and retained/write-once field lifecycle.",
+          "mechanism": "Employee field/control protection; automation owns actual value writes."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add the restricted seven-field support section without an audit change.",
+          "mechanism": "Existing Employee form supplied target and Administrator-only preparation controls."
+        }
+      ]
+    },
+    {
+      "id": "IMP-07",
+      "stableTaskId": "SEC-02",
+      "taskHash": "8f868c9a918b0e3d78925715b3b1fc222c6da612c4f5b5cdd3cb4ce2f096a2e7",
+      "renderedTaskHash": "fe43adfb658215379b2e1f5782febe71160a473dc237ac79f81e3b3d4138405e",
+      "evidenceReview": "The user resolves application-object visibility to Administrators only, including support navigation. The task denies all separate Support/non-Administrator application grants while leaving ordinary native Employee security in its own context. Exact enforcement and trusted service/Boomi execution contexts remain unverified; the task does not assume a permission bypass to satisfy automation.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Restrict all application objects to Administrators and protect captured data.",
+          "mechanism": "Native application/object/record/field permissions and route enforcement."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Apply Administrator profile-object grants and protected version/authoring writes.",
+          "mechanism": "Four profile-object permission grants; catalogue basic grants are consumed from the predecessor owner."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Bind trusted processing consistently with Administrator-only object visibility.",
+          "mechanism": "Verified native service execution context and restricted Employee endpoint/read permissions."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Restrict application support and drill-through to Administrator members.",
+          "mechanism": "Administrator support navigation and unchanged native Employee access boundary."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Enforce the same policy on direct/API/import/search/export routes.",
+          "mechanism": "Native record/field controls including terminal edit and immutable child protection."
+        }
+      ]
+    },
+    {
+      "id": "IMP-08",
+      "stableTaskId": "AUT-01",
+      "taskHash": "56da733349da48374cac9fd2ccf03795df67ac420432885115dc6884dd4b7fd4",
+      "renderedTaskHash": "74c5a54f10098a1d2d855d3d8e0e1ce04850309b4e12f93fb5444be4fd374c02",
+      "evidenceReview": "Reread the complete actor/matching/capture/helper/race/location sequence: operative steps are unchanged. The new application policy does not prove FETCHVALUE, GETRELATED, exact comparison, locks or service context. No pending application/access/Audit Trail decision remains in this task; the relevant native execution questions remain explicit inputs.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add integration discovery/capture and reusable initial location calculation.",
+          "mechanism": "Proposed Employee Action Handler plus callable native relationship calculation."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add allowlisted create-origin marking and internal-save guard.",
+          "mechanism": "Employee creation handler actor condition and recursion exclusion."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add blank/exact/ambiguous match branches and one-time active capture.",
+          "mechanism": "Employee JobCode FETCHVALUE relation step with empty-version guard."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add unpublished-code helper enrollment and genuine-new-code creation.",
+          "mechanism": "GETRELATED create/resolve, authoring initialization and helper relation write."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add shared-code conflict/race recovery and notification handoff.",
+          "mechanism": "Supplied per-code serialization and helper inverse event completion."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add pre-capture helper maintenance while retaining post-capture origin.",
+          "mechanism": "Employee code-change branches with write-once version and mismatch hold."
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Add precise SAME_HOME/HOME_PARENT reference selection and code checks.",
+          "mechanism": "Reusable native location calculation consumed by preparation only."
+        }
+      ]
+    },
+    {
+      "id": "IMP-09",
+      "stableTaskId": "AUT-04",
+      "taskHash": "1cdcfcb48c4a2969db6c9fcd5fe3d73389568502c060d674d9b9cb0fced71f50",
+      "renderedTaskHash": "6d5018754d70b85a98f83234509155bc35d1dc8b71387bc4cafab4260a21125e",
+      "evidenceReview": "Setup message content and recipient policy are confirmed, not new choices. The template is Position Code Setup Required, recipients are current Administrators, one linked source is required and no additional custom completion/reminder/escalation is introduced. Native recipient/delivery/default-email bindings and send/flag deduplication remain technical inputs; execution evidence is not Audit Trail.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one source-linked message and safe delivery guard.",
+          "mechanism": "Position Code Setup Required template and guarded native notification."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the complete setup message and Administrators recipient binding.",
+          "mechanism": "New native message template with code/source links and Publish instructions."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add integration-origin, unsent and linked-source delivery conditions.",
+          "mechanism": "Notification operation invoked after helper/inverse association."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add deduplicated delivery, success-only sent flag and retry behavior.",
+          "mechanism": "Supplied native delivery key/outcome and authoring sent-control update."
+        }
+      ]
+    },
+    {
+      "id": "IMP-10",
+      "stableTaskId": "AUT-07",
+      "taskHash": "da3b6da87cb4dc6d8fa734d7df3d1287181f5963454bcfade510bbec9dc5d5b3",
+      "renderedTaskHash": "ca32ef0aa575543bb69a1014a122f4ac18708d32075d4c705a6888f3961b4bd4",
+      "evidenceReview": "Reread the full copy/activation/source-writeback/completion/errors sequence; all eight errors and first/later branches remain self-contained. Workflow business parameters and Administrator permission policy are now confirmed. Native action/link identifiers, atomic transaction/retry support, onboarding eligibility and after-commit dispatch remain unverified implementation inputs, with no invented deadline or permission bypass.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one coherent atomic first/later publication outcome.",
+          "mechanism": "Common native publication operation plus workflow/form-link bindings."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add execution authorization, saved-revision and lifecycle/retry guards.",
+          "mechanism": "Common Publish entry operation under supplied per-code lock."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add active choice, complete group/Role and deferred-feature guards.",
+          "mechanism": "Publication validation before any version or activation state changes."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add independent version/Groups/Role graph construction and numbering.",
+          "mechanism": "Publication copy operations inside the supplied controlled change."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add active pointer and eligible first-source Employee writeback.",
+          "mechanism": "Current Published Version and helper-inverse source selection/write-once assignment."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add atomic initial completion and distinct later publish rollback.",
+          "mechanism": "Supplied transaction covering graph, pointer, source writes and workflow completion."
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Bind both Publish entry paths and emit only committed handoff.",
+          "mechanism": "Initial workflow Publish and Completed form-link execution with after-commit event."
+        },
+        {
+          "path": "steps.6",
+          "requiredChange": "Add the eight exact proposed guard/error messages.",
+          "mechanism": "Publication decision/error branches before activation and completion."
+        }
+      ]
+    },
+    {
+      "id": "IMP-11",
+      "stableTaskId": "AUT-08",
+      "taskHash": "ea1e288e5fdc71ac18f7aef4cfa3fa9c5a384ef075a160ae2ad83b39daa70d9e",
+      "renderedTaskHash": "9f000f647df9946926969ce289d0e9bf32f73f82c34906b0ba657fca52b97087",
+      "evidenceReview": "All membership eligibility, add-only updates, SAME_HOME/HOME_PARENT result use, snapshots and checkpoint-last steps are unchanged and complete. New application/visibility decisions do not establish a writable native membership API or pre-access support; those remain local blockers. No Audit Trail setup is added to preparation or its failure handling.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one repeat-safe initial membership/preparation routine.",
+          "mechanism": "Shared native Employee preparation operation with checkpoint guard."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add locked eligibility/current-code/captured-version checks.",
+          "mechanism": "Preparation entry conditions using actual Employee extension fields."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add only missing captured-profile memberships.",
+          "mechanism": "Supplied native group membership add/read mechanism; MemberOf replacement excluded."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add initial home/login snapshots and server-time checkpoint last.",
+          "mechanism": "Reusable calculation result, Employee reference writes and zoned timestamp."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add incomplete retry/no-op completion behavior without access removal.",
+          "mechanism": "Native preparation failure branch and populated-checkpoint exclusion."
+        }
+      ]
+    },
+    {
+      "id": "IMP-12",
+      "stableTaskId": "AUT-09",
+      "taskHash": "befc0b373b09755f6d9eaa91fc820c17df968ad284605b66e0c00d19dd831abf",
+      "renderedTaskHash": "ecee8863d7ccd226c214c191444f859289d16e9a968842f805964f7c0e13a86a",
+      "evidenceReview": "Reread all after-commit/service selection steps and criteria. They remain unchanged: use captured versions and approved schedule, exclude completed Employees and never reset preparation. Workflow parameter confirmation does not approve the separate five-minute Event Service proposal or prove after-commit binding. No business workflow approval or Audit Trail input is carried forward.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add after-commit and scheduled continuation of incomplete preparation.",
+          "mechanism": "Native dispatch and proposed Event Service calling the shared routine."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind committed Employee-capture and first-publication events.",
+          "mechanism": "Supplied after-commit native callable handoff using Employee identity."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add exact managed/incomplete/version/location eligible-record selection.",
+          "mechanism": "Event Service filter and supplied per-Employee exclusion binding."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Configure approved schedule, retry and native error ownership.",
+          "mechanism": "Native Event Service cadence/timezone and existing execution-error destination."
+        }
+      ]
+    },
+    {
+      "id": "IMP-13",
+      "stableTaskId": "INT-01",
+      "taskHash": "7f50b5bbc1e99f440914cf97add3475123f3429a6bcd07483330fce25508a711",
+      "renderedTaskHash": "aaefe97343a0957868d850220258775866819187fb13b7ee76a56a31fd98d0e6",
+      "evidenceReview": "The complete ordered establishment and correction steps remain unchanged and independently understandable. Application/Administrator/Audit Trail decisions do not supply missing Paylocity/site/job-function mappings or upstream correction authority. Native Employee establishment remains outside the new configuration application; no extra security or audit approval is introduced here.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the supplied establishment rule and protected correction mapping.",
+          "mechanism": "Proposed Boomi establishment transformation before HomeLocationCode delivery."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add established assigned/actual site branch and conflict/unknown hold.",
+          "mechanism": "First Boomi decision and supplied site-to-LocationCode mapping."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add remote California/San Diego and other job-function branches.",
+          "mechanism": "Ordered residence/job-function Boomi decisions and mapping tables."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add durable approved correction precedence and valid-result delivery.",
+          "mechanism": "Supplied upstream correction read and native Boomi evidence binding."
+        }
+      ]
+    },
+    {
+      "id": "IMP-14",
+      "stableTaskId": "INT-02",
+      "taskHash": "796f632a2494027748fc443b95289204bd03dd14b1079054260051c98f64c8ce",
+      "renderedTaskHash": "f750df25319c8a05e4e77d308ae6f33b7a5e8166ee87b532fef2e6fbe00b1f5c",
+      "evidenceReview": "Direct payload fields, FALSE removal controls, employee-only POST and intended same-Id updates remain unchanged. Application/workflow confirmation does not resolve optional source formats, feed timing, SSO SendEmail flags or lifecycle policies. These remain precise integration inputs; no Audit Trail or application placement blocker is retained.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add direct Employee delivery and pre-start selection.",
+          "mechanism": "Proposed Boomi POST/PATCH mapping and supplied feed schedule."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add exact identity/name/date/JobCode/HomeLocationCode mappings.",
+          "mechanism": "EmployeeUserAccess supported properties at the supplied tenant endpoint."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add employee-only creation and explicit omissions/removal controls.",
+          "mechanism": "IgnoreUserAccess=TRUE and FALSE removal flags in request mapping."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add approved pre-start selection and same-Id intended updates.",
+          "mechanism": "Boomi selection/timezone/null semantics and retained Employee Id mapping."
+        }
+      ]
+    },
+    {
+      "id": "IMP-15",
+      "stableTaskId": "INT-03",
+      "taskHash": "3adb14735829dfa3ad0854394a3bd2cb53a1bb5ee1355f2c2294bb1055d501f1",
+      "renderedTaskHash": "95788aaa3eeeda3b1089d0d0e31dbbe1357fc0104e07c91c9c46b6b0b7e8ea21",
+      "evidenceReview": "Zero/one/ambiguous Number reconciliation, unknown outcomes and exceptional identity handling remain unchanged and fully included. The user decisions do not establish Boomi serialization/read paths or rehire policy. Existing operational error correlation remains a support mechanism, distinct from the removed Audit Trail requirement.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add repeat-safe delivery around the configured direct request.",
+          "mechanism": "Boomi serialization, Number/Id reconciliation and bounded retry."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add zero/one/ambiguous identity decisions under EmployeeNumber control.",
+          "mechanism": "Supplied native Employee.Number read and same-Id resume operation."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add timeout reconciliation and same-Employee failure continuation.",
+          "mechanism": "Boomi unknown-outcome retry and existing native evidence destination."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add policy-bound exceptional identity handling and support hold.",
+          "mechanism": "Changed-number/rehire branches and correlation routing to supplied support owner."
+        }
+      ]
+    },
+    {
+      "id": "IMP-16",
+      "stableTaskId": "INT-04",
+      "taskHash": "5cb4970d1e33c9218d4f3eaff2228da861610082c9930c9a3af5a62a1a0f837d",
+      "renderedTaskHash": "76e5453fcbb3939424cdbf81d773221827115bf0d4eca9fe17567048a230d394",
+      "evidenceReview": "The full readiness/home-match/SSO/license gate and supported PATCH values remain unchanged. Administrators-only application policy does not prove Employee-only POST to later access PATCH, readiness API authorization or membership continuity; the exact machine execution/read context remains a technical input. No extra non-Administrator application grant is invented.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add preparation/identity-gated access for the same native Employee.",
+          "mechanism": "Boomi readiness read and EmployeeUserAccess access PATCH."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add checkpoint/version/login/home/SSO/license readiness conditions.",
+          "mechanism": "Restricted Object Data API field reads and home-mismatch hold."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add exact access PATCH values with protected group/hierarchy controls.",
+          "mechanism": "IgnoreUserAccess=FALSE and stored LoginLocationCode mapping."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add account-outcome reconciliation and protect later login exceptions.",
+          "mechanism": "Native account evidence/endpoint result and configured same-Id retry."
+        }
+      ]
+    },
+    {
+      "id": "IMP-17",
+      "stableTaskId": "RPT-01",
+      "taskHash": "86bb9c5e9560dcc6c87074a9eab8977bd49a74662c0c68803ff9453c5c521048",
+      "renderedTaskHash": "ab03434b552e199a5e0110335b9324851277423b545090b605ade23881af4d18",
+      "evidenceReview": "All proposed waiting/error filters and columns remain in the task. Application views and drill-through are now explicitly Administrators-only and require no Audit Trail source. Actual native execution/identity view bindings and permitted retry operation are still missing. The task does not infer new operational error objects or remove required retry diagnostics.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add Administrator-only waiting/error views using operational evidence.",
+          "mechanism": "Native profile/Employee support views, with no Audit Trail source or retention setup."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add no-publication and working-versus-published review views.",
+          "mechanism": "Position Code view filters and side-by-side configured field controls."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add no-capture and incomplete-preparation Employee filters/columns.",
+          "mechanism": "Employee extension-based support view definitions."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add failure/ambiguity views and Administrator-only navigation.",
+          "mechanism": "Supplied native error/identity queries and approved existing retry command."
+        }
+      ]
+    },
+    {
+      "id": "IMP-18",
+      "stableTaskId": "INIT-01",
+      "taskHash": "7884cb16650f6dd075dd4eb1585db6bda80b26740250caeb69f30e8704ee10d1",
+      "renderedTaskHash": "7fbb0b269b9ab9348f0e8a4b4f7f9de47a3e4a1358d26b89ad73881c81cb19b7",
+      "evidenceReview": "Reread the two initial-profile steps and their criteria: the population is still wholly blocked on the actual initial code/rule/group list, not application placement or audit policy. Manual origin FALSE and configured first Publish remain explicit. The confirmed workflow does not authorize deferred Roles or Employee migration.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add only the approved initial nondeferred profile configuration.",
+          "mechanism": "Position Code authoring records and the completed Publish operation."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create supplied case-exact code/rule/group values with manual origin.",
+          "mechanism": "Initial Position Code records and three filtered Groups grids."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Publish each supplied eligible initial record to version 1 and Completed.",
+          "mechanism": "Configured first-publication link; no existing-Employee enrollment."
+        }
+      ]
+    }
+  ]
+}

@@ -56,3 +56,17 @@ The rules will use available residence, work-location, jurisdiction, and reporti
 The detailed decision table should address California residents, employees assigned to operating establishments, remote employees outside California, reporting chains that reach different establishments, incomplete source data, and approved overrides.
 
 Transcript references: organizational-structure workshop 2:02:51–2:04:54, 2:24:05–2:27:15, 2:32:29–2:33:13, and 2:42:43–2:45:14; integration and inspections workshop 0:18:05–0:23:14.
+
+## Detailed rule clarification — October 28, 2026
+
+The user supplied the [establishment assignment flow](<../raw artifacts/2026-10-28-establishment-assignment-flow.md>) to close the detailed business-rule question. The original decision and September 17 acceptance record above are retained. This clarification replaces the earlier request for a detailed decision table; it does not add a reporting-chain calculation requirement.
+
+For a new employee, relocation or job change, apply these branches in order in Boomi before delivering HomeLocationCode:
+
+1. If the employee is assigned to, or works at, an established site, use that establishment. This branch takes precedence over residence.
+2. Otherwise, treat the employee as remote. If the employee is a California resident, use the San Diego establishment.
+3. Otherwise, use the established site designated as the main location for the employee’s job function.
+
+The supplied flow covers employee hours and injury/illness events on OSHA Forms 300, 300A and 301. It defines the Employee establishment calculation; it does not settle event-specific Incident Management attribution or overrides.
+
+Remaining implementation inputs are the source fields, valid site-to-LocationCode mappings (including San Diego), job-function-to-main-site mappings and resolution of conflicting assigned/actual sites. Job function must not be assumed to equal Position Code. The specification’s missing/conflicting-data hold and requirement for durable authorized corrections remain; the flow does not define correction authority or precedence. See specification section 10.1 for the current integration contract.

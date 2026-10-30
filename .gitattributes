@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve the exact bytes used by Employee plan content-review hashes.
+"docs/phase 1/employee management/ADR-001-004-implementation-plan-employee-provisioning*.md" text eol=lf
+"docs/phase 1/employee management/ADR-001-004-implementation-plan-employee-provisioning*.json" text eol=lf
+"docs/phase 1/employee management/validation-history/**" text eol=lf

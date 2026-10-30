@@ -1,6 +1,7 @@
 ---
 status: proposed
 date: 2026-09-17
+last_revised: 2026-10-29
 deciders:
   - Amy Roth
   - Mike Tran
@@ -18,64 +19,61 @@ secondary_applications: Training Management, Intelex Platform Administration, In
 
 ## Context and Problem Statement
 
-Terra-Gen needs repeatable initial user provisioning without configuring each employee independently. Paylocity can supply a Position Code as text, but Intelex needs governed configuration for login location, security groups, location-scoped roles, training workgroups, and document distribution groups. New codes may arrive before an administrator has configured them, and draft changes must not affect live provisioning.
+Terra-Gen needs repeatable initial Employee preparation driven by a Paylocity Position Code. Boomi delivers the code in EmployeeUserAccess.JobCode; native Employee processing resolves governed Intelex configuration and retains the immutable version used for initial preparation. A new code can arrive before an Administrator has configured it, and working edits must not alter published configuration or replay initial memberships.
 
-The standard `EmployeeUserAccess` payload does not provide a place to receive Terra-Gen's Position Code input. The design therefore requires a custom Paylocity Employee Record and a controlled Position Code publishing model.
+The proposed record is revised against the accepted specification and the user’s October 29 application/workflow/security/Audit Trail decisions. Its proposed status and original decision date are retained; no new formal ADR approval is implied.
 
 ## Decision Drivers
 
-* Derive initial user access consistently from a stable Paylocity value.
-* Detect and govern previously unseen Position Codes.
-* Prevent incomplete or draft configuration from provisioning users.
-* Reuse the Intelex group inheritance model without maintaining four conflicting membership fields.
-* Support location-qualified Role assignments.
-* Retain a traceable history of approved Position Code configurations.
+* Configure repeatable initial login location and security/training/document group selections once per Position Code.
+* Govern previously unseen codes without preventing employee-only creation.
+* Separate editable working configuration from immutable published versions.
+* Keep configuration visible only to Administrators in one application.
+* Avoid Audit Trail configuration that the user has explicitly excluded.
+* Retain the initial published version and helper origin on Employees without replaying memberships on later changes.
 
 ## Considered Options
 
-* Configure every employee individually.
-* Treat Position Code as unvalidated text and calculate assignments outside Intelex.
-* Maintain one directly editable Position Code record without versioning.
-* Use separate persisted relations for every group category.
-* Use a governed Position Code master with separately published configuration versions.
+* Configure every Employee independently.
+* Calculate assignments entirely outside Intelex from ungoverned code text.
+* Maintain one editable Position Code without immutable versions.
+* Use a stable authoring Position Code with separately published immutable versions in a governed application.
 
 ## Decision Outcome
 
-Chosen option: **Resolve exact Paylocity Position Codes to governed, versioned Intelex provisioning profiles and use only successfully published configuration for initial Employee creation.**
+Chosen option: **Resolve Employee.JobCode to governed Position Code authoring records in Employee Integration Manager and capture an immutable published configuration for initial preparation.**
 
-`Position Code Text` on the Paylocity Employee Record will resolve through `GETRELATED` to a unique Position Code using exact, case-sensitive matching. If the value is new, Intelex will create the Position Code and its first Published Position Code in Draft. Clearing the source text will clear the relation.
+Create the new **Employee Integration Manager** application. Place Login Location Rule, Assignment Location Basis, Position Code, Published Position Code, Position Code Role Assignment and Published Position Code Role Assignment in it. Implement the two catalogue configurations first. Native Employee and existing Group, Location and Role structures stay in their current applications; the seven Employee extensions are added to native Employee.
 
-The Paylocity Employee Record will retain both an M:1 Position Code relation and an M:1 Published Position Code relation. On record creation, it will capture the Position Code's Current Published Version. If no version has yet been published, the captured-version relation will remain empty and the first successful publication will populate it. Later publications and later updates to the Paylocity Employee Record will not replace the captured Published Position Code.
+Only the existing **Administrators** group may view application objects. Administrators maintain authoring configuration and Publish; committed versions and their copied children remain immutable. Support within this application means Administrators performing support, not a separate visibility grant. Trusted automated processing must use a supported security context consistent with this boundary.
 
-Automatically created Position Codes will retain the Source Paylocity Employee Record and two notification controls: `Created by Paylocity Integration` and `Setup Notification Sent`. A Position Code Action Handler will immediately send one setup notification to the Administrators group. The message will include the Position Code link, source employee, and setup instructions. Manually created Position Codes will not send this notification.
+**Audit Trail is not required.** Leave it disabled on new application objects and assign no audit-retention setup or native Employee Audit Trail change. Published versions, helper references and existing operational execution/notification diagnostics remain available under their own design responsibilities; no custom audit object is introduced.
 
-Position Code configuration will define:
+The Employee handler first checks JobCode and uses FETCHVALUE to match Position Code.Code exactly and case sensitively. It captures an existing Current Published Version only into an empty Employee.Position Code Version. A genuine no-match uses GETRELATED create/resolve to create one authoring code and start its initial workflow. Concurrent or already-unpublished codes share the same authoring record. Employee.[Helper] Create New Position Code Relation is an M:1 with the inverse Source Employees grid, retaining all Employees waiting for first publication separately from ordinary current-code usage.
 
-* A Login Location Rule of either Same as Home Location or Home Location's Parent. When the selected Home Location has no parent, the rule falls back to Home Location; the form will state this behavior.
-* One underlying M:N Groups relation, presented as separate type-filtered grids for Security Groups, Training Workgroups, and Document Distribution Groups.
-* A separate 1:M Position Code Role Assignment collection. Each unique Role specifies whether its assignment is qualified by Home Location or Login Location.
+Position Code owns one initial **Initial Setup** stage, active/nonterminal, with **Administrators** responsible and **no automatic Due Date/calendar/escalation**. **Publish** is the only exit and completes the workflow in terminal **Completed**. Validation failure leaves it in Initial Setup; no cancellation, rejection, return or reopen is defined. These business parameters are confirmed. Later edits and Publish occur while Completed without restarting workflow. Published objects have no workflow.
 
-The publishing structure contains a stable Position Code master and 1:M Published Position Code versions. Published Position Code uses a single-stage Draft workflow. Completing its Publish action replaces the master's matching scalar values, complete Groups relation, and complete Role Assignment collection, then sets `Current Published Version`. The relation is set only when every publication step succeeds; failure leaves the prior active configuration unchanged.
+The visible Publish link creates a new independent immutable version containing the authoring Login Location Rule, complete Groups set and copied Role rows. It sets Current Published Version only after complete validation. First publication fills eligible empty current-code/version references through Source Employees and completes the initial workflow in the same controlled change. Later publication changes neither existing Employee captures nor initial memberships. Required failure restores publication, pointer, eligible Employee assignments and workflow effects while preserving saved authoring edits.
 
-The first draft is created automatically. Later drafts are created manually from the master's Published Versions grid and are prepopulated from the current published predecessor, including Groups and Role Assignment rows. Draft edits do not affect provisioning until successfully published.
+Login Location Rule uses stable catalogue codes SAME_HOME or HOME_PARENT; HOME_PARENT falls back to Home Location if no parent exists. One Groups relation is presented through three subtype-filtered authoring grids. Location-qualified Role execution remains deferred; storage/copy structure does not authorize an unqualified membership fallback.
 
-Employee provisioning is blocked until the Paylocity Employee Record has captured a Published Position Code. During initial Employee creation, Intelex calculates Login Location and a semicolon-delimited Groups payload from that captured configuration. Location-qualified Roles use the `RoleId(LocationId)` or `RoleId(LocationCode)` syntax expected by `EmployeeUserAccess`. Position-code-derived memberships are not reapplied during later Employee updates.
+One setup notification is sent to Administrators only for integration-created codes after at least one source-helper link exists. Successful delivery sets Setup Notification Sent; manual creation, later source arrivals and subsequent publications send no additional setup message. No additional custom completion notification is defined.
+
+Employee-only creation is allowed before publication. Native post-commit preparation adds only missing captured-profile memberships, stores initial home/login references and stamps completion last. Account activation remains subject to profile/SSO readiness and verified native feasibility. Current-code navigation may change later, but the captured version and helper origin are retained and initial memberships are not replayed.
 
 ## Consequences
 
-* Initial access, workflow roles, document distribution, and training audiences are configured once per Position Code and applied consistently.
-* New Position Codes become visible and actionable instead of silently receiving arbitrary access.
-* A new Employee cannot be provisioned until the related Position Code has a successfully published version.
-* Administrators must maintain draft versions and publish them deliberately.
-* The master/version copy operation must replace relationship collections and provide rollback semantics to avoid partially activating a configuration.
-* Each Paylocity Employee Record preserves which Published Position Code governed its initial provisioning, even after a newer version is published.
-* Exact, case-sensitive matching intentionally permits values such as `PC-100` and `pc-100` to represent different codes.
-* Later Position Code changes affect subsequent new Employee provisioning; they do not automatically reconcile existing Employee memberships.
+* The six new configuration objects share a named Administrators-only application boundary.
+* Administrators edit authoring configuration and publish complete versions deliberately; historical versions remain independent and immutable.
+* Multiple Employees can wait for one new code and receive its first published version through the helper inverse.
+* No Audit Trail enablement or retention configuration is required; operational failure monitoring remains separate.
+* Native exact matching, concurrency, publication atomicity, terminal links, membership-before-access and later account activation still require supported implementation bindings/results.
+* Required deferred Role behavior continues to hold affected profiles.
 
 ## More Information
 
-The detailed object, field, workflow, notification, and serialization requirements are recorded in [Paylocity Employee Integration Technical Requirements and Clarifications](<../raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>).
+Current operative design: [Employee Management technical specification](../ADR-001-004-technical-specification-employee-provisioning.md). New confirmed requirements: [October 29 application decisions](<../raw artifacts/2026-10-29-employee-integration-manager-decisions.md>). Revision disposition: [ADR reconciliation](../ADR-RECONCILIATION-2026-10-29-employee-integration-manager.md).
 
-Training-specific applicability remains documented in Training Management ADR-001, **Assign Training Requirements through Job-Code-Mapped Workgroups**. Employee payload orchestration is defined in Employee Management ADR-003, **Integrate Employees through Boomi, APIHub, and EmployeeUserAccess**.
+The earlier [September 25 requirements](<../raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>) preserve historical staging/version-side Draft proposals. They are not current build instructions. Accepted ADR-003’s older transport outcome still requires formal reconciliation; the current specification explicitly governs direct delivery.
 
 Original transcript references: organizational-structure workshop 2:21:49–2:23:08 and 2:27:15–2:32:29; integration and inspections workshop 0:24:50–0:29:40 and 2:31:33–2:32:18.

@@ -73,3 +73,7 @@ The detailed field, Action Handler, lookup, publishing, and payload requirements
 Position Code governance is defined in Employee Management ADR-001, **Use Governed Position Codes as Provisioning Profile Inputs**. The Intelex endpoint contract is documented in the [Intelex User Management API](https://developers.intelex.com/#user-management-api).
 
 Original transcript references: 0:03:27–0:10:27 and 0:20:31–0:23:14. The requirements artifact records the subsequent technical direction that replaces the initially discussed EDIS/SFTP transport.
+
+## Configuration clarification — October 29, 2026
+
+Configuration objects belong to the new Employee Integration Manager application, with Administrators-only visibility and no Audit Trail requirement. These confirmed application settings are captured in revised ADR-001 and the current specification. Native Employee stays in its existing application. This dated clarification preserves the historical transport decision above; the previously identified direct-delivery reconciliation remains outstanding. See the [confirmed application decisions](<../raw artifacts/2026-10-29-employee-integration-manager-decisions.md>).

@@ -1,0 +1,913 @@
+{
+  "version": 2,
+  "date": "2026-10-29",
+  "sourceSpecification": "ADR-001-004-technical-specification-employee-provisioning.md",
+  "tasks": [
+    {
+      "id": "CFG-01",
+      "title": "Configure the Catalogue Choices and Maintenance",
+      "category": "Catalogues and initial configuration records",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Provide the two governed choice lists before configuring the remaining custom objects.",
+      "scope": "Add Login Location Rule and Assignment Location Basis with their fields, initial values, maintenance forms, basic permissions and native audit. Configure stable Code values and prevent inactive choices from becoming new selections without erasing historical references.",
+      "prerequisites": [],
+      "inputs": [
+        "placement",
+        "catalogueControls"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "placement",
+          "description": "Approved existing application and final object/field names are required to create TG_LoginLocationRuleObject and TG_AssignmentLocationBasisObject; the displayed labels and proposed names below are the design basis."
+        },
+        {
+          "id": "catalogueControls",
+          "description": "Supported unique-Code and used-Code immutability controls across form, API and import, plus audit capability/retention and the exact Administrators/support principals, are required for catalogue enforcement, permissions and audit. The target field capacities are 100 and 255; native supported capacities remain unverified."
+        }
+      ],
+      "steps": [
+        "Create Login Location Rule (proposed TG_LoginLocationRuleObject) and Assignment Location Basis (proposed TG_AssignmentLocationBasisObject), with no inheritance parent. Make each object and its Name localizable; make Code non-localizable. These are ordinary catalogue objects, not Intelex Lookup Objects. Intelex supplies record identities automatically.",
+        "On each catalogue add Code: required text, maximum 100, unique, no default; Name: required localizable text, maximum 255, no default; Active?: required Yes/No, default TRUE; Sort: optional Float, no default. Protect Code from change once referenced. Configure inactive-value retention: Active?=FALSE prevents new selection and never clears an existing reference.",
+        "Add Login Location Rule records Code=SAME_HOME, Name=Same as Home Location, Active?=TRUE, Sort=10; and Code=HOME_PARENT, Name=Home Location's Parent, Active?=TRUE, Sort=20. Add Assignment Location Basis records Code=HOME, Name=Home Location, Active?=TRUE, Sort=10; and Code=LOGIN, Name=Login Location, Active?=TRUE, Sort=20.",
+        "Add a maintenance form for each catalogue showing Code, Name, Active? and Sort in that order. Allow Administrators to create and edit Name, Active? and Sort; show referenced Code read only. Expose no consumer inverse grids. Configure consumer selectors to display Name, order by Sort and compare stable Code; the consuming relationship tasks own their Active?=TRUE filters.",
+        "Grant Administrators catalogue creation/read/edit and support only the approved read access; deny ordinary users catalogue administration and Boomi catalogue writes. Use the supplied principal/control bindings. Enable native audit of mutable catalogue values and referenced-Code protection using the supplied audit settings. Missing delete/retention policy blocks those permissions rather than granting deletion by assumption."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Each catalogue contains Code, Name, Active? and Sort with the specified types, defaults and capacities, and exactly its two specified initial records.",
+        "A referenced Code cannot be changed; an inactive record remains readable through historical references, while new consuming selections exclude it.",
+        "Administrators can maintain the four-field forms; unauthorized catalogue writes are refused and enabled audit records the permitted changes."
+      ],
+      "refs": "Specification 6.1–6.2 and 11; target additions, no catalogue package definition supplied.",
+      "deliverable": "the Catalogue Choices and Maintenance configured with the changes listed below.",
+      "rationale": "Catalogue fields, forms and basic rights are one bounded outcome; used-Code protection and localization require Senior Associate judgment.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "CFG-02",
+      "title": "Create the Four Profile Object Definitions",
+      "category": "Application and object configuration",
+      "implementer": "Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Provide the mutually referenced object definitions needed by the profile configuration.",
+      "scope": "Add the four profile object definitions in the existing approved application. This early structure is needed before the authoring, published-version and Role relationships can be configured; it assigns no native-object reconstruction.",
+      "prerequisites": [],
+      "inputs": [
+        "placement"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "placement",
+          "description": "Approved existing application, final names and absence/presence of equivalent custom definitions are required for the four proposed object additions. The available metadata covers native objects only, so these are proposed additions, not verified missing live objects."
+        }
+      ],
+      "steps": [
+        "Create Position Code (TG_PositionCodeObject), Published Position Code (TG_PublishedPositionCodeObject), Position Code Role Assignment (TG_PositionCodeRoleAssignmentObject) and Published Position Code Role Assignment (TG_PublishedPositionCodeRoleAssignmentObject), using the approved final names. Give all four no inheritance parent. Reuse the existing application; create no new application container.",
+        "Configure both published object definitions without workflows. The Position Code authoring configuration assignment adds the initial-only workflow; the Role storage assignment adds both Role-row structures. Automatic native identities need no added Id field."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "The four approved custom object definitions are available as relationship targets in the existing application.",
+        "Neither published object has a workflow; native Subject, Group, Employee, Location and Work Groups inheritance is unchanged."
+      ],
+      "refs": "Specification 4.2 and 7.1–7.4; native baseline JSON objects collection.",
+      "deliverable": "the Four Profile Object Definitions configured with the changes listed below.",
+      "rationale": "Routine object creation is isolated because these definitions must exist before mutually referencing field configurations.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "CFG-03",
+      "title": "Configure Position Code Authoring",
+      "category": "Fields and relationships",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Let Administrators maintain working Position Code settings during setup and after completion without changing published configuration.",
+      "scope": "Add the authoring fields, initial workflow structure and authoring form, including three views of one Groups relationship, protected system controls and native audit. Reserve the Publish link for the separately configured publication operation.",
+      "prerequisites": [
+        "CFG-01",
+        "CFG-02",
+        "CFG-04",
+        "CFG-05",
+        "CFG-07"
+      ],
+      "inputs": [
+        "authoringControls",
+        "workflow",
+        "subtypes",
+        "audit"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "authoringControls",
+          "description": "Final field names, exact case-sensitive unique-Code enforcement and Code-after-creation immutability bindings are required for authoring field controls. Code capacity 255 is the proposed target, not a verified native maximum."
+        },
+        {
+          "id": "workflow",
+          "description": "Initial Setup and Publish system names, the actual active/nonterminal status label, Administrators responsibility/fallback binding and an explicit due-date/default-email decision are required to finish the initial workflow. Completed edit/link support must be supplied; no due-date value is authorized yet."
+        },
+        {
+          "id": "subtypes",
+          "description": "Native selector predicates for SysSecurityGroupEntity, FragApplication_WorkGroupsObject and DocCtrl_DistributiGroupObject are required for the three filtered Groups grids. Role ancestry alone does not establish filter syntax."
+        },
+        {
+          "id": "audit",
+          "description": "Supported native audit settings and retention for authoring scalar/relationship changes, and native field/form bindings for the protected controls, are required for audit and non-editable controls."
+        }
+      ],
+      "steps": [
+        "On Position Code add Code: required text, maximum 255, exact case-sensitive uniqueness, no trim/case-fold and immutable after creation; Login Location Rule: optional M:1 to Login Location Rule, inverse disabled, default NULL, editable by Administrators in Initial Setup and Completed, new selections Active?=TRUE; Groups: optional M:N to SysGroupEntity, inverse disabled, empty initially; Current Published Version: optional M:1 to Published Position Code, inverse disabled, default NULL, read only and restricted to a complete publication of this same code.",
+        "Add Created by Paylocity Integration: required Yes/No, default FALSE for manual creation, read only after creation; and Setup Notification Sent: required Yes/No, default FALSE, read only. Employee discovery sets integration origin and successful notification sets its sent flag; ordinary authoring saves do not reset either control. Publishing copies neither flag.",
+        "Create one initial-only workflow on Position Code with stage Initial Setup, active/nonterminal status using the supplied native label, Person Responsible=Administrators through the supplied binding, and terminal result Completed. Configure the supplied due-date/default-email decision without adding an assumed deadline, reminder or escalation. Add the Publish action identity but keep it unavailable for execution until the complete publication operation is bound. Add no cancellation, rejection, return or reopen action.",
+        "Add authoring form containers for Initial Setup and Completed. Show Code read only after creation, editable Login Location Rule, and three subtype-filtered grids named Security Groups, Training Workgroups and Document Distribution Groups over the single Groups relation. Each grid changes only its own subtype and preserves selections in the other two; exclude Roles. Show the hint: HOME_PARENT uses the Home Location parent and falls back to Home Location when no parent exists.",
+        "Show Current Published Version and the read-only Published Versions history from the published owner relation. Show the Role Assignments inverse through the supplied deferred-control binding; Role entry/execution remains disabled until the deferred feature is approved. Keep Source Employees, from the helper inverse, as a background read-only support grid and Employees, from the current-code inverse, as separate read-only usage navigation. Show that working edits may differ from Current Published Version. Place one Publish link in Initial Setup and Completed; the publication assignment owns its execution binding.",
+        "Enable supported native audit for mutable authoring values and associations. Form controls keep Current Published Version, origin, sent flag and source/history grids read only; the separate record-security assignment owns enforcement through API, imports and direct access. Completed remains editable for Administrators and Save never creates a version or restarts the workflow."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Code is required, case sensitive and immutable after creation; new authoring records have no rule/current publication and both origin controls use their defined defaults.",
+        "Initial Setup is the sole active stage and Completed is a terminal result; no incomplete Publish action is exposed for execution.",
+        "Administrators can edit working rule/Groups in Initial Setup and Completed; editing one filtered Groups grid preserves the other categories and leaves all published records unchanged.",
+        "The form separates working settings, published history, ordinary Employees and Source Employees; audit captures supported authoring changes."
+      ],
+      "refs": "Specification 7.1, 9.1 and 11; native metadata does not contain these proposed forms or workflow.",
+      "deliverable": "Position Code Authoring configured with the changes listed below.",
+      "rationale": "Fields, stage-aware authoring and forms form one complete setup outcome. Subtype views and workflow binding require Senior Associate independence.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "CFG-04",
+      "title": "Configure Published Position Code Records",
+      "category": "Fields and relationships",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Provide a read-only record of each published profile configuration.",
+      "scope": "Add the published-version fields, its owner/history relationship, scoped version identity and review form. The publication operation creates values and independent copies; this assignment supplies their storage and presentation.",
+      "prerequisites": [
+        "CFG-01",
+        "CFG-02",
+        "CFG-05",
+        "CFG-07"
+      ],
+      "inputs": [
+        "versionIdentity",
+        "versionForm"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "versionIdentity",
+          "description": "Supported positive-integer field configuration, unique (Position Code, Version Number) constraint and native display expression combining Position Code.Code with Version Number are required to finish version identity. Final custom field names remain supplied inputs."
+        },
+        {
+          "id": "versionForm",
+          "description": "Approved review-form placement and support principal bindings are required for the new published-version screen; native data-access enforcement belongs to the record-security assignment."
+        }
+      ],
+      "steps": [
+        "On Published Position Code add Position Code: required M:1 to Position Code, inverse Published Versions enabled, fixed after creation; Version Number: required positive integer, no static default, read only; Login Location Rule: required M:1 to Login Location Rule, inverse disabled, read only; Groups: optional M:N to SysGroupEntity, inverse disabled, read only. Enforce uniqueness of (Position Code, Version Number) using the supplied native constraint. The publication operation allocates first number 1 and subsequent maximum+1.",
+        "Configure the supplied native display expression to display the owning Position Code.Code and Version Number. Add a read-only Published Position Code form showing that identity, source Position Code, Login Location Rule, Groups, Role Assignments from the published child-owner inverse and Employees from Employee.Position Code Version. Configure the latter two controls only after their owning relationship outputs exist.",
+        "Remove manual create, edit and Draft commands from the proposed version screen and history controls. Add no workflow or Predecessor field. Retain historical catalogue references on display after a choice is deactivated. The record-security assignment provides immutability beyond the form; publication is the only configured creation path."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Position Code, Version Number and Login Location Rule are required; the complete version relation and Groups collection can be populated only through the approved publication path.",
+        "Repeated version numbers for one code are refused; the same number can identify a version of a different code.",
+        "Authorized review shows the captured scalar, group and child configuration without manual version/Draft creation or editing."
+      ],
+      "refs": "Specification 7.2 and 11.",
+      "deliverable": "Published Position Code Records configured with the changes listed below.",
+      "rationale": "Version-scoped uniqueness and related-value display need Senior Associate judgment; transaction effects are owned separately.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "CFG-05",
+      "title": "Configure the Authoring and Published Role Structures",
+      "category": "Fields and relationships",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Reserve separate authoring and immutable version storage for Role choices without enabling deferred Role execution.",
+      "scope": "Add both three-field Role association structures, their inverse grids and bounded forms. Configure owner-scoped uniqueness and inactive-choice retention; keep the deferred authoring controls unavailable until Role use is approved.",
+      "prerequisites": [
+        "CFG-01",
+        "CFG-02"
+      ],
+      "inputs": [
+        "roleBindings"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "roleBindings",
+          "description": "Final Role field names, native SysRoleEntity selector binding, owner-plus-Role uniqueness control, supported authoring audit and the binding that disables deferred Role entry are required for these storage/form changes. Role immediate inheritance and executable assignment semantics remain unverified and are not assigned here."
+        }
+      ],
+      "steps": [
+        "On Position Code Role Assignment add Position Code: required M:1 to Position Code, fixed after row creation, inverse Role Assignments enabled; Role: required M:1 to existing SysRoleEntity, inverse disabled, no default; Assignment Location Basis: required M:1 to Assignment Location Basis, inverse disabled, no default, new selections Active?=TRUE. Enforce one Role per Position Code. Configure Administrator authoring edit capability for Initial Setup and Completed behind the deferred-feature restriction.",
+        "On Published Position Code Role Assignment add Published Position Code: required M:1 to Published Position Code, fixed after creation, inverse Role Assignments enabled; Role: required M:1 to SysRoleEntity, inverse disabled, read only; Assignment Location Basis: required M:1 to Assignment Location Basis, inverse disabled, read only. Enforce one Role per Published Position Code. Publication supplies the copied values; retain historical inactive basis references.",
+        "Add a three-field authoring Role form and a read-only three-field published Role review form. Fix the owner after creation on both. Prevent manual creation/editing of published rows, and add no workflow. Enable supported native audit of mutable authoring Role values. Display/entry of authoring Role rows remains unavailable until the deferred design is completed; create no unqualified group-membership alternative."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Both three-field structures expose their correct owner-side Role Assignments inverse; each owner can reference a Role only once.",
+        "The published structure is read only and retains copied Role/basis references independently of authoring rows.",
+        "Role storage is available to publication, but the deferred Role assignment feature cannot grant access or accept unauthorized authoring entries."
+      ],
+      "refs": "Specification 7.3–7.5, 11 and Role deferral in 12.4.",
+      "deliverable": "the Authoring and Published Role Structures configured with the changes listed below.",
+      "rationale": "The two small association structures and forms are one bounded storage outcome, with owner-scoped rules and deferred-control handling.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "CFG-07",
+      "title": "Configure Employee Profile Fields and Support Display",
+      "category": "Fields and relationships",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Retain the current code, initial setup participation and captured preparation evidence on each Employee.",
+      "scope": "Add the seven Employee extensions, their three declaring inverses and a restricted support display. Configure their defaults, field protection and supported native audit; native employee identity, JobCode and Location properties are reused.",
+      "prerequisites": [
+        "CFG-02"
+      ],
+      "inputs": [
+        "employeeBindings",
+        "employeeAudit"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "employeeBindings",
+          "description": "Approved final names for the seven proposed Employee extensions, actual Employee form/section target and supported relationship inverses are required for schema and support placement. Date/time timezone settings and write-once/read-only controls must be supplied for the captured version and checkpoint."
+        },
+        {
+          "id": "employeeAudit",
+          "description": "The extracted SysEmployeeEntity definition returned IsAuditEnabled=FALSE. Supported native audit scope/retention for only the new fields and their relationships is needed before enabling the specified evidence capture; do not assume all native Employee field audit must change."
+        }
+      ],
+      "steps": [
+        "On SysEmployeeEntity add Managed by Employee Integration? (TGIntegrationManaged): required Yes/No, default FALSE; Position Code (TGPositionCode): optional M:1 to Position Code, default NULL, inverse Employees enabled; [Helper] Create New Position Code Relation (TGHelperCreateNewPositionCodeRelation): optional M:1 to Position Code, default NULL, inverse Source Employees enabled. Each helper has at most one target; many Employees may reference the same Position Code. The current-code and helper relations are distinct stored fields.",
+        "Add Position Code Version (TGPositionCodeVersion): optional/write-once M:1 to Published Position Code, default NULL, inverse Employees enabled; Initial Login Location (TGInitialLoginLocation): optional M:1 to SysLocationEntity, inverse disabled, default NULL; Initial Profile Home Location (TGInitialProfileHomeLocation): optional M:1 to SysLocationEntity, inverse disabled, default NULL; Initial Profile Applied On (TGInitialProfileAppliedOn): optional Date/Time, timezone enabled, default NULL. Both location references become required when a checkpoint is written; code/version are required by preparation rather than by initial Employee save.",
+        "Configure all seven fields as maintained by trusted native automation and read only for ordinary edits. Current Position Code may change; a captured Position Code Version is never replaced automatically; helper remains as origin evidence after capture; preparation references and timestamp remain after completion. The actual record-matching and checkpoint writes belong to their automation assignments, not field defaults.",
+        "Add an authorized-support Employee form section showing all seven fields. Label Position Code as current association, Position Code Version as retained initial configuration, and the helper as initial workflow participation. Show Initial Login Location, Initial Profile Home Location and Initial Profile Applied On read only; explain that the timestamp means preparation completed, not account activation. Offer no manual ready/checkpoint reset. Enable the supplied native audit settings for these extension values and associations, including helper changes."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "A manually created Employee defaults Managed by Employee Integration? to FALSE and all six references/date values to NULL.",
+        "Several Employees referencing one helper target appear in that code’s Source Employees grid; current-code Employees and captured-version Employees use their distinct inverses.",
+        "Support can read the seven-field section under approved access; no form user can set a completion checkpoint or replace a captured version, and supported extension changes are audited."
+      ],
+      "refs": "Specification 8.1–8.3, 11 and additional fields in 13.4; baseline Employee metadata IsAuditEnabled=FALSE.",
+      "deliverable": "Employee Profile Fields and Support Display configured with the changes listed below.",
+      "rationale": "Seven native-object extensions, inverse ownership and their support display require Senior Associate care, with deeper direct-access security kept separate.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "SEC-02",
+      "title": "Configure Profile and Employee Access Controls",
+      "category": "Security",
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant",
+      "objective": "Permit governed authoring and automation while protecting published versions and Employee information on every required access path.",
+      "scope": "Add the profile object permissions and record/field restrictions for Administrators, support, Boomi and trusted native processing. Enforce immutable publications and protected Employee fields through forms, direct URLs, API, imports, search and export.",
+      "prerequisites": [
+        "CFG-03",
+        "CFG-04",
+        "CFG-05",
+        "CFG-07"
+      ],
+      "inputs": [
+        "security"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "security",
+          "description": "Exact Administrators/support/Boomi/service principals and native object, field, record, terminal-state and read-path permission bindings are required for these grants/denials. Support retry authority, delete policy and personal-data search/export scope remain undecided; those permissions stay blocked rather than being broadly granted."
+        }
+      ],
+      "steps": [
+        "Grant Administrators Position Code authoring create/read/edit in Initial Setup and Completed and execution of Publish, plus read access to Published Position Code and published Role rows. Grant no manual published-record or child creation/edit/delete. Keep authoring Code immutable after creation and Current Published Version, origin/sent controls, helper/history grids and all seven Employee extensions protected from ordinary direct writes. Authoring Role entry remains disabled while its feature is deferred.",
+        "Restrict Boomi to supported EmployeeUserAccess writes and approved Object Data API Employee readiness reads. Deny Boomi profile publication, custom checkpoint/capture writes and catalogue/profile maintenance. Grant the native handler/service context only the Employee relation, profile creation, publication-copy, first-release and membership writes needed by its declared operations. Trusted publication may construct its graph inside the controlled transaction; committed published records and children have no later edit path.",
+        "Grant support only approved read navigation to Employee/profile/native-error evidence and the supplied existing retry operation, not general publication or checkpoint editing. Ordinary users retain their existing Employee access and receive no provisioning-administration grant. Protect Source Employees, ordinary Employees and captured-version Employees drill-through using the supplied personal-data scope.",
+        "Apply the same restrictions to direct URL, API, import, search and export access as to the forms. Bind editable Completed authoring and Publish permissions to the supplied native terminal identity. Configure immutable-version/child controls and write-once Employee capture/checkpoint restrictions at the record/field layer, not merely by hiding form controls."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "An authorized Administrator can edit and publish Position Code in Completed; an unauthorized user cannot execute Publish even through a direct request.",
+        "Committed published fields, Groups and Role children refuse unauthorized changes through forms, API, imports and direct URLs.",
+        "Boomi cannot set custom preparation/capture values; permitted readiness reads work and restricted Employee information remains unavailable through search, export or navigation outside its approved scope."
+      ],
+      "refs": "Specification 11, field editability in 7 and 13.4, workflow access in 9.",
+      "deliverable": "Profile and Employee Access Controls configured with the changes listed below.",
+      "rationale": "Cross-object, terminal and personal-data controls need Senior Consultant authority and Principal review.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "AUT-01",
+      "title": "Configure Employee Position Code Resolution",
+      "category": "Automation and services",
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant",
+      "objective": "Associate incoming Employees with the right profile and retain every Employee waiting for a new Position Code.",
+      "scope": "Add the Employee Action Handler for integration-origin marking, exact code matching, first capture, missing-code creation and helper maintenance. Add the reusable initial login-location calculation used by preparation, without applying memberships inside the creation handler.",
+      "prerequisites": [
+        "CFG-01",
+        "CFG-03",
+        "CFG-04",
+        "CFG-05",
+        "CFG-07"
+      ],
+      "inputs": [
+        "event",
+        "transaction",
+        "locationCalculation"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "event",
+          "description": "Allowlisted Boomi actor identity, exact Employee creation/update/internal-save event bindings, FETCHVALUE relationship-return signature and case-sensitive comparison, GETRELATED create/resolve/workflow-start binding and recursive-save guard are required for handler execution. JobCode alone is not origin evidence."
+        },
+        {
+          "id": "transaction",
+          "description": "Supported shared per-code serialization, exact-Code uniqueness recovery and initial-publication race binding are required to create one authoring record and capture the committed first release safely. The native operations are unverified; no custom locking store is authorized."
+        },
+        {
+          "id": "locationCalculation",
+          "description": "Supported callable native relationship calculation and error/hold binding are required to return Employee.Location or ParentLocation as a valid Initial Login Location candidate without writing the preparation checkpoint."
+        }
+      ],
+      "steps": [
+        "Add a proposed Employee create Action Handler that checks the supplied allowlisted integration actor and sets Managed by Employee Integration?=TRUE only for that authorized new Employee. Leave manual/nonintegration creation FALSE. Guard internal saves to prevent repeated origin enrollment or workflow initialization. Do not enroll existing Employees in bulk.",
+        "When JobCode is empty, skip FETCHVALUE and creation and leave/clear current Position Code. When populated, FETCHVALUE Position Code where Code equals JobCode exactly and case sensitively, without trimming or case folding, into Employee.Position Code. An ambiguous result or failed search is an error/hold, not a no-match. If the resolved code has Current Published Version and Employee.Position Code Version is empty, capture that publication at creation handling; do not leave the choice to a later scheduled worker.",
+        "If the resolved code is in Initial Setup with no publication, set Employee.[Helper] Create New Position Code Relation to it and leave version empty. Only on a genuine no-match, use the supplied GETRELATED create/resolve operation to create a Position Code with Code=JobCode, Created by Paylocity Integration=TRUE, Setup Notification Sent=FALSE, rule/current publication NULL and initial workflow started. Set the Employee helper to that code; current Position Code may remain NULL until first publication. Create no published version here.",
+        "Use exact-Code uniqueness and the supplied per-code serialization to recover concurrent creation by relating all Employees to the same new authoring record. After helper assignment, wait for its Source Employees inverse to be available and invoke the guarded setup notification. Recheck lifecycle/current version against first publication under the shared control: the Employee must either join the initial release or capture its committed active version into eligible empty current-code/version fields afterward.",
+        "For an integration-managed Employee whose JobCode changes or clears before any capture, clear/re-resolve the helper while its prior code remains in Initial Setup so the old Source Employees grid loses stale participation. After capture retain helper origin and the captured version even if JobCode changes/clears; update/clear only current Position Code navigation. A current-code/captured-version mismatch before preparation holds review. Unrelated handler saves never recapture, restart workflow or replay preparation.",
+        "Add one reusable location calculation: require a valid captured version and Employee.Location with nonempty LocationCode; compare Login Location Rule.Code. SAME_HOME returns Employee.Location. HOME_PARENT returns Employee.Location.ParentLocation or, when absent, Employee.Location. Require the returned location to have a valid nonempty code; hold missing/unknown rule or invalid location. Return the reference only. The membership preparation routine owns stored login/home snapshots and its final timestamp."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "A nonempty JobCode on manual creation does not mark integration origin. Blank code does not search/create; ambiguous or failed search does not create a Position Code.",
+        "Exact case-distinct codes remain distinct; simultaneous Employees with one new exact code share one authoring record/workflow and appear in its Source Employees grid.",
+        "An existing active publication is captured once; an existing unpublished code joins the helper cohort without another code or workflow. A racing first publication leaves no eligible Employee without capture.",
+        "Pre-capture code changes remove stale helper participation; post-capture code changes retain the original helper/version and never reapply memberships.",
+        "SAME_HOME returns Home Location; HOME_PARENT returns the parent or Home Location fallback. Missing rule/location codes hold calculation and no checkpoint is written here."
+      ],
+      "refs": "Specification 8.1–8.2, 7.1 and Employee extensions in 13.4.",
+      "deliverable": "Employee Position Code Resolution configured with the changes listed below.",
+      "rationale": "Record discovery, workflow creation and publication races form the user-requested combined handler outcome; high-consequence concurrency requires Senior Consultant configuration.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "AUT-04",
+      "title": "Configure the One-Time Position Code Setup Message",
+      "category": "Notifications and automation",
+      "implementer": "Senior Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Notify Administrators once when an integration-created Position Code has Employees waiting for setup.",
+      "scope": "Add the Position Code Setup Required message template and guarded native delivery after a helper/source link exists. Set the sent flag only after delivery succeeds and use the supplied delivery deduplication mechanism for retry.",
+      "prerequisites": [
+        "CFG-03",
+        "CFG-07",
+        "AUT-01"
+      ],
+      "inputs": [
+        "notification"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "notification",
+          "description": "Actual template identity, current-Administrators recipient expression, native delivery/deduplication operation and success evidence covering the send/flag failure window are required to bind safe delivery. Native default creation/completion email settings must be supplied to avoid unintended additional mail."
+        }
+      ],
+      "steps": [
+        "Create the proposed Position Code Setup Required template. Include the Position Code link, Employees available in Source Employees at send time, a link to the live Source Employees grid, and instructions to configure Login Location Rule and the security/training/document group selections, save the record and click Publish. Address current users in the Administrators group through the supplied recipient expression. Add no CC/BCC, reminder, escalation or publication-completion template.",
+        "Bind the native notification operation to the Employee handler’s completed helper/inverse handoff. Require Created by Paylocity Integration=TRUE, Setup Notification Sent=FALSE and at least one linked Source Employee before sending; otherwise send nothing. The association must exist before recipient content is evaluated.",
+        "Use the supplied native delivery deduplication key/operation; on successful delivery set Setup Notification Sent=TRUE. On failure leave FALSE and retain native failure evidence for retry. Close the successful-send/failed-flag window using that supplied native mechanism; do not add a custom message log. Manual codes, later source arrivals after success and subsequent publication send no additional setup message. Apply the supplied default-email disposition."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "The message shows the code and live source-grid links and at least one actual source Employee before it is delivered to Administrators.",
+        "Manual creation, an empty Source Employees grid and an already sent flag each suppress delivery.",
+        "A failed send remains retryable; a successful send followed by retry produces one successful setup message and a TRUE sent flag."
+      ],
+      "refs": "Specification 9.4 and 8.1 helper handoff.",
+      "deliverable": "the One-Time Position Code Setup Message configured with the changes listed below.",
+      "rationale": "Delivery ordering and safe retry require Senior Consultant judgment even though the template itself is routine.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "AUT-07",
+      "title": "Configure Initial and Subsequent Position Code Publication",
+      "category": "Automation and services",
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant",
+      "objective": "Publish one complete immutable configuration and release waiting Employees only on the first successful publication.",
+      "scope": "Add the common publication operation, independent version/Role copies, first-source writeback, workflow completion and both Publish bindings. Put all validation before consequential changes and keep version activation, initial Employee writeback and workflow completion in the supplied single controlled change.",
+      "prerequisites": [
+        "CFG-03",
+        "CFG-04",
+        "CFG-05",
+        "CFG-07",
+        "SEC-02"
+      ],
+      "inputs": [
+        "publication",
+        "publishLink",
+        "publicationSelection"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "publication",
+          "description": "Supported operation binding, saved-revision check, per-code lock, version-number constraint, retry identity/reconciliation and atomic graph/pointer/Employee/workflow rollback must be supplied. These are unresolved native capabilities, not approved custom transaction syntax."
+        },
+        {
+          "id": "publishLink",
+          "description": "Exact Initial Setup Publish workflow-action binding and Completed form-link mechanism, active status mapping, responsible-person/due-date/default-email decisions and after-commit handoff are required to bind execution. Authoring scaffolding supplies the fields, screen and stage identities."
+        },
+        {
+          "id": "publicationSelection",
+          "description": "Supported group-type validation, active catalogue checks, Role uniqueness/basis checks and exact onboarding-eligible Employee status predicate are required for publication validation and source release. Profiles needing deferred location-qualified Roles must remain blocked."
+        }
+      ],
+      "steps": [
+        "Create one proposed publication operation shared by initial workflow Publish and the Completed form Publish link. Recheck authorized Administrator, saved latest authoring revision, per-code lock and attempt identity before copying. Initial publication requires Initial Setup and Current Published Version=NULL; later publication requires Completed and a nonnull Current Published Version. Reject stale/duplicate/uncertain attempts for reconciliation rather than create another version blindly.",
+        "Before changing any publication state require an active Login Location Rule, valid complete Groups selections excluding Role-as-group execution, unique Roles within the code and a valid active Assignment Location Basis on every Role row. Hold any profile needing the deferred location-qualified Role behavior. These publication guards own completion validation; form requiredness is only authoring assistance.",
+        "Within the supplied controlled change allocate Version Number=max published number for this Position Code+1, first 1. Create Published Position Code.Position Code=this code, Version Number=allocated value, Login Location Rule=authoring rule, and Groups=an independent complete copy of authoring Groups. For each authoring Role Assignment create an independent published child with Published Position Code=new version, Role=source Role, Assignment Location Basis=source basis. Copy neither origin/sent controls nor helper/source links. Do not alter authoring values or prior versions.",
+        "After the complete graph validates set Current Published Version to the new version. On first publication select Source Employees only through Employee.[Helper] Create New Position Code Relation. Recheck each helper target, Managed by Employee Integration?=TRUE, onboarding eligibility, exact JobCode=Code, Position Code Version=NULL and Initial Profile Applied On=NULL. Fill an empty Position Code with this code or retain a matching value; hold a conflicting current-code record for support, never overwrite it. Fill only an eligible empty Position Code Version with the new version. Retain helper links and never use the ordinary Employees grid as this work population.",
+        "On initial publication complete Initial Setup to terminal Completed together with the immutable graph, current pointer and eligible Employee assignments. Roll back all those required effects on failure while retaining saved authoring edits and Initial Setup. On later publication skip Source Employee writeback and workflow completion; retain Completed and all captured Employee versions. Failure preserves the previous current version and Completed. Serialize helper arrivals against first publication so each Employee is released here or captures the committed version afterward.",
+        "Bind the initial Publish action and form link to that common operation. Show it only to authorized Administrators, with the correct Initial Setup or Completed branch; recheck permission during execution. After successful commit hand eligible Employees to the configured preparation continuation, never inside the publication transaction. Add no cancellation/reopen path or custom completion notice. The continuation assignment owns the native dispatch binding.",
+        "Configure these proposed user messages for the named guards: unauthorized—You are not authorized to publish this Position Code.; missing/inactive rule—Select an active Login Location Rule before publishing.; unsaved/stale revision—Save your changes and reload the latest Position Code before publishing.; invalid groups/duplicate Role/basis—Review the group and Role selections before publishing.; deferred Role—This profile requires Role setup that has not yet been completed.; lifecycle/pointer mismatch—The Position Code status and published version do not agree. Contact support.; required publication/writeback failure—Publication could not be completed. The previous published setup remains unchanged.; duplicate/in-progress/uncertain attempt—A publication attempt is already being processed or needs its result checked."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "The first Publish creates version 1 with independent rule/Groups/Role values, fills eligible source Employees and ends Initial Setup in Completed together; any required failure restores all those effects.",
+        "A source Employee with a populated version is never overwritten; a mismatched helper/JobCode is not released; conflicting current-code records are held for review.",
+        "Later Publish creates the next version while staying Completed and preserves all existing Employee captures and prior version graphs.",
+        "Concurrent clicks, retries and helper arrivals use the supplied controlled outcome without duplicate versions or lost eligible source Employees.",
+        "Each named guard produces its configured message before activation/completion; no custom completion notification is sent."
+      ],
+      "refs": "Specification 7.2–7.4, 9.1–9.3 and publication requirements in 12.3.",
+      "deliverable": "Initial and Subsequent Position Code Publication configured with the changes listed below.",
+      "rationale": "Copy, source writeback and completion are inseparable parts of one publication outcome and are kept together to preserve atomicity. Advanced concurrency and cross-object completion need Senior Consultant implementation and Principal review.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "AUT-08",
+      "title": "Configure Initial Employee Membership Preparation",
+      "category": "Automation and services",
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant",
+      "objective": "Prepare the initial memberships and login instruction once without removing unrelated access.",
+      "scope": "Add the shared native preparation routine for eligible integration-managed Employees. Under an Employee lock add only missing desired memberships, store the initial login/home references and stamp completion last; retry finishes incomplete work without replaying completed setup.",
+      "prerequisites": [
+        "CFG-07",
+        "AUT-01"
+      ],
+      "inputs": [
+        "membership",
+        "preparationEligibility"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "membership",
+          "description": "Verified native Members/MemberOf add operation before user access exists, Employee lock, membership read/compare binding, native error evidence and transaction/timezone behavior are required for membership writes and checkpointing. User-confirmed M:N structure is not proof of a writable setter."
+        },
+        {
+          "id": "preparationEligibility",
+          "description": "Exact non-archived/non-deleted/onboarding-eligible predicate, current-code/version comparison and deferred-Role hold binding are required for eligibility. The predecessor provides the reusable login-location result, not a membership operation."
+        }
+      ],
+      "steps": [
+        "Add one proposed shared preparation routine for creation capture, first publication and retry callers. Under an Employee lock recheck Managed by Employee Integration?=TRUE, Initial Profile Applied On=NULL, Employee not archived/deleted, current JobCode resolves to current Position Code, populated Position Code Version belongs to that code, valid Employee.Location with nonempty LocationCode, and no unresolved required Role behavior. Hold invalid/mismatched records instead of changing capture.",
+        "Read desired Groups from the captured Employee.Position Code Version.Groups. Through the supplied native membership operation add the Employee only to groups where membership is absent. Preserve every unrelated membership; never replace MemberOf or remove unlisted groups. An empty profile category means unmanaged, not removal. Retry compares current membership and adds only remaining missing associations.",
+        "Invoke only the reusable location calculation: SAME_HOME returns Employee.Location; HOME_PARENT returns its ParentLocation or Employee.Location when no parent exists. Store Initial Profile Home Location=current Employee.Location and Initial Login Location=the valid returned location; require both codes to be nonempty. Write Initial Profile Applied On=server date/time with timezone support only after every required membership and reference write succeeds.",
+        "On partial failure retain successful memberships, leave Initial Profile Applied On empty and expose native failure evidence; account activation remains held. Retry safely completes missing writes. A populated timestamp makes subsequent calls a no-op and is never cleared by later feeds. Do not call the Employee discovery handler from this routine."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Eligible Employees receive every desired missing group once while unrelated memberships remain unchanged.",
+        "Partial failure leaves the checkpoint empty; retry completes the missing associations/references without duplication or removing successful access.",
+        "The timestamp is written only after valid home/login snapshots and all required group writes; completed Employees and code/version mismatches do not receive replayed setup."
+      ],
+      "refs": "Specification 8.2 and 13.4.",
+      "deliverable": "Initial Employee Membership Preparation configured with the changes listed below.",
+      "rationale": "Native membership-before-access behavior, locking and safe partial-failure recovery require Senior Consultant authority.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "AUT-09",
+      "title": "Configure Employee Preparation Continuation",
+      "category": "Automation and services",
+      "implementer": "Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Run preparation only after the inbound Employee or publication changes have committed and resume incomplete eligible records.",
+      "scope": "Add the native after-commit dispatch and scheduled Event Service that invoke the shared preparation routine. Apply explicit selection and execution controls without selecting a later profile version or resetting completed Employees.",
+      "prerequisites": [
+        "AUT-01",
+        "AUT-07",
+        "AUT-08"
+      ],
+      "inputs": [
+        "continuation",
+        "cadence"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "continuation",
+          "description": "Verified after-commit invocation binding for Employee capture and successful initial publication, Event Service executable/callable binding, per-Employee exclusion and native failure/retry owner are required to wire the service."
+        },
+        {
+          "id": "cadence",
+          "description": "Approved Event Service interval, timezone and retry/backoff limits are required for scheduling. Five minutes is the proposed cadence only, not an authorized fixed setting; the service must remain unscheduled until the value is supplied."
+        }
+      ],
+      "steps": [
+        "Bind the completed Employee-capture event and successful first-publication handoff to invoke membership preparation after their transactions commit. Pass the eligible Employee identity only; consume its already captured Position Code Version. Never substitute the latest current publication during continuation.",
+        "Add a proposed native Event Service selecting Managed by Employee Integration?=TRUE, Initial Profile Applied On=NULL, not archived/deleted, populated Position Code Version belonging to the current resolved Position Code, valid current Home Location/code and no unresolved required Role. Invoke the shared preparation routine for each selected Employee under the supplied exclusion/retry controls; its lock rechecks eligibility before writes.",
+        "Configure the supplied interval/timezone/retry policy and existing native execution-error destination/owner. Failures remain retryable with an empty checkpoint and visible native error evidence. Completed Employees are excluded, and no continuation resets a checkpoint, starts a Position Code workflow or creates an Employee."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "No membership preparation runs while Employee creation or first publication remains uncommitted.",
+        "The configured service selects ready incomplete Employees and calls the shared routine using their captured version; completed or mismatched records are excluded.",
+        "The approved schedule and native error destination are configured, and retry resumes partial preparation without another Employee or workflow."
+      ],
+      "refs": "Specification 8.1–8.2 and 9.2 after-commit continuation.",
+      "deliverable": "Employee Preparation Continuation configured with the changes listed below.",
+      "rationale": "Binding native events, scheduled selection and a shared routine is moderately complex Consultant work once its native contracts are supplied.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "INT-01",
+      "title": "Configure Establishment Assignment in Boomi",
+      "category": "Integrations",
+      "implementer": "Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Deliver the correct Home Location for new employees, relocations and job changes while honoring authorized corrections.",
+      "scope": "Add the supplied ordered establishment decision to the Boomi mapping: established work/assigned site first, otherwise San Diego for remote California residents, otherwise the job function’s designated main established site. Configure valid LocationCode mappings and hold incomplete or conflicting cases.",
+      "prerequisites": [],
+      "inputs": [
+        "establishment",
+        "correction"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "establishment",
+          "description": "Exact Paylocity fields for assigned/actual site, established-site classification, residence state and job function; all site-to-LocationCode values including San Diego; job-function-to-main-site values and maintenance owner; and conflicting/multiple-site resolution are required to bind the decision. Job function is not assumed to equal JobCode."
+        },
+        {
+          "id": "correction",
+          "description": "The approved durable upstream correction authority, actor/reason evidence fields, Boomi read binding and approver/clear/precedence values are required to implement protected corrections. No correction store or custom EmployeeUserAccess override field is authorized."
+        }
+      ],
+      "steps": [
+        "Add a proposed Boomi establishment mapping before HomeLocationCode delivery, triggered for new employees, relocation and job change. First determine whether the employee is assigned to or works at an established site. When yes map that site to its valid Intelex LocationCode and end this calculation, even for a California resident. An unknown site condition is not a No answer; hold it. Hold conflicting/multiple sites until the supplied resolution rule selects an unambiguous site.",
+        "Only when no established assigned/work site applies, treat the employee as remote. If residence state is California, map to the San Diego establishment’s supplied LocationCode. Otherwise map the employee’s job function to its designated main established site and then to LocationCode. Missing residence or missing/ambiguous applicable job-function/site mapping holds the affected creation/update; choose no corporate or San Diego default. No reporting-chain traversal is part of this decision.",
+        "Configure the supplied durable approved correction to override the calculated result until its explicit authorized clear condition. Preserve actor/reason and rule/version/input evidence through the existing supplied native support mechanism. An Intelex Location edit alone is not a durable correction. Deliver only a nonempty unambiguous HomeLocationCode. This Employee establishment mapping does not reapply Position Code memberships or define event-specific Incident Management attribution."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "An established site assignment takes precedence over California residence.",
+        "A remote California resident maps to San Diego; a remote non-California resident maps to the designated main site for their job function.",
+        "Required unknown/conflicting values hold the affected delivery, and a valid approved correction survives later feeds until its authorized clear condition."
+      ],
+      "refs": "Specification 10.1; user-supplied establishment flow dated 2026-10-28.",
+      "deliverable": "Establishment Assignment in Boomi configured with the changes listed below.",
+      "rationale": "The supplied ordered mapping is moderate integration work; correction storage/authority design remains external.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "INT-02",
+      "title": "Configure Direct Employee Delivery in Boomi",
+      "category": "Integrations",
+      "implementer": "Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Create pre-start Employees directly and update the same records through the supported EmployeeUserAccess contract.",
+      "scope": "Add the direct Boomi POST/PATCH mapping and pre-start selection. Send Position Code through JobCode, establishment through HomeLocationCode and only supported properties; create Employee without user access and leave activation to the readiness-gated operation.",
+      "prerequisites": [
+        "INT-01"
+      ],
+      "inputs": [
+        "sourceMapping",
+        "feed",
+        "flags"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "sourceMapping",
+          "description": "Final Paylocity/source allowlist, actual source field paths, endpoint host, capacities, DateOfHire calendar-date format and optional omission-versus-clear rules are required for payload binding. EmployeeNumber/name/JobCode/date/establishment are the specified minimum; unsupported mappings must not be invented."
+        },
+        {
+          "id": "feed",
+          "description": "Approved daily feed timing/timezone, seven-calendar-day pre-start window, catch-up/history bounds and source eligibility/status rules are required to enable feed selection; daily/seven days remains proposed until supplied."
+        },
+        {
+          "id": "flags",
+          "description": "Approved SendEmail value (FALSE proposed for SSO), other supported processing flags, termination/leave/rehire/PRL policies and later user-attribute allowlist are required for those mappings. No default revoke/archive behavior is authorized."
+        }
+      ],
+      "steps": [
+        "Add a proposed Boomi Employee delivery mapping to POST /api/v2/EmployeeUserAccess and PATCH /api/v2/EmployeeUserAccess({Employee.Id}) at the supplied tenant host. Map stable employee identifier to EmployeeNumber (native Employee.Number), Position Code to JobCode (native Employee.JobCode), FirstName/LastName, DateOfHire (native DateHired, Date type) and the establishment calculation result to HomeLocationCode. Require these values for selected pre-start creation.",
+        "For initial employee-only POST set IgnoreUserAccess=TRUE. Omit Groups, all seven custom Employee extensions, password properties and both business-hierarchy input properties. Set RemoveFromUnlistedGroups=FALSE and RemoveFromUnlistedBusinessHierarchies=FALSE on every operation. Apply the supplied SendEmail choice and supported flag values only. Do not request an account or calculate memberships in this mapping.",
+        "Configure the approved daily/pre-start selection using the supplied timezone, approximately seven-calendar-day window and catch-up bounds; email/SSO may arrive later. On successful POST retain returned native Id for later PATCH; on later employee updates use that same Id, supported changed fields and supplied omission/clear semantics. Do not routinely resend initial login instructions or reset manual login exceptions. The identity-retry operation controls serialization and uncertain delivery; account activation has its own gate."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "The selected pre-start POST sends the supported minimum with JobCode carrying Position Code, valid HomeLocationCode and IgnoreUserAccess=TRUE.",
+        "Groups, custom Employee fields, passwords and business-hierarchy inputs are absent; both removal controls are FALSE.",
+        "Later intended updates target the retained Employee Id, preserve omission-versus-clear behavior and do not repeat initial membership/login setup."
+      ],
+      "refs": "Specification 1, 8.1, 10 and 10.2; established EmployeeUserAccess property mapping, not new endpoint capability.",
+      "deliverable": "Direct Employee Delivery in Boomi configured with the changes listed below.",
+      "rationale": "Direct supported mapping and conditional feed selection are moderately complex Consultant configuration.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "INT-03",
+      "title": "Configure Employee Delivery Reconciliation and Retry",
+      "category": "Integrations",
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant",
+      "objective": "Resume uncertain delivery against the correct Employee instead of creating a duplicate.",
+      "scope": "Add per-EmployeeNumber serialization, native Number/Id reconciliation and bounded delivery retry around the direct Boomi request. Distinguish definite no-match, one valid match, ambiguous identity and unknown request outcome.",
+      "prerequisites": [
+        "INT-02"
+      ],
+      "inputs": [
+        "identity",
+        "evidence"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "identity",
+          "description": "Supported Boomi per-EmployeeNumber serialization, exact Employee.Number read/match path and stable Id storage/reconciliation operation are required to wrap delivery. Rehire, changed-number and termination identity policy plus retry/backoff limits must be supplied before those branches are enabled."
+        },
+        {
+          "id": "evidence",
+          "description": "Native Boomi correlation/outcome/error destination and administrator support owner are required for uncertain-outcome holds and retry evidence; no custom integration log object is authorized."
+        }
+      ],
+      "steps": [
+        "Wrap the direct Employee delivery with the supplied per-EmployeeNumber serialization. Before repeating POST reconcile native Employee.Number: zero definite matches permits creation; one valid identity match resumes that Employee.Id; multiple or conflicting matches hold for support. A failed search is not zero matches. Store/resume the supported native Id through the supplied Boomi mechanism.",
+        "Treat timeout or lost response as an unknown outcome, reconcile before another request and apply the supplied retry/backoff limits. A profile-preparation failure resumes native preparation for the same Employee and never creates another Employee. After known successful delivery retain correlation and endpoint outcome in the supplied native error/support mechanism.",
+        "Configure changed-number/rehire handling only using the supplied identity policy. Until supplied hold those exceptional records rather than invent a second identity or reuse a mismatched Employee. Route ambiguous/unknown outcomes to the supplied support owner with EmployeeNumber, known Id and request correlation."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "A POST timeout followed by one valid Number match resumes that Id without duplicate creation.",
+        "Ambiguous/failed identity search holds delivery; a definite zero-match case alone permits POST.",
+        "Preparation failure and rehire/identity exceptions cannot silently create another Employee; correlated outcomes are visible through the approved native support source."
+      ],
+      "refs": "Specification 10 retry contract and lifecycle/identity open items in 12.4.",
+      "deliverable": "Employee Delivery Reconciliation and Retry configured with the changes listed below.",
+      "rationale": "Concurrency and unknown-outcome reconciliation need Senior Consultant judgment and Principal review.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "INT-04",
+      "title": "Configure Readiness-Gated Account Activation",
+      "category": "Integrations",
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant",
+      "objective": "Enable access for the existing Employee only after profile preparation and organizational identity are ready.",
+      "scope": "Add the Boomi readiness read and later EmployeeUserAccess PATCH. Require completed initial preparation, consistent home/login references and SSO/license inputs; preserve prepared memberships and manual login exceptions.",
+      "prerequisites": [
+        "CFG-07",
+        "AUT-08",
+        "INT-02",
+        "INT-03"
+      ],
+      "inputs": [
+        "activation",
+        "activationValues"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "activation",
+          "description": "Verified employee-only POST followed by existing-Employee access PATCH, membership continuity, actual Object Data API readiness paths and native account-existence read/outcome evidence are required for activation. If the sequence is infeasible, revised design is external rather than an invented workaround."
+        },
+        {
+          "id": "activationValues",
+          "description": "Approved SAML UserId source, LicenseType values, LoginLocationCode read path, Boomi readiness-read principal, SendEmail/other account flag values and home-mismatch/manual-access reconciliation policy are required for gated access mapping."
+        }
+      ],
+      "steps": [
+        "Add Boomi readiness reads for the seven Employee extensions and current Employee.Location through the supplied restricted Object Data API paths. Require Initial Profile Applied On populated; valid Position Code Version and Initial Login Location; Initial Profile Home Location=current Employee.Location; valid nonempty location code; SSO UserId and approved LicenseType available. A changed home snapshot or incomplete readiness holds activation for approved reconciliation.",
+        "For eligible first access PATCH /api/v2/EmployeeUserAccess({Employee.Id}) using IgnoreUserAccess=FALSE, UserId=the SAML assertion identifier, LicenseType=approved value and LoginLocationCode=Initial Login Location.LocationCode. Omit Groups/custom fields and business-hierarchy inputs; keep RemoveFromUnlistedGroups=FALSE and RemoveFromUnlistedBusinessHierarchies=FALSE and apply the supplied SendEmail/account flags.",
+        "Use native account evidence and endpoint outcome to distinguish access activation from profile preparation. A nonnull preparation timestamp alone is not proof that an account exists. Route uncertain access outcomes through the configured delivery reconciliation; never recreate the Employee. Later ordinary updates omit initial login instructions unless separately approved access maintenance requires a change, preserving manual exceptions and captured profile/memberships."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Missing checkpoint, SSO/license/login value or mismatched home snapshot prevents access PATCH.",
+        "A ready Employee receives account access through PATCH on its existing Id, with the stored login code and FALSE removal controls.",
+        "Access creation preserves existing native memberships; endpoint/native account evidence, rather than preparation time alone, establishes activation outcome."
+      ],
+      "refs": "Specification 8.3 and 10; proposed account sequence remains unverified.",
+      "deliverable": "Readiness-Gated Account Activation configured with the changes listed below.",
+      "rationale": "Cross-system readiness and access-before/after semantics have substantial consequences and require Senior Consultant implementation with Principal review.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "RPT-01",
+      "title": "Configure Employee Setup Support Views",
+      "category": "Reports",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Show authorized support which codes or Employees are waiting and which failures need action.",
+      "scope": "Add bounded native support views over the existing profile/Employee fields and supplied native error sources. Separate source participation, current code use, captured preparation and actual account evidence.",
+      "prerequisites": [
+        "CFG-03",
+        "CFG-04",
+        "CFG-07",
+        "SEC-02"
+      ],
+      "inputs": [
+        "views"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "views",
+          "description": "Actual native report/view definitions and query/filter bindings, archive/onboarding eligibility values, failed-execution source and ambiguous-identity source/read paths are required to bind the proposed views. Sensitive navigation and any retry command must use the supplied support security scope; create no custom error object."
+        }
+      ],
+      "steps": [
+        "Add a proposed Position Codes Awaiting Publication view: Position Code.Current Published Version=NULL; columns Code, workflow status, Created by Paylocity Integration, Setup Notification Sent and Source Employees navigation. Add a Proposed Working Profile Review view showing authoring rule/Groups next to Current Published Version and Published Versions for comparison; no unverified automatic changed-since-publish flag is assumed.",
+        "Add Employees Awaiting a Captured Profile: Managed by Employee Integration?=TRUE, Position Code Version=NULL, not archived/deleted; columns Number, JobCode, Location, Position Code and [Helper] Create New Position Code Relation. Add Employees Awaiting Preparation: managed TRUE, version populated, Initial Profile Applied On=NULL, not archived/deleted; show Number, JobCode, current code, captured version, home and initial login/home snapshots.",
+        "Add Failed Employee Processing and Ambiguous Employee Identity views bound to the supplied native execution/identity sources. Show available EmployeeNumber, native Id, operation, correlation, failure/ambiguity and native time/evidence fields through their actual supplied bindings. Add permitted Employee/profile drill-through and only the approved existing retry command, if one is supplied; do not present a checkpoint as account-created evidence."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Waiting-code and waiting-Employee views distinguish no publication, no capture and incomplete preparation using their specified filters.",
+        "Current-code navigation and helper/source participation remain visibly separate; profile review shows working and published settings without editing versions.",
+        "Failure/identity views expose approved native evidence and permitted navigation only; unauthorized users cannot obtain Employee data through these views."
+      ],
+      "refs": "Specification 8, 11, support-view coverage in the prior plan; no exported view definitions supplied.",
+      "deliverable": "Employee Setup Support Views configured with the changes listed below.",
+      "rationale": "Native filters and support views need Senior Associate judgment; unresolved source bindings remain local blockers.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    },
+    {
+      "id": "INIT-01",
+      "title": "Configure the Initial Position Code Profiles",
+      "category": "Catalogues and initial configuration records",
+      "implementer": "Senior Associate Consultant",
+      "reviewer": "Senior Consultant",
+      "objective": "Make the supplied initial nondeferred Position Codes available for new Employee preparation.",
+      "scope": "Create the supplied exact Position Code records with their login rules and security/training/document group choices, then publish them through the completed configured controls. This is initial configuration, not Employee migration or enrollment.",
+      "prerequisites": [
+        "CFG-01",
+        "AUT-07"
+      ],
+      "inputs": [
+        "initial"
+      ],
+      "suppliedInputDescriptions": [
+        {
+          "id": "initial",
+          "description": "Exact initial Code strings, each rule choice SAME_HOME or HOME_PARENT and actual security/training/document group identities are required to create the initial profiles. No seed codes were supplied; this population is wholly blocked until that list arrives. Profiles needing deferred location-qualified Roles remain excluded."
+        }
+      ],
+      "steps": [
+        "For each supplied initial profile create Position Code.Code with the exact case-sensitive source string and Created by Paylocity Integration=FALSE; Setup Notification Sent defaults FALSE. Set Login Location Rule to the supplied SAME_HOME or HOME_PARENT record. Populate the one Groups relation through its three filtered grids with the supplied security, training and document group identities; empty categories remain unmanaged.",
+        "Save and use the configured initial Publish link to create immutable version 1, set Current Published Version and end Initial Setup in Completed. Do not publish any profile requiring the deferred Role feature. Configure only supplied profile records; enroll/backfill no existing Employee and create no invented default Position Code."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "accept": [
+        "Every supplied eligible initial code has its exact rule and three-category group configuration, a complete immutable first version and Completed authoring status.",
+        "No invented code, integration-origin flag, deferred Role execution or existing-Employee migration is introduced by initial configuration."
+      ],
+      "refs": "Specification 6, 7.1, 9.2 and 12.1 initial configuration direction.",
+      "deliverable": "the Initial Position Code Profiles configured with the changes listed below.",
+      "rationale": "Using the configured publication flow for supplied profile values is bounded configuration that needs Senior Associate judgment.",
+      "assumptions": "Proposed additions unless a verified before/after difference is stated. Supplied native results are prerequisites to the affected instructions, not assigned investigation."
+    }
+  ],
+  "retired": {
+    "UI-01": [
+      "CFG-01"
+    ],
+    "WF-01": [
+      "CFG-03"
+    ],
+    "UI-02": [
+      "CFG-03"
+    ],
+    "UI-03": [
+      "CFG-04",
+      "CFG-05"
+    ],
+    "CFG-06": [
+      "CFG-05"
+    ],
+    "UI-04": [
+      "CFG-07"
+    ],
+    "SEC-01": [
+      "CFG-01",
+      "SEC-02"
+    ],
+    "SEC-03": [
+      "CFG-01",
+      "CFG-03",
+      "CFG-05",
+      "CFG-07"
+    ],
+    "AUT-05": [
+      "AUT-07"
+    ],
+    "AUT-06": [
+      "AUT-07"
+    ],
+    "WF-02": [
+      "AUT-07"
+    ]
+  },
+  "coverage": [
+    [
+      "Two catalogue fields, values, forms, basic rights and audit; 6.1–6.2",
+      "CFG-01"
+    ],
+    [
+      "Four mutually referenced profile object definitions; 4.2, 7",
+      "CFG-02"
+    ],
+    [
+      "Authoring fields, Initial Setup scaffold, form, filtered Groups, source/history navigation and audit; 7.1, 9.1, 11",
+      "CFG-03"
+    ],
+    [
+      "Immutable version fields, scoped identity and review form; 7.2",
+      "CFG-04"
+    ],
+    [
+      "Both Role child schemas, forms and authoring audit; 7.3–7.5",
+      "CFG-05"
+    ],
+    [
+      "Seven Employee extensions, three declaring inverses, support display and extension audit; 13.4",
+      "CFG-07"
+    ],
+    [
+      "Profile rights, immutable record enforcement, terminal permissions and personal-data access; 11",
+      "SEC-02"
+    ],
+    [
+      "Exact code discovery, origin, capture, helper lifecycle, race and reusable login calculation; 8.1",
+      "AUT-01"
+    ],
+    [
+      "Template, linked-source trigger, recipients, delivery and sent flag; 9.4",
+      "AUT-04"
+    ],
+    [
+      "Immutable copy, active pointer, source release, atomic first completion, later Publish and all user errors; 9.2–9.3",
+      "AUT-07"
+    ],
+    [
+      "Add-only native memberships, location snapshots and checkpoint; 8.2",
+      "AUT-08"
+    ],
+    [
+      "After-commit dispatch, Event Service selection and approved cadence; 8.2",
+      "AUT-09"
+    ],
+    [
+      "Ordered establishment and governed correction mapping; 10.1",
+      "INT-01"
+    ],
+    [
+      "Direct supported payload, flags and pre-start feed; 10–10.2",
+      "INT-02"
+    ],
+    [
+      "Id/Number reconciliation and uncertain outcome; 10",
+      "INT-03"
+    ],
+    [
+      "SSO/profile readiness, existing-Employee access PATCH and native outcome; 8.3",
+      "INT-04"
+    ],
+    [
+      "Waiting/failed support views and native evidence navigation; 11",
+      "RPT-01"
+    ],
+    [
+      "Supplied initial profile values and publication; 12.1",
+      "INIT-01"
+    ]
+  ]
+}

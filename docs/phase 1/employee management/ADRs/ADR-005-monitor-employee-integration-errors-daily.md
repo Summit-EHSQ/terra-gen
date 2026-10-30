@@ -53,3 +53,7 @@ The notification frequency may be reduced after error patterns and operational r
 The current integration sequence and its validation gates are defined in [Paylocity Employee Integration Technical Requirements and Clarifications](<../raw artifacts/2026-09-25-paylocity-employee-integration-technical-requirements.md>) and Employee Management ADR-003.
 
 Transcript references: 0:56:18–1:02:12.
+
+## Configuration clarification — October 29, 2026
+
+The user has confirmed that Employee Integration Manager requires no Audit Trail or audit-retention setup. This does not remove the existing daily operational integration-error monitoring decision. Native execution/error and notification evidence remains distinct from Audit Trail; application-object visibility is limited to Administrators. See the [confirmed application decisions](<../raw artifacts/2026-10-29-employee-integration-manager-decisions.md>).

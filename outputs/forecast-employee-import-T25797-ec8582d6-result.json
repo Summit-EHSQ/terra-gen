@@ -1,0 +1,226 @@
+{
+  "project": {
+    "id": 605488,
+    "name": "[T&M] Terra-Gen | Phase 1 - Work Management"
+  },
+  "parent": {
+    "id": 16891569,
+    "number": "T25797",
+    "title": "Employee Management"
+  },
+  "source_file": "C:\\Users\\DaveMcLean\\OneDrive - Summit EHSQ Inc\\Documents\\GitHub\\terra-gen\\docs\\phase 1\\employee management\\ADR-001-004-implementation-plan-employee-provisioning.md",
+  "source_sha256": "ad19d87d3174dd14255b004240e99e1de9abe38d52f237add686bd46575cc475",
+  "started_utc": "2026-10-28T19:04:12.8076539Z",
+  "status": "complete",
+  "created": [
+    {
+      "plan_task_id": "CFG-01",
+      "id": 16966639,
+      "company_task_id": 26261,
+      "title": "[CFG-01] Create the Catalogue Objects"
+    },
+    {
+      "plan_task_id": "CFG-02",
+      "id": 16966640,
+      "company_task_id": 26262,
+      "title": "[CFG-02] Create the Profile Objects"
+    },
+    {
+      "plan_task_id": "CFG-03",
+      "id": 16966641,
+      "company_task_id": 26263,
+      "title": "[CFG-03] Configure Position Code Fields"
+    },
+    {
+      "plan_task_id": "CFG-04",
+      "id": 16966642,
+      "company_task_id": 26264,
+      "title": "[CFG-04] Configure Published Position Code Fields"
+    },
+    {
+      "plan_task_id": "CFG-05",
+      "id": 16966643,
+      "company_task_id": 26265,
+      "title": "[CFG-05] Configure Authoring Role Assignments"
+    },
+    {
+      "plan_task_id": "CFG-06",
+      "id": 16966644,
+      "company_task_id": 26266,
+      "title": "[CFG-06] Configure Published Role Assignments"
+    },
+    {
+      "plan_task_id": "CFG-07",
+      "id": 16966645,
+      "company_task_id": 26267,
+      "title": "[CFG-07] Configure Employee Setup Fields"
+    },
+    {
+      "plan_task_id": "WF-01",
+      "id": 16966646,
+      "company_task_id": 26268,
+      "title": "[WF-01] Configure Position Code Workflow — Simple"
+    },
+    {
+      "plan_task_id": "SEC-01",
+      "id": 16966647,
+      "company_task_id": 26269,
+      "title": "[SEC-01] Configure Basic Object Permissions"
+    },
+    {
+      "plan_task_id": "SEC-02",
+      "id": 16966648,
+      "company_task_id": 26270,
+      "title": "[SEC-02] Configure Record and Field Permissions"
+    },
+    {
+      "plan_task_id": "SEC-03",
+      "id": 16966649,
+      "company_task_id": 26271,
+      "title": "[SEC-03] Configure Native Audit"
+    },
+    {
+      "plan_task_id": "UI-01",
+      "id": 16966650,
+      "company_task_id": 26272,
+      "title": "[UI-01] Configure the Catalogue Forms"
+    },
+    {
+      "plan_task_id": "UI-02",
+      "id": 16966651,
+      "company_task_id": 26273,
+      "title": "[UI-02] Configure the Position Code Form"
+    },
+    {
+      "plan_task_id": "UI-03",
+      "id": 16966652,
+      "company_task_id": 26274,
+      "title": "[UI-03] Configure Published Version Forms"
+    },
+    {
+      "plan_task_id": "UI-04",
+      "id": 16966653,
+      "company_task_id": 26275,
+      "title": "[UI-04] Configure Employee Support Fields"
+    },
+    {
+      "plan_task_id": "AUT-01",
+      "id": 16966654,
+      "company_task_id": 26276,
+      "title": "[AUT-01] Configure the Employee Position Code Action Handler"
+    },
+    {
+      "plan_task_id": "AUT-04",
+      "id": 16966655,
+      "company_task_id": 26277,
+      "title": "[AUT-04] Configure the Setup Notification"
+    },
+    {
+      "plan_task_id": "AUT-05",
+      "id": 16966656,
+      "company_task_id": 26278,
+      "title": "[AUT-05] Configure Published Version Copies"
+    },
+    {
+      "plan_task_id": "AUT-06",
+      "id": 16966657,
+      "company_task_id": 26279,
+      "title": "[AUT-06] Configure Source Employee Assignment"
+    },
+    {
+      "plan_task_id": "AUT-07",
+      "id": 16966658,
+      "company_task_id": 26280,
+      "title": "[AUT-07] Configure the Publish Routine"
+    },
+    {
+      "plan_task_id": "WF-02",
+      "id": 16966659,
+      "company_task_id": 26281,
+      "title": "[WF-02] Configure Position Code Workflow — Full"
+    },
+    {
+      "plan_task_id": "AUT-08",
+      "id": 16966660,
+      "company_task_id": 26282,
+      "title": "[AUT-08] Configure Initial Membership Preparation"
+    },
+    {
+      "plan_task_id": "AUT-09",
+      "id": 16966661,
+      "company_task_id": 26283,
+      "title": "[AUT-09] Configure the Employee Preparation Service"
+    },
+    {
+      "plan_task_id": "INT-01",
+      "id": 16966662,
+      "company_task_id": 26284,
+      "title": "[INT-01] Configure Establishment Rules"
+    },
+    {
+      "plan_task_id": "INT-02",
+      "id": 16966663,
+      "company_task_id": 26285,
+      "title": "[INT-02] Configure Direct Employee Delivery"
+    },
+    {
+      "plan_task_id": "INT-03",
+      "id": 16966665,
+      "company_task_id": 26286,
+      "title": "[INT-03] Configure Employee Delivery Retry"
+    },
+    {
+      "plan_task_id": "INT-04",
+      "id": 16966666,
+      "company_task_id": 26287,
+      "title": "[INT-04] Configure Account Activation"
+    },
+    {
+      "plan_task_id": "RPT-01",
+      "id": 16966667,
+      "company_task_id": 26288,
+      "title": "[RPT-01] Configure Employee Setup Views"
+    },
+    {
+      "plan_task_id": "INIT-01",
+      "id": 16966668,
+      "company_task_id": 26289,
+      "title": "[INIT-01] Configure Initial Position Code Profiles"
+    }
+  ],
+  "skipped": [],
+  "failed": [],
+  "verified": [
+    16966639,
+    16966640,
+    16966641,
+    16966642,
+    16966643,
+    16966644,
+    16966645,
+    16966646,
+    16966647,
+    16966648,
+    16966649,
+    16966650,
+    16966651,
+    16966652,
+    16966653,
+    16966654,
+    16966655,
+    16966656,
+    16966657,
+    16966658,
+    16966659,
+    16966660,
+    16966661,
+    16966662,
+    16966663,
+    16966665,
+    16966666,
+    16966667,
+    16966668
+  ],
+  "completed_utc": "2026-10-28T19:04:56.5848255Z",
+  "rerun_duplicate_check": "All 29 exact titles exist once under the expected parent; a rerun would skip them."
+}

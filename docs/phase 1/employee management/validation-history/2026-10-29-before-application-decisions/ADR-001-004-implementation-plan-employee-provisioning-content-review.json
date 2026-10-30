@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-10-29",
+  "sourceSnapshotSha256": "c558ca4c4e9fed2cf6080c9b3ab3e25d9b09c6a52f023a826b2e0ad640badc02",
+  "sourceMarkdownSha256": "3a54d5808cd89ae2ab65e1a3d36819357f2e3171ee81e080b899a3d23d6c9fbd",
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "stableTaskId": "CFG-01",
+      "taskHash": "3b3ceeefd469af53c2c93831e4110ce8f6c007a55dabfe4b6b47b7b2b44ee256",
+      "renderedTaskHash": "7bf0fae779f75bd449637493b3156c59a59d80ae698458355db0caddfb3d751c",
+      "evidenceReview": "The complete four-field definitions and all four seed rows reconcile to specification 6.1–6.2. Forms/basic rights/audit transfer from the earlier small assignments. Used-Code enforcement and audit are not established by native metadata and remain named local inputs; no new tenant verification task is assigned.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add both governed catalogues as a complete maintenance outcome.",
+          "mechanism": "New catalogue objects, forms, permission grants and native audit."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the two independent localized catalogue definitions.",
+          "mechanism": "Proposed TG_LoginLocationRuleObject and TG_AssignmentLocationBasisObject."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add four precisely typed fields and referenced-Code/inactive controls.",
+          "mechanism": "Catalogue Code/Name/Active?/Sort field settings and supplied protection binding."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create the four exact initial Code/Name/Active?/Sort combinations.",
+          "mechanism": "Two initial records per catalogue using stable Code values."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add four-field maintenance screens and displayed ordering.",
+          "mechanism": "Catalogue forms; consumer tasks own selector filtering."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Apply Administrator/support grants and mutable-value audit.",
+          "mechanism": "Supplied principal/native audit bindings; undecided deletion remains blocked."
+        }
+      ]
+    },
+    {
+      "id": "IMP-02",
+      "stableTaskId": "CFG-02",
+      "taskHash": "eca78a66697ecfb29bc1b5d2b6c10957a2849d19055f8740cff25ef1000ad596",
+      "renderedTaskHash": "18393e3b7255bd913bcd9449baf02a1eef6d812d78b75e3430be4e1bc859f7b6",
+      "evidenceReview": "Specification 4.2 and 7 define four proposed custom objects. The baseline contains native objects only, so the task labels additions as proposed and requires equivalent-definition/name inputs instead of declaring live absence. Early object definitions break field-target ordering without recreating native objects.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the four shared profile relationship targets.",
+          "mechanism": "New object definitions in the supplied existing application."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the named authoring/version/Role objects without inheritance.",
+          "mechanism": "Four proposed TG profile object definitions."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Configure published objects with no workflow.",
+          "mechanism": "Published Position Code and published Role object parameters."
+        }
+      ]
+    },
+    {
+      "id": "IMP-03",
+      "stableTaskId": "CFG-03",
+      "taskHash": "d7c323e791039533615a2351848f0ab687454fa7b99c99d278e63704fff83f1a",
+      "renderedTaskHash": "49440bb9bc1ef4aa9fcb18b9d7c14c5a39b713670b212f92f241ab34b16e1df9",
+      "evidenceReview": "Every authoring field in 7.1, the condensed 9.1 stage and 11 form behavior is included inline. History, Role and Employee inverses are consumed from their owning field tasks. Actual stage/status/person/date, subtype predicates and audit bindings remain precise inputs; no fabricated due date or unverified filter syntax is presented.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add complete working-authoring fields, screen and initial stage scaffold.",
+          "mechanism": "Position Code schema, initial workflow, form containers and native audit."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add Code, rule, Groups and current-version fields with exact settings.",
+          "mechanism": "Position Code field/relationship configuration and supplied case-sensitive controls."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add independent origin/sent controls with FALSE manual defaults.",
+          "mechanism": "Two read-only required Yes/No authoring fields."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create Initial Setup and Completed with a non-executable Publish scaffold.",
+          "mechanism": "New initial-only workflow identities and supplied responsibility/date bindings."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add working state containers and three subtype-specific Groups grids.",
+          "mechanism": "Authoring form using one Groups relation and the native subtype predicates."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add separate history/source/current navigation and the Publish position.",
+          "mechanism": "Authoring form controls over predecessor-created inverse relations."
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Enable supported authoring audit and protected form control behavior.",
+          "mechanism": "Native authoring audit and form read-only rules; direct-access enforcement has its own owner."
+        }
+      ]
+    },
+    {
+      "id": "IMP-04",
+      "stableTaskId": "CFG-04",
+      "taskHash": "58c8f7e59ac595eb74f5ef5125d3ead24be669de1de308a663f07ea6f9ff336d",
+      "renderedTaskHash": "b5d597da4f64f6be95facb6aa2dafde6da8bf5040c729f84972ac85ecff316c0",
+      "evidenceReview": "The four stored publication fields and owner inverse reconcile to 7.2. The review form consumes Role and Employee inverses, now listed as explicit predecessors. Version numbering/display constraints remain native-input blockers. Transaction allocation/copy and non-form immutability are owned by publication and security, respectively.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add version storage, owner history and its read-only review screen.",
+          "mechanism": "Published Position Code fields, scoped constraint and form."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add required owner/positive number/rule and optional Groups storage.",
+          "mechanism": "Published Position Code field definitions and supplied composite uniqueness."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add the code-plus-number display and related review controls.",
+          "mechanism": "Native display expression and version form consuming Role/Employee inverses."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Remove manual creation/edit/Draft commands from the proposed screen.",
+          "mechanism": "New published form and history-control command configuration."
+        }
+      ]
+    },
+    {
+      "id": "IMP-05",
+      "stableTaskId": "CFG-05",
+      "taskHash": "6c8a81efb7294fc20fe5d7c9958fa0b2289c6ae4c58ed30434105522466f4492",
+      "renderedTaskHash": "e31ff49cfe6c0607cbea5d4574dc19efd60ee016ffb498cf7056d40965b18ef7",
+      "evidenceReview": "The six relationship fields, ownership and uniqueness reconcile to 7.3–7.4. Both simple Role forms are kept with their storage; UI-03 transfers its child screen here. The ordinary Role field may be configured but authoring entry/execution remains disabled as required by the current deferred boundary; selector/audit bindings stay unresolved.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add both Role storage structures, inverse grids and bounded forms.",
+          "mechanism": "Authoring and published Role association schema with deferred-entry control."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add authoring owner/Role/basis fields and owner-scoped uniqueness.",
+          "mechanism": "Position Code Role Assignment and its owner inverse/filter."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add immutable published owner/Role/basis fields and uniqueness.",
+          "mechanism": "Published Position Code Role Assignment and its owner inverse."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add separate authoring/review forms and audit without Role execution.",
+          "mechanism": "Role forms, native authoring audit and supplied deferred-control binding."
+        }
+      ]
+    },
+    {
+      "id": "IMP-06",
+      "stableTaskId": "CFG-07",
+      "taskHash": "22c27f7534da531bfd81224adab0807bd8f294da8f7347e960cdede662edb1e6",
+      "renderedTaskHash": "17d261e9f002e1f5e577a616ac5bca035bbd82288a170d4d083d2359303636b4",
+      "evidenceReview": "All seven additions, proposed TG names, types/defaults and three enabled inverses reconcile to the additional-fields table in 13.4. Employee metadata supplies existing JobCode/Location and audit FALSE, not custom field/form bindings. The task changes extension audit only where supported and leaves its actual binding/target blocked.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add Employee capture/support structure and its native evidence controls.",
+          "mechanism": "Seven Employee extensions, inverse relations, support section and extension audit."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add integration origin, current Position Code and distinct source helper.",
+          "mechanism": "SysEmployeeEntity new Yes/No and two M:1 fields with named inverses."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add captured version, two initial location references and zoned timestamp.",
+          "mechanism": "Four new Employee preparation fields and conditional checkpoint requiredness."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Configure form protection and retained/write-once field lifecycle.",
+          "mechanism": "Employee field/control protection; automation owns actual value writes."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add the authorized-support section and supported extension audit.",
+          "mechanism": "Existing Employee form supplied target plus native extension audit configuration."
+        }
+      ]
+    },
+    {
+      "id": "IMP-07",
+      "stableTaskId": "SEC-02",
+      "taskHash": "065ac8f71fdfaaf2589877badfdfc2c56669c0550726ce0841e891defe3d6ff0",
+      "renderedTaskHash": "7792158cac976f51e088401ce90f9fe3a0c7428e8eaf3b33de7f4e986e082bbb",
+      "evidenceReview": "Specification 11 supplies principal responsibilities, immutable publications and protected Employee data. Exact principals and native route-specific controls are absent, so the task spells out the policy inline and blocks their bindings rather than inventing an existing permission matrix. Catalogue basic rights are owned separately; no broad new ordinary-user grant is added.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add profile/Employee grants and immutable-record restrictions.",
+          "mechanism": "Supplied object, record, field and access-route permission bindings."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Grant governed Administrator authoring while protecting version/state writes.",
+          "mechanism": "Profile object grants and protected native/custom field restrictions."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Restrict Boomi and trusted processing to their declared operations.",
+          "mechanism": "Integration readiness-read/endpoint grants and service-context permissions."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Grant narrow support evidence/retry access and scoped Employee navigation.",
+          "mechanism": "Existing support principal grants and personal-data filter bindings."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Enforce the same policy on direct/API/import/search/export routes.",
+          "mechanism": "Native record/field controls including terminal edit and immutable child protection."
+        }
+      ]
+    },
+    {
+      "id": "IMP-08",
+      "stableTaskId": "AUT-01",
+      "taskHash": "2c92c111871a2bb2496a95cbd0890540852aea52b57aa6f29e64704851863d78",
+      "renderedTaskHash": "ea86bf85f90218229595f14b46f458d1cef2cf8d801c9afef710c80f4b228e83",
+      "evidenceReview": "The complete 8.1 sequence is retained: actor-verified origin, FETCHVALUE first, GETRELATED only genuine no-match, existing-unpublished enrollment, helper lifecycle, concurrent discovery and first-release race. The user-required reusable login calculation is included with explicit SAME_HOME/HOME_PARENT fallback. Native signatures, actor/event/lock bindings are unresolved inputs, not executable invented formulas.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add integration discovery/capture and reusable initial location calculation.",
+          "mechanism": "Proposed Employee Action Handler plus callable native relationship calculation."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add allowlisted create-origin marking and internal-save guard.",
+          "mechanism": "Employee creation handler actor condition and recursion exclusion."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add blank/exact/ambiguous match branches and one-time active capture.",
+          "mechanism": "Employee JobCode FETCHVALUE relation step with empty-version guard."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add unpublished-code helper enrollment and genuine-new-code creation.",
+          "mechanism": "GETRELATED create/resolve, authoring initialization and helper relation write."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add shared-code conflict/race recovery and notification handoff.",
+          "mechanism": "Supplied per-code serialization and helper inverse event completion."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add pre-capture helper maintenance while retaining post-capture origin.",
+          "mechanism": "Employee code-change branches with write-once version and mismatch hold."
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Add precise SAME_HOME/HOME_PARENT reference selection and code checks.",
+          "mechanism": "Reusable native location calculation consumed by preparation only."
+        }
+      ]
+    },
+    {
+      "id": "IMP-09",
+      "stableTaskId": "AUT-04",
+      "taskHash": "65e0d36717e1343ed8698d7e1ed6b25f79ae61f628bc55aa8df9db1da8ad5792",
+      "renderedTaskHash": "f65e00bc98f18d64db2896bf2e730e694d1335073c1412f3a656c1d4da3d79ee",
+      "evidenceReview": "The template, current Administrators recipients, content, three-part guard and success-only sent flag reconcile to 9.4. Event ordering comes from the completed helper handoff. No extra completion/escalation mail or custom log is assigned; delivery deduplication and the send/flag failure window remain explicit local native inputs.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one source-linked message and safe delivery guard.",
+          "mechanism": "Position Code Setup Required template and guarded native notification."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the complete setup message and Administrators recipient binding.",
+          "mechanism": "New native message template with code/source links and Publish instructions."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add integration-origin, unsent and linked-source delivery conditions.",
+          "mechanism": "Notification operation invoked after helper/inverse association."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add deduplicated delivery, success-only sent flag and retry behavior.",
+          "mechanism": "Supplied native delivery key/outcome and authoring sent-control update."
+        }
+      ]
+    },
+    {
+      "id": "IMP-10",
+      "stableTaskId": "AUT-07",
+      "taskHash": "c06069ad12b627cfee9733ba176ea1aec14e948e6a3ddfd05dafc686224846df",
+      "renderedTaskHash": "5ae7652adcd95972d1c27aaa754365130164785fdd68049a35f9dda1611caea5",
+      "evidenceReview": "The whole atomic publication sequence in 9.2–9.3 is now owned once, including prior copy, source-writeback and full workflow binding tasks. All eight proposed errors are inline, and first versus Completed behavior stays distinct. Atomic graph/pointer/Employee/workflow support and retry identity are not verified; their absence remains a blocker rather than a promise of native capability.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one coherent atomic first/later publication outcome.",
+          "mechanism": "Common native publication operation plus workflow/form-link bindings."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add execution authorization, saved-revision and lifecycle/retry guards.",
+          "mechanism": "Common Publish entry operation under supplied per-code lock."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add active choice, complete group/Role and deferred-feature guards.",
+          "mechanism": "Publication validation before any version or activation state changes."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add independent version/Groups/Role graph construction and numbering.",
+          "mechanism": "Publication copy operations inside the supplied controlled change."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add active pointer and eligible first-source Employee writeback.",
+          "mechanism": "Current Published Version and helper-inverse source selection/write-once assignment."
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add atomic initial completion and distinct later publish rollback.",
+          "mechanism": "Supplied transaction covering graph, pointer, source writes and workflow completion."
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Bind both Publish entry paths and emit only committed handoff.",
+          "mechanism": "Initial workflow Publish and Completed form-link execution with after-commit event."
+        },
+        {
+          "path": "steps.6",
+          "requiredChange": "Add the eight exact proposed guard/error messages.",
+          "mechanism": "Publication decision/error branches before activation and completion."
+        }
+      ]
+    },
+    {
+      "id": "IMP-11",
+      "stableTaskId": "AUT-08",
+      "taskHash": "3c3667c8efe60f9082fa3d9b29dde9279c4c89b2e9ca3f94c9e93bb3611e7bfb",
+      "renderedTaskHash": "7fa68aef0d892ad35ad98c0f19663067b3ca6cd07ee1839a5212ba67c7221a72",
+      "evidenceReview": "All 8.2 eligibility, add-only native memberships, snapshot values and checkpoint-last behavior are included without requiring the assignee to discover another routine. The reusable calculation predecessor is described by its returned location. Membership writes before account creation, lock and failure context remain local feasibility inputs; no unsupported setter is claimed.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one repeat-safe initial membership/preparation routine.",
+          "mechanism": "Shared native Employee preparation operation with checkpoint guard."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add locked eligibility/current-code/captured-version checks.",
+          "mechanism": "Preparation entry conditions using actual Employee extension fields."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add only missing captured-profile memberships.",
+          "mechanism": "Supplied native group membership add/read mechanism; MemberOf replacement excluded."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add initial home/login snapshots and server-time checkpoint last.",
+          "mechanism": "Reusable calculation result, Employee reference writes and zoned timestamp."
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add incomplete retry/no-op completion behavior without access removal.",
+          "mechanism": "Native preparation failure branch and populated-checkpoint exclusion."
+        }
+      ]
+    },
+    {
+      "id": "IMP-12",
+      "stableTaskId": "AUT-09",
+      "taskHash": "26ee862f358e8a2d046feaf1ed37d01eea84448d45eac07847e442a5c23e6e26",
+      "renderedTaskHash": "3b41a21018ab9e778dde67f80536a57b9dd011943d8756e4a8bd0fd92f0c25e6",
+      "evidenceReview": "The service consumes resolved/captured Employees and the separate shared preparation routine. It does not assign a latest version, duplicate discovery or set timestamps itself. After-commit event/Service binding and five-minute versus approved cadence remain explicit local inputs; the predecessor list is task-only and acyclic.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add after-commit and scheduled continuation of incomplete preparation.",
+          "mechanism": "Native dispatch and proposed Event Service calling the shared routine."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind committed Employee-capture and first-publication events.",
+          "mechanism": "Supplied after-commit native callable handoff using Employee identity."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add exact managed/incomplete/version/location eligible-record selection.",
+          "mechanism": "Event Service filter and supplied per-Employee exclusion binding."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Configure approved schedule, retry and native error ownership.",
+          "mechanism": "Native Event Service cadence/timezone and existing execution-error destination."
+        }
+      ]
+    },
+    {
+      "id": "IMP-13",
+      "stableTaskId": "INT-01",
+      "taskHash": "dae10a1fb2404a662a6db91c812284448d3774915e982bdebe1b36bdff6c15f7",
+      "renderedTaskHash": "f1c339b70117d5c58672b0c513dcc99455cbd131936ab8e5f88f88dcfdcf8f83",
+      "evidenceReview": "The ordered branches reconcile to the actual supplied October 28 diagram, including assigned/work site priority over California, San Diego only for remote Californians, and job function for other remote workers. The task does not equate JobCode to job function. Site/source/code mappings and durable correction authority remain local missing inputs, with no reporting-chain or datastore invention.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the supplied establishment rule and protected correction mapping.",
+          "mechanism": "Proposed Boomi establishment transformation before HomeLocationCode delivery."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add established assigned/actual site branch and conflict/unknown hold.",
+          "mechanism": "First Boomi decision and supplied site-to-LocationCode mapping."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add remote California/San Diego and other job-function branches.",
+          "mechanism": "Ordered residence/job-function Boomi decisions and mapping tables."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add durable approved correction precedence and valid-result delivery.",
+          "mechanism": "Supplied upstream correction read and native Boomi evidence binding."
+        }
+      ]
+    },
+    {
+      "id": "IMP-14",
+      "stableTaskId": "INT-02",
+      "taskHash": "7a3819c8d370972884bcf6b5556d591e4d906b3ea4422ec2928234bd5aca1c69",
+      "renderedTaskHash": "180efc064a92e867f36ca3a41ccf4b85c30d2848e9ac88efa5b0835adbb99df8",
+      "evidenceReview": "The supported payload property mapping and omission/removal controls reconcile to section 10; no web verification is required for this documentation revision because the cited official contract content is already in the accepted specification. Proposed feed timing, optional mapping and SendEmail value are explicitly unresolved. The establishment predecessor supplies the HomeLocationCode result only.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add direct Employee delivery and pre-start selection.",
+          "mechanism": "Proposed Boomi POST/PATCH mapping and supplied feed schedule."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add exact identity/name/date/JobCode/HomeLocationCode mappings.",
+          "mechanism": "EmployeeUserAccess supported properties at the supplied tenant endpoint."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add employee-only creation and explicit omissions/removal controls.",
+          "mechanism": "IgnoreUserAccess=TRUE and FALSE removal flags in request mapping."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add approved pre-start selection and same-Id intended updates.",
+          "mechanism": "Boomi selection/timezone/null semantics and retained Employee Id mapping."
+        }
+      ]
+    },
+    {
+      "id": "IMP-15",
+      "stableTaskId": "INT-03",
+      "taskHash": "b0a803554a1322b89d3d27f1d882fd95c20ad9bb6026d5f07a17adce0bcce9af",
+      "renderedTaskHash": "50c30b69a578b41dc75b16df47dc02888cdf3c69dfa6221182430446ddb89f1c",
+      "evidenceReview": "Section 10 requires serialization and Number/Id reconciliation before repeated POST. The task includes zero/one/multiple/failed-search behavior and unknown outcomes inline, and names its direct-delivery predecessor. Identity-change/rehire policy and native support/serialization bindings remain local inputs rather than proposed new storage.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add repeat-safe delivery around the configured direct request.",
+          "mechanism": "Boomi serialization, Number/Id reconciliation and bounded retry."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add zero/one/ambiguous identity decisions under EmployeeNumber control.",
+          "mechanism": "Supplied native Employee.Number read and same-Id resume operation."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add timeout reconciliation and same-Employee failure continuation.",
+          "mechanism": "Boomi unknown-outcome retry and existing native evidence destination."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add policy-bound exceptional identity handling and support hold.",
+          "mechanism": "Changed-number/rehire branches and correlation routing to supplied support owner."
+        }
+      ]
+    },
+    {
+      "id": "IMP-16",
+      "stableTaskId": "INT-04",
+      "taskHash": "b1ca424d79b8cacd9fe142ed16cadffd1f7b3c4b80c474adefb849f2bf41716f",
+      "renderedTaskHash": "9a64b3b0fc9ea15ff85c5822c4a9009171dd76dfbf98ac466babf1e0665a95ea",
+      "evidenceReview": "The full 8.3 readiness gate, home snapshot consistency and supported access PATCH values are inline. The checkpoint is correctly distinguished from account existence. Read paths, SAML/license values and employee-only-to-access/membership-continuity behavior remain precise inputs; the task does not silently change the accepted architecture to make it feasible.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add preparation/identity-gated access for the same native Employee.",
+          "mechanism": "Boomi readiness read and EmployeeUserAccess access PATCH."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add checkpoint/version/login/home/SSO/license readiness conditions.",
+          "mechanism": "Restricted Object Data API field reads and home-mismatch hold."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add exact access PATCH values with protected group/hierarchy controls.",
+          "mechanism": "IgnoreUserAccess=FALSE and stored LoginLocationCode mapping."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add account-outcome reconciliation and protect later login exceptions.",
+          "mechanism": "Native account evidence/endpoint result and configured same-Id retry."
+        }
+      ]
+    },
+    {
+      "id": "IMP-17",
+      "stableTaskId": "RPT-01",
+      "taskHash": "02ac55e623772a2e4afdee6c60705303f550d4832ca5b5ba34d9c68ab7a1e7a2",
+      "renderedTaskHash": "5b7da00a5d006023c170cfdb4cd5d986f9e27d31d06c9ba2543501b66ade283b",
+      "evidenceReview": "The prior plan and specification require waiting/failed support views but provide no exported view objects. These are explicitly proposed screens with actual field filters and bounded columns, not fake modifications to existing named reports. Native error/identity source paths and permitted navigation are local blockers; no derived difference flag or new logging object is invented.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add bounded support views separating each readiness/failure condition.",
+          "mechanism": "Proposed native profile/Employee views and supplied native error-source views."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add no-publication and working-versus-published review views.",
+          "mechanism": "Position Code view filters and side-by-side configured field controls."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add no-capture and incomplete-preparation Employee filters/columns.",
+          "mechanism": "Employee extension-based support view definitions."
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add failure/ambiguity evidence views with approved navigation.",
+          "mechanism": "Supplied native execution/identity queries and permitted retry command binding."
+        }
+      ]
+    },
+    {
+      "id": "IMP-18",
+      "stableTaskId": "INIT-01",
+      "taskHash": "a565c2384876855c8afb100467b60f9609cc1dd7197c757081612c58bbbb6b6a",
+      "renderedTaskHash": "ce93876a25f50546f21d183af94fdaa0ea481c45ef7ee3e32326be7fdbe21257",
+      "evidenceReview": "Initial profile configuration is explicitly in specification 12.1 and the previous accepted planning scope; this is not migration. No actual initial code/group list was supplied, so that entire population remains blocked. The task includes exact flag/rule choices and consumes the completed Publish operation rather than assigning another publishing mechanism.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add only the approved initial nondeferred profile configuration.",
+          "mechanism": "Position Code authoring records and the completed Publish operation."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create supplied case-exact code/rule/group values with manual origin.",
+          "mechanism": "Initial Position Code records and three filtered Groups grids."
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Publish each supplied eligible initial record to version 1 and Completed.",
+          "mechanism": "Configured first-publication link; no existing-Employee enrollment."
+        }
+      ]
+    }
+  ]
+}
