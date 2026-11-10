@@ -1,51 +1,50 @@
 {
   "version": 1,
+  "reviewKind": "full-plan-redraft",
+  "reviewedDate": "2026-11-10",
   "scope": [
-    "IMP-01"
+    "IMP-01",
+    "IMP-03",
+    "IMP-04",
+    "IMP-05",
+    "IMP-08",
+    "IMP-09",
+    "IMP-10",
+    "IMP-14",
+    "IMP-16",
+    "IMP-20",
+    "IMP-24",
+    "IMP-28",
+    "IMP-30",
+    "IMP-31",
+    "IMP-34",
+    "IMP-35",
+    "IMP-36",
+    "IMP-39",
+    "IMP-40",
+    "IMP-41",
+    "IMP-42",
+    "IMP-43",
+    "IMP-44",
+    "IMP-45",
+    "IMP-47",
+    "IMP-50",
+    "IMP-51",
+    "IMP-52",
+    "IMP-53",
+    "IMP-54",
+    "IMP-55",
+    "IMP-56",
+    "IMP-57",
+    "IMP-58"
   ],
-  "reviewKind": "scoped-revision",
-  "scopeReason": "The user requested revision of IMP-01 and the planner skill. The remaining 33 tasks have not been redrafted or certified against this new content contract.",
-  "unchangedTaskHashes": {
-    "IMP-03": "a1e6361c4280f289bef50709d222b09526e85d8509dd4082ffbf27df40b381ab",
-    "IMP-04": "b91dc35b85fa730a43bc76bc09024f5ab531c7f7d6ed233a6ea3e2ea4ef62c27",
-    "IMP-05": "1b9b1ec45c0a1d2ee41770e0f2578ff177f86f5733e96ec160e63d496f950563",
-    "IMP-08": "6f042387883e454a8f3c6ac1def3bbd65f497f6f0bffb6ca66435753b01c4b52",
-    "IMP-09": "fafb89b35752fcb167c39ad4e333e55f937e4a23f9ce57f57d2dcd17b7216b88",
-    "IMP-10": "e4a70e02947f3726c4c31cf29a29590026b03c99f3e06f61111fbd4c4e5e8fcf",
-    "IMP-14": "1b5278269a39c52da7e7216b8dc6e99eaaf656a8973de6f0a106231ba846f13c",
-    "IMP-16": "560e8d735922c595ed7c4c2b9e6fe289a5388bb5ccc0a54acaf18b2337968702",
-    "IMP-20": "91ccf0a08b9719d81c4a2154bb315784e12864f02217ad733e14142865e25dff",
-    "IMP-24": "805e9e3176120a3175f67c26921ce89ab7e56b5729c9e8e8fa2999e25cf6946b",
-    "IMP-28": "ba5f166114f1d7055243bc181b31514792325bb5f0007924f67a3499bd4e5f7f",
-    "IMP-30": "5e22ffa40d4bbe1a51b6d805cae8bcac3a67ee4c5991f9f61649664a621a4adf",
-    "IMP-31": "80b630780b65dd95f245d6c677f728a527d41271372b579ac7fdfe5148447480",
-    "IMP-34": "06d8ea90b46e2cfa1581102b33feb7951d4ad9de6ecc618550578cff1c0bb387",
-    "IMP-35": "021004213d1d1c840229e03914b1463c95638acade340bdc0c29ffb8144c665a",
-    "IMP-36": "1fdbfb4d226f50644ab69424ec7219145e92886e77b5bd2e34f91d7998c6b118",
-    "IMP-39": "835db9b68f12563493cbff94b98c1a8576c3af2684fbcbce62e8841470f6d657",
-    "IMP-40": "7e3f388ad75a1126f5dbcd520fb2b8ff135759ba3f25e3e9e921894f111da31f",
-    "IMP-41": "c15793f5ee1171946a5c0e5d7537a063c875bedbb4a7cbafd2ed6496b75facbf",
-    "IMP-42": "3c023f33dc4f5af8744498d19e7afd5da2010b0abd7ec965b6123863e0c0e7be",
-    "IMP-43": "31326b8a15a84e81163888ee6bc858d6069e02b859edd5249388e370213d1dcf",
-    "IMP-44": "61bc1f3fbfeac0624d61da858c1132ea7aa674f2e5269eed33ea786f07005032",
-    "IMP-45": "f66875a5e951e59d1552cb703f65bb95195b1ff0e847ac5197e87e3408ac6fb9",
-    "IMP-47": "2472e0ba519a205777ac43ffa09ca0544611578e4af2c0d4a4c7fe73c4daf0ce",
-    "IMP-50": "9f73c1def2c6adf38062c1249d78f63b56f24acdfa6a26aa5baca9182f484365",
-    "IMP-51": "2678048c469a6dd1695fbc59f7a4bc9e2b99ef75f02834d25f763a2cefddca82",
-    "IMP-52": "7d0259cca6ed8ddb2209441361e3edd65b6f660e75345c83ec3e06ae514c446a",
-    "IMP-53": "b5f27071f3973e56e5f0c3bc2d00b48e374a82c0907de2f3e44eadccdd74b8a5",
-    "IMP-54": "c247dadec56c6304de34d2132df125657eba184f67ad291fb8c61cc638d7a685",
-    "IMP-55": "f49395fe46637e6cb081d9a3f52ae1019b3e164b5bf5785de2374076f7d12db9",
-    "IMP-56": "8887222b9d298972623686202a4aad5ac4355010c29b56ac65abafe5934e7e7c",
-    "IMP-57": "4e7e353268dec8920ea9bc179e9253fef8c6cc8b358c7b78d82367e60a2803e5",
-    "IMP-58": "b19781e6833c7c7feb54c2dd2c739b8782f9c54acd6af6658c8ccba79f617d57"
-  },
+  "scopeReason": "Full existing content review with user-feedback delta review across all tasks: Toolbox Talks exclusion is plan-specific; native processing permissions and named evidence references are skill-level rules.",
   "tasks": [
     {
       "id": "IMP-01",
-      "taskHash": "f75b70bbe557f52ccebff15a83ee5813d7e6bc93f0debfcf84188decbe820d3b",
-      "renderedTaskHash": "73de65389668adc9eefb012f5f3382bf3df49492a842d88b2dda345ccf29f2a8",
-      "evidenceReview": "Compared all four new object definitions, sixteen field declarations and fourteen seed records with the current technical specification and target-model.json. These are proposed new objects without fabricated GUIDs, not modifications to installed lists. New-list access rules are reproduced in full. Removed the existing-route/decision/equipment/Corrective identification exercise, its acceptance criterion and G03 blocker; no existing options are being changed by this task. Reviewed the rendered detailed assignment with references hidden. Administrator and system principal identities remain explicitly missing and block only permission bindings. This review does not claim those identities are supplied or that any tenant behavior has been tested.",
+      "taskHash": "fc9bbb9c75c013b6c7ac32e3c370b9a91a65d83eeb2c85ec8fc67fd6fbf9504e",
+      "renderedTaskHash": "048684f020a1efa5f13a9ca2a477bff5ec8e7cfb0cf3a333394c290ae46b7854",
+      "evidenceReview": "User-confirmed platform behavior removes native processing-context permission setup, its acceptance criterion and its missing system-principal input. Ordinary-user read and administrator maintenance rights remain. Reviewed the four new objects, sixteen fields and fourteen entries unchanged; only actual administrator groups remain missing for maintenance rights. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
       "checks": {
         "standaloneInstructions": true,
         "exactValuesIncluded": true,
@@ -56,138 +55,1933 @@
       "instructions": [
         {
           "path": "scope",
-          "requiredChange": "Create four independent reference lists, their sixteen fields, fourteen named entries and the specified access permissions.",
-          "mechanism": "Four new Inspections objects, their fields, entries and object access configuration"
+          "requiredChange": "Create Inspection Source, Response Outcome, Inspection Outcome and Inspection Classification in the Inspections module. Add Code, Name, Active? and Sort to each object; populate the fourteen entries listed in this task. Configure ordinary users to read the lists, authorized program administrators to maintain them. The object names, settings, fields, entries and access rules are included below.",
+          "mechanism": "Configure Inspection Reference Lists / configuration elements named in the assignment"
         },
         {
           "path": "configurationRows.0",
-          "requiredChange": "Add Inspection Source as a new independent object in Inspections.",
-          "mechanism": "Insp_InspectionSourceObject object definition"
+          "requiredChange": "Inspection Source: Create independent object Insp_InspectionSourceObject, display name Inspection Source, in Inspections; no inheritance.",
+          "mechanism": "New reference object Inspection Source"
         },
         {
           "path": "configurationRows.1",
-          "requiredChange": "Add Response Outcome as a new independent object in Inspections.",
-          "mechanism": "Insp_ResponseOutcomeObject object definition"
+          "requiredChange": "Response Outcome: Create independent object Insp_ResponseOutcomeObject, display name Response Outcome, in Inspections; no inheritance.",
+          "mechanism": "New reference object Response Outcome"
         },
         {
           "path": "configurationRows.2",
-          "requiredChange": "Add Inspection Outcome as a new independent object in Inspections.",
-          "mechanism": "Insp_OutcomeObject object definition"
+          "requiredChange": "Inspection Outcome: Create independent object Insp_OutcomeObject, display name Inspection Outcome, in Inspections; no inheritance.",
+          "mechanism": "New reference object Inspection Outcome"
         },
         {
           "path": "configurationRows.3",
-          "requiredChange": "Add Inspection Classification as a new independent object in Inspections.",
-          "mechanism": "Insp_ClassificationObject object definition"
+          "requiredChange": "Inspection Classification: Create independent object Insp_ClassificationObject, display name Inspection Classification, in Inspections; no inheritance.",
+          "mechanism": "New reference object Inspection Classification"
         },
         {
           "path": "configurationRows.4",
-          "requiredChange": "Set the listed localization, abstract, workflow, Location, security, audit, attachment, display and sort parameters on each new object.",
-          "mechanism": "Native object parameters and generated detail/inventory views on all four objects"
+          "requiredChange": "Settings on all four objects: Set IsLocalizable=TRUE, IsAbstract=FALSE, HasWorkflow=FALSE, IsLocationBound=FALSE, IsSecurityEnabled=TRUE, IsAuditEnabled=FALSE and IsAttachmentEnabled=FALSE. Set DisplayProperty=Name and OrderProperty=Sort, ascending. Use native generated detail and inventory views.",
+          "mechanism": "New reference object/field settings"
         },
         {
           "path": "configurationRows.5",
-          "requiredChange": "Add mandatory non-localizable unique Code Text fields with maximum length 100 and no default.",
-          "mechanism": "Code field definition on each of the four new objects"
+          "requiredChange": "Code — add to each object: Internal name Code; mandatory Text, maximum 100 characters, non-localizable, no default, unique within its object. Codes are stable once used by application rules; translated display names do not change codes.",
+          "mechanism": "New reference object/field settings"
         },
         {
           "path": "configurationRows.6",
-          "requiredChange": "Add mandatory localizable Name Text fields with maximum length 255 and no default.",
-          "mechanism": "Name field definition on each of the four new objects"
+          "requiredChange": "Name — add to each object: Internal name Name; mandatory Text, maximum 255 characters, localizable, no default. Use as the displayed description.",
+          "mechanism": "New reference object/field settings"
         },
         {
           "path": "configurationRows.7",
-          "requiredChange": "Add mandatory Active Yes/No fields defaulting TRUE, with the stated availability semantics for reference-list values.",
-          "mechanism": "Active field definition and reference-list value availability settings"
+          "requiredChange": "Active? — add to each object: Internal name Active; mandatory Yes/No, default TRUE. FALSE makes a value unavailable for new user selections while existing references remain valid. Values required by automation remain active while that automation uses them.",
+          "mechanism": "New reference object/field settings"
         },
         {
           "path": "configurationRows.8",
-          "requiredChange": "Add optional Sort Float fields with no default and use them for ascending ordering.",
-          "mechanism": "Sort field definitions and OrderProperty on the four new objects"
+          "requiredChange": "Sort — add to each object: Internal name Sort; optional Float, no default. Use for ascending presentation order.",
+          "mechanism": "New reference object/field settings"
         },
         {
           "path": "configurationRows.9",
-          "requiredChange": "Create the Internal source entry with Code INTERNAL, Active TRUE and Sort 10.",
-          "mechanism": "Insp_InspectionSourceObject reference entry INTERNAL"
+          "requiredChange": "Inspection Source entry: INTERNAL: Create Code=INTERNAL; Name=Internal; Active=TRUE; Sort=10.",
+          "mechanism": "New reference entry Inspection Source entry: INTERNAL"
         },
         {
           "path": "configurationRows.10",
-          "requiredChange": "Create the External source entry with Code EXTERNAL, Active TRUE and Sort 20.",
-          "mechanism": "Insp_InspectionSourceObject reference entry EXTERNAL"
+          "requiredChange": "Inspection Source entry: EXTERNAL: Create Code=EXTERNAL; Name=External; Active=TRUE; Sort=20.",
+          "mechanism": "New reference entry Inspection Source entry: EXTERNAL"
         },
         {
           "path": "configurationRows.11",
-          "requiredChange": "Create the Unanswered response entry with Code UNANSWERED, Active TRUE and Sort 10.",
-          "mechanism": "Insp_ResponseOutcomeObject reference entry UNANSWERED"
+          "requiredChange": "Response Outcome entry: UNANSWERED: Create Code=UNANSWERED; Name=Unanswered; Active=TRUE; Sort=10.",
+          "mechanism": "New reference entry Response Outcome entry: UNANSWERED"
         },
         {
           "path": "configurationRows.12",
-          "requiredChange": "Create the Not applicable response entry with Code NOT_APPLICABLE, Active TRUE and Sort 20.",
-          "mechanism": "Insp_ResponseOutcomeObject reference entry NOT_APPLICABLE"
+          "requiredChange": "Response Outcome entry: NOT_APPLICABLE: Create Code=NOT_APPLICABLE; Name=Not applicable; Active=TRUE; Sort=20.",
+          "mechanism": "New reference entry Response Outcome entry: NOT_APPLICABLE"
         },
         {
           "path": "configurationRows.13",
-          "requiredChange": "Create the Informational response entry with Code INFORMATIONAL, Active TRUE and Sort 30.",
-          "mechanism": "Insp_ResponseOutcomeObject reference entry INFORMATIONAL"
+          "requiredChange": "Response Outcome entry: INFORMATIONAL: Create Code=INFORMATIONAL; Name=Informational; Active=TRUE; Sort=30.",
+          "mechanism": "New reference entry Response Outcome entry: INFORMATIONAL"
         },
         {
           "path": "configurationRows.14",
-          "requiredChange": "Create the Negative response entry with Code NEGATIVE, Active TRUE and Sort 40.",
-          "mechanism": "Insp_ResponseOutcomeObject reference entry NEGATIVE"
+          "requiredChange": "Response Outcome entry: NEGATIVE: Create Code=NEGATIVE; Name=Negative; Active=TRUE; Sort=40.",
+          "mechanism": "New reference entry Response Outcome entry: NEGATIVE"
         },
         {
           "path": "configurationRows.15",
-          "requiredChange": "Create the Positive response entry with Code POSITIVE, Active TRUE and Sort 50.",
-          "mechanism": "Insp_ResponseOutcomeObject reference entry POSITIVE"
+          "requiredChange": "Response Outcome entry: POSITIVE: Create Code=POSITIVE; Name=Positive; Active=TRUE; Sort=50.",
+          "mechanism": "New reference entry Response Outcome entry: POSITIVE"
         },
         {
           "path": "configurationRows.16",
-          "requiredChange": "Create the Not assessed inspection outcome with Code NOT_ASSESSED, Active TRUE and Sort 10.",
-          "mechanism": "Insp_OutcomeObject reference entry NOT_ASSESSED"
+          "requiredChange": "Inspection Outcome entry: NOT_ASSESSED: Create Code=NOT_ASSESSED; Name=Not assessed; Active=TRUE; Sort=10.",
+          "mechanism": "New reference entry Inspection Outcome entry: NOT_ASSESSED"
         },
         {
           "path": "configurationRows.17",
-          "requiredChange": "Create the Pass inspection outcome with Code PASS, Active TRUE and Sort 20.",
-          "mechanism": "Insp_OutcomeObject reference entry PASS"
+          "requiredChange": "Inspection Outcome entry: PASS: Create Code=PASS; Name=Pass; Active=TRUE; Sort=20.",
+          "mechanism": "New reference entry Inspection Outcome entry: PASS"
         },
         {
           "path": "configurationRows.18",
-          "requiredChange": "Create the Nonconforming inspection outcome with Code NONCONFORMING, Active TRUE and Sort 30.",
-          "mechanism": "Insp_OutcomeObject reference entry NONCONFORMING"
+          "requiredChange": "Inspection Outcome entry: NONCONFORMING: Create Code=NONCONFORMING; Name=Nonconforming; Active=TRUE; Sort=30.",
+          "mechanism": "New reference entry Inspection Outcome entry: NONCONFORMING"
         },
         {
           "path": "configurationRows.19",
-          "requiredChange": "Create the Not applicable inspection outcome with Code NOT_APPLICABLE, Active TRUE and Sort 40.",
-          "mechanism": "Insp_OutcomeObject reference entry NOT_APPLICABLE"
+          "requiredChange": "Inspection Outcome entry: NOT_APPLICABLE: Create Code=NOT_APPLICABLE; Name=Not applicable; Active=TRUE; Sort=40.",
+          "mechanism": "New reference entry Inspection Outcome entry: NOT_APPLICABLE"
         },
         {
           "path": "configurationRows.20",
-          "requiredChange": "Create the In progress classification with Code IN_PROGRESS, Active TRUE and Sort 10.",
-          "mechanism": "Insp_ClassificationObject reference entry IN_PROGRESS"
+          "requiredChange": "Inspection Classification entry: IN_PROGRESS: Create Code=IN_PROGRESS; Name=In progress; Active=TRUE; Sort=10.",
+          "mechanism": "New reference entry Inspection Classification entry: IN_PROGRESS"
         },
         {
           "path": "configurationRows.21",
-          "requiredChange": "Create the Complete with open actions classification with Code COMPLETE_OPEN_ACTIONS, Active TRUE and Sort 20.",
-          "mechanism": "Insp_ClassificationObject reference entry COMPLETE_OPEN_ACTIONS"
+          "requiredChange": "Inspection Classification entry: COMPLETE_OPEN_ACTIONS: Create Code=COMPLETE_OPEN_ACTIONS; Name=Complete with open actions; Active=TRUE; Sort=20.",
+          "mechanism": "New reference entry Inspection Classification entry: COMPLETE_OPEN_ACTIONS"
         },
         {
           "path": "configurationRows.22",
-          "requiredChange": "Create the Complete with all actions closed classification with Code COMPLETE_RESOLVED, Active TRUE and Sort 30.",
-          "mechanism": "Insp_ClassificationObject reference entry COMPLETE_RESOLVED"
+          "requiredChange": "Inspection Classification entry: COMPLETE_RESOLVED: Create Code=COMPLETE_RESOLVED; Name=Complete with all actions closed; Active=TRUE; Sort=30.",
+          "mechanism": "New reference entry Inspection Classification entry: COMPLETE_RESOLVED"
         },
         {
           "path": "configurationRows.23",
-          "requiredChange": "Grant ordinary users read-only access to the four newly created lists.",
-          "mechanism": "New reference-object access rights for ordinary application users"
+          "requiredChange": "Ordinary application users — all four lists: Grant read access to entries required by the application. Grant no ordinary permission to create, change or delete reference-list records.",
+          "mechanism": "New reference object permission rules"
         },
         {
           "path": "configurationRows.24",
-          "requiredChange": "Grant reference maintenance rights to the supplied authorized program-administrator groups.",
-          "mechanism": "New reference-object maintenance rights; actual group identities remain a permission-only supplied input"
+          "requiredChange": "Authorized program administrators — all four lists: Grant maintenance access to Code, Name, Active? and Sort, subject to code stability and the active-value restrictions above. Bind this access to the supplied administrator groups.",
+          "mechanism": "New reference object permission rules"
+        }
+      ]
+    },
+    {
+      "id": "IMP-03",
+      "taskHash": "290fc046109f18b0e366eb410a253280419df186b38809042d56daa32ef737a5",
+      "renderedTaskHash": "04c22c6e30bb09ba907c9fcae7c8db40609b076999a14b6a190b6047fc5444ec",
+      "evidenceReview": "User project scope excludes Toolbox Talks. Removed CLF_Checklist_Toolbox_Detail and its profile assignment, the E1753 change row, generic Toolbox editor work and all three-editor criteria. Only CLF_Checklist_Detail and CLF_Checklist_MassUpdate receive checklist changes. Question/section/Choice edits remain Inspection-scoped; named source IDs are verified from the package. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure Inspection checklist, section, question and Choice maintenance screens. Hide BOTH controls EnableSections and EnableScoring while fixing their values to Yes and No. Add the contribution and negative-choice controls, make section names mandatory, expose action/comment requirements for single-choice and multiple-choice questions, and hide numeric scoring and formal Finding setup.",
+          "mechanism": "Configure Checklist and Question Authoring / configuration elements named in the assignment"
         },
         {
-          "path": "configurationRows.25",
-          "requiredChange": "Grant system processing read and reference-assignment rights to the newly created lists.",
-          "mechanism": "New reference-object access rights bound to the supplied system-processing security context"
+          "path": "configurationRows.0",
+          "requiredChange": "Checklist editors: On CLF_Checklist_Detail (E497) and CLF_Checklist_MassUpdate (E1773), add the proposed Inspection Checklist Settings view action. For Inspection-owned content set EnableSections=TRUE and EnableScoring=FALSE; HIDE both controls. The existing scoring default is TRUE. Apply the Inspection-only view values rather than changing a shared global default.",
+          "mechanism": "Two Inspection checklist editors / Inspection Checklist Settings"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Section Name: On CLF_SectionObjectDetailView (E2503), add the proposed Inspection Section Name view action: make SectionName mandatory when its Checklist belongs to Inspections. Reject an empty/whitespace-only name through the authoring guard built in IMP-24.",
+          "mechanism": "Section detail / Inspection Section Name"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Question contribution and required answer: On CLF_Quest_Detail (E972), add ContributesToOutcome. Show it for AnswerType.Value equal to Choice or Choices; set FALSE and hide it for all other types. Set AnswerRequired=TRUE and hide its Required control for Inspection questions.",
+          "mechanism": "Question detail field controls and scoped view actions"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Multiple-choice action/comment selections: In existing Show/Hide Choice List on CLF_Quest_Detail (E972), change the Inspection Choices branch that hides Choice_Requirement_Grid_NoFindings. Show this existing grid for both Choice and Choices so ActReqChoices and ComReqChoices can be selected from the question ChoiceList; hide it for other types. Published selections are read-only.",
+          "mechanism": "CLF_Quest_Detail (E972) / Show/Hide Choice List / Choice_Requirement_Grid_NoFindings"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Negative-choice maintenance: Add IsNegative, caption Is Negative?, to CLF_Choice_Detail (E112) and the actual Inspection Choice bulk editors supplied for this application. Default new values No. Add help text: This setting applies everywhere this Choice is used; use separate Choice records when meanings differ.",
+          "mechanism": "Choice field controls and help text"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Published contribution: Add a read-only ContributesToOutcome control on CLF_PubQuest_Detail (E220). The field and its publication copy are supplied by IMP-04.",
+          "mechanism": "Published Question detail control"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Scoring and formal Finding controls: Hide FindReqChoices, TriggerFindings, Weight and ValueChoiceList in Inspection question editors; leave FindReqChoices empty for new Inspection questions. Hide existing Choice.Value and Choice List.MaxPoints controls on Inspection-facing maintenance screens. Hide a Published Question.MaxPoints control only on a supplied profile where it exists; CLF_PubQuest_Detail (E220) has no such control.",
+          "mechanism": "Existing authoring controls and supplied profile controls"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Checklist.Enable Scoring? (CLF_ChecklistObject.EnableScoring): On the Inspection-only checklist view actions, set EnableScoring=FALSE and HIDE both EnableScoring and EnableSections controls on the two named Inspection editors; the authoring guard enforces the fixed settings. The shared global field default is not changed.",
+          "mechanism": "Checklist.Enable Scoring? (CLF_ChecklistObject.EnableScoring) / EnableScoring (E1784)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Checklist.Enable Sections? (CLF_ChecklistObject.EnableSections): Set EnableSections=TRUE and hide its control on CLF_Checklist_Detail and CLF_Checklist_MassUpdate only. The authoring guard in IMP-24 enforces the fixed setting on save/publication.",
+          "mechanism": "Checklist.Enable Sections? (CLF_ChecklistObject.EnableSections) / EnableSections (E1534)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Section.Section Name (CLF_SectionObject.SectionName): Make a meaningful section name mandatory for Inspection authoring; retain existing section and published name/order mappings.",
+          "mechanism": "Section.Section Name (CLF_SectionObject.SectionName) / SectionName (E1331)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Checklist field controls (CLF_Checklist_Detail): In the Inspection-scoped view action on Checklist field controls (CLF_Checklist_Detail), HIDE both EnableSections and EnableScoring controls and set their effective values TRUE and FALSE respectively.",
+          "mechanism": "Checklist field controls (CLF_Checklist_Detail) / CLF_Checklist_Detail (E497)"
+        },
+        {
+          "path": "modifications.4",
+          "requiredChange": "Checklist field controls (CLF_Checklist_MassUpdate): In the Inspection-scoped view action on Checklist field controls (CLF_Checklist_MassUpdate), HIDE both EnableSections and EnableScoring controls and set their effective values TRUE and FALSE respectively.",
+          "mechanism": "Checklist field controls (CLF_Checklist_MassUpdate) / CLF_Checklist_MassUpdate (E1773)"
+        },
+        {
+          "path": "modifications.5",
+          "requiredChange": "Choice List.Max Points (CLF_ChoiceListObject.MaxPoints): Hide existing MaxPoints controls on supplied Inspection-facing CLF_ChoiceListObject views; CLF_PubQuest_Detail (E220) contains no such published control. The current numeric calculation is source context, not assigned work.",
+          "mechanism": "Choice List.Max Points (CLF_ChoiceListObject.MaxPoints) / MaxPoints (E722)"
+        },
+        {
+          "path": "modifications.6",
+          "requiredChange": "Choice.Value (CLF_ChoiceObject.Value): Hide the numeric value on Inspection-facing screens. Preserve the field type, current data and existing scoring calculations for other uses.",
+          "mechanism": "Choice.Value (CLF_ChoiceObject.Value) / Value (E323)"
+        },
+        {
+          "path": "modifications.7",
+          "requiredChange": "Published Question.Max Points (CLF_PubQuestObject.MaxPoints): Hide existing MaxPoints controls on supplied Inspection-facing CLF_PubQuestObject views; CLF_PubQuest_Detail (E220) contains no such published control. The current numeric calculation is source context, not assigned work.",
+          "mechanism": "Published Question.Max Points (CLF_PubQuestObject.MaxPoints) / MaxPoints (E233)"
+        },
+        {
+          "path": "modifications.8",
+          "requiredChange": "Question Abstract.Action Required (CLF_QuestAbstractObject.ActReqChoices): In CLF_Quest_Detail (E972) show the existing ActReqChoices editor in Choice_Requirement_Grid_NoFindings for both Choice and Choices, limited to the question ChoiceList; published selections remain read-only.",
+          "mechanism": "Question Abstract.Action Required (CLF_QuestAbstractObject.ActReqChoices) / ActReqChoices (E642)"
+        },
+        {
+          "path": "modifications.9",
+          "requiredChange": "Question Abstract.Required (CLF_QuestAbstractObject.AnswerRequired): Hide Required and force Yes for Inspection authoring. Save/publication checks enforce it; hidden dependent questions remain excluded from submission requirements.",
+          "mechanism": "Question Abstract.Required (CLF_QuestAbstractObject.AnswerRequired) / AnswerRequired (E130)"
+        },
+        {
+          "path": "modifications.10",
+          "requiredChange": "Question Abstract.Finding Required (CLF_QuestAbstractObject.FindReqChoices): Hide and leave empty for new Inspection questions. Retain existing shared/historical references; formal Finding requirements do not block the current Inspection process.",
+          "mechanism": "Question Abstract.Finding Required (CLF_QuestAbstractObject.FindReqChoices) / FindReqChoices (E651)"
+        },
+        {
+          "path": "modifications.11",
+          "requiredChange": "Question Abstract.Choices that Trigger Action Plans (CLF_QuestAbstractObject.TriggerFindings): Hide TriggerFindings in Inspection authoring screens; direct linked actions and categorical results replace its display role in this process.",
+          "mechanism": "Question Abstract.Choices that Trigger Action Plans (CLF_QuestAbstractObject.TriggerFindings) / TriggerFindings (E1518)"
+        },
+        {
+          "path": "modifications.12",
+          "requiredChange": "Question Abstract.Default Value (Choice List) (CLF_QuestAbstractObject.ValueChoiceList): Hide ValueChoiceList in Inspection authoring screens; direct linked actions and categorical results replace its display role in this process.",
+          "mechanism": "Question Abstract.Default Value (Choice List) (CLF_QuestAbstractObject.ValueChoiceList) / ValueChoiceList (E1345)"
+        },
+        {
+          "path": "modifications.13",
+          "requiredChange": "Question Abstract.Weight (CLF_QuestAbstractObject.Weight): Hide Weight in Inspection authoring screens; direct linked actions and categorical results replace its display role in this process.",
+          "mechanism": "Question Abstract.Weight (CLF_QuestAbstractObject.Weight) / Weight (E1343)"
+        },
+        {
+          "path": "modifications.14",
+          "requiredChange": "CLF_Quest_Detail / Show/Hide Choice List / Choices branch: For the Inspection scope show this existing requirement grid for Choice and Choices; hide it for non-choice answers.",
+          "mechanism": "CLF_Quest_Detail / Show/Hide Choice List / Choices branch / CLF_Quest_Detail (E972)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-04",
+      "taskHash": "09e7804f37cee05db21764a71e4615afbbbf09c116a1c3bbde6d2a62fb1dcd36",
+      "renderedTaskHash": "baab4daa4d3b44140c1200a62f2ab8008a7def9a05a9106d73765e407c19d91d",
+      "evidenceReview": "Compared the two new optional Yes/No declarations and FALSE/legacy-NULL semantics with the field contract. E265 receives exactly the additional contribution copy. Existing ActReqChoices mapping is source context; selected Choice flags remain shared rather than copied. Initial classifications are not assigned here. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the two Yes/No settings used to classify responses: Contributes to Outcome? on Question Abstract and Is Negative? on Choice. Extend the existing Published Question copy handler by one assignment so publication carries the contribution setting.",
+          "mechanism": "Configure Question Outcome Settings and Publication / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Contributes to Outcome?: Add ContributesToOutcome to CLF_QuestAbstractObject as optional Yes/No, default FALSE. Working Question and Published Question inherit this single declaration. Treat legacy NULL as FALSE. Allow TRUE only for Choice/Choices; the authoring form and guard tasks configure that restriction.",
+          "mechanism": "CLF_QuestAbstractObject.ContributesToOutcome"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Is Negative?: Add IsNegative to CLF_ChoiceObject as optional Yes/No, default FALSE; legacy NULL means FALSE. This flag belongs to the shared Choice and is read wherever that record is selected.",
+          "mechanism": "CLF_ChoiceObject.IsNegative"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Publication copy: In Copy Values from Question during Publish (E265), add ContributesToOutcome=Question.ContributesToOutcome to the existing set-value steps. This is the only additional copy; existing ActReqChoices already copies the question-specific action selections.",
+          "mechanism": "Copy Values from Question during Publish (E265) / new ContributesToOutcome set-value step"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Publish field-copy steps (Copy Values from Question during Publish): Add only ContributesToOutcome=Question.ContributesToOutcome. Keep existing ActReqChoices and other copies, handler identity and native publication behavior.",
+          "mechanism": "Publish field-copy steps (Copy Values from Question during Publish) / Copy Values from Question during Publish (E265)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-05",
+      "taskHash": "5409132175755d8a22db7f2ba017e00b021d46d3ba9b189f18d04940bed8e900",
+      "renderedTaskHash": "9e1168fc8038ba7fea81cecf81730adfc55facfd99922c1f5023b8c8bb8d0c59",
+      "evidenceReview": "Reconciled new source/outcome fields and the twenty existing program fields against E1565 enabled review/equipment actions and E1236 Create Role. Role branches, mandatory conditions, hidden-value retention and fixed program guards are explicit. Actual route identities, technical principals, used-type check and native event binding remain local blockers; initial program data and memberships stay externally owned. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add source and overall-result settings to Type of Inspection. Update its setup form and replace its ad hoc role-creation handler with program validation, so source, review routing and equipment settings can be maintained consistently.",
+          "mechanism": "Configure Inspection Program Settings / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Source Mode: Add SourceMode to Insp_TypeObject: optional M:1 to Insp_InspectionSourceObject, inverse disabled, default the INTERNAL record. On Insp_Type_Detail (E1565) show an active-entry selector and require it for new/revised current programs. A legacy blank means Internal; prohibit changing source on a type already used by inspections.",
+          "mechanism": "Insp_TypeObject.SourceMode / Insp_Type_Detail (E1565) selector / proposed program guard"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Overall Outcome Required?: Add OverallOutcomeRequired as optional Yes/No. The new initial Internal program records use TRUE through Data Migration; existing NULL means not required. Show/edit it for Internal. For External hide it and force FALSE.",
+          "mechanism": "Insp_TypeObject.OverallOutcomeRequired / Insp_Type_Detail (E1565) source rule"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Fixed program settings: On Insp_Type_Detail (E1565) hide ComplValidation and set TRUE; hide FindingTracking and set FALSE. Hide EquipmMandatory and derive TRUE when EquipmentList=TRUE, FALSE otherwise.",
+          "mechanism": "Insp_Type_Detail (E1565) fixed-setting view actions"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "First-review controls: Modify enabled hide/show First Reviewer: EnabFirstReview=TRUE requires positive DforFirstReview and PRMethod. Role method shows/requires Role; Specific Person shows/requires FirstReviewer; Expression shows/requires Expression. Supervisor and Submitter require no role/person/expression field. Hide and make other route fields nonmandatory while retaining their values.",
+          "mechanism": "Insp_Type_Detail (E1565) / hide/show First Reviewer"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Second-review controls: Modify the enabled method-based hide/show Second Reviewer action: EnaSecondReview=TRUE requires EnabFirstReview=TRUE, positive forSecondReview and PRMethodSndRev. Role shows/requires Role2; Specific Person shows/requires SecondReviewer; Expression shows/requires Expression2. Hide/nonrequire other route fields and retain their values. The separate disabled legacy action is not the target.",
+          "mechanism": "Insp_Type_Detail (E1565) / enabled hide/show Second Reviewer"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Hidden-value retention: In the two enabled review actions remove ClearValueAction entries for disabled review days/methods and inactive route fields. In show/hide equipment remove ELOptions from the disabled branch ClearValueAction; hide/nonrequire it when EquipmentList=FALSE, show/require it when TRUE.",
+          "mechanism": "Insp_Type_Detail (E1565) review and equipment ClearValueAction entries"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Maintained roles and exceptions: Change Role branches to select Role/Role2 directly. Disable ordinary New/Existing routing branches and hide InspRoleOption, InspRoleOption2, InspRoleOptionId, RoleName and RoleName2. Restrict FirstReviewer, SecondReviewer, Expression and Expression2 to the supplied technical-administrator access; ordinary methods are maintained Role, Immediate Supervisor and Submitter.",
+          "mechanism": "Insp_Type_Detail (E1565) role branches and supplied technical-administrator permissions"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Program validation handler: Repurpose existing Create Role (E1236) as Validate Inspection Program Settings. Remove GETRELATED role creation and role-name clearing. Under the supported current-Inspection-program save binding enforce the source rule, ComplValidation=TRUE, FindingTracking=FALSE, derived EquipmMandatory, positive enabled review periods, required matching routing fields, first review before second, and an ELOptions selection when equipment is enabled.",
+          "mechanism": "Create Role (E1236) / proposed Validate Inspection Program Settings"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Type of Inspection.Enable Checklist Completion Validation? (Insp_TypeObject.ComplValidation): Hide Enable Checklist Completion Validation? and require Yes for current Inspection programs; enforce on save while preserving other applications.",
+          "mechanism": "Type of Inspection.Enable Checklist Completion Validation? (Insp_TypeObject.ComplValidation) / ComplValidation (E1563)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Type of Inspection.No. of Days for Review (Insp_TypeObject.DforFirstReview): Require a positive supplied review-day value when first review is enabled. When disabled hide/retain the value without making it mandatory. Use the existing stage-entry due-date calculation.",
+          "mechanism": "Type of Inspection.No. of Days for Review (Insp_TypeObject.DforFirstReview) / DforFirstReview (E1603)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Type of Inspection.Equipment List Options (Insp_TypeObject.ELOptions): Show/require an active existing Text/Lookup entry only when EquipmentList is Yes. When disabled hide and retain its value; use the actual supplied reference-record record identities.",
+          "mechanism": "Type of Inspection.Equipment List Options (Insp_TypeObject.ELOptions) / ELOptions (E1600)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Type of Inspection.Make Equipment Mandatory? (Insp_TypeObject.EquipmMandatory): Hide the independent control. Set Yes when EquipmentList is Yes and No otherwise; save checks prevent contradictions.",
+          "mechanism": "Type of Inspection.Make Equipment Mandatory? (Insp_TypeObject.EquipmMandatory) / EquipmMandatory (E163)"
+        },
+        {
+          "path": "modifications.4",
+          "requiredChange": "Type of Inspection.Expression (Insp_TypeObject.Expression): Require the expression only for enabled first review using the Expression route. Technical administrators maintain the supplied native expression-supported stage-recipient expression; hide/retain for other methods.",
+          "mechanism": "Type of Inspection.Expression (Insp_TypeObject.Expression) / Expression (E1068)"
+        },
+        {
+          "path": "modifications.5",
+          "requiredChange": "Type of Inspection.Expression:2 (Insp_TypeObject.Expression2): Require the expression only for enabled second review using the Expression route. Technical administrators maintain the supplied native expression-supported stage-recipient expression; hide/retain for other methods.",
+          "mechanism": "Type of Inspection.Expression:2 (Insp_TypeObject.Expression2) / Expression2 (E686)"
+        },
+        {
+          "path": "modifications.6",
+          "requiredChange": "Type of Inspection.Utilize Finding Tracking (Insp_TypeObject.FindingTracking): Hide Utilize Finding Tracking and require No for current Inspection programs; enforce on save while retaining existing shared capability.",
+          "mechanism": "Type of Inspection.Utilize Finding Tracking (Insp_TypeObject.FindingTracking) / FindingTracking (E1103)"
+        },
+        {
+          "path": "modifications.7",
+          "requiredChange": "Type of Inspection.Reviewer (Insp_TypeObject.FirstReviewer): Require the named reviewer only for enabled first review using the supplied Specific Person route. Restrict this technical exception; hide/retain for other methods.",
+          "mechanism": "Type of Inspection.Reviewer (Insp_TypeObject.FirstReviewer) / FirstReviewer (E1612)"
+        },
+        {
+          "path": "modifications.8",
+          "requiredChange": "Type of Inspection.No. of Days for Second Review (Insp_TypeObject.forSecondReview): Require a positive supplied review-day value when second review is enabled. When disabled hide/retain the value without making it mandatory. Use the existing stage-entry due-date calculation.",
+          "mechanism": "Type of Inspection.No. of Days for Second Review (Insp_TypeObject.forSecondReview) / forSecondReview (E1596)"
+        },
+        {
+          "path": "modifications.9",
+          "requiredChange": "Type of Inspection.New/Existing Role (Insp_TypeObject.InspRoleOption): Hide from routine program administration. Use maintained roles; disable automatic role creation through this Inspection pathway and preserve existing shared metadata/history.",
+          "mechanism": "Type of Inspection.New/Existing Role (Insp_TypeObject.InspRoleOption) / InspRoleOption (E591)"
+        },
+        {
+          "path": "modifications.10",
+          "requiredChange": "Type of Inspection.New/Existing Role:2 (Insp_TypeObject.InspRoleOption2): Hide from routine program administration. Use maintained roles; disable automatic role creation through this Inspection pathway and preserve existing shared metadata/history.",
+          "mechanism": "Type of Inspection.New/Existing Role:2 (Insp_TypeObject.InspRoleOption2) / InspRoleOption2 (E989)"
+        },
+        {
+          "path": "modifications.11",
+          "requiredChange": "Type of Inspection.New/Existing Role Id (Insp_TypeObject.InspRoleOptionId): Hide from routine program administration. Use maintained roles; disable automatic role creation through this Inspection pathway and preserve existing shared metadata/history.",
+          "mechanism": "Type of Inspection.New/Existing Role Id (Insp_TypeObject.InspRoleOptionId) / InspRoleOptionId (E1238)"
+        },
+        {
+          "path": "modifications.12",
+          "requiredChange": "Type of Inspection.Method to Determine Person Responsible (Insp_TypeObject.PRMethod): Require the approved routing method when first review is enabled. Ordinary routes are maintained Role, Immediate Supervisor or Submitter; use actual supplied reference-record identities and supplied establishment-aware settings.",
+          "mechanism": "Type of Inspection.Method to Determine Person Responsible (Insp_TypeObject.PRMethod) / PRMethod (E1247)"
+        },
+        {
+          "path": "modifications.13",
+          "requiredChange": "Type of Inspection.Method To Determine Person Responsible:2 (Insp_TypeObject.PRMethodSndRev): Require the approved routing method when second review is enabled. Ordinary routes are maintained Role, Immediate Supervisor or Submitter; use actual supplied reference-record identities and supplied establishment-aware settings.",
+          "mechanism": "Type of Inspection.Method To Determine Person Responsible:2 (Insp_TypeObject.PRMethodSndRev) / PRMethodSndRev (E1593)"
+        },
+        {
+          "path": "modifications.14",
+          "requiredChange": "Type of Inspection.Role (Insp_TypeObject.Role): Show and require Role only for the corresponding enabled review using the Role method; hide/nonrequire and retain it for other methods. The stage-recipient task consumes this selected maintained role.",
+          "mechanism": "Type of Inspection.Role (Insp_TypeObject.Role) / Role (E1242)"
+        },
+        {
+          "path": "modifications.15",
+          "requiredChange": "Type of Inspection.Role2 (Insp_TypeObject.Role2): Show and require Role2 only for the corresponding enabled review using the Role method; hide/nonrequire and retain it for other methods. The stage-recipient task consumes this selected maintained role.",
+          "mechanism": "Type of Inspection.Role2 (Insp_TypeObject.Role2) / Role2 (E1590)"
+        },
+        {
+          "path": "modifications.16",
+          "requiredChange": "Type of Inspection.Role Name (Insp_TypeObject.RoleName): Hide from routine program administration. Use maintained roles; disable automatic role creation through this Inspection pathway and preserve existing shared metadata/history.",
+          "mechanism": "Type of Inspection.Role Name (Insp_TypeObject.RoleName) / RoleName (E1240)"
+        },
+        {
+          "path": "modifications.17",
+          "requiredChange": "Type of Inspection.Role Name 2 (Insp_TypeObject.RoleName2): Hide from routine program administration. Use maintained roles; disable automatic role creation through this Inspection pathway and preserve existing shared metadata/history.",
+          "mechanism": "Type of Inspection.Role Name 2 (Insp_TypeObject.RoleName2) / RoleName2 (E1598)"
+        },
+        {
+          "path": "modifications.18",
+          "requiredChange": "Type of Inspection.Second Reviewer (Insp_TypeObject.SecondReviewer): Require the named reviewer only for enabled second review using the supplied Specific Person route. Restrict this technical exception; hide/retain for other methods.",
+          "mechanism": "Type of Inspection.Second Reviewer (Insp_TypeObject.SecondReviewer) / SecondReviewer (E1605)"
+        },
+        {
+          "path": "modifications.19",
+          "requiredChange": "Routine Create Role branch (Create Role): Replace the role-creation branch with Validate Inspection Program Settings: remove GETRELATED role creation/role-name clearing and add the fixed-setting, enabled-review, source and equipment checks listed in this task.",
+          "mechanism": "Routine Create Role branch (Create Role) / Create Role (E1236)"
+        },
+        {
+          "path": "modifications.20",
+          "requiredChange": "Insp_Type_Detail / reviewer and equipment view actions: Configure maintained-role routing and the precise hide/retain changes listed in the Required configuration table; remove ordinary ad hoc-role controls.",
+          "mechanism": "Insp_Type_Detail / reviewer and equipment view actions / Insp_Type_Detail (E1565)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-08",
+      "taskHash": "ed5123c5c65c35e3dd66845f6b6fd67d1635fa4172d4c250e53c6982e026ec15",
+      "renderedTaskHash": "4c903308382c7715ef209fba6d7cfd76ccbe6df2cfb72c3b7c859a0f9dff0848",
+      "evidenceReview": "Checked four new Inspection field types/defaults and the source IsReadOnly=FALSE on four existing declaring Inspection Abstract stamps. The task changes native properties rather than inventing E1623 controls. Submission/acceptance assignments are explicitly consumed from the later workflow task, and existing CompletedBy/CompletedOn work is not reassigned. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add separate external-party, performance-date, submission-time and acceptance-time fields on Inspection. Make the four existing reviewer actor/date fields read-only at their declaring Inspection Abstract object.",
+          "mechanism": "Separate Inspection Performance, Submission, and Acceptance Details / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "External Party: On Insp_EquipInspectionObject add ExternalParty, Text maximum 255, optional underlying field, default NULL. Working-stage inspector/record owner edits it; show for External and require nonblank at submission, hide/blank for Internal.",
+          "mechanism": "Insp_EquipInspectionObject.ExternalParty"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Performed On: Add PerformedOn, optional Date, default NULL, calendar date with no timezone conversion. Require at submission for both sources; External uses the actual third-party performance date. This is separate from InspectionDate, the existing due date.",
+          "mechanism": "Insp_EquipInspectionObject.PerformedOn"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Submitted At: Add SubmittedAt, optional Date/Time with timezone enabled, default NULL, read-only to users. The submission action in IMP-43 sets server NOW after its checks succeed.",
+          "mechanism": "Insp_EquipInspectionObject.SubmittedAt"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Accepted At: Add AcceptedAt, optional Date/Time with timezone enabled, default NULL, read-only to users. The final-completion branches in IMP-43 set server NOW immediately before successful native completion.",
+          "mechanism": "Insp_EquipInspectionObject.AcceptedAt"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Existing reviewer stamps: On Insp_InspectionAbsObject change native IsReadOnly from FALSE to TRUE on FirstReviewBy, SecondReviewBy, DaofFirstReview and DofSecondReview. These existing fields have no actor/date controls on Insp_EquipInspection_Detail (E1623); this changes their native field properties.",
+          "mechanism": "Four existing Inspection Abstract field definitions"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Inspection Abstract.Date of Review (Insp_InspectionAbsObject.DaofFirstReview): Change native IsReadOnly from FALSE to TRUE on the existing declaring field. Its existing workflow population is supporting product behavior, not new stamping work.",
+          "mechanism": "Inspection Abstract.Date of Review (Insp_InspectionAbsObject.DaofFirstReview) / DaofFirstReview (E2992)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Inspection Abstract.Date of Second Review (Insp_InspectionAbsObject.DofSecondReview): Change native IsReadOnly from FALSE to TRUE on the existing declaring field. Its existing workflow population is supporting product behavior, not new stamping work.",
+          "mechanism": "Inspection Abstract.Date of Second Review (Insp_InspectionAbsObject.DofSecondReview) / DofSecondReview (E2990)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Inspection Abstract.Review By (Insp_InspectionAbsObject.FirstReviewBy): Change native IsReadOnly from FALSE to TRUE on the existing declaring field. Its existing workflow population is supporting product behavior, not new stamping work.",
+          "mechanism": "Inspection Abstract.Review By (Insp_InspectionAbsObject.FirstReviewBy) / FirstReviewBy (E2984)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Inspection Abstract.Second Review By (Insp_InspectionAbsObject.SecondReviewBy): Change native IsReadOnly from FALSE to TRUE on the existing declaring field. Its existing workflow population is supporting product behavior, not new stamping work.",
+          "mechanism": "Inspection Abstract.Second Review By (Insp_InspectionAbsObject.SecondReviewBy) / SecondReviewBy (E2994)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-09",
+      "taskHash": "8fb3667136064c3aeb31771a91a53d28963f2a36c1a93fb7212b96dd0a855d71",
+      "renderedTaskHash": "c3175917530c6e5963da51404574fd200d0aec69dcbd15e55458a951b511bbb1",
+      "evidenceReview": "Compared the three new reference relationships, inverse-disabled settings, native optional/read-only properties and exact record defaults to their canonical field rows. ResponseOutcome has no global default on the shared object; initialization belongs to Inspection generation. Result calculation mechanisms are owned separately. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add read-only categorical result relationships to Question Answer and Inspection, with optional native requiredness and explicit defaults for new current-process records.",
+          "mechanism": "Add Inspection and Response Result Fields / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Response Outcome: Add CLF_QuestionAnswerObject.ResponseOutcome, optional M:1 to Insp_ResponseOutcomeObject, inverse disabled, read-only, default NULL. New Inspection response generation/classification assigns UNANSWERED before evaluation; other shared uses remain blank.",
+          "mechanism": "CLF_QuestionAnswerObject.ResponseOutcome"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Overall Outcome: Add Insp_EquipInspectionObject.OverallOutcome, optional M:1 to Insp_OutcomeObject, inverse disabled, read-only. Default new current-process inspections to the NOT_ASSESSED record; existing blanks remain blank until the current process evaluates them.",
+          "mechanism": "Insp_EquipInspectionObject.OverallOutcome"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Action Classification: Add Insp_EquipInspectionObject.ActionClassification, optional M:1 to Insp_ClassificationObject, inverse disabled, read-only. Default new current-process inspections to IN_PROGRESS. The follow-up operation in IMP-44 maintains subsequent values.",
+          "mechanism": "Insp_EquipInspectionObject.ActionClassification"
+        }
+      ]
+    },
+    {
+      "id": "IMP-10",
+      "taskHash": "020aea226631aa2a478d5072d2f107aa4480548136283d545365cc28e1977abf",
+      "renderedTaskHash": "763fefb7fdf9a2d2d88fae464c6b17cd25bdb03e605f0c3a78f7f0e05083c81b",
+      "evidenceReview": "Checked E18 Action Already Complete Show/Hide against its exported TRUE branch and native ActionOwner/AlBeenCorrected properties. Each HideAction/SetNonMandatoryAction/ClearValueAction removal and ShowAction/SetMandatoryAction addition is named. Empty-only performer/date defaults and the conditional Corrective default are explicit; there is no fictitious Save handler or option-inventory assignment. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify ActionOwner requiredness and the completed-entry branch of Action Already Complete Show/Hide on CLF_InsActionPlan_Detail (E18). Make the action description mandatory for completed entry, hide its outstanding owner, default an empty performer/date, and configure the Inspection subtype Corrective type.",
+          "mechanism": "Configure Action Entry Requirements / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "ActionOwner field: Change the underlying IsRequired setting from TRUE to FALSE.",
+          "mechanism": "CLF_InsActionPlanObject.ActionOwner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "AlBeenCorrected field: Set the new-record default to FALSE (No).",
+          "mechanism": "CLF_InsActionPlanObject.AlBeenCorrected"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "ActionOwner create control: In StageContainer_Draft on CLF_InsActionPlan_Detail, change the ActionOwner control IsMandatory setting from TRUE to FALSE. The existing outstanding branch applies the conditional mandatory setting.",
+          "mechanism": "CLF_InsActionPlan_Detail (E18) / StageContainer_Draft.ActionOwner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Existing view action: completed branch: Edit Action Already Complete Show/Hide, condition AlBeenCorrected=TRUE. Remove CPARActionReq from HideAction, SetNonMandatoryAction and ClearValueAction. Add CPARActionReq to ShowAction and SetMandatoryAction.",
+          "mechanism": "CLF_InsActionPlan_Detail (E18) / Action Already Complete Show/Hide / CPARActionReq"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Existing view action: completed owner: In the same TRUE branch, remove ActionOwner from ShowAction and add it to HideAction and SetNonMandatoryAction.",
+          "mechanism": "CLF_InsActionPlan_Detail (E18) / Action Already Complete Show/Hide / ActionOwner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Completed-entry defaults: In the same TRUE branch, add conditional defaults: set an empty CompletedBy to CURRENTUSER and an empty CompletionDate to TODAY. Keep an entered actual performer/date as entered.",
+          "mechanism": "CLF_InsActionPlan_Detail (E18) / completed-entry default actions"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Corrective type: For this subtype, change the CPARTypeID default to the actual supplied Corrective entry only if it differs. Hide the CPARTypeID controls in StageContainer_InProgress and StageContainer_Completed; the create control is already hidden.",
+          "mechanism": "Inspection subtype CPARTypeID default and CLF_InsActionPlan_Detail (E18) controls"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Inspection Action Plan.Action Owner (CLF_InsActionPlanObject.ActionOwner): Change the underlying IsRequired setting from TRUE to FALSE. On CLF_InsActionPlan_Detail (E18), change the create control IsMandatory from TRUE to FALSE and make the existing TRUE view-action branch hide/make nonmandatory ActionOwner.",
+          "mechanism": "Inspection Action Plan.Action Owner (CLF_InsActionPlanObject.ActionOwner) / ActionOwner (E1812)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Inspection Action Plan.Has this action already been corrected? (CLF_InsActionPlanObject.AlBeenCorrected): Set the new-record default to FALSE so the existing outstanding-entry branch is selected initially.",
+          "mechanism": "Inspection Action Plan.Has this action already been corrected? (CLF_InsActionPlanObject.AlBeenCorrected) / AlBeenCorrected (E534)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Abstract Corrective Action.Completed By (FragApplication_AbCorrectivActiObject.CompletedBy): Add a conditional default in the existing TRUE view-action branch: when CompletedBy is empty, populate CURRENTUSER; keep an entered actual performer.",
+          "mechanism": "Abstract Corrective Action.Completed By (FragApplication_AbCorrectivActiObject.CompletedBy) / CompletedBy (E1424)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Abstract Corrective Action.Completion Date (FragApplication_AbCorrectivActiObject.CompletionDate): Add a conditional default in the existing TRUE view-action branch: when CompletionDate is empty, populate TODAY; keep an entered actual date. Date validation is assigned to the named completion operations in IMP-39/IMP-42.",
+          "mechanism": "Abstract Corrective Action.Completion Date (FragApplication_AbCorrectivActiObject.CompletionDate) / CompletionDate (E800)"
+        },
+        {
+          "path": "modifications.4",
+          "requiredChange": "Abstract Corrective Action.Action Required (FragApplication_AbCorrectivActiObject.CPARActionReq): In CLF_InsActionPlan_Detail (E18) Action Already Complete Show/Hide, TRUE branch, remove CPARActionReq from HideAction, SetNonMandatoryAction and ClearValueAction; add it to ShowAction and SetMandatoryAction.",
+          "mechanism": "Abstract Corrective Action.Action Required (FragApplication_AbCorrectivActiObject.CPARActionReq) / CPARActionReq (E200)"
+        },
+        {
+          "path": "modifications.5",
+          "requiredChange": "Abstract Corrective Action.Type (FragApplication_AbCorrectivActiObject.CPARTypeID): Change the Inspection subtype default only if it differs from the supplied Corrective record; hide its controls in CLF_InsActionPlan_Detail (E18) StageContainer_InProgress and StageContainer_Completed.",
+          "mechanism": "Abstract Corrective Action.Type (FragApplication_AbCorrectivActiObject.CPARTypeID) / CPARTypeID (E1410)"
+        },
+        {
+          "path": "modifications.6",
+          "requiredChange": "CLF_InsActionPlan_Detail / Action Already Complete Show/Hide: Change the named TRUE branch and create control exactly as listed in this task: show/require the activity without clearing it, hide/make nonmandatory the owner, and add defaults only for empty performer/date values.",
+          "mechanism": "CLF_InsActionPlan_Detail / Action Already Complete Show/Hide / CLF_InsActionPlan_Detail (E18)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-14",
+      "taskHash": "e23fe9c52b4f8f0aa6da34e2584989a6b519c58af7d7ef996b0d8d6d9a7d4350",
+      "renderedTaskHash": "e6be1afd5a34ecd81edd40386626493605379b40e7297c8692245a0ed534ad77",
+      "evidenceReview": "Checked the stable Inspection schema and E2675/E2691/E2695 identities. Clearing the specific Draft due expression and binding both separate review stages to the same existing Review GUID are the only changes. The task does not rebuild workflow infrastructure or merge stage identities. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify the existing Inspection workflow ced8b0af-3920-4fcc-9e75-e5fcca803f56: clear the recurring Draft due-date expression and bind both review stages to the same existing Review status.",
+          "mechanism": "Update Inspection Workflow Stages and Statuses / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Draft (Draft; Create/Draft (E2675)): Clear DueDateExpression, currently Workflow.RecurringSeries.StartDate.",
+          "mechanism": "Create/Draft (E2675) / DueDateExpression"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "First review (ActionsPending; Review (E2691)): Set Status to Review record 3fffb769-563b-4259-a75d-ed894416c2c0.",
+          "mechanism": "Review (E2691) / Status"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Second review (SecondReview; Second Review (E2695)): Set Status to the same Review record 3fffb769-563b-4259-a75d-ed894416c2c0. Keep ActionsPending and SecondReview as distinct stage SystemNames.",
+          "mechanism": "Second Review (E2695) / Status"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Draft DueDateExpression (Create/Draft): Clear the recurring-series Draft due-date expression and retain the existing nonrecurring stage.",
+          "mechanism": "Draft DueDateExpression (Create/Draft) / Create/Draft (E2675)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Review Status binding (Review): Apply the first-review status/responsibility change specified in the Required configuration table for this task; retain ActionsPending and the existing due-date expression.",
+          "mechanism": "Review Status binding (Review) / Review (E2691)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Second Review Status binding (Second Review): Apply the second-review status/responsibility change specified in the Required configuration table for this task; retain SecondReview and the existing due-date expression.",
+          "mechanism": "Second Review Status binding (Second Review) / Second Review (E2695)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-16",
+      "taskHash": "81e5c2badc4b6e844bc9be0ab2e37c350991fa5e8827d62bad6d4039a2e26f05",
+      "renderedTaskHash": "ff2d115e1a1c10678d8f5f8bf63fc5ddcbfb7c57636d9b77e39d53daeb7e6c25",
+      "evidenceReview": "Compared the new single-value File contract to E1623 source selector and stage containers. The named proposed source-mode action prevents the existing checklist selector action re-showing it for External. File defaults, ordinary Save, source conditions, optional evidence and control editability are stated; workflow report checks are owned once by IMP-43. Unexported/File bindings remain explicit. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the single-file External Inspection Report field and configure Insp_EquipInspection_Detail (E1623) to display either Internal checklist execution or the External report section. Add result/date controls and working/review evidence editability; the submission/review actions in IMP-43 own the server-side report gate.",
+          "mechanism": "Configure Inspection Entry and External Report Upload / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Single File field: Add Insp_EquipInspectionObject.ExternalInspectionReport, caption External Inspection Report, native File type, zero or one file, optional underlying field, default NULL.",
+          "mechanism": "Inspection.ExternalInspectionReport native File field"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Source-mode view action: Add the proposed Inspection Entry Source Mode action to Insp_EquipInspection_Detail (E1623), evaluated on load and TypeOfInspec change. Internal or legacy blank source shows/requires InspecChecklist and displays section/Question Answer execution. External hides/nonrequires/clears InspecChecklist and PubChecklist and hides section/answer presentations, including QuestionAnswersGridSection_Config.",
+          "mechanism": "Insp_EquipInspection_Detail (E1623) / proposed Inspection Entry Source Mode"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "External report section: For TypeOfInspec.SourceMode.Code=EXTERNAL show section External Inspection Report containing only ExternalInspectionReport, replacing the Question Answer grid. Show ExternalParty and PerformedOn. Internal hides the report section without clearing an already stored report. The File control remains nonmandatory for ordinary Save.",
+          "mechanism": "Insp_EquipInspection_Detail (E1623) / External Inspection Report section and source-specific controls"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Existing checklist selector action: Modify Hide Checklist if Checklist Type is empty on Insp_EquipInspection_Detail (E1623): TypeOfInspec being nonblank is no longer sufficient to show InspecChecklist. Also require Internal or legacy blank source so the action cannot re-show the selector for External.",
+          "mechanism": "Insp_EquipInspection_Detail (E1623) / Hide Checklist if Checklist Type is empty"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Stage editability: Allow inspector/record-owner upload/replacement in Draft or InspectioninProgress, including returned work. Make the report and existing optional inspection evidence read-only in ActionsPending, SecondReview and Completed. The existing stage containers supply the stage identity; native file/control access bindings remain supplied inputs.",
+          "mechanism": "Insp_EquipInspection_Detail (E1623) stage containers and File/evidence controls"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Result and date display: Add read-only OverallOutcome, ActionClassification, SubmittedAt and AcceptedAt controls; add the working-stage ExternalParty/PerformedOn controls. Field definitions come from the result/date tasks.",
+          "mechanism": "Insp_EquipInspection_Detail (E1623) new field controls"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Finding/scoring display: Hide existing inspection Findings, NbFindings, Score, MaxPoints and PointsAwarded controls/grids in the supplied Inspection detail/list profiles. Only exported or supplied control bindings are assigned for modification. Equipment controls are configured by the equipment task.",
+          "mechanism": "Inspection detail/list Finding and score controls"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Checklist Answer.Findings (CLF_ChecklistAnswerObject.Findings): Hide existing Findings controls/grids in Insp_EquipInspection_Detail (E1623) and supplied Inspection desktop detail/list profiles. Native fields/calculations are not modified; mobile/profile and output changes have their own task owners.",
+          "mechanism": "Checklist Answer.Findings (CLF_ChecklistAnswerObject.Findings) / Findings (E2963)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Checklist Answer.Max Points (CLF_ChecklistAnswerObject.MaxPoints): Hide existing MaxPoints controls/grids in Insp_EquipInspection_Detail (E1623) and supplied Inspection desktop detail/list profiles. Native fields/calculations are not modified; mobile/profile and output changes have their own task owners.",
+          "mechanism": "Checklist Answer.Max Points (CLF_ChecklistAnswerObject.MaxPoints) / MaxPoints (E1193)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Checklist Answer.# Findings (CLF_ChecklistAnswerObject.NbFindings): Hide existing NbFindings controls/grids in Insp_EquipInspection_Detail (E1623) and supplied Inspection desktop detail/list profiles. Native fields/calculations are not modified; mobile/profile and output changes have their own task owners.",
+          "mechanism": "Checklist Answer.# Findings (CLF_ChecklistAnswerObject.NbFindings) / NbFindings (E2972)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Checklist Answer.Points Awarded (CLF_ChecklistAnswerObject.PointsAwarded): Hide existing PointsAwarded controls/grids in Insp_EquipInspection_Detail (E1623) and supplied Inspection desktop detail/list profiles. Native fields/calculations are not modified; mobile/profile and output changes have their own task owners.",
+          "mechanism": "Checklist Answer.Points Awarded (CLF_ChecklistAnswerObject.PointsAwarded) / PointsAwarded (E1981)"
+        },
+        {
+          "path": "modifications.4",
+          "requiredChange": "Checklist Answer.Score (CLF_ChecklistAnswerObject.Score): Hide existing Score controls/grids in Insp_EquipInspection_Detail (E1623) and supplied Inspection desktop detail/list profiles. Native fields/calculations are not modified; mobile/profile and output changes have their own task owners.",
+          "mechanism": "Checklist Answer.Score (CLF_ChecklistAnswerObject.Score) / Score (E1977)"
+        },
+        {
+          "path": "modifications.5",
+          "requiredChange": "Inspection Abstract.Inspection Checklist (Insp_InspectionAbsObject.InspecChecklist): Require before Internal execution and use the selected inspection type’s compatible active published checklist. Hide/clear for External. Retain native generation and publication selection.",
+          "mechanism": "Inspection Abstract.Inspection Checklist (Insp_InspectionAbsObject.InspecChecklist) / InspecChecklist (E1218)"
+        },
+        {
+          "path": "modifications.6",
+          "requiredChange": "Insp_EquipInspection_Detail / Hide Checklist if Checklist Type is empty: Add the source condition so External never re-shows the checklist selector. Add the named External-only single-file section and source-mode view action.",
+          "mechanism": "Insp_EquipInspection_Detail / Hide Checklist if Checklist Type is empty / Insp_EquipInspection_Detail (E1623)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-20",
+      "taskHash": "1efce89f20b09acb2cea11765aed09dfe04c44b6e587db8cfecd8986c25e51e2",
+      "renderedTaskHash": "ad3a47726f82d07e31db418ae7e1c292e9a90cf986218bc49a4065ade333369a",
+      "evidenceReview": "Checked E904 FindingsGridSection, existing typed-answer selection and Upload images section. New result display and the proposed Inspection Response State rule have actual targets and distinct editability conditions. Native parent-stage/read-only properties and section-profile controls are supplied inputs rather than invented action classes. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "On CLF_QuestionAnswer_Detail (E904), add a read-only Response Outcome control, hide formal Finding/scoring display, and configure response/evidence controls as editable only during working or returned inspection stages.",
+          "mechanism": "Update Checklist Response Screens / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Response result: Add ResponseOutcome to Answer Details with Readonly=TRUE.",
+          "mechanism": "CLF_QuestionAnswer_Detail (E904) / ResponseOutcome control"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Finding/scoring controls: Hide FindingsGridSection and existing Findings, NbFindings, MaxPoints and PointsAwarded controls on Inspection Question Answer and Section Answer profiles where present.",
+          "mechanism": "CLF_QuestionAnswer_Detail (E904) / FindingsGridSection and supplied response/section profile controls"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Response state view rule: Add the proposed Inspection Response State rule on CLF_QuestionAnswer_Detail (E904). For ChecklistAnswer.SysteTypeHelper=Insp_EquipInspectionObject, use the supplied parent-stage binding: typed answers, Comments and existing Upload images controls are editable during Draft/InspectioninProgress and read-only during ActionsPending/SecondReview/Completed. The native Show/hide Answer Fields action already selects the matching answer control.",
+          "mechanism": "CLF_QuestionAnswer_Detail (E904) / proposed Inspection Response State and existing attachment controls"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Question Answer.Findings (CLF_QuestionAnswerObject.Findings): Hide existing Findings controls on CLF_QuestionAnswer_Detail (E904) and supplied Inspection response/section desktop profiles; the Finding grid is FindingsGridSection. Native calculation/storage remains source context.",
+          "mechanism": "Question Answer.Findings (CLF_QuestionAnswerObject.Findings) / Findings (E545)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Question Answer.Max Points (CLF_QuestionAnswerObject.MaxPoints): Hide existing MaxPoints controls on CLF_QuestionAnswer_Detail (E904) and supplied Inspection response/section desktop profiles; the Finding grid is FindingsGridSection. Native calculation/storage remains source context.",
+          "mechanism": "Question Answer.Max Points (CLF_QuestionAnswerObject.MaxPoints) / MaxPoints (E870)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Question Answer.# Findings (CLF_QuestionAnswerObject.NbFindings): Hide existing NbFindings controls on CLF_QuestionAnswer_Detail (E904) and supplied Inspection response/section desktop profiles; the Finding grid is FindingsGridSection. Native calculation/storage remains source context.",
+          "mechanism": "Question Answer.# Findings (CLF_QuestionAnswerObject.NbFindings) / NbFindings (E542)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Question Answer.Points Awarded (CLF_QuestionAnswerObject.PointsAwarded): Hide existing PointsAwarded controls on CLF_QuestionAnswer_Detail (E904) and supplied Inspection response/section desktop profiles; the Finding grid is FindingsGridSection. Native calculation/storage remains source context.",
+          "mechanism": "Question Answer.Points Awarded (CLF_QuestionAnswerObject.PointsAwarded) / PointsAwarded (E810)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-24",
+      "taskHash": "c44bbfdc1ce5923abaa1c89320d509278d8fec3f38140265ec1eb877c1a30b79",
+      "renderedTaskHash": "4902218f60079ea3bfcba7b058e2e1545813b7211a084b916740b0117c4fa17c",
+      "evidenceReview": "Compared E629 first N/A condition and single-choice-only action/comment cleanup tests to the exact proposed replacements. Both new authoring guards have named owners and explicit fixed-setting, membership and one-level dependency conditions/order. Raw ActionType=2 is not treated as proof of publication coverage; actual hooks and shared Inspection scope remain unresolved inputs. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Correct the existing Question Abstract cleanup handler and add scoped Inspection checklist/question authoring guards. Enforce fixed authoring settings, named sections, valid one-level dependencies and same-list choice requirements before save/publication can accept invalid content.",
+          "mechanism": "Update Checklist Save and Publication Checks / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "N/A comment cleanup: (0) Actions on Create & Update (E629): In (0) Actions on Create & Update, replace AND(IFNULL(AllowNA,FALSE),IFNULL(ComReqIfNA,FALSE)) with AND(NOT(IFNULL(AllowNA,FALSE)),IFNULL(ComReqIfNA,FALSE)) in the first clearing condition. Set ComReqIfNA=FALSE only when N/A is disabled. Show/edit ComReqIfNA when AllowNA=TRUE; hide/clear it when FALSE; published values are read-only.",
+          "mechanism": "(0) Actions on Create & Update (E629) first condition and question N/A-comment controls"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "(0) Actions on Create & Update (E629) multiple-choice cleanup: For Inspection questions, replace AnswerType.Value <> \"Choice\" in each ActReqChoices/ComReqChoices invalid-type test with AND(AnswerType.Value <> \"Choice\",AnswerType.Value <> \"Choices\"). Retain each existing out-of-list test. Valid Choices questions retain their action/comment selections; unsupported types clear them.",
+          "mechanism": "(0) Actions on Create & Update (E629) / ActReqChoices and ComReqChoices clearing conditions"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Checklist guard: Add proposed Validate Inspection Checklist on CLF_ChecklistObject using the supplied Inspection create/update/pre-publish bindings. Enforce EnableSections=TRUE, EnableScoring=FALSE, at least one meaningful named section and a nonblank name for every section.",
+          "mechanism": "Proposed Validate Inspection Checklist handler/guard"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Question guard: Add proposed Validate Inspection Question on CLF_QuestObject through the supplied scoped save/pre-publish bindings. Enforce AnswerRequired=TRUE; reject ContributesToOutcome=TRUE except for Choice/Choices, including rejection for Checkbox. Require ActReqChoices, ComReqChoices and visibility/default selections to belong to the question ChoiceList.",
+          "mechanism": "Proposed Validate Inspection Question handler/guard"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Dependencies and validation order: In the question guard reject self/cyclic dependencies, dependencies outside the same checklist and chains deeper than one dependency level. Check memberships/dependencies before cleanup silently removes invalid selections; run again before publication.",
+          "mechanism": "Proposed question guard / ordered dependency and membership validation"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Question Abstract.Comment Required if NA (CLF_QuestAbstractObject.ComReqIfNA): Allow authors to edit when AllowNA is Yes. When No, hide and clear to No. Correct (0) Actions on Create & Update (E629) so a valid required N/A comment is retained; published value is read-only.",
+          "mechanism": "Question Abstract.Comment Required if NA (CLF_QuestAbstractObject.ComReqIfNA) / ComReqIfNA (E640)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "First N/A-comment clearing condition ((0) Actions on Create & Update): Replace the first N/A-comment clearing condition with the exact expression in this task’s table. Clear the requirement only when N/A is disabled; keep other steps and shared behavior.",
+          "mechanism": "First N/A-comment clearing condition ((0) Actions on Create & Update) / (0) Actions on Create & Update (E629)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-28",
+      "taskHash": "850fb982cca0055dc57f8131e1062ff4c72d1b7ee2615ad608a0df7c8b127f15",
+      "renderedTaskHash": "753126ec21a93d9dcbcd2691c19a87de223899cda7b5b6918b423769687d29b8",
+      "evidenceReview": "Checked E2007 native checklist version/answer creation and the existing SysteTypeHelper declaration. Internal generation stays native inside a new source guard; External skips it. Initialization assigns UNANSWERED through a supplied callback, while the later classification task adds evaluation, avoiding a circular construction dependency. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify existing Create answers handler Create answers (E2007) so Internal inspections use native checklist/response generation and External inspections bypass it. Set the existing system discriminator before any Inspection-specific response rules and initialize new Inspection results.",
+          "mechanism": "Update Inspection Creation for Internal and External Sources / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Inspection discriminator: Before related response processing, set the owning CLF_ChecklistAnswerObject.SysteTypeHelper to exact value Insp_EquipInspectionObject.",
+          "mechanism": "Create answers (E2007) / owning Checklist Answer discriminator assignment"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Internal generation branch: Wrap the current InspecChecklist selection, PubChecklist assignment, PubQuestions.hCheckAnswerId writes and native response/section generation in the condition source is Internal or legacy NULL.",
+          "mechanism": "Create answers (E2007) / source guard around existing creation writes"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "External branch: For source code EXTERNAL bypass checklist selection and all related checklist-answer/section/question creation writes. External evidence is captured on the Inspection itself.",
+          "mechanism": "Create answers (E2007) / External branch"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Result initialization: Where native generation bypasses ordinary Question Answer create processing, use the supplied creation callback to assign ResponseOutcome to the UNANSWERED record for each new Inspection answer. IMP-34 subsequently adds response classification after native initialization; this task supplies the initialization hook.",
+          "mechanism": "Native generation callback / Inspection response initialization"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Checklist Answer.System Type Helper (CLF_ChecklistAnswerObject.SysteTypeHelper): Set to the exact value Insp_EquipInspectionObject before Inspection-specific response processing.",
+          "mechanism": "Checklist Answer.System Type Helper (CLF_ChecklistAnswerObject.SysteTypeHelper) / SysteTypeHelper (E1023)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Create answers flow (Create answers): Set SysteTypeHelper before processing. Run the existing response/section creation writes only for Internal or blank source; skip them for External.",
+          "mechanism": "Create answers flow (Create answers) / Create answers (E2007)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-30",
+      "taskHash": "3f0db45749c1b4fa2b51a5cc37cfb4bd1ae4a8b50e16a146dcc372ab83c8bc11",
+      "renderedTaskHash": "d9c717a2c1ccbdf3b014a20d2ea83466d04b50185ffac4b0682810fd05024076",
+      "evidenceReview": "Compared E2628 child-Location rejection and existing Equipment/EquipmentTxt fields with the new permitted-establishment condition and three equipment branches. Context restrictions cover source/type, Location and equipment after evidence; view clearing is limited to unused working drafts. Missing policy/prior-value/save/Lookup bindings are local inputs; no local taxonomy is added. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Replace the existing leaf-Location restriction with the approved establishment rule and configure Inspection equipment entry for disabled, Text or Lookup modes. Add a scoped save guard for matching inputs and protection of the context after evidence exists.",
+          "mechanism": "Update Establishment and Equipment Rules / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Location validation: Throw Error if Saved at Location that Isn't Bottom (E2628): In Throw Error if Saved at Location that Isn't Bottom, replace COUNT(Location.ChildLocations)>0 and the RMD-only error with the supplied permitted-establishment predicate/message. An approved establishment must not be rejected solely because it has child Locations.",
+          "mechanism": "Throw Error if Saved at Location that Isn't Bottom (E2628) / Location condition and error"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Equipment view action: Add proposed Inspection Equipment Entry on Insp_EquipInspection_Detail (E1623). EquipmentList=FALSE: hide/clear Equipment and EquipmentTxt. Enabled Text option: show/require EquipmentTxt and hide/clear Equipment. Enabled Lookup option: show/require Equipment and hide/clear EquipmentTxt. Compare actual supplied Text/Lookup records.",
+          "mechanism": "Insp_EquipInspection_Detail (E1623) / proposed Inspection Equipment Entry"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Equipment/context guard: Add proposed Validate Inspection Equipment on Insp_EquipInspectionObject at the supplied save hook. Reject missing required enabled equipment or the wrong alternate input. Reject changes to TypeOfInspec/source, Location or equipment context after execution or action evidence exists, using the supplied prior-value/evidence binding. Apply view-action clearing only to unused working drafts; evidence-bearing/review/completed context is not editable.",
+          "mechanism": "Proposed Validate Inspection Equipment save guard"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Inspection.Equipment (Insp_EquipInspectionObject.Equipment): Show and require the existing lookup only when EquipmentList is Yes and the supplied reference-record Lookup option is selected. Use permitted active G05 inventory; hide/clear in disabled or Text mode.",
+          "mechanism": "Inspection.Equipment (Insp_EquipInspectionObject.Equipment) / Equipment (E1543)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Inspection.Equipment (Insp_EquipInspectionObject.EquipmentTxt): Show and require text identification only when EquipmentList is Yes and the supplied reference-record Text option is selected. Hide/clear in disabled or Lookup mode; keep its existing length.",
+          "mechanism": "Inspection.Equipment (Insp_EquipInspectionObject.EquipmentTxt) / EquipmentTxt (E2913)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Location validation condition and message (Throw Error if Saved at Location that Isn't Bottom): Replace the child-Location rejection condition and RMD-only message with the supplied approved-establishment rule/message.",
+          "mechanism": "Location validation condition and message (Throw Error if Saved at Location that Isn't Bottom) / Throw Error if Saved at Location that Isn't Bottom (E2628)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-31",
+      "taskHash": "b126831afb19b1ebf6ad61def672501761a5e7f94eeece77219eb849ddb12ec8",
+      "renderedTaskHash": "711068de080e52dd04a6de3cd0da955025a1a5de64b72ba98794af80f711c401",
+      "evidenceReview": "Checked the conditional OperationalResource relationship and external five-field interface against the target model. Physical identities are intentionally unresolved. The actual additions are the optional relationship, selector filters and establishment guard branch; the task neither inventories unchanged options nor creates a duplicate enterprise object. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Connect the optional shared Operational Resource selector and existing equipment lookup to the supplied enterprise records and establishment filters. Add matching save checks without creating a local resource taxonomy.",
+          "mechanism": "Connect Optional Resource and Equipment Selections / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Optional resource relationship: Add Insp_EquipInspectionObject.OperationalResource as optional M:1 to the supplied authoritative resource object, inverse disabled, default NULL. The required external interface is stable Id, displayed Name (maximum 255), Active, Establishment and TechnologyCode; their physical bindings must be supplied.",
+          "mechanism": "Inspection.OperationalResource / authoritative shared object binding"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Resource and equipment selectors: On the supplied Inspection controls, filter active resources/equipment to the selected inspection Location and permitted resource context. Show OperationalResource only when its binding is available; permit changes only before execution/action evidence exists.",
+          "mechanism": "Inspection resource/equipment selector filters"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Cross-establishment checks: Extend the proposed Validate Inspection Equipment guard from IMP-30 to reject resource/equipment selections outside the supplied establishment scope through direct save as well as the selector.",
+          "mechanism": "Validate Inspection Equipment / shared-selection branch"
+        }
+      ]
+    },
+    {
+      "id": "IMP-34",
+      "taskHash": "7b9f857007c04c61e6b19048e7e157f9ce06c9f6e6698c05f02dd5da1d67a964",
+      "renderedTaskHash": "0467dc0d630fc4586e4b6a58a679de2ff68f0240a800f4687cafcd82c4b608fc",
+      "evidenceReview": "Compared all five response-result branches to the ordered decision contract. Hidden/permitted N/A precedence, FALSE/zero, non-contribution, selected shared negative flags and actual record assignments are fully stated. Classify Inspection Response is explicitly proposed; native callback/order/accepted-parent bindings remain inputs and the task does not claim E883 already classifies responses. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the proposed Classify Inspection Response handler on Question Answer. Assign one stored response result using the five ordered conditions below, after native visibility/default processing and only while the source inspection is unaccepted.",
+          "mechanism": "Configure Response Outcome Calculations / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Scope and trigger: On CLF_QuestionAnswerObject run only where ChecklistAnswer.SysteTypeHelper=Insp_EquipInspectionObject. Use the supported create/update order after Clear Answer if not visible (E842)/(2) Actions on Update (E883). Reevaluate on Choice, Choices, Checkbox, Date, Float, Text, IsNA or IsVisible changes; result-only writes must not retrigger it. Add the supported native-generation classification callback after the initialization configured in IMP-28.",
+          "mechanism": "Proposed Classify Inspection Response handler and generation callback"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "1. Not applicable: Set ResponseOutcome to NOT_APPLICABLE when IsVisible is not TRUE or when IsNA=TRUE and the published question permits N/A. Evaluate this before missing-answer/negative conditions.",
+          "mechanism": "ResponseOutcome / ordered applicability branch"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "2. Unanswered: For a visible applicable question with no matching typed value, set UNANSWERED. Use the native typed-answer meaning: Checkbox FALSE and numeric zero are entered answers.",
+          "mechanism": "ResponseOutcome / ordered unanswered branch"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "3. Informational: For an answered question set INFORMATIONAL if PubQuestion.ContributesToOutcome is not TRUE (including NULL), or its AnswerType is not Choice/Choices. Checkbox is informational.",
+          "mechanism": "ResponseOutcome / ordered contribution branch"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "4. Negative: For an answered contributing Choice set NEGATIVE when selected Choice.IsNegative=TRUE. For Choices set NEGATIVE when any selected member has IsNegative=TRUE. NULL flags mean FALSE; unselected negative choices have no effect.",
+          "mechanism": "ResponseOutcome / ordered negative branch"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "5. Positive: Set POSITIVE for the remaining answered, applicable, contributing Choice/Choices response. Each branch assigns the actual entry in Insp_ResponseOutcomeObject with that exact Code.",
+          "mechanism": "ResponseOutcome / positive branch and record assignment"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Acceptance boundary: Reject result updates when the owning Inspection is natively Completed. Submission and approval reevaluate current shared choice flags before acceptance through the workflow integration task.",
+          "mechanism": "Classification handler / accepted-parent guard"
+        }
+      ]
+    },
+    {
+      "id": "IMP-35",
+      "taskHash": "87ebe3131590dd5589be5c3eff752466034fee08a3b3b946d12f0cedd7ec9d94",
+      "renderedTaskHash": "4584a847a5e195197bced3555aa3fc10bbf3ce5ead6cd8acffbc291bec069048",
+      "evidenceReview": "Checked source calculations E948/E831/E802/E896/E847 against the five Inspection-only changes. Same-list single/multiple choices, negative/N/A comments and direct action existence are explicit; native NbActions is reuse. External File validation is assigned to Inspection workflow actions, not a Question Answer formula. Executable scoped syntax remains an input. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify the five existing Question Answer readiness calculations for Inspection records. Add visibility/N/A exclusions, negative and selected-choice comment checks, multiple-choice action requirements, and remove formal Finding completion from Inspection readiness.",
+          "mechanism": "Update Inspection Submission Checks / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Inspection-only calculation branches: Wrap changed calculations in ChecklistAnswer.SysteTypeHelper=Insp_EquipInspectionObject. For other consumers use each unchanged original expression from the exported field definition. These are existing calculation edits, not a new generic Save handler.",
+          "mechanism": "Existing Question Answer calculation expressions"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Is Answer Missing (IsAnswerMiss): The source calculation tests AnswerRequired and IsFilled only. In the Inspection branch return FALSE for hidden questions or valid explicit N/A; otherwise TRUE when a visible required question lacks its matching typed answer. Checkbox FALSE and Float 0 count as entered.",
+          "mechanism": "CLF_QuestionAnswerObject.IsAnswerMiss / IsAnswerMiss (E948)"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Is Comment Missing (IsComMiss): The source is single-choice-only. In the Inspection branch hidden questions return FALSE. Permitted IsNA requires a nonblank comment only when PubQuestion.ComReqIfNA=TRUE. Otherwise require nonblank Comments when ResponseOutcome is NEGATIVE or the selected Choice/any Choices member belongs to PubQuestion.ComReqChoices.",
+          "mechanism": "CLF_QuestionAnswerObject.IsComMiss / IsComMiss (E831)"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Is Action Missing (IsActionMiss): Extend the source single-choice test to Choice and Choices. For visible/applicable non-N/A responses return TRUE only when a selected choice belongs to PubQuestion.ActReqChoices and no direct linked ActionPlans record exists. Open or completed actions satisfy existence. Empty/nonmatching requirements, Checkbox and hidden/valid N/A return FALSE; negativity does not control action requirements.",
+          "mechanism": "CLF_QuestionAnswerObject.IsActionMiss / IsActionMiss (E802)"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Is Finding Missing (IsFindingMiss): Return FALSE in the Inspection branch. Existing Finding-required behavior for other applications remains the fallback.",
+          "mechanism": "CLF_QuestionAnswerObject.IsFindingMiss / IsFindingMiss (E896)"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Is Submit Ready (IsSubmitReady): For Inspection return NOT(OR(IsAnswerMiss,IsComMiss,IsActionMiss)); exclude IsFindingMiss. IMP-43 consumes this readiness value in existing Inspection workflow actions and separately validates ExternalInspectionReport.",
+          "mechanism": "CLF_QuestionAnswerObject.IsSubmitReady / IsSubmitReady (E847)"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Question Answer.Is Action Missing (CLF_QuestionAnswerObject.IsActionMiss): Extend the current single-choice check to multiple-choice selections. If any selected choice belongs to published ActReqChoices, require a distinct linked action, whether open or completed. Empty/nonmatching selections require none; negativity is independent.",
+          "mechanism": "Question Answer.Is Action Missing (CLF_QuestionAnswerObject.IsActionMiss) / IsActionMiss (E802)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Question Answer.Is Answer Missing (CLF_QuestionAnswerObject.IsAnswerMiss): Check visible/applicable questions for the matching typed answer or permitted explicit N/A. Exclude hidden questions.",
+          "mechanism": "Question Answer.Is Answer Missing (CLF_QuestionAnswerObject.IsAnswerMiss) / IsAnswerMiss (E948)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Question Answer.Is Comment Missing (CLF_QuestionAnswerObject.IsComMiss): Require comments for negative responses and retain the configured choice/N/A comment conditions.",
+          "mechanism": "Question Answer.Is Comment Missing (CLF_QuestionAnswerObject.IsComMiss) / IsComMiss (E831)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Question Answer.Is Finding Missing (CLF_QuestionAnswerObject.IsFindingMiss): Return No for Inspection records and remove formal Finding status as a submission blocker.",
+          "mechanism": "Question Answer.Is Finding Missing (CLF_QuestionAnswerObject.IsFindingMiss) / IsFindingMiss (E896)"
+        },
+        {
+          "path": "modifications.4",
+          "requiredChange": "Question Answer.Is Submit Ready (CLF_QuestionAnswerObject.IsSubmitReady): Change the Inspection calculation to aggregate its scoped answer/comment/action checks and exclude IsFindingMiss. External report checks are owned by IMP-43 on Inspection, not Question Answer.",
+          "mechanism": "Question Answer.Is Submit Ready (CLF_QuestionAnswerObject.IsSubmitReady) / IsSubmitReady (E847)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-36",
+      "taskHash": "aad5040b71fcc60aae69db9fd21b6ed9595b8dbb671d6c39274f4bd212525542",
+      "renderedTaskHash": "143ad01992e317f33dd1c019ac8da8d6c25e3d9c3e3a70b7c97b0cb03089caed",
+      "evidenceReview": "Compared overall result precedence and required-outcome semantics to the target decisions and required submission fields. Readiness is described in terms of PerformedOn, checklist/generated answers and response readiness rather than a numbered requirement. Parent invocation and readiness-change hooks are explicitly proposed; native invocation/write syntax remains missing and accepted outcomes are protected. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the proposed Evaluate Inspection Overall Outcome operation and connect it to response updates. Before acceptance assign the inspection result using source, required-outcome flag, response readiness and the ordered categorical results below.",
+          "mechanism": "Configure Overall Inspection Results / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Scope and invocation: Create the operation on Insp_EquipInspectionObject. After Classify Inspection Response exists from IMP-34, add its supported related-parent invocation here. Also invoke it when pre-acceptance response readiness changes through Comments, permitted N/A, attachments or direct-action events using the supplied native hooks. The workflow integration in IMP-43 invokes this same operation before submission/approval. Do not write OverallOutcome once the source inspection is natively Completed.",
+          "mechanism": "Proposed Evaluate Inspection Overall Outcome / response-parent integration"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Not assessed and readiness: Assign Insp_OutcomeObject entry NOT_ASSESSED when source is EXTERNAL, OverallOutcomeRequired is not TRUE, or required submission conditions are incomplete. Ready Internal means PerformedOn and InspecChecklist are present, generated responses are nonempty, and every applicable response passes its Inspection IsSubmitReady answer/comment/action calculation. A legacy blank source means Internal; a blank required-outcome flag means not required.",
+          "mechanism": "OverallOutcome / first branch and readiness aggregation"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Nonconforming: For a ready Internal inspection requiring an outcome, assign NONCONFORMING when at least one applicable response result is NEGATIVE.",
+          "mechanism": "OverallOutcome / negative branch"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Pass: For a ready required-outcome Internal inspection with no NEGATIVE and at least one POSITIVE result, assign PASS.",
+          "mechanism": "OverallOutcome / positive branch"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Not applicable: For the remaining ready required-outcome Internal inspection with no contributing applicable response, assign NOT_APPLICABLE. Informational-only content cannot receive PASS.",
+          "mechanism": "OverallOutcome / no-contribution branch"
+        }
+      ]
+    },
+    {
+      "id": "IMP-39",
+      "taskHash": "93e09d686e0d8de30bfe389c6c97994bf35bea46070cb8c81a778953b4ac13dc",
+      "renderedTaskHash": "092999047c5947418ac235068ab27be70815329f164b7c5b9397ed9f6f60f0d8",
+      "evidenceReview": "Checked E3088 AlBeenCorrected branch and Workflow.DateNotRequired assignment. All activity/performer/date/notes/future-date errors precede that consequential write. Native initial-completion event order remains a precise input, and no general Save-validation operation or transient-task behavior is asserted verified. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add completed-entry evidence checks to the existing Action Already Completed handler Action Already Completed (E3088), before its Workflow.DateNotRequired assignment. Configure the native initial-completed path to consume entered performer/date/notes without issuing an outstanding task.",
+          "mechanism": "Configure Entry of Already-Completed Corrections / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Existing branch and checks: Inside Action Already Completed (E3088) AlBeenCorrected=TRUE, before Workflow.DateNotRequired, reject blank/whitespace CPARActionReq, missing CompletedBy, missing CompletionDate, blank/whitespace CompletionNotes or CompletionDate later than TODAY. Error: Please enter the completed activity, performer, completion date and completion notes.",
+          "mechanism": "Action Already Completed (E3088) / checks before Workflow.DateNotRequired"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Native initial completion: After those checks succeed, set Workflow.DateNotRequired through the supplied native create/completion order. Use the actual CompletedBy/CompletionDate values, including permitted earlier dates. The form task supplies only empty-value defaults.",
+          "mechanism": "Action Already Completed (E3088) / supported initial-completion assignment"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Initial already-completed flow (Action Already Completed): In Action Already Completed (E3088) add missing/blank activity, missing performer/date, blank notes and CompletionDate later than TODAY error checks before setting Workflow.DateNotRequired. Use the supplied supplied initial-completion event order.",
+          "mechanism": "Initial already-completed flow (Action Already Completed) / Action Already Completed (E3088)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-40",
+      "taskHash": "5ce6fb0b377b1277a4b411b31fd4e374fb6125245e230afb73fb7d01b327cc97",
+      "renderedTaskHash": "e6d8f942e3bf08347d74bdc2e15aa81e90b369df5cc0ce6a9f375400a99e9a2e",
+      "evidenceReview": "Compared first-review recipient branches and the direct SecondReviewer source expression on E2691/E2695. Each stage method and matching role/person/expression field is enumerated, with Location scope and explicit route error. Existing DATEADD expressions are context rather than work; unknown method IDs and native recipient/membership bindings remain local inputs. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify the two existing review-stage RecipientExpression settings to follow each stage’s current Type of Inspection routing method and Location. Add an error for an unresolved route; due dates use the existing stage-entry calendar-day expressions.",
+          "mechanism": "Update Review Assignments / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "First review assignment: On Review stage Review (E2691) (SystemName ActionsPending) replace the recipient branch with the selected TypeOfInspec.PRMethod: Role resolves permitted members of TypeOfInspec.Role for this Inspection.Location; Immediate Supervisor uses the supplied accountable-inspector supervisor binding; Submitter uses the supplied native submitting-user binding; approved Specific Person uses FirstReviewer; Expression evaluates Expression through its supported native context.",
+          "mechanism": "Review (E2691) / RecipientExpression"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Second review assignment: On Second Review (E2695) (SystemName SecondReview) replace direct TypeOfInspec.SecondReviewer with the corresponding PRMethodSndRev route. Role uses Role2; Specific Person uses SecondReviewer; Expression uses Expression2; Supervisor/Submitter use the supplied stage recipient bindings. Resolve by stage SystemName because both stages display status Review.",
+          "mechanism": "Second Review (E2695) / RecipientExpression"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Invalid route: Before assigning either review task, reject an enabled route with no eligible recipient or missing required route input. Error: The review route is not configured for this inspection. Do not assign an implicit fallback reviewer.",
+          "mechanism": "Review stage recipient-resolution error branch"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "RecipientExpression (Review): Replace the first-review RecipientExpression with PRMethod-based Role, Supervisor, Submitter or authorized Specific Person/Expression routing for the Inspection Location, with the stated unresolved-route error.",
+          "mechanism": "RecipientExpression (Review) / Review (E2691)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "RecipientExpression (Second Review): Replace direct TypeOfInspec.SecondReviewer with PRMethodSndRev-based routing using Role2, SecondReviewer or Expression2 and the same supported Supervisor/Submitter routes and unresolved-route error.",
+          "mechanism": "RecipientExpression (Second Review) / Second Review (E2695)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-41",
+      "taskHash": "57e1cc7e41b9c44183e693f251552a5882bd781ac1ce0da4813d8a7c2f448b95",
+      "renderedTaskHash": "b533dda16cf12a05a68dda105454c958e78d7eaa710348903849c1320790f5c4",
+      "evidenceReview": "Checked E477 release-change notification condition and the three actual template identities/call sites. The AlBeenCorrected exclusion is verified existing-operation work. Missing message bodies are not evidence of defects; only approved content differences are assigned, with template bodies/merge fields explicitly required as inputs. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify the action assignment-notice condition to exclude already-completed entry. Apply only approved content differences to existing Return, review-assignment and inspection-completion templates once their actual message bodies are supplied.",
+          "mechanism": "Update Inspection and Action Notifications / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Outstanding-action assignment condition: In Send Assignment Notification Upon Completion of Inspection (E477), inside ISCHANGED(HelperReleaseAP) and HelperReleaseAP=TRUE add AlBeenCorrected=FALSE before the existing notification step.",
+          "mechanism": "Send Assignment Notification Upon Completion of Inspection (E477) / release-change notification condition"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Return message content: For existing template [Summit] Inspection - Rejected (E2662), used by Complete Approval Stage (E2702)/Complete Approval Stage (E2706), apply the approved content difference so the inspector’s Return message contains the corresponding nonblank RevieweComments or RevieweComment1 and source inspection link. The exported identity does not include its localized body; no absence of reason text is assumed.",
+          "mechanism": "[Summit] Inspection - Rejected (E2662) / supplied localized message body and merge-field binding"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Review/completion message content: For INTELEX | Upcoming Task Reminder Notification (E2313) used by Complete Inspection (E2704)/Complete Approval Stage (E2702) and Inspection - Distribution List Notification (E1090) used at completion, apply approved body/link differences: review assignments identify the responsible stage/task; final acceptance identifies the accepted Inspection and its distribution recipients, without saying all actions are closed. Existing dispatch steps already follow their transitions.",
+          "mechanism": "INTELEX | Upcoming Task Reminder Notification (E2313) and Inspection - Distribution List Notification (E1090) / supplied localized content bindings"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Assignment notification condition (Send Assignment Notification Upon Completion of Inspection): Add AlBeenCorrected=FALSE to the assignment notice condition. Keep the existing inspection-acceptance/release timing and template.",
+          "mechanism": "Assignment notification condition (Send Assignment Notification Upon Completion of Inspection) / Send Assignment Notification Upon Completion of Inspection (E477)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-42",
+      "taskHash": "e246f49fdf2a9c9b11a4719a440f35ed678043cef63e92b0ddb3128a6d120ec4",
+      "renderedTaskHash": "f34a2e3bdfdedde4abe111be4a62566eb2787fcfb3eb5445ec600da6a2853b81",
+      "evidenceReview": "Compared E2510 start condition and E2518 source order, which completes before defaults/notes validation. The new sequence puts empty-only defaults and all presence/nonblank/future-date checks before completion, and calls the named classification operation afterward. Native initial-completion and cross-record invocation bindings are specific blockers, not assumed capabilities. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Change the Inspection Action Plan workflow start condition to permit validated already-completed entry. Reorder the existing Complete action so defaults and evidence checks succeed before native completion, then refresh the source inspection’s follow-up classification.",
+          "mechanism": "Update the Action Completion Workflow / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Workflow start condition: On Inspection Action Plan (E2510), schema c7f95fd5-34a5-45d5-9231-727910d22265, replace HelperReleaseAP=TRUE with proposed OR(HelperReleaseAP=TRUE,AlBeenCorrected=TRUE), activated only with the supplied initial-completion event order.",
+          "mechanism": "Inspection Action Plan (E2510) / StartCondition"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Complete action defaults: In Complete (E2518) (b736836e-f77d-4a45-967a-712179a2cf74), move existing empty CompletionDate=TODAY and empty CompletedBy=CURRENTUSER defaults from after native completion to before it. Preserve actual entered values.",
+          "mechanism": "Complete (E2518) / ordered default steps"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Checks before completion: Move the existing CompletionNotes check before completion and require a nonblank value. Add resolved CompletedBy/CompletionDate presence and CompletionDate<=TODAY checks. Error for blank notes: In order to proceed, please fill out Completion Notes. Missing performer/date or a future date must also fail before completion.",
+          "mechanism": "Complete (E2518) / pre-completion validation"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Successful completion integration: Only after all checks succeed invoke the existing native Completed operation and maintain IsCompleted. Then invoke Refresh Inspection Action Classification from IMP-44 so current linked-action completion updates the source classification. Native task completion stops its reminders.",
+          "mechanism": "Complete (E2518) / post-completion classification invocation"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Workflow StartCondition (Inspection Action Plan): Apply the supplied initial-completion-validated start condition OR(HelperReleaseAP=TRUE,AlBeenCorrected=TRUE); retain native DateNotRequired completion settings and existing stage identities.",
+          "mechanism": "Workflow StartCondition (Inspection Action Plan) / Inspection Action Plan (E2510)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Complete action step order (Complete): Move the existing empty CompletedBy/CompletionDate defaults and CompletionNotes check before native completion. Add resolved performer/date and future-date checks, then complete, maintain IsCompleted and invoke Refresh Inspection Action Classification.",
+          "mechanism": "Complete action step order (Complete) / Complete (E2518)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-43",
+      "taskHash": "024656839dbe62d496126126a8e311f913ec59d7fef7162445e83a5833897e21",
+      "renderedTaskHash": "ee727de10c8b370b5ae2ac341b4dccba32566e4cb3bc5c4556947748260b2ad3",
+      "evidenceReview": "Reconciled all four existing action identities, source guards, approval decisions and Return destinations with the workflow contracts. Report presence/upload checks and Internal readiness/result refresh precede state changes. Existing reviewer/field-work stamps are reuse; new SubmittedAt/AcceptedAt, release and post-completion classification are explicit. Native invocation, decision IDs and File state remain narrow inputs. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify the existing Continue, Complete Inspection and two approval actions. Add source-specific submission/report checks, categorical-result refresh, rejection reason validation and new submission/acceptance timestamps. Remove formal Finding closure blocking and use the existing native completion operation.",
+          "mechanism": "Update Inspection Submission, Review, and Acceptance / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Continue — Continue (E2697): In Continue (E2697), apply its checklist/empty-QuestionAnswers check and generation path only to Internal or legacy blank source. For External bypass those requirements; ordinary Draft continuation does not require an uploaded report.",
+          "mechanism": "Continue (E2697) / source-specific Continue branch"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Common submission/approval checks: Before advancing InspectioninProgress or approving either review, require PerformedOn for both sources. External also requires nonblank ExternalParty and exactly one completed, server-accessible upload in ExternalInspectionReport. Reject blank/pending/failed upload before timestamps, notifications or state changes. Errors: Please enter the external party and inspection date and upload the inspection report. / Upload the External Inspection Report before moving the inspection forward.",
+          "mechanism": "Complete Inspection (E2704) and approved Complete Approval Stage (E2702)/Complete Approval Stage (E2706) branches / source-specific guards"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Internal response checks: For Internal, require its checklist and current applicable response readiness. Reevaluate response results from current shared Choice.IsNegative and published contribution/requirements, then consume IsSubmitReady; reject incomplete answers/comments/direct actions. Error: Complete the applicable questions and their required comments or action plans before submitting. Formal Findings and open-action closure are not blockers.",
+          "mechanism": "Complete Inspection (E2704) and approved Complete Approval Stage (E2702)/Complete Approval Stage (E2706) / readiness and result calls"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Complete Inspection — Complete Inspection (E2704): After submission checks succeed, invoke Evaluate Inspection Overall Outcome from IMP-36 and set SubmittedAt=NOW. If EnabFirstReview=TRUE route to ActionsPending with its configured recipient; otherwise use the final-completion sequence below. The existing field-work CompletedBy/CompletedOn assignments already occur on this action.",
+          "mechanism": "Complete Inspection (E2704) / submission timestamp and routing branches"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "First review — Complete Approval Stage (E2702): Before any transition require RevieweDecision to equal a supplied Approved/Rejected record; error if missing: Please select a review decision. For Rejected replace the numeric comments comparison with a nonblank RevieweComments check; error: Please enter the reason for returning this inspection. Return to InspectioninProgress. Approved reruns applicable checks/results, then routes to enabled SecondReview or final completion.",
+          "mechanism": "Complete Approval Stage (E2702) / decision, reason and approved routing branches"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Second review — Complete Approval Stage (E2706): Require RevieweDecisio1 and the corresponding nonblank RevieweComment1 for Rejected, replacing its numeric comparison with the same stated decision/reason errors. Rejected returns to ActionsPending; Approved reruns applicable checks/results and uses final completion.",
+          "mechanism": "Complete Approval Stage (E2706) / decision, reason and approved completion branches"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Final-completion sequence: In the no-review Complete Inspection (E2704) branch and final-approved Complete Approval Stage (E2702)/Complete Approval Stage (E2706) branches, after all guards/results succeed set AcceptedAt=NOW and ReleActionPlans=TRUE, invoke existing native completion, then Refresh Inspection Action Classification from IMP-44 and the existing distribution notice. Remove open-Finding closure guards and redundant direct Workflow.CurrentStage/PersonResponsible clearing.",
+          "mechanism": "Complete Inspection (E2704)/Complete Approval Stage (E2702)/Complete Approval Stage (E2706) / ordered native final-completion branches"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Inspection.[Helper] Release Action Plans (Insp_EquipInspectionObject.ReleActionPlans): Set Yes only at final acceptance. Use the native exception for already-completed entry.",
+          "mechanism": "Inspection.[Helper] Release Action Plans (Insp_EquipInspectionObject.ReleActionPlans) / ReleActionPlans (E1471)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Continue question-count branch (Continue): Apply checklist generation and the empty-response check only to Internal inspections. External inspections proceed with saved report-based context.",
+          "mechanism": "Continue question-count branch (Continue) / Continue (E2697)"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Complete Inspection flow (Complete Inspection): Add source-specific field/report/readiness checks before metadata or transitions; evaluate response/overall results, set SubmittedAt and route to review or final completion. In final completion add AcceptedAt, release actions and refresh classification. Remove open-Finding closure checks and redundant workflow-pointer clearing.",
+          "mechanism": "Complete Inspection flow (Complete Inspection) / Complete Inspection (E2704)"
+        },
+        {
+          "path": "modifications.3",
+          "requiredChange": "Complete Approval Stage flow (Complete Approval Stage): Replace the numeric rejection-comment comparison with nonblank RevieweComments validation before Return to InspectioninProgress; rerun source/readiness/results on approval and remove open-Finding closure blocking. Add AcceptedAt/release/classification integration only in final-approved branches.",
+          "mechanism": "Complete Approval Stage flow (Complete Approval Stage) / Complete Approval Stage (E2702)"
+        },
+        {
+          "path": "modifications.4",
+          "requiredChange": "Complete Approval Stage flow (Complete Approval Stage): Replace the numeric rejection-comment comparison with nonblank RevieweComment1 validation before Return to ActionsPending; rerun source/readiness/results on approval and remove open-Finding closure blocking. Add AcceptedAt/release/classification integration in the approved final-completion branch.",
+          "mechanism": "Complete Approval Stage flow (Complete Approval Stage) / Complete Approval Stage (E2706)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-44",
+      "taskHash": "0e1b70dbf5b6314360d97eacef674bb8199da25dd0facdf05f45f520af279bbb",
+      "renderedTaskHash": "5fb1ee63b269e653360d58ef1924a47faa015e8a937d3fcb21628845abdb9250",
+      "evidenceReview": "Reviewed the four operation/branch instructions: native action-event integration and the three exact ActionClassification assignments remain. Removed the redundant authorization/write-boundary row. No processing permission or identity configuration is assigned; accepted evidence behavior is expressed by the operation target and its functional criteria.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the proposed Refresh Inspection Action Classification operation. Recalculate the source Inspection’s follow-up category from native completion and distinct linked actions, including after action creation, completion or permitted reopening.",
+          "mechanism": "Configure Inspection Follow-up Classification / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Operation and action-event integration: Create the operation on Insp_EquipInspectionObject. Bind the supported CLF_InsActionPlanObject created/completed/permitted-reopen related-update hooks to its source Inspection using existing CheckListAnsAct links. Completion action tasks call the same operation after native completion.",
+          "mechanism": "Proposed Refresh Inspection Action Classification / related action-event hooks"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Inspection still in progress: When native Inspection workflow is not Completed, assign Insp_ClassificationObject record IN_PROGRESS to ActionClassification.",
+          "mechanism": "ActionClassification / native-not-completed branch"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Completed with open work: When Inspection is Completed and any distinct related Inspection Action Plan is not completed, assign COMPLETE_OPEN_ACTIONS. Count each action identity once even if several responses reference it.",
+          "mechanism": "ActionClassification / open-related-action branch"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Completed and resolved: When Inspection is Completed with no open related action, including zero actions, assign COMPLETE_RESOLVED.",
+          "mechanism": "ActionClassification / no-open-action branch"
+        }
+      ]
+    },
+    {
+      "id": "IMP-45",
+      "taskHash": "3998da4d4a7c2e867c0a01824d300efc90a28a4f7c5f0f545d27beebe7e22484",
+      "renderedTaskHash": "cbc0f99794c8144aade0a6383c0457c958e81c5b30b44c2f9e531fd718803f27",
+      "evidenceReview": "Checked native review/action stages and existing due/completion fields. No reminder-rule records are exported, so all three named reminders are proposed additions. Exact cadence, recipients, template and native configuration bindings are missing inputs; the task does not guess intervals or assign speculative due-lock removal. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create native reminder configurations for first review, second review and outstanding corrective-action work, using supplied cadence/recipients and the existing native due/completion state.",
+          "mechanism": "Configure Review and Action Reminders / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "First review reminder: Create proposed Inspection First Review Reminder for stage ActionsPending, Review (E2691). Bind its current review responsibility and existing due expression DATEADD(\"d\",TypeOfInspec.DforFirstReview,TODAY); use the supplied cadence, recipients and message template.",
+          "mechanism": "Native reminder configuration for Review (E2691)"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Second review reminder: Create proposed Inspection Second Review Reminder for stage SecondReview, Second Review (E2695). Bind its current review responsibility and existing due expression DATEADD(\"d\",TypeOfInspec.forSecondReview,TODAY); use the supplied cadence, recipients and template.",
+          "mechanism": "Native reminder configuration for Second Review (E2695)"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Outstanding action reminder: Create proposed Inspection Action Reminder for action stage InProgress, In Progress (E2514). Bind existing ActionOwner, DueDate and native task identity; stop reminders on native completion. Initially completed corrections must not receive an outstanding-work reminder.",
+          "mechanism": "Native reminder configuration for In Progress (E2514)"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Native eligibility and stop conditions: Apply reminders only while the corresponding native task remains open; completion ends eligibility. Use the supplied reminder definition type/screen and exact policy values. The export contains no reminder-rule records, so these are proposed additions.",
+          "mechanism": "Three native reminder eligibility/completion conditions"
+        }
+      ]
+    },
+    {
+      "id": "IMP-47",
+      "taskHash": "8a9d6b28233b3fe489ad93dfc7434a2c21db6daf02c8215b94935c8a72b6fa30",
+      "renderedTaskHash": "6e8f0e29d370b3586b2778aa38195d1a78159bdeabb1c3bab002aceef2febb6c",
+      "evidenceReview": "Reviewed audit flags and actual inspector, reviewer, action-owner, accepted-record and file user rights. Replaced the residual system-exception row with accepted-record user read-only configuration and removed the system edit-rights criterion. Native operation permissions/context are absent from this assignment and its blockers.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Enable the two verified Inspection audit flags and configure the required differences to current record/field/file permissions. Protect accepted evidence while preserving working inspector, stage-specific reviewer and independent action-owner access.",
+          "mechanism": "Update Inspection, Review, and Action Access / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Audit history: Change IsAuditEnabled from FALSE to TRUE on Insp_EquipInspectionObject (E37) and Insp_InspectionAbsObject (E106), retaining review decision/comment/actor/date changes with native workflow history.",
+          "mechanism": "Two existing object IsAuditEnabled properties"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Inspector rights: On supplied native record/field permission rules allow inspector/record-owner editing of working/returned Inspection evidence during Draft/InspectioninProgress. In ActionsPending/SecondReview/Completed make responses, comments and files read-only to that inspector.",
+          "mechanism": "Supplied Inspection/response record and field permission rules"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Reviewer rights: In ActionsPending allow only the current first reviewer to edit RevieweDecision and RevieweComments; in SecondReview allow only the current second reviewer to edit RevieweDecisio1 and RevieweComment1. Source responses/files and the other stage’s review fields are read-only.",
+          "mechanism": "Supplied stage-specific review field rules"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Action owner rights: Permit the assigned ActionOwner to maintain its independent action and complete it through the native action workflow. A related action/source link grants no edit permission on accepted Inspection evidence.",
+          "mechanism": "Supplied Inspection Action Plan record permission rules"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Accepted evidence: Set user edit permissions on accepted Inspection/answers, OverallOutcome and review evidence to read-only.",
+          "mechanism": "Supplied accepted-record user permissions"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Files and access routes: Apply the existing authorized Location boundary to Inspection, answers, actions, relationships and files, including ExternalInspectionReport upload/download/replacement. Enforce it for direct URLs, exports and mobile as well as form access.",
+          "mechanism": "Supplied native record/file Location permissions"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "IsAuditEnabled (Insp_EquipInspectionObject): Change audit history from disabled to enabled on this existing Inspection object for changing review decisions, comments, actors and dates.",
+          "mechanism": "IsAuditEnabled (Insp_EquipInspectionObject) / Insp_EquipInspectionObject (E37)"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "IsAuditEnabled (Insp_InspectionAbsObject): Change audit history from disabled to enabled on this existing Inspection object for changing review decisions, comments, actors and dates.",
+          "mechanism": "IsAuditEnabled (Insp_InspectionAbsObject) / Insp_InspectionAbsObject (E106)"
+        }
+      ]
+    },
+    {
+      "id": "IMP-50",
+      "taskHash": "4c4a8c61dd52c9f0c75fd1b4ae3339fa294a22055e1f9d426f75af08bc7538c4",
+      "renderedTaskHash": "7cbd16af4c100a11ac3cfb50d7d73712ba35e57be61bfb5fc9d57acf171aafa4",
+      "evidenceReview": "Compared mobile requirements with the actual desktop source/stage/action conditions now repeated in this task. The external single-file section, entry requirements, read-only evidence and server upload gate are explicit. Actual native mobile profile, queue/conflict and uploader bindings remain supplied inputs; no custom synchronization implementation is invented. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Apply the defined Inspection/response/action conditions to the supplied native mobile profiles. Configure the external single-file presentation and native upload/queue/conflict controls without introducing separate mobile record identities.",
+          "mechanism": "Update Mobile Inspection and Action Screens / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Internal/External presentation: On supplied mobile Inspection profiles, Internal/legacy blank source shows checklist section/Question Answer execution. External hides these and shows ExternalParty, PerformedOn and section External Inspection Report containing only the single-value ExternalInspectionReport File control. Ordinary working Save may omit the report.",
+          "mechanism": "Supplied mobile Inspection profile source-mode controls"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Evidence and review controls: Allow working/returned inspector edits to typed responses, Comments and files; make these read-only in ActionsPending/SecondReview/Completed. Expose only the matching reviewer decision/comment pair for its stage. Hide numeric scoring and formal Finding controls.",
+          "mechanism": "Supplied mobile Inspection/Question Answer profile stage rules"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Action entry: On the supplied mobile action profile, AlBeenCorrected=FALSE requires activity, owner and due date. TRUE requires CPARActionReq, CompletedBy, CompletionDate and CompletionNotes, hides/nonrequires owner/due date and defaults only empty performer/date to CURRENTUSER/TODAY. Hide the Corrective type selector.",
+          "mechanism": "Supplied mobile Inspection Action Plan profile conditions"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Upload and conflict controls: Bind native downloaded-record, upload-queue and conflict indicators to these same records. Pending/failed report uploads remain visibly pending/failed; the server check in IMP-43 permits advancement only after ExternalInspectionReport is fully uploaded and accessible. Use supported online session start and offline session restrictions.",
+          "mechanism": "Native mobile queue/conflict/File controls"
+        }
+      ]
+    },
+    {
+      "id": "IMP-51",
+      "taskHash": "33761fe6823107ef3b1c7b500d86b651ebff881d0486ea6d92d290f5d1b52fcd",
+      "renderedTaskHash": "5c5f91ccc5173e0594a943e9a7e3892050ed85ae26bd1ad5f50a70b213033546",
+      "evidenceReview": "Reconciled every Inspection Register column, one-inspection row level, Review status presentation and External report context to native/new fields. Source/file authorization is inline. Existing report definitions are not exported, so an existing target requires its current definition; otherwise this is a proposed addition with precise native/layout inputs. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure the proposed Inspection Register report with one row per Inspection and the explicit columns below. Include External report context and categorical outcomes while applying the source Inspection’s authorized Location/file access.",
+          "mechanism": "Configure the Inspection Register Report / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Columns: On the approved native definition rooted at Insp_EquipInspectionObject show record identity/link; TypeOfInspec; SourceMode (legacy blank displayed Internal); Location; PersResponsible as Inspector; PerformedOn; InspectionDate as due date; SubmittedAt; AcceptedAt; native workflow status; OverallOutcome; ActionClassification; ExternalParty; ExternalInspectionReport file reference. Include OperationalResource only when its optional enterprise binding is available.",
+          "mechanism": "Proposed Inspection Register / column bindings"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "One inspection per row: Keep one root Inspection row regardless of response/action count. Display both ActionsPending and SecondReview as Review while retaining stage identity for stage-specific drill-through. External displays its stored NOT_ASSESSED outcome and report reference.",
+          "mechanism": "Inspection Register / root grouping and stage/source presentation"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Access: Bind source-inspection Location authorization and native file-download authorization to the report and exports. The displayed ExternalInspectionReport link must not grant wider file access.",
+          "mechanism": "Inspection Register / native record and file security bindings"
+        }
+      ]
+    },
+    {
+      "id": "IMP-52",
+      "taskHash": "aafadc461c6e73fbbb9c37d2abefabd88b3b4454a2d1c08d886897e36de569d7",
+      "renderedTaskHash": "db18a6154e22382113ba56b4dae81ecd45efdabfe6ec24d65f42b18ca534d5e3",
+      "evidenceReview": "Compared the negative-response report filter, native question/answer/evidence fields and direct action links to the output contract. Stored result filtering and distinct identities avoid polarity recomputation and joined-row inflation. Exact parent/authoring/attachment/report joins remain a stated input rather than an invented native report schema. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure the proposed Deficiency Report, selecting stored negative Inspection responses and displaying each response’s question context, evidence and distinct direct actions.",
+          "mechanism": "Configure the Deficiency Report / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Negative-response selection: Root the approved native definition at CLF_QuestionAnswerObject. Filter ChecklistAnswer.SysteTypeHelper=Insp_EquipInspectionObject and ResponseOutcome.Code=NEGATIVE. Use stored response outcome; do not recompute historic polarity from current Choice flags.",
+          "mechanism": "Proposed Deficiency Report / response filter"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Response columns: Show source Inspection identity/link, Location and TypeOfInspec; QuestionRef; PubQuestion identity and its authoring Question identity where available; published section/question wording; matching typed answer or AnswerText; Comments; permitted native response attachments.",
+          "mechanism": "Deficiency Report / response/question/evidence columns"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Action details and counting: Show linked direct ActionPlans with identity, activity, completion state, owner/due date and actual performer/date/notes when completed. Group child rows below their response and count distinct response and action identities rather than joined rows. Keep the negative response selected after an action closes.",
+          "mechanism": "Deficiency Report / existing action relationships and distinct grouping"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Access: Apply source Inspection Location authorization and native attachment authorization to all rows and evidence links.",
+          "mechanism": "Deficiency Report / native security bindings"
+        }
+      ]
+    },
+    {
+      "id": "IMP-53",
+      "taskHash": "76dcd3d464577530d447bc45bc2d7b23d34eed0222c4d799f0e47f5d7651ae2d",
+      "renderedTaskHash": "c018793d3bb92d3de4f35e925a34bfd551cf00dbccba8821368ae52bee2232b1",
+      "evidenceReview": "Checked the action fields and inherited completion properties used by action follow-up. Root identity, source links, assignment versus completed evidence and distinct counts are explicit. Native report target, joins and authorization remain supplied; the task does not create new action source synchronization. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure proposed Action Follow-up reports with one row per Inspection Action Plan. Distinguish outstanding assignment fields from completed-correction evidence and retain authorized links to source inspections/responses.",
+          "mechanism": "Configure Action Follow-up Reports / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Action columns: Root at CLF_InsActionPlanObject; show stable action identity, CPARActionReq, ActionOwner, DueDate, AlBeenCorrected, native completion state/IsCompleted, CompletedBy, CompletionDate and CompletionNotes.",
+          "mechanism": "Proposed Action Follow-up / action field bindings"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Source and entry presentation: Show existing source inspection and linked QuestionAnswers through native product links. For outstanding actions emphasize owner/due date; for completed corrections show actual performer/date/notes and whether AlBeenCorrected identified completed entry.",
+          "mechanism": "Action Follow-up / source joins and completion-specific columns"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Distinct counts and access: Count each action once regardless of linked response count. Apply source Location/action authorization and protect source inspection navigation; an action link does not broaden source inspection rights.",
+          "mechanism": "Action Follow-up / root grouping and native access"
+        }
+      ]
+    },
+    {
+      "id": "IMP-54",
+      "taskHash": "2244cf2060a8565d6f78222cf2f33d87cb3aec078469e8fac9b70e672b9004de",
+      "renderedTaskHash": "5a07efa59e055100a1e233d5a7939fd188fcb1ce8c5deb82f75ed0832010e2b8",
+      "evidenceReview": "Reconciled cycle-level review history with separate Inspection SubmittedAt/AcceptedAt totals and the two same-status native stages. Current reviewer fields are not represented as full historical evidence. Exact history/cycle/Return/actor joins and timeliness measures remain local inputs; no unverified history object is invented. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure proposed Review Timeliness reports using native workflow history for individual review cycles and separate Inspection-level submission/acceptance totals.",
+          "mechanism": "Configure Review Timeliness Reports / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Cycle detail: Use the supplied native workflow/task history relationships to show Inspection identity, stage SystemName, cycle identity, stage entry, due date, actual acting reviewer, decision/Return time, Return reason and subsequent resubmission. Distinguish ActionsPending from SecondReview even though both have status Review.",
+          "mechanism": "Proposed Review Timeliness / native cycle-history joins"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Inspection totals: Provide an Inspection-level result using SubmittedAt and AcceptedAt once per Inspection. Keep cycle/task rows separate from Inspection totals so repeated Return/resubmission cycles cannot multiply totals.",
+          "mechanism": "Review Timeliness / separate inspection and cycle grouping"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "History and authorization: Bind earlier reviewer/decision/reason values to native history, rather than current FirstReviewBy/SecondReviewBy and decision fields alone. Apply authorized source Inspection Location access to details and export.",
+          "mechanism": "Review Timeliness / historical field and security bindings"
+        }
+      ]
+    },
+    {
+      "id": "IMP-55",
+      "taskHash": "22bf8fff917bff26aacc33f29f3ae5239094745ba12f3cd094777415e167462e",
+      "renderedTaskHash": "b2ed132afac30d46ae5d7043cc0e0a53de42246baf424df5539b201837c39f5e",
+      "evidenceReview": "Compared trend dimensions to stored negative response, stable authoring/published identity and available program/Location context. Period field/boundaries are explicitly missing policy inputs, not guessed. Optional enterprise dimensions are current/conditional and unknown historic values are not manufactured. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure proposed Response Trend reports to compare repeated stored negative responses by stable question identity, published wording, inspection program, establishment and approved reporting period.",
+          "mechanism": "Configure Response Trend Reports / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Trend dataset: Root the approved definition at Inspection Question Answers and select stored ResponseOutcome.Code=NEGATIVE. Include stable authoring question identity through PubQuestion, the actual published wording/version, source TypeOfInspec and Location.",
+          "mechanism": "Proposed Response Trends / negative-response dataset"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Grouping and period: Group/count distinct response identities by authoring question, actual published context, program, Location and the supplied reporting-period date field/boundaries. Preserve published versions for drill-through rather than merging different wording invisibly.",
+          "mechanism": "Response Trends / question and period grouping"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Optional current resource attributes: When the enterprise resource binding is available, add current OperationalResource/TechnologyCode dimensions and label them Current. Keep unavailable historical attributes unknown. Apply source Location authorization to the dataset and exports.",
+          "mechanism": "Response Trends / optional shared dimensions and native access"
+        }
+      ]
+    },
+    {
+      "id": "IMP-56",
+      "taskHash": "92ed966a2c0fe97e31eb074e9414f094fb8b53e2d4dbe77b6f7577b3033483a7",
+      "renderedTaskHash": "e53b24af1e967832046ca34ea85934e72e4b9d3912398ff65c0f2409e79556f7",
+      "evidenceReview": "Compared proposed Merge Template parent fields and date meanings to the portable-record contract. Branding, generation-time context and Draft/final labels are explicit deliverable settings, with actual native bindings/layout/assets still supplied. Proposed output scope remains approval-dependent; no tenant template is assumed exported. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the proposed branded Inspection Record main Merge Template after its scope/branding is approved. Bind the specified parent fields and make working versus accepted output visibly distinguishable.",
+          "mechanism": "Configure the Branded Inspection Record Template / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Main field bindings: On the supplied native Inspection-rooted Merge Template bind Inspection identity, TypeOfInspec, SourceMode, Location, optional bound OperationalResource, PersResponsible, PerformedOn, InspectionDate due date, SubmittedAt, AcceptedAt, OverallOutcome and ActionClassification.",
+          "mechanism": "Proposed Inspection Record / parent-field merge bindings"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Branding and status: Apply the supplied logo, colors, page layout and approved labels. Render Draft prominently for unaccepted output and identify accepted output with AcceptedAt and native completed state. Include native generation time distinct from performance/submission/acceptance dates.",
+          "mechanism": "Inspection Record / main layout, status and generation metadata"
+        }
+      ]
+    },
+    {
+      "id": "IMP-57",
+      "taskHash": "3106eb3cec4bf9274b389398bc88078491e15781a941cbd385d4316e9034cb4a",
+      "renderedTaskHash": "2f0dcda7ea9358ad8541eb71a907170eab8776060a4d79ec4209d029f1c254a9",
+      "evidenceReview": "Reconciled native child response, review-history, direct-action and photo sections and the ExternalInspectionReport alternative with the output contract. Existing hidden-answer clearing is not represented as retained historical evidence. Actual child/image/history/File output bindings and sizing/pagination remain local inputs. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add conditional response, review, corrective-action and photograph sections to the Inspection Record template. Internal output shows checklist evidence; External output identifies the single externally provided report.",
+          "mechanism": "Configure Inspection Record Evidence Sections / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Internal response sections: On the parent template supplied by IMP-56, add native child sections for ordered sections/questions, published wording, matching typed answer/AnswerText, IsNA, Comments and stored ResponseOutcome. Apply existing visibility/clearing semantics when selecting responses; do not manufacture cleared hidden evidence.",
+          "mechanism": "Inspection Record / native section and Question Answer child bindings"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Review and action sections: Add native history-backed review stage/cycle, actual actor/date, decision and Return reason. Add distinct direct corrective actions with CPARActionReq, owner/due date, native completion, actual CompletedBy/CompletionDate/CompletionNotes and initial-completed indicator.",
+          "mechanism": "Inspection Record / review-history and action child bindings"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Photograph layout: Bind authorized native Inspection/response photographs using the supplied supported image/child settings. Apply the approved image sizing and pagination so images remain readable.",
+          "mechanism": "Inspection Record / native attachment/image merge controls"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "External section: For SourceMode.Code=EXTERNAL suppress checklist child sections and show ExternalParty, PerformedOn and the single ExternalInspectionReport file/reference through the supplied native output binding. Keep this input report separate from generated output storage.",
+          "mechanism": "Inspection Record / External conditional section and File binding"
+        }
+      ]
+    },
+    {
+      "id": "IMP-58",
+      "taskHash": "cf262f287f0d194b07b7caa4d0b74ddb1201c1b3ea6bb53a2aef14915a3d83e2",
+      "renderedTaskHash": "e17c9c65e86a3d5f1f95c9bf3195ec6b7152c0046c2f5fb96c11e1842df7716c",
+      "evidenceReview": "Checked accepted-content generation, source/generation metadata and native official-file storage requirements. Generated output is explicitly separate from the external input report. Native action/storage/retention/regeneration and any approved signature details remain exact supplied inputs; no guessed policy or shadow record is introduced. Reviewed the element-name presentation changes against the package evidence-name registry: required-configuration and existing-change cells pair every e-ID with its actual configuration name. No other configuration difference is introduced by those labels.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure native generation and storage for an accepted Inspection Record, using the completed branded template and supplied official-file retention/versioning policy.",
+          "mechanism": "Configure Portable Inspection Record Generation / configuration elements named in the assignment"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Generation action: Bind the completed template to the supplied native output-generation action on Insp_EquipInspectionObject. Final output requires native accepted/completed content. Include source Inspection identity and generation time in supported native metadata.",
+          "mechanism": "Native Inspection Record generation action and metadata"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Official output storage: Bind the supplied generated file type, destination, authorized access and retention/versioning settings. Store output separately from ExternalInspectionReport, which remains the externally uploaded input report.",
+          "mechanism": "Native generated-file storage and metadata bindings"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Regeneration: Configure the supplied version/retention rule for regenerating an existing official record. Preserve or replace earlier official output only as that policy explicitly permits; use the native supported generation/storage mechanism.",
+          "mechanism": "Native regeneration/versioning configuration"
         }
       ]
     }

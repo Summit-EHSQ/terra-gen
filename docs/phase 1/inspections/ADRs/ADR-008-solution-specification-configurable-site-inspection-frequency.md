@@ -3,7 +3,7 @@ status: proposed
 related_adr: ADR-008-track-configurable-site-inspection-frequency.md
 solution: Configurable Operational Activity Targets
 initial_source_application: Inspections
-last_revised: 2026-10-27
+last_revised: 2026-11-06
 ---
 
 # Solution Specification: Operational Activity Targets
@@ -95,7 +95,6 @@ All system names are proposed and all stable IDs are unresolved. Because no pack
 | Inspection | Tenant-defined | Tenant-defined | Phase 1 source record / Existing external dependency; package metadata unresolved |
 | Location | Tenant-defined | Tenant-defined | Establishment or equivalent scope / Existing shared dependency; package metadata unresolved |
 | Workgroup | Tenant-defined | Tenant-defined | Reminder recipient / Native or shared dependency; package metadata unresolved |
-| Time Zone | Tenant-defined | Tenant-defined | Period boundary authority / Native or shared dependency; package metadata unresolved |
 | User | Tenant-defined | Tenant-defined | Publish actor / Native dependency; package metadata unresolved |
 
 ## 6. Logical model
@@ -119,7 +118,6 @@ class Target_Contribution
 class Inspection
 class Location
 class Workgroup
-class Time_Zone
 class User
 class Unit_of_Measure
 class Recurrence_Definition
@@ -159,7 +157,6 @@ Source_Measure_Criterion_Version --> Criterion_Operator : Operator
 Source_Measure_Version --> User : Published By
 Activity_Target_Rule --> Source_Measure : Source Measure
 Activity_Target_Rule --> Recurrence_Definition : Recurrence Definition
-Activity_Target_Rule --> Time_Zone : Business Time Zone
 Activity_Target_Rule --> Scope_Basis : Scope Basis
 Activity_Target_Rule --> Target_Direction : Target Direction
 Target_Scope_Assignment "0..*" --> "1" Activity_Target_Rule : Activity Target Rule
@@ -513,6 +510,8 @@ All version records are system-created, immutable, audited, and hidden from ordi
 
 #### 7.5.1 Activity Target Rule
 
+Period attribution uses only the calendar date reported on the source record. If the source includes a time, capture its reported date component without converting between time zones. A record reported as February 1 at 02:00 UTC counts toward February; a record reported as January 31 at 23:00 ET counts toward January. No Business Time Zone setting is required.
+
 | Field | Type / relationship | Req | Default / calculation | Editability and visibility | Automation / lifecycle |
 |---|---|---:|---|---|---|
 | Code | Text, max 100 | Y | None; unique | Target Administrator editable; always visible | Stable after first generated period; not published because Rule is directly governed configuration |
@@ -523,7 +522,6 @@ All version records are system-created, immutable, audited, and hidden from ordi
 | Required Value | Decimal, precision/scale unresolved | Y | None | Target Administrator editable; always visible; must be non-negative | Period Generator snapshots to Period.Required Value |
 | Target Direction | M:1 to Target Direction; inverse disabled | Y | `DIR_AT_LEAST` | Target Administrator editable; always visible; new selections filter `Active?=TRUE` | Period Generator snapshots to Period.Target Direction |
 | Recurrence Definition | M:1 to Recurrence Definition; inverse disabled | Y | None | Target Administrator editable until first period; always visible; new selections filter `Active?=TRUE` and validated recurrence | Period Generator reads the expression; existing periods remain unchanged |
-| Business Time Zone | M:1 to platform Time Zone catalogue; inverse disabled | Y | Application default Time Zone relationship | Target Administrator editable until first period; always visible; new selections filter to active platform values | Period Generator uses it for date boundaries; existing periods remain unchanged |
 | At-Risk Lead Days | Integer, minimum 0 | N | `NULL` | Target Administrator editable; always visible; null disables at-risk date | Period Generator calculates Period.At-Risk On; existing periods remain unchanged |
 | Active? | Yes/No | Y | `TRUE` | Target Administrator editable; always visible | `FALSE` prevents new period generation; existing periods and assignments remain valid |
 | Scope Assignments | Inverse 1:M grid from Target Scope Assignment.Activity Target Rule | N | None | Read only; visible to Target Administrator | Navigation only; no duplicate stored relationship |
@@ -551,8 +549,8 @@ All version records are system-created, immutable, audited, and hidden from ordi
 | Display Field | Calculated Text, max length unresolved | Y | Continuing calculation from Target Scope Assignment display, Period Start, separator, and Period End; exact Intelex syntax unresolved | Read only; always visible | Calculated field; null components are rejected because both dates are required |
 | Target Scope Assignment | M:1 to Target Scope Assignment; inverse grid `Activity Target Periods` | Y | Period Generator candidate assignment | Read only; always visible | Period Generator sets; immutable |
 | Source Measure Version | M:1 to Source Measure Version; inverse grid `Activity Target Periods` | Y | Assignment.Activity Target Rule.Source Measure.Active Version at creation | Read only; always visible | Period Generator snapshot; immutable |
-| Period Start | Date | Y | Period Generator recurrence calculation | Read only; always visible | Inclusive boundary in Rule.Business Time Zone; immutable |
-| Period End | Date | Y | Period Generator recurrence calculation | Read only; always visible | Inclusive boundary in Rule.Business Time Zone; immutable |
+| Period Start | Date | Y | Period Generator recurrence calculation | Read only; always visible | Inclusive calendar-date boundary; immutable |
+| Period End | Date | Y | Period Generator recurrence calculation | Read only; always visible | Inclusive calendar-date boundary; immutable |
 | Location | M:1 to Location; no inverse | Conditional | Stored snapshot of Assignment.Location | Read only; visible and populated for `SCOPE_LOCATION`; hidden and `NULL` for Enterprise | Period Generator sets once; immutable |
 | Required Value | Decimal, precision/scale unresolved | Y | Stored snapshot of Rule.Required Value | Read only; always visible | Period Generator sets once; immutable |
 | Target Direction | M:1 to Target Direction; inverse disabled | Y | Stored snapshot of Rule.Target Direction | Read only; always visible; inactive existing reference retained | Period Generator sets once; immutable |
@@ -578,7 +576,7 @@ Target Activity is system-created, audited, and read-only to users.
 | Source Measure Version | M:1 to Source Measure Version; inverse grid `Target Activities` | Y | Evaluation Event Service candidate version | Read only; always visible | Service sets on create; immutable identity component |
 | Inspection Source Record | M:1 to Inspection; no inverse | Y | Evaluation Event Service candidate Inspection | Read only; always visible | Service sets on create; immutable identity component; future source fields use conditional exactly-one rule |
 | Evaluation Expression | Long Text, maximum length unresolved; executable Intelex expression text | Y | Stored copy of Source Measure Version.Compiled Expression at create | Read only; specialist-visible | Evaluation Event Service snapshots once; local Target Activity `EVAL()` input; immutable |
-| Activity Date | Date | Y | Extracted using published `DIM_ACTIVITY_DATE` mapping | Read only; always visible | Evaluation Event Service refreshes on source re-evaluation; native audit preserves prior value |
+| Activity Date | Date | Y | Reported calendar date extracted using published `DIM_ACTIVITY_DATE` mapping; any time component is discarded without time-zone conversion | Read only; always visible | Evaluation Event Service refreshes on source re-evaluation; native audit preserves prior value |
 | Location | M:1 to Location; no inverse | N | Extracted using published `DIM_LOCATION` mapping; `NULL` when no mapping | Read only; visible when populated or relevant to reporting | Evaluation Event Service refreshes on re-evaluation; audit preserves prior value |
 | Evaluated Value | Calculated Decimal, precision/scale unresolved | N | Continuing `EVAL()` of local Evaluation Expression in Target Activity context; exact Intelex invocation unresolved | Read only; always visible | `NULL` means nonqualifying; zero is valid; Evaluation Event Service saves record to trigger recalculation |
 | Unit of Measure | M:1 to Unit of Measure; inverse disabled | Y | Stored copy of Source Measure Version.Unit of Measure at create | Read only; always visible; inactive existing reference retained | Evaluation Event Service snapshots once; immutable |
@@ -628,15 +626,7 @@ These objects are included to make the inventory-to-contract mapping complete. T
 
 **Directly declared fields:** None in this solution. The reminder-recipient relationship is declared on Target Scope Assignment, with no inverse grid on Workgroup.
 
-#### 7.7.4 Time Zone
-
-**Authority:** Existing native or shared tenant object; package metadata and stable ID are unresolved.
-
-**Parent:** Tenant-defined and unresolved.
-
-**Directly declared fields:** None in this solution. The period-boundary authority relationship is declared on Target Scope Assignment, with no inverse grid on Time Zone.
-
-#### 7.7.5 User
+#### 7.7.4 User
 
 **Authority:** Existing native tenant object; package metadata and stable ID are unresolved.
 
@@ -704,7 +694,7 @@ Failure leaves no partial active graph. Retry cannot create a duplicate version 
 
 **Cadence:** deployment decision required.
 
-Select active assignments whose active rules and effective dates intersect the configured generation horizon, whose Source Measure has an Active Version, and whose recurrence is active and validated. Calculate boundaries in Business Time Zone and upsert by the period uniqueness key. Copy every period snapshot in section 7.5. The service never creates an Inspection. Concurrency relies on the uniqueness constraint; retry returns the existing period. Native Event Service evidence is owned by Platform Administration.
+Select active assignments whose active rules and effective dates intersect the configured generation horizon, whose Source Measure has an Active Version, and whose recurrence is active and validated. Calculate inclusive calendar-date boundaries from the recurrence and any Period Anchor Date, then upsert by the period uniqueness key. Copy every period snapshot in section 7.5. The service never creates an Inspection. Concurrency relies on the uniqueness constraint; retry returns the existing period. Native Event Service evidence is owned by Platform Administration.
 
 ### 9.3 Target Activity Evaluation Event Service
 
@@ -716,7 +706,7 @@ For each candidate/version pair, upsert by activity uniqueness, copy the express
 
 ### 9.4 Contribution Reconciliation Event Service
 
-Run after evaluation and on a separately approved reconciliation cadence. A Target Activity matches a period when status is Successful, value is non-null, Source Measure Version matches, Activity Date is inclusively within the period, and Location snapshots match when the period is Location-scoped; enterprise periods do not filter by Location.
+Run after evaluation and on a separately approved reconciliation cadence. A Target Activity matches a period when status is Successful, value is non-null, Source Measure Version matches, Activity Date is inclusively within the period, and Location snapshots match when the period is Location-scoped; enterprise periods do not filter by Location. Compare the reported calendar date directly with Period Start and Period End, without time-of-day or time-zone conversion.
 
 Lock each period, upsert the unique contribution, update changed values, remove stale contributions, sum current contributions into Actual Value, derive status/health, and stamp Last Reconciled On. Retry is safe.
 
@@ -765,7 +755,7 @@ Reporting grains are: Period for zero-activity and compliance; Contribution for 
 |---|---|
 | Source Measure | Qualifying Inspections |
 | Source / aggregation / unit | Inspection / Count / Records |
-| Dimensions | Verified actual date, Location, type, checklist, workflow status, and outcome as needed |
+| Dimensions | Verified reported calendar date, Location, type, checklist, workflow status, and outcome as needed |
 | Criteria | Approved completion and program criteria using verified system names and canonical values |
 | Rule | At least 2 Records per approved annual Recurrence Definition |
 | Scope | One assignment per required Location |
@@ -788,6 +778,7 @@ A weekly Hazard ID target adds `Hazard ID Source Record`; a quarterly Near Miss 
 | CHG-008 | Add | Catalogue family | Inline values | Governed stable-Code relationships | Implementation rules | High pending tenant inheritance check |
 | CHG-009 | Reuse | Evidence/reminders | Possible custom records | Native audit, logs, reminders | OAT-012 | High pending retention check |
 | CHG-010 | Modify | Target scope | Earlier finer-grained site scope | Enterprise and Location only; one Phase 1 assignment per Location | OAT-003; user direction 2026-10-27 | High |
+| CHG-011 | Remove / clarify | Business Time Zone and period attribution | Rule-level time zone and converted period boundaries | Reported calendar date only; no time-of-day or time-zone conversion for period attribution | User direction 2026-11-06 | High |
 
 ## 13. Traceability
 
@@ -823,7 +814,7 @@ Deployment order:
 5. Implement Publish only after compiler output is validated.
 6. Configure and publish Qualifying Inspections; create rules and assignments; generate periods without Inspections.
 7. Backfill only the approved lookback and reconcile against the manual tracker. Do not import manual totals as calculated evidence.
-8. Enable reminders after owners, thresholds, timezone boundaries, cadence, and escalation are approved.
+8. Enable reminders after owners, thresholds, calendar-date boundaries, cadence, and escalation are approved.
 
 Rollback disables services and reminders while retaining audited evidence. Deletion of generated evidence requires an approved retention decision and migration script.
 
@@ -849,6 +840,7 @@ Rollback disables services and reminders while retaining audited evidence. Delet
 | AT-016 | User lacks Inspection access | Target navigation/export discloses no unauthorized source data |
 | AT-017 | Unsatisfied target reaches At-Risk On | Status At Risk and native reminder to current responsible members |
 | AT-018 | Add future source | Distinct M:1 and uniqueness added; exactly one source populated; Inspection unchanged |
+| AT-019 | Otherwise qualifying records reported February 1 at 02:00 UTC and January 31 at 23:00 ET | Activity Dates remain February 1 and January 31; records count toward February and January respectively, without time-zone conversion |
 
 ## 16. Validation results and open evidence
 
@@ -862,16 +854,16 @@ Rollback disables services and reminders while retaining audited evidence. Delet
 | Formula vocabulary/dependencies | No invented executable formula; exact `EVAL()` syntax and Inspection paths unresolved |
 | Null semantics | Explicit: null nonqualifying by default; zero valid |
 | Uniqueness/retry | Defined for versions, periods, activities, contributions; load testing remains |
-| Timezone | Types and authority specified; recurrence boundaries/source conversion unresolved |
+| Date attribution | Reported calendar date governs period matching without time-zone conversion; exact source field and date extraction require tenant verification |
 | Security | Boundaries specified; direct-access and export tests remain |
 | Stale concepts | Old names appear only in supersession/change history; generic key, runtime dimension, custom reminder/audit, and pre-created Inspection are absent |
 
 Before build, obtain:
 
 1. Tenant `.ipack` and stable IDs for all external/shared objects.
-2. Exact Inspection system fields for date, scope, type, checklist, status, outcome, and Sum values.
+2. Exact Inspection system fields for reported calendar date, scope, type, checklist, status, outcome, and Sum values; verify that date extraction preserves the reported date without time-zone conversion.
 3. Approved `EVAL()` invocation, path/literal syntax, return/error behaviour, and expression limits.
-4. Import-ready recurrence expressions and week, quarter, daylight-saving, and inclusive-boundary decisions.
+4. Import-ready recurrence expressions and week, quarter, and inclusive calendar-date boundary decisions.
 5. Service cadence, concurrency, retry, watermark, generation horizon, backfill lookback, and error owners.
 6. Initial target criteria, scopes, values, workgroups, thresholds, and recipients.
 7. Retention and recalculation policy for corrections after period close.

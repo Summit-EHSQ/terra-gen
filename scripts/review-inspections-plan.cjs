@@ -52,8 +52,7 @@ module.exports=function reviewPlan(tasks,model,baseline,contexts){
    ['Inspection Classification','IN_PROGRESS','In progress',10],['Inspection Classification','COMPLETE_OPEN_ACTIONS','Complete with open actions',20],['Inspection Classification','COMPLETE_RESOLVED','Complete with all actions closed',30]
   ].map(([list,code,name,sort])=>[list+' entry: '+code,'Create Code='+code+'; Name='+name+'; Active=TRUE; Sort='+sort+'.']),
   ['Ordinary application users — all four lists','Grant read access to entries required by the application. Grant no ordinary permission to create, change or delete reference-list records.'],
-  ['Authorized program administrators — all four lists','Grant maintenance access to Code, Name, Active? and Sort, subject to code stability and the active-value restrictions above. Bind this access to the supplied administrator groups.'],
-  ['Application system processing — all four lists','Grant the supplied system-processing context read access and permission to assign these entries to source, response outcome, inspection outcome and classification relationships.']
+  ['Authorized program administrators — all four lists','Grant maintenance access to Code, Name, Active? and Sort, subject to code stability and the active-value restrictions above. Bind this access to the supplied administrator groups.']
  ];
  one.accept=[
   'Four independent objects exist in Inspections with the exact internal/display names, common object settings and four fields listed in this task.',

@@ -7,7 +7,7 @@ Static configuration-contract checks. The as-is baseline remains separate. G01â€
 | consultantLanguageTasks | 34 |
 | explicitExistingFieldModifications | 61 |
 | unchangedFieldContexts | 19 |
-| explicitExistingElementRows | 88 |
+| explicitExistingElementRows | 87 |
 | revision | 2 |
 | objects | 92 |
 | coreObjectSections | 28 |
@@ -53,7 +53,7 @@ Static configuration-contract checks. The as-is baseline remains separate. G01â€
 
 ## Task-content gate
 
-The document build also executes the [task-content validation gate](implementation-content-validation.json) against the [recorded content review](implementation-content-review.json). The current revision covers IMP-01; the other 33 tasks remain explicitly unreviewed against this new contract. The gate checks instruction references, preparation-only work, task/rendered-review freshness and edits outside the selected scope. A structural pass does not certify the unreviewed content.
+The document build also executes the [task-content validation gate](implementation-content-validation.json) against the [recorded content review](implementation-content-review.json). The 10 November 2026 full redraft covers all 34 active tasks. Each task has a recorded content review tied to its current JSON and rendered assignment. The gate checks instruction references, preparation-only work, task/rendered-review freshness and edits outside the selected scope. This combines automated detectors with the recorded content review; it does not certify live tenant behavior.
 
 ## Readiness
 

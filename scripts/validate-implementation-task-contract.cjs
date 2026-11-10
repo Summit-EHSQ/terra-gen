@@ -12,6 +12,10 @@ function units(task){
 const externalId=/\b(?:SEC|REM|NTF|PF|R|H|D|F|I|W|S)[-–]?\d{2,}(?:\.\d+)?\b/g;
 const outsourced=/\b(?:refer to|see (?:the )?(?:specification|requirement|external)|according to (?:the )?(?:referenced |technical )?(?:specification|tables?|rules?)|(?:as |from (?:its|the) )(?:specified|defined|described) in|from (?:its|the) specification|match(?:es)? (?:the )?specification)\b/i;
 const preparation=/\b(?:identify|resolve|record|document|confirm|inventory)\b.{0,70}\b(?:existing|supporting)\b.{0,70}\b(?:options?|identit(?:y|ies)|identifiers?|entries|values)\b/i;
+const platformSetup=/\b(?:grant|configure|provision|supply|create|set up)\b.{0,110}\b(?:system[- ]processing (?:context|principals?|permissions?)|system[- ](?:context|principal)|platform[- ]processing (?:context|permissions?))\b/i;
+function unnamedEvidence(text,names={}){
+ return [...String(text).matchAll(/\bE\d+\b/g)].filter(m=>!names[m[0]]||!text.slice(0,m.index).endsWith(names[m[0]]+' (')||text[m.index+m[0].length]!==')').map(m=>m[0]);
+}
 const normalize=s=>String(s).replace(/&#124;/g,'|').replace(/\s+/g,' ').trim();
 function taskSection(markdown,id){
  const headings=[...markdown.matchAll(/^### (IMP-\d+) — .+$/gm)],matches=headings.filter(m=>m[1]===id);
@@ -40,6 +44,11 @@ function validate(plan,markdown,review,selected){
    if(matches.length)issue(id,x.path,'EXTERNAL_REQUIREMENT_ID','Move numbered requirement references to traceability; include the actual instructions here: '+[...new Set(matches)].join(', '));
    if(outsourced.test(x.text))issue(id,x.path,'OUTSOURCED_CONTENT','Replace the direction to another specification/table with the required settings or values.');
    if(preparation.test(x.text)||(/^(?:Existing|Supporting) (?:options|entries|identities):/i.test(x.text)))issue(id,x.path,'PREPARATION_AS_WORK','Identifying or recording existing values is an input/context activity unless a specific configuration modification is assigned.');
+   if(platformSetup.test(x.text))issue(id,x.path,'PLATFORM_PROCESSING_SETUP','Intelex manages its processing context and permissions; remove this platform-processing setup assignment. Actual user permissions and operation behavior remain in scope.');
+   if(/^(configurationRows|modifications)\./.test(x.path)){
+    const missing=unnamedEvidence(x.text,plan.evidenceNames);
+    if(missing.length)issue(id,x.path,'UNNAMED_EVIDENCE','Pair each evidence ID with its verified configuration name as Name (E123): '+missing.join(', '));
+   }
   }
   const rawSection=taskSection(markdown,id);
   if(rawSection===null)issue(id,'markdown','RENDERED_TASK','Rendered plan must contain this detailed task exactly once.');
@@ -48,6 +57,8 @@ function validate(plan,markdown,review,selected){
    for(const [i,line]of rawSection.split(/\r?\n/).entries()){
     if(/^\*\*Specification references:\*\*/.test(line))continue;
     if([...line.matchAll(externalId)].length||outsourced.test(line)||preparation.test(line))issue(id,'markdown.line.'+(i+1),'RENDERED_CONTENT','Rendered task contains an external requirement/directive or preparation-only instruction outside traceability.');
+    if(platformSetup.test(line))issue(id,'markdown.line.'+(i+1),'PLATFORM_PROCESSING_SETUP','Remove the platform-managed processing permission assignment.');
+    if(line.startsWith('| ')&&unnamedEvidence(normalize(line),plan.evidenceNames).length)issue(id,'markdown.line.'+(i+1),'UNNAMED_EVIDENCE','Instruction/change table evidence IDs must include their verified names, including the source-reference column.');
    }
    const rendered=[{path:'scope',text:t.scope},...(t.configurationRows||[]).flatMap((r,i)=>r.map((text,j)=>({path:'configurationRows.'+i+'.'+j,text}))),...(t.steps||[]).map((text,i)=>({path:'steps.'+i,text})),...(t.accept||[]).map((text,i)=>({path:'accept.'+i,text}))];
    for(const x of rendered)if(!x.text||!section.includes(normalize(x.text)))issue(id,x.path,'RENDER_MISMATCH','Reviewed instruction/criterion is missing from the rendered detailed task.');

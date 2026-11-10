@@ -392,7 +392,7 @@ Current [technical specification](solution-specification.md) and [implementation
 | E1695 | CLF_FindingStatus_Inventory | CLF_FindingStatusObject | Reuse unchanged external/shared definition |
 | E1699 | CLF_FindingStatus_Detail | CLF_FindingStatusObject | Reuse unchanged external/shared definition |
 | E1730 | CLF_ChecklistType_Detail | CLF_ChecklistTypeObject | Reuse unchanged external/shared definition |
-| E1753 | CLF_Checklist_Toolbox_Detail | CLF_ChecklistObject | IMP-03 |
+| E1753 | CLF_Checklist_Toolbox_Detail | CLF_ChecklistObject | Toolbox Talks — out of project scope; no configuration work |
 | E1773 | CLF_Checklist_MassUpdate | CLF_ChecklistObject | IMP-03 |
 | E1779 | CLF_Checklist_Select | CLF_ChecklistObject | IMP-03 |
 | E1824 | ConfgAppSetting_GlobAppSettingsObjectDetailView | ConfgAppSetting_GlobAppSettingsObject | Reuse unchanged external/shared definition |
@@ -424,11 +424,11 @@ Current [technical specification](solution-specification.md) and [implementation
 | E2127 | Insp_Type_Detail | Insp_TypeObject | IMP-05 |
 | E2135 | CLF_QuestionAnswer_Detail | CLF_QuestionAnswerObject | IMP-20, IMP-16 |
 | E2251 | CLF_QuestionAnswer_Docs_Readonly | CLF_QuestionAnswerObject | IMP-20, IMP-16 |
-| E2256 | CLF_Checklist_Toolbox_Detail | CLF_ChecklistObject | IMP-03 |
+| E2256 | CLF_Checklist_Toolbox_Detail | CLF_ChecklistObject | Toolbox Talks — out of project scope; no configuration work |
 | E2265 | CLF_Preferences_Inventory | CLF_PreferencesObject | Reuse unchanged external/shared definition |
 | E2267 | CLF_Preferences_Inventory | CLF_PreferencesObject | Reuse unchanged external/shared definition |
-| E2294 | CLF_Quest_ToolBox_Detail | CLF_QuestObject | IMP-03 |
-| E2298 | CLF_Quest_ToolBox_Detail | CLF_QuestObject | IMP-03 |
+| E2294 | CLF_Quest_ToolBox_Detail | CLF_QuestObject | Toolbox Talks — out of project scope; no configuration work |
+| E2298 | CLF_Quest_ToolBox_Detail | CLF_QuestObject | Toolbox Talks — out of project scope; no configuration work |
 | E2328 | ConfgAppSetting_SpecAppSettingsObjectDetailView | ConfgAppSetting_SpecAppSettingsObject | Reuse unchanged external/shared definition |
 | E2350 | CLF_PubChecklist_Inventory | CLF_PubChecklistObject | IMP-03 |
 | E2356 | ConfgAppSetting_TPanelGeneratorObjectDetailView | ConfgAppSetting_TPanelGeneratorObject | Reuse unchanged external/shared definition |

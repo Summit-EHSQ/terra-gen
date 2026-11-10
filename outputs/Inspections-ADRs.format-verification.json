@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "mode": "Standard",
+  "reference": "C:\\Users\\DaveMcLean\\.codex\\skills\\adr-word-export\\assets\\architecture-reference.docx",
+  "output": "C:\\Users\\DaveMcLean\\OneDrive - Summit EHSQ Inc\\Documents\\GitHub\\terra-gen\\outputs\\Inspections-ADRs.docx",
+  "policy": "C:\\Users\\DaveMcLean\\.codex\\skills\\adr-word-export\\assets\\format-verification-policy.json",
+  "generatedAtUtc": "2026-10-30T17:51:23.8102158Z",
+  "summary": {
+    "passed": 24,
+    "warnings": 0,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "name": "reference-package-open",
+      "category": "package",
+      "status": "pass",
+      "message": "Reference DOCX package opened successfully."
+    },
+    {
+      "name": "output-package-open",
+      "category": "package",
+      "status": "pass",
+      "message": "Output DOCX package opened successfully."
+    },
+    {
+      "name": "required-part:[Content_Types].xml",
+      "category": "package",
+      "status": "pass",
+      "message": "Required package part is present."
+    },
+    {
+      "name": "required-part:_rels/.rels",
+      "category": "package",
+      "status": "pass",
+      "message": "Required package part is present."
+    },
+    {
+      "name": "required-part:word/document.xml",
+      "category": "package",
+      "status": "pass",
+      "message": "Required package part is present."
+    },
+    {
+      "name": "required-part:word/_rels/document.xml.rels",
+      "category": "package",
+      "status": "pass",
+      "message": "Required package part is present."
+    },
+    {
+      "name": "required-part:word/styles.xml",
+      "category": "package",
+      "status": "pass",
+      "message": "Required package part is present."
+    },
+    {
+      "name": "xml-well-formed",
+      "category": "package",
+      "status": "pass",
+      "message": "All XML package parts are well formed."
+    },
+    {
+      "name": "relationship-targets",
+      "category": "package",
+      "status": "pass",
+      "message": "All internal relationship targets resolve."
+    },
+    {
+      "name": "first-section-geometry",
+      "category": "layout",
+      "status": "pass",
+      "message": "Page size, margins, columns, and first-page behavior match the reference."
+    },
+    {
+      "name": "even-odd-header-setting",
+      "category": "layout",
+      "status": "pass",
+      "message": "Odd/even header behavior matches the reference."
+    },
+    {
+      "name": "reference-styles-present",
+      "category": "styles",
+      "status": "pass",
+      "message": "All reference styles are present in the output."
+    },
+    {
+      "name": "reference-styles-unchanged",
+      "category": "styles",
+      "status": "pass",
+      "message": "All retained reference style definitions are unchanged."
+    },
+    {
+      "name": "additional-styles",
+      "category": "styles",
+      "status": "pass",
+      "message": "Additional styles are approved (31 added)."
+    },
+    {
+      "name": "used-styles-defined",
+      "category": "styles",
+      "status": "pass",
+      "message": "Every paragraph, character, and table style used by the output is defined."
+    },
+    {
+      "name": "exact-part:word/theme/theme1.xml",
+      "category": "package",
+      "status": "pass",
+      "message": "Package part matches the reference exactly."
+    },
+    {
+      "name": "exact-part:word/fontTable.xml",
+      "category": "package",
+      "status": "pass",
+      "message": "Package part matches the reference exactly."
+    },
+    {
+      "name": "exact-part:word/webSettings.xml",
+      "category": "package",
+      "status": "pass",
+      "message": "Package part matches the reference exactly."
+    },
+    {
+      "name": "header-parts",
+      "category": "headers-footers",
+      "status": "pass",
+      "message": "All reference header parts are retained exactly."
+    },
+    {
+      "name": "footer-parts",
+      "category": "headers-footers",
+      "status": "pass",
+      "message": "All reference footer parts are retained exactly."
+    },
+    {
+      "name": "header-footer-media",
+      "category": "headers-footers",
+      "status": "pass",
+      "message": "All reference header/footer media is retained exactly."
+    },
+    {
+      "name": "header-footer-fields",
+      "category": "headers-footers",
+      "status": "pass",
+      "message": "Required header/footer page fields are retained."
+    },
+    {
+      "name": "direct-typography-overrides",
+      "category": "direct-formatting",
+      "status": "pass",
+      "message": "No unexpected direct formatting overrides were detected."
+    },
+    {
+      "name": "direct-paragraph-layout-overrides",
+      "category": "direct-formatting",
+      "status": "pass",
+      "message": "No unexpected direct formatting overrides were detected."
+    }
+  ]
+}

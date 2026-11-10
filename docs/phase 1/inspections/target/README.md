@@ -10,7 +10,7 @@
 - [Handler reconciliation](automation-reconciliation.md)
 - [Scope/supersession decisions](revision-decisions.md)
 - [Validation and remaining inputs](validation.md)
-- [Task-content validation — IMP-01 scope](implementation-content-validation.json)
+- [Task-content validation — full-plan scope](implementation-content-validation.json)
 
 The [as-is baseline](../as-is/README.md) is unchanged. Revision 1 is archived as history; its broader architectural proposals are not active implementation requirements.
 
