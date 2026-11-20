@@ -35,6 +35,7 @@ ADR-001 and ADR-002 remain proposed and should not be treated as approved implem
 
 ## Source Evidence
 
+- [Summit + TG: Asset Hierarchy Setup, November 10, 2026](<raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>) — shared asset/establishment foundations. The [cross-phase reconciliation](<../../phase 1/ADR-RECONCILIATION-2026-11-10.md>) leaves all three Incident ADRs unchanged and records the pending regulatory/location binding; inspection defaulting is not automatically adopted for incidents.
 - [Design Workshop Day 1 — Morning, September 15, 2026](<raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-morning.md>)
 - [Design Workshop Day 2 — Morning, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>)
 - [Design Workshop Day 2 — Afternoon, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-afternoon.md>)
@@ -50,6 +51,7 @@ ADR **More Information** sections identify the relevant timestamps.
 - Define minimum contractor data, internal entry responsibility, reconciliation, and KPI ownership.
 - Establish triggers for reconsidering contractor self-service and isolated security.
 - Create additional ADRs as the detailed incident workflow is designed.
+- Resolve the proposed separate-establishment/reporting-location boundary and its supported regulatory binding before changing incident attribution or its hierarchy-dependent context. Accepted privacy controls remain authoritative; Phase 2 scope is unchanged.
 
 Track these items in the [Phase 2 section of the shared open-task register](<../../phase 1/OPEN-TASKS-AND-QUESTIONS.md#phase-2--incident-management-outside-phase-1-delivery-scope>). They remain outside Phase 1 delivery scope.
 

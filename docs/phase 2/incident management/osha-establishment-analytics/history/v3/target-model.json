@@ -1,0 +1,2038 @@
+{
+  "status": "Proposed; not implemented",
+  "classification": "Logical Intelex object model",
+  "objects": [
+    {
+      "name": "OSHA Establishment",
+      "internalName": "TG_OSHAEstablishmentObject",
+      "abstract": false,
+      "inheritanceParent": null,
+      "fields": [
+        {
+          "name": "Code",
+          "caption": "Code",
+          "contract": [
+            "Code",
+            "Text, max 100",
+            "Y",
+            "None; unique, non-localizable",
+            "Establishment administrator editable before first use",
+            "Stable integration key after first use; native audit"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "Name",
+          "caption": "Name",
+          "contract": [
+            "Name",
+            "Text, max 255; legal reporting label, non-localizable",
+            "Y",
+            "None",
+            "Establishment administrator editable",
+            "Display field; does not rewrite existing annual snapshots"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "Active",
+          "caption": "Active?",
+          "contract": [
+            "Active?",
+            "Yes/No",
+            "Y",
+            "TRUE",
+            "Establishment administrator editable",
+            "FALSE prevents new ordinary selections and routine period generation; retains history and authorized historical corrections"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "CompanyName",
+          "caption": "Company Name",
+          "contract": [
+            "Company Name",
+            "Text, max 255",
+            "Conditional",
+            "None",
+            "Administrator editable; required for report generation",
+            "Copied to annual CompanyName at initial generation; later changes do not cascade"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "Street",
+          "caption": "Street",
+          "contract": [
+            "Street",
+            "Text, max 255",
+            "Conditional",
+            "None",
+            "Administrator editable; required for report generation",
+            "Copied to annual LocationStreet at initial generation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "City",
+          "caption": "City",
+          "contract": [
+            "City",
+            "Text, max 100",
+            "Conditional",
+            "None",
+            "Administrator editable; required for report generation",
+            "Copied to annual LocationCity at initial generation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "State",
+          "caption": "State",
+          "contract": [
+            "State",
+            "Text, max 100",
+            "Conditional",
+            "None",
+            "Administrator editable; required for report generation",
+            "Copied to annual LocationState at initial generation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "PostalCode",
+          "caption": "Postal Code",
+          "contract": [
+            "Postal Code",
+            "Text, max 30",
+            "Conditional",
+            "None",
+            "Administrator editable; required for report generation",
+            "Copied to annual LocationPostal at initial generation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "EINNumber",
+          "caption": "EIN Number",
+          "contract": [
+            "EIN Number",
+            "Text, max 30",
+            "N",
+            "None",
+            "Administrator editable",
+            "Copied to annual EINNumber at initial generation; submission validation is output-specific"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "NAICSCode",
+          "caption": "NAICS Code",
+          "contract": [
+            "NAICS Code",
+            "Number / bigint, System.Int64",
+            "N",
+            "None",
+            "Administrator editable",
+            "Copied to annual NAICSCode at initial generation; retain original numeric representation for parity"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "SICCode",
+          "caption": "SIC Code",
+          "contract": [
+            "SIC Code",
+            "Number / bigint, System.Int64",
+            "N",
+            "None",
+            "Administrator editable",
+            "Copied to annual SICCode at initial generation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "IndustryDescription",
+          "caption": "Industry Description",
+          "contract": [
+            "Industry Description",
+            "Text, max 1000",
+            "N",
+            "None",
+            "Administrator editable",
+            "Copied to annual InduDescription at initial generation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "EstablishmentType",
+          "caption": "Establishment Type",
+          "contract": [
+            "Establishment Type",
+            "M:1 to EHSIncidentMang_EstablishmeTypeObject, 0..1 target; inverse disabled",
+            "N",
+            "None",
+            "Administrator editable; preserve referenced values; new selections use native Deleted=FALSE; retain existing references if a value is later deleted",
+            "Reuses existing catalogue; copied to annual EstablishmeType; no new values seeded"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "EstablishmentSize",
+          "caption": "Establishment Size",
+          "contract": [
+            "Establishment Size",
+            "M:1 to EHSIncidentMang_EstablishmeSizeObject, 0..1 target; inverse disabled",
+            "N",
+            "None",
+            "Administrator editable; preserve referenced values; new selections use native Deleted=FALSE; retain existing references if a value is later deleted",
+            "Reuses existing catalogue; copied to annual EstablishmtSize; do not invent size thresholds"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "EstablishmentID",
+          "caption": "Establishment ID",
+          "contract": [
+            "Establishment ID",
+            "Text, max 100",
+            "N",
+            "None",
+            "Administrator editable",
+            "External reporting identifier; distinct from Code and native record GUID; copied to annual EstablishmentID"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "OSHA300aID",
+          "caption": "OSHA 300a ID",
+          "contract": [
+            "OSHA 300a ID",
+            "Text, max 100",
+            "N",
+            "None",
+            "Administrator editable",
+            "External reporting identifier; copied to annual OSHA300aID; format and annual applicability require output validation"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "HoursHeadcounts",
+          "caption": "Hours and Headcounts",
+          "contract": [
+            "Hours and Headcounts",
+            "Inverse 1:M grid from Establishment Hours and Headcount.OSHA Establishment",
+            "N",
+            "None",
+            "Read only; authorized analytics users",
+            "Navigation over the declaring relationship; no duplicate storage"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "IncidentRateKPIs",
+          "caption": "Incident Rate KPIs",
+          "contract": [
+            "Incident Rate KPIs",
+            "Inverse 1:M grid from Establishment Incident Rate KPI.OSHA Establishment (inherited)",
+            "N",
+            "None",
+            "Read only; authorized analytics users",
+            "Navigation over the declaring relationship; no duplicate storage; concrete records only"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        },
+        {
+          "name": "OSHASummaries",
+          "caption": "OSHA Summaries",
+          "contract": [
+            "OSHA Summaries",
+            "Inverse 1:M grid from Establishment OSHA Summary.OSHA Establishment (inherited)",
+            "N",
+            "None",
+            "Read only; authorized regulatory users",
+            "Navigation over the declaring relationship; no duplicate storage; concrete records only"
+          ],
+          "evidence": "Proposed; inferred from package reporting needs"
+        }
+      ],
+      "action": "Add",
+      "isLocationBound": false
+    },
+    {
+      "name": "Establishment Incident Rate Abstract",
+      "internalName": "TG_EstIncRateAbstractObject",
+      "abstract": true,
+      "inheritanceParent": null,
+      "source": "SafetyMetrics_IncRateAbstractObject",
+      "fields": [
+        {
+          "name": "RecordNo",
+          "caption": "Record No",
+          "sourceName": "RecordNo",
+          "sourceRecordId": "043f6a0d-5d53-4f2c-9ce8-0afc63a0b0c2",
+          "sourceGraphId": "50",
+          "contract": [
+            "Record No",
+            "AutoNumber, System.Int64",
+            "Y",
+            "None in metadata; native AutoNumber population required",
+            "Read only; analytics users may view",
+            "Native AutoNumber; new target sequence, never reuse source identity"
+          ]
+        },
+        {
+          "name": "Date",
+          "caption": "Date",
+          "sourceName": "Date",
+          "sourceRecordId": "ff23157a-1cf6-4979-97c2-ae2895d3201e",
+          "sourceGraphId": "56",
+          "contract": [
+            "Date",
+            "Date; calendar date, timezone capture disabled",
+            "Y",
+            "None; A2 supplies month start or A3 supplies January 1",
+            "Read only; analytics users may view",
+            "A2 sets first day of month; unique OSHAEstablishment + Date"
+          ]
+        },
+        {
+          "name": "OSHAEstablishment",
+          "caption": "OSHA Establishment",
+          "sourceName": "Location",
+          "sourceRecordId": "47e4fcf0-502a-4567-8f26-4cadfc038c73",
+          "sourceGraphId": "58",
+          "contract": [
+            "OSHA Establishment",
+            "M:1 to OSHA Establishment; exactly 1 target per record; inverse Incident Rate KPIs",
+            "Y",
+            "None; mandatory generation/import scope",
+            "Read only on generated period forms; A2/A3 supplies scope; historical inactive references retained",
+            "A2/A3 supplies reference at creation; no ordinary user reassignment of generated periods"
+          ]
+        },
+        {
+          "name": "RuNumDaysAway",
+          "caption": "Number of Days Away - Rollup",
+          "sourceName": "RuNumDaysAway",
+          "sourceRecordId": "6a867f71-aa59-4a0f-9424-bec709d10655",
+          "sourceGraphId": "78",
+          "contract": [
+            "Number of Days Away - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum NumDaysAway, treating empty report values as 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtRecordable",
+          "caption": "Number of Recordable/Reportable - Rollup",
+          "sourceName": "RuCtRecordable",
+          "sourceRecordId": "88037be2-4963-4b60-8f3a-deba17db7dba",
+          "sourceGraphId": "94",
+          "contract": [
+            "Number of Recordable/Reportable - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 for a nonempty OSHARecordable value other than the source report literal \"0\", otherwise 0; reproduce the source report Boolean conversion behavior. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoNumFatalities",
+          "caption": "Number of Fatalities - Establishment",
+          "sourceName": "LoNumFatalities",
+          "sourceRecordId": "a83fede5-74ae-4a23-957b-ef7ff00203d5",
+          "sourceGraphId": "96",
+          "contract": [
+            "Number of Fatalities - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 for nonempty DiedfromInj other than source report literal \"0\", otherwise 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtIncidents",
+          "caption": "Number of Incidents - Rollup",
+          "sourceName": "RuCtIncidents",
+          "sourceRecordId": "b75e75e4-c641-447e-81d8-cc18704ac8cb",
+          "sourceGraphId": "133",
+          "contract": [
+            "Number of Incidents - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Count Injury/Illness.Id rows in the establishment/month population; not generic Incident rows or distinct OSHA cases. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LocNameHelper",
+          "caption": "[Helper] Establishment Name",
+          "sourceName": "LocNameHelper",
+          "sourceRecordId": "81b5d8d6-5bff-49b5-a669-61ac051f1be0",
+          "sourceGraphId": "159",
+          "contract": [
+            "[Helper] Establishment Name",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "None; populated from OSHA Establishment.Name",
+            "Read only; analytics users may view",
+            "A2 stamps at generation; preserves display for inactive establishments; explicit administrator correction only"
+          ]
+        },
+        {
+          "name": "RuNumLostDays",
+          "caption": "Number of Lost Days - Rollup",
+          "sourceName": "RuNumLostDays",
+          "sourceRecordId": "a2d7e328-40a0-420d-9b0c-38a6276247ff",
+          "sourceGraphId": "193",
+          "contract": [
+            "Number of Lost Days - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum NumDaysAway + NumJobTransfer + NumRestrictDay, treating empty report values as 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCntrctWrkdHrs",
+          "caption": "Contractor Worked Hours - Establishment",
+          "sourceName": "LoCntrctWrkdHrs",
+          "sourceRecordId": "53ec5a18-4bf9-4c7c-8a33-451cf2417c62",
+          "sourceGraphId": "197",
+          "contract": [
+            "Contractor Worked Hours - Establishment",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2 reads Establishment Hours and Headcount.ContractrHrs for matching OSHAEstablishment + Date after A0 completes; Lo/Ru use identical flat scope"
+          ]
+        },
+        {
+          "name": "LocationIdHelp",
+          "caption": "[Helper] Establishment ID",
+          "sourceName": "LocationIdHelp",
+          "sourceRecordId": "3ea4baa8-dcc1-4177-a4a6-ad1017b4d40b",
+          "sourceGraphId": "199",
+          "contract": [
+            "[Helper] Establishment ID",
+            "GUID",
+            "Y",
+            "None; native GUID of OSHA Establishment reference",
+            "Read only; hidden on ordinary form",
+            "A2/A3 stamps at creation; hidden helper, never uses SysLocationEntity GUID"
+          ]
+        },
+        {
+          "name": "LoCtIncidents",
+          "caption": "Number of Incidents - Establishment",
+          "sourceName": "LoCtIncidents",
+          "sourceRecordId": "736d7978-6935-4eb3-9098-6b7b7d391a84",
+          "sourceGraphId": "212",
+          "contract": [
+            "Number of Incidents - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Count Injury/Illness.Id rows in the establishment/month population; not generic Incident rows or distinct OSHA cases. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuNumIncDayAway",
+          "caption": "Number of Incidents with Days Away - Rollup",
+          "sourceName": "RuNumIncDayAway",
+          "sourceRecordId": "553bb1be-bd16-45ca-94e0-390d26d1019c",
+          "sourceGraphId": "259",
+          "contract": [
+            "Number of Incidents with Days Away - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 when NumDaysAway > 0, otherwise 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoNumLostDays",
+          "caption": "Number of Lost Days - Establishment",
+          "sourceName": "LoNumLostDays",
+          "sourceRecordId": "4b7b009e-ede4-487b-92ca-beb73df52e64",
+          "sourceGraphId": "267",
+          "contract": [
+            "Number of Lost Days - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum NumDaysAway + NumJobTransfer + NumRestrictDay, treating empty report values as 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoNumIncDayAway",
+          "caption": "Number of Incidents with Days Away - Establishment",
+          "sourceName": "LoNumIncDayAway",
+          "sourceRecordId": "a8c7f1b8-9643-43c4-a36e-808c494aec70",
+          "sourceGraphId": "275",
+          "contract": [
+            "Number of Incidents with Days Away - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 when NumDaysAway > 0, otherwise 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCntrctWrkdHrs",
+          "caption": "Contractor Worked Hours - Rollup",
+          "sourceName": "RuCntrctWrkdHrs",
+          "sourceRecordId": "ba2eec4a-ce5d-4de9-885a-d6799508bab5",
+          "sourceGraphId": "320",
+          "contract": [
+            "Contractor Worked Hours - Rollup",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2 reads Establishment Hours and Headcount.ContractrHrs for matching OSHAEstablishment + Date after A0 completes; Lo/Ru use identical flat scope"
+          ]
+        },
+        {
+          "name": "RuNumIncLostTim",
+          "caption": "Number of Incidents with Lost Time - Rollup",
+          "sourceName": "RuNumIncLostTim",
+          "sourceRecordId": "c6626d90-5f1b-4950-b266-e75e837caecb",
+          "sourceGraphId": "331",
+          "contract": [
+            "Number of Incidents with Lost Time - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 when NumDaysAway + NumJobTransfer + NumRestrictDay > 0, otherwise 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuEmplWrkdHours",
+          "caption": "Employee Worked Hours - Rollup",
+          "sourceName": "RuEmplWrkdHours",
+          "sourceRecordId": "1d59a6b3-d05a-4f5f-97cb-35527693d811",
+          "sourceGraphId": "333",
+          "contract": [
+            "Employee Worked Hours - Rollup",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2 reads Establishment Hours and Headcount.EmployeeHrs for matching OSHAEstablishment + Date after A0 completes; Lo/Ru use identical flat scope"
+          ]
+        },
+        {
+          "name": "LoNumIncLostTim",
+          "caption": "Number of Incidents with Lost Time - Establishment",
+          "sourceName": "LoNumIncLostTim",
+          "sourceRecordId": "f258419d-0555-46da-9777-892a24dd1d84",
+          "sourceGraphId": "356",
+          "contract": [
+            "Number of Incidents with Lost Time - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 when NumDaysAway + NumJobTransfer + NumRestrictDay > 0, otherwise 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuNumTrnsfRstDy",
+          "caption": "Number of Job Transfer and Restricted Days - Rollup",
+          "sourceName": "RuNumTrnsfRstDy",
+          "sourceRecordId": "30bd6dfd-e613-46df-a5fb-789807f4dbdb",
+          "sourceGraphId": "358",
+          "contract": [
+            "Number of Job Transfer and Restricted Days - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum NumJobTransfer + NumRestrictDay, treating empty report values as 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoNumTrnsfRstDy",
+          "caption": "Number of Job Transfer and Restricted Days - Establishment",
+          "sourceName": "LoNumTrnsfRstDy",
+          "sourceRecordId": "0d60d4c4-7643-4256-bdcd-0ddb6e9ded31",
+          "sourceGraphId": "360",
+          "contract": [
+            "Number of Job Transfer and Restricted Days - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum NumJobTransfer + NumRestrictDay, treating empty report values as 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoNumDaysAway",
+          "caption": "Number of Days Away - Establishment",
+          "sourceName": "LoNumDaysAway",
+          "sourceRecordId": "b831e2f5-81da-4a28-8556-1b9939b1a379",
+          "sourceGraphId": "364",
+          "contract": [
+            "Number of Days Away - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum NumDaysAway, treating empty report values as 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtRecordable",
+          "caption": "Number of Recordable/Reportable - Establishment",
+          "sourceName": "LoCtRecordable",
+          "sourceRecordId": "76c14f73-0411-4d97-aa06-c97215d6bc8d",
+          "sourceGraphId": "368",
+          "contract": [
+            "Number of Recordable/Reportable - Establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 for a nonempty OSHARecordable value other than the source report literal \"0\", otherwise 0; reproduce the source report Boolean conversion behavior. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoEmplWrkdHours",
+          "caption": "Employee Worked Hours - Establishment",
+          "sourceName": "LoEmplWrkdHours",
+          "sourceRecordId": "b231cb4e-ed84-4433-9857-e5907347bec2",
+          "sourceGraphId": "370",
+          "contract": [
+            "Employee Worked Hours - Establishment",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2 reads Establishment Hours and Headcount.EmployeeHrs for matching OSHAEstablishment + Date after A0 completes; Lo/Ru use identical flat scope"
+          ]
+        },
+        {
+          "name": "RuNumFatalities",
+          "caption": "Number of Fatalities - Rollup",
+          "sourceName": "RuNumFatalities",
+          "sourceRecordId": "22761319-34bf-40db-b0fe-dfbc62fec0f0",
+          "sourceGraphId": "372",
+          "contract": [
+            "Number of Fatalities - Rollup",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A2: Sum 1 for nonempty DiedfromInj other than source report literal \"0\", otherwise 0. Join by supplied establishment attribution and OII.MonthYearHelp derived from DateUserEntered. Lo/Ru equal for flat scope. Source: [SM-KPI] 02 - Location KPI Data (graphId 2737); report-context logic, not a field formula."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        }
+      ],
+      "action": "Add",
+      "isLocationBound": false
+    },
+    {
+      "name": "Establishment Incident Rate KPI",
+      "internalName": "TG_EstIncidentRateKPIObject",
+      "abstract": false,
+      "inheritanceParent": "TG_EstIncRateAbstractObject",
+      "source": "SafetyMetrics_IncidentRateKPIObject",
+      "fields": [
+        {
+          "name": "TargetLTIR",
+          "caption": "Target LTIR",
+          "sourceName": "TargetLTIR",
+          "sourceRecordId": "031ca632-f345-4473-b527-ecd11cfa358a",
+          "sourceGraphId": "21",
+          "contract": [
+            "Target LTIR",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Authorized analytics administrator editable",
+            "Manual target, preserved by A2; not an actual calculated rate"
+          ]
+        },
+        {
+          "name": "TargetSeverRate",
+          "caption": "Target Severity Rate",
+          "sourceName": "TargetSeverRate",
+          "sourceRecordId": "69e835da-1299-4987-9623-60ecdc24a5c3",
+          "sourceGraphId": "34",
+          "contract": [
+            "Target Severity Rate",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Authorized analytics administrator editable",
+            "Manual target, preserved by A2; not an actual calculated rate"
+          ]
+        },
+        {
+          "name": "TargetDART",
+          "caption": "Target DAIR",
+          "sourceName": "TargetDART",
+          "sourceRecordId": "3b534394-89c5-4df7-ba5d-47a458045aa4",
+          "sourceGraphId": "38",
+          "contract": [
+            "Target DAIR",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Authorized analytics administrator editable",
+            "Manual target, preserved by A2; not an actual calculated rate"
+          ]
+        },
+        {
+          "name": "TargetTRIR",
+          "caption": "Target TRIR",
+          "sourceName": "TargetTRIR",
+          "sourceRecordId": "6b07875f-d712-432e-a5f3-1e41cc5877ed",
+          "sourceGraphId": "42",
+          "contract": [
+            "Target TRIR",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Authorized analytics administrator editable",
+            "Manual target, preserved by A2; not an actual calculated rate"
+          ]
+        }
+      ],
+      "action": "Add",
+      "isLocationBound": false
+    },
+    {
+      "name": "Establishment OSHA Abstract",
+      "internalName": "TG_EstOSHAAbstractObject",
+      "abstract": true,
+      "inheritanceParent": null,
+      "source": "SafetyMetrics_OSHAAbstractObject",
+      "fields": [
+        {
+          "name": "RuNumRstOrJobTr",
+          "caption": "Total number of job transfer or restriction days (L) - roll up",
+          "sourceName": "RuNumRstOrJobTr",
+          "sourceRecordId": "a5121aa8-ff73-4602-a75a-9a3554ecd256",
+          "sourceGraphId": "9",
+          "contract": [
+            "Total number of job transfer or restriction days (L) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums NumJobTAndRest across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuNumDaysAway",
+          "caption": "Total number of days away from work (K) - roll up",
+          "sourceName": "RuNumDaysAway",
+          "sourceRecordId": "24eb3202-85fc-4b70-9833-957ab9a81749",
+          "sourceGraphId": "15",
+          "contract": [
+            "Total number of days away from work (K) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums NumDaysAwayOSHA across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtInjuries",
+          "caption": "Injuries (M1) - roll up",
+          "sourceName": "RuCtInjuries",
+          "sourceRecordId": "e7939fe3-d879-4001-9d64-076e0af2a305",
+          "sourceGraphId": "131",
+          "contract": [
+            "Injuries (M1) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiInjury across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtRespiratorC",
+          "caption": "Respiratory Conditions (M3) - establishment",
+          "sourceName": "LoCtRespiratorC",
+          "sourceRecordId": "5bca326a-4a16-411d-a2f2-23c4a4cd6bed",
+          "sourceGraphId": "135",
+          "contract": [
+            "Respiratory Conditions (M3) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiRsprtryCd across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "OSHAEstablishment",
+          "caption": "OSHA Establishment",
+          "sourceName": "Location",
+          "sourceRecordId": "f42c96ef-7f7e-40d3-bbbf-e49835d3676e",
+          "sourceGraphId": "137",
+          "contract": [
+            "OSHA Establishment",
+            "M:1 to OSHA Establishment; exactly 1 target per record; inverse OSHA Summaries",
+            "Y",
+            "None; mandatory generation/import scope",
+            "Read only on generated period forms; A2/A3 supplies scope; historical inactive references retained",
+            "A2/A3 supplies reference at creation; no ordinary user reassignment of generated periods"
+          ]
+        },
+        {
+          "name": "RuCtOthrRecrdbl",
+          "caption": "Other Recordable Cases (J) - roll up",
+          "sourceName": "RuCtOthrRecrdbl",
+          "sourceRecordId": "ce337920-028b-4d77-b139-0fc00d17c2eb",
+          "sourceGraphId": "145",
+          "contract": [
+            "Other Recordable Cases (J) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcOtherRec across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtAllOtherIln",
+          "caption": "All other illnesses (M6) - establishment",
+          "sourceName": "LoCtAllOtherIln",
+          "sourceRecordId": "ff14c5af-f2b1-4ec7-a051-cd31d6ac9115",
+          "sourceGraphId": "147",
+          "contract": [
+            "All other illnesses (M6) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiAllOthrIl across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtOthrRecrdbl",
+          "caption": "Other Recordable Cases (J) - establishment",
+          "sourceName": "LoCtOthrRecrdbl",
+          "sourceRecordId": "2a2c5443-282f-4812-8c61-b99fb90947c4",
+          "sourceGraphId": "153",
+          "contract": [
+            "Other Recordable Cases (J) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcOtherRec across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtTrnfrOrRest",
+          "caption": "Job Transfer or Restricted Days Cases (I) - roll up",
+          "sourceName": "RuCtTrnfrOrRest",
+          "sourceRecordId": "b8f0c569-6ac0-4604-8c6d-1bb2e3aafa72",
+          "sourceGraphId": "155",
+          "contract": [
+            "Job Transfer or Restricted Days Cases (I) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcJobTrRest across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LocationStreet",
+          "caption": "Establishment Street",
+          "sourceName": "LocationStreet",
+          "sourceRecordId": "9c44cf39-500b-4edf-a0c2-4f84e72fe54c",
+          "sourceGraphId": "161",
+          "contract": [
+            "Establishment Street",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Street",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "Date",
+          "caption": "Date",
+          "sourceName": "Date",
+          "sourceRecordId": "c5a85721-a4f8-432a-b2a0-0b9d3624f1ef",
+          "sourceGraphId": "165",
+          "contract": [
+            "Date",
+            "Date; calendar date, timezone capture disabled",
+            "Y",
+            "None; A2 supplies month start or A3 supplies January 1",
+            "Read only; analytics users may view",
+            "A3 sets January 1; unique OSHAEstablishment + Date"
+          ]
+        },
+        {
+          "name": "LoCtPoisonings",
+          "caption": "Poisonings (M4) - establishment",
+          "sourceName": "LoCtPoisonings",
+          "sourceRecordId": "262eba6d-19ba-4a5a-88df-6c05429d0c8c",
+          "sourceGraphId": "176",
+          "contract": [
+            "Poisonings (M4) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiPoisoning across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtHearingLoss",
+          "caption": "Hearing loss (M5) - establishment",
+          "sourceName": "LoCtHearingLoss",
+          "sourceRecordId": "1b8905a2-21ff-454c-9797-b3fe4eb16935",
+          "sourceGraphId": "191",
+          "contract": [
+            "Hearing loss (M5) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiHringLoss across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtSkinDisordr",
+          "caption": "Skin Disorders (M2) - roll up",
+          "sourceName": "RuCtSkinDisordr",
+          "sourceRecordId": "c9f65332-c642-40cf-a145-087ea8d1f5c9",
+          "sourceGraphId": "195",
+          "contract": [
+            "Skin Disorders (M2) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiSkinDsrdr across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtRespiratorC",
+          "caption": "Respiratory Conditions (M3) - roll up",
+          "sourceName": "RuCtRespiratorC",
+          "sourceRecordId": "30df76e2-4500-4238-8b33-5cdf7d9fe715",
+          "sourceGraphId": "245",
+          "contract": [
+            "Respiratory Conditions (M3) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiRsprtryCd across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtFatalities",
+          "caption": "Death (G) - establishment",
+          "sourceName": "LoCtFatalities",
+          "sourceRecordId": "82889c5a-9b60-416e-9ece-8fed03c7347f",
+          "sourceGraphId": "255",
+          "contract": [
+            "Death (G) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcFatality across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtTrnfrOrRest",
+          "caption": "Job Transfer or Restricted Days Cases (I) - establishment",
+          "sourceName": "LoCtTrnfrOrRest",
+          "sourceRecordId": "e4fd521f-134f-4fbd-a0f5-36bd889f6f04",
+          "sourceGraphId": "261",
+          "contract": [
+            "Job Transfer or Restricted Days Cases (I) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcJobTrRest across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtInjuries",
+          "caption": "Injuries (M1) - establishment",
+          "sourceName": "LoCtInjuries",
+          "sourceRecordId": "3a3a3464-8f8d-4c40-9b77-1d8065403771",
+          "sourceGraphId": "263",
+          "contract": [
+            "Injuries (M1) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiInjury across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LocationCity",
+          "caption": "Establishment City",
+          "sourceName": "LocationCity",
+          "sourceRecordId": "9bf7245e-afd1-41cd-a3b0-69fb5686420c",
+          "sourceGraphId": "265",
+          "contract": [
+            "Establishment City",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.City",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "LocationPostal",
+          "caption": "Establishment Postal Code",
+          "sourceName": "LocationPostal",
+          "sourceRecordId": "c454ea65-dbc6-4b74-a769-560659e63488",
+          "sourceGraphId": "273",
+          "contract": [
+            "Establishment Postal Code",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Postal Code",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "RuCtFatalities",
+          "caption": "Death (G) - roll up",
+          "sourceName": "RuCtFatalities",
+          "sourceRecordId": "0ed2cf14-7c62-4262-a534-bc5d929cb673",
+          "sourceGraphId": "277",
+          "contract": [
+            "Death (G) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcFatality across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtDaysAway",
+          "caption": "Days Away From Work Cases (H) - roll up",
+          "sourceName": "RuCtDaysAway",
+          "sourceRecordId": "fe3e4d2f-9d3d-413d-ac0c-88394c569355",
+          "sourceGraphId": "279",
+          "contract": [
+            "Days Away From Work Cases (H) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcDaysAway across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LocationState",
+          "caption": "Establishment State",
+          "sourceName": "LocationState",
+          "sourceRecordId": "878a8c8e-7187-4146-b56d-6c0a0bdc1780",
+          "sourceGraphId": "281",
+          "contract": [
+            "Establishment State",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.State",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "RecordNo",
+          "caption": "Record No",
+          "sourceName": "RecordNo",
+          "sourceRecordId": "2fad4902-18fb-4b40-b2ac-8e9211f9934d",
+          "sourceGraphId": "283",
+          "contract": [
+            "Record No",
+            "AutoNumber, System.Int64",
+            "Y",
+            "None in metadata; native AutoNumber population required",
+            "Read only; analytics users may view",
+            "Native AutoNumber; new target sequence, never reuse source identity"
+          ]
+        },
+        {
+          "name": "LoCtDaysAway",
+          "caption": "Days Away From Work Cases (H) - establishment",
+          "sourceName": "LoCtDaysAway",
+          "sourceRecordId": "7dc3d0d1-5438-4b07-a349-e1633ef73495",
+          "sourceGraphId": "285",
+          "contract": [
+            "Days Away From Work Cases (H) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpOcDaysAway across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "ReporLocationId",
+          "caption": "[Helper] Establishment ID",
+          "sourceName": "ReporLocationId",
+          "sourceRecordId": "5e355ca1-cc36-407f-8373-ecc4a606164f",
+          "sourceGraphId": "287",
+          "contract": [
+            "[Helper] Establishment ID",
+            "GUID",
+            "Y",
+            "None; native GUID of OSHA Establishment reference",
+            "Read only; hidden on ordinary form",
+            "A2/A3 stamps at creation; hidden helper, never uses SysLocationEntity GUID"
+          ]
+        },
+        {
+          "name": "Year",
+          "caption": "Year",
+          "sourceName": "Year",
+          "sourceRecordId": "1a8efdf8-b524-4b21-ab8c-6d6f4d2e7059",
+          "sourceGraphId": "289",
+          "contract": [
+            "Year",
+            "Number / bigint, System.Int64",
+            "N",
+            "Calendar year of Date; A3 stores the year, matching source initialization report YEAR(Start Date); not an exported calculated field",
+            "Read only; analytics users may view",
+            "A3 stores year during annual generation; read only"
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtAllOtherIln",
+          "caption": "All other illnesses (M6) - roll up",
+          "sourceName": "RuCtAllOtherIln",
+          "sourceRecordId": "c1d0bf9f-99f3-42db-94d5-694fa3e5211d",
+          "sourceGraphId": "291",
+          "contract": [
+            "All other illnesses (M6) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiAllOthrIl across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LocationName",
+          "caption": "Establishment Display Name",
+          "sourceName": "LocationName",
+          "sourceRecordId": "29d14066-bcc0-462f-9799-c93c3c8b5c51",
+          "sourceGraphId": "293",
+          "contract": [
+            "Establishment Display Name",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Name",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "OIISettings",
+          "caption": "OII Settings",
+          "sourceName": "OIISettings",
+          "sourceRecordId": "3fad4677-eb32-4ec6-bd8d-ba01225d62d1",
+          "sourceGraphId": "297",
+          "contract": [
+            "OII Settings",
+            "M:1 to EHSIncidentMang_OIISettingObject; 0..1 target; inverse disabled",
+            "N",
+            "Export default points to b2102af3-2dbe-4bc2-9395-cd1202ae0192; resolve equivalent OII Setting in destination",
+            "Read only; hidden on ordinary summary form",
+            "A3 binds destination settings before report availability; never assume source GUID is portable"
+          ]
+        },
+        {
+          "name": "LoNumDaysAway",
+          "caption": "Total number of days away from work (K) - establishment",
+          "sourceName": "LoNumDaysAway",
+          "sourceRecordId": "b31a896c-3489-42c2-b1b2-fb7aff0fd6da",
+          "sourceGraphId": "300",
+          "contract": [
+            "Total number of days away from work (K) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums NumDaysAwayOSHA across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtHearingLoss",
+          "caption": "Hearing loss (M5) - roll up",
+          "sourceName": "RuCtHearingLoss",
+          "sourceRecordId": "59abf339-8b77-4b3c-b276-8bee83c166f8",
+          "sourceGraphId": "302",
+          "contract": [
+            "Hearing loss (M5) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiHringLoss across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoCtSkinDisordr",
+          "caption": "Skin Disorders (M2) - establishment",
+          "sourceName": "LoCtSkinDisordr",
+          "sourceRecordId": "bb25f32a-b45b-430c-88c5-ac2f815ebd68",
+          "sourceGraphId": "304",
+          "contract": [
+            "Skin Disorders (M2) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiSkinDsrdr across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RuCtPoisonings",
+          "caption": "Poisonings (M4) - roll up",
+          "sourceName": "RuCtPoisonings",
+          "sourceRecordId": "82e4d214-767c-442b-bb68-ae3b68e8f871",
+          "sourceGraphId": "306",
+          "contract": [
+            "Poisonings (M4) - roll up",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums OSHARecord.HlpPiiPoisoning across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "LoNumRstOrJobTr",
+          "caption": "Total number of job transfer or restriction days (L) - establishment",
+          "sourceName": "LoNumRstOrJobTr",
+          "sourceRecordId": "f5f0367a-e7ba-416e-a02e-b4b121df1650",
+          "sourceGraphId": "308",
+          "contract": [
+            "Total number of job transfer or restriction days (L) - establishment",
+            "Number / bigint, System.Int64",
+            "N",
+            "0",
+            "Read only; analytics users may view",
+            "A3 sums NumJobTAndRest across OSHARecordable=TRUE Injury/Illness rows for the supplied establishment and OII.YearHelp year; empty report values become 0. Lo/Ru equal. Source: [SM-OSHA] 03 - Location Recordable Data (graphId 2652); preserve case helper values, do not recreate their unexported classification rules."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        }
+      ],
+      "action": "Add",
+      "isLocationBound": false
+    },
+    {
+      "name": "Establishment OSHA Summary",
+      "internalName": "TG_EstOSHASummaryObject",
+      "abstract": false,
+      "inheritanceParent": "TG_EstOSHAAbstractObject",
+      "source": "SafetyMetrics_OSHASummaryObject",
+      "fields": [
+        {
+          "name": "LoNumHrsWorked",
+          "caption": "Total hours worked by all employees this year Establishment",
+          "sourceName": "LoNumHrsWorked",
+          "sourceRecordId": "7f73b62a-cf80-4df3-b0fe-cefe289bee81",
+          "sourceGraphId": "70",
+          "contract": [
+            "Total hours worked by all employees this year Establishment",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Read only; analytics users may view",
+            "A3 sums EmployeeHrs from matching establishment monthly summaries for the calendar year; excludes ContractrHrs. Zero when source sum is not positive. Lo/Ru equal. Source reports 2620 and 2622; no source-row hours counted again."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "CompanyName",
+          "caption": "Company Name",
+          "sourceName": "CompanyName",
+          "sourceRecordId": "9f13e607-352d-4116-a8d7-5923ebefb8c2",
+          "sourceGraphId": "86",
+          "contract": [
+            "Company Name",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Company Name",
+            "Authorized analytics administrator editable",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ]
+        },
+        {
+          "name": "LoAvgNumEmploye",
+          "caption": "Annual average number of employees Establishment",
+          "sourceName": "LoAvgNumEmploye",
+          "sourceRecordId": "164ddcf5-d6b7-4681-a13e-2aa0a7c75c9a",
+          "sourceGraphId": "141",
+          "contract": [
+            "Annual average number of employees Establishment",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Read only; analytics users may view",
+            "A3 divides SUM(EmployeeHCount) by COUNT(monthly-summary Id) for the matching establishment/year; 0 if count is 0. Every existing monthly summary contributes to count, including zero-headcount records; missing months have no record to count. No rounding expression exported. Lo/Ru equal. Source reports 2620 and 2622."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "EINNumber",
+          "caption": "EIN Number",
+          "sourceName": "EINNumber",
+          "sourceRecordId": "54df0e7d-0cba-4c3d-933d-3319dbbe9b22",
+          "sourceGraphId": "167",
+          "contract": [
+            "EIN Number",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.EIN Number",
+            "Authorized analytics administrator editable",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ]
+        },
+        {
+          "name": "RuAvgNumEmploye",
+          "caption": "Annual average number of employees Rollup",
+          "sourceName": "RuAvgNumEmploye",
+          "sourceRecordId": "aa761ce1-4f94-4498-8f17-c22f9e85b42b",
+          "sourceGraphId": "216",
+          "contract": [
+            "Annual average number of employees Rollup",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Read only; analytics users may view",
+            "A3 divides SUM(EmployeeHCount) by COUNT(monthly-summary Id) for the matching establishment/year; 0 if count is 0. Every existing monthly summary contributes to count, including zero-headcount records; missing months have no record to count. No rounding expression exported. Lo/Ru equal. Source reports 2620 and 2622."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "RUNumHrsWorked",
+          "caption": "Total hours worked by all employees this year Rollup",
+          "sourceName": "RUNumHrsWorked",
+          "sourceRecordId": "a2f1fc86-b6b3-4734-8f73-e3f803ec86d9",
+          "sourceGraphId": "218",
+          "contract": [
+            "Total hours worked by all employees this year Rollup",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "None",
+            "Read only; analytics users may view",
+            "A3 sums EmployeeHrs from matching establishment monthly summaries for the calendar year; excludes ContractrHrs. Zero when source sum is not positive. Lo/Ru equal. Source reports 2620 and 2622; no source-row hours counted again."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "ChangeReason",
+          "caption": "Change Reason",
+          "sourceName": "ChangeReason",
+          "sourceRecordId": "689f5ee1-759e-4db1-ad42-806fd74c0389",
+          "sourceGraphId": "220",
+          "contract": [
+            "Change Reason",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "None",
+            "Authorized analytics administrator editable",
+            "Regulatory administrator maintains explanation for reporting correction; native audit; never overwritten by refresh"
+          ]
+        },
+        {
+          "name": "EstablishmeType",
+          "caption": "Establishment Type",
+          "sourceName": "EstablishmeType",
+          "sourceRecordId": "a8962428-408c-4f85-a90c-b5d65602e5f8",
+          "sourceGraphId": "238",
+          "contract": [
+            "Establishment Type",
+            "M:1 to EHSIncidentMang_EstablishmeTypeObject; 0..1 target; inverse disabled",
+            "N",
+            "At initial annual generation: OSHA Establishment.Establishment Type",
+            "Regulatory administrator editable; preserve selected inactive/legacy values; new selections use native Deleted=FALSE; retain existing references if a value is later deleted",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "EstablishmeName",
+          "caption": "Establishment Name",
+          "sourceName": "EstablishmeName",
+          "sourceRecordId": "7f49a072-cee4-4999-8eeb-6abe1317f99b",
+          "sourceGraphId": "243",
+          "contract": [
+            "Establishment Name",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Name",
+            "Authorized analytics administrator editable",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ]
+        },
+        {
+          "name": "EstablishmtSize",
+          "caption": "Establishment Size",
+          "sourceName": "EstablishmtSize",
+          "sourceRecordId": "a82aed57-7855-4f18-9ab1-fdf1c69b6bf1",
+          "sourceGraphId": "324",
+          "contract": [
+            "Establishment Size",
+            "M:1 to EHSIncidentMang_EstablishmeSizeObject; 0..1 target; inverse disabled",
+            "N",
+            "At initial annual generation: OSHA Establishment.Establishment Size",
+            "Regulatory administrator editable; preserve selected inactive/legacy values; new selections use native Deleted=FALSE; retain existing references if a value is later deleted",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "SICCode",
+          "caption": "SIC Code",
+          "sourceName": "SICCode",
+          "sourceRecordId": "68a49357-d504-4af5-a22b-09bc278011d6",
+          "sourceGraphId": "335",
+          "contract": [
+            "SIC Code",
+            "Number / bigint, System.Int64",
+            "N",
+            "At initial annual generation: OSHA Establishment.SIC Code",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "AssociatedOIIs",
+          "caption": "Associated OIIs",
+          "sourceName": "AssociatedOIIs",
+          "sourceRecordId": "d4d44121-35de-45c8-81b0-7762edcc4be6",
+          "sourceGraphId": "339",
+          "contract": [
+            "Associated OIIs",
+            "Related Injury/Illness collection, 0..* results; proposed inverse 1:M navigation over the separately owned establishment-summary reference; no duplicate stored relationship",
+            "N",
+            "None",
+            "Read only in target; authorized regulatory users; recordable-only log grid",
+            "A3 resolves establishment/year recordable OII membership using the separately supplied declaring reference/query. Source OII.OSHASummary and AssociatedOIIs direction are now known; do not repoint the existing location-summary reference. Incident attribution, exact new declaring field, case deduplication and inverse binding remain open under IN-06."
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "NAICSCode",
+          "caption": "NAICS Code",
+          "sourceName": "NAICSCode",
+          "sourceRecordId": "47bb1cfb-ab61-4fa3-8143-2e34999f7042",
+          "sourceGraphId": "343",
+          "contract": [
+            "NAICS Code",
+            "Number / bigint, System.Int64",
+            "N",
+            "At initial annual generation: OSHA Establishment.NAICS Code",
+            "Read only; analytics users may view",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+          ]
+        },
+        {
+          "name": "AnyRecrdblIncid",
+          "caption": "Any Recordable Incidents",
+          "sourceName": "AnyRecrdblIncid",
+          "sourceRecordId": "134ce6e9-7a4b-4375-9809-61b900c1458c",
+          "sourceGraphId": "345",
+          "contract": [
+            "Any Recordable Incidents",
+            "M:1 to EHSIncidentMang_HasRecordaInjurObject; 0..1 target; inverse disabled",
+            "N",
+            "None",
+            "Regulatory administrator editable; preserve selected inactive/legacy values; new selections use native Deleted=FALSE; retain existing references if a value is later deleted",
+            "Annual submission value; preserve manual edit on refresh and validate against totals before output; source lookup Value 1 = had injuries/illnesses, Value 2 = did not have injuries/illnesses; see 4.9.4"
+          ],
+          "evidence": "Proposed target; revision 3 behavior refined using package 1.0.1.0"
+        },
+        {
+          "name": "OSHA300aID",
+          "caption": "OSHA 300a ID",
+          "sourceName": "OSHA300aID",
+          "sourceRecordId": "51f0ddfd-d3c4-4f3a-aafc-1b24503985e3",
+          "sourceGraphId": "348",
+          "contract": [
+            "OSHA 300a ID",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.OSHA 300a ID",
+            "Authorized analytics administrator editable",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ]
+        },
+        {
+          "name": "EstablishmentID",
+          "caption": "Establishment ID",
+          "sourceName": "EstablishmentID",
+          "sourceRecordId": "aafd4e82-84fd-49d0-b28d-007ab5da2b6a",
+          "sourceGraphId": "350",
+          "contract": [
+            "Establishment ID",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Establishment ID",
+            "Authorized analytics administrator editable",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ]
+        },
+        {
+          "name": "InduDescription",
+          "caption": "Industry Description",
+          "sourceName": "InduDescription",
+          "sourceRecordId": "50892a20-7c08-457d-bc3b-d410e1e7036b",
+          "sourceGraphId": "352",
+          "contract": [
+            "Industry Description",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "At initial annual generation: OSHA Establishment.Industry Description",
+            "Authorized analytics administrator editable",
+            "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+          ]
+        }
+      ],
+      "action": "Add",
+      "isLocationBound": false
+    },
+    {
+      "name": "Establishment Hours and Headcount",
+      "internalName": "TG_EstHrsHeadcountObject",
+      "abstract": false,
+      "inheritanceParent": null,
+      "source": "SafetyMetrics_HrsandHeadcountObject",
+      "fields": [
+        {
+          "name": "Date",
+          "caption": "Date",
+          "sourceName": "Date",
+          "sourceRecordId": "80e3ba70-b105-4c23-829a-9433ce6965da",
+          "sourceGraphId": "82",
+          "contract": [
+            "Date",
+            "Date; calendar date, timezone capture disabled",
+            "Y",
+            "A0 copies Hours Worked.Month on generated creation; native MonthStartValueGenerator on headcount-only creation",
+            "Headcount editor selects at creation; read only after save",
+            "A1 validates DAY(Date)=1; unique OSHAEstablishment + Date; monthly-summary identity fixed after creation"
+          ]
+        },
+        {
+          "name": "ContractrHCount",
+          "caption": "Contractor Headcount",
+          "sourceName": "ContractrHCount",
+          "sourceRecordId": "53042940-5f4b-47e0-908b-f58a2871e5e5",
+          "sourceGraphId": "157",
+          "contract": [
+            "Contractor Headcount",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Authorized headcount editor editable; API/import uses the same validation; retain source numeric type and default",
+            "A1 preserves independent headcount maintenance; never sum from Hours Worked entries; A3 refreshes employment values after changes"
+          ]
+        },
+        {
+          "name": "EmployeeHrs",
+          "caption": "Employees Hours",
+          "sourceName": "EmployeeHrs",
+          "sourceRecordId": "b198518e-dcbb-42ef-86c7-21a9410bb556",
+          "sourceGraphId": "169",
+          "contract": [
+            "Employees Hours",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0 at creation; A0 replaces with sum of Hours Worked.Employee Hours matching OSHAEstablishment and Month = Date",
+            "Read only to ordinary users/API/import clients; authorized processor writes only",
+            "A0 fully recomputes after source create/change/delete/rebuild; zero for empty set after successful refresh; no manual override"
+          ]
+        },
+        {
+          "name": "OSHAEstablishment",
+          "caption": "OSHA Establishment",
+          "sourceName": "Location",
+          "sourceRecordId": "a651c5f7-7c6c-4a4f-8b98-2e166cc3e2cb",
+          "sourceGraphId": "185",
+          "contract": [
+            "OSHA Establishment",
+            "M:1 to OSHA Establishment; exactly 1 target per record; inverse Hours and Headcounts",
+            "Y",
+            "None; A0 supplies scope, or headcount editor selects at summary creation",
+            "Required at creation; new selections Active?=TRUE; read only after save; inactive historical references retained",
+            "A1 validates unique monthly identity; correct contribution attribution on Hours Worked, not by reassigning this summary"
+          ]
+        },
+        {
+          "name": "LocNameHelper",
+          "caption": "[Helper] Establishment Name",
+          "sourceName": "LocNameHelper",
+          "sourceRecordId": "7d5c95fb-f74e-4ed3-82bc-719b34cb943a",
+          "sourceGraphId": "249",
+          "contract": [
+            "[Helper] Establishment Name",
+            "Text / nvarchar; length not constrained in export",
+            "N",
+            "None; populated from OSHA Establishment.Name",
+            "Read only; analytics users may view",
+            "A1 stamps OSHA Establishment.Name at summary creation; preserve historical label on master rename/deactivation; explicit audited correction allowed"
+          ]
+        },
+        {
+          "name": "EmployeeHCount",
+          "caption": "Employees Headcount",
+          "sourceName": "EmployeeHCount",
+          "sourceRecordId": "f635f6de-9084-4174-b0d6-99e40f60b943",
+          "sourceGraphId": "253",
+          "contract": [
+            "Employees Headcount",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Authorized headcount editor editable; API/import uses the same validation; retain source numeric type and default",
+            "A1 preserves independent headcount maintenance; never sum from Hours Worked entries; A3 refreshes employment values after changes"
+          ]
+        },
+        {
+          "name": "RecordNo",
+          "caption": "Record No",
+          "sourceName": "RecordNo",
+          "sourceRecordId": "b5ba29e0-3e7d-48e2-b44b-b7f855d6bce8",
+          "sourceGraphId": "314",
+          "contract": [
+            "Record No",
+            "AutoNumber, System.Int64",
+            "N",
+            "Native auto-number sequence (source generator exported)",
+            "Read only; analytics users may view",
+            "Native AutoNumber; new target sequence, never reuse source identity"
+          ]
+        },
+        {
+          "name": "ContractrHrs",
+          "caption": "Contractor Hours",
+          "sourceName": "ContractrHrs",
+          "sourceRecordId": "62554d93-ac70-4361-ae19-7adf524d591a",
+          "sourceGraphId": "316",
+          "contract": [
+            "Contractor Hours",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0 at creation; A0 replaces with sum of Hours Worked.Contractor Hours matching OSHAEstablishment and Month = Date",
+            "Read only to ordinary users/API/import clients; authorized processor writes only",
+            "A0 fully recomputes after source create/change/delete/rebuild; zero for empty set after successful refresh; no manual override"
+          ]
+        },
+        {
+          "name": "HoursWorkedEntries",
+          "caption": "Hours Worked Entries",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Hours Worked Entries",
+            "Inverse 1:M grid from Hours Worked.Establishment Hours and Headcount",
+            "N",
+            "None",
+            "Read only; authorized hours/analytics users",
+            "Navigation over Hours Worked.EstablishmentHoursHeadcount; no duplicate relationship storage"
+          ]
+        }
+      ],
+      "action": "Add",
+      "isLocationBound": false
+    },
+    {
+      "name": "Location Hours and Headcount",
+      "internalName": "SafetyMetrics_HrsandHeadcountObject",
+      "source": "SafetyMetrics_HrsandHeadcountObject",
+      "sourceRecordId": "0f0ecb2a-5f62-4faf-9609-b98873007c83",
+      "action": "Modify",
+      "abstract": false,
+      "inheritanceParent": null,
+      "isLocationBound": true,
+      "fields": [
+        {
+          "name": "Date",
+          "caption": "Date",
+          "sourceName": "Date",
+          "sourceRecordId": "80e3ba70-b105-4c23-829a-9433ce6965da",
+          "sourceGraphId": "82",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Date",
+            "Date; calendar date; timezone capture disabled",
+            "Y",
+            "A0 copies Hours Worked.Month on generated creation; existing MonthStartValueGenerator on headcount-only creation",
+            "Headcount editor selects at creation; read only after save",
+            "A1 retains DAY(Date)=1 and unique Location + Date; fixed monthly-summary identity after creation"
+          ]
+        },
+        {
+          "name": "ContractrHCount",
+          "caption": "Contractor Headcount",
+          "sourceName": "ContractrHCount",
+          "sourceRecordId": "53042940-5f4b-47e0-908b-f58a2871e5e5",
+          "sourceGraphId": "157",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Contractor Headcount",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Authorized headcount editor editable; retain existing numeric type/default, permissions and headcount imports",
+            "A1 preserves independent headcount maintenance; never sum from Hours Worked; A4 refreshes downstream employment values"
+          ]
+        },
+        {
+          "name": "EmployeeHrs",
+          "caption": "Employees Hours",
+          "sourceName": "EmployeeHrs",
+          "sourceRecordId": "b198518e-dcbb-42ef-86c7-21a9410bb556",
+          "sourceGraphId": "169",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Employees Hours",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0 at creation; A0 replaces with sum of Hours Worked.Employee Hours matching Location and Month = Date",
+            "Read only to users/API/import clients after governed cutover; authorized processor writes only",
+            "A0 fully recomputes direct/local source contributions; never fan out input to ancestors; zero for empty set after successful refresh"
+          ]
+        },
+        {
+          "name": "Location",
+          "caption": "Location",
+          "sourceName": "Location",
+          "sourceRecordId": "a651c5f7-7c6c-4a4f-8b98-2e166cc3e2cb",
+          "sourceGraphId": "185",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Location",
+            "M:1 to SysLocationEntity; exactly 1 target; preserve existing inverse configuration (not exported)",
+            "Y",
+            "None; A0 supplies scope, or headcount editor selects at creation",
+            "Required at creation; new selections Deleted=FALSE and existing location permissions; read only after save; historical references retained",
+            "A1 retains required scope and unique Location + Date; preserve system relationship and inverse; correct attribution through Hours Worked"
+          ]
+        },
+        {
+          "name": "LocNameHelper",
+          "caption": "Location Name Helper",
+          "sourceName": "LocNameHelper",
+          "sourceRecordId": "7d5c95fb-f74e-4ed3-82bc-719b34cb943a",
+          "sourceGraphId": "249",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2; revision 3 behavior refined using package 1.0.1.0",
+          "contract": [
+            "Location Name Helper",
+            "Text / nvarchar; maximum length unresolved in export",
+            "N",
+            "Existing helper population from Location.Name",
+            "Read only; authorized analytics users",
+            "Retain Set Location Name Helper, stable GUID 5d1ff7d0-0a65-455f-a19b-8ab03332b0d9 (new graphId 2527; original graphId 247): if AND(ISCHANGED(Location), NOT(Location.Deleted)), set LocNameHelper=Location.Name. Numeric ActionType=3 event semantics remain unverified; A1 initializes processor-created summaries and preserves archived labels."
+          ]
+        },
+        {
+          "name": "EmployeeHCount",
+          "caption": "Employees Headcount",
+          "sourceName": "EmployeeHCount",
+          "sourceRecordId": "f635f6de-9084-4174-b0d6-99e40f60b943",
+          "sourceGraphId": "253",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Employees Headcount",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0",
+            "Authorized headcount editor editable; retain existing numeric type/default, permissions and headcount imports",
+            "A1 preserves independent headcount maintenance; never sum from Hours Worked; A4 refreshes downstream employment values"
+          ]
+        },
+        {
+          "name": "RecordNo",
+          "caption": "Record No",
+          "sourceName": "RecordNo",
+          "sourceRecordId": "b5ba29e0-3e7d-48e2-b44b-b7f855d6bce8",
+          "sourceGraphId": "314",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Record No",
+            "AutoNumber, System.Int64",
+            "N",
+            "Existing native AutoNumber sequence",
+            "Read only; authorized analytics users",
+            "Retain native AutoNumber; preserve existing record identities"
+          ]
+        },
+        {
+          "name": "ContractrHrs",
+          "caption": "Contractor Hours",
+          "sourceName": "ContractrHrs",
+          "sourceRecordId": "62554d93-ac70-4361-ae19-7adf524d591a",
+          "sourceGraphId": "316",
+          "evidence": "Extracted field; modified lifecycle is Proposed revision 2",
+          "contract": [
+            "Contractor Hours",
+            "Float, System.Double; precision/scale not constrained in export",
+            "N",
+            "0 at creation; A0 replaces with sum of Hours Worked.Contractor Hours matching Location and Month = Date",
+            "Read only to users/API/import clients after governed cutover; authorized processor writes only",
+            "A0 fully recomputes direct/local source contributions; never fan out input to ancestors; zero for empty set after successful refresh"
+          ]
+        },
+        {
+          "name": "HoursWorkedEntries",
+          "caption": "Hours Worked Entries",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Hours Worked Entries",
+            "Inverse 1:M grid from Hours Worked.Location Hours and Headcount",
+            "N",
+            "None",
+            "Read only; retain location-scoped access; source access separately checked",
+            "Navigation over Hours Worked.LocationHoursHeadcount; no duplicate relationship storage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hours Worked",
+      "internalName": "TG_HoursWorkedObject",
+      "action": "Add",
+      "abstract": false,
+      "inheritanceParent": null,
+      "isLocationBound": false,
+      "fields": [
+        {
+          "name": "SourceEntryID",
+          "caption": "Source Entry ID",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Source Entry ID",
+            "Text, max 255; unique within Hours Worked; non-localizable",
+            "Y",
+            "Import: caller supplies namespaced stable key; manual create: A0 supplies manual: followed by native record GUID using supported creation mechanism",
+            "Required on import; read only after creation; configured record display value",
+            "A0 enforces unique create; updates reuse stable key; generation timing must be verified; no reinsertion on retry"
+          ]
+        },
+        {
+          "name": "Month",
+          "caption": "Month",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Month",
+            "Date; calendar date; timezone capture disabled",
+            "Y",
+            "Native MonthStartValueGenerator at creation",
+            "Hours editor editable; visible in all modes; reject dates other than first day of month",
+            "A0 watches Month; correction refreshes/relinks original and corrected periods; scope [Month, next month start)"
+          ]
+        },
+        {
+          "name": "Location",
+          "caption": "Location",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Location",
+            "M:1 to SysLocationEntity; 0..1 target; inverse disabled on this new dimension reference",
+            "Conditional",
+            "NULL",
+            "Visible/editable in all modes; required when OSHA Establishment is NULL; new selections Deleted=FALSE and existing location permissions; no login/home-location default",
+            "A0 enforces at least one dimension; clearing permitted only if OSHA Establishment remains populated; clear LocationHoursHeadcount and refresh original scope; retain existing archived references"
+          ]
+        },
+        {
+          "name": "OSHAEstablishment",
+          "caption": "OSHA Establishment",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "OSHA Establishment",
+            "M:1 to OSHA Establishment; 0..1 target; inverse disabled on this dimension reference",
+            "Conditional",
+            "NULL",
+            "Visible/editable in all modes; required when Location is NULL; new selections Active?=TRUE; no default from Location; retain existing inactive references",
+            "A0 enforces at least one dimension; clearing permitted only if Location remains populated; clear EstablishmentHoursHeadcount and refresh original scope; Location changes never force/clear this reference"
+          ]
+        },
+        {
+          "name": "EmployeeHours",
+          "caption": "Employee Hours",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Employee Hours",
+            "Float, System.Double; unit hours; finite and >= 0; no further precision/scale constraint",
+            "Y",
+            "0",
+            "Hours editor editable; visible in all modes; deliberate zero permitted; NULL rejected",
+            "A0 watches EmployeeHours; contributes once per selected dimension; full recomputation on correction"
+          ]
+        },
+        {
+          "name": "ContractorHours",
+          "caption": "Contractor Hours",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Contractor Hours",
+            "Float, System.Double; unit hours; finite and >= 0; no further precision/scale constraint",
+            "Y",
+            "0",
+            "Hours editor editable; visible in all modes; deliberate zero permitted; NULL rejected",
+            "A0 watches ContractorHours; preserve contractor population separately; negative adjustments rejected, correct original source entry instead"
+          ]
+        },
+        {
+          "name": "LocationHoursHeadcount",
+          "caption": "Location Hours and Headcount",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Location Hours and Headcount",
+            "M:1 to Location Hours and Headcount; 0..1 target; inverse Hours Worked Entries",
+            "Conditional",
+            "NULL until A0 resolves applicable summary within successful save",
+            "Read only; visible/required at completed save when Location is populated; NULL and hidden when Location is NULL",
+            "A0 assigns unique summary with Location = this Location and Date = Month; relink/clear on dimension/Month correction; reject client-supplied links"
+          ]
+        },
+        {
+          "name": "EstablishmentHoursHeadcount",
+          "caption": "Establishment Hours and Headcount",
+          "evidence": "Proposed revision 2",
+          "contract": [
+            "Establishment Hours and Headcount",
+            "M:1 to Establishment Hours and Headcount; 0..1 target; inverse Hours Worked Entries",
+            "Conditional",
+            "NULL until A0 resolves applicable summary within successful save",
+            "Read only; visible/required at completed save when OSHA Establishment is populated; NULL and hidden when it is NULL",
+            "A0 assigns unique summary with OSHAEstablishment = this OSHAEstablishment and Date = Month; relink/clear on dimension/Month correction; reject client-supplied links"
+          ]
+        }
+      ]
+    }
+  ],
+  "revision": 3,
+  "previousTarget": "history/v2/target-model.json",
+  "baselineSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "requirements": {
+    "refined": [
+      "R1",
+      "R2",
+      "R6",
+      "R8"
+    ],
+    "added": [
+      "R7",
+      "R8",
+      "R9"
+    ],
+    "superseded": [
+      "Separate direct-hour entry on the two monthly summary families",
+      "No change to original Location Hours and Headcount hour-entry behavior"
+    ]
+  },
+  "additionalBaselineEvidence": {
+    "version": "1.0.1.0",
+    "sha256": "8730cf3b3ea68e6d1a8a00964f1809de525da9b7c6c26f9f1b9cc0934cb29ac4",
+    "file": "package-evidence-v1.0.1.0.json",
+    "classification": "Extracted additional source evidence; not a target deployment"
+  },
+  "sourceCalculationRules": {
+    "monthly": {
+      "CtIncidents": "Count Injury/Illness.Id rows in the establishment/month population; not generic Incident rows or distinct OSHA cases",
+      "CtRecordable": "Sum 1 for a nonempty OSHARecordable value other than the source report literal \"0\", otherwise 0; reproduce the source report Boolean conversion behavior",
+      "NumIncDayAway": "Sum 1 when NumDaysAway > 0, otherwise 0",
+      "NumIncLostTim": "Sum 1 when NumDaysAway + NumJobTransfer + NumRestrictDay > 0, otherwise 0",
+      "NumFatalities": "Sum 1 for nonempty DiedfromInj other than source report literal \"0\", otherwise 0",
+      "NumDaysAway": "Sum NumDaysAway, treating empty report values as 0",
+      "NumLostDays": "Sum NumDaysAway + NumJobTransfer + NumRestrictDay, treating empty report values as 0",
+      "NumTrnsfRstDy": "Sum NumJobTransfer + NumRestrictDay, treating empty report values as 0"
+    },
+    "annual": {
+      "CtFatalities": "OSHARecord.HlpOcFatality",
+      "CtDaysAway": "OSHARecord.HlpOcDaysAway",
+      "CtTrnfrOrRest": "OSHARecord.HlpOcJobTrRest",
+      "CtOthrRecrdbl": "OSHARecord.HlpOcOtherRec",
+      "NumDaysAway": "NumDaysAwayOSHA",
+      "NumRstOrJobTr": "NumJobTAndRest",
+      "CtInjuries": "OSHARecord.HlpPiiInjury",
+      "CtSkinDisordr": "OSHARecord.HlpPiiSkinDsrdr",
+      "CtRespiratorC": "OSHARecord.HlpPiiRsprtryCd",
+      "CtPoisonings": "OSHARecord.HlpPiiPoisoning",
+      "CtHearingLoss": "OSHARecord.HlpPiiHringLoss",
+      "CtAllOtherIln": "OSHARecord.HlpPiiAllOthrIl"
+    },
+    "annualEmployeeHours": "SUM(EmployeeHrs), 0 when sum not positive; excludes ContractrHrs",
+    "averageEmployeeHeadcount": "SUM(EmployeeHCount) / COUNT(monthly-summary Id), 0 when count=0; no explicit rounding",
+    "rateExpressions": "Unresolved; totals reports do not establish actual-rate dashboard rules"
+  },
+  "externalInputResolution": "external-input-resolution.json"
+}

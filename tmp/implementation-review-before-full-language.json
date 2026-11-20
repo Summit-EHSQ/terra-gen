@@ -1,0 +1,1321 @@
+{
+  "version": 1,
+  "reviewScope": "All 15 tasks: original full operative review retained after exact comparison; rewritten task-local input/readiness explanations manually reviewed in full. All 12 global input explanations and external responsibility constraints reviewed in business language.",
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "taskHash": "0ee688f76fb391d8997970a50db978900b8c5ad2c18ccb9f118f060cb072b361",
+      "renderedTaskHash": "55076fb5e531b5cadb6a2808315fbd45a97ce81023398d4eed37d01f1dff17de",
+      "evidenceReview": "Reviewed all sixteen register-field rows against the revision-2 master: exact text limits, Int64 industry codes, independent reporting IDs and existing Type/Size targets are explicit. Safety Metrics module caption was read from the source package. Code-after-use enforcement was moved to the security task because its reference targets do not exist during this task. Catalogue value filters remain a narrow supplied input, not invented fields or seed work. Language-only revision review: The revised text still asks only for the two existing classification lists, their codes and availability rules; it explicitly allows the other register work to continue.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the non-location-bound OSHA Establishment object, its sixteen business fields, unique code, audit and administration views in the existing Safety Metrics application. Configure the master field defaults and catalogue selectors; downstream navigation grids and the later reference-dependent code guard are owned by their consuming tasks.",
+          "mechanism": "OSHA Establishment business fields, unique-code validation and administration detail/inventory views."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Code (Code) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: Y. Default/population setting: None; unique, non-localizable. Field/control behavior: Administrator editable at creation and while unused; the later reference-dependent code guard is configured with the complete record-security outcome.",
+          "mechanism": "TG_OSHAEstablishmentObject.Code field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Name (Name) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 255; legal reporting label, non-localizable. Required: Y. Default/population setting: None. Field/control behavior: Establishment administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.Name field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Active? (Active) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Yes/No. Required: Y. Default/population setting: TRUE. Field/control behavior: Establishment administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.Active field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Company Name (CompanyName) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 255. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation.",
+          "mechanism": "TG_OSHAEstablishmentObject.CompanyName field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Street (Street) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 255. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation.",
+          "mechanism": "TG_OSHAEstablishmentObject.Street field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add City (City) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation.",
+          "mechanism": "TG_OSHAEstablishmentObject.City field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add State (State) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation.",
+          "mechanism": "TG_OSHAEstablishmentObject.State field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Postal Code (PostalCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 30. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation.",
+          "mechanism": "TG_OSHAEstablishmentObject.PostalCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add EIN Number (EINNumber) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 30. Required: N. Default/population setting: None. Field/control behavior: Administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.EINNumber field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add NAICS Code (NAICSCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: None. Field/control behavior: Administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.NAICSCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add SIC Code (SICCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: None. Field/control behavior: Administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.SICCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Industry Description (IndustryDescription) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 1000. Required: N. Default/population setting: None. Field/control behavior: Administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.IndustryDescription field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add Establishment Type (EstablishmentType) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeTypeObject, 0..1 target; inverse disabled. Required: N. Default/population setting: None. Field/control behavior: Administrator editable; preserve referenced values; available-value filter unresolved because catalogue fields are not exported.",
+          "mechanism": "TG_OSHAEstablishmentObject.EstablishmentType field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Establishment Size (EstablishmentSize) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeSizeObject, 0..1 target; inverse disabled. Required: N. Default/population setting: None. Field/control behavior: Administrator editable; preserve referenced values; available-value filter unresolved because catalogue fields are not exported.",
+          "mechanism": "TG_OSHAEstablishmentObject.EstablishmentSize field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Establishment ID (EstablishmentID) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: N. Default/population setting: None. Field/control behavior: Administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.EstablishmentID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add OSHA 300a ID (OSHA300aID) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: N. Default/population setting: None. Field/control behavior: Administrator editable.",
+          "mechanism": "TG_OSHAEstablishmentObject.OSHA300aID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the independent register and its two administration views with native audit.",
+          "mechanism": "TG_OSHAEstablishmentObject and TG_OSHAEstablishment_Detail/Inventory"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Introduce Code uniqueness and explicit Active/Name defaults; bind only supplied selector filters.",
+          "mechanism": "Code unique constraint, Active default and two catalogue reference controls"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add business-field controls without unconditional address requiredness.",
+          "mechanism": "OSHA Establishment administration form and conditional reporting-data controls"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The revised text still asks only for the two existing classification lists, their codes and availability rules; it explicitly allows the other register work to continue."
+      }
+    },
+    {
+      "id": "IMP-02",
+      "taskHash": "c25d0ea694ba062dc13a3d51c235360690aa676d966e3dcae4a943a78c2db6ee",
+      "renderedTaskHash": "0e1761ea5293d2a9c00a902c0f197f016b50c5f14b1b3f732823b6e36510ade3",
+      "evidenceReview": "Reviewed nineteen field/grid additions and three existing-change instructions. The original object audit flag is FALSE and original EmployeeHrs/ContractrHrs readonly flags are FALSE; those are real changes. Date/Location metadata and the actual detail-view controls are described precisely without asserting a live Location editor behavior. Original unique/date validators, sequence, headcounts and helper are reuse. Source links/inverses and conditional requiredness were checked against all three valid dimension modes. Creation binding/text capacity are explicit local blockers. Language-only revision review: Saved-summary protection and initial name copying remain separate from the shared synchronization assignment. The text-length and first-creation edit settings remain the only additional local details requested.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create Hours Worked and Establishment Hours and Headcount with their entry/detail/inventory views, conditional selectors, summary links, contribution grids and ordinary unique/date validation. Change the original location summary hour editability, protect saved summary identity, initialize the new summary label and add native audit to that original object. Atomic hour synchronization is owned by its specialist task.",
+          "mechanism": "Eight shared-input fields, nine establishment-summary fields/grids, one location-summary contribution grid, establishment summary navigation, updated location controls and summary validation."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Source Entry ID (SourceEntryID) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Text, max 255; unique within Hours Worked; non-localizable. Required: Y. Default/population setting: Import: caller supplies namespaced stable key; manual create: A0 supplies manual: followed by native record GUID using supported creation mechanism. Field/control behavior: Required on import; read only after creation; configured record display value.",
+          "mechanism": "TG_HoursWorkedObject.SourceEntryID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Month (Month) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Date; calendar date; timezone capture disabled. Required: Y. Default/population setting: Native MonthStartValueGenerator at creation. Field/control behavior: Hours editor editable; visible in all modes; reject dates other than first day of month.",
+          "mechanism": "TG_HoursWorkedObject.Month field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Location (Location) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to SysLocationEntity; 0..1 target; inverse disabled on this new dimension reference. Required: Conditional. Default/population setting: NULL. Field/control behavior: Visible/editable in all modes; required when OSHA Establishment is NULL; new selections Deleted=FALSE and existing location permissions; no login/home-location default.",
+          "mechanism": "TG_HoursWorkedObject.Location field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to OSHA Establishment; 0..1 target; inverse disabled on this dimension reference. Required: Conditional. Default/population setting: NULL. Field/control behavior: Visible/editable in all modes; required when Location is NULL; new selections Active?=TRUE; no default from Location; retain existing inactive references.",
+          "mechanism": "TG_HoursWorkedObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Employee Hours (EmployeeHours) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Float, System.Double; unit hours; finite and >= 0; no further precision/scale constraint. Required: Y. Default/population setting: 0. Field/control behavior: Hours editor editable; visible in all modes; deliberate zero permitted; NULL rejected.",
+          "mechanism": "TG_HoursWorkedObject.EmployeeHours field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Contractor Hours (ContractorHours) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Float, System.Double; unit hours; finite and >= 0; no further precision/scale constraint. Required: Y. Default/population setting: 0. Field/control behavior: Hours editor editable; visible in all modes; deliberate zero permitted; NULL rejected.",
+          "mechanism": "TG_HoursWorkedObject.ContractorHours field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add Location Hours and Headcount (LocationHoursHeadcount) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to Location Hours and Headcount; 0..1 target; inverse Hours Worked Entries. Required: Conditional. Default/population setting: NULL until A0 resolves applicable summary within successful save. Field/control behavior: Read only; visible/required at completed save when Location is populated; NULL and hidden when Location is NULL.",
+          "mechanism": "TG_HoursWorkedObject.LocationHoursHeadcount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Establishment Hours and Headcount (EstablishmentHoursHeadcount) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to Establishment Hours and Headcount; 0..1 target; inverse Hours Worked Entries. Required: Conditional. Default/population setting: NULL until A0 resolves applicable summary within successful save. Field/control behavior: Read only; visible/required at completed save when OSHA Establishment is populated; NULL and hidden when it is NULL.",
+          "mechanism": "TG_HoursWorkedObject.EstablishmentHoursHeadcount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Date (Date) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Date; calendar date, timezone capture disabled. Required: Y. Default/population setting: A0 copies Hours Worked.Month on generated creation; native MonthStartValueGenerator on headcount-only creation. Field/control behavior: Headcount editor selects at creation; read only after save.",
+          "mechanism": "TG_EstHrsHeadcountObject.Date field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Contractor Headcount (ContractrHCount) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Authorized headcount editor editable; API/import uses the same validation; retain source numeric type and default.",
+          "mechanism": "TG_EstHrsHeadcountObject.ContractrHCount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add Employees Hours (EmployeeHrs) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0 at creation; A0 replaces with sum of Hours Worked.Employee Hours matching OSHAEstablishment and Month = Date. Field/control behavior: Read only to ordinary users/API/import clients; authorized processor writes only.",
+          "mechanism": "TG_EstHrsHeadcountObject.EmployeeHrs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: M:1 to OSHA Establishment; exactly 1 target per record; inverse Hours and Headcounts. Required: Y. Default/population setting: None; A0 supplies scope, or headcount editor selects at summary creation. Field/control behavior: Required at creation; new selections Active?=TRUE; read only after save; inactive historical references retained.",
+          "mechanism": "TG_EstHrsHeadcountObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add [Helper] Establishment Name (LocNameHelper) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: None; populated from OSHA Establishment.Name. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstHrsHeadcountObject.LocNameHelper field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Employees Headcount (EmployeeHCount) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Authorized headcount editor editable; API/import uses the same validation; retain source numeric type and default.",
+          "mechanism": "TG_EstHrsHeadcountObject.EmployeeHCount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Record No (RecordNo) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: AutoNumber, System.Int64. Required: N. Default/population setting: Native auto-number sequence (source generator exported). Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstHrsHeadcountObject.RecordNo field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Contractor Hours (ContractrHrs) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0 at creation; A0 replaces with sum of Hours Worked.Contractor Hours matching OSHAEstablishment and Month = Date. Field/control behavior: Read only to ordinary users/API/import clients; authorized processor writes only.",
+          "mechanism": "TG_EstHrsHeadcountObject.ContractrHrs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Hours Worked Entries (HoursWorkedEntries) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Inverse 1:M grid from Hours Worked.Establishment Hours and Headcount. Required: N. Default/population setting: None. Field/control behavior: Read only; authorized hours/analytics users.",
+          "mechanism": "TG_EstHrsHeadcountObject.HoursWorkedEntries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add Hours Worked Entries (HoursWorkedEntries) on Location Hours and Headcount (SafetyMetrics_HrsandHeadcountObject). Type/relationship: Inverse 1:M grid from Hours Worked.Location Hours and Headcount. Required: N. Default/population setting: None. Field/control behavior: Read only; retain location-scoped access; source access separately checked.",
+          "mechanism": "SafetyMetrics_HrsandHeadcountObject.HoursWorkedEntries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Add Hours and Headcounts (HoursHeadcounts) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Inverse 1:M grid from Establishment Hours and Headcount.OSHA Establishment. Required: N. Default/population setting: None. Field/control behavior: Read only; authorized analytics users.",
+          "mechanism": "TG_OSHAEstablishmentObject.HoursHeadcounts field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create both new objects and four matching source/summary views.",
+          "mechanism": "TG_HoursWorkedObject, TG_EstHrsHeadcountObject and their detail/inventory views"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add source key/month rules and conditional dimension/link presentation.",
+          "mechanism": "SourceEntryID uniqueness, DAY(Month)=1 and source form controls"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add editable separate employee/contractor source-hour controls without duplicate server logic.",
+          "mechanism": "EmployeeHours and ContractorHours form controls on TG_HoursWorked_Detail"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add new establishment uniqueness and saved-summary identity/delete guard, reusing original validators.",
+          "mechanism": "New establishment validator and proposed Protect Monthly Summary Identity validation"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Initialize the new establishment-summary label only at creation.",
+          "mechanism": "Proposed Initialize Establishment Monthly Summary create Action Handler"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Enable headcount-only entry and readonly contribution navigation.",
+          "mechanism": "Monthly summary forms and HoursWorkedEntries inverse grids"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Enable audit on the exported unaudited location summary.",
+          "mechanism": "SafetyMetrics_HrsandHeadcountObject.IsAuditEnabled FALSE to TRUE"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Make existing summary hours readonly after the external cutover release.",
+          "mechanism": "EmployeeHrs/ContractrHrs field properties and SafetyMetrics_HrsandHeadcount_Detail controls"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Add saved-record Date/Location restrictions against the verified source controls.",
+          "mechanism": "Creation-only control rules and Protect Monthly Summary Identity server validation"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "Saved-summary protection and initial name copying remain separate from the shared synchronization assignment. The text-length and first-creation edit settings remain the only additional local details requested."
+      }
+    },
+    {
+      "id": "IMP-03",
+      "taskHash": "ff0fd510fa633cdbad36d0fc86837a7b6a0175a528b5747f866b33e8deb88806",
+      "renderedTaskHash": "b7a0e6dc98218758f286874557ab4614747d44e53a6ca0f2b501b5ba059e74d4",
+      "evidenceReview": "Reviewed thirty field/grid rows: twenty measures remain stored zero-default numeric fields; the five remaining base fields and four manual targets retain requiredness and types, with Location replaced by establishment. The master grid is a native inverse, not another stored relation. Monthly Date explicitly uses month start, removing ambiguous mixed monthly/annual wording. TargetDART retains the DAIR caption. Population is not claimed as exported. Missing text/AutoNumber settings are local, while stale source profile properties are excluded from the new views. Language-only revision review: The plain-language description preserves the missing name-field length and automatic numbering details while allowing the remaining KPI setup. No calculation rule or field setting was added.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the independent incident-rate abstract base and concrete KPI object, all twenty stored measures, period/establishment identity, helper fields and four manual targets. Add their two detail/inventory view pairs and establishment navigation; population and actual-rate report expressions remain owned by their consuming tasks.",
+          "mechanism": "Twenty-nine mapped monthly/KPI fields, monthly unique/date validation, two view pairs and master KPI navigation."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Record No (RecordNo) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: AutoNumber, System.Int64. Required: Y. Default/population setting: None in metadata; native AutoNumber population required. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RecordNo field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Date (Date) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Date; calendar date, timezone capture disabled. Required: Y. Default/population setting: None; Refresh Establishment Monthly Metrics supplies the first day of the requested month. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.Date field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: M:1 to OSHA Establishment; exactly 1 target per record; inverse Incident Rate KPIs. Required: Y. Default/population setting: None; mandatory generation/import scope. Field/control behavior: Read only on generated forms; supplied by Refresh Establishment Monthly Metrics; historical inactive references retained.",
+          "mechanism": "TG_EstIncRateAbstractObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Number of Days Away - Rollup (RuNumDaysAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuNumDaysAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Number of Recordable/Reportable - Rollup (RuCtRecordable) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuCtRecordable field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Number of Fatalities - Establishment (LoNumFatalities) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoNumFatalities field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add Number of Incidents - Rollup (RuCtIncidents) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuCtIncidents field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add [Helper] Establishment Name (LocNameHelper) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: None; populated from OSHA Establishment.Name. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LocNameHelper field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Number of Lost Days - Rollup (RuNumLostDays) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuNumLostDays field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Contractor Worked Hours - Establishment (LoCntrctWrkdHrs) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoCntrctWrkdHrs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add [Helper] Establishment ID (LocationIdHelp) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: GUID. Required: Y. Default/population setting: None; native GUID of OSHA Establishment reference. Field/control behavior: Read only; hidden on ordinary form.",
+          "mechanism": "TG_EstIncRateAbstractObject.LocationIdHelp field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Number of Incidents - Establishment (LoCtIncidents) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoCtIncidents field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add Number of Incidents with Days Away - Rollup (RuNumIncDayAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuNumIncDayAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Number of Lost Days - Establishment (LoNumLostDays) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoNumLostDays field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Number of Incidents with Days Away - Establishment (LoNumIncDayAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoNumIncDayAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Contractor Worked Hours - Rollup (RuCntrctWrkdHrs) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuCntrctWrkdHrs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Number of Incidents with Lost Time - Rollup (RuNumIncLostTim) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuNumIncLostTim field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add Employee Worked Hours - Rollup (RuEmplWrkdHours) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuEmplWrkdHours field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Add Number of Incidents with Lost Time - Establishment (LoNumIncLostTim) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoNumIncLostTim field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Add Number of Job Transfer and Restricted Days - Rollup (RuNumTrnsfRstDy) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuNumTrnsfRstDy field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.20",
+          "requiredChange": "Add Number of Job Transfer and Restricted Days - Establishment (LoNumTrnsfRstDy) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoNumTrnsfRstDy field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.21",
+          "requiredChange": "Add Number of Days Away - Establishment (LoNumDaysAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoNumDaysAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.22",
+          "requiredChange": "Add Number of Recordable/Reportable - Establishment (LoCtRecordable) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoCtRecordable field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.23",
+          "requiredChange": "Add Employee Worked Hours - Establishment (LoEmplWrkdHours) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.LoEmplWrkdHours field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.24",
+          "requiredChange": "Add Number of Fatalities - Rollup (RuNumFatalities) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstIncRateAbstractObject.RuNumFatalities field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.25",
+          "requiredChange": "Add Target LTIR (TargetLTIR) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetLTIR field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.26",
+          "requiredChange": "Add Target Severity Rate (TargetSeverRate) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetSeverRate field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.27",
+          "requiredChange": "Add Target DAIR (TargetDART) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetDART field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.28",
+          "requiredChange": "Add Target TRIR (TargetTRIR) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetTRIR field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.29",
+          "requiredChange": "Add Incident Rate KPIs (IncidentRateKPIs) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Inverse 1:M grid from Establishment Incident Rate KPI.OSHA Establishment (inherited). Required: N. Default/population setting: None. Field/control behavior: Read only; authorized analytics users.",
+          "mechanism": "TG_OSHAEstablishmentObject.IncidentRateKPIs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create independent monthly inheritance and audit configuration.",
+          "mechanism": "TG_EstIncRateAbstractObject and direct child TG_EstIncidentRateKPIObject"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add monthly unique/date checks and new record numbering.",
+          "mechanism": "OSHAEstablishment + Date unique constraint, DAY(Date)=1 and native AutoNumber"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create monthly/KPI views with distinct readonly measures and editable targets.",
+          "mechanism": "TG_EstIncRateAbstract_Detail/Inventory and TG_EstIncidentRateKPI_Detail/Inventory"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Create valid new profiles and master KPI navigation without obsolete fields.",
+          "mechanism": "New view profiles and IncidentRateKPIs inverse navigation"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The plain-language description preserves the missing name-field length and automatic numbering details while allowing the remaining KPI setup. No calculation rule or field setting was added."
+      }
+    },
+    {
+      "id": "IMP-04",
+      "taskHash": "ac0ee6e9ff23469a5931f72241290b0758c4d218aa49f0333e17230ab64c8f41",
+      "renderedTaskHash": "2c3f35425ff652b75b1a0ad0cd4d7fcc586266bbdca8e9f55e12323bfaf42007",
+      "evidenceReview": "Reviewed all thirty-five annual-base rows against the extract mapping: twenty-four readonly Int64 case/day measures, annual identity, establishment reference, five header text fields, Year, GUID helper and OIISettings. January-1 validation and unique annual scope are explicit. Year is stored and populated by the annual operation, not an invented executable formula. Destination settings/default and copied text capacities remain blocked locally; source setting GUID is not presented as portable. No inherited source location binding is introduced. Language-only revision review: The two explanations retain copied name/address lengths, automatic numbering and the correct environment-specific OSHA settings reference. They do not imply the source reference is portable.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the independent annual OSHA abstract base with its thirty-five mapped fields, year-start/uniqueness validation and base detail/inventory views. Define stored header fields and the destination settings reference; annual snapshots and totals are populated by the annual processing task.",
+          "mechanism": "Thirty-five base declarations, year-start/unique validation and the new OSHA base view pair."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Total number of job transfer or restriction days (L) - roll up (RuNumRstOrJobTr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuNumRstOrJobTr field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Total number of days away from work (K) - roll up (RuNumDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuNumDaysAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Injuries (M1) - roll up (RuCtInjuries) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtInjuries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Respiratory Conditions (M3) - establishment (LoCtRespiratorC) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtRespiratorC field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: M:1 to OSHA Establishment; exactly 1 target per record; inverse OSHA Summaries. Required: Y. Default/population setting: None; mandatory generation/import scope. Field/control behavior: Read only on generated forms; supplied by Refresh Establishment Annual OSHA; historical inactive references retained.",
+          "mechanism": "TG_EstOSHAAbstractObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Other Recordable Cases (J) - roll up (RuCtOthrRecrdbl) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtOthrRecrdbl field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add All other illnesses (M6) - establishment (LoCtAllOtherIln) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtAllOtherIln field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Other Recordable Cases (J) - establishment (LoCtOthrRecrdbl) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtOthrRecrdbl field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Job Transfer or Restricted Days Cases (I) - roll up (RuCtTrnfrOrRest) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtTrnfrOrRest field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Establishment Street (LocationStreet) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Street. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LocationStreet field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add Date (Date) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Date; calendar date, timezone capture disabled. Required: Y. Default/population setting: None; Refresh Establishment Annual OSHA supplies January 1 of the requested year. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.Date field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Poisonings (M4) - establishment (LoCtPoisonings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtPoisonings field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add Hearing loss (M5) - establishment (LoCtHearingLoss) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtHearingLoss field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Skin Disorders (M2) - roll up (RuCtSkinDisordr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtSkinDisordr field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Respiratory Conditions (M3) - roll up (RuCtRespiratorC) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtRespiratorC field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Death (G) - establishment (LoCtFatalities) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtFatalities field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Job Transfer or Restricted Days Cases (I) - establishment (LoCtTrnfrOrRest) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtTrnfrOrRest field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add Injuries (M1) - establishment (LoCtInjuries) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtInjuries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Add Establishment City (LocationCity) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.City. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LocationCity field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Add Establishment Postal Code (LocationPostal) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Postal Code. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LocationPostal field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.20",
+          "requiredChange": "Add Death (G) - roll up (RuCtFatalities) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtFatalities field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.21",
+          "requiredChange": "Add Days Away From Work Cases (H) - roll up (RuCtDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtDaysAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.22",
+          "requiredChange": "Add Establishment State (LocationState) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.State. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LocationState field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.23",
+          "requiredChange": "Add Record No (RecordNo) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: AutoNumber, System.Int64. Required: Y. Default/population setting: None in metadata; native AutoNumber population required. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RecordNo field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.24",
+          "requiredChange": "Add Days Away From Work Cases (H) - establishment (LoCtDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtDaysAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.25",
+          "requiredChange": "Add [Helper] Establishment ID (ReporLocationId) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: GUID. Required: Y. Default/population setting: None; native GUID of OSHA Establishment reference. Field/control behavior: Read only; hidden on ordinary form.",
+          "mechanism": "TG_EstOSHAAbstractObject.ReporLocationId field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.26",
+          "requiredChange": "Add Year (Year) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: None; Refresh Establishment Annual OSHA stores the calendar year derived from Date; no continuing calculated expression is assigned. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.Year field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.27",
+          "requiredChange": "Add All other illnesses (M6) - roll up (RuCtAllOtherIln) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtAllOtherIln field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.28",
+          "requiredChange": "Add Establishment Display Name (LocationName) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Name. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LocationName field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.29",
+          "requiredChange": "Add OII Settings (OIISettings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: M:1 to EHSIncidentMang_OIISettingObject; 0..1 target; inverse disabled. Required: N. Default/population setting: No portable record GUID available; defer destination default binding to the supplied OII Setting input, never hard-code the source record GUID. Field/control behavior: Read only; hidden on ordinary summary form.",
+          "mechanism": "TG_EstOSHAAbstractObject.OIISettings field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.30",
+          "requiredChange": "Add Total number of days away from work (K) - establishment (LoNumDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoNumDaysAway field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.31",
+          "requiredChange": "Add Hearing loss (M5) - roll up (RuCtHearingLoss) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtHearingLoss field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.32",
+          "requiredChange": "Add Skin Disorders (M2) - establishment (LoCtSkinDisordr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoCtSkinDisordr field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.33",
+          "requiredChange": "Add Poisonings (M4) - roll up (RuCtPoisonings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.RuCtPoisonings field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.34",
+          "requiredChange": "Add Total number of job transfer or restriction days (L) - establishment (LoNumRstOrJobTr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHAAbstractObject.LoNumRstOrJobTr field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the standalone non-location-bound abstract annual base.",
+          "mechanism": "TG_EstOSHAAbstractObject object metadata in Safety Metrics"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add annual unique/date identity restrictions and new numbering.",
+          "mechanism": "OSHAEstablishment + Date uniqueness, year-start validation and RecordNo"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create base annual views with actual readonly fields and hidden settings.",
+          "mechanism": "TG_EstOSHAAbstract_Detail/Inventory and their new field profiles"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add stored header and year counterparts without continuous master calculations.",
+          "mechanism": "LocationName/Street/City/State/Postal and Year stored-field metadata"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The two explanations retain copied name/address lengths, automatic numbering and the correct environment-specific OSHA settings reference. They do not imply the source reference is portable."
+      }
+    },
+    {
+      "id": "IMP-05",
+      "taskHash": "0a88a0a53bc04b1d55a27ee5e4fda56141b9cf1a333dfe27b198015a25505359",
+      "renderedTaskHash": "7b5bb39ad26b07e04d78e0e91d9731d59d333e32c510b7314b1a1abd70ab6a12",
+      "evidenceReview": "Reviewed eighteen direct-field/grid additions and case-navigation steps against the actual summary detail content. Seventeen child declarations are not duplicated on the abstract base; Establishment Display Name remains distinct from Establishment Name. AssociatedOIIs cardinality/opposing property is absent and is explicitly blocked before relationship creation. Case paths and 301 template/object lookup remain supplied bindings, and no incident-side fields are assigned. Mutable annual metadata is separate from stored readonly headers and aggregate fields. Language-only revision review: All four local needs remain distinct: text lengths, existing classification choices, case-record links/multiplicity and case-level 301/reporting requirements. Known individual fields can proceed and no incident-side work is assigned.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the concrete OSHA summary with seventeen direct declarations, inherited annual measures, its detail/inventory views and master summary grid. Add the readonly case log and case-level 301 navigation only against the supplied incident relationship contract; report download links belong to the output tasks.",
+          "mechanism": "Concrete annual summary, seventeen direct fields, new summary view pair, master navigation and scoped case log controls."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Total hours worked by all employees this year Establishment (LoNumHrsWorked) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHASummaryObject.LoNumHrsWorked field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Company Name (CompanyName) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Company Name. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.CompanyName field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Annual average number of employees Establishment (LoAvgNumEmploye) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHASummaryObject.LoAvgNumEmploye field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add EIN Number (EINNumber) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.EIN Number. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.EINNumber field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Annual average number of employees Rollup (RuAvgNumEmploye) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHASummaryObject.RuAvgNumEmploye field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Total hours worked by all employees this year Rollup (RUNumHrsWorked) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHASummaryObject.RUNumHrsWorked field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add Change Reason (ChangeReason) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.ChangeReason field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Establishment Type (EstablishmeType) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeTypeObject; 0..1 target; inverse disabled. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Establishment Type. Field/control behavior: Regulatory administrator editable; preserve selected inactive/legacy values; active-selection filter unresolved in external catalogue export.",
+          "mechanism": "TG_EstOSHASummaryObject.EstablishmeType field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Establishment Name (EstablishmeName) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Name. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.EstablishmeName field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Establishment Size (EstablishmtSize) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeSizeObject; 0..1 target; inverse disabled. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Establishment Size. Field/control behavior: Regulatory administrator editable; preserve selected inactive/legacy values; active-selection filter unresolved in external catalogue export.",
+          "mechanism": "TG_EstOSHASummaryObject.EstablishmtSize field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add SIC Code (SICCode) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.SIC Code. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHASummaryObject.SICCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Associated OIIs (AssociatedOIIs) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Related Injury/Illness collection; 0..* results, storage cardinality/inverse unresolved in export. Required: N. Default/population setting: None. Field/control behavior: Read only in target; authorized regulatory users; recordable-only log grid.",
+          "mechanism": "TG_EstOSHASummaryObject.AssociatedOIIs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add NAICS Code (NAICSCode) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.NAICS Code. Field/control behavior: Read only; analytics users may view.",
+          "mechanism": "TG_EstOSHASummaryObject.NAICSCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Any Recordable Incidents (AnyRecrdblIncid) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: M:1 to EHSIncidentMang_HasRecordaInjurObject; 0..1 target; inverse disabled. Required: N. Default/population setting: None. Field/control behavior: Regulatory administrator editable; preserve selected inactive/legacy values; active-selection filter unresolved in external catalogue export.",
+          "mechanism": "TG_EstOSHASummaryObject.AnyRecrdblIncid field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add OSHA 300a ID (OSHA300aID) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.OSHA 300a ID. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.OSHA300aID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Establishment ID (EstablishmentID) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Establishment ID. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.EstablishmentID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Industry Description (InduDescription) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Industry Description. Field/control behavior: Authorized analytics administrator editable.",
+          "mechanism": "TG_EstOSHASummaryObject.InduDescription field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add OSHA Summaries (OSHASummaries) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Inverse 1:M grid from Establishment OSHA Summary.OSHA Establishment (inherited). Required: N. Default/population setting: None. Field/control behavior: Read only; authorized regulatory users.",
+          "mechanism": "TG_OSHAEstablishmentObject.OSHASummaries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the annual concrete child without repeating inherited fields.",
+          "mechanism": "TG_EstOSHASummaryObject direct inheritance from TG_EstOSHAAbstractObject"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Create annual forms with readonly totals and permitted metadata edits.",
+          "mechanism": "TG_EstOSHASummary_Detail/Inventory and metadata panels"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add the supplied readonly case collection/grid with exact source paths and masking.",
+          "mechanism": "AssociatedOIIs binding and AssociatedOIIs.OSHARecord grid"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add case-level 301 control and master annual-summary navigation.",
+          "mechanism": "OSHA301 template control using case identity and OSHASummaries inverse grid"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "All four local needs remain distinct: text lengths, existing classification choices, case-record links/multiplicity and case-level 301/reporting requirements. Known individual fields can proceed and no incident-side work is assigned."
+      }
+    },
+    {
+      "id": "IMP-06",
+      "taskHash": "bab3087ec0afa3341405b05e201bd0cff15c68e755713f4319c7ae6905a72d5d",
+      "renderedTaskHash": "eec9fe25cdbeda6fc7bd16a2e777781f5087dc926f9f2715b2cbe768e9bf19c4",
+      "evidenceReview": "Read the full assignment without references. It creates genuine user/record/field restrictions, not platform processing setup. Named role labels are business responsibilities awaiting supplied tenant group mappings. All relationship targets exist from predecessors before code-in-use guard construction, avoiding the former master-task dependency cycle. Source links and summary hours are restricted at direct-access boundaries; existing incident permissions remain unchanged. Both authorization and reference-existence expression bindings are explicit local inputs. Language-only revision review: Business wording still requires actual user groups and record visibility/change rights, including historical correction. The in-use check still protects establishment codes and deletion only after references exist.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure application-user field/object/record rules for the eight new or modified objects, with permissions evaluated independently for location and establishment. Apply server/API restrictions to calculated summary hours, source links, referenced establishment codes, correction access and navigation. Reuse native processing permissions; this task does not create a system identity or alter incident security.",
+          "mechanism": "User-role and record-scope permission configuration with field-write restrictions, referenced-code guard and a supported dual-dimension access predicate."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind user roles and deny direct writes to processor-owned fields.",
+          "mechanism": "Application-user object/record/field permission configuration"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add independent location/establishment authorization with a dual-scope AND condition.",
+          "mechanism": "Supported dual-dimension user-access predicate consumed by synchronization"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add immutable source-key and controlled historical/annual correction access.",
+          "mechanism": "SourceEntryID field-write restriction and supplied correction entitlements"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Apply record restrictions across navigation, direct URLs and export/search routes.",
+          "mechanism": "Native user record permissions on source/summary/report access paths"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add referenced-code validation and master deletion protection once reference targets exist.",
+          "mechanism": "Proposed Protect Establishment Code server validation and Code readonly control"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "Business wording still requires actual user groups and record visibility/change rights, including historical correction. The in-use check still protects establishment codes and deletion only after references exist."
+      }
+    },
+    {
+      "id": "IMP-07",
+      "taskHash": "b4ecf83d9c8fcd35e6738cbe6354207fcc31410d3cc929ec05f5cc655c5e23a8",
+      "renderedTaskHash": "da7599377292f2ec30252a71ec2a4a2fa756d4ef22637bdf81e6349de77fd6bc",
+      "evidenceReview": "Read all seven ordered steps and failure criteria. The task defines a new synchronization processor, consumes existing configured source uniqueness/user restrictions and owns only its ordered source/summary transaction. Month, both dimensions and the two hour fields are enumerated watched values; links are not triggers. Old/new scopes, clearing, empty-set zero, locks, duplicate-summary conflicts, rollback and scope-only rebuild are specified. No endpoint, transaction API or Delete-event capability is fabricated: executable binding remains blocked on the precise supplied runtime input. Language-only revision review: The rewritten explanation retains create/change/delete timing, original assignments, manual unique references, all-or-none saves, simultaneous update protection and authorized recalculation. It does not promise an unverified Intelex capability.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the proposed Synchronize Hours Worked processor and its source Create/Update/Delete hooks, including source validation, summary creation/reuse, link updates and complete replacement of affected totals. Keep one atomic operation for the source and both dimensions, deterministic concurrency controls, repeat-safe updates and explicit scope-only rebuild; downstream processor wiring is a separate task.",
+          "mechanism": "Proposed Synchronize Hours Worked processor, source hooks and authorized scope-rebuild operation with defined failure behavior."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create source hooks and default/replay handling around the existing unique key.",
+          "mechanism": "Proposed Synchronize Hours Worked and source Create/Update/Delete Action Handlers"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Invoke installed permissions and validate source values before persistence.",
+          "mechanism": "Synchronize Hours Worked pre-write branch and existing access/field restrictions"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Capture original scopes and safely acquire/create monthly summary records.",
+          "mechanism": "Synchronization scope union, deterministic locks and native unique-conflict retry branch"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Assign or clear only the matching dimension-specific summary links.",
+          "mechanism": "LocationHoursHeadcount and EstablishmentHoursHeadcount assignment branch"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Replace both summary hour columns from exact current source scope selections.",
+          "mechanism": "Synchronization aggregate replacement branch on both monthly summary types"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Commit the logical transaction or roll back and provide scope-only rebuild.",
+          "mechanism": "Supplied atomic processing/locking binding and native execution evidence"
+        },
+        {
+          "path": "steps.6",
+          "requiredChange": "Expose successful old/new affected scopes without recursive source writes.",
+          "mechanism": "Successful synchronization outcome consumed by the later refresh dispatcher"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The rewritten explanation retains create/change/delete timing, original assignments, manual unique references, all-or-none saves, simultaneous update protection and authorized recalculation. It does not promise an unverified Intelex capability."
+      }
+    },
+    {
+      "id": "IMP-08",
+      "taskHash": "196411df4e3cb69558a41d1c36816334446f242a2f21658d3af37b531a4cfb1f",
+      "renderedTaskHash": "433f17b6c8c2ddcc683e2e9bf157e99322db17a70d6f58e60215b908d9004d15",
+      "evidenceReview": "The extract has no metric calculations, so sixteen incident-derived values remain blocked on source eligibility/attribution rather than guessed rules. Four explicit hour-field assignments consume only the matching establishment summary. Scope identity, month boundary, helpers, equal Lo/Ru population and preserved targets are specified inline. Repeated refresh replaces a complete result and reports failure; native operation/locking binding is a named supplied input. Prerequisites supply the required source summary and destination KPI objects, without staffing or tenant-verification edges. Language-only revision review: The text retains sixteen incident-derived measures versus four already-defined hour measures, establishment attribution/correction information and complete-result save behavior. Fields remain separate from automatic population work.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add a proposed Refresh Establishment Monthly Metrics operation that creates or updates one monthly KPI, initializes its identity/helpers and replaces all twenty stored aggregates. Read hours only from the matching establishment summary and derive incident measures only through supplied source eligibility/attribution rules; do not add actual-rate fields or modify goals.",
+          "mechanism": "Proposed monthly refresh operation producing a complete establishment/month KPI result and repeat-safe refresh outcome."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add one-result-per-month generation with native record identity and establishment helpers.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics operation"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Populate four hour aggregates from the exact monthly summary columns.",
+          "mechanism": "TG_EstHrsHeadcountObject EmployeeHrs/ContractrHrs to monthly Lo/Ru hour fields"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Replace all sixteen incident-derived measures using supplied eligibility and attribution.",
+          "mechanism": "Monthly incident selection and eight equal Lo/Ru pair assignments"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Commit the complete twenty-measure set and preserve manual targets through retry/failure.",
+          "mechanism": "Monthly refresh result transaction and native completion outcome"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The text retains sixteen incident-derived measures versus four already-defined hour measures, establishment attribution/correction information and complete-result save behavior. Fields remain separate from automatic population work."
+      }
+    },
+    {
+      "id": "IMP-09",
+      "taskHash": "337c5dd67e3bd1f8afab469a44e92030fd3ab97f0a887b48179c4e22c0d60e08",
+      "renderedTaskHash": "2094968e39a51de29b95f22f7663da572076ca892f8d5d3b265d2bddfc55d118",
+      "evidenceReview": "Reviewed the full annual task, including fifteen target assignments from fourteen source master properties, twelve Lo/Ru case/day pairs and four employment fields. Annual policy/collection/settings/operation syntax remain explicit inputs. Create-only snapshots and permitted metadata overrides are not overwritten during normal refresh. Header correction targets seven named readonly fields with native audit. Common CompanyName/address preflight has one owner here; print/merge/export tasks invoke it, and electronic recordability consistency has its own export execution point. No new incident or audit object is assigned. Language-only revision review: The wording preserves case links, annual policy, limits/averaging, environment settings, additional output requirements, annual/header correction and conflict-free complete saves. It still excludes incident-record changes.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the proposed Refresh Establishment Annual OSHA operation, creation-only master-to-summary copy, stored annual identity, twenty-four base measures, four employment totals and same-scope case membership. Add explicit authorized header correction and shared annual-output metadata validation while preserving manual annual values during routine refresh.",
+          "mechanism": "Proposed annual refresh, header-correction and shared metadata-validation operations with complete snapshot mapping, stable annual identity and retained overrides."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create or update one annual result and initialize date/year/GUID/settings identity.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA operation"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Copy fifteen named master properties into creation-only stored annual values.",
+          "mechanism": "Annual creation snapshot branch with explicit source-to-target mappings"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Replace twenty-four annual count/day values under supplied classification policy.",
+          "mechanism": "Annual eligible case selection and twelve equal Lo/Ru assignments"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Populate four employment fields and the supplied annual case collection.",
+          "mechanism": "Same-establishment monthly summaries and supplied AssociatedOIIs binding"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Persist a complete result without rewriting annual overrides or prior snapshots.",
+          "mechanism": "Annual refresh transaction and metadata-preservation branch"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Add an explicit audited operation to correct seven readonly header/code values.",
+          "mechanism": "Proposed Correct Annual OSHA Header operation"
+        },
+        {
+          "path": "steps.6",
+          "requiredChange": "Add one shared five-field output-metadata validation without making master fields mandatory.",
+          "mechanism": "Proposed Validate Annual OSHA Output invoked by downstream print/merge/export bindings"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The wording preserves case links, annual policy, limits/averaging, environment settings, additional output requirements, annual/header correction and conflict-free complete saves. It still excludes incident-record changes."
+      }
+    },
+    {
+      "id": "IMP-10",
+      "taskHash": "e84c2778bc7ca421b29a9d67accbc88cc1f0a6f59ac5a187a0dc323e9538936b",
+      "renderedTaskHash": "b72ca37301dc28efb91c29645b8682c5a07a3e633d607cb1bfdd3c139e8a5f31",
+      "evidenceReview": "Reviewed the dispatcher as a real new integration outcome consuming the synchronization result and both new refresh operations. Existing location processor signatures and native completion/error behavior are absent and explicitly supplied, not invented services. Headcount watchers are limited to the two actual summary headcount fields, while hours/helper/link writes cannot recurse into source synchronization. Incident notifications are consumed through an external contract without adding incident fields. No scheduler, processing-principal setup or migration task is introduced. Language-only revision review: Existing location process names/calling details and success/failure handling remain required. Incident notifications still supply both previous and corrected establishment/period, with no new incident automation assigned.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the refresh dispatcher consuming successful shared synchronization and summary headcount changes. Bind new establishment operations and the supplied original location processors, cover original/corrected months and years, and attach the native completion/error gate without adding a scheduler, ledger or incident-side handler.",
+          "mechanism": "Proposed Dispatch Hours Analytics Refresh integration and summary-headcount callbacks with coalesced scope refresh and native failure gating."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind committed affected-scope outcomes to both new and supplied legacy refresh operations.",
+          "mechanism": "Proposed Dispatch Hours Analytics Refresh integration"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add headcount-only summary callbacks and creation-time scope-only rebuild wiring.",
+          "mechanism": "Monthly summary EmployeeHCount/ContractrHCount callbacks"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Subscribe only to the supplied incident old/new-scope notifications.",
+          "mechanism": "External incident notification subscription on the dispatcher"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Coalesce/serialize refresh work and apply native success/failure freshness gating.",
+          "mechanism": "Supplied native completion/error gate and scoped refresh dispatch branch"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "Existing location process names/calling details and success/failure handling remain required. Incident notifications still supply both previous and corrected establishment/period, with no new incident automation assigned."
+      }
+    },
+    {
+      "id": "IMP-11",
+      "taskHash": "ff204335d75fe3a4c7f0b197ca837764014bca7412160bfb653db9bb5a6d4d63",
+      "renderedTaskHash": "99688e8b4c4664748714000efa08ce974e249f0f3afddcf5709748de4a6f2050",
+      "evidenceReview": "All four exported case-log link names/parameters were compared with package URLs. Each new binding has its own target object/record and supplied destination templates; no hard-coded original summary ID is carried forward. The Combined Cal label/parameter discrepancy is retained as an input, not silently fixed. The task invokes the installed common metadata validator and native completion gate rather than duplicating those checks. Custom-object support/equivalent adapter remains explicitly blocked; it is not declared a working URL-only clone. Language-only revision review: Templates with cases and with no cases remain required, without implying that cases must be completed. Combined Cal behavior and custom-establishment report compatibility remain explicit unresolved needs.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the four new summary print links and supported report/template bindings for OSHA 300, Combined OSHA 300, Cal/OSHA 300 and Combined Cal/OSHA 300. Use establishment/year case membership, privacy masking, empty-case behavior and output-completeness checks; retain the original location print links.",
+          "mechanism": "Four new establishment log output bindings and their supplied supported templates/report adapter."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add a target-summary OSHA 300 link using the supplied report binding and two template properties.",
+          "mechanism": "New Print OSHA 300 Form link and supplied OSHA report adapter"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add the separate combined OSHA link with the verified Combined behavior.",
+          "mechanism": "New Print Combined OSHA 300 Form link"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add the target-summary Cal link with supplied Cal template bindings.",
+          "mechanism": "New Print Cal/OSHA 300 Form link"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add combined Cal only after its inconsistent source behavior has an explicit supplied decision.",
+          "mechanism": "New Print Combined Cal/OSHA 300 Form link and supplied combined parameter binding"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind the selected case population and call the existing shared metadata validator before rendering.",
+          "mechanism": "New 300 report adapter and Validate Annual OSHA Output invocation"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Bind populated/empty templates, masking and the installed refresh gate before download.",
+          "mechanism": "300 output template controls and native completion gate"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "Templates with cases and with no cases remain required, without implying that cases must be completed. Combined Cal behavior and custom-establishment report compatibility remain explicit unresolved needs."
+      }
+    },
+    {
+      "id": "IMP-12",
+      "taskHash": "409bbe357d97264968e9156a79f740f596c552a0f5aa98be4280398071ad6325",
+      "renderedTaskHash": "7eafab7ae95aa497f6e332c091688e53640e5a65f5d2ba830f8ecafe0620408c",
+      "evidenceReview": "The two source mail-merge link names, OSHA300ATempId and CalOSHA300AFormId properties are verified in the package. New links consume new summary identities and destination templates, while original links remain reuse context. All twelve Ru G–M source fields, annual employment values and header fields are enumerated; equal Lo/Ru fields are not added. The shared preflight is called rather than rebuilt. Template definitions and custom-summary merge support remain narrow supplied blockers. Language-only revision review: Both annual-form templates, their system references, supported population from the new summary and form-specific mandatory information remain requested in business language.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the two new 300A mail-merge/template bindings on the establishment summary. Map the annual stored fields, measure pairs and metadata requirements to supplied destination templates while preserving historical snapshots and original location output links.",
+          "mechanism": "Two establishment 300A form templates/bindings and output validation."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add an OSHA 300A merge link addressing the new summary and destination template.",
+          "mechanism": "New Print OSHA 300 A Form mail-merge binding"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add a Cal 300A merge link addressing the new summary and destination Cal template.",
+          "mechanism": "New Print Cal/OSHA 300 A Form mail-merge binding"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Map exact annual header, G–M and employment fields to supplied destination merge properties.",
+          "mechanism": "Destination OSHA/Cal 300A template field mappings"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Invoke shared metadata validation and completed-refresh gating before the two merges.",
+          "mechanism": "Validate Annual OSHA Output calls on the 300A output bindings"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "Both annual-form templates, their system references, supported population from the new summary and form-specific mandatory information remain requested in business language."
+      }
+    },
+    {
+      "id": "IMP-13",
+      "taskHash": "d516e61034a87e89c10b86f0d4f7b31c922218cceda4a68c29c651531ea7ce4c",
+      "renderedTaskHash": "32238d9c9cbd64e7c4693c941811ec2114418cf9c17f2b4bacdd66156b269e6e",
+      "evidenceReview": "The KPI source declares targets only, so this task creates report expressions rather than actual-rate object fields. Reviewed each named numerator/day path and goal field against the monthly declarations, including the TargetDART/DAIR naming distinction. Denominator composition, numerical normalizer, null/rounding and executable report definitions are missing and locally blocked. Multi-period calculations recompute from aggregates without assuming an average of monthly rates. Predecessors supply monthly values and the completed-refresh gate, not unrelated implementation order. Language-only revision review: All denominator, scale, rounding, zero/missing-hours and multi-month decisions remain explicit, together with the working rate report and target comparison setup; no numerical value is invented.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the proposed Establishment Incident Rates report/dashboard using the new monthly KPI measures and supplied actual-rate definitions. Show target comparisons, establishment/month filtering, completeness and refresh gating without storing unrequested actual-rate fields or combining reporting dimensions.",
+          "mechanism": "Establishment rate report/dashboard with four actual-rate outputs and target comparisons."
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add the actual TRIR report expression against RuCtRecordable and supplied rate policy.",
+          "mechanism": "Establishment Incident Rates TRIR expression and TargetTRIR comparison"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add the actual DAIR expression against RuNumIncDayAway and correct TargetDART caption.",
+          "mechanism": "Establishment Incident Rates DAIR expression and Target DAIR comparison"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add the actual LTIR expression against the supplied incident-count classification.",
+          "mechanism": "Establishment Incident Rates LTIR expression and TargetLTIR comparison"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add actual severity against named days-away/restriction totals and supplied rate policy.",
+          "mechanism": "Establishment Incident Rates severity expression and TargetSeverRate comparison"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create establishment/period report bindings and aggregate-period rate behavior.",
+          "mechanism": "Proposed Establishment Incident Rates report/dashboard query and expressions"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Apply existing record visibility and refresh completeness to actual-rate display.",
+          "mechanism": "Rate report access/filter/completion display configuration"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "All denominator, scale, rounding, zero/missing-hours and multi-month decisions remain explicit, together with the working rate report and target comparison setup; no numerical value is invented."
+      }
+    },
+    {
+      "id": "IMP-14",
+      "taskHash": "733435b94a06c60e5fd6f4c1fe6c04011c6e8236ab00fe2d3c234d292d50bf5c",
+      "renderedTaskHash": "8eba0cf95ca1b382a031751c295eed56eff3c1b29ed948e9a1aad229d68b7bef",
+      "evidenceReview": "The source OSHA Esub link is verified as dashboard navigation, not a submission endpoint. The task assigns a new export/view/link with explicit annual source properties and stable catalogue-key handling, but blocks exact columns/query/format until the missing dashboard/submission schema is supplied. Common metadata preflight is invoked; export-specific formatting and recordability checks are owned here. No direct submission, credentials, native processing identity or scheduled regulatory transmission is added. Language-only revision review: File version/layout/format requirements, stable reference codes and environment-specific pre-export requirements remain separate needs. The wording does not introduce direct regulatory transmission.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create a proposed Establishment OSHA Electronic Export view/report based on the supplied original dashboard definition and submission schema. Rebind queries/columns to the new annual summary, enforce required values and formatting, and add new summary navigation; do not add direct regulatory submission automation.",
+          "mechanism": "New establishment electronic-export report/query and summary navigation link."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add separate establishment export navigation without modifying the original Esub link.",
+          "mechanism": "Proposed Establishment OSHA Electronic Export view/report and summary link"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Bind exact annual source properties to the supplied export schema and stable keys.",
+          "mechanism": "New electronic export query, column and value mappings"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add export-specific format/recordability checks and invoke shared preflight/freshness gating.",
+          "mechanism": "Electronic export validation and installed metadata/completion operation calls"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "File version/layout/format requirements, stable reference codes and environment-specific pre-export requirements remain separate needs. The wording does not introduce direct regulatory transmission."
+      }
+    },
+    {
+      "id": "IMP-15",
+      "taskHash": "ec9756634e89ac646d3c576d189d64663a42fea42f1dd2fb27da51c470a3bc2f",
+      "renderedTaskHash": "68aa799abbf1b67d85f0b87e5aad3e70f8cd5649aa3e5971e35eb45267ce5372",
+      "evidenceReview": "The original summary disables native data import and the package identifies no actual writer. This assignment therefore states fully blocked status and requires concrete supplied mapping names, current targets and source identifiers before any existing change. It prescribes exact eventual source-column/identity target changes, retry replacement and retirement of identified direct-hour mappings, without a discovery task or invented interface. Headcounts remain external to Hours Worked; no data load or activation is assigned. Language-only revision review: The task remains unable to start until actual imports/connections and their source/target fields are supplied. The rewrite does not assert an existing integration or turn identification into assigned configuration work.",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true
+      },
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Modify only the concrete import/interface mappings supplied for existing hour writers, redirecting source hours and references to Hours Worked and its synchronized save operation. Use stable allocation-line keys and separate headcount mappings; do not discover integrations, load historical data or enable a production cutover.",
+          "mechanism": "Rebound named hours-import mappings with update/retry semantics and retired direct-summary hour targets."
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Redirect only supplied named hour writers from summary-hour columns to synchronized source entry.",
+          "mechanism": "Supplied existing interface mappings to TG_HoursWorkedObject synchronized entry"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Map stable source/allocation identities and update/retry semantics with explicit input validation.",
+          "mechanism": "Existing integration key/period/dimension/amount mappings and update route"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Disable the concrete direct-hour mappings while retaining separate headcount routes.",
+          "mechanism": "Supplied existing direct-summary hour-target mapping removal/disable changes"
+        }
+      ],
+      "languageRevisionReview": {
+        "scope": "External-input and readiness explanations only; all operative instructions, criteria, roles, prerequisites and input IDs compared unchanged.",
+        "decision": "The task remains unable to start until actual imports/connections and their source/target fields are supplied. The rewrite does not assert an existing integration or turn identification into assigned configuration work."
+      }
+    }
+  ]
+}

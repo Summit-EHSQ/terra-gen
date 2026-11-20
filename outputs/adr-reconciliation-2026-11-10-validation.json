@@ -1,0 +1,73 @@
+{
+  "review_date": "2026-11-10",
+  "result": "pass",
+  "scope": "Documentation contract checks; no tenant or runtime validation",
+  "existing_adrs_accounted_for": 67,
+  "grounded_candidates": 18,
+  "matrix_rows": 85,
+  "added_proposed_adrs": [
+    "PA-009",
+    "PA-010",
+    "PA-011"
+  ],
+  "revised_proposed_adrs": [
+    "DC-010",
+    "INS-008",
+    "INS-009",
+    "INS-017",
+    "PA-003",
+    "TM-017",
+    "TM-019"
+  ],
+  "protected_history_files_unchanged": 38,
+  "current_totals": {
+    "phase 1": {
+      "accepted": 36,
+      "proposed": 30,
+      "superseded": 1,
+      "active": 66,
+      "files": 67
+    },
+    "phase 2": {
+      "accepted": 1,
+      "proposed": 2,
+      "superseded": 0,
+      "active": 3,
+      "files": 3
+    }
+  },
+  "shared_new_transcript_copies": 6,
+  "source_body_sha256": "96206fd14175a91450bd9626855390567482e575f1d54c6e5c49cb6e307242b0",
+  "all_source_files": 28,
+  "unique_source_meetings": 10,
+  "local_links_checked": 420,
+  "active_supersession_changes": 0,
+  "pending_design_gaps": [
+    "Hierarchy transition and regulatory binding",
+    "Employee HomeLocationCode and consumer mappings",
+    "Existing employee transport ADR/specification discrepancy",
+    "Asset dictionary/API recovery and support contract",
+    "Provider release detection/notification and package behavior",
+    "Document and training audience basis remains open"
+  ],
+  "errors": [],
+  "warnings": [],
+  "revised_historical_dates_preserved": 7,
+  "source_body_preserved_exactly": true,
+  "matrix_shape_checked": true,
+  "git_diff_check": "pass",
+  "follow_up_confirmation": {
+    "date": "2026-11-10",
+    "confirmed_decisions": [
+      1,
+      2,
+      4
+    ],
+    "open_business_decisions": [
+      3
+    ],
+    "protected_history_unchanged": true,
+    "local_links_checked": 227,
+    "result": "pass"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "interpretation": "Export metadata comparison by stable configuration identity; omitted or enriched metadata is not evidence of a product schema change. Original baseline remains preserved.",
+  "previousSha256": "8730cf3b3ea68e6d1a8a00964f1809de525da9b7c6c26f9f1b9cc0934cb29ac4",
+  "newSha256": "c7716f41d56fcaf1f80991aae602a17b08e8192190004a02d78560adde2724aa",
+  "added": [
+    {
+      "id": "1027",
+      "recordId": "6669c9d4-2af9-4b4a-8d7f-ad0d48e07434",
+      "type": "Reporting",
+      "name": "Applications"
+    },
+    {
+      "id": "1786",
+      "recordId": "8f804dbd-de7e-de62-219a-996f059f75d8",
+      "type": "Reporting",
+      "name": "OOB - OSHA Data Setup"
+    },
+    {
+      "id": "1838",
+      "recordId": "af433d60-af2e-e66b-509d-510ba3ee42cc",
+      "type": "Reporting",
+      "name": "Safety Metrics"
+    },
+    {
+      "id": "1840",
+      "recordId": "8f2b3541-1cb5-4aef-9d22-992597c801e3",
+      "type": "Reporting",
+      "name": "Health & Safety"
+    },
+    {
+      "id": "1844",
+      "recordId": "d15c923e-abdd-6481-0115-2a8f37b8432b",
+      "type": "Reporting",
+      "name": "OOB - Incident Rate Data Setup"
+    }
+  ],
+  "changed": [
+    {
+      "id": "1776",
+      "recordId": "d7afe974-07b9-403c-9ca1-96ac8c33f1d7",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "1903",
+      "recordId": "1a9f3c5e-bcce-44b4-8efb-f271134ad523",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "1905",
+      "recordId": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "1946",
+      "recordId": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2146",
+      "recordId": "619364dd-17f7-4bcc-8e5a-c1c214b84106",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2148",
+      "recordId": "12ea179a-f422-4d41-9820-7a90799b1b65",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2157",
+      "recordId": "f5623fa3-07b1-41a1-bbde-648f2824571c",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2290",
+      "recordId": "c997e490-c6d0-4ded-a3b1-db81c2628cfa",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2292",
+      "recordId": "cce6d073-a2aa-497a-8b8f-9e23faf47b52",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2308",
+      "recordId": "2967c223-2a5f-474b-a880-88cfb66036a8",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2465",
+      "recordId": "1c2059ec-a97d-45ef-afc9-81030ab22d67",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2562",
+      "recordId": "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2564",
+      "recordId": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2622",
+      "recordId": "25105669-b87c-4561-b948-88428c2a2ef0",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2630",
+      "recordId": "1dfd076d-51c8-4254-8607-77f8ecf93906",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2632",
+      "recordId": "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2654",
+      "recordId": "eecbcf27-bcfa-4065-a1c0-e0ed27ab7fb2",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2660",
+      "recordId": "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2662",
+      "recordId": "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    },
+    {
+      "id": "2747",
+      "recordId": "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+      "type": "Report",
+      "properties": [
+        "Visualizations"
+      ]
+    }
+  ],
+  "missing": []
+}

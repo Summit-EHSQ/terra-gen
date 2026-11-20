@@ -1,0 +1,412 @@
+{
+  "revision": 6,
+  "input": {
+    "id": "IN-02",
+    "title": "Field sizes, defaults and record-number settings",
+    "status": "Answered by user-confirmed field settings",
+    "answer": "Keep the characteristics of each analogous OOTB field when copying it, including unset text lengths. Use AutoNumber for RecordNo. SourceEntryID starts blank (NULL). Keep monthly summary dimension and Date editable only when the summary is created. Set the actual corresponding relationship-ID names during configuration.",
+    "remaining": "No further information is required for IN-02. IMP-07 sets the native ID-key names while configuring the handler. The existing requirement to supply SourceEntryID before first save is retained; NULL is its starting value, not a generated identifier."
+  },
+  "changes": [
+    {
+      "object": "TG_EstIncRateAbstractObject",
+      "field": "RecordNo",
+      "before": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "Y",
+        "None in metadata; native AutoNumber population required",
+        "Read only; analytics users may view",
+        "Native AutoNumber; new target sequence, never reuse source identity"
+      ],
+      "after": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "Y",
+        "DefaultValue=NULL as in source; native AutoNumber field supplies the record number",
+        "Read only; analytics users may view",
+        "Native AutoNumber; new target sequence, never reuse source identity"
+      ]
+    },
+    {
+      "object": "TG_EstIncRateAbstractObject",
+      "field": "LocNameHelper",
+      "before": [
+        "[Helper] Establishment Name",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "None; populated from OSHA Establishment.Name",
+        "Read only; analytics users may view",
+        "A2 stamps at generation; preserves display for inactive establishments; explicit administrator correction only"
+      ],
+      "after": [
+        "[Helper] Establishment Name",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=false",
+        "N",
+        "None; populated from OSHA Establishment.Name",
+        "Read only; analytics users may view",
+        "A2 stamps at generation; preserves display for inactive establishments; explicit administrator correction only"
+      ]
+    },
+    {
+      "object": "TG_EstOSHAAbstractObject",
+      "field": "LocationStreet",
+      "before": [
+        "Establishment Street",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Street",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ],
+      "after": [
+        "Establishment Street",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.Street",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ]
+    },
+    {
+      "object": "TG_EstOSHAAbstractObject",
+      "field": "LocationCity",
+      "before": [
+        "Establishment City",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.City",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ],
+      "after": [
+        "Establishment City",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.City",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ]
+    },
+    {
+      "object": "TG_EstOSHAAbstractObject",
+      "field": "LocationPostal",
+      "before": [
+        "Establishment Postal Code",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Postal Code",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ],
+      "after": [
+        "Establishment Postal Code",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.Postal Code",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ]
+    },
+    {
+      "object": "TG_EstOSHAAbstractObject",
+      "field": "LocationState",
+      "before": [
+        "Establishment State",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.State",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ],
+      "after": [
+        "Establishment State",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.State",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ]
+    },
+    {
+      "object": "TG_EstOSHAAbstractObject",
+      "field": "RecordNo",
+      "before": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "Y",
+        "None in metadata; native AutoNumber population required",
+        "Read only; analytics users may view",
+        "Native AutoNumber; new target sequence, never reuse source identity"
+      ],
+      "after": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "Y",
+        "DefaultValue=NULL as in source; native AutoNumber field supplies the record number",
+        "Read only; analytics users may view",
+        "Native AutoNumber; new target sequence, never reuse source identity"
+      ]
+    },
+    {
+      "object": "TG_EstOSHAAbstractObject",
+      "field": "LocationName",
+      "before": [
+        "Establishment Display Name",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Name",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ],
+      "after": [
+        "Establishment Display Name",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=false",
+        "N",
+        "At initial annual generation: OSHA Establishment.Name",
+        "Read only; analytics users may view",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized explicit metadata correction through A3 with native audit"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "CompanyName",
+      "before": [
+        "Company Name",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Company Name",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ],
+      "after": [
+        "Company Name",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.Company Name",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "EINNumber",
+      "before": [
+        "EIN Number",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.EIN Number",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ],
+      "after": [
+        "EIN Number",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.EIN Number",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "ChangeReason",
+      "before": [
+        "Change Reason",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "None",
+        "Authorized analytics administrator editable",
+        "Regulatory administrator maintains explanation for reporting correction; native audit; never overwritten by refresh"
+      ],
+      "after": [
+        "Change Reason",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "None",
+        "Authorized analytics administrator editable",
+        "Regulatory administrator maintains explanation for reporting correction; native audit; never overwritten by refresh"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "EstablishmeName",
+      "before": [
+        "Establishment Name",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Name",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ],
+      "after": [
+        "Establishment Name",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.Name",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "OSHA300aID",
+      "before": [
+        "OSHA 300a ID",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.OSHA 300a ID",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ],
+      "after": [
+        "OSHA 300a ID",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.OSHA 300a ID",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "EstablishmentID",
+      "before": [
+        "Establishment ID",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Establishment ID",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ],
+      "after": [
+        "Establishment ID",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.Establishment ID",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ]
+    },
+    {
+      "object": "TG_EstOSHASummaryObject",
+      "field": "InduDescription",
+      "before": [
+        "Industry Description",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "At initial annual generation: OSHA Establishment.Industry Description",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ],
+      "after": [
+        "Industry Description",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=true",
+        "N",
+        "At initial annual generation: OSHA Establishment.Industry Description",
+        "Authorized analytics administrator editable",
+        "A3 copies stored snapshot at creation; later master edits do not cascade; authorized annual override retained on metric refresh"
+      ]
+    },
+    {
+      "object": "TG_EstHrsHeadcountObject",
+      "field": "LocNameHelper",
+      "before": [
+        "[Helper] Establishment Name",
+        "Text / nvarchar; length not constrained in export",
+        "N",
+        "None; populated from OSHA Establishment.Name",
+        "Read only; analytics users may view",
+        "A1 stamps OSHA Establishment.Name at summary creation; preserve historical label on master rename/deactivation; explicit audited correction allowed"
+      ],
+      "after": [
+        "[Helper] Establishment Name",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=false",
+        "N",
+        "None; populated from OSHA Establishment.Name",
+        "Read only; analytics users may view",
+        "A1 stamps OSHA Establishment.Name at summary creation; preserve historical label on master rename/deactivation; explicit audited correction allowed"
+      ]
+    },
+    {
+      "object": "TG_EstHrsHeadcountObject",
+      "field": "RecordNo",
+      "before": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "N",
+        "Native auto-number sequence (source generator exported)",
+        "Read only; analytics users may view",
+        "Native AutoNumber; new target sequence, never reuse source identity"
+      ],
+      "after": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "N",
+        "Copy the source AutoNumber generator settings (StartValue=1, IncrementStep=1); allocate a new target sequence",
+        "Read only; analytics users may view",
+        "Native AutoNumber; new target sequence, never reuse source identity"
+      ]
+    },
+    {
+      "object": "SafetyMetrics_HrsandHeadcountObject",
+      "field": "LocNameHelper",
+      "before": [
+        "Location Name Helper",
+        "Text / nvarchar; maximum length unresolved in export",
+        "N",
+        "Existing helper population from Location.Name",
+        "Read only; authorized analytics users",
+        "Retain Set Location Name Helper, stable GUID 5d1ff7d0-0a65-455f-a19b-8ab03332b0d9 (new graphId 2527; original graphId 247): if AND(ISCHANGED(Location), NOT(Location.Deleted)), set LocNameHelper=Location.Name. Numeric ActionType=3 event semantics remain unverified; A1 initializes processor-created summaries and preserves archived labels."
+      ],
+      "after": [
+        "Location Name Helper",
+        "Text / nvarchar; MaxLength=NULL, MinLength=NULL (unset as in source); Precision=NULL, Scale=NULL; IsLocalizable=false; IsLiveTranslatable=false; SpellCheck=false",
+        "N",
+        "Existing helper population from Location.Name",
+        "Read only; authorized analytics users",
+        "Retain Set Location Name Helper, stable GUID 5d1ff7d0-0a65-455f-a19b-8ab03332b0d9 (new graphId 2527; original graphId 247): if AND(ISCHANGED(Location), NOT(Location.Deleted)), set LocNameHelper=Location.Name. Numeric ActionType=3 event semantics remain unverified; A1 initializes processor-created summaries and preserves archived labels."
+      ]
+    },
+    {
+      "object": "SafetyMetrics_HrsandHeadcountObject",
+      "field": "RecordNo",
+      "before": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "N",
+        "Existing native AutoNumber sequence",
+        "Read only; authorized analytics users",
+        "Retain native AutoNumber; preserve existing record identities"
+      ],
+      "after": [
+        "Record No",
+        "AutoNumber, System.Int64",
+        "N",
+        "Retain the existing AutoNumber generator and sequence; do not reset existing numbering",
+        "Read only; authorized analytics users",
+        "Retain native AutoNumber; preserve existing record identities"
+      ]
+    },
+    {
+      "object": "TG_HoursWorkedObject",
+      "field": "SourceEntryID",
+      "before": [
+        "Source Entry ID",
+        "Text, max 255; unique within Hours Worked; non-localizable",
+        "Y",
+        "Imports supply a stable namespaced key; manual-entry default is manual: plus native record GUID, configured with source-field defaults under IN-02",
+        "Required on import; read only after creation; configured record display value",
+        "Native unique constraint and immutable key; authorized updates reuse the key. No custom hours processor is needed for entry deduplication."
+      ],
+      "after": [
+        "Source Entry ID",
+        "Text, max 255; unique within Hours Worked; non-localizable",
+        "Y",
+        "NULL; no automatic value",
+        "User or import supplies before first save; read only after creation; configured record display value",
+        "Native unique constraint and immutable key; authorized updates reuse the key. No custom hours processor is needed for entry deduplication."
+      ]
+    }
+  ]
+}

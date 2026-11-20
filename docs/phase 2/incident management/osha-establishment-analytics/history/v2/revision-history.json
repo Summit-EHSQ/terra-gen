@@ -1,0 +1,19 @@
+{
+  "currentRevision": 2,
+  "baselineSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "previousTarget": "history/v1/technical-specification.md",
+  "refinedRequirements": [
+    "R1",
+    "R2"
+  ],
+  "newRequirements": [
+    "R7",
+    "R8",
+    "R9"
+  ],
+  "supersededDecisions": [
+    "Separate direct-hour entry on the two monthly summary families",
+    "No change to original Location Hours and Headcount hour-entry behavior"
+  ],
+  "incidentDesign": "Excluded; dependency contract retained"
+}

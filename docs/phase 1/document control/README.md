@@ -1,5 +1,7 @@
 # Document Control
 
+Follow-up: document audience selection remains open; no organizational-unit, establishment or actual-workplace applicability rule is selected by the hierarchy confirmation. See the [recorded confirmation](<../platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md>). Earlier descriptions of unresolved business choices below refer to the initial review.
+
 This component governs how Terra-Gen creates, classifies, approves, releases, distributes, secures, and migrates controlled documents in Intelex. The Phase 1 direction preserves the standard Intelex Document Control model wherever practical, centralizes administration, and applies additional control according to governance need.
 
 [Documentation portal](../README.md) · [Phase 1 change log](../CHANGELOG.md) · [Open tasks and questions](../OPEN-TASKS-AND-QUESTIONS.md)
@@ -21,6 +23,7 @@ It does not define the content or operating workflow of other applications. When
 - Author content externally, then manage release candidates and controlled publication in Intelex.
 - Require deliberate release and distribution rather than treating approval alone as publication.
 - Validate migration with a representative 20–30 document pilot, then use a metadata-driven production load with a controlled source-change period.
+- Proposed clarification: begin a provisional preview with available representative metadata before future approvers are finalized, and inspect generated headers/mapping before bulk formatting. This does not waive approval or release controls.
 
 ## Decision Register
 
@@ -48,6 +51,7 @@ It does not define the content or operating workflow of other applications. When
 
 ## Source Evidence
 
+- [Summit + TG: Asset Hierarchy Setup, November 10, 2026](<raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>) — provisional metadata/approvers, core-team preview and hierarchy implications; see the [reconciliation](../ADR-RECONCILIATION-2026-11-10.md).
 - [Design Workshop Day 3 — Morning, September 17, 2026](<raw artifacts/meeting_transcripts/2026-09-17-terra-gen-summit-ehsq-design-workshop-day-3-morning.md>)
 
 Each ADR cites the relevant workshop timestamps in its **More Information** section.
@@ -59,6 +63,7 @@ Each ADR cites the relevant workshop timestamps in its **More Information** sect
 - Select the representative pilot set; establish the migration inventory, metadata mapping, validation, production sequencing, source-change cutoff, and reconciliation rules.
 - Define the controlled taxonomies, document types, applicability rules, and security exceptions.
 - Confirm operational ownership for administration, release, distribution, periodic review, and obsolete content.
+- Reconcile establishment-specific placement and shortcuts if the proposed reporting Location Structure is adopted; accepted ADR-006 remains unchanged pending that transition.
 
 Track material Phase 1 work in the [consolidated open-task register](../OPEN-TASKS-AND-QUESTIONS.md).
 

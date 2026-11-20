@@ -1,5 +1,7 @@
 # Intelex Platform Administration
 
+Follow-up confirmation: reporting-based Location Structure and separate employee establishment storage are confirmed; Intelex retains hierarchy maintenance and Boomi supplies assignments. Document/training audiences and technical/regulatory bindings remain open. See the [recorded confirmation](<raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md>). Earlier descriptions of unresolved business choices below refer to the initial review.
+
 This component defines the shared structures and controls that support every Phase 1 Intelex application, including hierarchy, visibility, employee placement, workflow roles, reporting, support access, and platform change governance.
 
 [Documentation portal](../README.md) · [Phase 1 change log](../CHANGELOG.md) · [Open tasks and questions](../OPEN-TASKS-AND-QUESTIONS.md)
@@ -13,6 +15,8 @@ It provides shared foundations rather than application-specific business workflo
 ## Current Direction
 
 - Use a single establishment-based location hierarchy and keep the operational asset taxonomy separate.
+- Proposed successor under ADR-009: use the Paylocity reporting structure for Location Structure and hold OSHA establishments separately. The accepted establishment-based baseline remains authoritative until regulatory, employee and application bindings are reconciled and the transition approved.
+- Proposed under ADR-010/011: consume a source-governed recursive Asset object through Boomi, with read-only user-facing reference data, stable identities and parent-first API delivery.
 - Do not use the superseded universal intersection-based visibility model; define access per application and use workflow-derived access where appropriate.
 - Proposed: keep employee attribution distinct from exceptional access assignments.
 - Maintain the organizational hierarchy in Intelex with governed ownership and stable identifiers.
@@ -33,6 +37,11 @@ It provides shared foundations rather than application-specific business workflo
 | [ADR-006](ADRs/ADR-006-provide-controlled-external-support-access.md) | Accepted | Provide Controlled External Support Access |
 | [ADR-007](ADRs/ADR-007-use-shared-tasks-and-security-aware-reporting.md) | Proposed | Use Shared Tasks and Security-Aware Reporting |
 | [ADR-008](ADRs/ADR-008-establish-first-year-platform-change-governance.md) | Proposed | Establish First-Year Platform Change Governance |
+| [ADR-009](ADRs/ADR-009-separate-reporting-locations-from-osha-establishments.md) | Proposed | Separate Reporting Locations from OSHA Establishments |
+| [ADR-010](ADRs/ADR-010-consume-a-governed-asset-hierarchy-from-terra-gen.md) | Proposed | Consume a Governed Asset Hierarchy from Terra-Gen |
+| [ADR-011](ADRs/ADR-011-synchronize-assets-through-a-parent-first-api-integration.md) | Proposed | Synchronize Assets through a Parent-First API Integration |
+
+The [November 10 reconciliation](../ADR-RECONCILIATION-2026-11-10.md) records the pending PA-001 successor and PA-004 ownership question. No accepted ADR has been rewritten or marked superseded by these proposals.
 
 ## Dependencies and Boundaries
 
@@ -44,6 +53,7 @@ It provides shared foundations rather than application-specific business workflo
 
 ## Source Evidence
 
+- [Summit + TG: Asset Hierarchy Setup, November 10, 2026, scheduled 4–5 PM ET](<raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>) — shared evidence for asset governance/integration, the hierarchy transition and application impacts.
 - [Design Workshop Day 1 — Morning, September 15, 2026](<raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-morning.md>)
 - [Design Workshop Day 2 — Morning, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>)
 - [Design Workshop Day 2 — Afternoon, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-afternoon.md>)
@@ -54,7 +64,8 @@ ADR **More Information** sections identify the relevant timestamps.
 ## Open Work
 
 - Define and approve each application's visibility model and the proposed employee attribution/access-assignment model.
-- Define the governed site/resource/asset taxonomy and authoritative sources.
+- Approve the source-governed asset model and provide its data dictionary, identifiers, aliases, establishment links and lifecycle rules; define API recovery, reconciliation and support ownership.
+- Resolve the separate-establishment proposal against standard regulatory reporting, employee payloads, document applicability, training audiences and inspection security. Confirm who owns organizational hierarchy nodes independently of the source-owned asset hierarchy.
 - Document the initial visibility model for each Phase 1 application and test representative personas.
 - Name owners and approvers for hierarchies, identifiers, reference data, mappings, roles, and exceptions.
 - Establish effective dating, validation, audit, and fallback procedures for master data and unpopulated roles.

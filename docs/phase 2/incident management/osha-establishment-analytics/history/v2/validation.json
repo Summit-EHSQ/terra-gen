@@ -1,0 +1,142 @@
+{
+  "revision": 2,
+  "status": "Structural validation passed; runtime/build gates remain",
+  "checks": [
+    {
+      "name": "Source field coverage",
+      "pass": true,
+      "detail": "89 source fields; 89 counterparts"
+    },
+    {
+      "name": "Unique source record IDs",
+      "pass": true,
+      "detail": "Field and object IDs checked independently"
+    },
+    {
+      "name": "Target internal names unique per declaration",
+      "pass": true,
+      "detail": "8 object names; each declared field name checked"
+    },
+    {
+      "name": "No inherited redeclaration or ambiguous captions",
+      "pass": true,
+      "detail": "Target names and display captions include inherited fields"
+    },
+    {
+      "name": "Canonical row completeness",
+      "pass": true,
+      "detail": "126 field/grid rows; six populated columns; valid requiredness"
+    },
+    {
+      "name": "Markdown reconciles to model",
+      "pass": true,
+      "detail": "Every target field contract row is present verbatim"
+    },
+    {
+      "name": "Target objects have numbered subsections",
+      "pass": true,
+      "detail": "8 owned/modified object sections"
+    },
+    {
+      "name": "Three location references replaced",
+      "pass": true,
+      "detail": "Three counterpart references replaced; existing location-summary reference retained separately"
+    },
+    {
+      "name": "Establishment family has no system Location references",
+      "pass": true,
+      "detail": "Shared Hours Worked and retained location summary are the explicit dimensional bridge"
+    },
+    {
+      "name": "Requiredness preserved on cloned declarations",
+      "pass": true,
+      "detail": "All 89 fields"
+    },
+    {
+      "name": "No calculation expression falsely extracted",
+      "pass": true,
+      "detail": "All 91 Calculation properties are null"
+    },
+    {
+      "name": "Resolved evidence relation targets",
+      "pass": true,
+      "detail": "388 graph edges resolved by identifier; optional module/profile names need not be present"
+    },
+    {
+      "name": "Baseline inheritance acyclic",
+      "pass": true,
+      "detail": "Direct exported SuperType edges checked"
+    },
+    {
+      "name": "Repository evidence links resolve",
+      "pass": true,
+      "detail": [
+        "../../../phase 1/platform administration/ADRs/ADR-009-separate-reporting-locations-from-osha-establishments.md",
+        "../../../phase 1/platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md",
+        "../ADRs/ADR-001-capture-establishment-and-operational-resource.md",
+        "../ADRs/ADR-003-limit-persistent-incident-visibility-and-use-workflow-access.md",
+        "../../../phase 1/employee management/ADR-001-004-technical-specification-employee-provisioning.md"
+      ]
+    },
+    {
+      "name": "Native report hard-coded ID is evidenced",
+      "pass": true,
+      "detail": "Six object-specific print links"
+    },
+    {
+      "name": "Existing location summary retained",
+      "pass": true,
+      "detail": "8 original field GUIDs, object ID, location binding and native reference retained; one inverse added"
+    },
+    {
+      "name": "Sole hours-input authority",
+      "pass": true,
+      "detail": "Summary hour fields readonly and A0-owned in both dimensions"
+    },
+    {
+      "name": "Headcounts remain independent",
+      "pass": true,
+      "detail": "No headcount field on Hours Worked; independent summary editability retained"
+    },
+    {
+      "name": "Conditional references and summary links",
+      "pass": true,
+      "detail": "At least one dimension; each populated dimension requires its exact summary link at completed save"
+    },
+    {
+      "name": "Summary inverses have exactly one declaring reference",
+      "pass": true,
+      "detail": "Navigation only; no extra relationship on either dimension master"
+    },
+    {
+      "name": "No new input inverse on masters",
+      "pass": true,
+      "detail": "Existing system location-summary inverse preserved separately"
+    },
+    {
+      "name": "Revision and supersession recorded",
+      "pass": true,
+      "detail": "R1/R2 refined; R7–R9 added; v1 target retained"
+    },
+    {
+      "name": "Package baseline byte-for-byte preserved",
+      "pass": true,
+      "detail": "Current and archived package-evidence.json match; baseline not promoted"
+    },
+    {
+      "name": "No active v1 direct-hour entry instructions",
+      "pass": true,
+      "detail": "Current source, field contracts and lifecycle reconciled"
+    }
+  ],
+  "limitations": [
+    "Source/summary atomic transaction, locking and Delete original-scope event support unverified",
+    "Manual source-key generation timing, original location processor hooks and completion/error gate unverified",
+    "Existing writer inventory and economic-overlap migration reconciliation required",
+    "Source aggregation and rate definitions not exported",
+    "AssociatedOIIs inverse/storage metadata absent",
+    "Report templates, dashboard and custom-object report support unverified",
+    "Incident attribution implementation deliberately excluded",
+    "No tenant configuration or runtime test performed"
+  ]
+}

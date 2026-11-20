@@ -1,5 +1,7 @@
 # Employee Management
 
+Follow-up confirmation: retain the existing establishment calculation unchanged and store its result separately from organizational Home Location. Exact storage and integration bindings require specification; the older HomeLocationCode establishment mapping is historical and must be reconciled. See the [recorded confirmation](<../platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md>). Earlier descriptions of unresolved business choices below refer to the initial review.
+
 This component governs how employee identities and organizational attributes enter Intelex, drive provisioning, and remain operationally supportable throughout the employee lifecycle.
 
 [Documentation portal](../README.md) · [Phase 1 change log](../CHANGELOG.md) · [Open tasks and questions](../OPEN-TASKS-AND-QUESTIONS.md)
@@ -48,6 +50,7 @@ The [Workflow section](ADR-001-004-technical-specification-employee-provisioning
 
 ## Source Evidence
 
+- [Summit + TG: Asset Hierarchy Setup, November 10, 2026](<raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>) — proposes reporting locations separate from OSHA establishments. The [reconciliation](../ADR-RECONCILIATION-2026-11-10.md) preserves accepted establishment rules and identifies the unresolved HomeLocationCode binding; it does not select a new employee transport.
 - [Training Setup Q&A, October 28, 2026, 3:30 PM ET](<raw artifacts/meeting_transcripts/2026-10-28-terra-gen-training-setup-qa.md>) — identical source copy in Training Management. The [October 28 reconciliation](<../training management/ADR-RECONCILIATION-2026-10-28.md>) records assignment/location dependencies and outstanding formal reconciliation of Employee ADRs with the accepted specification; it does not change Employee ADR statuses.
 - [Design Workshop Day 1 — Morning, September 15, 2026](<raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-morning.md>)
 - [Design Workshop Day 2 — Morning, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>)
@@ -65,6 +68,7 @@ ADR **More Information** sections identify the relevant timestamps.
 - Define minimum pre-start data and identity-matching behavior.
 - Validate native Employee handler/service timing, membership writes, direct Boomi retry/reconciliation, proposed account-readiness gate and support ownership.
 - Validate SAML identifiers and mobile/offline account-disablement behavior.
+- Reconcile HomeLocationCode and the employee-establishment relationship before any approved reporting-hierarchy transition. The existing ordered establishment rules remain valid inputs; the meeting does not define their replacement payload destination.
 
 Track these items in the [consolidated open-task register](../OPEN-TASKS-AND-QUESTIONS.md).
 

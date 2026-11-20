@@ -1,0 +1,100 @@
+{
+  "revision": 6,
+  "evidenceFile": "package-evidence-v1.0.2.0.json",
+  "evidenceSha256": "c7716f41d56fcaf1f80991aae602a17b08e8192190004a02d78560adde2724aa",
+  "inputs": [
+    {
+      "id": "IN-01",
+      "title": "How Intelex will save and recalculate hours safely",
+      "status": "Answered by user-confirmed native design",
+      "answer": "Hours Worked Create/Update linking uses null-checked GETRELATED; matching summaries are found or created. Summary EmployeeHrs/ContractrHrs are native SUM calculations over their own Hours Worked Entries grids. The user supplied the variadic field/value syntax, reference-ID target convention and matched-type rule.",
+      "remaining": "No custom coordinated summary-write, Delete totals handler or transaction/locking subsystem is required. Native relationship-ID names are set during configuration; downstream refresh remains IN-09."
+    },
+    {
+      "id": "IN-02",
+      "title": "Field sizes, defaults and record-number settings",
+      "status": "Answered by user-confirmed field settings",
+      "answer": "Keep the characteristics of each analogous OOTB field when copying it, including unset text lengths. Use AutoNumber for RecordNo. SourceEntryID starts blank (NULL). Keep monthly summary dimension and Date editable only when the summary is created. Set the actual corresponding relationship-ID names during configuration.",
+      "remaining": "No further information is required for IN-02. IMP-07 sets the native ID-key names while configuring the handler. The existing requirement to supply SourceEntryID before first save is retained; NULL is its starting value, not a generated identifier."
+    },
+    {
+      "id": "IN-03",
+      "title": "Existing OSHA classification choices",
+      "status": "Answered for source configuration",
+      "answer": "Three existing lookup schemas and all eight source values/GUIDs are supplied in 4.9. Native Deleted is FALSE on every record; no Active? or Code field is exported.",
+      "remaining": "Use existing Value/Caption domains and proposed Deleted=FALSE new-selection filters; resolve equivalent records in the destination without assuming portable GUIDs."
+    },
+    {
+      "id": "IN-04",
+      "title": "Who can see and change information",
+      "status": "Partly answered",
+      "answer": "Six security exports use InheritPermissions=true and empty Permissions. This confirms inheritance, not the effective user/group permissions or access for a flat establishment.",
+      "remaining": "Supply approved user groups, dimension scopes, historical-edit rights, privacy rules and supported enforcement. Supply the native configuration for the used-record code/deletion guards as part of these user-access restrictions."
+    },
+    {
+      "id": "IN-05",
+      "title": "Rules for monthly incident measures and rates",
+      "status": "Partly answered",
+      "answer": "Monthly OII grain, DateUserEntered-derived month, all eight incident measures and separate employee/contractor summary hours are confirmed in 5.1. No worker/status filter is present in the supplied measure report. All supporting measure reports are present and unchanged in 1.0.2.0. The 36-hour checks choose which reporting periods to update; they do not limit the incidents counted within those periods.",
+      "remaining": "Supply actual-rate denominator population, scale/normalizer, rounding, period aggregation and zero/null division behavior."
+    },
+    {
+      "id": "IN-06",
+      "title": "How incidents are assigned to establishments",
+      "status": "Partly answered",
+      "answer": "Source OII.OSHASummary, AssociatedOIIs direction and optional M:1 OSHARecord path are now known. Source linking has the null-clearing/predicate discrepancy in 5.3.",
+      "remaining": "The separate incident design still supplies establishment attribution, declaring relationship/query, correction/deletion contexts, inverse binding, clearing and privacy. No incident-side design is added here."
+    },
+    {
+      "id": "IN-07",
+      "title": "Rules for annual OSHA totals and workforce figures",
+      "status": "Partly answered",
+      "answer": "Recordable OII/year join, G–M source values, exported 180-day calculations, employee-only annual hours and monthly-record-count headcount averaging are confirmed.",
+      "remaining": "Supply OSHA helper population/precedence, intended monthly-summary coverage, the business rule for missing/zero submissions and partial-year completeness, and any output rounding not in these reports."
+    },
+    {
+      "id": "IN-08",
+      "title": "OSHA reporting settings and form templates",
+      "status": "Open",
+      "answer": "The exported Template records are email notifications. OII Setting exposes FormType and EnableDT; print-template properties/values and regulatory forms are absent. Existing link evidence and Combined Cal/OSHA discrepancy remain.",
+      "remaining": "Supply destination print settings/templates and verified native custom-object support or approved supported equivalent output."
+    },
+    {
+      "id": "IN-09",
+      "title": "How existing reports are refreshed",
+      "status": "Partly answered",
+      "answer": "All 25 reports used by the three existing update processes and eight imports are accounted for. Their 75 report-to-import connections read columns that exist. The update checks look for recent changes to both injury/illness records and monthly summaries, using a stated 36-hour lookback. They use each record's current assignment and do not show how earlier assignments or missed runs are corrected.",
+      "remaining": "Provide supported downstream refresh after native calculated hours change, source deletion/relinking and headcount changes. Confirm whether calculation changes trigger Update or change DateModified, or supply the supported selection/notification route. Retain full old/new-period recovery, immediate/historical invocation and success/failure/readiness behavior. Another copy of the 25 source reports is not needed."
+    },
+    {
+      "id": "IN-10",
+      "title": "Existing sources of imported hours",
+      "status": "Partly answered",
+      "answer": "One known insert-only initializer creates Location+Date summaries; it has no EmployeeHrs/ContractrHrs mappings. It is not an external hour feed. All 75 source mappings have now been traced; the known initializer still supplies only Location.Id and Date, not hour values.",
+      "remaining": "Inventory any actual payroll/manual/API/import writers and stable entry/allocation IDs; no absence of external feeds is inferred."
+    },
+    {
+      "id": "IN-11",
+      "title": "Current incident-rate report design",
+      "status": "Open",
+      "answer": "The existing preparation-report folders and all 25 underlying event-service reports are now verified: Applications → Health & Safety → Safety Metrics → OOB - Incident Rate Data Setup / OOB - OSHA Data Setup. Their definitions are unchanged, and twenty now explicitly have Visualizations=null. This is not the four actual-rate dashboard or its target-comparison design.",
+      "remaining": "Supply that dashboard/report, calculations, display groups and access rules."
+    },
+    {
+      "id": "IN-12",
+      "title": "OSHA electronic-file requirements",
+      "status": "Open",
+      "answer": "All 25 reports are accounted for within the exported event-service dependency closure; none is the dashboard/export definition referenced by the electronic-submission link. No submission-file schema or direct-submission API is supplied.",
+      "remaining": "Supply the exact export definition, applicable submission-file version/columns/format and supported generation route; no direct submission API is established."
+    }
+  ],
+  "limits": "Answers apply to exported source configuration, not live destination capability, legal validation or implementation.",
+  "reportLineage": "report-lineage-v1.0.2.0.json",
+  "designConfirmation": {
+    "source": "User messages on 2026-11-12",
+    "signature": "GETRELATED(\"TargetObject\", \"TargetField1\", SourceValue1, \"TargetFieldN\", SourceValueN)",
+    "nativeFindCreate": true,
+    "matchingTypesRequired": true,
+    "exampleNamesNotAuthoritative": true
+  }
+}

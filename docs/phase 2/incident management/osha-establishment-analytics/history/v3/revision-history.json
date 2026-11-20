@@ -1,0 +1,34 @@
+{
+  "currentRevision": 3,
+  "baselineSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "previousTarget": "history/v2/technical-specification.md",
+  "refinedRequirements": [
+    "R1",
+    "R2",
+    "R6",
+    "R8"
+  ],
+  "newRequirements": [
+    "R7",
+    "R8",
+    "R9"
+  ],
+  "supersededDecisions": [
+    "Separate direct-hour entry on the two monthly summary families",
+    "No change to original Location Hours and Headcount hour-entry behavior"
+  ],
+  "incidentDesign": "Excluded; dependency contract retained",
+  "additionalBaselineEvidence": {
+    "version": "1.0.1.0",
+    "sha256": "8730cf3b3ea68e6d1a8a00964f1809de525da9b7c6c26f9f1b9cc0934cb29ac4",
+    "file": "package-evidence-v1.0.1.0.json",
+    "classification": "Extracted additional source evidence; not a target deployment"
+  },
+  "evidenceRevisionDecisions": [
+    "Preserve original baseline and both prior target revisions",
+    "Refine monthly OII totals and annual employee workforce arithmetic from source reports",
+    "Reuse existing lookup Value/Caption records",
+    "Identify native process chains without inferring atomic transactions",
+    "Retain source relationship discrepancy and missing outputs as open constraints"
+  ]
+}

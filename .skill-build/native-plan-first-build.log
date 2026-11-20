@@ -1,0 +1,203 @@
+{
+  "tasks": 15,
+  "fieldDefinitions": 126,
+  "coverage": 258,
+  "structuralPassed": true,
+  "structuralErrors": [],
+  "projectFailures": [],
+  "contentPassed": false,
+  "contentErrors": [
+    {
+      "task": "IMP-01",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-01",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-02",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-02",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-03",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-03",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-04",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-04",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-05",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-05",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-06",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-06",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-07",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-07",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-07",
+      "path": "configurationRows.0",
+      "code": "CHANGE_REVIEW"
+    },
+    {
+      "task": "IMP-07",
+      "path": "configurationRows.1",
+      "code": "CHANGE_REVIEW"
+    },
+    {
+      "task": "IMP-07",
+      "path": "steps.5",
+      "code": "STALE_INSTRUCTION_REVIEW"
+    },
+    {
+      "task": "IMP-07",
+      "path": "steps.6",
+      "code": "STALE_INSTRUCTION_REVIEW"
+    },
+    {
+      "task": "IMP-08",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-08",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-09",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-09",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-10",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-10",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-10",
+      "path": "steps.6",
+      "code": "CHANGE_REVIEW"
+    },
+    {
+      "task": "IMP-11",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-11",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-12",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-12",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-13",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+C:\Users\DaveMcLean\OneDrive - Summit EHSQ Inc\Documents\GitHub\terra-gen\scripts\build-current-implementation-plan.cjs:16
+if(!structural.passed||!content.passed)throw Error('Current artifacts have a failed gate or stale/missing content review. Review and correct the assignments before delivery.');
+                                       ^
+
+Error: Current artifacts have a failed gate or stale/missing content review. Review and correct the assignments before delivery.
+    at Object.<anonymous> (C:\Users\DaveMcLean\OneDrive - Summit EHSQ Inc\Documents\GitHub\terra-gen\scripts\build-current-implementation-plan.cjs:16:46)
+    at Module._compile (node:internal/modules/cjs/loader:1562:14)
+    at Object..js (node:internal/modules/cjs/loader:1699:10)
+    at Module.load (node:internal/modules/cjs/loader:1313:32)
+    at Function._load (node:internal/modules/cjs/loader:1123:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1335:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (C:\Users\DaveMcLean\OneDrive - Summit EHSQ Inc\Documents\GitHub\terra-gen\scripts\build-shared-hours-implementation-plan.cjs:5:23)
+
+Node.js v22.13.1
+      "task": "IMP-13",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-14",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-14",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    },
+    {
+      "task": "IMP-15",
+      "path": "review",
+      "code": "STALE_REVIEW"
+    },
+    {
+      "task": "IMP-15",
+      "path": "review",
+      "code": "STALE_RENDERED_REVIEW"
+    }
+  ]
+}

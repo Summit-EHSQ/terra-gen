@@ -1,0 +1,10 @@
+const fs=require('node:fs');
+const {validate}=require('./intelex-implementation-planner/scripts/validate-plan-output-contract.cjs');
+const base='docs/phase 2/incident management/osha-establishment-analytics/';
+const p=JSON.parse(fs.readFileSync(base+'implementation-plan.json','utf8'));
+p.planContractVersion=2;p.basis=[{reference:base+'technical-specification.md',limitation:'Export evidence; no live tenant verification.'}];
+p.coverage=p.fieldCoverage.map(c=>({...c,description:c.action+' '+c.element}));
+for(const t of p.tasks)t.predecessorOutputs=t.prerequisites.map(id=>({id,description:p.tasks.find(x=>x.id===id).deliverable}));
+const result=validate(p,fs.readFileSync(base+'implementation-plan.md','utf8'));
+fs.writeFileSync('.skill-build/approved-plan-format-check.json',JSON.stringify({...result,note:'Test-only legacy adapter; does not renew content or language approval.'},null,2));
+console.log(JSON.stringify(result,null,2));

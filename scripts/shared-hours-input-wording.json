@@ -1,0 +1,114 @@
+{
+  "externalInputs": {
+    "IN-01": {
+      "title": "How Intelex will save and recalculate hours safely",
+      "description": "The Intelex technical team needs to provide the supported way to update an hours entry and all related summaries together, so either every change succeeds or none is saved. This must cover adding, changing and deleting entries; retaining the original establishment, location and month when an entry changes; preventing simultaneous updates from producing conflicting totals; assigning a unique reference to a manually entered record before it is checked; protecting a saved summary's location and month; and allowing an authorized recalculation. The package does not show how to configure these features."
+    },
+    "IN-02": {
+      "title": "Field sizes and record-number settings",
+      "description": "The team needs the maximum text lengths allowed in the copied summary fields, the settings for automatic record numbering, and the supported way to allow a field to be edited when a record is first created but protect it afterward. Lengths are already specified for the new establishment register, but the package does not give the limits for all copied names, addresses and supporting fields."
+    },
+    "IN-03": {
+      "title": "Existing OSHA classification choices",
+      "description": "Provide the current choices and their reference codes for OSHA Establishment Type, OSHA Establishment Size and Has OSHA Recordable Injuries. The team also needs to know how choices that are no longer available for new records are identified. The package does not include these lists. New choices, employee-size thresholds or submission codes must not be assumed."
+    },
+    "IN-04": {
+      "title": "Who can see and change information",
+      "description": "Provide the approved user groups and access rules for maintaining establishments, entering hours, changing headcounts, setting KPI targets, correcting OSHA information and viewing reports. Specify which locations and establishments each group can access, who can correct historical records for inactive locations or establishments, and what people may see through links and exports. An entry assigned to both a location and an establishment must require access to both. The technical team also needs the supported way to apply these rules; the establishment list will not become a new security hierarchy."
+    },
+    "IN-05": {
+      "title": "Rules for monthly incident measures and rates",
+      "description": "Provide the current rules for which incidents are included, which incident date is used, whether incidents or individual injury cases are counted, which workers are included, and how lost-time incidents and days are counted. For incident rates, specify whether employee hours, contractor hours or both are used, the number used to scale each rate, rounding, how several months are combined, and how missing or zero hours are handled. The package does not contain these calculation rules."
+    },
+    "IN-06": {
+      "title": "How incidents are assigned to establishments",
+      "description": "The separately owned incident design must explain how every relevant incident type is assigned to an OSHA establishment and how this solution will be told when that assignment or reporting period changes. Both the previous and corrected assignments must be available so the right totals can be recalculated. The technical team also needs the existing links between annual summaries, injury/illness records and OSHA case details, including how many records each link can contain and how confidential employee information stays protected. Designing or changing the incident records remains outside this plan."
+    },
+    "IN-07": {
+      "title": "Rules for annual OSHA totals and workforce figures",
+      "description": "Provide the existing rules for which cases enter the annual OSHA totals, how a case is classified when more than one outcome applies, and any limits on the days counted. Specify which employee hours enter the annual total and how average headcount is calculated, including partial years, missing months and rounding. The team also needs the rule for deciding when missing hours or headcounts prevent reporting, and how a deliberately entered zero is treated differently from missing information."
+    },
+    "IN-08": {
+      "title": "OSHA reporting settings and form templates",
+      "description": "Provide the OSHA reporting settings and form templates used in the intended Intelex environment, including their system references, required information and case-level OSHA 301 links. The technical team must establish whether the standard OSHA and Cal/OSHA reporting tools can use the new establishment summaries; if they cannot, an approved supported reporting method is needed. Clarify how the combined forms should behave, particularly the Combined Cal/OSHA form, whose exported setting currently matches the non-combined form. Settings references from the source environment must not be assumed to work in another environment."
+    },
+    "IN-09": {
+      "title": "How existing reports are refreshed",
+      "description": "The technical team needs the names and calling details of the existing processes that recalculate location KPIs and annual OSHA figures after hours or headcounts change. It also needs to know how Intelex signals that a recalculation succeeded or failed, and how reports can be prevented from appearing current while an update is unfinished or has failed. These process details are not included in the package."
+    },
+    "IN-10": {
+      "title": "Existing sources of imported hours",
+      "description": "Provide the names and settings of any imports or connections that currently send hours into Intelex: which source fields they read, which Intelex fields they update, and how each source entry or allocation line is uniquely identified. Specify how those connections will create or correct entries in Hours Worked and which old direct-summary mappings will be retired. The package shows built-in importing turned off for the original summary, but does not identify any other hours feeds. No existing connection is assumed."
+    },
+    "IN-11": {
+      "title": "Current incident-rate report design",
+      "description": "Provide the current report or dashboard setup that displays the four actual incident rates and compares them with their targets. The team needs its calculations, display settings, reporting groups and access rules, plus the supported way to reproduce them for establishments. The package includes descriptions of the rates, but not the working report or its calculations."
+    },
+    "IN-12": {
+      "title": "OSHA electronic-file requirements",
+      "description": "Provide the current OSHA electronic-export report behind the OSHA Esub link and the submission-file requirements it must meet. This includes the applicable version, required columns and order, source information for each column, permitted values, formatting and the supported way to generate the file in the intended environment. The package includes a link to the report, not the report itself or a confirmed direct-submission service."
+    }
+  },
+  "taskInputs": {
+    "IMP-01": {
+      "IN-03": "Provide the existing Establishment Type and Size choices, their reference codes and the rule for excluding choices that are no longer available. Only those selection rules are waiting; the register and its other fields can be created. Existing choices will be reused."
+    },
+    "IMP-02": {
+      "IN-01": "The technical team must provide the supported way to prevent a saved summary's location, establishment or month from being changed, and to fill in the establishment name when a new summary is created. Those checks and the name-copying step are waiting. IMP-07 handles unique entry references and coordinated updates to hours totals.",
+      "IN-02": "Provide the allowed length of the summary's saved establishment name and the supported setting for fields that are editable only when first created. The known number, date and relationship fields can be configured while these details are supplied."
+    },
+    "IMP-03": {
+      "IN-02": "Provide the allowed length of the saved establishment name and the automatic record-number settings for the new KPI records. Only these settings are waiting; the remaining KPI fields and record setup can be completed."
+    },
+    "IMP-04": {
+      "IN-02": "Provide the allowed text lengths for the annual summary's saved establishment name and address, plus its automatic record-number settings. Only these settings are waiting; the known case-count and day-total fields can be created.",
+      "IN-08": "Identify the OSHA reporting-settings record to use in the intended environment. It is needed to connect the new annual summaries to the correct reporting settings. The record reference in the source package must not be assumed to work there."
+    },
+    "IMP-05": {
+      "IN-02": "Provide the allowed text lengths for company name, EIN, establishment name, industry description, change reason and reporting IDs. Only those length settings are waiting.",
+      "IN-03": "Provide the existing Establishment Type, Establishment Size and Has OSHA Recordable Injuries choices, their reference codes and the rule for excluding choices no longer available. The plan does not authorize new choices.",
+      "IN-06": "Explain how the annual summary is linked to injury/illness and OSHA case records, including how many records each link can contain and which case information is available. The case list and its links are waiting for this information; the known individual fields can be created.",
+      "IN-08": "Provide the OSHA 301 template and its links to the correct case records, together with the information that must be present before reporting. Only the case-level print link and related reporting checks are waiting."
+    },
+    "IMP-06": {
+      "IN-04": "Provide the actual user groups and the locations, establishments, fields and reports each group may see or change, including historical corrections. These access settings cannot be completed from business-role labels alone.",
+      "IN-01": "The technical team must provide the supported way to check whether an establishment is already in use. This is needed to prevent its code from being changed, or the establishment from being deleted, once other records use it. The required record links will already exist from the earlier tasks."
+    },
+    "IMP-07": {
+      "IN-01": "The technical team must provide the supported way to run the hours update when an entry is added, changed or deleted; retain its previous assignments before deletion; assign a unique manual-entry reference; save the entry and summaries together; avoid conflicting simultaneous updates; and allow an authorized recalculation. The behavior is defined, but the automated update cannot be built until these system details are supplied."
+    },
+    "IMP-08": {
+      "IN-05": "Provide the monthly rules for included incidents, reporting dates, worker groups, incident-versus-case counts and lost-time/day totals. These rules are needed for sixteen incident measures. The source of the four hours measures is already defined.",
+      "IN-06": "Provide the way to select incidents for an establishment and the information sent when an incident's previous establishment or reporting period is corrected. The task must not assume an incident field or default assignment.",
+      "IN-01": "The technical team must provide the supported way to run the monthly recalculation and save a complete set of results without conflicting updates. The earlier tasks already provide the fields; this information is needed to make them update automatically."
+    },
+    "IMP-09": {
+      "IN-06": "Provide the links between the annual summary and its cases, and the rule for selecting cases assigned to the same establishment. This is needed to populate the annual case list and totals; changing the incident records is outside this task.",
+      "IN-07": "Provide the annual case classifications, day-count limits, included employee hours and average-headcount calculation, including missing months and partial years. The annual calculations and checks for missing information are waiting for these rules.",
+      "IN-08": "Identify the OSHA reporting-settings record to use in the intended environment and any additional information each output requires. These details are needed when creating annual records and adding output-specific checks to the five shared company-name and address checks.",
+      "IN-01": "The technical team must provide the supported way to run an annual recalculation or an authorized header correction and save a complete result without conflicting updates. No particular workflow button or system method is assumed."
+    },
+    "IMP-10": {
+      "IN-09": "Provide the existing location-recalculation process names, how to call them, and how Intelex indicates success or failure. Connecting the existing location calculations and preventing unfinished results from appearing current are waiting for these details.",
+      "IN-06": "The separately owned incident solution must send both the previous and corrected establishment and reporting period when an incident changes. This task will receive that information and request recalculation; it will not add automation to the incident records."
+    },
+    "IMP-11": {
+      "IN-08": "Provide the supported reporting method and the templates for OSHA 300 and Cal/OSHA 300 reports, both with cases and with no cases. Clarify the Combined Cal/OSHA behavior. The four print links cannot be completed until the team has a supported method that works with the new establishment summaries."
+    },
+    "IMP-12": {
+      "IN-08": "Provide the OSHA 300A and Cal/OSHA 300A templates and their system references, the supported way to fill them from the new establishment summary, and the information each form requires. These details are needed to complete both annual-form outputs."
+    },
+    "IMP-13": {
+      "IN-05": "Specify whether each rate uses employee hours, contractor hours or both; the number used to scale the rate; rounding; treatment of zero or missing hours; and how several months are combined. The actual-rate calculations are waiting for these rules.",
+      "IN-11": "Provide the working incident-rate report or dashboard and the supported way to reproduce its display and target comparisons. The package contains rate descriptions only, so it cannot supply the complete report setup."
+    },
+    "IMP-14": {
+      "IN-12": "Provide the electronic-export report, its required file version, columns and formats, and the supported way to generate it. The export's data selection and file layout are waiting for these details.",
+      "IN-03": "Provide the reference codes for the recordable-injury, establishment-type and establishment-size choices. The export must use the codes required by the submission file, rather than translated display labels.",
+      "IN-08": "Provide the reporting settings to use in the intended environment and the information that must be present before export. These are needed to complete the pre-export checks; source-environment record references will not be assumed to work."
+    },
+    "IMP-15": {
+      "IN-10": "Provide the names and current settings of the actual hours imports or connections, the fields they read and update, and the supported way to send entries into Hours Worked. This task cannot start until those connections and required changes are identified; the package does not establish that any such connection exists."
+    }
+  }
+}

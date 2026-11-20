@@ -13,8 +13,10 @@ Start with the [documentation portal](<docs/phase 1/README.md>). It provides the
 
 ## Current Snapshot
 
-- Phase 1: 63 active ADRs (36 accepted, 27 proposed) plus one superseded historical ADR.
+- Phase 1: 66 active ADRs (36 accepted, 30 proposed) plus one superseded historical ADR.
 - Phase 2: 3 active Incident Management ADRs (1 accepted, 2 proposed).
-- Source evidence: 20 transcript files representing 8 unique meetings; shared workshop copies are byte-for-byte identical across the domains that use them.
+- Source evidence: 28 transcript files representing 10 unique meetings; shared copies are byte-for-byte identical across the domains that use them.
+
+The [November 10 reconciliation](<docs/phase 1/ADR-RECONCILIATION-2026-11-10.md>) covers every existing ADR and the asset-hierarchy meeting. It adds three proposals and clarifies seven existing drafts. The proposed separation of reporting locations from OSHA establishments still requires reconciliation with accepted hierarchy, employee and regulatory contracts.
 
 ADR status is authoritative. A proposed ADR or an item discussed in a transcript must not be treated as an approved implementation requirement.

@@ -2,6 +2,22 @@
 
 This file records material changes to the Phase 1 architecture decision records and their supporting source artifacts. Dates identify when the documentation was updated; source meeting dates are identified separately.
 
+## 2026-11-10
+
+### Follow-up confirmations
+
+* Recorded the user’s confirmation of reporting-based Location Structure, unchanged employee establishment calculation with separate storage, and Intelex-owned hierarchy maintenance with Boomi supplying assignments. Updated PA-009/003, training audience clarification, indexes and the reconciliation plan; PA-004 is retained unchanged. Document/training audiences and exact technical/regulatory bindings remain unresolved. No accepted ADR or accepted technical specification was silently rewritten.
+
+### Asset hierarchy setup — proposed architecture and cross-domain reconciliation
+
+* Registered **Summit + TG: Asset Hierarchy Setup**, November 10, 2026, scheduled 4–5 PM ET, using user-confirmed metadata. Preserved the complete supplied transcript body and identical source copies in all five Phase 1 domains and Phase 2 Incident Management. The recording's actual end time is not inferred from the scheduled window.
+* Saved the [reconciliation plan](ADR-RECONCILIATION-2026-11-10.md), accounting for all 67 prior ADRs across both phases and 18 grounded candidates, including underdefined and temporary operational directions.
+* Added proposed Platform Administration ADR-009 for reporting locations separate from OSHA establishments, ADR-010 for source-governed read-only asset reference data, and ADR-011 for stable-identity, parent-first API delivery.
+* Revised seven proposed ADRs without changing IDs or historical dates: PA-003, Inspections 008/009/017, Document Control 010, and Training 017/019. Clarifications cover attribution/access, asset-derived inspection context, reporting/target dependencies, provisional import approvers, manual MARCOM adoption after notification, and training-location audiences.
+* Preserved every accepted and superseded ADR byte-for-byte. PA-009 is a proposed successor direction, with no activated supersession. Explicitly recorded the conflict with accepted establishment-based Location Structure, the employee HomeLocationCode contract, hierarchy ownership, document applicability and regulatory/Phase 2 bindings. The prior Employee transport discrepancy remains separately open.
+* Retained accepted document-pilot, SCORM-validation and MARCOM-refresh decisions. Recorded package/quiz and adaptive-learning validation gaps, temporary UAT spreadsheet/access proposals and pending asset change-order/support evidence without inferring implementation or approval.
+* Updated component indexes, source links and targeted task/change-register notes. Phase 1 now contains 66 active ADRs (36 accepted, 30 proposed) plus one historical superseded record; Phase 2 remains one accepted and two proposed. Verified source inventory is 28 transcript copies representing 10 unique meetings; the root overview's earlier 20/8 figures were stale.
+
 ## 2026-10-28
 
 ### Training Setup Q&A — proposed ADR additions and migration clarification

@@ -15,18 +15,20 @@ The current documentation covers Phase 1 design across Document Control, Employe
 
 ## Documentation Status
 
-The working Phase 1 collection currently contains 63 active ADRs: 36 accepted and 27 proposed. It also retains one superseded Platform Administration ADR for history. Phase 2 currently contains three Incident Management ADRs: one accepted and two proposed.
+The working Phase 1 collection currently contains 66 active ADRs: 36 accepted and 30 proposed. It also retains one superseded Platform Administration ADR for history. Phase 2 currently contains three Incident Management ADRs: one accepted and two proposed.
 
 | Domain | Accepted | Proposed | Superseded | Active | Files |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Document Control | 10 | 2 | 0 | 12 | 12 |
 | Employee Management | 5 | 1 | 0 | 6 | 6 |
 | Inspections | 11 | 6 | 0 | 17 | 17 |
-| Intelex Platform Administration | 4 | 3 | 1 | 7 | 8 |
+| Intelex Platform Administration | 4 | 6 | 1 | 10 | 11 |
 | Training and Competency Management | 6 | 15 | 0 | 21 | 21 |
-| **Phase 1 total** | **36** | **27** | **1** | **63** | **64** |
+| **Phase 1 total** | **36** | **30** | **1** | **66** | **67** |
 
 These counts describe the current repository contents and should be updated whenever ADRs are added, removed, or change status. The phase change log is the chronological record and may temporarily describe an earlier baseline while a documentation update is in progress.
+
+The [November 10 ADR reconciliation](ADR-RECONCILIATION-2026-11-10.md) reviews all 67 prior ADRs across both phases and 18 grounded candidates. Three Platform Administration proposals and seven draft clarifications are saved for review. Accepted PA ADR-001 still governs the Location Structure; proposed PA ADR-009's separate reporting-location/establishment model is a pending transition, with employee, document and regulatory impacts unresolved.
 
 ## Documentation Map
 
@@ -175,7 +177,8 @@ The change log records material documentation changes. Git history remains the d
 
 The active ADRs identify several areas that require further validation or detailed design:
 
-- The authoritative asset hierarchy, asset taxonomy, ownership model, and integration boundary.
+- Approval and completion of the proposed source-governed asset hierarchy and parent-first API integration, including its dictionary and operating contract.
+- Reconciliation of the proposed reporting Location Structure and separate OSHA establishment model with accepted hierarchy ownership, employee HomeLocationCode, document applicability, training audiences and regulatory reporting.
 - Employee deactivation behavior, including the treatment of inactive employees, omitted records, and termination dates.
 - Employee-profile catalogue ownership, mapping rules, exception precedence, and minimal-record behavior.
 - Final establishment-assignment rules for remote employees and exceptional cases.

@@ -1,0 +1,113 @@
+{
+  "scope": "Full implementation plan business-language rewrite",
+  "tasksReviewed": [
+    {
+      "id": "IMP-01",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 16,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-02",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 19,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-03",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 30,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-04",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 35,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-05",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 18,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-06",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-07",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-08",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-09",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-10",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-11",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-12",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-13",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-14",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    },
+    {
+      "id": "IMP-15",
+      "rolesAndDependenciesPreserved": true,
+      "inputRequestsPreserved": true,
+      "fieldSettingsPreserved": 0,
+      "scopeAndInstructionsReviewed": true
+    }
+  ],
+  "fieldCoverageUnchanged": true,
+  "externalInputsUnchanged": true,
+  "summary": "Task titles, explanations, instructions, field tables, checks, role reasons, dependency notes and coverage notes rewritten; actual configuration settings and technical ownership retained."
+}

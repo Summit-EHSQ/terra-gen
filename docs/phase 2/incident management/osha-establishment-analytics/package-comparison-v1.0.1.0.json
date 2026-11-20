@@ -1,0 +1,4145 @@
+{
+  "interpretation": "Export metadata comparison by stable configuration identity; omitted or enriched metadata is not evidence of a product schema change. Original baseline remains preserved.",
+  "previousSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "newSha256": "8730cf3b3ea68e6d1a8a00964f1809de525da9b7c6c26f9f1b9cc0934cb29ac4",
+  "added": [
+    {
+      "id": "15",
+      "recordId": "b2923542-87f3-4204-814e-ae024f02b987",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "19",
+      "recordId": "67d45638-73ea-4964-997d-0e2c100a1115",
+      "type": "Source Field",
+      "name": "b2s0ht"
+    },
+    {
+      "id": "21",
+      "recordId": "4263ff14-bb9f-4030-bd68-1dd609118ba9",
+      "type": "Field",
+      "name": "TaskBeforeInci"
+    },
+    {
+      "id": "25",
+      "recordId": "801870f1-883d-48a5-969f-8b35622d6c17",
+      "type": "Object",
+      "name": "EHSIncidentMang_OSHAObject"
+    },
+    {
+      "id": "33",
+      "recordId": "69770aaa-72e0-44e4-9024-dcf20558866b",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "35",
+      "recordId": "3a0a2a67-3de6-4c2c-9146-ac27f204cd26",
+      "type": "Source Field",
+      "name": "baasta"
+    },
+    {
+      "id": "39",
+      "recordId": "dfd5e0b4-f9f2-4ade-8228-ba15af3c0b1b",
+      "type": "Field",
+      "name": "ETLDataMap"
+    },
+    {
+      "id": "44",
+      "recordId": "ace37517-4603-4393-a3fa-19efd16cd77b",
+      "type": "Object",
+      "name": "ETL_DataMapperObject"
+    },
+    {
+      "id": "46",
+      "recordId": "728e97d0-7aa1-43e3-b7ed-b0c5dc11fb02",
+      "type": "Field",
+      "name": "YearHelp"
+    },
+    {
+      "id": "49",
+      "recordId": "e66d6677-14c5-44c5-875b-4fdd6231c3a6",
+      "type": "Field",
+      "name": "DateUserEntered"
+    },
+    {
+      "id": "53",
+      "recordId": "aeb89b4b-2981-4608-9a2d-5495aff3dc17",
+      "type": "Field",
+      "name": "JobTransfer"
+    },
+    {
+      "id": "57",
+      "recordId": "19716717-4d30-443d-87f6-e370afe8f2e1",
+      "type": "Field",
+      "name": "Category"
+    },
+    {
+      "id": "60",
+      "recordId": "a2455229-2ea3-45d9-89cc-404efa4cec45",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "62",
+      "recordId": "41aa620b-75ed-4465-b0ee-23fc63dce4aa",
+      "type": "Object",
+      "name": "EHSIncidentMang_OIIDayObject"
+    },
+    {
+      "id": "64",
+      "recordId": "362bc52a-c461-4c44-a678-5da97a3e25e5",
+      "type": "Field",
+      "name": "Days"
+    },
+    {
+      "id": "70",
+      "recordId": "ba503885-9d49-458b-b51b-4e628bc505b4",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "72",
+      "recordId": "b8327341-a0ec-4ef4-a215-7ba9f605ba47",
+      "type": "Source Field",
+      "name": "bkh7vx"
+    },
+    {
+      "id": "76",
+      "recordId": "7d7ae26a-f9f9-4bfe-9c33-ed413ee8554c",
+      "type": "Field",
+      "name": "ReasonforTrnsfr"
+    },
+    {
+      "id": "78",
+      "recordId": "9193b491-efbb-46d6-a012-fa55e5e1cae9",
+      "type": "Field",
+      "name": "NAICSCode"
+    },
+    {
+      "id": "82",
+      "recordId": "593091e2-19c1-4a96-9017-326fb1e81f7d",
+      "type": "Field",
+      "name": "AbsenceRecordId"
+    },
+    {
+      "id": "84",
+      "recordId": "fbc70fbe-cc4c-49e7-97a6-01449a4d81ed",
+      "type": "Simple Type",
+      "name": "uniqueidentifier"
+    },
+    {
+      "id": "86",
+      "recordId": "833b0cad-698b-495d-bfc9-7e804f320c35",
+      "type": "Field",
+      "name": "AbsenceRecord"
+    },
+    {
+      "id": "90",
+      "recordId": "516d454e-c295-4204-8b96-1280d2229991",
+      "type": "Object",
+      "name": "HCPack_BodPartIINatObject"
+    },
+    {
+      "id": "92",
+      "recordId": "3627c297-4e1d-47e9-a360-164ddf26df4d",
+      "type": "Application",
+      "name": "Health Care Package"
+    },
+    {
+      "id": "94",
+      "recordId": "a94e7b36-b074-46da-a22a-5cac5d850ccd",
+      "type": "Source Field",
+      "name": "bidgf0"
+    },
+    {
+      "id": "96",
+      "recordId": "2ee3384c-e139-44c7-9791-43b40c28bcc8",
+      "type": "Source Report",
+      "name": "[SM-OSHA] 05 - Rollup Data Import"
+    },
+    {
+      "id": "98",
+      "recordId": "ad39b8d1-92c3-4a53-a189-2e3e6916f8a8",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "100",
+      "recordId": "d59e4de3-08f3-47fe-a8b7-1225d4e62a15",
+      "type": "Field",
+      "name": "From"
+    },
+    {
+      "id": "104",
+      "recordId": "ef5c8d21-8810-4459-a660-43383341dbe3",
+      "type": "Field",
+      "name": "OccupationEmp"
+    },
+    {
+      "id": "129",
+      "recordId": "ec05b841-5259-4905-bbe1-57a302189d32",
+      "type": "Security Settings",
+      "name": "Incident Rate KPI Security"
+    },
+    {
+      "id": "134",
+      "recordId": "a2e77a67-ce53-4ab5-8e8a-868b874e8214",
+      "type": "Source Field",
+      "name": "bocx5g"
+    },
+    {
+      "id": "136",
+      "recordId": "f24050bc-07e8-4dd3-af36-da764fff2598",
+      "type": "Source Report",
+      "name": "[SM-KPI] 01 - Initialization"
+    },
+    {
+      "id": "138",
+      "recordId": "77cbd2c9-4fc6-4ec9-bec7-d29d69a118fb",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "140",
+      "recordId": "9bcaf3c4-1b32-4330-8e48-6e200f144ea5",
+      "type": "Configurable View",
+      "name": "OH_OII_Restrictions_Select"
+    },
+    {
+      "id": "152",
+      "recordId": "fd814974-5fbd-4d98-8afd-0e9b1d6d55ab",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "154",
+      "recordId": "a8089c42-13c9-42c2-b647-395c8e49ff9f",
+      "type": "Source Field",
+      "name": "bf17nz"
+    },
+    {
+      "id": "156",
+      "recordId": "0d9453ec-87e5-44c7-bb12-8bd631426e73",
+      "type": "Field",
+      "name": "Id"
+    },
+    {
+      "id": "158",
+      "recordId": "d5d7714a-e28b-49f3-a3cf-b6571e26b027",
+      "type": "Field",
+      "name": "EnableOshaHelp"
+    },
+    {
+      "id": "166",
+      "recordId": "826a22df-06f0-4567-bff3-1161031cf59e",
+      "type": "Field",
+      "name": "Workflow"
+    },
+    {
+      "id": "169",
+      "recordId": "ff5895e2-f1a0-4f19-83fc-417947fcef53",
+      "type": "Object",
+      "name": "SysWorkflowInstanceEntity"
+    },
+    {
+      "id": "173",
+      "recordId": "50212136-a2f7-4279-853d-246a040d68d6",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_OII_Closed_Detail"
+    },
+    {
+      "id": "264",
+      "recordId": "f3391622-64da-4bdd-b3a1-75893068fd9e",
+      "type": "Configurable View Profile",
+      "name": "EHSIncidentMang_OII_Closed_Detail (Mobile)"
+    },
+    {
+      "id": "266",
+      "recordId": "785124a0-20be-4606-8d25-56dd86248bbf",
+      "type": "Object",
+      "name": "SysSubjectEntity"
+    },
+    {
+      "id": "270",
+      "recordId": "ee89e86f-1b2d-4442-944a-83f7ffe76be6",
+      "type": "Object",
+      "name": "FragApplication_StateProvinceObject"
+    },
+    {
+      "id": "274",
+      "type": "Import",
+      "name": "[SM-KPI] 04 - Rollup Data Import"
+    },
+    {
+      "id": "276",
+      "recordId": "5998d334-c3e3-4b72-a68d-3b824ff4737e",
+      "type": "Import",
+      "name": "[SM-KPI] 04 - Rollup Data Import"
+    },
+    {
+      "id": "278",
+      "recordId": "d1102629-c7a6-4dc1-a306-657f7ff68f4b",
+      "type": "Source Report",
+      "name": "[SM-KPI] 04 - Rollup Data Import"
+    },
+    {
+      "id": "280",
+      "recordId": "512fd2ab-40e6-470d-9282-75fffc7b5513",
+      "type": "Report",
+      "name": "[SM-KPI] 04 - Rollup Data Import (2/2)"
+    },
+    {
+      "id": "282",
+      "recordId": "dee00b2d-d342-4036-8286-0751e7b659c6",
+      "type": "Source Field",
+      "name": "buwew5"
+    },
+    {
+      "id": "284",
+      "recordId": "49520b3f-e717-462e-94cd-15aaf342c0e1",
+      "type": "Source Field",
+      "name": "b15pyu"
+    },
+    {
+      "id": "286",
+      "recordId": "6847766b-f1d8-42d5-b75e-2a7cd5b78beb",
+      "type": "Source Field",
+      "name": "b4w5ve"
+    },
+    {
+      "id": "288",
+      "recordId": "9cdd93dd-645d-49fc-b418-33202429a30f",
+      "type": "Source Field",
+      "name": "b1pbnr"
+    },
+    {
+      "id": "290",
+      "recordId": "562324ff-87e3-4692-86c2-3a483d1dfa5f",
+      "type": "Source Field",
+      "name": "bcp52q"
+    },
+    {
+      "id": "292",
+      "recordId": "316c679c-32a7-4b5e-b24c-3d112c765914",
+      "type": "Source Field",
+      "name": "b157gy"
+    },
+    {
+      "id": "294",
+      "recordId": "d6e6c9c2-2d69-4c78-9804-8a29be709e2e",
+      "type": "Source Field",
+      "name": "bejojm"
+    },
+    {
+      "id": "296",
+      "recordId": "20e8d761-6da1-4574-ac61-91195c97d588",
+      "type": "Source Field",
+      "name": "b4eiik"
+    },
+    {
+      "id": "298",
+      "recordId": "be0b6c4b-782d-4b71-a8d5-93623466a6ff",
+      "type": "Source Field",
+      "name": "b1cwc8"
+    },
+    {
+      "id": "300",
+      "recordId": "72bf1ccd-65b8-4ee1-8f5f-a8c4b1593400",
+      "type": "Source Field",
+      "name": "b70vgs"
+    },
+    {
+      "id": "302",
+      "recordId": "3b61eaff-ba3f-4a2c-865e-b6e2190a27de",
+      "type": "Source Field",
+      "name": "bytgk3"
+    },
+    {
+      "id": "304",
+      "recordId": "c413f9d3-5043-4b57-8df7-d816b1531b36",
+      "type": "Source Field",
+      "name": "b48j7q"
+    },
+    {
+      "id": "306",
+      "recordId": "1ea1ba15-e6ca-4761-a613-6662f1fa0446",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "308",
+      "recordId": "ed8a9349-d28f-4863-a9b5-134f9b6ee3d1",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "310",
+      "recordId": "1e39aecf-d4a4-4f2d-8762-641acee2da54",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "312",
+      "recordId": "f8a33c01-8f51-46a0-be1c-0bf2eebd4f31",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "314",
+      "recordId": "47fb3b43-0c40-47f9-938e-05311f6320ad",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "316",
+      "recordId": "93b3ab7e-f068-4589-9e60-e1ae674b3bc2",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "318",
+      "recordId": "4973e751-e5fb-452c-b39d-bbae90cdb49f",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "320",
+      "recordId": "c33be7ab-fc24-48a0-a8f5-36fe30b1062a",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "322",
+      "recordId": "c56a59a3-397e-4a14-b885-1df31ba07299",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "324",
+      "recordId": "e779ec00-b75b-495a-a880-e9e22cd1ba72",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "326",
+      "recordId": "956dc928-c8d4-4a20-aafc-04adfd6c5282",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "415",
+      "recordId": "9e074452-0945-49be-8d08-0e0a90d3cf7b",
+      "type": "Object Action Handler",
+      "name": "Set Relation to OII Setting Record"
+    },
+    {
+      "id": "417",
+      "recordId": "6ceb1879-bcd1-46b9-81aa-50573e5a835e",
+      "type": "Field",
+      "name": "EnableRIDDORHlp"
+    },
+    {
+      "id": "419",
+      "recordId": "601dd808-fe66-4052-8379-8c76b9ab3662",
+      "type": "Field",
+      "name": "EnableWCBHelp"
+    },
+    {
+      "id": "421",
+      "recordId": "a75b297a-c36f-44ac-9f72-2f8bdbd78f4b",
+      "type": "Field",
+      "name": "OSHARecordable"
+    },
+    {
+      "id": "423",
+      "recordId": "99ddb9c7-5a3f-4702-bb68-4f74602c6aac",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "425",
+      "recordId": "f0fe17b0-ae46-44b7-b644-70ed3eb1162e",
+      "type": "Field",
+      "name": "OIISettingId"
+    },
+    {
+      "id": "427",
+      "recordId": "65b3d90d-5f72-4fe5-9652-f6ecc793ce5d",
+      "type": "Field",
+      "name": "FormType"
+    },
+    {
+      "id": "430",
+      "recordId": "0c3d1802-174b-40cf-af02-834e8b11a5ca",
+      "type": "Field",
+      "name": "Location"
+    },
+    {
+      "id": "434",
+      "recordId": "f98335b7-ec0d-4169-a400-8b12cf20412c",
+      "type": "Field",
+      "name": "EnableDTHelp"
+    },
+    {
+      "id": "436",
+      "recordId": "8cea0c46-ee4c-4349-be8f-cc54d197b996",
+      "type": "Field",
+      "name": "LocationId"
+    },
+    {
+      "id": "438",
+      "recordId": "4c959a7e-193b-4f1b-96ff-665f0680db36",
+      "type": "Field",
+      "name": "OIISetting"
+    },
+    {
+      "id": "441",
+      "recordId": "9fe3c9dc-b518-4988-8859-e923347d875b",
+      "type": "Field",
+      "name": "EnableDT"
+    },
+    {
+      "id": "443",
+      "recordId": "b4929840-7c16-4b07-922c-e85ff512a5a9",
+      "type": "Field",
+      "name": "TreatmeReceived"
+    },
+    {
+      "id": "446",
+      "recordId": "93effbb3-d671-4947-ae74-a86ddc6ae8ac",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_EHSOIITreaGivenObject"
+    },
+    {
+      "id": "448",
+      "recordId": "1149cbde-fdb0-400b-a0aa-f1373864ee9f",
+      "type": "Scheduled Import",
+      "name": "[SM-KPI] 01 - Initialization"
+    },
+    {
+      "id": "450",
+      "type": "Import",
+      "name": "[SM-KPI] 01 - Initialization"
+    },
+    {
+      "id": "452",
+      "recordId": "1be6d4a1-9f1b-4a3f-8efe-ac62af79e24b",
+      "type": "Import",
+      "name": "[SM-KPI] 01 - Initialization"
+    },
+    {
+      "id": "454",
+      "recordId": "c1c3c27c-ca0c-4cee-9431-4031be32dedf",
+      "type": "Report",
+      "name": "[SM-KPI] 01 - Initialization"
+    },
+    {
+      "id": "456",
+      "recordId": "4cfed23b-3edf-4e1c-9d6c-b311deff711b",
+      "type": "Source Field",
+      "name": "bz2f69"
+    },
+    {
+      "id": "458",
+      "recordId": "d8975262-411d-4a04-b8a7-dcb0ddfe3206",
+      "type": "Source Field",
+      "name": "bzriz3"
+    },
+    {
+      "id": "460",
+      "recordId": "6c10afee-df2a-49d8-8c33-fdee0ebe1ef1",
+      "type": "Source Field",
+      "name": "bedehf"
+    },
+    {
+      "id": "462",
+      "recordId": "343e57b1-5b5f-44a9-ae7c-6df5646e1025",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "464",
+      "recordId": "9c2453a0-1eb1-4116-8c8e-e364a6ad21cf",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "466",
+      "recordId": "2f7a4907-b983-4d29-b656-81bde9402303",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "497",
+      "recordId": "19a4048b-36e7-46bd-b7f1-2aa5a0f04abc",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "501",
+      "recordId": "1427f107-2ac0-497e-8b67-5d67427323fb",
+      "type": "Source Field",
+      "name": "b78q6g"
+    },
+    {
+      "id": "503",
+      "recordId": "5e826b6a-2808-4806-b7b0-7fc58693f5d9",
+      "type": "Configurable View Profile",
+      "name": "EHSIncidentMang_OII_Default_Detail (Mobile)"
+    },
+    {
+      "id": "505",
+      "recordId": "6e77d5cf-79cd-4c15-bd1d-45f64a32ccdb",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_OII_Default_Detail"
+    },
+    {
+      "id": "730",
+      "recordId": "6ae08202-6f58-4d56-92f0-d76001651bf8",
+      "type": "Field",
+      "name": "InjuryIllnes"
+    },
+    {
+      "id": "734",
+      "recordId": "9ef721eb-fa71-43bf-b762-78d7f479d3a3",
+      "type": "Object",
+      "name": "EHSIncidentMang_InitialTreatmntObject"
+    },
+    {
+      "id": "736",
+      "recordId": "8e16d4f1-cb6b-47b8-96c0-437c21193943",
+      "type": "Field",
+      "name": "Name"
+    },
+    {
+      "id": "738",
+      "recordId": "3f4aa723-b988-4d96-ad4b-8f7c5ac373c4",
+      "type": "Object",
+      "name": "SysWorkflowStatusEntity"
+    },
+    {
+      "id": "740",
+      "recordId": "53fcf2ed-43d4-4867-ae0d-6fbac94c5c47",
+      "type": "Field",
+      "name": "SourceOII"
+    },
+    {
+      "id": "743",
+      "recordId": "6b42be6c-d526-4450-9b21-646810d4bb20",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_EHSOIISourofOIIObject"
+    },
+    {
+      "id": "745",
+      "recordId": "302cac2f-82d3-405b-b4c1-25cba76c00f7",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_InjuryOutcomeObject"
+    },
+    {
+      "id": "747",
+      "recordId": "639c490f-df41-4ede-8c03-160005baf7aa",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_GenderObject"
+    },
+    {
+      "id": "749",
+      "recordId": "6afb3ac6-96db-4072-9293-4d02699d1264",
+      "type": "Object",
+      "name": "SysEmployeeEntity"
+    },
+    {
+      "id": "751",
+      "recordId": "a71f17be-f7ee-49a5-b0e6-baa94be3db01",
+      "type": "Source Field",
+      "name": "bfju65"
+    },
+    {
+      "id": "753",
+      "recordId": "f29fc3c0-c7e2-4f11-b01c-dd438b240bac",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "761",
+      "recordId": "7d055d1d-0220-4028-8507-d91b337ce096",
+      "type": "Configurable View Profile",
+      "name": "EHSIncidentMang_OII_Disabled_Detail (Mobile)"
+    },
+    {
+      "id": "763",
+      "recordId": "17373a06-6e33-49df-90b5-d48cad295828",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_OII_Disabled_Detail"
+    },
+    {
+      "id": "852",
+      "recordId": "baa2c4f7-4417-42f3-972d-2a9c66783fd6",
+      "type": "Field",
+      "name": "Number"
+    },
+    {
+      "id": "854",
+      "recordId": "66deeff5-3877-4a7f-a5a4-83c01d9d54c4",
+      "type": "Object",
+      "name": "OH_CaseAbsObject"
+    },
+    {
+      "id": "856",
+      "recordId": "80a2f701-c458-428c-b459-61cf1a6a66a1",
+      "type": "Application",
+      "name": "Occupational Health"
+    },
+    {
+      "id": "858",
+      "recordId": "420f7f71-a61f-45ab-a9b6-9b64c7a3a1e9",
+      "type": "Security Settings",
+      "name": "OSHA Summary Security"
+    },
+    {
+      "id": "859",
+      "recordId": "09300b47-1b32-4ea7-9dfc-be1fb427d12f",
+      "type": "Object",
+      "name": "MetObjectEntity"
+    },
+    {
+      "id": "863",
+      "recordId": "c515bf64-1f6d-4b64-95eb-3608fd7997cf",
+      "type": "Source Field",
+      "name": "blvxsm"
+    },
+    {
+      "id": "865",
+      "recordId": "66203344-0104-4085-8b1e-49f873fa3fdb",
+      "type": "Source Report",
+      "name": "[SM-KPI] 04 - Location Data Import"
+    },
+    {
+      "id": "867",
+      "recordId": "81aa1e15-2f5c-438a-abea-d3cd1074eadf",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "869",
+      "recordId": "85e45f30-71b1-4c8e-bff4-7ce106703632",
+      "type": "Field",
+      "name": "State"
+    },
+    {
+      "id": "872",
+      "recordId": "ffc98d00-0752-44cf-978e-017c0cc7cc9c",
+      "type": "Event Handler",
+      "name": "[Safety Metrics] Incident Rate KPI Data Update"
+    },
+    {
+      "id": "874",
+      "recordId": "5c22baf3-822c-43d6-b7ea-b1489a0a3fcd",
+      "type": "Schedule",
+      "name": "Nightly Run"
+    },
+    {
+      "id": "876",
+      "type": "Import",
+      "name": "[SM-KPI] 04 - Location Data Import"
+    },
+    {
+      "id": "878",
+      "recordId": "a9c9bcbb-7d59-4377-a605-2e789062b763",
+      "type": "Import",
+      "name": "[SM-KPI] 04 - Location Data Import"
+    },
+    {
+      "id": "880",
+      "recordId": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "type": "Report",
+      "name": "[SM-KPI] 04 - Location Data Import"
+    },
+    {
+      "id": "882",
+      "recordId": "7dfa5df9-5035-45c7-841f-0aa03c780679",
+      "type": "Source Field",
+      "name": "bqdeu0"
+    },
+    {
+      "id": "884",
+      "recordId": "8f62a7a1-5b69-4526-8043-1de476b5d339",
+      "type": "Source Field",
+      "name": "b1c7y6"
+    },
+    {
+      "id": "886",
+      "recordId": "b2a57abd-989b-4c5b-9d8a-34fd92475370",
+      "type": "Source Field",
+      "name": "bngvmy"
+    },
+    {
+      "id": "888",
+      "recordId": "76766d12-d297-4c9c-a3af-56421168a7de",
+      "type": "Source Field",
+      "name": "biypao"
+    },
+    {
+      "id": "890",
+      "recordId": "155bf070-a0ce-4628-a016-5802ba98e1f3",
+      "type": "Source Field",
+      "name": "b35kid"
+    },
+    {
+      "id": "892",
+      "recordId": "8a108c2f-2d40-47bb-8219-690581e2ae10",
+      "type": "Source Field",
+      "name": "bpp8gr"
+    },
+    {
+      "id": "894",
+      "recordId": "99d0ea2a-f4b2-41e5-aa1e-6d45c5db9122",
+      "type": "Source Field",
+      "name": "b9b4gi"
+    },
+    {
+      "id": "896",
+      "recordId": "fa2d6697-122b-404b-a282-8022fc81436b",
+      "type": "Source Field",
+      "name": "bk16as"
+    },
+    {
+      "id": "898",
+      "recordId": "f2c398f1-8622-4f45-b47e-82fcd208c646",
+      "type": "Source Field",
+      "name": "bifuxq"
+    },
+    {
+      "id": "900",
+      "recordId": "58208d57-f8fc-4a8e-bd6d-d5d08297c513",
+      "type": "Source Field",
+      "name": "bxim4x"
+    },
+    {
+      "id": "902",
+      "recordId": "d127811d-f5be-4c7a-abc5-e4d8796bcdfd",
+      "type": "Source Field",
+      "name": "bjia5x"
+    },
+    {
+      "id": "904",
+      "recordId": "8c6892d4-a222-4960-a878-f37e8ecb1db8",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "906",
+      "recordId": "7cad3064-2f92-479a-910c-f6ae0c710e4b",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "908",
+      "recordId": "cffc71f4-a5ae-45ea-b564-447cc0f320e8",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "910",
+      "recordId": "f7a6c762-f571-4fa1-9f6d-e9013a6f4f27",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "912",
+      "recordId": "3dad36d9-65d5-4835-bdbe-80854ba69b11",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "914",
+      "recordId": "780e65fe-8c53-4b4f-ac2c-d7d5b8989d75",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "916",
+      "recordId": "b58b7bdc-1baa-429f-ab45-873bc0988a51",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "918",
+      "recordId": "2986ef3f-5f46-4cc4-8b52-6f0fc42e3e8c",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "920",
+      "recordId": "869c4875-f4b3-47b0-bcb4-abfe6bec4300",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "922",
+      "recordId": "d44981d1-e400-4565-a537-634ca51a37d5",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1009",
+      "recordId": "f566a443-cc20-4122-88ea-95e3fc1780c4",
+      "type": "Scheduled Import",
+      "name": "[SM-KPI] 04 - Rollup Data Import"
+    },
+    {
+      "id": "1011",
+      "recordId": "a0d81d37-7b7a-4e94-9c49-68995608350a",
+      "type": "Scheduled Import",
+      "name": "[SM-KPI] 04 - Location Data Import"
+    },
+    {
+      "id": "1013",
+      "recordId": "b67ec127-1be8-48f0-837d-c5c787fbf090",
+      "type": "Source Field",
+      "name": "b0k30t"
+    },
+    {
+      "id": "1015",
+      "recordId": "7f10b67f-2189-4847-894b-3736b859e816",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1017",
+      "recordId": "87bd4195-e090-47f7-a592-fe68d75a9b3d",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1019",
+      "recordId": "d14c3d1c-dcad-4258-ae0a-8253103f1dda",
+      "type": "Source Field",
+      "name": "bblb9v"
+    },
+    {
+      "id": "1021",
+      "recordId": "a1a829e0-1349-499c-a3c9-f7f51798a1f8",
+      "type": "Field",
+      "name": "DateNotRequired"
+    },
+    {
+      "id": "1027",
+      "recordId": "36c01154-1d8e-47ae-bbd9-ef4677df530b",
+      "type": "Field",
+      "name": "OSHALostDays"
+    },
+    {
+      "id": "1031",
+      "recordId": "dd5e401d-f1c9-473a-be42-5db649a6eeb3",
+      "type": "Field",
+      "name": "NumJobTAndRest"
+    },
+    {
+      "id": "1035",
+      "recordId": "07dc7217-7744-4fca-8020-12824d335241",
+      "type": "Field",
+      "name": "NumDaysAwayOSHA"
+    },
+    {
+      "id": "1040",
+      "recordId": "c5965e44-8f3e-434c-8a5b-59940692d3e7",
+      "type": "Object",
+      "name": "EHSIncidentMang_WorkerTypeObject"
+    },
+    {
+      "id": "1042",
+      "recordId": "dd67ef10-c087-4ecb-96b6-4652aed641ad",
+      "type": "Scheduled Import",
+      "name": "[Safety Metrics] Generate Employee Hours and Heacount"
+    },
+    {
+      "id": "1044",
+      "type": "Import",
+      "name": "[SM-HH] Generate Employee Hours and Heacount"
+    },
+    {
+      "id": "1046",
+      "recordId": "d7fba97e-2449-4ac6-9efc-ebe5384b439d",
+      "type": "Import",
+      "name": "[SM-HH] Generate Employee Hours and Heacount"
+    },
+    {
+      "id": "1050",
+      "recordId": "79e029e0-4b61-4bfd-90e6-e576f4097d35",
+      "type": "Source Report",
+      "name": "[SM-HH] Generate Employee Hours and Heacount"
+    },
+    {
+      "id": "1052",
+      "recordId": "1d608ee4-57d7-41c8-bed7-1cffe15d80a3",
+      "type": "Report",
+      "name": "[SM-HH] Initialize Head Count and Hours Worked Records"
+    },
+    {
+      "id": "1054",
+      "recordId": "7a6ae245-90bb-461a-bbce-1d0139f8bdbd",
+      "type": "Source Field",
+      "name": "b9qheq"
+    },
+    {
+      "id": "1056",
+      "recordId": "2e408ae6-c7fb-445c-8fc0-7446e66efbf8",
+      "type": "Source Field",
+      "name": "b9oufa"
+    },
+    {
+      "id": "1058",
+      "recordId": "6a38eb83-251a-4ff0-a42c-b03e6b88e865",
+      "type": "Source Field",
+      "name": "bx2rxk"
+    },
+    {
+      "id": "1060",
+      "recordId": "6875a345-4c94-4e70-96cc-d553bb2581fb",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1085",
+      "recordId": "112663bf-46d3-4319-aff4-c9cf1165c535",
+      "type": "OSHA Establishment Size",
+      "name": "250+ employees"
+    },
+    {
+      "id": "1087",
+      "recordId": "baa9d2f0-0f88-493a-9e85-62e31120aa34",
+      "type": "System Permission Mask",
+      "name": "Create"
+    },
+    {
+      "id": "1089",
+      "recordId": "7646b7a3-a61b-4317-b04e-7854b5c79f51",
+      "type": "Object Action Handler",
+      "name": "Set Name Hidden Field"
+    },
+    {
+      "id": "1091",
+      "recordId": "1efad6bf-9565-49ee-a802-ab02d14f7be7",
+      "type": "Object Action Handler",
+      "name": "'Date of Hire' must be before 'Date of Time of Incident'."
+    },
+    {
+      "id": "1093",
+      "recordId": "2793235a-28f7-43a7-bb67-8f675e3a38bd",
+      "type": "Type Validation",
+      "name": "'Start Date of Investigation' must be on or before Today."
+    },
+    {
+      "id": "1095",
+      "recordId": "94df103d-e466-4e12-8138-34e42f91f93b",
+      "type": "Object Action Handler",
+      "name": "Create OSHA Record"
+    },
+    {
+      "id": "1097",
+      "recordId": "e141a585-c074-445c-baed-13f54039feef",
+      "type": "Type Validation",
+      "name": "'Date and Time of Incident' must be on or before Today."
+    },
+    {
+      "id": "1099",
+      "recordId": "f56e93d7-2af2-4ed8-8f31-5a51bb481d0d",
+      "type": "Field",
+      "name": "AbsenceRecord"
+    },
+    {
+      "id": "1103",
+      "recordId": "649870f1-64ef-400b-ba76-a057238c7d11",
+      "type": "Type Validation",
+      "name": "'Date and Time of Approval' must be on or after 'End Date of Investigation'."
+    },
+    {
+      "id": "1105",
+      "recordId": "f5fe3cd9-e4d3-41ae-99a1-8cc53097bed1",
+      "type": "Type Validation",
+      "name": "'Date of Birth' must be before Today.  (for Employee)"
+    },
+    {
+      "id": "1107",
+      "recordId": "8921d6d2-01b7-41a9-b003-3fff4f062610",
+      "type": "Object Action Handler",
+      "name": "Populate Task Before Incident in Osha"
+    },
+    {
+      "id": "1109",
+      "recordId": "e6e9d54a-8522-4066-b7d3-3e035930e943",
+      "type": "Field",
+      "name": "DateHireHidden"
+    },
+    {
+      "id": "1114",
+      "recordId": "3a69933e-fbc9-45e6-b368-520ce7b0a14a",
+      "type": "Field",
+      "name": "NumRistOrJobTra"
+    },
+    {
+      "id": "1118",
+      "recordId": "15faa187-8bb6-42f4-9631-f67de84bc3f8",
+      "type": "Object Action Handler",
+      "name": "Set value if Worker Type equals Employee"
+    },
+    {
+      "id": "1120",
+      "recordId": "3909b981-9af4-41c3-a32e-06eb6630858e",
+      "type": "Field",
+      "name": "Shift"
+    },
+    {
+      "id": "1123",
+      "recordId": "0280dc65-44d3-4518-b531-61197fcd8b3e",
+      "type": "Object Action Handler",
+      "name": "Set Previous Stage PR, PR and Due Date fields when workflow is 'Cancelled' or 'Completed'."
+    },
+    {
+      "id": "1125",
+      "recordId": "89f79945-1dd4-48d7-b044-486ea0d96041",
+      "type": "Field",
+      "name": "DateofDeath"
+    },
+    {
+      "id": "1127",
+      "recordId": "00887eac-f337-41c3-8a01-27405c8f4973",
+      "type": "Field",
+      "name": "EventsExposures"
+    },
+    {
+      "id": "1130",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been closed."
+    },
+    {
+      "id": "1132",
+      "recordId": "3e9b340b-1f76-41cc-80b1-bf24e4739a3a",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been closed."
+    },
+    {
+      "id": "1134",
+      "recordId": "d9b9f954-f355-4239-b77b-52a628b098b2",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1139",
+      "recordId": "175a1313-6e59-456b-9060-5e385d7f8582",
+      "type": "Field",
+      "name": "FirstName"
+    },
+    {
+      "id": "1141",
+      "recordId": "f4cb74c8-e197-4406-b533-87bb8a48e05e",
+      "type": "Field",
+      "name": "OSHASummary"
+    },
+    {
+      "id": "1145",
+      "recordId": "5a5e2706-b392-4b03-a3fd-df5c66a382ea",
+      "type": "Type Validation",
+      "name": "'Date and Time of Approval' must be on or before Today."
+    },
+    {
+      "id": "1147",
+      "recordId": "61d9d446-5adf-416e-890d-057f99fca53c",
+      "type": "Field",
+      "name": "DateofBirth"
+    },
+    {
+      "id": "1149",
+      "recordId": "c13c6f2a-dcba-4f7c-a06f-ca7ac9c21006",
+      "type": "Object Action Handler",
+      "name": "Set Name of Event Type Object"
+    },
+    {
+      "id": "1151",
+      "recordId": "0906ab93-f685-4d16-a095-86871228f432",
+      "type": "Field",
+      "name": "Country"
+    },
+    {
+      "id": "1154",
+      "recordId": "6ac0955a-2c71-42db-8206-492001561438",
+      "type": "Field",
+      "name": "OSHARecord"
+    },
+    {
+      "id": "1157",
+      "recordId": "ff287417-c7fa-47e1-9a1f-2b44b59f3e71",
+      "type": "Field",
+      "name": "Address"
+    },
+    {
+      "id": "1159",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been verified."
+    },
+    {
+      "id": "1161",
+      "recordId": "789c3a1c-8a25-42fe-9360-2434a738b5bd",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been verified."
+    },
+    {
+      "id": "1163",
+      "recordId": "d213d515-3dfd-4903-be81-ebf10a851b8f",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1168",
+      "recordId": "7b7280ac-22c6-4253-9051-b5675bc05aa9",
+      "type": "Field",
+      "name": "GenderEmp"
+    },
+    {
+      "id": "1171",
+      "recordId": "1f26b0be-5e4c-4a96-9764-8f99e7766eb1",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_OII_Frag_Days_Editable"
+    },
+    {
+      "id": "1176",
+      "recordId": "f561230f-c4ef-4d03-9b6f-2c6927594277",
+      "type": "Field",
+      "name": "BPIINs"
+    },
+    {
+      "id": "1179",
+      "recordId": "1a1fd1e9-3b25-4667-8ec3-8bc6da8bd06a",
+      "type": "Field",
+      "name": "DTs"
+    },
+    {
+      "id": "1183",
+      "recordId": "135ddf57-43b5-43eb-9fba-c75e5c20bff7",
+      "type": "Type Validation",
+      "name": "Date and Time Reported' must be on or before Today."
+    },
+    {
+      "id": "1185",
+      "recordId": "01d2ae19-e55b-428f-ac27-5fd11a91e704",
+      "type": "Field",
+      "name": "PhysicianName"
+    },
+    {
+      "id": "1187",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been investigated."
+    },
+    {
+      "id": "1189",
+      "recordId": "1446afc3-99cb-4d01-8b3f-631eda01a26c",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been investigated."
+    },
+    {
+      "id": "1191",
+      "recordId": "1cbcfd25-b941-4cf8-b0bc-7b6b4738c43b",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1196",
+      "recordId": "5aa603a3-af61-42f7-946c-29035f062889",
+      "type": "Field",
+      "name": "WorkerTypeObj"
+    },
+    {
+      "id": "1199",
+      "recordId": "b85f2952-65b7-4613-bd90-6453bafbb830",
+      "type": "Field",
+      "name": "SourceDetails"
+    },
+    {
+      "id": "1201",
+      "recordId": "d6e3e799-941d-4886-b0c8-d3203cfdc8ec",
+      "type": "Field",
+      "name": "LastName"
+    },
+    {
+      "id": "1203",
+      "recordId": "f31a5e9a-06b5-4f85-9a50-2257d856d197",
+      "type": "Field",
+      "name": "InjryClssifctin"
+    },
+    {
+      "id": "1206",
+      "recordId": "d94b3c10-a15a-4ed6-90be-d066a1cac3b4",
+      "type": "Field",
+      "name": "InjOutcomeHelp"
+    },
+    {
+      "id": "1210",
+      "recordId": "7c510d44-c6bd-45a7-a5ea-f2a0040e7716",
+      "type": "Field",
+      "name": "DiedfromInj"
+    },
+    {
+      "id": "1212",
+      "recordId": "a32d3155-6058-44c2-abf3-461cf7ae4a6f",
+      "type": "Field",
+      "name": "OSHAReport"
+    },
+    {
+      "id": "1215",
+      "recordId": "703f19a6-f995-4729-bf07-f34452b70e1f",
+      "type": "Type Validation",
+      "name": "Only one RIDDOR Record can be associated to Injury/Illness record."
+    },
+    {
+      "id": "1217",
+      "recordId": "0eb57870-4d00-40c9-a3e4-6f25c1301fab",
+      "type": "Object Action Handler",
+      "name": "Clear Medical Facility"
+    },
+    {
+      "id": "1219",
+      "recordId": "aa93e8cc-8ed6-4099-9b6d-5960858629c5",
+      "type": "Type Validation",
+      "name": "'End Date of Investigation' must be on or after 'Start Date of Investigation'."
+    },
+    {
+      "id": "1221",
+      "recordId": "fd558e4f-36f9-4fb2-8802-a4c036968544",
+      "type": "Object Action Handler",
+      "name": "Clear value of Validation Details Section"
+    },
+    {
+      "id": "1223",
+      "recordId": "82d196a7-006b-45f4-9498-051c386e140a",
+      "type": "Field",
+      "name": "ABeforeIncident"
+    },
+    {
+      "id": "1225",
+      "recordId": "af695b11-6174-4307-9d6b-a3325d8101c8",
+      "type": "Type Validation",
+      "name": "'Date of Fatality' must be on or before Today."
+    },
+    {
+      "id": "1227",
+      "recordId": "02a5b3a2-1926-4b0b-971b-3c68c93d6b26",
+      "type": "Type Validation",
+      "name": "'Start Date of Investigation' must be on or after 'Date and Time of Incident'."
+    },
+    {
+      "id": "1229",
+      "recordId": "1781a5aa-0c92-49ab-a3c8-24626454e96b",
+      "type": "Field",
+      "name": "GenderHidden"
+    },
+    {
+      "id": "1234",
+      "recordId": "cdeb4596-3b4e-4dc4-a2f6-ffdeda82528a",
+      "type": "Type Validation",
+      "name": "'End Date of Investigation' must be on or before Today."
+    },
+    {
+      "id": "1236",
+      "recordId": "02ab5bc7-7a40-4565-b93b-9c14dc213944",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_OII_Frag_Days_Readonly"
+    },
+    {
+      "id": "1241",
+      "recordId": "f66b3597-d4d9-4372-944c-26d97f2d6d37",
+      "type": "Field",
+      "name": "OSHAONLY"
+    },
+    {
+      "id": "1244",
+      "recordId": "cdcd1e97-5d2d-4a1a-b357-3631db20f625",
+      "type": "Field",
+      "name": "CreatedIncident"
+    },
+    {
+      "id": "1248",
+      "recordId": "7138277c-94cc-485c-accb-38df74a26b94",
+      "type": "Field",
+      "name": "MedFacilityName"
+    },
+    {
+      "id": "1250",
+      "recordId": "cd86773c-93c5-4ca5-b407-6a5ee3941228",
+      "type": "Field",
+      "name": "ShiftDetails"
+    },
+    {
+      "id": "1252",
+      "recordId": "fbb66ab1-eb56-4f2b-b3c3-28187e3ed8fd",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_OII_Inventory"
+    },
+    {
+      "id": "1262",
+      "recordId": "94cc61e6-bc2a-4e75-8011-395aa547c0c5",
+      "type": "Field",
+      "name": "PrInjuryIllness"
+    },
+    {
+      "id": "1265",
+      "recordId": "3a4e7339-84a8-4d1e-bec0-7650693688da",
+      "type": "Field",
+      "name": "PostalCode"
+    },
+    {
+      "id": "1267",
+      "recordId": "5bf7e75c-be80-45cc-a076-123e35466ed6",
+      "type": "Field",
+      "name": "DayAwayOSHAHelp"
+    },
+    {
+      "id": "1271",
+      "recordId": "b37f043d-72fb-4c66-80e0-50f106387a64",
+      "type": "Field",
+      "name": "JobTAndRestHelp"
+    },
+    {
+      "id": "1276",
+      "recordId": "adb42dd9-9545-4d7f-a3bf-f4b1e1dac498",
+      "type": "Field",
+      "name": "ClaimsOII"
+    },
+    {
+      "id": "1280",
+      "recordId": "657a85b3-0762-4189-b648-21c53ee24a86",
+      "type": "Type Validation",
+      "name": "'Date of Birth' must be before Today. (for Employee)"
+    },
+    {
+      "id": "1282",
+      "recordId": "d36300c3-eb4f-4141-9b95-a54096ce3b39",
+      "type": "Field",
+      "name": "QuestAnsHelper"
+    },
+    {
+      "id": "1285",
+      "recordId": "3af67e13-528a-4bcc-a34f-84ec7cd0bdc6",
+      "type": "Field",
+      "name": "Hospitalised"
+    },
+    {
+      "id": "1287",
+      "recordId": "5217ab0a-50f0-42be-8140-79045f03e259",
+      "type": "Field",
+      "name": "Occupation"
+    },
+    {
+      "id": "1289",
+      "recordId": "b6bca3e2-1c56-4da3-ac9b-13c8401499ea",
+      "type": "Object Action Handler",
+      "name": "Clear value of  Worker Detail Section"
+    },
+    {
+      "id": "1291",
+      "recordId": "755133d2-a6c8-486a-b642-22f1be4b4675",
+      "type": "Type Validation",
+      "name": "'Date of Treatment' should be on or after 'Date and Time of Incident'"
+    },
+    {
+      "id": "1293",
+      "recordId": "5808a0b0-0051-4cfc-8cc2-3265a54ef0c2",
+      "type": "Field",
+      "name": "Gender"
+    },
+    {
+      "id": "1296",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been returned for Investigation."
+    },
+    {
+      "id": "1298",
+      "recordId": "22526bf8-bdda-4b85-acf0-9d2e76fd1a2f",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been returned for Investigation."
+    },
+    {
+      "id": "1300",
+      "recordId": "72b96f52-6875-4aab-8df2-6ce44c2311e4",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1305",
+      "recordId": "65442709-fc88-4d57-b6fb-27c6a18a6198",
+      "type": "Field",
+      "name": "NumJobTransfer"
+    },
+    {
+      "id": "1308",
+      "recordId": "0c7e65ac-2648-4b31-a6d7-dc0070901bc5",
+      "type": "Type Validation",
+      "name": "'Date and Time Reported' must be after 'Date and Time of Incident'."
+    },
+    {
+      "id": "1310",
+      "recordId": "95833a5f-a908-4375-8725-704ba4ef777d",
+      "type": "Field",
+      "name": "SelectMediclFac"
+    },
+    {
+      "id": "1313",
+      "recordId": "8be1e2af-225a-42d0-850a-481972fe505a",
+      "type": "Configurable View",
+      "name": "Case_EHSIncidentMang_OII_Select"
+    },
+    {
+      "id": "1319",
+      "recordId": "e651c146-a34a-41b5-bc09-7df9d937d4d4",
+      "type": "Field",
+      "name": "NameHidden"
+    },
+    {
+      "id": "1325",
+      "recordId": "b0ace4c2-0aa8-4c7a-8798-d0e61f77eb98",
+      "type": "Field",
+      "name": "ClaimsHelper"
+    },
+    {
+      "id": "1328",
+      "recordId": "f34c12cf-c2de-4176-8d33-ea7f59d57205",
+      "type": "Field",
+      "name": "PrivacyCase"
+    },
+    {
+      "id": "1330",
+      "recordId": "1eaf22df-20b7-41af-8ceb-a2968b16cb24",
+      "type": "Field",
+      "name": "NumDaysAway"
+    },
+    {
+      "id": "1333",
+      "recordId": "6d77aa57-ee4a-4074-8da6-e4c70c67886c",
+      "type": "Type Validation",
+      "name": "'Date of Treatment' must be on or before Today."
+    },
+    {
+      "id": "1335",
+      "recordId": "cad5a45e-9860-474a-97d6-42d03bdf3b69",
+      "type": "Field",
+      "name": "EmpNameHelp"
+    },
+    {
+      "id": "1337",
+      "recordId": "61b0a6e3-337e-442b-8979-fe9e6b5fe655",
+      "type": "Field",
+      "name": "Classification"
+    },
+    {
+      "id": "1340",
+      "recordId": "fea5846c-5488-4fd6-936f-5fcb252821cb",
+      "type": "Object Action Handler",
+      "name": "[OH Integration] Prevent Employee Change when injury record is related to Case"
+    },
+    {
+      "id": "1342",
+      "type": "Workflow Draft Schema",
+      "name": "Injury/Illness"
+    },
+    {
+      "id": "1344",
+      "recordId": "a621e4e3-6a1f-43c4-af5f-8c051e1a0b9c",
+      "type": "Workflow Draft Schema",
+      "name": "Injury/Illness"
+    },
+    {
+      "id": "1346",
+      "recordId": "b3533941-00a7-4899-bc29-35f1fdee4798",
+      "type": "Workflow Draft Status",
+      "name": "Closed"
+    },
+    {
+      "id": "1348",
+      "recordId": "17aab427-0587-493e-b5c4-1ee4a4584eb3",
+      "type": "Workflow Draft Stage",
+      "name": "Draft"
+    },
+    {
+      "id": "1350",
+      "recordId": "740c52ef-58ae-4002-996d-ab2df47b011e",
+      "type": "Field",
+      "name": "DisableWorkflow"
+    },
+    {
+      "id": "1352",
+      "recordId": "4761a7dc-3cdf-45cd-8f5f-01fd1fcb3a57",
+      "type": "Workflow Draft Status",
+      "name": "Validation"
+    },
+    {
+      "id": "1354",
+      "recordId": "afeb2022-6883-4dec-b500-0406b4128aba",
+      "type": "Workflow Draft Status",
+      "name": "Returned for Investigation"
+    },
+    {
+      "id": "1356",
+      "recordId": "34f6550c-7d0d-4c50-8e9a-1412b426334a",
+      "type": "Workflow Draft Status",
+      "name": "Return to Investigation"
+    },
+    {
+      "id": "1358",
+      "recordId": "f3c6dfb4-01b0-4884-8b14-43f8008226b7",
+      "type": "Workflow Draft Status",
+      "name": "In-Progress"
+    },
+    {
+      "id": "1360",
+      "recordId": "1883a86d-c4ac-4e84-ae1d-5922f420a415",
+      "type": "Workflow Draft Status",
+      "name": "Attached to Master"
+    },
+    {
+      "id": "1362",
+      "recordId": "e4ea9959-da54-4474-8290-81542eaa3230",
+      "type": "Workflow Draft Status",
+      "name": "Disabled"
+    },
+    {
+      "id": "1364",
+      "recordId": "c2c6778f-16bd-48dc-9d3a-8c4cd9077e17",
+      "type": "Workflow Draft Status",
+      "name": "Reopened"
+    },
+    {
+      "id": "1366",
+      "recordId": "14a35f4f-6edf-4417-934e-91208412c891",
+      "type": "Workflow Draft Status",
+      "name": "Investigation"
+    },
+    {
+      "id": "1368",
+      "recordId": "2c61a68c-35bf-44c6-a05d-96f563c42d5e",
+      "type": "Workflow Draft Status",
+      "name": "Draft"
+    },
+    {
+      "id": "1370",
+      "recordId": "d3e867a5-168f-47b2-8c12-a4ded7ff565a",
+      "type": "Workflow Draft Status",
+      "name": "Complete"
+    },
+    {
+      "id": "1372",
+      "recordId": "d18e5d8b-31a2-4ec7-8f9c-a6714d074281",
+      "type": "Workflow Draft Status",
+      "name": "Verification"
+    },
+    {
+      "id": "1374",
+      "recordId": "924e49e0-b13d-49bb-9343-ab52cc826319",
+      "type": "Workflow Draft Status",
+      "name": "Approval"
+    },
+    {
+      "id": "1376",
+      "recordId": "33709098-a9b8-4855-94f8-b01926b061a6",
+      "type": "Workflow Draft Status",
+      "name": "Return for Investigation"
+    },
+    {
+      "id": "1378",
+      "recordId": "51c0d53b-784e-49cf-b153-c9896e61e6c3",
+      "type": "Workflow Draft Status",
+      "name": "Approved"
+    },
+    {
+      "id": "1380",
+      "recordId": "e403cd8f-01ea-4786-96aa-d3c3e9bb467e",
+      "type": "Workflow Draft Status",
+      "name": "Open"
+    },
+    {
+      "id": "1382",
+      "recordId": "3b6aeec4-f232-47f4-9363-ececc5184055",
+      "type": "Workflow Draft Status",
+      "name": "Return to Approval"
+    },
+    {
+      "id": "1384",
+      "recordId": "c5b479a3-e5c8-4952-b407-f360a4c3cf3a",
+      "type": "Workflow Draft Status",
+      "name": "Cancelled"
+    },
+    {
+      "id": "1386",
+      "recordId": "b70afb5d-632e-4896-b8f8-b81b372dac6d",
+      "type": "Workflow Draft Stage",
+      "name": "Approval"
+    },
+    {
+      "id": "1388",
+      "recordId": "00554fbb-1803-47cd-a61c-b09651f606b9",
+      "type": "Workflow Draft Stage",
+      "name": "Investigation"
+    },
+    {
+      "id": "1390",
+      "recordId": "4c6070e3-f58a-4c4a-8483-286316fb907c",
+      "type": "Workflow Draft Stage",
+      "name": "Returned for Investigation"
+    },
+    {
+      "id": "1392",
+      "recordId": "77a19903-8d0c-44e4-94c6-d68ae91caaee",
+      "type": "Workflow Draft Stage",
+      "name": "Verification"
+    },
+    {
+      "id": "1394",
+      "recordId": "3a13447d-0907-465f-9cae-6230042a104e",
+      "type": "Field",
+      "name": "CreatedBy"
+    },
+    {
+      "id": "1397",
+      "recordId": "320bc96e-5a2d-4ff6-b697-b916ae1eae29",
+      "type": "System Subject",
+      "name": "Person Responsible"
+    },
+    {
+      "id": "1399",
+      "recordId": "503fe1f0-b219-49c6-b787-2a17895d27a2",
+      "type": "System Permission Mask",
+      "name": "Modify"
+    },
+    {
+      "id": "1401",
+      "recordId": "71eadb32-28d7-4810-93de-460030b6a13f",
+      "type": "Permission",
+      "name": "HardDelete"
+    },
+    {
+      "id": "1403",
+      "recordId": "aca5b695-b3d1-4a10-a7db-67ea17ab0b99",
+      "type": "Workflow Draft Stage Action",
+      "name": "Submit for Verification"
+    },
+    {
+      "id": "1405",
+      "recordId": "9f00837e-1fae-4383-90de-d4187eb0bcaa",
+      "type": "Role",
+      "name": "Incident Coordinator"
+    },
+    {
+      "id": "1407",
+      "recordId": "33cd515a-bdc2-449c-afb6-3d5588ea02d5",
+      "type": "Permission",
+      "name": "ViewWFAction"
+    },
+    {
+      "id": "1409",
+      "recordId": "9b38b199-ec88-42ce-84d7-9a6d9fd234c1",
+      "type": "System Permission Mask",
+      "name": "View"
+    },
+    {
+      "id": "1411",
+      "recordId": "41609215-7b47-4b94-94a7-1e5711b14721",
+      "type": "Workflow Draft Stage Action",
+      "name": "Return for Investigation"
+    },
+    {
+      "id": "1413",
+      "recordId": "fd7027da-f859-4de8-8c79-a93a549a471f",
+      "type": "Workflow Draft Stage Action",
+      "name": "Close"
+    },
+    {
+      "id": "1415",
+      "recordId": "1bc4009a-c02a-49b1-a4af-f1fea9df5fe7",
+      "type": "Field",
+      "name": "InvestDueDate"
+    },
+    {
+      "id": "1417",
+      "recordId": "49046bbe-28f3-4386-88f1-a2527d6b3cab",
+      "type": "Field",
+      "name": "AssInvestigator"
+    },
+    {
+      "id": "1420",
+      "recordId": "cf2e63b3-5d76-4379-bf1c-06e328411c7d",
+      "type": "System Permission Mask",
+      "name": "Edit"
+    },
+    {
+      "id": "1422",
+      "recordId": "a5db6368-a0f4-4230-ba80-e91e41d91e8e",
+      "type": "Permission",
+      "name": "PerformWFAction"
+    },
+    {
+      "id": "1424",
+      "recordId": "bc34d898-4441-44d8-b6d5-39357fee8f67",
+      "type": "Workflow Draft Stage Action",
+      "name": "Close without Approval"
+    },
+    {
+      "id": "1426",
+      "recordId": "53a57e43-6954-4fef-8bdd-e6a3e8a11a91",
+      "type": "Workflow Draft Stage Action",
+      "name": "Submit for Approval"
+    },
+    {
+      "id": "1428",
+      "recordId": "eba32a2d-116f-4035-9a2b-b508d5dc59f7",
+      "type": "Workflow Draft Stage Action",
+      "name": "Submit for Approval"
+    },
+    {
+      "id": "1430",
+      "recordId": "2ce6691b-52b3-4b75-8584-20ad08abba99",
+      "type": "Workflow Draft Stage Action",
+      "name": "Submit for Investigation"
+    },
+    {
+      "id": "1432",
+      "recordId": "761e9df6-381d-4d81-a8fe-395f283f15c8",
+      "type": "Workflow Draft Stage Action",
+      "name": "Close without Investigation"
+    },
+    {
+      "id": "1434",
+      "recordId": "b257072a-4658-4706-a118-4e38a9880eae",
+      "type": "Workflow Draft Stage Action",
+      "name": "Cancel"
+    },
+    {
+      "id": "1436",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been submitted."
+    },
+    {
+      "id": "1438",
+      "recordId": "f4267edc-06fd-4166-80e2-e480730f0301",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been submitted."
+    },
+    {
+      "id": "1440",
+      "recordId": "b17fcedb-9f31-444f-b9cb-e7d38cf5e1f1",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1632",
+      "recordId": "0650a944-4d1a-4ec2-beb9-97f97fea2940",
+      "type": "Field",
+      "name": "TransToNearMiss"
+    },
+    {
+      "id": "1634",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been reopened."
+    },
+    {
+      "id": "1636",
+      "recordId": "f4bf721d-5019-44fe-b142-ee46be307525",
+      "type": "Template",
+      "name": "EHS - Injury/Illness has been reopened."
+    },
+    {
+      "id": "1638",
+      "recordId": "d7971fa4-1ccf-4795-b920-02537a8f9f5d",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1643",
+      "recordId": "4e0adc80-d97e-42a5-be7a-86d73292353b",
+      "type": "Object Action Handler",
+      "name": "Investigation Due Date Validation"
+    },
+    {
+      "id": "1645",
+      "recordId": "576bdf65-e30e-4e03-9a80-820a8f7b6507",
+      "type": "Link",
+      "name": "DetachFromCase"
+    },
+    {
+      "id": "1647",
+      "type": "Template",
+      "name": "Injury/Illness Activity is Overdue!"
+    },
+    {
+      "id": "1649",
+      "recordId": "084a6796-4cd8-41f6-827a-326e23c51d7b",
+      "type": "Template",
+      "name": "Injury/Illness Activity is Overdue!"
+    },
+    {
+      "id": "1651",
+      "recordId": "e49ddf6c-6e2d-4b58-a577-83f152471fbc",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1656",
+      "recordId": "71c2ff89-2683-42e8-ac16-9215e722d566",
+      "type": "Field",
+      "name": "RIDDORReport"
+    },
+    {
+      "id": "1660",
+      "type": "Template",
+      "name": "EHS - [DEPRECATED] Injury/Illness has been cancelled."
+    },
+    {
+      "id": "1662",
+      "recordId": "3f985936-7ef9-487f-ba79-4d7121f16a7a",
+      "type": "Template",
+      "name": "EHS - [DEPRECATED] Injury/Illness has been cancelled."
+    },
+    {
+      "id": "1664",
+      "recordId": "e9cb81b6-6f47-4f6e-beb3-c68ec82d8a28",
+      "type": "Email Message Template",
+      "name": "Email Message Template"
+    },
+    {
+      "id": "1669",
+      "recordId": "52e1a75d-6134-4e36-85c7-795b2f641336",
+      "type": "Field",
+      "name": "DateOfHire"
+    },
+    {
+      "id": "1671",
+      "recordId": "6ce7945d-f834-4ed1-bd25-dd3994098dd5",
+      "type": "Object Action Handler",
+      "name": "Master Incident Action and Reopen Workflow Action"
+    },
+    {
+      "id": "1673",
+      "recordId": "5199cc9b-b2be-4d2a-a67f-96fef1ae17e9",
+      "type": "Field",
+      "name": "WorkerType"
+    },
+    {
+      "id": "1676",
+      "recordId": "93544bf0-b5b1-4425-a61e-bbaa4092b229",
+      "type": "Field",
+      "name": "OccupationHidd"
+    },
+    {
+      "id": "1681",
+      "recordId": "5ef101c4-e30f-40ba-9773-ce215ffde953",
+      "type": "Field",
+      "name": "DateofTreatment"
+    },
+    {
+      "id": "1683",
+      "recordId": "8e42d31e-078e-46a9-a902-fd2cdff95d00",
+      "type": "Field",
+      "name": "City"
+    },
+    {
+      "id": "1685",
+      "recordId": "e3287233-3a73-41fe-9825-df8e954552c0",
+      "type": "Object Action Handler",
+      "name": "[OH Integration] Set Relation with Occupational Health Record"
+    },
+    {
+      "id": "1687",
+      "recordId": "698584d8-6e63-4b0e-9c62-bc6cc7089f6c",
+      "type": "Field",
+      "name": "InjuryOutcome"
+    },
+    {
+      "id": "1690",
+      "recordId": "5b5b8b52-2d2a-4487-bf4c-1cd69e39fa11",
+      "type": "Field",
+      "name": "DOBHidden"
+    },
+    {
+      "id": "1695",
+      "recordId": "47fd24da-4d3d-420f-86b4-16737d9501ee",
+      "type": "Field",
+      "name": "Days"
+    },
+    {
+      "id": "1699",
+      "recordId": "e11e835f-243a-42d6-adfc-da6f4a48847f",
+      "type": "Object Action Handler",
+      "name": "[Helper] OSHA Only"
+    },
+    {
+      "id": "1701",
+      "recordId": "01b1f9dc-773c-4ee5-83d6-507b8a87f7f1",
+      "type": "Field",
+      "name": "NotInEmplyDirct"
+    },
+    {
+      "id": "1703",
+      "recordId": "0d9e4d44-bbc3-497c-98b9-f36e53db217c",
+      "type": "Field",
+      "name": "ETLRcrdMapHlp"
+    },
+    {
+      "id": "1705",
+      "recordId": "6405049d-8ef3-4280-8630-f46795ecc478",
+      "type": "Type Validation",
+      "name": "Only one WCB Form can be created per Injury/Illness."
+    },
+    {
+      "id": "1707",
+      "recordId": "d5669c79-27a5-4d91-a738-a920eeaf04a4",
+      "type": "Object Action Handler",
+      "name": "‘Date of Fatality’ must be on or after ‘Date and Time of Incident’"
+    },
+    {
+      "id": "1709",
+      "recordId": "c13a90fd-8bf8-446a-add6-307015f33d36",
+      "type": "Type Validation",
+      "name": "'Date of Birth' must be before Today."
+    },
+    {
+      "id": "1711",
+      "type": "Template",
+      "name": "EHS - [DEPRECATED] Injury/Illness has been submitted for Approval"
+    },
+    {
+      "id": "1713",
+      "recordId": "177bd4c3-223a-4098-90df-2d90836c6de7",
+      "type": "Template",
+      "name": "EHS - [DEPRECATED] Injury/Illness has been submitted for Approval"
+    },
+    {
+      "id": "1715",
+      "recordId": "6acfc3b0-7d64-43c8-b31e-25310714cd11",
+      "type": "Email Message Template",
+      "name": "[{\"FileName\":null,\"Source\":null,\"Extension\":null,\"Expression\":\"\"}]"
+    },
+    {
+      "id": "1720",
+      "recordId": "db7bccd3-1720-445a-9df5-49c7b180f8e8",
+      "type": "Field",
+      "name": "HelpIsCancelled"
+    },
+    {
+      "id": "1722",
+      "recordId": "437a5fe5-ef18-402f-aa12-9153ba9e15ed",
+      "type": "Field",
+      "name": "NameEmp"
+    },
+    {
+      "id": "1725",
+      "recordId": "af7bb303-6b77-4e93-8936-c73bb3a9ea0d",
+      "type": "Field",
+      "name": "InitiaTreatment"
+    },
+    {
+      "id": "1728",
+      "recordId": "6c4581de-c4dd-4ac7-b28e-72e6a80225e0",
+      "type": "Field",
+      "name": "HR"
+    },
+    {
+      "id": "1732",
+      "recordId": "be6a846f-cd6f-4cc2-9ef2-db12f1d36f7b",
+      "type": "Field",
+      "name": "DateBirthEmp"
+    },
+    {
+      "id": "1734",
+      "recordId": "8190d7bd-e186-4cb7-81a4-d58aba90e443",
+      "type": "Object Action Handler",
+      "name": "Archive Injury/Illness"
+    },
+    {
+      "id": "1736",
+      "recordId": "95587e0d-d30a-4119-8a9e-6e141d2e60cb",
+      "type": "Field",
+      "name": "DateOfHireEmp"
+    },
+    {
+      "id": "1738",
+      "recordId": "dc505f28-00d0-4ad5-8920-b4a920b4c5bc",
+      "type": "Field",
+      "name": "MonthYearHelp"
+    },
+    {
+      "id": "1741",
+      "recordId": "846bca03-35ea-4acd-bbf0-d60c82315098",
+      "type": "Field",
+      "name": "InjIllTypeHelp"
+    },
+    {
+      "id": "1745",
+      "recordId": "a37e7759-ee61-4fcb-82f1-0bae484839ca",
+      "type": "Field",
+      "name": "NotInMediFacDir"
+    },
+    {
+      "id": "1747",
+      "recordId": "bce8d0a0-a3b2-4eba-add5-24ed7809b525",
+      "type": "Field",
+      "name": "NumRestrictDay"
+    },
+    {
+      "id": "1750",
+      "recordId": "0acc5add-6f2f-4ac1-a207-0ecfecc4d9b5",
+      "type": "Field",
+      "name": "Case"
+    },
+    {
+      "id": "1754",
+      "recordId": "89e1f7fb-cfca-4d1b-aa4b-f4133310cbe4",
+      "type": "Object Action Handler",
+      "name": "'Date of Treatment' Validation"
+    },
+    {
+      "id": "1760",
+      "recordId": "be94bb06-80c7-4ddc-923c-b95c3b54d05b",
+      "type": "Source Field",
+      "name": "b5xz01"
+    },
+    {
+      "id": "1762",
+      "recordId": "a45b914a-1b3d-467b-b829-e9a092de9a01",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1764",
+      "recordId": "a69a7f61-e713-41c0-96fa-1cf97a084f74",
+      "type": "Object",
+      "name": "MetTypeEntity"
+    },
+    {
+      "id": "1770",
+      "recordId": "aeeccdc4-deb8-4a2a-b77c-08896cd6699f",
+      "type": "Configurable View",
+      "name": "EHSIncidentMang_MedicalFacility_Select"
+    },
+    {
+      "id": "1772",
+      "recordId": "a50474d1-a191-4e99-b50d-8160de199269",
+      "type": "Object",
+      "name": "EHSIncidentMang_MedicalFacilityObject"
+    },
+    {
+      "id": "1774",
+      "recordId": "d7afe974-07b9-403c-9ca1-96ac8c33f1d7",
+      "type": "Report",
+      "name": "[SM-OSHA] 00 - Base rollup report"
+    },
+    {
+      "id": "1776",
+      "recordId": "05621c8a-69c2-4147-8de3-544ed58e7f22",
+      "type": "Object",
+      "name": "CalenManagement_CycleTypeObject"
+    },
+    {
+      "id": "1778",
+      "recordId": "99facbb6-272a-4faf-88da-71e018226414",
+      "type": "Field",
+      "name": "StartDate"
+    },
+    {
+      "id": "1780",
+      "recordId": "cd49d96f-4244-436e-891d-bc8c3ac690a0",
+      "type": "Object",
+      "name": "CalenManagement_ReportingPeriodObject"
+    },
+    {
+      "id": "1782",
+      "recordId": "ea9b2d04-c1e5-40fa-a333-92b988a6f400",
+      "type": "Object",
+      "name": "SysLocationTreeStructureEntity"
+    },
+    {
+      "id": "1819",
+      "recordId": "e72dd96d-2c14-4a62-830f-4d25209d8ebc",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1823",
+      "recordId": "ca3f6d41-47cd-4536-9534-957f9764404d",
+      "type": "Source Field",
+      "name": "b0guny"
+    },
+    {
+      "id": "1825",
+      "recordId": "6f1ae6be-48fb-462d-b43f-ded4a5797c6a",
+      "type": "Source Field",
+      "name": "bqjum1"
+    },
+    {
+      "id": "1827",
+      "recordId": "65ca7b0b-63ff-4a5d-a932-a7e3149ab458",
+      "type": "Source Report",
+      "name": "[SM-OSHA] 05 - Location Data Import"
+    },
+    {
+      "id": "1829",
+      "recordId": "fbb664db-1122-4eea-9375-ab9985c3f14e",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1831",
+      "recordId": "dfbff50b-ebae-4370-ac85-0de6419907a6",
+      "type": "Source Report",
+      "name": "[SM-OSHA] 01 - Initialization"
+    },
+    {
+      "id": "1833",
+      "recordId": "0f0ecb2a-5f62-4faf-9609-b98873007c83",
+      "type": "Security Settings",
+      "name": "Location Hours and Headcount Security"
+    },
+    {
+      "id": "1834",
+      "recordId": "6505d16f-e3f9-4e3c-b4b8-bbb5fbeb5cf5",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_CDNFormsOSHAObject"
+    },
+    {
+      "id": "1838",
+      "recordId": "8dc1c8dc-f39c-4159-8e38-699de87f3e8f",
+      "type": "Field",
+      "name": "PersonResponsibleId"
+    },
+    {
+      "id": "1840",
+      "recordId": "f50139e1-050f-4af7-9b08-2ea71d9f6d93",
+      "type": "Field",
+      "name": "PersonResponsible"
+    },
+    {
+      "id": "1843",
+      "recordId": "1818a6e7-51a1-4159-907d-7b03fb728325",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1845",
+      "recordId": "9d3467b0-28c0-4761-955c-d9abd5deef80",
+      "type": "Source Field",
+      "name": "b7fk9n"
+    },
+    {
+      "id": "1851",
+      "recordId": "b2765b0f-0e50-4e62-bc40-5aa787fe82c3",
+      "type": "Object",
+      "name": "EHSIncidentMang_RIDDORObject"
+    },
+    {
+      "id": "1857",
+      "recordId": "7117e7fb-6383-4245-8782-11c0f6f64fdd",
+      "type": "Field",
+      "name": "Id"
+    },
+    {
+      "id": "1861",
+      "recordId": "20ab611c-d7e0-4738-906e-bd4f9bdc1333",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1863",
+      "recordId": "8a2a3b62-1ba5-48f7-bc0e-19cab1c09f81",
+      "type": "Source Field",
+      "name": "b839he"
+    },
+    {
+      "id": "1867",
+      "recordId": "5787fe11-11f1-4040-8e90-fed4ec63b6d4",
+      "type": "Object",
+      "name": "EHSIncidentMang_MasterAbstractObject"
+    },
+    {
+      "id": "1869",
+      "recordId": "e62d8fb7-03b4-491a-a4a5-d7e0f4f7cf8c",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1873",
+      "recordId": "27f5890c-02b2-46bf-ad17-acbf9f3080a5",
+      "type": "Source Field",
+      "name": "bvugff"
+    },
+    {
+      "id": "1875",
+      "recordId": "2ab03e96-a121-44a1-94a8-b68c8a2f1a3e",
+      "type": "Field",
+      "name": "tavalidincident"
+    },
+    {
+      "id": "1877",
+      "recordId": "998f80f6-e07f-45d5-a7a5-e598d2f8d302",
+      "type": "Source Field",
+      "name": "be1w6g"
+    },
+    {
+      "id": "1879",
+      "recordId": "7d107c46-04ef-4b14-8c1f-16eb50b1dac4",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1881",
+      "recordId": "c5b4bbb7-c69f-43f3-b2d7-51dfc201c728",
+      "type": "Source Field",
+      "name": "bygtty"
+    },
+    {
+      "id": "1885",
+      "recordId": "31a07fe7-8e4b-41bb-aa95-29bb9a7bb8a0",
+      "type": "Application",
+      "name": "My Tasks Summary"
+    },
+    {
+      "id": "1887",
+      "recordId": "49705b2a-9d5a-48f7-b5e4-f3c54e8ad85a",
+      "type": "Object",
+      "name": "OH_HRObject"
+    },
+    {
+      "id": "1889",
+      "recordId": "09ac4b8f-33bf-4011-bc42-68051538688d",
+      "type": "Object",
+      "name": "EHSIncidentMang_AbstractIncRegObject"
+    },
+    {
+      "id": "1891",
+      "recordId": "1f13e794-f102-4e59-bc14-dd05c2cad11d",
+      "type": "Field",
+      "name": "HlpPiiPoisoning"
+    },
+    {
+      "id": "1893",
+      "recordId": "1a9f3c5e-bcce-44b4-8efb-f271134ad523",
+      "type": "Report",
+      "name": "[SM-OSHA] 05 - Rollup Data Import (1/2)"
+    },
+    {
+      "id": "1895",
+      "recordId": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "type": "Report",
+      "name": "[SM-OSHA] 05 - Location Data Import"
+    },
+    {
+      "id": "1897",
+      "recordId": "97387fe5-d828-4b86-b06b-cf15adb45199",
+      "type": "Configurable View Profile",
+      "name": "EHSIncidentMang_OII_Frag_Days_Editable (Mobile)"
+    },
+    {
+      "id": "1899",
+      "recordId": "0d88a330-df90-45f4-a682-f8345dd48bfa",
+      "type": "Field",
+      "name": "Status"
+    },
+    {
+      "id": "1908",
+      "recordId": "9f79ebbf-df8f-4b40-90b6-64c2d2eb09bd",
+      "type": "Field",
+      "name": "Address1"
+    },
+    {
+      "id": "1918",
+      "recordId": "89f3a0e6-a046-4ef4-a262-929ec7884c5f",
+      "type": "Object",
+      "name": "FragApplication_CountryObject"
+    },
+    {
+      "id": "1922",
+      "recordId": "1fd6eb33-f6b7-46f7-b533-9a9fc1ba39e6",
+      "type": "Application",
+      "name": "Calendar Management"
+    },
+    {
+      "id": "1924",
+      "recordId": "20705b42-3433-4c0a-815f-b3173abea5ed",
+      "type": "Object",
+      "name": "EHSIncidentMang_DTQuestAnswerObject"
+    },
+    {
+      "id": "1926",
+      "recordId": "bbaa819a-68e5-43e0-85e4-233af5b1f0a4",
+      "type": "Object",
+      "name": "OH_AbsenceRecObject"
+    },
+    {
+      "id": "1928",
+      "recordId": "6bffee06-7aa9-465e-9ea8-f2831f450101",
+      "type": "Source Field",
+      "name": "bxqa9u"
+    },
+    {
+      "id": "1930",
+      "recordId": "6265abcc-7661-48c9-8f14-b694e49b6c1f",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1932",
+      "recordId": "c2b384df-68ee-408e-9130-7c3a9ce51a59",
+      "type": "Field",
+      "name": "Id"
+    },
+    {
+      "id": "1934",
+      "recordId": "4f0b8eaa-f2ee-45aa-8095-a509c6394334",
+      "type": "Has OSHA Recordable Injuries",
+      "name": "Establishment had injuries or illnesses"
+    },
+    {
+      "id": "1936",
+      "recordId": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "type": "Report",
+      "name": "[SM-KPI] 00 - Location base report for KPI data."
+    },
+    {
+      "id": "1940",
+      "recordId": "456ce05f-7a61-4399-820e-82ba0fdde35e",
+      "type": "Application",
+      "name": "ETL"
+    },
+    {
+      "id": "1942",
+      "recordId": "71d03d43-37e4-416e-a428-f8584f06872a",
+      "type": "Configurable View",
+      "name": "Employee_EHSIncidentMang_OII_Inventory"
+    },
+    {
+      "id": "1944",
+      "recordId": "82c1a290-1a73-4c88-a599-762023b6ab79",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1948",
+      "recordId": "ede40a37-ec52-4f7c-8454-758408943101",
+      "type": "Source Field",
+      "name": "b89ecw"
+    },
+    {
+      "id": "1950",
+      "recordId": "e4998719-4187-4bb5-946d-268882a2557b",
+      "type": "Field",
+      "name": "DueDate"
+    },
+    {
+      "id": "1952",
+      "recordId": "71646e44-7e7f-4f0d-bf04-e3057428d1c9",
+      "type": "Simple Type",
+      "name": "datetime"
+    },
+    {
+      "id": "1954",
+      "recordId": "2cf389f5-83cc-4b84-8457-2b8583ac82f2",
+      "type": "Field",
+      "name": "PrevPersResp"
+    },
+    {
+      "id": "1961",
+      "recordId": "dd6141d6-73bf-4e6c-a3f5-03413c76afc2",
+      "type": "Field",
+      "name": "InjuryOutcome"
+    },
+    {
+      "id": "1966",
+      "recordId": "7f106794-113e-44c2-8b28-383253f7faf9",
+      "type": "Field",
+      "name": "ParentLocation"
+    },
+    {
+      "id": "1970",
+      "recordId": "a6eeedbf-0e6d-4438-b6b7-f54b9af7e36e",
+      "type": "Field",
+      "name": "InvestigEndDate"
+    },
+    {
+      "id": "1972",
+      "recordId": "f492597f-9336-440d-a9d3-51d942463182",
+      "type": "Field",
+      "name": "StartInvestigat"
+    },
+    {
+      "id": "1974",
+      "recordId": "d5b287f9-4137-4b30-b751-8372b5ade3ba",
+      "type": "Source Field",
+      "name": "bcfc75"
+    },
+    {
+      "id": "1976",
+      "recordId": "96a02114-29d4-4862-a4b0-a678db2e2242",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1978",
+      "recordId": "7334b25d-3602-43e1-944f-d89e3b3b9c59",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "1982",
+      "recordId": "fb34a149-d4f8-4b2f-b20f-7cdb6bf72a68",
+      "type": "Source Field",
+      "name": "b7tn4f"
+    },
+    {
+      "id": "1984",
+      "recordId": "f22c6d5a-ab21-4542-b86f-57877e357928",
+      "type": "Field",
+      "name": "OSHAONLYId"
+    },
+    {
+      "id": "1988",
+      "type": "Import",
+      "name": "[SM-OSHA] 05 - Rollup Data Import"
+    },
+    {
+      "id": "1990",
+      "recordId": "7a4af9f2-9db1-4a7d-87a2-d52038fad826",
+      "type": "Import",
+      "name": "[SM-OSHA] 05 - Rollup Data Import"
+    },
+    {
+      "id": "1992",
+      "recordId": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+      "type": "Report",
+      "name": "[SM-OSHA] 05 - Rollup Data Import (2/2)"
+    },
+    {
+      "id": "1994",
+      "recordId": "da2fd5bc-3f6b-4778-8df1-288f6bb7e4b5",
+      "type": "Source Field",
+      "name": "b7z3o0"
+    },
+    {
+      "id": "1996",
+      "recordId": "b412c5d0-ed47-44a8-bdd7-28f5d71ebc0e",
+      "type": "Source Field",
+      "name": "b83cti"
+    },
+    {
+      "id": "1998",
+      "recordId": "2ccc8790-1c44-470b-a22b-3afd2c39aab7",
+      "type": "Source Field",
+      "name": "bzonh1"
+    },
+    {
+      "id": "2000",
+      "recordId": "dc9a2392-1d30-4fd3-a67b-4c589cf176bb",
+      "type": "Source Field",
+      "name": "bqui3v"
+    },
+    {
+      "id": "2002",
+      "recordId": "06ec6d14-f374-48fd-9ee0-8623929e67a7",
+      "type": "Source Field",
+      "name": "bbtnvn"
+    },
+    {
+      "id": "2004",
+      "recordId": "dc51a4f2-a925-4eab-b23d-8dfa3d744588",
+      "type": "Source Field",
+      "name": "bqm8jy"
+    },
+    {
+      "id": "2006",
+      "recordId": "1f880763-6680-457b-ab69-ba53c0051073",
+      "type": "Source Field",
+      "name": "bs0qcw"
+    },
+    {
+      "id": "2008",
+      "recordId": "94a05081-58f7-4264-b9da-d07570407ec7",
+      "type": "Source Field",
+      "name": "be2kla"
+    },
+    {
+      "id": "2010",
+      "recordId": "7b289f92-2865-49d3-9883-d8fbc66c2ce8",
+      "type": "Source Field",
+      "name": "b7xz3o"
+    },
+    {
+      "id": "2012",
+      "recordId": "08e8bd7c-10c7-4195-ad87-e96c1177e5af",
+      "type": "Source Field",
+      "name": "bb7q1k"
+    },
+    {
+      "id": "2014",
+      "recordId": "d383579a-059a-4047-863b-997786133ee4",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2016",
+      "recordId": "757a1b62-944b-44af-8869-2e2013b5fc92",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2018",
+      "recordId": "1ad23e3e-99de-4f64-808f-97627a1435de",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2020",
+      "recordId": "d34cf357-ca9b-4f91-a7e8-e4e59c5da0fe",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2022",
+      "recordId": "aa902c69-285e-4a31-902e-3d72fa480ff1",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2024",
+      "recordId": "4212a71b-b3be-4b45-8089-7962dc6ebf29",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2026",
+      "recordId": "05aa6bb5-3f8f-4ff4-a057-7d5bba8405e8",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2028",
+      "recordId": "6abda597-977a-4d06-8319-b0da48939239",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2030",
+      "recordId": "5bb197ff-6960-48ad-880b-e4528f9aab97",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2136",
+      "recordId": "619364dd-17f7-4bcc-8e5a-c1c214b84106",
+      "type": "Report",
+      "name": "[SM-KPI] 02 - Rollup KPI Data"
+    },
+    {
+      "id": "2138",
+      "recordId": "12ea179a-f422-4d41-9820-7a90799b1b65",
+      "type": "Report",
+      "name": "[SM-KPI] 00 - Rollup base data for KPI reports."
+    },
+    {
+      "id": "2140",
+      "recordId": "5d971e2d-fa7b-4c92-9852-9d25094b421e",
+      "type": "Simple Type",
+      "name": "int"
+    },
+    {
+      "id": "2147",
+      "recordId": "f5623fa3-07b1-41a1-bbde-648f2824571c",
+      "type": "Report",
+      "name": "[SM-OSHA] 01 - Initialization"
+    },
+    {
+      "id": "2149",
+      "recordId": "62ccebe8-898d-4c32-b7ac-3308523df271",
+      "type": "Source Field",
+      "name": "bz311l"
+    },
+    {
+      "id": "2151",
+      "recordId": "0fcd7344-20ec-43c3-886c-c92086de71b2",
+      "type": "Source Field",
+      "name": "boqzgf"
+    },
+    {
+      "id": "2153",
+      "recordId": "2e94c030-d345-4607-abc3-504fdf040a70",
+      "type": "Source Field",
+      "name": "bgw86p"
+    },
+    {
+      "id": "2155",
+      "recordId": "dc721f4c-517f-4304-a6cf-7b332f35f248",
+      "type": "Source Field",
+      "name": "bnvhso"
+    },
+    {
+      "id": "2157",
+      "type": "Import",
+      "name": "[SM-OSHA] 01 - Initialization"
+    },
+    {
+      "id": "2159",
+      "recordId": "307ca4f8-e22e-4c73-b222-fb98b3c8d18e",
+      "type": "Import",
+      "name": "[SM-OSHA] 01 - Initialization"
+    },
+    {
+      "id": "2161",
+      "recordId": "62d35965-f43a-4865-b5f8-09079e95de27",
+      "type": "Source Field",
+      "name": "bml5e7"
+    },
+    {
+      "id": "2163",
+      "recordId": "a4313807-9c44-4319-9618-129fbba6ed6b",
+      "type": "Source Field",
+      "name": "bstkap"
+    },
+    {
+      "id": "2165",
+      "recordId": "0b8dba4d-2548-4fdb-9575-c387363ba7aa",
+      "type": "Source Field",
+      "name": "beyrnj"
+    },
+    {
+      "id": "2167",
+      "recordId": "289a977b-87e6-4690-b3b1-bf288fa577c8",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2169",
+      "recordId": "4e5b401b-7a64-440c-b667-16c4b1292b42",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2171",
+      "recordId": "3c4beee8-d468-42c4-aed2-dda40af4a06f",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2173",
+      "recordId": "ef38252e-ef9c-4eb9-9606-5215ee29ecc3",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2175",
+      "recordId": "54c24766-48b8-4557-99ec-878a3bcb3b99",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2177",
+      "recordId": "e11c4b28-b81d-4e5d-abdd-a7d4375da7bb",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2179",
+      "recordId": "c28c1c43-4053-4a47-b763-cdfaf91b9b79",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2255",
+      "recordId": "ccdf74e7-f5fb-4eeb-8728-984b05dc40fa",
+      "type": "Field",
+      "name": "Gender"
+    },
+    {
+      "id": "2257",
+      "recordId": "8558e793-544e-49a3-8afe-36f3de7b71b4",
+      "type": "Field",
+      "name": "Position"
+    },
+    {
+      "id": "2259",
+      "recordId": "4a381853-d2e9-4bbc-baec-c34d56964148",
+      "type": "Field",
+      "name": "DateHired"
+    },
+    {
+      "id": "2261",
+      "recordId": "335f290d-ef65-405a-85f7-7228959d9a28",
+      "type": "Field",
+      "name": "DateOfBirth"
+    },
+    {
+      "id": "2263",
+      "recordId": "1c5170ba-c22c-4b43-9471-b3f4e32dd736",
+      "type": "Security Settings",
+      "name": "Incident Rate Abstract Security"
+    },
+    {
+      "id": "2264",
+      "recordId": "26ffd545-ea97-46a6-aca4-9b637e1d37d5",
+      "type": "Schedule",
+      "name": "Nightly Run"
+    },
+    {
+      "id": "2266",
+      "recordId": "d389a540-b9fd-41ac-ba86-a1cee1074707",
+      "type": "Event Handler",
+      "name": "[Safety Metrics] OSHA Summary Data Update"
+    },
+    {
+      "id": "2268",
+      "recordId": "34ac7adc-7e36-4c17-8bf1-164b23ad27c4",
+      "type": "Field",
+      "name": "PrevPersRespId"
+    },
+    {
+      "id": "2270",
+      "recordId": "24471921-b258-43a6-a290-403291ffbecc",
+      "type": "Field",
+      "name": "DaysAway"
+    },
+    {
+      "id": "2280",
+      "recordId": "c997e490-c6d0-4ded-a3b1-db81c2628cfa",
+      "type": "Report",
+      "name": "[SM-OSHA] 03 - Rollup Recordable Data"
+    },
+    {
+      "id": "2282",
+      "recordId": "cce6d073-a2aa-497a-8b8f-9e23faf47b52",
+      "type": "Report",
+      "name": "[SM-OSHA] 04 - Hours and Headcount (3/3)"
+    },
+    {
+      "id": "2284",
+      "recordId": "24c44768-2301-4c9c-97ea-c9190ab0ca96",
+      "type": "Field",
+      "name": "HlpOcDaysAway"
+    },
+    {
+      "id": "2286",
+      "recordId": "14331016-605e-4178-aca0-5f5bbc3bed1a",
+      "type": "Field",
+      "name": "OpenWorkStage"
+    },
+    {
+      "id": "2288",
+      "recordId": "7fd5a4c7-239d-482d-b2a1-707ce215907c",
+      "type": "Field",
+      "name": "HlpPiiSkinDsrdr"
+    },
+    {
+      "id": "2290",
+      "recordId": "3e08b31e-eaa3-4f72-bd1d-d52c80d62c6b",
+      "type": "OSHA Establishment Type",
+      "name": "Establishment is not a government entity"
+    },
+    {
+      "id": "2292",
+      "recordId": "9ab9e6ea-8fb4-4bbf-8f9a-408ef3b0e54c",
+      "type": "Field",
+      "name": "Index"
+    },
+    {
+      "id": "2296",
+      "recordId": "ff25e60b-57f1-4775-8278-817f1f0f5b62",
+      "type": "Scheduled Import",
+      "name": "[SM-OSHA] 05 - Rollup Data Import"
+    },
+    {
+      "id": "2298",
+      "recordId": "2967c223-2a5f-474b-a880-88cfb66036a8",
+      "type": "Report",
+      "name": "[SM-KPI] 03 - Rollup Hours and Headcount"
+    },
+    {
+      "id": "2300",
+      "recordId": "2b22ad45-9bb6-4274-8129-815fc87fff60",
+      "type": "Scheduled Import",
+      "name": "[SM-OSHA] 05 - Location Data Import"
+    },
+    {
+      "id": "2302",
+      "type": "Import",
+      "name": "[SM-OSHA] 05 - Location Data Import"
+    },
+    {
+      "id": "2304",
+      "recordId": "2563360c-3bf8-4e61-b543-209a7f5f27fa",
+      "type": "Import",
+      "name": "[SM-OSHA] 05 - Location Data Import"
+    },
+    {
+      "id": "2306",
+      "recordId": "8583fcfb-db65-41bf-a696-0ddd45a329e3",
+      "type": "Source Field",
+      "name": "bfnmbg"
+    },
+    {
+      "id": "2308",
+      "recordId": "6508fc66-22bf-4e92-99bc-2fc1632bda05",
+      "type": "Source Field",
+      "name": "b7sxfo"
+    },
+    {
+      "id": "2310",
+      "recordId": "506e7f2b-b635-44ab-a97d-2ffc204aaae9",
+      "type": "Source Field",
+      "name": "bv3ggv"
+    },
+    {
+      "id": "2312",
+      "recordId": "0775af35-20a9-4755-8f18-3ac758c81019",
+      "type": "Source Field",
+      "name": "b6o71h"
+    },
+    {
+      "id": "2314",
+      "recordId": "8209751a-4dc4-4695-8f7c-46c54b266373",
+      "type": "Source Field",
+      "name": "bpwo5d"
+    },
+    {
+      "id": "2316",
+      "recordId": "33366c8e-beaf-4d5d-8b92-62ea6f1643ce",
+      "type": "Source Field",
+      "name": "b6wwde"
+    },
+    {
+      "id": "2318",
+      "recordId": "b0fab031-bb91-4a45-a2f3-6eb14a4316e6",
+      "type": "Source Field",
+      "name": "b58g1y"
+    },
+    {
+      "id": "2320",
+      "recordId": "a2d78caa-58c4-4a2d-baed-8ffc8d4fc3c1",
+      "type": "Source Field",
+      "name": "bs1mmq"
+    },
+    {
+      "id": "2322",
+      "recordId": "2289379b-83b5-484a-99d8-9374f655cc23",
+      "type": "Source Field",
+      "name": "b5h2o5"
+    },
+    {
+      "id": "2324",
+      "recordId": "ab82ccca-6463-486e-89cc-db0f16595db1",
+      "type": "Source Field",
+      "name": "bnqip5"
+    },
+    {
+      "id": "2326",
+      "recordId": "b9183631-c474-4dc6-8783-ef656e7bbd3d",
+      "type": "Source Field",
+      "name": "b0bgaq"
+    },
+    {
+      "id": "2328",
+      "recordId": "b11b0420-c89f-4f55-bc7c-1a1140b723cf",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2330",
+      "recordId": "6595fcd7-1c61-4568-b38f-83e034705d56",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2332",
+      "recordId": "4db03a5f-11f3-4ca1-97b3-703c29b15825",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2334",
+      "recordId": "87b44b6f-c998-460e-8249-8729298d6de1",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2336",
+      "recordId": "a739d6a4-ffe6-4f47-b350-a3506951b0f4",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2338",
+      "recordId": "af13c3f2-83d1-475c-89b3-6c1c96bddeb9",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2340",
+      "recordId": "ee590034-76c3-428d-bf74-3c01dce159bf",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2342",
+      "recordId": "59dbb601-5063-4a5f-954a-bf1ad9d0334e",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2344",
+      "recordId": "92146e45-2c90-4263-836d-d6fb1f4924b0",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2346",
+      "recordId": "edd4facc-280d-42cc-b42e-cad992072a6d",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2445",
+      "recordId": "6f531add-b5b3-4d7e-a417-08def66f5ed2",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2447",
+      "recordId": "0e26a459-4d47-45f0-81d0-d96d6416e15b",
+      "type": "Source Field",
+      "name": "be9bsx"
+    },
+    {
+      "id": "2455",
+      "recordId": "1c2059ec-a97d-45ef-afc9-81030ab22d67",
+      "type": "Report",
+      "name": "[SM-KPI] 04 - Rollup Data Import (1/2)"
+    },
+    {
+      "id": "2457",
+      "recordId": "5f4e84aa-51c5-4bfb-bfa6-b35a2f1618a3",
+      "type": "Field",
+      "name": "NameEmpId"
+    },
+    {
+      "id": "2459",
+      "recordId": "2961dfbd-15de-416c-a793-352b7ba1d611",
+      "type": "Field",
+      "name": "FullName"
+    },
+    {
+      "id": "2466",
+      "recordId": "05b147d2-e2ca-4ae9-80d6-cb8d2c1c531e",
+      "type": "Object",
+      "name": "EHSIncidentMang_ShiftObject"
+    },
+    {
+      "id": "2468",
+      "recordId": "83813151-2825-4e0a-8f2a-c56fec3dfee9",
+      "type": "Source Field",
+      "name": "b0e6iy"
+    },
+    {
+      "id": "2470",
+      "recordId": "990b72aa-da83-4cec-9129-b09ed02478ab",
+      "type": "Source Report",
+      "name": "[SM-OSHA] 02 - Relate OII's"
+    },
+    {
+      "id": "2472",
+      "recordId": "4ea0f838-00c8-4bb7-a79f-0eca025e163b",
+      "type": "Field",
+      "name": "HlpPiiInjury"
+    },
+    {
+      "id": "2474",
+      "recordId": "8412e209-2d72-4e14-aa35-14db0f59e3cb",
+      "type": "Object",
+      "name": "Claim_ClaimObject"
+    },
+    {
+      "id": "2476",
+      "recordId": "f9f874b9-e4aa-46dc-9f3c-919164a7e2a3",
+      "type": "Application",
+      "name": "WCB Claims Management"
+    },
+    {
+      "id": "2480",
+      "recordId": "4353f244-4cf7-4eed-8746-b981bfd330b1",
+      "type": "Field",
+      "name": "OSHARecordId"
+    },
+    {
+      "id": "2482",
+      "recordId": "be27dcdc-33c8-4033-bc59-28b02bd814ee",
+      "type": "Field",
+      "name": "CascadeDeleted"
+    },
+    {
+      "id": "2484",
+      "recordId": "8e9b1c69-cf12-485d-99a9-06e9a2129004",
+      "type": "OSHA Establishment Type",
+      "name": "Establishment is a Local Government entity"
+    },
+    {
+      "id": "2486",
+      "recordId": "146a85f7-cf71-4d56-8e58-b7ff13d09655",
+      "type": "Object",
+      "name": "EHSIncidentMang_OIIClassificatObject"
+    },
+    {
+      "id": "2490",
+      "recordId": "20e6f394-687f-4fc2-958d-2a92ee4dd31f",
+      "type": "Simple Type",
+      "name": "char"
+    },
+    {
+      "id": "2492",
+      "recordId": "e7832899-27d1-4335-b3aa-0c5d7e75f5ab",
+      "type": "Field",
+      "name": "TypeOfEvent"
+    },
+    {
+      "id": "2495",
+      "recordId": "55e82a8f-d914-4404-a49a-d64e18cd306d",
+      "type": "Field",
+      "name": "State"
+    },
+    {
+      "id": "2516",
+      "recordId": "f03846bf-eba4-4ac5-ab17-8675e6d8dd63",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_EHSOIWorkerTypeObject"
+    },
+    {
+      "id": "2518",
+      "recordId": "ac8082a8-9965-4298-bb98-ad4544e012be",
+      "type": "Field",
+      "name": "PrInjuryIllness"
+    },
+    {
+      "id": "2521",
+      "recordId": "5efe9ebd-4a2f-4737-abef-4f1384c3bdb8",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_OSInjuryIllnessObject"
+    },
+    {
+      "id": "2525",
+      "recordId": "5caaa910-5da9-4e8a-8f56-2e3d68cb6b5b",
+      "type": "Field",
+      "name": "Caption"
+    },
+    {
+      "id": "2533",
+      "recordId": "f2ea2fc4-50d0-4ae2-beee-0fa9b1ad63e9",
+      "type": "Field",
+      "name": "To"
+    },
+    {
+      "id": "2535",
+      "recordId": "83fac673-c094-4493-b96e-132462443b41",
+      "type": "Field",
+      "name": "EntryType"
+    },
+    {
+      "id": "2538",
+      "recordId": "279acb4c-955a-4d12-9ad6-99c0afec0ccb",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "2540",
+      "recordId": "cef0ec67-5964-471a-8d01-08f21e6b17f3",
+      "type": "Field",
+      "name": "Duration"
+    },
+    {
+      "id": "2544",
+      "recordId": "90846922-4a9d-4b1c-9a37-336b7a1bfac9",
+      "type": "Field",
+      "name": "DateCreated"
+    },
+    {
+      "id": "2546",
+      "recordId": "b0732ad6-0546-4bea-9f04-e99d1f89a1c1",
+      "type": "Field",
+      "name": "RecordNo"
+    },
+    {
+      "id": "2548",
+      "recordId": "8f76a21b-9c8c-42bc-85cf-1729c31707f7",
+      "type": "Field",
+      "name": "Id"
+    },
+    {
+      "id": "2550",
+      "recordId": "4dbd0f1d-2e89-43de-9bbd-a24f722d6b3a",
+      "type": "Field",
+      "name": "InjuryIllnesId"
+    },
+    {
+      "id": "2552",
+      "recordId": "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+      "type": "Report",
+      "name": "[SM-OSHA] 05 - Last Modified Base"
+    },
+    {
+      "id": "2554",
+      "recordId": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "type": "Report",
+      "name": "[SM-OSHA] 00 - Base location report"
+    },
+    {
+      "id": "2556",
+      "recordId": "bddc1499-dbe3-4306-80d1-e2431004acdc",
+      "type": "Field",
+      "name": "OpenWorkflow"
+    },
+    {
+      "id": "2558",
+      "recordId": "9e04bd03-3832-46f0-a8cc-7aaf1996ca8f",
+      "type": "OSHA Establishment Size",
+      "name": "< 20 employees"
+    },
+    {
+      "id": "2560",
+      "recordId": "bdb4c032-5c4e-4f8b-8bdf-7d7ebff4c602",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_OIIDayCategoryObject"
+    },
+    {
+      "id": "2562",
+      "recordId": "c53b967b-3265-422d-9604-a21ef8d38864",
+      "type": "Has OSHA Recordable Injuries",
+      "name": "Establishment did not have injuries or illnesses"
+    },
+    {
+      "id": "2564",
+      "recordId": "74c88679-221d-474c-8d2f-095e78e17f72",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "2566",
+      "recordId": "31d894e9-b3da-406b-898e-d6d10593ce08",
+      "type": "Source Field",
+      "name": "bsa548"
+    },
+    {
+      "id": "2572",
+      "recordId": "760c52c0-2a61-4139-a0aa-a55022e38a3b",
+      "type": "Field",
+      "name": "DateReported"
+    },
+    {
+      "id": "2574",
+      "recordId": "ec13c69e-9e29-463f-9795-9d976357cf19",
+      "type": "Field",
+      "name": "Address2"
+    },
+    {
+      "id": "2576",
+      "recordId": "496a88f9-6f7a-4383-bf59-02dc7e166aa7",
+      "type": "Field",
+      "name": "EndDate"
+    },
+    {
+      "id": "2578",
+      "recordId": "ae0543a9-fd42-4472-8546-e15080f8d5a7",
+      "type": "Field",
+      "name": "HlpOcFatality"
+    },
+    {
+      "id": "2580",
+      "recordId": "0c3dee6c-4c57-468b-93b4-bcefa53838ea",
+      "type": "Field",
+      "name": "Date"
+    },
+    {
+      "id": "2584",
+      "recordId": "c6059869-bf10-47f0-b0a7-5d31536a49a4",
+      "type": "Security Settings",
+      "name": "OSHA Abstract Security"
+    },
+    {
+      "id": "2590",
+      "recordId": "d8138e6e-8b37-4203-a235-1874b9aa9585",
+      "type": "Field",
+      "name": "Index"
+    },
+    {
+      "id": "2596",
+      "recordId": "90cd2691-f73d-47ca-829a-af3e0f0443ba",
+      "type": "Field",
+      "name": "HRId"
+    },
+    {
+      "id": "2598",
+      "recordId": "6de36d64-010f-4c42-a682-1f97b0318890",
+      "type": "Field",
+      "name": "UpdateBalance"
+    },
+    {
+      "id": "2600",
+      "recordId": "3022d381-d3c9-43c8-ab39-92c86f15a105",
+      "type": "Field",
+      "name": "Balance"
+    },
+    {
+      "id": "2604",
+      "recordId": "cb56b44a-8bbd-42cf-8db5-4ef4c6c76089",
+      "type": "Field",
+      "name": "HR"
+    },
+    {
+      "id": "2608",
+      "recordId": "a70474b9-74d9-4204-86e4-7f69010a0504",
+      "type": "Field",
+      "name": "Case"
+    },
+    {
+      "id": "2612",
+      "recordId": "25105669-b87c-4561-b948-88428c2a2ef0",
+      "type": "Report",
+      "name": "[SM-KPI] 03 - Location Hours and Headcount"
+    },
+    {
+      "id": "2616",
+      "recordId": "2a1ea445-236e-417c-b4f1-fcc1637319fe",
+      "type": "Field",
+      "name": "RestrictedDays"
+    },
+    {
+      "id": "2620",
+      "recordId": "1dfd076d-51c8-4254-8607-77f8ecf93906",
+      "type": "Report",
+      "name": "[SM-OSHA] 04 - Hours and Headcount (1/3)"
+    },
+    {
+      "id": "2622",
+      "recordId": "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+      "type": "Report",
+      "name": "[SM-OSHA] 04 - Hours and Headcount (2/3)"
+    },
+    {
+      "id": "2624",
+      "recordId": "87ff251a-263c-469a-8673-86fdb1a3b880",
+      "type": "OSHA Establishment Type",
+      "name": "Establishment is a State Government entity"
+    },
+    {
+      "id": "2626",
+      "recordId": "c5d58f10-8307-4677-bfd1-e6ba80415d7b",
+      "type": "Permission",
+      "name": "DetachfromCase"
+    },
+    {
+      "id": "2628",
+      "recordId": "d8daf1af-0b7d-4851-b348-03e608f1f5f3",
+      "type": "Field Mapping",
+      "name": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+    },
+    {
+      "id": "2630",
+      "recordId": "79aa38b0-c60c-4a76-8cc9-e5a76f60de64",
+      "type": "Source Field",
+      "name": "b3jako"
+    },
+    {
+      "id": "2632",
+      "recordId": "e082ebf7-344c-4215-a8e5-ae1f4e77937f",
+      "type": "Field",
+      "name": "WorkflowStatus"
+    },
+    {
+      "id": "2634",
+      "recordId": "a158d17b-b7f9-4574-a9e5-9de21e3b180c",
+      "type": "Simple Type",
+      "name": "Workflow Status Type"
+    },
+    {
+      "id": "2636",
+      "recordId": "e6bf3e3f-891b-401a-9f79-8bdec54ed0f4",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_EHSOIIEventsExoObject"
+    },
+    {
+      "id": "2642",
+      "recordId": "ceb61a63-1b69-4479-9f68-45d50acc909b",
+      "type": "Field",
+      "name": "Caption"
+    },
+    {
+      "id": "2644",
+      "recordId": "eecbcf27-bcfa-4065-a1c0-e0ed27ab7fb2",
+      "type": "Report",
+      "name": "[SM-OSHA] 02 - Relate OII's"
+    },
+    {
+      "id": "2646",
+      "recordId": "2e12483e-7484-4b49-83ba-aa074ef2087e",
+      "type": "Field",
+      "name": "HlpPiiHringLoss"
+    },
+    {
+      "id": "2648",
+      "recordId": "99bd885c-209e-4195-9604-1d36fb03d9d6",
+      "type": "Object",
+      "name": "EHSIncidentMang_InjryClsfcationObject"
+    },
+    {
+      "id": "2650",
+      "recordId": "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+      "type": "Report",
+      "name": "[SM-KPI] 04 - Last Modified Base"
+    },
+    {
+      "id": "2652",
+      "recordId": "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+      "type": "Report",
+      "name": "[SM-OSHA] 03 - Location Recordable Data"
+    },
+    {
+      "id": "2654",
+      "recordId": "9c7b8f44-5cfe-469c-98bf-a0958d078af2",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "2656",
+      "recordId": "55e20359-8a7b-46e0-9ba1-943f6a93d80a",
+      "type": "Configurable View Profile",
+      "name": "EHSIncidentMang_OII_Inventory (Mobile)"
+    },
+    {
+      "id": "2663",
+      "recordId": "e878e419-caec-4cca-88fa-12bc5d9179b2",
+      "type": "Scheduled Import",
+      "name": "[SM-OSHA] 02 - Relate OII's"
+    },
+    {
+      "id": "2665",
+      "type": "Import",
+      "name": "[SM-OSHA] 02 - Relate OII's"
+    },
+    {
+      "id": "2667",
+      "recordId": "c40bdb4d-cba7-4dbb-bdc8-3a74bbfb398e",
+      "type": "Import",
+      "name": "[SM-OSHA] 02 - Relate OII's"
+    },
+    {
+      "id": "2688",
+      "recordId": "fad9ae94-1ceb-4db8-aebf-750dd4b6fa92",
+      "type": "Field",
+      "name": "DateApproved"
+    },
+    {
+      "id": "2690",
+      "recordId": "3275c4b2-62fb-4e85-875f-0e17f9174bb5",
+      "type": "Object",
+      "name": "Claim_OIIClaimObject"
+    },
+    {
+      "id": "2692",
+      "recordId": "2a9f6bb0-3cf8-4f3b-91da-18bad187edba",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_LTEntryTypeObject"
+    },
+    {
+      "id": "2694",
+      "recordId": "d96c24fc-b643-45af-9251-a1a5f1f55920",
+      "type": "Field",
+      "name": "City"
+    },
+    {
+      "id": "2696",
+      "recordId": "8e0e18d0-410c-40da-8648-63e1856a2038",
+      "type": "Field",
+      "name": "PostalCode"
+    },
+    {
+      "id": "2698",
+      "recordId": "9c981b9a-8d2b-49e3-8f92-080624662b83",
+      "type": "Field",
+      "name": "SICCode"
+    },
+    {
+      "id": "2716",
+      "recordId": "54cd638e-921a-4482-8110-82bf35b07c40",
+      "type": "Field",
+      "name": "HlpPiiAllOthrIl"
+    },
+    {
+      "id": "2718",
+      "recordId": "a08d3e73-43db-45e9-9298-1359b339725f",
+      "type": "Configurable View Profile",
+      "name": "EHSIncidentMang_OII_Frag_Days_Readonly (Mobile)"
+    },
+    {
+      "id": "2720",
+      "recordId": "86db71b3-d191-44f6-8ae1-2867c7a5c36f",
+      "type": "Security Settings",
+      "name": "Safety Metrics Security"
+    },
+    {
+      "id": "2721",
+      "recordId": "a365a5fc-32b7-4ca3-a0e7-ca198a43733d",
+      "type": "Object",
+      "name": "SysModuleEntity"
+    },
+    {
+      "id": "2723",
+      "recordId": "74ce441b-61d5-46c1-aa72-ee806ac41cca",
+      "type": "Field",
+      "name": "Master"
+    },
+    {
+      "id": "2727",
+      "recordId": "ad89dbed-541e-478a-b52c-6de4367c8a56",
+      "type": "Object",
+      "name": "OH_EmpFMLABalanceObject"
+    },
+    {
+      "id": "2729",
+      "recordId": "33cdd92d-1fc4-4a8a-9cbe-48e6ffb26a13",
+      "type": "Object",
+      "name": "EventFwk_EventTypeObject"
+    },
+    {
+      "id": "2731",
+      "recordId": "79d836c8-3378-4989-b1ce-e9f9facb4d3e",
+      "type": "Field",
+      "name": "Caption"
+    },
+    {
+      "id": "2733",
+      "recordId": "5e4a0e1e-893c-413b-b32e-e499860a21ed",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "2735",
+      "recordId": "dfbbea7d-4778-4fd0-8c23-bab690ba3fc8",
+      "type": "OSHA Establishment Size",
+      "name": "20-249 employees"
+    },
+    {
+      "id": "2737",
+      "recordId": "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+      "type": "Report",
+      "name": "[SM-KPI] 02 - Location KPI Data"
+    },
+    {
+      "id": "2739",
+      "recordId": "1476dcb8-dc33-43fb-bcd4-27e9d7ce01bb",
+      "type": "Field",
+      "name": "HlpOcOtherRec"
+    },
+    {
+      "id": "2741",
+      "recordId": "58dabaf2-9752-490c-85c4-df6741ca1357",
+      "type": "Field",
+      "name": "HlpPiiRsprtryCd"
+    },
+    {
+      "id": "2743",
+      "recordId": "887c80e0-8635-4a4e-9618-64f8783a6473",
+      "type": "Field",
+      "name": "HlpOcJobTrRest"
+    },
+    {
+      "id": "2745",
+      "recordId": "b3512beb-c298-41cb-b4c9-0667af8dca41",
+      "type": "Scheduled Import",
+      "name": "[SM-OSHA] 01 - Initialization"
+    },
+    {
+      "id": "2747",
+      "recordId": "23aa4898-b451-4768-818f-6ea86b7ebf3f",
+      "type": "Field",
+      "name": "Index"
+    },
+    {
+      "id": "2749",
+      "recordId": "c82fe724-f857-4ed5-94e6-ed3f57c90d28",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "2751",
+      "recordId": "f6fb7c3d-c144-4fd2-a017-7a2995afa57e",
+      "type": "Event Handler",
+      "name": "[Safety Metrics] Generate Location Hours and Headcount Records"
+    },
+    {
+      "id": "2753",
+      "recordId": "aed39710-7797-489e-afdc-4350bec31686",
+      "type": "Field",
+      "name": "Value"
+    },
+    {
+      "id": "2755",
+      "recordId": "aa4f250a-52b5-4923-aec9-a231aad6fb8d",
+      "type": "Field",
+      "name": "Value"
+    }
+  ],
+  "changed": [
+    {
+      "id": "42",
+      "recordId": "bbc02abb-6a22-4d72-9e8c-cb7cb26a596a",
+      "type": "Object",
+      "name": "EHSIncidentMang_OIIObject",
+      "properties": [
+        "Reporting object",
+        "Permissions",
+        "DisplayProperty",
+        "DescriptionProperty",
+        "CustomInventories",
+        "Group",
+        "OrderProperty",
+        "Filters"
+      ]
+    },
+    {
+      "id": "328",
+      "recordId": "22761319-34bf-40db-b0fe-dfbc62fec0f0",
+      "type": "Field",
+      "name": "RuNumFatalities",
+      "properties": [
+        "EditPermission",
+        "ValidationRules",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "330",
+      "recordId": "ba2eec4a-ce5d-4de9-885a-d6799508bab5",
+      "type": "Field",
+      "name": "RuCntrctWrkdHrs",
+      "properties": [
+        "EditPermission",
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules"
+      ]
+    },
+    {
+      "id": "332",
+      "recordId": "1d59a6b3-d05a-4f5f-97cb-35527693d811",
+      "type": "Field",
+      "name": "RuEmplWrkdHours",
+      "properties": [
+        "ValidationRules",
+        "ViewPermission",
+        "EditPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "334",
+      "recordId": "6a867f71-aa59-4a0f-9424-bec709d10655",
+      "type": "Field",
+      "name": "RuNumDaysAway",
+      "properties": [
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "EditPermission",
+        "ValidationRules"
+      ]
+    },
+    {
+      "id": "336",
+      "recordId": "c6626d90-5f1b-4950-b266-e75e837caecb",
+      "type": "Field",
+      "name": "RuNumIncLostTim",
+      "properties": [
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "ViewPermission",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "338",
+      "recordId": "553bb1be-bd16-45ca-94e0-390d26d1019c",
+      "type": "Field",
+      "name": "RuNumIncDayAway",
+      "properties": [
+        "ViewPermission",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules"
+      ]
+    },
+    {
+      "id": "340",
+      "recordId": "ff23157a-1cf6-4979-97c2-ae2895d3201e",
+      "type": "Field",
+      "name": "Date",
+      "properties": [
+        "ValidationRules",
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "342",
+      "recordId": "a2d7e328-40a0-420d-9b0c-38a6276247ff",
+      "type": "Field",
+      "name": "RuNumLostDays",
+      "properties": [
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "344",
+      "recordId": "30bd6dfd-e613-46df-a5fb-789807f4dbdb",
+      "type": "Field",
+      "name": "RuNumTrnsfRstDy",
+      "properties": [
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "346",
+      "recordId": "b75e75e4-c641-447e-81d8-cc18704ac8cb",
+      "type": "Field",
+      "name": "RuCtIncidents",
+      "properties": [
+        "ViewPermission",
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "468",
+      "recordId": "3ea4baa8-dcc1-4177-a4a6-ad1017b4d40b",
+      "type": "Field",
+      "name": "LocationIdHelp",
+      "properties": [
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "470",
+      "recordId": "81b5d8d6-5bff-49b5-a669-61ac051f1be0",
+      "type": "Field",
+      "name": "LocNameHelper",
+      "properties": [
+        "ViewPermission",
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "924",
+      "recordId": "a8c7f1b8-9643-43c4-a36e-808c494aec70",
+      "type": "Field",
+      "name": "LoNumIncDayAway",
+      "properties": [
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "EditPermission",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "926",
+      "recordId": "b831e2f5-81da-4a28-8556-1b9939b1a379",
+      "type": "Field",
+      "name": "LoNumDaysAway",
+      "properties": [
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "928",
+      "recordId": "53ec5a18-4bf9-4c7c-8a33-451cf2417c62",
+      "type": "Field",
+      "name": "LoCntrctWrkdHrs",
+      "properties": [
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "930",
+      "recordId": "4b7b009e-ede4-487b-92ca-beb73df52e64",
+      "type": "Field",
+      "name": "LoNumLostDays",
+      "properties": [
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "932",
+      "recordId": "736d7978-6935-4eb3-9098-6b7b7d391a84",
+      "type": "Field",
+      "name": "LoCtIncidents",
+      "properties": [
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "934",
+      "recordId": "b231cb4e-ed84-4433-9857-e5907347bec2",
+      "type": "Field",
+      "name": "LoEmplWrkdHours",
+      "properties": [
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "936",
+      "recordId": "a83fede5-74ae-4a23-957b-ef7ff00203d5",
+      "type": "Field",
+      "name": "LoNumFatalities",
+      "properties": [
+        "ValidationRules",
+        "EditPermission",
+        "ViewPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "938",
+      "recordId": "0d60d4c4-7643-4256-bdcd-0ddb6e9ded31",
+      "type": "Field",
+      "name": "LoNumTrnsfRstDy",
+      "properties": [
+        "ViewPermission",
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "940",
+      "recordId": "76c14f73-0411-4d97-aa06-c97215d6bc8d",
+      "type": "Field",
+      "name": "LoCtRecordable",
+      "properties": [
+        "EditPermission",
+        "ViewPermission",
+        "ValidationRules",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "1048",
+      "recordId": "0f0ecb2a-5f62-4faf-9609-b98873007c83",
+      "type": "Object",
+      "name": "SafetyMetrics_HrsandHeadcountObject",
+      "properties": [
+        "Notification Templates",
+        "Group",
+        "Links",
+        "Workflows",
+        "Filters",
+        "DescriptionProperty",
+        "CustomInventories",
+        "OrderProperty",
+        "Reporting object",
+        "SuperType"
+      ]
+    },
+    {
+      "id": "1062",
+      "recordId": "80e3ba70-b105-4c23-829a-9433ce6965da",
+      "type": "Field",
+      "name": "Date",
+      "properties": [
+        "EditPermission",
+        "ValidationRules",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "2032",
+      "recordId": "a2f1fc86-b6b3-4734-8f73-e3f803ec86d9",
+      "type": "Field",
+      "name": "RUNumHrsWorked",
+      "properties": [
+        "ViewPermission",
+        "ValidationRules",
+        "DefaultUnitOfMeasure",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "2034",
+      "recordId": "59abf339-8b77-4b3c-b276-8bee83c166f8",
+      "type": "Field",
+      "name": "RuCtHearingLoss",
+      "properties": [
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "EditPermission",
+        "ValidationRules"
+      ]
+    },
+    {
+      "id": "2036",
+      "recordId": "c1d0bf9f-99f3-42db-94d5-694fa3e5211d",
+      "type": "Field",
+      "name": "RuCtAllOtherIln",
+      "properties": [
+        "EditPermission",
+        "ValidationRules",
+        "ViewPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "2038",
+      "recordId": "30df76e2-4500-4238-8b33-5cdf7d9fe715",
+      "type": "Field",
+      "name": "RuCtRespiratorC",
+      "properties": [
+        "ValidationRules",
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "2040",
+      "recordId": "fe3e4d2f-9d3d-413d-ac0c-88394c569355",
+      "type": "Field",
+      "name": "RuCtDaysAway",
+      "properties": [
+        "ViewPermission",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ValidationRules"
+      ]
+    },
+    {
+      "id": "2181",
+      "recordId": "5e355ca1-cc36-407f-8373-ecc4a606164f",
+      "type": "Field",
+      "name": "ReporLocationId",
+      "properties": [
+        "ViewPermission",
+        "ValidationRules",
+        "DefaultUnitOfMeasure",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "2183",
+      "recordId": "878a8c8e-7187-4146-b56d-6c0a0bdc1780",
+      "type": "Field",
+      "name": "LocationState",
+      "properties": [
+        "ValidationRules",
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "2185",
+      "recordId": "47bb1cfb-ab61-4fa3-8143-2e34999f7042",
+      "type": "Field",
+      "name": "NAICSCode",
+      "properties": [
+        "ValidationRules",
+        "ViewPermission",
+        "EditPermission",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "2187",
+      "recordId": "68a49357-d504-4af5-a22b-09bc278011d6",
+      "type": "Field",
+      "name": "SICCode",
+      "properties": [
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "ViewPermission",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "2189",
+      "recordId": "1a8efdf8-b524-4b21-ab8c-6d6f4d2e7059",
+      "type": "Field",
+      "name": "Year",
+      "properties": [
+        "ViewPermission",
+        "EditPermission",
+        "ValidationRules",
+        "DefaultUnitOfMeasure"
+      ]
+    },
+    {
+      "id": "2191",
+      "recordId": "29d14066-bcc0-462f-9799-c93c3c8b5c51",
+      "type": "Field",
+      "name": "LocationName",
+      "properties": [
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "2294",
+      "recordId": "bcb89cad-109b-47cf-a3b2-3bb8ac766f7a",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_EstablishmeSizeObject",
+      "properties": [
+        "CustomInventories",
+        "DefaultInventoryView",
+        "ActionHandlers",
+        "DefaultDetailView",
+        "Links",
+        "DescriptionProperty",
+        "Datasets",
+        "Views",
+        "Permissions",
+        "Filters",
+        "ValidationRules",
+        "Group",
+        "DisplayProperty"
+      ]
+    },
+    {
+      "id": "2348",
+      "recordId": "e4fd521f-134f-4fbd-a0f5-36bd889f6f04",
+      "type": "Field",
+      "name": "LoCtTrnfrOrRest",
+      "properties": [
+        "DefaultUnitOfMeasure",
+        "ViewPermission",
+        "ValidationRules",
+        "EditPermission"
+      ]
+    },
+    {
+      "id": "2350",
+      "recordId": "3a3a3464-8f8d-4c40-9b77-1d8065403771",
+      "type": "Field",
+      "name": "LoCtInjuries",
+      "properties": [
+        "ViewPermission",
+        "DefaultUnitOfMeasure",
+        "EditPermission",
+        "ValidationRules"
+      ]
+    },
+    {
+      "id": "2352",
+      "recordId": "82889c5a-9b60-416e-9ece-8fed03c7347f",
+      "type": "Field",
+      "name": "LoCtFatalities",
+      "properties": [
+        "DefaultUnitOfMeasure",
+        "ValidationRules",
+        "EditPermission",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "2354",
+      "recordId": "7dc3d0d1-5438-4b07-a349-e1633ef73495",
+      "type": "Field",
+      "name": "LoCtDaysAway",
+      "properties": [
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "2356",
+      "recordId": "f5f0367a-e7ba-416e-a02e-b4b121df1650",
+      "type": "Field",
+      "name": "LoNumRstOrJobTr",
+      "properties": [
+        "ValidationRules",
+        "EditPermission",
+        "DefaultUnitOfMeasure",
+        "ViewPermission"
+      ]
+    },
+    {
+      "id": "2514",
+      "recordId": "bfd31eec-2b15-46e6-bf3e-1583e382745c",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_EstablishmeTypeObject",
+      "properties": [
+        "Group",
+        "DisplayProperty",
+        "Views",
+        "DescriptionProperty",
+        "DefaultDetailView",
+        "Permissions",
+        "DefaultInventoryView",
+        "ActionHandlers",
+        "Datasets",
+        "ValidationRules",
+        "Filters",
+        "CustomInventories",
+        "Links"
+      ]
+    },
+    {
+      "id": "2592",
+      "recordId": "d61d4b82-b2f4-43d0-acc4-af4f6484cbd3",
+      "type": "Lookup Object",
+      "name": "EHSIncidentMang_HasRecordaInjurObject",
+      "properties": [
+        "DefaultInventoryView",
+        "Group",
+        "Datasets",
+        "Views",
+        "ActionHandlers",
+        "DescriptionProperty",
+        "CustomInventories",
+        "Links",
+        "DisplayProperty",
+        "Permissions",
+        "DefaultDetailView",
+        "Filters",
+        "ValidationRules"
+      ]
+    }
+  ],
+  "missing": []
+}

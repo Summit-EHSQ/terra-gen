@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intelex Implementation Planner"
+  short_description: "Create dependency-correct Intelex build plans"
+  default_prompt: "Use $intelex-implementation-planner to turn this solution specification into an assignable technical implementation plan."

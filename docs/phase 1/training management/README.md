@@ -1,5 +1,7 @@
 # Training and Competency Management
 
+Follow-up: training audience selection remains open; confirmation of the reporting hierarchy does not establish which location dimension assigns courses. See the [recorded confirmation](<../platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md>). Earlier descriptions of unresolved business choices below refer to the initial review.
+
 This component governs how Terra-Gen assigns, delivers, records, renews, and audits training and qualifications in Intelex, including the planned replacement of TPC.
 
 [Documentation portal](../README.md) · [Phase 1 change log](../CHANGELOG.md) · [Open tasks and questions](../OPEN-TASKS-AND-QUESTIONS.md)
@@ -26,6 +28,7 @@ Training courses and completions form the foundation for qualifications, but the
 - Proposed: rehearse history migration in test, then perform one planned cumulative production load under ADR-020, with employee/course prerequisites for included inactive history.
 - Proposed: defer qualification/certification delivery and reassess program requirements and scope before restarting under ADR-021. Existing qualification decisions remain retained design inputs.
 - Use a reusable MARCOM catalogue and pin a specific provider release/file when the Training Course Version selects or changes its MARCOM Course. A catalogue update leaves existing courses unchanged; the training user manually creates a Course Version to adopt a newer release.
+- Proposed November 10 clarification: notify the designated training contact when a usable provider update is available, then adopt it deliberately through the existing Course Version pattern. Provider/distributor detection, ingestion and notification ownership remain unresolved; no new confirmation action or automatic refresh is selected.
 - Proposed catalogue model: one language-specific Entry per provider Product Code, retained Content Releases with an explicit current pointer, and previous-filename Alias children. Three-digit IDs remain searchable attributes because they repeat across industries.
 - MARCOM Classification, MARCOM Industry, and MARCOM Topic are separate catalogue objects; each Content Release references one record in each catalogue and preserves its original provider labels.
 - Proposed: constrain the initial API-assisted catalogue load to non-personal course data in test and deactivate temporary credentials afterward.
@@ -75,6 +78,7 @@ The [MARCOM Course Catalog Implementation Plan](MARCOM-COURSE-CATALOG-IMPLEMENTA
 
 ## Source Evidence
 
+- [Summit + TG: Asset Hierarchy Setup, November 10, 2026](<raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>) — manual MARCOM adoption, unverified adaptive/package behavior and the changed location-audience dependency. The [reconciliation](../ADR-RECONCILIATION-2026-11-10.md) preserves accepted compatibility/refresh decisions and identifies the exact gaps.
 - [Training Setup Q&A, October 28, 2026, 3:30 PM ET](<raw artifacts/meeting_transcripts/2026-10-28-terra-gen-training-setup-qa.md>) — shared with Employee Management; assignment sources, initial due dates, history migration, and qualification deferral.
 - [MARCOM Course File Name and Metadata Guide](<raw artifacts/MARCOM Adaptive Learning Course File Name and Metadata Guide 09 10 26.xlsx>) — only `English language` and `Spanish language` analyzed; both discontinued tabs excluded. Provider SCORM descriptions document adaptive chapter test-out intent; target compatibility remains untested.
 - [MARCOM Requirements Knowledge Transfer, October 23, 2026](<raw artifacts/meeting_transcripts/2026-10-23-terra-gen-training-management-marcom-requirements-knowledge-transfer.md>) — internal direction; client approval is not established.
@@ -96,10 +100,12 @@ ADR **More Information** sections identify the relevant timestamps.
 - Derive qualification definitions, assessor authority, validity, renewal, lapse, and reinstatement rules from policy.
 - Design authorized competency attestation and its evidence model.
 - Validate SCORM and custom-package compatibility.
+- Obtain the referenced custom SCORM quiz sample if absent and verify that failed attempts do not produce passing completions. Whole-package import retains its embedded quiz; the corrected discussion does not require Quiz Builder reconstruction or establish the target SCORM version. Actual adaptive-learning behavior remains untested in the supplied evidence.
 - Test the supplied Incident Reporting and Fleet Safety packaged-learning samples under `content/phase 1/training management/`; repository presence does not establish compatibility.
 - Define TPC inventory, migration, coexistence, cutover, historical-data treatment, and decommissioning.
 - Prototype exact course, document, quiz, and SCORM version traceability.
 - Establish the MARCOM refresh operating model.
+- Name the provider/distributor and client owners for release detection, usable-library publication and notification. Revalidate location-based course audiences before adopting the proposed reporting hierarchy and separate regulatory-establishment model.
 - Review the proposed Entry/Release/Alias schema, separate MARCOM Classification/Industry/Topic catalogue objects, and full metadata mapping; confirm provider key stability, current-release designation, release retention, guarded selection-time release/file pinning, asset availability, and import anomalies. Existing Training Management functionality owns learner attempts, completions, and historical evidence. Validate provider-described adaptive chapter test-out in actual English/Spanish packages and confirm release notifications.
 - Configure assignment and history behavior for termination, leave, rehire, and job changes.
 

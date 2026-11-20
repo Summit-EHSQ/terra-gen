@@ -1,0 +1,2334 @@
+{
+  "title": "Shared Hours Worked and OSHA Establishment configuration implementation plan",
+  "version": 1,
+  "date": "2026-11-12",
+  "specificationRevision": 2,
+  "baselineSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "evidenceNames": {
+    "E36": "Safety Metrics",
+    "E13": "SafetyMetrics_OSHAAbstractObject",
+    "E17": "SafetyMetrics_IncidentRateKPIObject",
+    "E40": "SafetyMetrics_IncRateAbstractObject",
+    "E44": "EHSIncidentMang_IncidentObject",
+    "E48": "EventFwk_EventObject",
+    "E66": "SysLocationEntity",
+    "E72": "SafetyMetrics_OSHASummaryObject",
+    "E76": "EHSIncidentMang_OIIObject",
+    "E84": "SafetyMetrics_HrsandHeadcountObject",
+    "E241": "EHSIncidentMang_EstablishmeTypeObject",
+    "E310": "FragApplication_SettingAbsObject",
+    "E322": "EventFwk_EventScenarioObject",
+    "E327": "EHSIncidentMang_EstablishmeSizeObject",
+    "E362": "EHSIncidentMang_OIISettingObject",
+    "E366": "EHSIncidentMang_HasRecordaInjurObject",
+    "E9": "RuNumRstOrJobTr",
+    "E15": "RuNumDaysAway",
+    "E21": "TargetLTIR",
+    "E34": "TargetSeverRate",
+    "E38": "TargetDART",
+    "E42": "TargetTRIR",
+    "E50": "RecordNo",
+    "E56": "Date",
+    "E58": "Location",
+    "E70": "LoNumHrsWorked",
+    "E78": "RuNumDaysAway",
+    "E82": "Date",
+    "E86": "CompanyName",
+    "E94": "RuCtRecordable",
+    "E96": "LoNumFatalities",
+    "E131": "RuCtInjuries",
+    "E133": "RuCtIncidents",
+    "E135": "LoCtRespiratorC",
+    "E137": "Location",
+    "E141": "LoAvgNumEmploye",
+    "E145": "RuCtOthrRecrdbl",
+    "E147": "LoCtAllOtherIln",
+    "E153": "LoCtOthrRecrdbl",
+    "E155": "RuCtTrnfrOrRest",
+    "E157": "ContractrHCount",
+    "E159": "LocNameHelper",
+    "E161": "LocationStreet",
+    "E165": "Date",
+    "E167": "EINNumber",
+    "E169": "EmployeeHrs",
+    "E176": "LoCtPoisonings",
+    "E185": "Location",
+    "E191": "LoCtHearingLoss",
+    "E193": "RuNumLostDays",
+    "E195": "RuCtSkinDisordr",
+    "E197": "LoCntrctWrkdHrs",
+    "E199": "LocationIdHelp",
+    "E212": "LoCtIncidents",
+    "E216": "RuAvgNumEmploye",
+    "E218": "RUNumHrsWorked",
+    "E220": "ChangeReason",
+    "E222": "Name",
+    "E238": "EstablishmeType",
+    "E243": "EstablishmeName",
+    "E245": "RuCtRespiratorC",
+    "E249": "LocNameHelper",
+    "E251": "Deleted",
+    "E253": "EmployeeHCount",
+    "E255": "LoCtFatalities",
+    "E259": "RuNumIncDayAway",
+    "E261": "LoCtTrnfrOrRest",
+    "E263": "LoCtInjuries",
+    "E265": "LocationCity",
+    "E267": "LoNumLostDays",
+    "E273": "LocationPostal",
+    "E275": "LoNumIncDayAway",
+    "E277": "RuCtFatalities",
+    "E279": "RuCtDaysAway",
+    "E281": "LocationState",
+    "E283": "RecordNo",
+    "E285": "LoCtDaysAway",
+    "E287": "ReporLocationId",
+    "E289": "Year",
+    "E291": "RuCtAllOtherIln",
+    "E293": "LocationName",
+    "E297": "OIISettings",
+    "E300": "LoNumDaysAway",
+    "E302": "RuCtHearingLoss",
+    "E304": "LoCtSkinDisordr",
+    "E306": "RuCtPoisonings",
+    "E308": "LoNumRstOrJobTr",
+    "E314": "RecordNo",
+    "E316": "ContractrHrs",
+    "E320": "RuCntrctWrkdHrs",
+    "E324": "EstablishmtSize",
+    "E331": "RuNumIncLostTim",
+    "E333": "RuEmplWrkdHours",
+    "E335": "SICCode",
+    "E339": "AssociatedOIIs",
+    "E343": "NAICSCode",
+    "E345": "AnyRecrdblIncid",
+    "E348": "OSHA300aID",
+    "E350": "EstablishmentID",
+    "E352": "InduDescription",
+    "E356": "LoNumIncLostTim",
+    "E358": "RuNumTrnsfRstDy",
+    "E360": "LoNumTrnsfRstDy",
+    "E364": "LoNumDaysAway",
+    "E368": "LoCtRecordable",
+    "E370": "LoEmplWrkdHours",
+    "E372": "RuNumFatalities",
+    "E19": "SafetyMetrics_IncidentRateKPI_Inventory",
+    "E23": "SafetyMetrics_IncidentRateKPI_Detail",
+    "E54": "Unique Location - Date",
+    "E62": "SafetyMetrics_IncRateAbstract_Inventory",
+    "E80": "Date on first of month",
+    "E98": "OSHA Esub",
+    "E100": "SafetyMetrics_OSHASummary_Detail",
+    "E151": "SafetyMetrics_HrsandHeadcount_Inventory",
+    "E163": "Unique Location - Date",
+    "E173": "SafetyMetrics_IncRateAbstract_Detail",
+    "E178": "SafetyMetrics_OSHAAbstract_Detail",
+    "E183": "Unique Location-Date",
+    "E203": "Print Cal/OSHA 300 Form",
+    "E205": "Print Cal/OSHA 300 A Form",
+    "E209": "SafetyMetrics_HrsandHeadcount_Detail",
+    "E214": "Print Combined OSHA 300 Form",
+    "E224": "SafetyMetrics_OSHASummary_Inventory",
+    "E247": "Set Location Name Helper",
+    "E271": "SafetyMetrics_OSHAAbstract_Inventory",
+    "E295": "Month and Day Check",
+    "E318": "First of Month Check",
+    "E329": "Print OSHA 300 Form",
+    "E337": "Print Combined Cal/OSHA 300 Form",
+    "E354": "Print OSHA 300 A Form"
+  },
+  "externalInputs": [
+    {
+      "id": "IN-01",
+      "description": "Supported destination binding for source Create/Update/Delete hooks, access to original reference/month values before deletion, cross-object atomic transaction and deterministic locks, manual source-key initialization before required-value validation, conditional server-side summary-identity guards and safe explicit rebuild invocation. No concrete runtime capability or method signature is included in the package."
+    },
+    {
+      "id": "IN-02",
+      "description": "Destination capacities for copied nvarchar fields with null MaxLength metadata, native AutoNumber defaults for new analytics records, and supported settings for creation-only versus later-readonly controls. Master data text limits are specified, but copied summary/helper capacities are not."
+    },
+    {
+      "id": "IN-03",
+      "description": "Existing OSHA Establishment Type, OSHA Establishment Size and Has OSHA Recordable Injuries value keys and any active-selection metadata. No catalogue field definitions or records are exported; do not invent Active? properties, thresholds or submission codes."
+    },
+    {
+      "id": "IN-04",
+      "description": "Approved application-user role/group mappings and record-scope predicates for establishment administration, hours editing, headcount editing, KPI target editing, regulatory metadata correction and reporting. Include the supported dual-dimension user access check, inactive-scope correction entitlement and direct-URL/export visibility policy; no new security hierarchy is assumed."
+    },
+    {
+      "id": "IN-05",
+      "description": "Verified source monthly incident eligibility, incident-versus-case counting level, incident dates/types, worker-population membership and lost-time/day rules. Supply actual rate denominator composition, normalizer, zero/null handling, period aggregation and rounding expressions; exported metric Calculation properties are null."
+    },
+    {
+      "id": "IN-06",
+      "description": "Separately supplied incident-establishment attribution and change-notification contract covering original/corrected scopes, full incident-type coverage, AssociatedOIIs declaring relationship/cardinality/opposing property, and OSHARecord/InjuryIllnes paths with privacy masking. Incident-side configuration is outside this plan."
+    },
+    {
+      "id": "IN-07",
+      "description": "Verified annual G–M case eligibility/classification precedence/day caps, source annual employee-hour inclusion, headcount annual-average calculation including partial/missing months and rounding, and output completeness behavior for missing versus entered-zero hours/headcounts."
+    },
+    {
+      "id": "IN-08",
+      "description": "Destination OII Setting record and template IDs, supported custom-summary binding for DownloadOSHAReport and mail merge, source template definitions, verified combined-output behavior including Combined Cal/OSHA oshaType, case 301 bindings, and output-specific mandatory metadata. If a native endpoint rejects custom types, supply the approved supported equivalent report configuration before its task proceeds."
+    },
+    {
+      "id": "IN-09",
+      "description": "Exact existing location KPI/annual processor identifiers, operation signatures and successful-refresh/failure callbacks; supported invocation after summary/headcount writes; and native completion/error gate preventing stale affected outputs appearing current. No source processing implementation is exported."
+    },
+    {
+      "id": "IN-10",
+      "description": "Concrete current hours-import/interface names, source field definitions and target mapping identifiers, supported entry endpoint/update route, stable namespaced source/allocation-line keys and approved interface-retirement mapping. The extract has IsDataImportEnabled=FALSE on the original summary and does not identify an existing import writer."
+    },
+    {
+      "id": "IN-11",
+      "description": "Existing actual-rate report/dashboard definition and supported destination expressions/display bindings for the four rates, target comparisons, grouping and permissions. No actual calculated-rate fields or dashboard definition is present in the extract."
+    },
+    {
+      "id": "IN-12",
+      "description": "Definition/query/export layout behind the source OSHA Esub dashboard 6a9aa80a-174a-415e-b2c3-be5a41c08424, current submission schema/version, required field mappings/formatting and approved destination export binding. The exported link is navigation only, not evidence of a direct submission API."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "title": "Create the OSHA Establishment register",
+      "category": "Objects and administration forms",
+      "objective": "Provide the independent establishment master used by hours entry and regulatory reporting.",
+      "scope": "Create the non-location-bound OSHA Establishment object, its sixteen business fields, unique code, audit and administration views in the existing Safety Metrics application. Configure the master field defaults and catalogue selectors; downstream navigation grids and the later reference-dependent code guard are owned by their consuming tasks.",
+      "deliverable": "OSHA Establishment business fields, unique-code validation and administration detail/inventory views.",
+      "implementer": "Associate Consultant",
+      "rationale": "Typed fields, ordinary defaults, a unique code and two administration views form a bounded established configuration assignment; nuanced reference-dependent security is assigned separately.",
+      "inputs": [
+        "IN-03"
+      ],
+      "steps": [
+        "Create TG_OSHAEstablishmentObject in Safety Metrics (E36), display name OSHA Establishment; IsAbstract=FALSE, IsLocationBound=FALSE, no inheritance parent, native audit enabled and no workflow. Create TG_OSHAEstablishment_Detail and TG_OSHAEstablishment_Inventory; Name is the object display field.",
+        "Add a unique constraint on Code, length 100, non-localizable. Configure Active? default TRUE and Name as a non-localizable legal reporting label. Configure the supplied Type/Size catalogue selector filters with inverse disabled and preserve references to values later made inactive.",
+        "Place Name, Code, Active?, Company Name, address, EIN, industry metadata, establishment type/size and external reporting IDs on the administration form. Company Name, Street, City, State and Postal Code remain visible/editable and may be blank during maintenance; report-generation completeness is enforced by the reporting tasks, not unconditional master requiredness."
+      ],
+      "accept": [
+        "The register permits establishment administration without a Location reference or workflow.",
+        "Duplicate Code is rejected, Active? defaults TRUE and Name supplies the display value.",
+        "Master form address fields remain editable without unconditional reporting completeness requirements."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 1, 3, 4.1, 6.3; R3, R4.",
+        "Package module Safety Metrics (E36), object GUID 86db71b3-d191-44f6-8ae1-2867c7a5c36f."
+      ],
+      "configurationRows": [
+        [
+          "OSHA Establishment.Code",
+          "Add Code (Code) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: Y. Default/population setting: None; unique, non-localizable. Field/control behavior: Administrator editable at creation and while unused; the later reference-dependent code guard is configured with the complete record-security outcome."
+        ],
+        [
+          "OSHA Establishment.Name",
+          "Add Name (Name) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 255; legal reporting label, non-localizable. Required: Y. Default/population setting: None. Field/control behavior: Establishment administrator editable."
+        ],
+        [
+          "OSHA Establishment.Active?",
+          "Add Active? (Active) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Yes/No. Required: Y. Default/population setting: TRUE. Field/control behavior: Establishment administrator editable."
+        ],
+        [
+          "OSHA Establishment.Company Name",
+          "Add Company Name (CompanyName) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 255. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation."
+        ],
+        [
+          "OSHA Establishment.Street",
+          "Add Street (Street) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 255. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation."
+        ],
+        [
+          "OSHA Establishment.City",
+          "Add City (City) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation."
+        ],
+        [
+          "OSHA Establishment.State",
+          "Add State (State) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation."
+        ],
+        [
+          "OSHA Establishment.Postal Code",
+          "Add Postal Code (PostalCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 30. Required: Conditional. Default/population setting: None. Field/control behavior: Administrator editable; required for report generation."
+        ],
+        [
+          "OSHA Establishment.EIN Number",
+          "Add EIN Number (EINNumber) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 30. Required: N. Default/population setting: None. Field/control behavior: Administrator editable."
+        ],
+        [
+          "OSHA Establishment.NAICS Code",
+          "Add NAICS Code (NAICSCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: None. Field/control behavior: Administrator editable."
+        ],
+        [
+          "OSHA Establishment.SIC Code",
+          "Add SIC Code (SICCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: None. Field/control behavior: Administrator editable."
+        ],
+        [
+          "OSHA Establishment.Industry Description",
+          "Add Industry Description (IndustryDescription) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 1000. Required: N. Default/population setting: None. Field/control behavior: Administrator editable."
+        ],
+        [
+          "OSHA Establishment.Establishment Type",
+          "Add Establishment Type (EstablishmentType) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeTypeObject, 0..1 target; inverse disabled. Required: N. Default/population setting: None. Field/control behavior: Administrator editable; preserve referenced values; available-value filter unresolved because catalogue fields are not exported."
+        ],
+        [
+          "OSHA Establishment.Establishment Size",
+          "Add Establishment Size (EstablishmentSize) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeSizeObject, 0..1 target; inverse disabled. Required: N. Default/population setting: None. Field/control behavior: Administrator editable; preserve referenced values; available-value filter unresolved because catalogue fields are not exported."
+        ],
+        [
+          "OSHA Establishment.Establishment ID",
+          "Add Establishment ID (EstablishmentID) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: N. Default/population setting: None. Field/control behavior: Administrator editable."
+        ],
+        [
+          "OSHA Establishment.OSHA 300a ID",
+          "Add OSHA 300a ID (OSHA300aID) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Text, max 100. Required: N. Default/population setting: None. Field/control behavior: Administrator editable."
+        ]
+      ],
+      "modifications": [],
+      "prerequisites": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-03",
+          "description": "The existing Establishment Type and Size selector keys and any active-value property are missing; only those two new-selection filters are blocked. Their target objects are known and can be configured without reseeding values."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-03 — The existing Establishment Type and Size selector keys and any active-value property are missing; only those two new-selection filters are blocked. Their target objects are known and can be configured without reseeding values."
+    },
+    {
+      "id": "IMP-02",
+      "title": "Configure shared hours entry and the monthly summaries",
+      "category": "Objects, forms and validation",
+      "objective": "Provide one entry form for hours and separate monthly summaries that retain independent headcounts.",
+      "scope": "Create Hours Worked and Establishment Hours and Headcount with their entry/detail/inventory views, conditional selectors, summary links, contribution grids and ordinary unique/date validation. Change the original location summary hour editability, protect saved summary identity, initialize the new summary label and add native audit to that original object. Atomic hour synchronization is owned by its specialist task.",
+      "deliverable": "Eight shared-input fields, nine establishment-summary fields/grids, one location-summary contribution grid, establishment summary navigation, updated location controls and summary validation.",
+      "prerequisites": [
+        "IMP-01"
+      ],
+      "implementer": "Consultant",
+      "rationale": "The complete entry outcome spans two summary types and conditional source links; separating fields from forms would create unnecessary handoffs.",
+      "inputs": [
+        "IN-01",
+        "IN-02"
+      ],
+      "steps": [
+        "Create TG_HoursWorkedObject and TG_EstHrsHeadcountObject as concrete, non-location-bound objects without inheritance or workflow in Safety Metrics (E36); enable native audit. Create TG_HoursWorked_Detail, TG_HoursWorked_Inventory, TG_EstHrsHeadcount_Detail and TG_EstHrsHeadcount_Inventory with the field labels/internal names below.",
+        "Configure SourceEntryID as the Hours Worked display field and a unique key. Add first-of-month validation on Month using DAY(Month)=1, adapted from the exported Date validation pattern. On the entry form show both dimension selectors at all times: require Location only when OSHAEstablishment is NULL and require OSHAEstablishment only when Location is NULL. Show each readonly summary link only when its dimension is populated; conditional link requiredness applies at successful save after synchronization, not before the processor can populate it. Do not clear/default one dimension when the other changes.",
+        "On the Hours Worked form display editable EmployeeHours and ContractorHours, both required, default 0 and finite/nonnegative; allow explicit zero and fractional hours. Readonly summary links are not input selectors. Server validation and clearing/relinking are owned by the synchronization task, rather than duplicated in form automation.",
+        "Add the new establishment summary unique constraint on OSHAEstablishment + Date and DAY(Date)=1 validation. Add a proposed Protect Monthly Summary Identity server validator on both summaries that rejects Location/OSHAEstablishment or Date changes after creation and blocks deletion while Hours Worked references exist. Reuse Unique Location-Date (E183) and Date on first of month (E80) on the original location summary; do not recreate them.",
+        "Add a proposed Initialize Establishment Monthly Summary create Action Handler: set LocNameHelper from OSHAEstablishment.Name at creation, retain that value on later master rename/deactivation, and use native AutoNumber for RecordNo. This handler does not calculate hours or dispatch refreshes. Native defaults initialize new headcounts to zero without resetting an existing record.",
+        "Configure headcount-only summary creation with required dimension and month-start Date; saved dimension/date controls become readonly. Keep the two headcounts as separate editable summary values; the source contains no headcount fields. Link both summaries to Hours Worked through the two source-owned summary references and expose their readonly Hours Worked Entries inverse grids."
+      ],
+      "modifications": [
+        {
+          "element": "SafetyMetrics_HrsandHeadcountObject (E84)",
+          "change": "Change IsAuditEnabled from FALSE to TRUE on the existing Location Hours and Headcount object; retain its existing location/security binding and object GUID."
+        },
+        {
+          "element": "EmployeeHrs (E169) and ContractrHrs (E316)",
+          "change": "Change IsReadOnly from FALSE to TRUE for EmployeeHrs and ContractrHrs on the original summary, after the external reconciled cutover release. Configure readonly controls for those two fields on SafetyMetrics_HrsandHeadcount_Detail (E209); server/API write restrictions belong to the user-security task."
+        },
+        {
+          "element": "Date (E82) and Location (E185) on SafetyMetrics_HrsandHeadcount_Detail (E209)",
+          "change": "The source Date and Location fields have IsReadOnly=FALSE; the view includes a plain Date control and a Location control with DisplayAs=String, neither with an explicit readonly condition. Add creation-only editability controls and show both readonly after save; do not claim the effective source Location editor behavior was runtime-verified. Existing requiredness and initial Date default remain unchanged. Protect Monthly Summary Identity enforces the saved-record restriction server-side."
+        }
+      ],
+      "accept": [
+        "Location-only, establishment-only and dual-dimension entry controls are available; neither-dimension input cannot pass completed save once synchronization is installed.",
+        "The two summary grids navigate through the source summary-link fields without a second relationship.",
+        "The original hour fields are readonly while both headcounts remain editable; saved summary scope/date cannot be changed.",
+        "Existing location summary validation IDs and object/field GUIDs remain in place."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.6–4.8, 5.4, 6.1–6.4; R1, R7–R9.",
+        "Location Hours and Headcount source fields and views are in package-evidence.json."
+      ],
+      "configurationRows": [
+        [
+          "Hours Worked.Source Entry ID",
+          "Add Source Entry ID (SourceEntryID) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Text, max 255; unique within Hours Worked; non-localizable. Required: Y. Default/population setting: Import: caller supplies namespaced stable key; manual create: A0 supplies manual: followed by native record GUID using supported creation mechanism. Field/control behavior: Required on import; read only after creation; configured record display value."
+        ],
+        [
+          "Hours Worked.Month",
+          "Add Month (Month) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Date; calendar date; timezone capture disabled. Required: Y. Default/population setting: Native MonthStartValueGenerator at creation. Field/control behavior: Hours editor editable; visible in all modes; reject dates other than first day of month."
+        ],
+        [
+          "Hours Worked.Location",
+          "Add Location (Location) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to SysLocationEntity; 0..1 target; inverse disabled on this new dimension reference. Required: Conditional. Default/population setting: NULL. Field/control behavior: Visible/editable in all modes; required when OSHA Establishment is NULL; new selections Deleted=FALSE and existing location permissions; no login/home-location default."
+        ],
+        [
+          "Hours Worked.OSHA Establishment",
+          "Add OSHA Establishment (OSHAEstablishment) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to OSHA Establishment; 0..1 target; inverse disabled on this dimension reference. Required: Conditional. Default/population setting: NULL. Field/control behavior: Visible/editable in all modes; required when Location is NULL; new selections Active?=TRUE; no default from Location; retain existing inactive references."
+        ],
+        [
+          "Hours Worked.Employee Hours",
+          "Add Employee Hours (EmployeeHours) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Float, System.Double; unit hours; finite and >= 0; no further precision/scale constraint. Required: Y. Default/population setting: 0. Field/control behavior: Hours editor editable; visible in all modes; deliberate zero permitted; NULL rejected."
+        ],
+        [
+          "Hours Worked.Contractor Hours",
+          "Add Contractor Hours (ContractorHours) on Hours Worked (TG_HoursWorkedObject). Type/relationship: Float, System.Double; unit hours; finite and >= 0; no further precision/scale constraint. Required: Y. Default/population setting: 0. Field/control behavior: Hours editor editable; visible in all modes; deliberate zero permitted; NULL rejected."
+        ],
+        [
+          "Hours Worked.Location Hours and Headcount",
+          "Add Location Hours and Headcount (LocationHoursHeadcount) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to Location Hours and Headcount; 0..1 target; inverse Hours Worked Entries. Required: Conditional. Default/population setting: NULL until A0 resolves applicable summary within successful save. Field/control behavior: Read only; visible/required at completed save when Location is populated; NULL and hidden when Location is NULL."
+        ],
+        [
+          "Hours Worked.Establishment Hours and Headcount",
+          "Add Establishment Hours and Headcount (EstablishmentHoursHeadcount) on Hours Worked (TG_HoursWorkedObject). Type/relationship: M:1 to Establishment Hours and Headcount; 0..1 target; inverse Hours Worked Entries. Required: Conditional. Default/population setting: NULL until A0 resolves applicable summary within successful save. Field/control behavior: Read only; visible/required at completed save when OSHA Establishment is populated; NULL and hidden when it is NULL."
+        ],
+        [
+          "Establishment Hours and Headcount.Date",
+          "Add Date (Date) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Date; calendar date, timezone capture disabled. Required: Y. Default/population setting: A0 copies Hours Worked.Month on generated creation; native MonthStartValueGenerator on headcount-only creation. Field/control behavior: Headcount editor selects at creation; read only after save."
+        ],
+        [
+          "Establishment Hours and Headcount.Contractor Headcount",
+          "Add Contractor Headcount (ContractrHCount) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Authorized headcount editor editable; API/import uses the same validation; retain source numeric type and default."
+        ],
+        [
+          "Establishment Hours and Headcount.Employees Hours",
+          "Add Employees Hours (EmployeeHrs) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0 at creation; A0 replaces with sum of Hours Worked.Employee Hours matching OSHAEstablishment and Month = Date. Field/control behavior: Read only to ordinary users/API/import clients; authorized processor writes only."
+        ],
+        [
+          "Establishment Hours and Headcount.OSHA Establishment",
+          "Add OSHA Establishment (OSHAEstablishment) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: M:1 to OSHA Establishment; exactly 1 target per record; inverse Hours and Headcounts. Required: Y. Default/population setting: None; A0 supplies scope, or headcount editor selects at summary creation. Field/control behavior: Required at creation; new selections Active?=TRUE; read only after save; inactive historical references retained."
+        ],
+        [
+          "Establishment Hours and Headcount.[Helper] Establishment Name",
+          "Add [Helper] Establishment Name (LocNameHelper) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: None; populated from OSHA Establishment.Name. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Hours and Headcount.Employees Headcount",
+          "Add Employees Headcount (EmployeeHCount) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Authorized headcount editor editable; API/import uses the same validation; retain source numeric type and default."
+        ],
+        [
+          "Establishment Hours and Headcount.Record No",
+          "Add Record No (RecordNo) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: AutoNumber, System.Int64. Required: N. Default/population setting: Native auto-number sequence (source generator exported). Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Hours and Headcount.Contractor Hours",
+          "Add Contractor Hours (ContractrHrs) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0 at creation; A0 replaces with sum of Hours Worked.Contractor Hours matching OSHAEstablishment and Month = Date. Field/control behavior: Read only to ordinary users/API/import clients; authorized processor writes only."
+        ],
+        [
+          "Establishment Hours and Headcount.Hours Worked Entries",
+          "Add Hours Worked Entries (HoursWorkedEntries) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Type/relationship: Inverse 1:M grid from Hours Worked.Establishment Hours and Headcount. Required: N. Default/population setting: None. Field/control behavior: Read only; authorized hours/analytics users."
+        ],
+        [
+          "Location Hours and Headcount.Hours Worked Entries",
+          "Add Hours Worked Entries (HoursWorkedEntries) on Location Hours and Headcount (SafetyMetrics_HrsandHeadcountObject). Type/relationship: Inverse 1:M grid from Hours Worked.Location Hours and Headcount. Required: N. Default/population setting: None. Field/control behavior: Read only; retain location-scoped access; source access separately checked."
+        ],
+        [
+          "OSHA Establishment.Hours and Headcounts",
+          "Add Hours and Headcounts (HoursHeadcounts) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Inverse 1:M grid from Establishment Hours and Headcount.OSHA Establishment. Required: N. Default/population setting: None. Field/control behavior: Read only; authorized analytics users."
+        ]
+      ],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-01",
+          "description": "Supported saved-record identity checks and the new establishment-summary creation initializer are needed before server Date/scope immutability and creation-time helper population can be bound. Manual SourceEntryID generation and atomic source synchronization remain owned by IMP-07."
+        },
+        {
+          "id": "IN-02",
+          "description": "The new LocNameHelper text capacity and creation-only readonly control binding are missing. Other explicit input numeric/text/date settings and new relationship configuration can proceed."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-01 — Supported saved-record identity checks and the new establishment-summary creation initializer are needed before server Date/scope immutability and creation-time helper population can be bound. Manual SourceEntryID generation and atomic source synchronization remain owned by IMP-07. IN-02 — The new LocNameHelper text capacity and creation-only readonly control binding are missing. Other explicit input numeric/text/date settings and new relationship configuration can proceed. Technical prerequisites: IMP-01."
+    },
+    {
+      "id": "IMP-03",
+      "title": "Configure establishment incident-rate records",
+      "category": "Analytics objects and forms",
+      "objective": "Provide the monthly establishment incident measures and editable performance targets.",
+      "scope": "Create the independent incident-rate abstract base and concrete KPI object, all twenty stored measures, period/establishment identity, helper fields and four manual targets. Add their two detail/inventory view pairs and establishment navigation; population and actual-rate report expressions remain owned by their consuming tasks.",
+      "deliverable": "Twenty-nine mapped monthly/KPI fields, monthly unique/date validation, two view pairs and master KPI navigation.",
+      "prerequisites": [
+        "IMP-01"
+      ],
+      "implementer": "Senior Associate Consultant",
+      "rationale": "This is a bounded inherited field/form build with a known source mapping and simple period validators; no complex population algorithm is assigned here.",
+      "inputs": [
+        "IN-02"
+      ],
+      "steps": [
+        "Create TG_EstIncRateAbstractObject (Establishment Incident Rate Abstract) as abstract/non-instantiable with no inheritance parent, and TG_EstIncidentRateKPIObject (Establishment Incident Rate KPI) as its direct concrete child, in Safety Metrics (E36). Both are not location-bound, have native audit and have no workflow. Declare base fields only on the abstract object and targets only on the child.",
+        "Configure unique OSHAEstablishment + Date and DAY(Date)=1 validators on the new base. Required Date and OSHAEstablishment are supplied by monthly generation; no user reassignment is allowed on generated forms. Configure RecordNo as native AutoNumber/display field with a new sequence, not a copied source record identity.",
+        "Create TG_EstIncRateAbstract_Detail/Inventory and TG_EstIncidentRateKPI_Detail/Inventory; show RecordNo, OSHA Establishment and Date, panels for four editable targets, incident counts, lost days and employee/contractor hours. Show the stored measures readonly. Keep TargetDART caption Target DAIR; do not relabel it as DART. Hide LocationIdHelp on ordinary forms and retain its establishment-GUID meaning.",
+        "Build new view profiles from the actual declared/inherited fields. Exclude stale DisplayField, Month, RepLocationId and absent OSHA-category properties found in the source KPI profile; do not add fictitious fields. Add the master Incident Rate KPIs grid as navigation over the concrete child inherited OSHAEstablishment reference."
+      ],
+      "accept": [
+        "The abstract object cannot hold records and the child inherits each base field once.",
+        "The child has four editable manual targets; all twenty measures are readonly stored fields.",
+        "The new monthly unique/date validators reject duplicate establishment/month and non-month-start dates.",
+        "All new profile paths resolve to declared/inherited fields; the KPI label remains Target DAIR for TargetDART."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.2–4.3, 5.1–5.2, 7; R2, R3.",
+        "Source incident-rate objects, fields and view definitions in package-evidence.json."
+      ],
+      "configurationRows": [
+        [
+          "Establishment Incident Rate Abstract.Record No",
+          "Add Record No (RecordNo) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: AutoNumber, System.Int64. Required: Y. Default/population setting: None in metadata; native AutoNumber population required. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Date",
+          "Add Date (Date) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Date; calendar date, timezone capture disabled. Required: Y. Default/population setting: None; Refresh Establishment Monthly Metrics supplies the first day of the requested month. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.OSHA Establishment",
+          "Add OSHA Establishment (OSHAEstablishment) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: M:1 to OSHA Establishment; exactly 1 target per record; inverse Incident Rate KPIs. Required: Y. Default/population setting: None; mandatory generation/import scope. Field/control behavior: Read only on generated forms; supplied by Refresh Establishment Monthly Metrics; historical inactive references retained."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Days Away - Rollup",
+          "Add Number of Days Away - Rollup (RuNumDaysAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Recordable/Reportable - Rollup",
+          "Add Number of Recordable/Reportable - Rollup (RuCtRecordable) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Fatalities - Establishment",
+          "Add Number of Fatalities - Establishment (LoNumFatalities) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Incidents - Rollup",
+          "Add Number of Incidents - Rollup (RuCtIncidents) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.[Helper] Establishment Name",
+          "Add [Helper] Establishment Name (LocNameHelper) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: None; populated from OSHA Establishment.Name. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Lost Days - Rollup",
+          "Add Number of Lost Days - Rollup (RuNumLostDays) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Contractor Worked Hours - Establishment",
+          "Add Contractor Worked Hours - Establishment (LoCntrctWrkdHrs) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.[Helper] Establishment ID",
+          "Add [Helper] Establishment ID (LocationIdHelp) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: GUID. Required: Y. Default/population setting: None; native GUID of OSHA Establishment reference. Field/control behavior: Read only; hidden on ordinary form."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Incidents - Establishment",
+          "Add Number of Incidents - Establishment (LoCtIncidents) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Incidents with Days Away - Rollup",
+          "Add Number of Incidents with Days Away - Rollup (RuNumIncDayAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Lost Days - Establishment",
+          "Add Number of Lost Days - Establishment (LoNumLostDays) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Incidents with Days Away - Establishment",
+          "Add Number of Incidents with Days Away - Establishment (LoNumIncDayAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Contractor Worked Hours - Rollup",
+          "Add Contractor Worked Hours - Rollup (RuCntrctWrkdHrs) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Incidents with Lost Time - Rollup",
+          "Add Number of Incidents with Lost Time - Rollup (RuNumIncLostTim) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Employee Worked Hours - Rollup",
+          "Add Employee Worked Hours - Rollup (RuEmplWrkdHours) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Incidents with Lost Time - Establishment",
+          "Add Number of Incidents with Lost Time - Establishment (LoNumIncLostTim) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Job Transfer and Restricted Days - Rollup",
+          "Add Number of Job Transfer and Restricted Days - Rollup (RuNumTrnsfRstDy) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Job Transfer and Restricted Days - Establishment",
+          "Add Number of Job Transfer and Restricted Days - Establishment (LoNumTrnsfRstDy) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Days Away - Establishment",
+          "Add Number of Days Away - Establishment (LoNumDaysAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Recordable/Reportable - Establishment",
+          "Add Number of Recordable/Reportable - Establishment (LoCtRecordable) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Employee Worked Hours - Establishment",
+          "Add Employee Worked Hours - Establishment (LoEmplWrkdHours) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate Abstract.Number of Fatalities - Rollup",
+          "Add Number of Fatalities - Rollup (RuNumFatalities) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment Incident Rate KPI.Target LTIR",
+          "Add Target LTIR (TargetLTIR) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment Incident Rate KPI.Target Severity Rate",
+          "Add Target Severity Rate (TargetSeverRate) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment Incident Rate KPI.Target DAIR",
+          "Add Target DAIR (TargetDART) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment Incident Rate KPI.Target TRIR",
+          "Add Target TRIR (TargetTRIR) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "OSHA Establishment.Incident Rate KPIs",
+          "Add Incident Rate KPIs (IncidentRateKPIs) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Inverse 1:M grid from Establishment Incident Rate KPI.OSHA Establishment (inherited). Required: N. Default/population setting: None. Field/control behavior: Read only; authorized analytics users."
+        ]
+      ],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-02",
+          "description": "Copied LocNameHelper capacity and native AutoNumber default binding for the new RecordNo are not explicit in the export; those two settings are blocked while the known numeric fields and inheritance can be created."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-02 — Copied LocNameHelper capacity and native AutoNumber default binding for the new RecordNo are not explicit in the export; those two settings are blocked while the known numeric fields and inheritance can be created. Technical prerequisites: IMP-01."
+    },
+    {
+      "id": "IMP-04",
+      "title": "Configure the establishment OSHA measure base",
+      "category": "Regulatory objects and forms",
+      "objective": "Provide the annual establishment counts, day totals, reporting identity and stored header fields.",
+      "scope": "Create the independent annual OSHA abstract base with its thirty-five mapped fields, year-start/uniqueness validation and base detail/inventory views. Define stored header fields and the destination settings reference; annual snapshots and totals are populated by the annual processing task.",
+      "deliverable": "Thirty-five base declarations, year-start/unique validation and the new OSHA base view pair.",
+      "prerequisites": [
+        "IMP-01"
+      ],
+      "implementer": "Senior Associate Consultant",
+      "rationale": "The inherited base is a sizeable but bounded field/view outcome; retaining simple validation with its fields avoids fragmentation.",
+      "inputs": [
+        "IN-02",
+        "IN-08"
+      ],
+      "steps": [
+        "Create TG_EstOSHAAbstractObject (Establishment OSHA Abstract) as abstract/non-instantiable with no inheritance parent in Safety Metrics (E36); set IsLocationBound=FALSE, enable native audit and add no workflow.",
+        "Configure unique OSHAEstablishment + Date and AND(MONTH(Date)=1, DAY(Date)=1) validation. Date/OSHAEstablishment are readonly on generated forms and mandatory in annual generation. Use native AutoNumber for RecordNo/display identity and a new sequence; the required ReporLocationId helper stores the establishment GUID, not a system Location GUID.",
+        "Create TG_EstOSHAAbstract_Detail and TG_EstOSHAAbstract_Inventory with readonly G–M count/day fields, year, annual date, establishment reference and header snapshots. Keep OIISettings hidden on ordinary summary forms; catalogue/settings inverses are disabled. Build profiles only from actual base fields.",
+        "Create LocationName, LocationStreet, LocationCity, LocationState and LocationPostal as stored header text counterparts, not continuing master formulas. Configure Year as a stored number populated by annual processing. Do not add a Location reference or make the new base inherit the original OSHA base."
+      ],
+      "accept": [
+        "All twenty-four Lo/Ru annual count/day declarations exist once on the new non-location-bound base.",
+        "The base rejects non-January-1 dates and duplicate establishment/year records.",
+        "Header values are stored fields and the required GUID helper refers to establishment identity.",
+        "OIISettings has a destination-supplied default or remains explicitly blocked; the source settings GUID is not silently reused."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.4, 5.1, 6.3; R2–R4.",
+        "Source OSHA Abstract fields and validations in package-evidence.json."
+      ],
+      "configurationRows": [
+        [
+          "Establishment OSHA Abstract.Total number of job transfer or restriction days (L) - roll up",
+          "Add Total number of job transfer or restriction days (L) - roll up (RuNumRstOrJobTr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Total number of days away from work (K) - roll up",
+          "Add Total number of days away from work (K) - roll up (RuNumDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Injuries (M1) - roll up",
+          "Add Injuries (M1) - roll up (RuCtInjuries) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Respiratory Conditions (M3) - establishment",
+          "Add Respiratory Conditions (M3) - establishment (LoCtRespiratorC) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.OSHA Establishment",
+          "Add OSHA Establishment (OSHAEstablishment) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: M:1 to OSHA Establishment; exactly 1 target per record; inverse OSHA Summaries. Required: Y. Default/population setting: None; mandatory generation/import scope. Field/control behavior: Read only on generated forms; supplied by Refresh Establishment Annual OSHA; historical inactive references retained."
+        ],
+        [
+          "Establishment OSHA Abstract.Other Recordable Cases (J) - roll up",
+          "Add Other Recordable Cases (J) - roll up (RuCtOthrRecrdbl) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.All other illnesses (M6) - establishment",
+          "Add All other illnesses (M6) - establishment (LoCtAllOtherIln) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Other Recordable Cases (J) - establishment",
+          "Add Other Recordable Cases (J) - establishment (LoCtOthrRecrdbl) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Job Transfer or Restricted Days Cases (I) - roll up",
+          "Add Job Transfer or Restricted Days Cases (I) - roll up (RuCtTrnfrOrRest) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Establishment Street",
+          "Add Establishment Street (LocationStreet) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Street. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Date",
+          "Add Date (Date) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Date; calendar date, timezone capture disabled. Required: Y. Default/population setting: None; Refresh Establishment Annual OSHA supplies January 1 of the requested year. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Poisonings (M4) - establishment",
+          "Add Poisonings (M4) - establishment (LoCtPoisonings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Hearing loss (M5) - establishment",
+          "Add Hearing loss (M5) - establishment (LoCtHearingLoss) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Skin Disorders (M2) - roll up",
+          "Add Skin Disorders (M2) - roll up (RuCtSkinDisordr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Respiratory Conditions (M3) - roll up",
+          "Add Respiratory Conditions (M3) - roll up (RuCtRespiratorC) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Death (G) - establishment",
+          "Add Death (G) - establishment (LoCtFatalities) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Job Transfer or Restricted Days Cases (I) - establishment",
+          "Add Job Transfer or Restricted Days Cases (I) - establishment (LoCtTrnfrOrRest) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Injuries (M1) - establishment",
+          "Add Injuries (M1) - establishment (LoCtInjuries) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Establishment City",
+          "Add Establishment City (LocationCity) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.City. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Establishment Postal Code",
+          "Add Establishment Postal Code (LocationPostal) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Postal Code. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Death (G) - roll up",
+          "Add Death (G) - roll up (RuCtFatalities) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Days Away From Work Cases (H) - roll up",
+          "Add Days Away From Work Cases (H) - roll up (RuCtDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Establishment State",
+          "Add Establishment State (LocationState) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.State. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Record No",
+          "Add Record No (RecordNo) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: AutoNumber, System.Int64. Required: Y. Default/population setting: None in metadata; native AutoNumber population required. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Days Away From Work Cases (H) - establishment",
+          "Add Days Away From Work Cases (H) - establishment (LoCtDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.[Helper] Establishment ID",
+          "Add [Helper] Establishment ID (ReporLocationId) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: GUID. Required: Y. Default/population setting: None; native GUID of OSHA Establishment reference. Field/control behavior: Read only; hidden on ordinary form."
+        ],
+        [
+          "Establishment OSHA Abstract.Year",
+          "Add Year (Year) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: None; Refresh Establishment Annual OSHA stores the calendar year derived from Date; no continuing calculated expression is assigned. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.All other illnesses (M6) - roll up",
+          "Add All other illnesses (M6) - roll up (RuCtAllOtherIln) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Establishment Display Name",
+          "Add Establishment Display Name (LocationName) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Name. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.OII Settings",
+          "Add OII Settings (OIISettings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: M:1 to EHSIncidentMang_OIISettingObject; 0..1 target; inverse disabled. Required: N. Default/population setting: No portable record GUID available; defer destination default binding to the supplied OII Setting input, never hard-code the source record GUID. Field/control behavior: Read only; hidden on ordinary summary form."
+        ],
+        [
+          "Establishment OSHA Abstract.Total number of days away from work (K) - establishment",
+          "Add Total number of days away from work (K) - establishment (LoNumDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Hearing loss (M5) - roll up",
+          "Add Hearing loss (M5) - roll up (RuCtHearingLoss) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Skin Disorders (M2) - establishment",
+          "Add Skin Disorders (M2) - establishment (LoCtSkinDisordr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Poisonings (M4) - roll up",
+          "Add Poisonings (M4) - roll up (RuCtPoisonings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Abstract.Total number of job transfer or restriction days (L) - establishment",
+          "Add Total number of job transfer or restriction days (L) - establishment (LoNumRstOrJobTr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: 0. Field/control behavior: Read only; analytics users may view."
+        ]
+      ],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-02",
+          "description": "Capacity for copied LocationName/Street/City/State/Postal text fields and new RecordNo AutoNumber default binding are missing; those settings are blocked, not the known count/day fields."
+        },
+        {
+          "id": "IN-08",
+          "description": "The destination OII Setting record is needed to bind OIISettings.DefaultValue; the exported source default b2102af3-2dbe-4bc2-9395-cd1202ae0192 is not assumed portable."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-02 — Capacity for copied LocationName/Street/City/State/Postal text fields and new RecordNo AutoNumber default binding are missing; those settings are blocked, not the known count/day fields. IN-08 — The destination OII Setting record is needed to bind OIISettings.DefaultValue; the exported source default b2102af3-2dbe-4bc2-9395-cd1202ae0192 is not assumed portable. Technical prerequisites: IMP-01."
+    },
+    {
+      "id": "IMP-05",
+      "title": "Configure annual OSHA summaries and case navigation",
+      "category": "Regulatory records and forms",
+      "objective": "Provide annual establishment employment information, editable reporting metadata and privacy-aware case navigation.",
+      "scope": "Create the concrete OSHA summary with seventeen direct declarations, inherited annual measures, its detail/inventory views and master summary grid. Add the readonly case log and case-level 301 navigation only against the supplied incident relationship contract; report download links belong to the output tasks.",
+      "deliverable": "Concrete annual summary, seventeen direct fields, new summary view pair, master navigation and scoped case log controls.",
+      "prerequisites": [
+        "IMP-04"
+      ],
+      "implementer": "Consultant",
+      "rationale": "The summary combines inherited fields, external case-grid paths and case-template navigation whose failure could misattribute regulatory output.",
+      "inputs": [
+        "IN-02",
+        "IN-03",
+        "IN-06",
+        "IN-08"
+      ],
+      "steps": [
+        "Create TG_EstOSHASummaryObject (Establishment OSHA Summary) as the direct concrete child of TG_EstOSHAAbstractObject in Safety Metrics (E36); native audit enabled, no location binding/workflow. Declare only its seventeen fields; do not repeat inherited base fields.",
+        "Create TG_EstOSHASummary_Detail and TG_EstOSHASummary_Inventory with establishment/year/header metadata, G–J cases, K/L days, M1–M6 types and annual employment panels. Allow authorized edits of CompanyName, EINNumber, EstablishmeName, InduDescription, EstablishmeType, EstablishmtSize, AnyRecrdblIncid, OSHA300aID, EstablishmentID and ChangeReason; readonly codes/header values use the annual correction operation. Keep OIISettings hidden.",
+        "Add AssociatedOIIs using only the supplied declaring relationship/cardinality; do not guess an inverse or create an incident-side field. Configure readonly log navigation through AssociatedOIIs.OSHARecord with InjuryIllnes.OSHARecordable=TRUE. Columns are CaseNo, InjuryIllnes.NameHidden, InjuryIllnes.DateUserEntered, InjuryOutcome, InjuryIllnes.NumDaysAwayOSHA, InjuryIllnes.NumJobTAndRest and PrInjuryIllness. Suppress duplicate case rows and preserve name masking and incident permissions.",
+        "Configure the case 301 control to use InjuryIllnes.OIISetting.OSHA301TempId and OSHAObjectID with the case record ID, not the summary ID. Bind the destination case-template route only after the supplied path/template contract is complete. Add the establishment master OSHA Summaries inverse grid over the concrete summary inherited OSHAEstablishment reference."
+      ],
+      "accept": [
+        "The concrete summary inherits the base once and has seventeen direct fields, including distinct Establishment Display Name and Establishment Name.",
+        "The log contains only supplied same-establishment/year eligible case records, displays masked names and has no edit column.",
+        "The 301 link addresses the case object and case record rather than the annual summary.",
+        "Ordinary metric refresh does not make reporting metadata controls readonly or reset permitted annual edits."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.5, 4.9, 7–8; R2, R5, R6.",
+        "SafetyMetrics_OSHASummary_Detail (E100) supplies the extracted case-grid paths; their target field definitions are not exported."
+      ],
+      "configurationRows": [
+        [
+          "Establishment OSHA Summary.Total hours worked by all employees this year Establishment",
+          "Add Total hours worked by all employees this year Establishment (LoNumHrsWorked) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Summary.Company Name",
+          "Add Company Name (CompanyName) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Company Name. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment OSHA Summary.Annual average number of employees Establishment",
+          "Add Annual average number of employees Establishment (LoAvgNumEmploye) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Summary.EIN Number",
+          "Add EIN Number (EINNumber) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.EIN Number. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment OSHA Summary.Annual average number of employees Rollup",
+          "Add Annual average number of employees Rollup (RuAvgNumEmploye) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Summary.Total hours worked by all employees this year Rollup",
+          "Add Total hours worked by all employees this year Rollup (RUNumHrsWorked) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Float, System.Double; precision/scale not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Summary.Change Reason",
+          "Add Change Reason (ChangeReason) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: None. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment OSHA Summary.Establishment Type",
+          "Add Establishment Type (EstablishmeType) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeTypeObject; 0..1 target; inverse disabled. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Establishment Type. Field/control behavior: Regulatory administrator editable; preserve selected inactive/legacy values; active-selection filter unresolved in external catalogue export."
+        ],
+        [
+          "Establishment OSHA Summary.Establishment Name",
+          "Add Establishment Name (EstablishmeName) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Name. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment OSHA Summary.Establishment Size",
+          "Add Establishment Size (EstablishmtSize) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: M:1 to EHSIncidentMang_EstablishmeSizeObject; 0..1 target; inverse disabled. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Establishment Size. Field/control behavior: Regulatory administrator editable; preserve selected inactive/legacy values; active-selection filter unresolved in external catalogue export."
+        ],
+        [
+          "Establishment OSHA Summary.SIC Code",
+          "Add SIC Code (SICCode) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.SIC Code. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Summary.Associated OIIs",
+          "Add Associated OIIs (AssociatedOIIs) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Related Injury/Illness collection; 0..* results, storage cardinality/inverse unresolved in export. Required: N. Default/population setting: None. Field/control behavior: Read only in target; authorized regulatory users; recordable-only log grid."
+        ],
+        [
+          "Establishment OSHA Summary.NAICS Code",
+          "Add NAICS Code (NAICSCode) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Number / bigint, System.Int64. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.NAICS Code. Field/control behavior: Read only; analytics users may view."
+        ],
+        [
+          "Establishment OSHA Summary.Any Recordable Incidents",
+          "Add Any Recordable Incidents (AnyRecrdblIncid) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: M:1 to EHSIncidentMang_HasRecordaInjurObject; 0..1 target; inverse disabled. Required: N. Default/population setting: None. Field/control behavior: Regulatory administrator editable; preserve selected inactive/legacy values; active-selection filter unresolved in external catalogue export."
+        ],
+        [
+          "Establishment OSHA Summary.OSHA 300a ID",
+          "Add OSHA 300a ID (OSHA300aID) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.OSHA 300a ID. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment OSHA Summary.Establishment ID",
+          "Add Establishment ID (EstablishmentID) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Establishment ID. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "Establishment OSHA Summary.Industry Description",
+          "Add Industry Description (InduDescription) on Establishment OSHA Summary (TG_EstOSHASummaryObject). Type/relationship: Text / nvarchar; length not constrained in export. Required: N. Default/population setting: At initial annual generation: OSHA Establishment.Industry Description. Field/control behavior: Authorized analytics administrator editable."
+        ],
+        [
+          "OSHA Establishment.OSHA Summaries",
+          "Add OSHA Summaries (OSHASummaries) on OSHA Establishment (TG_OSHAEstablishmentObject). Type/relationship: Inverse 1:M grid from Establishment OSHA Summary.OSHA Establishment (inherited). Required: N. Default/population setting: None. Field/control behavior: Read only; authorized regulatory users."
+        ]
+      ],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-02",
+          "description": "Copied CompanyName, EINNumber, EstablishmeName, InduDescription, ChangeReason and reporting-ID capacities remain unspecified; only their exact capacity settings are blocked."
+        },
+        {
+          "id": "IN-03",
+          "description": "Existing Type/Size/Has OSHA Recordable Injuries keys and active-value metadata are needed for selectors; no new enumerations are authorized."
+        },
+        {
+          "id": "IN-06",
+          "description": "AssociatedOIIs storage cardinality/opposing field and OSHARecord/InjuryIllnes paths must be supplied before creating that collection binding or its case grid. Known scalar fields can proceed."
+        },
+        {
+          "id": "IN-08",
+          "description": "Case 301 destination template/object lookup bindings and output-specific metadata requirements are missing; only 301 navigation and output-linked completeness bindings are blocked."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-02 — Copied CompanyName, EINNumber, EstablishmeName, InduDescription, ChangeReason and reporting-ID capacities remain unspecified; only their exact capacity settings are blocked. IN-03 — Existing Type/Size/Has OSHA Recordable Injuries keys and active-value metadata are needed for selectors; no new enumerations are authorized. IN-06 — AssociatedOIIs storage cardinality/opposing field and OSHARecord/InjuryIllnes paths must be supplied before creating that collection binding or its case grid. Known scalar fields can proceed. IN-08 — Case 301 destination template/object lookup bindings and output-specific metadata requirements are missing; only 301 navigation and output-linked completeness bindings are blocked. Technical prerequisites: IMP-04."
+    },
+    {
+      "id": "IMP-06",
+      "title": "Configure user access across the two reporting dimensions",
+      "category": "Application-user and record permissions",
+      "objective": "Allow authorized maintenance and reporting without turning either reporting dimension into an access shortcut.",
+      "scope": "Configure application-user field/object/record rules for the eight new or modified objects, with permissions evaluated independently for location and establishment. Apply server/API restrictions to calculated summary hours, source links, referenced establishment codes, correction access and navigation. Reuse native processing permissions; this task does not create a system identity or alter incident security.",
+      "deliverable": "User-role and record-scope permission configuration with field-write restrictions, referenced-code guard and a supported dual-dimension access predicate.",
+      "prerequisites": [
+        "IMP-02",
+        "IMP-03",
+        "IMP-05"
+      ],
+      "implementer": "Senior Consultant",
+      "rationale": "Non-location-bound input, dual-scope authorization and incident privacy require nuanced cross-object security judgment.",
+      "inputs": [
+        "IN-04",
+        "IN-01"
+      ],
+      "steps": [
+        "Bind supplied establishment-administrator roles to master maintenance; hours-editor roles to Hours Worked create/update/delete within every selected dimension; headcount-editor roles to the two summary headcounts; analytics-administrator roles to KPI targets; regulatory-administrator roles to annual metadata/correction; and reporting roles to only authorized result records. Disable direct ordinary/API/import writes to summary EmployeeHrs/ContractrHrs and source LocationHoursHeadcount/EstablishmentHoursHeadcount.",
+        "Configure the supported user-access predicate so location-only entry requires location entitlement, establishment-only requires establishment entitlement, and dual-scope entry requires both. Changing references rechecks all resulting scopes; a related summary or source link grants no new rights to the other dimension. Expose the resulting user-access check to the shared synchronization handler without introducing a security hierarchy.",
+        "Configure saved-source SourceEntryID immutability and restrict new inactive-scope assignments to the supplied administrator historical-correction entitlement. Existing inactive references remain valid for authorized hours/month correction and historical output. Limit readonly annual-header correction to the explicit regulatory operation; do not enable general edits to those fields.",
+        "Apply the same application-user record restrictions to forms, direct URLs, searches, exports and relationship navigation. The original location summary retains its native location binding, while establishment and source objects use the supplied independent record rules. Existing incident/case permissions and masked-name presentation remain separate and authoritative.",
+        "Add a proposed Protect Establishment Code server validation and corresponding readonly Code control condition once the record is referenced by Hours Worked.OSHAEstablishment, Establishment Hours and Headcount.OSHAEstablishment, Establishment Incident Rate KPI.OSHAEstablishment or Establishment OSHA Summary.OSHAEstablishment. Reject later Code changes before save while Name remains editable. Block hard deletion of a referenced establishment and prohibit cascade deletion of its sources/results; retain historical references when Active? becomes FALSE."
+      ],
+      "accept": [
+        "An editor entitled to only one of two selected dimensions cannot save a dual-scope entry.",
+        "Ordinary/API/import users cannot modify calculated summary hours or source summary links; authorized headcount and target edits remain possible.",
+        "Opening a summary grid or exported result does not grant access to hidden source/case records.",
+        "Historical inactive references remain readable without enabling unrestricted new inactive-scope assignment.",
+        "A referenced establishment Code cannot change or be hard-deleted, while its Name remains editable and deactivation preserves references."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4, 6.2–6.3, 8; R1, R3, R8, R9.",
+        "Accepted incident privacy controls are retained; no incident-side configuration is assigned."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-04",
+          "description": "Actual role/group mappings, record-scope predicates and supported user access checks are required before binding object, field, navigation and historical-correction permissions. Business role labels below are not fabricated tenant groups."
+        },
+        {
+          "id": "IN-01",
+          "description": "Supported server reference-existence/deletion checks are needed to bind code-after-first-use protection and prevent hard deletion of the referenced master; the summary/record references already exist from predecessor outputs."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-04 — Actual role/group mappings, record-scope predicates and supported user access checks are required before binding object, field, navigation and historical-correction permissions. Business role labels below are not fabricated tenant groups. IN-01 — Supported server reference-existence/deletion checks are needed to bind code-after-first-use protection and prevent hard deletion of the referenced master; the summary/record references already exist from predecessor outputs. Technical prerequisites: IMP-02, IMP-03, IMP-05."
+    },
+    {
+      "id": "IMP-07",
+      "title": "Configure synchronized hours contributions and corrections",
+      "category": "Cross-object automation",
+      "objective": "Keep shared hours entries, both monthly totals and their links consistent through creation, correction and deletion.",
+      "scope": "Add the proposed Synchronize Hours Worked processor and its source Create/Update/Delete hooks, including source validation, summary creation/reuse, link updates and complete replacement of affected totals. Keep one atomic operation for the source and both dimensions, deterministic concurrency controls, repeat-safe updates and explicit scope-only rebuild; downstream processor wiring is a separate task.",
+      "deliverable": "Proposed Synchronize Hours Worked processor, source hooks and authorized scope-rebuild operation with defined failure behavior.",
+      "prerequisites": [
+        "IMP-02",
+        "IMP-06"
+      ],
+      "implementer": "Senior Consultant",
+      "reviewer": "Principal Consultant (technical approver; a different person from the implementer)",
+      "rationale": "Concurrency, original-scope corrections and atomic writes across two independent dimensions form one indivisible high-consequence outcome; splitting the transaction across assignments would obscure its failure boundary.",
+      "inputs": [
+        "IN-01"
+      ],
+      "steps": [
+        "Add a proposed processor named Synchronize Hours Worked and Create/Update/Delete Action Handlers on TG_HoursWorkedObject. Before required validation, populate a missing manual SourceEntryID as manual: plus the source native GUID through the supplied create-time mechanism; imports must supply a namespaced key. Consume the configured unique SourceEntryID constraint and add retry handling so identical replay adds nothing and a changed payload is accepted only as an authorized update to that record.",
+        "Before committing any source change, invoke the installed user-access and saved-source-key restrictions for every selected dimension; require Month on its first day, finite nonnegative EmployeeHours/ContractorHours and at least one of Location or OSHAEstablishment. Reject client-supplied summary links through the installed field-write restrictions. Watch Month, Location, OSHAEstablishment, EmployeeHours and ContractorHours on updates; link-only processor writes do not restart this operation.",
+        "Capture old dimensions, month and summary links before update/delete. Build the union of old and corrected location/month and establishment/month scopes. Lock the source and affected scopes in deterministic object-kind, scope-GUID, month order. Reuse the unique existing monthly summary or create it with dimension, Date=Month, native RecordNo, helper label and default headcounts; never reset existing headcounts. A unique-create conflict rereads the existing summary and safely retries.",
+        "Assign LocationHoursHeadcount only to the summary with Location equal to the source Location and Date equal to Month. Assign EstablishmentHoursHeadcount only to the summary with OSHAEstablishment equal to the source reference and Date equal to Month. A populated dimension requires its link at completed save. Clearing one dimension clears only its link and recalculates its old scope; the other dimension is never forced or cleared implicitly.",
+        "For every affected location/month, replace EmployeeHrs with the sum of EmployeeHours and ContractrHrs with the sum of ContractorHours from committed resulting source rows matching Location and Month. For every affected establishment/month use the matching OSHAEstablishment and Month. Include each source row once per applicable dimension, use zero for an empty set and never create ancestor-location input contributions. Do not add prior summary totals or modify headcounts, record GUIDs or metadata.",
+        "Commit the source, new summaries, links and both worker-hour totals as one logical atomic operation; on failure retain the complete prior state and report scope/error through native execution evidence. Serialize overlapping writes and prevent stale concurrent reads overwriting newer totals. Keep old summaries when their final contribution disappears. Add an authorized scope-only rebuild branch that recalculates existing source rows without manufacturing a source record or requiring an artificial SourceEntryID.",
+        "Return successful synchronization with all affected old/new dimensions, months and years for the refresh dispatcher. Link/summary writes do not recursively generate source entries. This processor does not call unresolved location/report services directly, create a custom run ledger or assign native processing permissions."
+      ],
+      "accept": [
+        "A dual-scope source contributes 1,200 hours to each matching summary while remaining one raw-source entry; changing to 1,250 replaces rather than adds its contribution.",
+        "Changing month or either dimension refreshes old/new scopes and updates or clears only the applicable links.",
+        "Deleting the last contribution sets affected summary hours to zero and leaves headcounts/summary identities intact.",
+        "A forced failure or concurrent duplicate-summary creation cannot leave only one dimension updated, an orphan link or a second summary for one scope/month."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.8, 5.4, 6.1–6.4; R7–R9.",
+        "A0 is a design responsibility label; Synchronize Hours Worked and its handlers are proposed additions, not exported existing operations."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-01",
+          "description": "Source event signatures, pre-delete original-value access, transaction/locking binding, manual GUID-key default timing and explicit operation invocation must be supplied before executable handlers can be created. The task defines the required behavior but does not assume these capabilities exist."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-01 — Source event signatures, pre-delete original-value access, transaction/locking binding, manual GUID-key default timing and explicit operation invocation must be supplied before executable handlers can be created. The task defines the required behavior but does not assume these capabilities exist. Technical prerequisites: IMP-02, IMP-06."
+    },
+    {
+      "id": "IMP-08",
+      "title": "Configure monthly establishment incident measures",
+      "category": "Analytics automation",
+      "objective": "Populate establishment monthly incident counts, day measures and hours while preserving manual rate goals.",
+      "scope": "Add a proposed Refresh Establishment Monthly Metrics operation that creates or updates one monthly KPI, initializes its identity/helpers and replaces all twenty stored aggregates. Read hours only from the matching establishment summary and derive incident measures only through supplied source eligibility/attribution rules; do not add actual-rate fields or modify goals.",
+      "deliverable": "Proposed monthly refresh operation producing a complete establishment/month KPI result and repeat-safe refresh outcome.",
+      "prerequisites": [
+        "IMP-02",
+        "IMP-03"
+      ],
+      "implementer": "Senior Consultant",
+      "rationale": "Incident classification parity, worker hours and safe concurrent refresh are substantial cross-object automation responsibilities.",
+      "inputs": [
+        "IN-05",
+        "IN-06",
+        "IN-01"
+      ],
+      "steps": [
+        "Add a proposed operation named Refresh Establishment Monthly Metrics accepting an establishment GUID and first-of-month Date. Reject other dates, serialize the establishment/month scope and create or update exactly one TG_EstIncidentRateKPIObject by OSHAEstablishment + Date. At creation set required establishment/date/RecordNo, LocationIdHelp to the establishment native GUID and LocNameHelper to its Name; retain historical helper values on ordinary refresh.",
+        "Set LoEmplWrkdHours and RuEmplWrkdHours from TG_EstHrsHeadcountObject.EmployeeHrs for the same establishment + Date; set LoCntrctWrkdHrs and RuCntrctWrkdHrs from ContractrHrs. Do not add raw Hours Worked amounts or organizational-location totals. A missing monthly input is handled through the supplied completeness policy rather than silently treated as confirmed zero.",
+        "Using the supplied incident eligibility and establishment query, replace both Lo/Ru values for CtIncidents, CtRecordable, NumIncDayAway, NumIncLostTim, NumFatalities, NumDaysAway, NumLostDays and NumTrnsfRstDy. Monthly date scope is inclusive month start and exclusive next month start. Each Lo/Ru pair uses the identical flat establishment population. Do not infer a case count from an incident count or treat names as classification rules.",
+        "Persist all twenty aggregates as one complete result or retain the prior complete values on failure. Repeated calls fully recompute current data, not increment totals. Preserve TargetTRIR, TargetDART, TargetLTIR and TargetSeverRate; report success/failure and affected scope to the configured native completion gate."
+      ],
+      "accept": [
+        "The four hours aggregates exactly reflect the matching monthly summary, with equal Lo/Ru pairs and no raw-input addition.",
+        "Each of the sixteen incident-derived values follows the supplied eligibility/counting rules in the requested establishment/month.",
+        "Retry creates no second KPI and does not overwrite any of the four manual targets.",
+        "Failed refresh leaves the previous complete aggregate set and a native scoped failure outcome."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.2–4.3, 5, 6; R2, R3.",
+        "All source metric Calculation values are null; only the stored-field contract is extracted."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-05",
+          "description": "Monthly incident/date/worker/counting and lost-time/day rules are needed for sixteen incident-derived stored values; no aggregate calculation is exported. The four hour values already have exact summary sources."
+        },
+        {
+          "id": "IN-06",
+          "description": "The incident attribution/query contract and original/corrected scope notifications are needed to select the establishment population; no incident field or default may be invented."
+        },
+        {
+          "id": "IN-01",
+          "description": "The supported explicit refresh-operation binding and atomic/locked result-write mechanism are required before constructing the executable monthly processor; field metadata is already owned by predecessor tasks."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-05 — Monthly incident/date/worker/counting and lost-time/day rules are needed for sixteen incident-derived stored values; no aggregate calculation is exported. The four hour values already have exact summary sources. IN-06 — The incident attribution/query contract and original/corrected scope notifications are needed to select the establishment population; no incident field or default may be invented. Technical prerequisites: IMP-02, IMP-03. IN-01 — Executable refresh operation and coherent result-write binding are missing."
+    },
+    {
+      "id": "IMP-09",
+      "title": "Configure annual establishment totals and header snapshots",
+      "category": "Regulatory analytics automation",
+      "objective": "Populate one annual establishment summary with reproducible case totals, employment values and retained reporting metadata.",
+      "scope": "Add the proposed Refresh Establishment Annual OSHA operation, creation-only master-to-summary copy, stored annual identity, twenty-four base measures, four employment totals and same-scope case membership. Add explicit authorized header correction and shared annual-output metadata validation while preserving manual annual values during routine refresh.",
+      "deliverable": "Proposed annual refresh, header-correction and shared metadata-validation operations with complete snapshot mapping, stable annual identity and retained overrides.",
+      "prerequisites": [
+        "IMP-02",
+        "IMP-05"
+      ],
+      "implementer": "Senior Consultant",
+      "rationale": "Regulatory classification, annual-average policy, snapshots and correction behavior span multiple objects and carry material reporting consequences.",
+      "inputs": [
+        "IN-06",
+        "IN-07",
+        "IN-08",
+        "IN-01"
+      ],
+      "steps": [
+        "Add a proposed operation named Refresh Establishment Annual OSHA accepting establishment GUID and year; set Date to January 1, serialize scope and create or update exactly one TG_EstOSHASummaryObject by OSHAEstablishment + Date. At creation set native RecordNo, ReporLocationId to establishment native GUID, Year to the calendar year of Date and OIISettings to the supplied destination record.",
+        "At initial creation copy master Name to LocationName and EstablishmeName; Street to LocationStreet; City to LocationCity; State to LocationState; PostalCode to LocationPostal; CompanyName to CompanyName; EINNumber to EINNumber; NAICSCode to NAICSCode; SICCode to SICCode; IndustryDescription to InduDescription; EstablishmentType to EstablishmeType; EstablishmentSize to EstablishmtSize; EstablishmentID to EstablishmentID; OSHA300aID to OSHA300aID. Store values once, not continuing master formulas.",
+        "For the inclusive January 1 to exclusive next January 1 incident scope, apply supplied eligibility/precedence/day-cap rules and replace Lo/Ru pairs CtFatalities, CtDaysAway, CtTrnfrOrRest, CtOthrRecrdbl, NumDaysAway, NumRstOrJobTr, CtInjuries, CtSkinDisordr, CtRespiratorC, CtPoisonings, CtHearingLoss and CtAllOtherIln. Both sides use the identical flat establishment population; do not use location descendants.",
+        "Set LoNumHrsWorked and RUNumHrsWorked from eligible same-establishment monthly summary EmployeeHrs under the supplied annual inclusion rule. Set LoAvgNumEmploye and RuAvgNumEmploye from the supplied monthly EmployeeHCount averaging rule, including partial/missing periods and rounding; never sum headcounts or divide automatically by entered rows. Populate AssociatedOIIs through the supplied collection binding and same annual population, not a guessed stored relationship.",
+        "Persist all aggregate and case-membership changes coherently or retain the prior complete result. Preserve user-edited CompanyName, EINNumber, EstablishmeName, InduDescription, EstablishmeType, EstablishmtSize, AnyRecrdblIncid, OSHA300aID, EstablishmentID and ChangeReason during routine refresh. Master renames/deactivation do not recopy stored headers.",
+        "Add a proposed Correct Annual OSHA Header operation for the supplied regulatory-administrator entitlement. Allow explicit corrected LocationName, LocationStreet, LocationCity, LocationState, LocationPostal, SICCode and NAICSCode values on the selected annual record, with native audit of before/after values and actor. Routine refresh must not invoke it.",
+        "Add a proposed Validate Annual OSHA Output operation that checks the selected annual snapshot CompanyName, LocationStreet, LocationCity, LocationState and LocationPostal for missing values before a print/merge/export request. Return field-specific validation errors without changing any record. Consume supplied output-specific required-field parameters when the output task binds them; do not make these master fields unconditionally mandatory. Electronic recordability/schema consistency checks are owned by the electronic-export configuration."
+      ],
+      "accept": [
+        "Creating an annual summary populates all fifteen master-to-summary target assignments plus date/year/GUID/settings once.",
+        "A master rename or ordinary refresh preserves historical header values and permitted annual overrides.",
+        "All twenty-four case/day and four employment values use supplied source policies and equal Lo/Ru establishment scope.",
+        "Explicit authorized header correction is audited and does not change master data or broaden ordinary field editability."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.4–4.5, 5, 6.3; R2–R6.",
+        "A3 is a design label; the two named operations are proposed additions."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-06",
+          "description": "The AssociatedOIIs relationship/query and same-establishment case attribution are needed for collection membership and annual case selection; incident-side fields are not assigned here."
+        },
+        {
+          "id": "IN-07",
+          "description": "Annual G–M rules, day caps and employee-hours/headcount averaging including missing months/partial years are needed before binding stored annual aggregates and completeness errors."
+        },
+        {
+          "id": "IN-08",
+          "description": "The destination OII Setting record is needed for creation binding; supplied output-specific required-field parameters supplement the five shared header checks, without assuming a portable source record GUID."
+        },
+        {
+          "id": "IN-01",
+          "description": "Supported explicit annual/header-correction operation bindings and coherent locked result-write behavior are required before executable processing can be configured; no workflow action or method signature is assumed."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-06 — The AssociatedOIIs relationship/query and same-establishment case attribution are needed for collection membership and annual case selection; incident-side fields are not assigned here. IN-07 — Annual G–M rules, day caps and employee-hours/headcount averaging including missing months/partial years are needed before binding stored annual aggregates and completeness errors. IN-08 — The destination OII Setting record is needed for creation binding; supplied output-specific required-field parameters supplement the five shared header checks, without assuming a portable source record GUID. Technical prerequisites: IMP-02, IMP-05. IN-01 — Annual/correction operation and coherent result-write binding are missing."
+    },
+    {
+      "id": "IMP-10",
+      "title": "Connect successful changes to all affected analytics refreshes",
+      "category": "Processor integration",
+      "objective": "Refresh both reporting families after hours or headcount changes and prevent stale results being presented as current.",
+      "scope": "Add the refresh dispatcher consuming successful shared synchronization and summary headcount changes. Bind new establishment operations and the supplied original location processors, cover original/corrected months and years, and attach the native completion/error gate without adding a scheduler, ledger or incident-side handler.",
+      "deliverable": "Proposed Dispatch Hours Analytics Refresh integration and summary-headcount callbacks with coalesced scope refresh and native failure gating.",
+      "prerequisites": [
+        "IMP-07",
+        "IMP-08",
+        "IMP-09"
+      ],
+      "implementer": "Senior Consultant",
+      "rationale": "Existing-product integration, after-commit ordering and stale-output failure handling require high-consequence native behavior judgment.",
+      "inputs": [
+        "IN-09",
+        "IN-06"
+      ],
+      "steps": [
+        "Add a proposed Dispatch Hours Analytics Refresh integration that consumes the successful committed affected-scope union from Synchronize Hours Worked. Call Refresh Establishment Monthly Metrics for each distinct affected establishment/month and Refresh Establishment Annual OSHA for each affected establishment/year. Call the supplied existing location KPI/annual operations for distinct affected location/month/year and required hierarchy roll-ups; do not fan source input rows to ancestors.",
+        "Add Update callbacks on both monthly summaries watching EmployeeHCount and ContractrHCount only. Establishment headcount changes request annual establishment employment refresh; location headcount changes request the supplied location employment refresh. Hours-only processor writes and helper/link metadata writes do not reenter source synchronization. New headcount-only summary creation invokes the scope-only hours rebuild before its dependent refreshes.",
+        "Subscribe to the supplied incident-change notification endpoint and consume original/corrected establishment/period values to request both affected results. Do not create incident reference fields, defaults or workflow operations. Include changes crossing month/year boundaries and authorized historical inactive scopes.",
+        "Coalesce work by operation, dimension kind, scope GUID and period; serialize overlapping result writes and recompute from the latest completed source population. Bind native success/failure evidence and the supplied completion gate so affected KPI/report views cannot claim current output while a necessary refresh is pending or failed. Downstream failure does not roll back already-committed consistent source/summary hours; a retry recomputes complete current results."
+      ],
+      "accept": [
+        "Changing an hours entry across two years refreshes both original/new establishment years and all affected monthly/location outputs.",
+        "A headcount-only edit refreshes employment values without altering source hours or triggering source recursion.",
+        "Failed downstream refresh leaves consistent hours and an observable native failure gate; retry replaces rather than adds results.",
+        "No scheduled service, custom queue/ledger or incident-side workflow has been added by this integration."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 6, 7–8; R1, R2, R5, R8, R9."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-09",
+          "description": "Exact location refresh operation identifiers/signatures and native completion/error callbacks are missing; binding the legacy side and output freshness gate is blocked until supplied."
+        },
+        {
+          "id": "IN-06",
+          "description": "The separately implemented incident-change event contract must supply old/new establishment and period scopes; only subscribing the dispatcher is in scope, not creating incident handlers."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-09 — Exact location refresh operation identifiers/signatures and native completion/error callbacks are missing; binding the legacy side and output freshness gate is blocked until supplied. IN-06 — The separately implemented incident-change event contract must supply old/new establishment and period scopes; only subscribing the dispatcher is in scope, not creating incident handlers. Technical prerequisites: IMP-07, IMP-08, IMP-09."
+    },
+    {
+      "id": "IMP-11",
+      "title": "Configure establishment OSHA 300 report outputs",
+      "category": "Regulatory reports",
+      "objective": "Generate OSHA and Cal/OSHA case logs from the new establishment summary and its scoped cases.",
+      "scope": "Add the four new summary print links and supported report/template bindings for OSHA 300, Combined OSHA 300, Cal/OSHA 300 and Combined Cal/OSHA 300. Use establishment/year case membership, privacy masking, empty-case behavior and output-completeness checks; retain the original location print links.",
+      "deliverable": "Four new establishment log output bindings and their supplied supported templates/report adapter.",
+      "prerequisites": [
+        "IMP-05",
+        "IMP-09",
+        "IMP-10"
+      ],
+      "implementer": "Senior Consultant",
+      "rationale": "Custom-summary endpoint support and combined-case behavior require specialist report integration rather than URL-only cloning.",
+      "inputs": [
+        "IN-08"
+      ],
+      "configurationRows": [
+        [
+          "Print OSHA 300 Form",
+          "Add a new link on TG_EstOSHASummaryObject using the supplied custom-summary report binding, target summary object ID and selected summary record ID; map OSHA300TempId and OSHA300EmptyId, oshaType=OSHA when the supplied native binding supports that parameter. Source Print OSHA 300 Form (E329) hard-codes the original summary ID; do not reuse it."
+        ],
+        [
+          "Print Combined OSHA 300 Form",
+          "Add a new combined link with OSHA300TempId/OSHA300EmptyId and the supplied combined-report behavior; the source Print Combined OSHA 300 Form (E214) uses oshaType=Combined. Include only the approved establishment/year population, never organizational descendants."
+        ],
+        [
+          "Print Cal/OSHA 300 Form",
+          "Add a new Cal link using CALOSHA300TempId/CALOSHA300EmptyId and the supplied Cal report binding; the source Print Cal/OSHA 300 Form (E203) uses oshaType=OSHA. Preserve the same selected establishment/year and case masking."
+        ],
+        [
+          "Print Combined Cal/OSHA 300 Form",
+          "Add a new combined-Cal link using the supplied confirmed combined behavior. The source Print Combined Cal/OSHA 300 Form (E337) also sends oshaType=OSHA despite its combined label; do not invent a corrected parameter or silently assert combined behavior. Bind the supplied decision explicitly."
+        ]
+      ],
+      "steps": [
+        "Bind each output to the selected new summary/header and the same eligible case set as annual totals. Invoke Validate Annual OSHA Output with the supplied output-specific mandatory-field parameters before rendering; that installed operation owns the shared CompanyName/address checks. Master editing itself remains possible without complete reporting address data.",
+        "Configure populated and empty-case templates, masked employee-name handling and the supplied native refresh-completion gate before download. Existing location-family links and object IDs are reuse context, not edits."
+      ],
+      "accept": [
+        "All four new links address the new summary identity and supplied supported binding, not the original hard-coded object ID.",
+        "Selected establishment/year cases and privacy masking are consistent across populated/empty log outputs.",
+        "Missing required report metadata or incomplete refresh prevents a current-report download.",
+        "Combined Cal output follows the supplied confirmed behavior rather than an assumed parameter correction."
+      ],
+      "refs": [
+        "Technical specification revision 2 section 7; R6.",
+        "Four source print links are extracted; their templates and native custom-object compatibility are absent."
+      ],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-08",
+          "description": "Supported custom-summary endpoint/adapter, OSHA300TempId/OSHA300EmptyId, CALOSHA300TempId/CALOSHA300EmptyId destination templates and the Combined Cal parameter decision are required. Without a supported equivalent binding no executable report link is assigned."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-08 — Supported custom-summary endpoint/adapter, OSHA300TempId/OSHA300EmptyId, CALOSHA300TempId/CALOSHA300EmptyId destination templates and the Combined Cal parameter decision are required. Without a supported equivalent binding no executable report link is assigned. Technical prerequisites: IMP-05, IMP-09, IMP-10."
+    },
+    {
+      "id": "IMP-12",
+      "title": "Configure establishment OSHA 300A annual forms",
+      "category": "Regulatory report templates",
+      "objective": "Generate OSHA and Cal/OSHA annual summary forms using retained annual headers and employment values.",
+      "scope": "Add the two new 300A mail-merge/template bindings on the establishment summary. Map the annual stored fields, measure pairs and metadata requirements to supplied destination templates while preserving historical snapshots and original location output links.",
+      "deliverable": "Two establishment 300A form templates/bindings and output validation.",
+      "prerequisites": [
+        "IMP-09",
+        "IMP-10"
+      ],
+      "implementer": "Consultant",
+      "rationale": "The template mappings are bounded but regulatory output identity and annual aggregate selection require consultant-level cross-object judgment.",
+      "inputs": [
+        "IN-08"
+      ],
+      "configurationRows": [
+        [
+          "Print OSHA 300 A Form",
+          "Add a target-summary mail-merge link using destination OIISettings.OSHA300ATempId, the newly configured TG_EstOSHASummaryObject identity and selected record ID. Source Print OSHA 300 A Form (E354) uses the original hard-coded summary ID; replace it only on the new link."
+        ],
+        [
+          "Print Cal/OSHA 300 A Form",
+          "Add a target-summary mail-merge link using destination OIISettings.CalOSHA300AFormId, the new summary identity and selected record ID. Source Print Cal/OSHA 300 A Form (E205) is retained on the original family."
+        ]
+      ],
+      "steps": [
+        "Map the template header to stored LocationName, LocationStreet, LocationCity, LocationState, LocationPostal, EstablishmeName, CompanyName, EINNumber, SICCode, NAICSCode and InduDescription. Map Year and one complete annual measure family: RuCtFatalities (G), RuCtDaysAway (H), RuCtTrnfrOrRest (I), RuCtOthrRecrdbl (J), RuNumDaysAway (K), RuNumRstOrJobTr (L), RuCtInjuries (M1), RuCtSkinDisordr (M2), RuCtRespiratorC (M3), RuCtPoisonings (M4), RuCtHearingLoss (M5) and RuCtAllOtherIln (M6). Map employment values from RuAvgNumEmploye and RUNumHrsWorked; never add their equal Lo counterparts. The supplied template determines destination merge-property names, not an extra source population.",
+        "Invoke the installed Validate Annual OSHA Output operation with supplied template-specific required-field parameters before merge; do not duplicate the shared CompanyName/address checks. Bind the native completion gate. Later master edits do not overwrite the annual snapshot header."
+      ],
+      "accept": [
+        "Both new links merge the selected target summary and supplied destination template.",
+        "Annual employment values and G–M fields map once per selected scope without Lo/Ru doubling.",
+        "Changing current master metadata does not silently change a previously stored annual header in its form output."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.4–4.5, 6.3, 7; R4, R6."
+      ],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-08",
+          "description": "Destination OSHA300ATempId and CalOSHA300AFormId template definitions/IDs, supported mail-merge binding for the new summary object and output-specific required fields are needed before configuring the two outputs."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-08 — Destination OSHA300ATempId and CalOSHA300AFormId template definitions/IDs, supported mail-merge binding for the new summary object and output-specific required fields are needed before configuring the two outputs. Technical prerequisites: IMP-09, IMP-10."
+    },
+    {
+      "id": "IMP-13",
+      "title": "Configure actual incident-rate reporting by establishment",
+      "category": "KPI reports and dashboards",
+      "objective": "Display actual establishment incident rates beside the four manual targets using the original verified rate policy.",
+      "scope": "Create the proposed Establishment Incident Rates report/dashboard using the new monthly KPI measures and supplied actual-rate definitions. Show target comparisons, establishment/month filtering, completeness and refresh gating without storing unrequested actual-rate fields or combining reporting dimensions.",
+      "deliverable": "Establishment rate report/dashboard with four actual-rate outputs and target comparisons.",
+      "prerequisites": [
+        "IMP-08",
+        "IMP-10"
+      ],
+      "implementer": "Consultant",
+      "rationale": "Period-level rate aggregation, worker denominator selection and null handling require report/formula judgment beyond routine field configuration.",
+      "inputs": [
+        "IN-05",
+        "IN-11"
+      ],
+      "configurationRows": [
+        [
+          "TRIR and target",
+          "Add actual TRIR using RuCtRecordable as the recordable/reportable incident numerator, supplied Hours denominator and Normalizer; compare to TargetTRIR. Use a verified executable report expression only after the denominator/normalizer/null/rounding inputs are supplied."
+        ],
+        [
+          "DAIR and target",
+          "Add actual DAIR using RuNumIncDayAway as the days-away incident numerator with the supplied denominator/normalizer; compare to TargetDART displayed as Target DAIR, not a DART target."
+        ],
+        [
+          "LTIR and target",
+          "Add actual LTIR using RuNumIncLostTim after its supplied days-away or transfer/restricted incident-counting classification is bound, with supplied denominator/normalizer; compare to TargetLTIR. Do not substitute day totals for incident count."
+        ],
+        [
+          "Severity and target",
+          "Add actual Severity Rate using RuNumDaysAway plus RuNumTrnsfRstDy under the supplied days-away/transfer/restriction day policy, denominator and normalizer; compare to TargetSeverRate."
+        ]
+      ],
+      "steps": [
+        "Bind report records to TG_EstIncidentRateKPIObject with establishment and calendar-month/period filters. Recompute a multi-month rate from eligible aggregate numerator and denominator under supplied policy, rather than averaging monthly rates. Keep employee/contractor hour inputs distinct and never add equal Lo/Ru pairs.",
+        "Apply configured user record visibility and native refresh-completion gating. Do not label a default zero or missing-input period as a completed actual rate. No actual-rate scalar field is added to the object model."
+      ],
+      "accept": [
+        "Four actual rates and their matching manual goals are displayed for the selected establishment/period.",
+        "Zero/null hours, rounding and multi-month results follow supplied executable definitions, without invented normalizers.",
+        "Changing the report period does not average monthly rates or add raw hours to summary totals."
+      ],
+      "refs": [
+        "Technical specification revision 2 section 5.2; R2, R3.",
+        "SafetyMetrics_IncidentRateKPI_Detail (E23) tooltips provide conceptual definitions only."
+      ],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-05",
+          "description": "Actual denominator employee/contractor composition, numeric normalizer, zero/null behavior, rounding and cross-month aggregation rules are required before writing executable rate expressions."
+        },
+        {
+          "id": "IN-11",
+          "description": "The existing rate report/dashboard definition and supported new report/display binding are needed to reproduce actual outputs and target comparisons; the extract provides only tooltips."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-05 — Actual denominator employee/contractor composition, numeric normalizer, zero/null behavior, rounding and cross-month aggregation rules are required before writing executable rate expressions. IN-11 — The existing rate report/dashboard definition and supported new report/display binding are needed to reproduce actual outputs and target comparisons; the extract provides only tooltips. Technical prerequisites: IMP-08, IMP-10."
+    },
+    {
+      "id": "IMP-14",
+      "title": "Configure establishment OSHA electronic export",
+      "category": "Regulatory export configuration",
+      "objective": "Produce the supported electronic OSHA export using annual establishment data and identifiers.",
+      "scope": "Create a proposed Establishment OSHA Electronic Export view/report based on the supplied original dashboard definition and submission schema. Rebind queries/columns to the new annual summary, enforce required values and formatting, and add new summary navigation; do not add direct regulatory submission automation.",
+      "deliverable": "New establishment electronic-export report/query and summary navigation link.",
+      "prerequisites": [
+        "IMP-09",
+        "IMP-10"
+      ],
+      "implementer": "Consultant",
+      "rationale": "Submission-field semantics, annual populations and supported export formatting require cross-object report judgment.",
+      "inputs": [
+        "IN-12",
+        "IN-03",
+        "IN-08"
+      ],
+      "steps": [
+        "Add a new navigation link to the proposed Establishment OSHA Electronic Export view/report on TG_EstOSHASummaryObject. The source OSHA Esub (E98) points to dashboard 6a9aa80a-174a-415e-b2c3-be5a41c08424; its definition is an external input, not evidence of a working submission API. Leave the original link unchanged.",
+        "Bind the new export to TG_EstOSHASummaryObject establishment/year data and supplied column layout. Map EstablishmentID, OSHA300aID, EINNumber, CompanyName, EstablishmeName, stored address, SICCode, NAICSCode, InduDescription, EstablishmeType, EstablishmtSize, AnyRecrdblIncid, Year, annual G–M values and employment totals to supplied schema fields and exact formatting. Use stable value keys where required, not localizable captions.",
+        "Invoke the installed Validate Annual OSHA Output operation with supplied schema-specific required-field parameters, then add export-format checks and AnyRecrdblIncid consistency with annual totals using supplied lookup keys. Bind the native completed-refresh gate before export. One establishment/year is exported under its own identifiers; do not include organizational descendants or add Lo/Ru pairs. No transmission credentials, scheduled submission or submit endpoint is created."
+      ],
+      "accept": [
+        "The new link selects target establishment summaries and leaves the original navigation intact.",
+        "Export column names/order/values match the supplied schema, including stable keys and reporting identifiers.",
+        "Inconsistent recordability, missing required values or incomplete refresh prevents a current export."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 4.5, 7; R6.",
+        "OSHA Esub (E98) is exported navigation; dashboard/query/schema are absent."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-12",
+          "description": "The source dashboard query/export column layout, current submission schema and supported destination export binding are missing; exact query/column construction is blocked."
+        },
+        {
+          "id": "IN-03",
+          "description": "Stable AnyRecrdblIncid, EstablishmeType and EstablishmtSize keys are needed for schema-compliant export values rather than localized labels."
+        },
+        {
+          "id": "IN-08",
+          "description": "Destination record/template context and output-specific mandatory metadata are needed to bind export preconditions; the source settings GUID is not assumed portable."
+        }
+      ],
+      "blockedStatus": "Partially blocked: IN-12 — The source dashboard query/export column layout, current submission schema and supported destination export binding are missing; exact query/column construction is blocked. IN-03 — Stable AnyRecrdblIncid, EstablishmeType and EstablishmtSize keys are needed for schema-compliant export values rather than localized labels. IN-08 — Destination record/template context and output-specific mandatory metadata are needed to bind export preconditions; the source settings GUID is not assumed portable. Technical prerequisites: IMP-09, IMP-10."
+    },
+    {
+      "id": "IMP-15",
+      "title": "Update supplied hours-import mappings to the shared entry",
+      "category": "Existing integration mappings",
+      "objective": "Route identified external hours writers through shared input so they no longer compete with summary calculations.",
+      "scope": "Modify only the concrete import/interface mappings supplied for existing hour writers, redirecting source hours and references to Hours Worked and its synchronized save operation. Use stable allocation-line keys and separate headcount mappings; do not discover integrations, load historical data or enable a production cutover.",
+      "deliverable": "Rebound named hours-import mappings with update/retry semantics and retired direct-summary hour targets.",
+      "prerequisites": [
+        "IMP-07"
+      ],
+      "implementer": "Consultant",
+      "rationale": "External interface changes require mapping and retry semantics but do not independently redesign the atomic source processor.",
+      "inputs": [
+        "IN-10"
+      ],
+      "steps": [
+        "On each supplied named hours-writer mapping, change the target from direct summary EmployeeHrs/ContractrHrs writes to TG_HoursWorkedObject.EmployeeHours/ContractorHours through Synchronize Hours Worked. Map source period to Month on the first calendar day, source location to Location only where explicitly supplied, and source establishment to OSHAEstablishment only where explicitly supplied. Do not infer one dimension from the other or transmit processor-owned summary links.",
+        "Map the supplied stable feed/allocation-line identity to SourceEntryID. Configure replay as same-key no-op/update, not a new source row; source corrections replace the original contribution. Split amounts only from an approved non-overlapping allocation, never repeat full amounts under several keys. Reject missing dimensions, invalid dates and NULL/negative/non-finite hours before completion.",
+        "Remove/disable the identified direct-hour target mappings in the same interface change, leaving independently supplied headcount mappings on their existing summary targets. Configure caller authorization through the application-user rules already installed; do not assign native processing permissions or invent unidentified interfaces. Data conversion, credential provisioning and production cutover remain external."
+      ],
+      "accept": [
+        "Each supplied named writer targets shared hours and no longer directly writes calculated summary-hour fields.",
+        "Replaying a source identity does not create another contribution; authorized correction updates its existing source entry.",
+        "Headcounts are not mapped into Hours Worked and dimension attribution is not inferred from organizational placement."
+      ],
+      "refs": [
+        "Technical specification revision 2 sections 8–10; R9.",
+        "Original summary IsDataImportEnabled=FALSE; actual writer existence/names are not established by the package."
+      ],
+      "configurationRows": [],
+      "modifications": [],
+      "assumptions": "None",
+      "reviewer": "Senior Consultant (product build manager; a different person from the implementer)",
+      "suppliedInputDescriptions": [
+        {
+          "id": "IN-10",
+          "description": "The actual interface/mapping names, source fields, existing target IDs and supported entry route are absent. No existing import configuration is claimed; this task is fully blocked until concrete differences are supplied."
+        }
+      ],
+      "blockedStatus": "Blocked: IN-10 — No concrete current mapping/interface identifiers are supplied; all existing-interface modification instructions await them. Technical prerequisite: IMP-07 supplies the synchronized entry route."
+    }
+  ],
+  "fieldCoverage": [
+    {
+      "element": "TG_OSHAEstablishmentObject.Code",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.Name",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.Active",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.CompanyName",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.Street",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.City",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.State",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.PostalCode",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.EINNumber",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.NAICSCode",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.SICCode",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.IndustryDescription",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.EstablishmentType",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.EstablishmentSize",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.EstablishmentID",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.OSHA300aID",
+      "action": "Add",
+      "owner": "IMP-01",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_HoursWorkedObject.SourceEntryID",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "TG_HoursWorkedObject.Month",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_HoursWorkedObject.Location",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_HoursWorkedObject.OSHAEstablishment",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_HoursWorkedObject.EmployeeHours",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_HoursWorkedObject.ContractorHours",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_HoursWorkedObject.LocationHoursHeadcount",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "TG_HoursWorkedObject.EstablishmentHoursHeadcount",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.Date",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Date (E82); source GUID 80e3ba70-b105-4c23-829a-9433ce6965da",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.ContractrHCount",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "ContractrHCount (E157); source GUID 53042940-5f4b-47e0-908b-f58a2871e5e5",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.EmployeeHrs",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "EmployeeHrs (E169); source GUID b198518e-dcbb-42ef-86c7-21a9410bb556",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.OSHAEstablishment",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Location (E185); source GUID a651c5f7-7c6c-4a4f-8b98-2e166cc3e2cb",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.LocNameHelper",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "LocNameHelper (E249); source GUID 7d5c95fb-f74e-4ed3-82bc-719b34cb943a",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.EmployeeHCount",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "EmployeeHCount (E253); source GUID f635f6de-9084-4174-b0d6-99e40f60b943",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.RecordNo",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "RecordNo (E314); source GUID b5ba29e0-3e7d-48e2-b44b-b7f855d6bce8",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.ContractrHrs",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "ContractrHrs (E316); source GUID 62554d93-ac70-4361-ae19-7adf524d591a",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "TG_EstHrsHeadcountObject.HoursWorkedEntries",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native inverse navigation"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.HoursWorkedEntries",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native inverse navigation"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.HoursHeadcounts",
+      "action": "Add",
+      "owner": "IMP-02",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native inverse navigation"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.Date",
+      "action": "Modify",
+      "owner": "IMP-02",
+      "source": "Date (E82)",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.ContractrHCount",
+      "action": "Reuse",
+      "owner": null,
+      "source": "ContractrHCount (E157)",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.EmployeeHrs",
+      "action": "Modify",
+      "owner": "IMP-02",
+      "source": "EmployeeHrs (E169)",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.Location",
+      "action": "Modify",
+      "owner": "IMP-02",
+      "source": "Location (E185)",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.LocNameHelper",
+      "action": "Reuse",
+      "owner": null,
+      "source": "LocNameHelper (E249)",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.EmployeeHCount",
+      "action": "Reuse",
+      "owner": null,
+      "source": "EmployeeHCount (E253)",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.RecordNo",
+      "action": "Reuse",
+      "owner": null,
+      "source": "RecordNo (E314)",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "SafetyMetrics_HrsandHeadcountObject.ContractrHrs",
+      "action": "Modify",
+      "owner": "IMP-02",
+      "source": "ContractrHrs (E316)",
+      "populationOwner": "IMP-07"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RecordNo",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RecordNo (E50); source GUID 043f6a0d-5d53-4f2c-9ce8-0afc63a0b0c2",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.Date",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "Date (E56); source GUID ff23157a-1cf6-4979-97c2-ae2895d3201e",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.OSHAEstablishment",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "Location (E58); source GUID 47e4fcf0-502a-4567-8f26-4cadfc038c73",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuNumDaysAway",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuNumDaysAway (E78); source GUID 6a867f71-aa59-4a0f-9424-bec709d10655",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuCtRecordable",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuCtRecordable (E94); source GUID 88037be2-4963-4b60-8f3a-deba17db7dba",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoNumFatalities",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoNumFatalities (E96); source GUID a83fede5-74ae-4a23-957b-ef7ff00203d5",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuCtIncidents",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuCtIncidents (E133); source GUID b75e75e4-c641-447e-81d8-cc18704ac8cb",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LocNameHelper",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LocNameHelper (E159); source GUID 81b5d8d6-5bff-49b5-a669-61ac051f1be0",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuNumLostDays",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuNumLostDays (E193); source GUID a2d7e328-40a0-420d-9b0c-38a6276247ff",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoCntrctWrkdHrs",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoCntrctWrkdHrs (E197); source GUID 53ec5a18-4bf9-4c7c-8a33-451cf2417c62",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LocationIdHelp",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LocationIdHelp (E199); source GUID 3ea4baa8-dcc1-4177-a4a6-ad1017b4d40b",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoCtIncidents",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoCtIncidents (E212); source GUID 736d7978-6935-4eb3-9098-6b7b7d391a84",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuNumIncDayAway",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuNumIncDayAway (E259); source GUID 553bb1be-bd16-45ca-94e0-390d26d1019c",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoNumLostDays",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoNumLostDays (E267); source GUID 4b7b009e-ede4-487b-92ca-beb73df52e64",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoNumIncDayAway",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoNumIncDayAway (E275); source GUID a8c7f1b8-9643-43c4-a36e-808c494aec70",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuCntrctWrkdHrs",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuCntrctWrkdHrs (E320); source GUID ba2eec4a-ce5d-4de9-885a-d6799508bab5",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuNumIncLostTim",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuNumIncLostTim (E331); source GUID c6626d90-5f1b-4950-b266-e75e837caecb",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuEmplWrkdHours",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuEmplWrkdHours (E333); source GUID 1d59a6b3-d05a-4f5f-97cb-35527693d811",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoNumIncLostTim",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoNumIncLostTim (E356); source GUID f258419d-0555-46da-9777-892a24dd1d84",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuNumTrnsfRstDy",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuNumTrnsfRstDy (E358); source GUID 30bd6dfd-e613-46df-a5fb-789807f4dbdb",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoNumTrnsfRstDy",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoNumTrnsfRstDy (E360); source GUID 0d60d4c4-7643-4256-bdcd-0ddb6e9ded31",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoNumDaysAway",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoNumDaysAway (E364); source GUID b831e2f5-81da-4a28-8556-1b9939b1a379",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoCtRecordable",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoCtRecordable (E368); source GUID 76c14f73-0411-4d97-aa06-c97215d6bc8d",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.LoEmplWrkdHours",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "LoEmplWrkdHours (E370); source GUID b231cb4e-ed84-4433-9857-e5907347bec2",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncRateAbstractObject.RuNumFatalities",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "RuNumFatalities (E372); source GUID 22761319-34bf-40db-b0fe-dfbc62fec0f0",
+      "populationOwner": "IMP-08 (stored values); native/entry behavior for references and identity"
+    },
+    {
+      "element": "TG_EstIncidentRateKPIObject.TargetLTIR",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "TargetLTIR (E21); source GUID 031ca632-f345-4473-b527-ecd11cfa358a",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstIncidentRateKPIObject.TargetSeverRate",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "TargetSeverRate (E34); source GUID 69e835da-1299-4987-9623-60ecdc24a5c3",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstIncidentRateKPIObject.TargetDART",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "TargetDART (E38); source GUID 3b534394-89c5-4df7-ba5d-47a458045aa4",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_EstIncidentRateKPIObject.TargetTRIR",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "TargetTRIR (E42); source GUID 6b07875f-d712-432e-a5f3-1e41cc5877ed",
+      "populationOwner": "Native default or authorized user entry"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.IncidentRateKPIs",
+      "action": "Add",
+      "owner": "IMP-03",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native inverse navigation"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuNumRstOrJobTr",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuNumRstOrJobTr (E9); source GUID a5121aa8-ff73-4602-a75a-9a3554ecd256",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuNumDaysAway",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuNumDaysAway (E15); source GUID 24eb3202-85fc-4b70-9833-957ab9a81749",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtInjuries",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtInjuries (E131); source GUID e7939fe3-d879-4001-9d64-076e0af2a305",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtRespiratorC",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtRespiratorC (E135); source GUID 5bca326a-4a16-411d-a2f2-23c4a4cd6bed",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.OSHAEstablishment",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "Location (E137); source GUID f42c96ef-7f7e-40d3-bbbf-e49835d3676e",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtOthrRecrdbl",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtOthrRecrdbl (E145); source GUID ce337920-028b-4d77-b139-0fc00d17c2eb",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtAllOtherIln",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtAllOtherIln (E147); source GUID ff14c5af-f2b1-4ec7-a051-cd31d6ac9115",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtOthrRecrdbl",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtOthrRecrdbl (E153); source GUID 2a2c5443-282f-4812-8c61-b99fb90947c4",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtTrnfrOrRest",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtTrnfrOrRest (E155); source GUID b8f0c569-6ac0-4604-8c6d-1bb2e3aafa72",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LocationStreet",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LocationStreet (E161); source GUID 9c44cf39-500b-4edf-a0c2-4f84e72fe54c",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.Date",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "Date (E165); source GUID c5a85721-a4f8-432a-b2a0-0b9d3624f1ef",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtPoisonings",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtPoisonings (E176); source GUID 262eba6d-19ba-4a5a-88df-6c05429d0c8c",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtHearingLoss",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtHearingLoss (E191); source GUID 1b8905a2-21ff-454c-9797-b3fe4eb16935",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtSkinDisordr",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtSkinDisordr (E195); source GUID c9f65332-c642-40cf-a145-087ea8d1f5c9",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtRespiratorC",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtRespiratorC (E245); source GUID 30df76e2-4500-4238-8b33-5cdf7d9fe715",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtFatalities",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtFatalities (E255); source GUID 82889c5a-9b60-416e-9ece-8fed03c7347f",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtTrnfrOrRest",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtTrnfrOrRest (E261); source GUID e4fd521f-134f-4fbd-a0f5-36bd889f6f04",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtInjuries",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtInjuries (E263); source GUID 3a3a3464-8f8d-4c40-9b77-1d8065403771",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LocationCity",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LocationCity (E265); source GUID 9bf7245e-afd1-41cd-a3b0-69fb5686420c",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LocationPostal",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LocationPostal (E273); source GUID c454ea65-dbc6-4b74-a769-560659e63488",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtFatalities",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtFatalities (E277); source GUID 0ed2cf14-7c62-4262-a534-bc5d929cb673",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtDaysAway",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtDaysAway (E279); source GUID fe3e4d2f-9d3d-413d-ac0c-88394c569355",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LocationState",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LocationState (E281); source GUID 878a8c8e-7187-4146-b56d-6c0a0bdc1780",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RecordNo",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RecordNo (E283); source GUID 2fad4902-18fb-4b40-b2ac-8e9211f9934d",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtDaysAway",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtDaysAway (E285); source GUID 7dc3d0d1-5438-4b07-a349-e1633ef73495",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.ReporLocationId",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "ReporLocationId (E287); source GUID 5e355ca1-cc36-407f-8373-ecc4a606164f",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.Year",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "Year (E289); source GUID 1a8efdf8-b524-4b21-ab8c-6d6f4d2e7059",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtAllOtherIln",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtAllOtherIln (E291); source GUID c1d0bf9f-99f3-42db-94d5-694fa3e5211d",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LocationName",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LocationName (E293); source GUID 29d14066-bcc0-462f-9799-c93c3c8b5c51",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.OIISettings",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "OIISettings (E297); source GUID 3fad4677-eb32-4ec6-bd8d-ba01225d62d1",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoNumDaysAway",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoNumDaysAway (E300); source GUID b31a896c-3489-42c2-b1b2-fb7aff0fd6da",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtHearingLoss",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtHearingLoss (E302); source GUID 59abf339-8b77-4b3c-b276-8bee83c166f8",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoCtSkinDisordr",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoCtSkinDisordr (E304); source GUID bb25f32a-b45b-430c-88c5-ac2f815ebd68",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.RuCtPoisonings",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "RuCtPoisonings (E306); source GUID 82e4d214-767c-442b-bb68-ae3b68e8f871",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHAAbstractObject.LoNumRstOrJobTr",
+      "action": "Add",
+      "owner": "IMP-04",
+      "source": "LoNumRstOrJobTr (E308); source GUID f5f0367a-e7ba-416e-a02e-b4b121df1650",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.LoNumHrsWorked",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "LoNumHrsWorked (E70); source GUID 7f73b62a-cf80-4df3-b0fe-cefe289bee81",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.CompanyName",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "CompanyName (E86); source GUID 9f13e607-352d-4116-a8d7-5923ebefb8c2",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.LoAvgNumEmploye",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "LoAvgNumEmploye (E141); source GUID 164ddcf5-d6b7-4681-a13e-2aa0a7c75c9a",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.EINNumber",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "EINNumber (E167); source GUID 54df0e7d-0cba-4c3d-933d-3319dbbe9b22",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.RuAvgNumEmploye",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "RuAvgNumEmploye (E216); source GUID aa761ce1-4f94-4498-8f17-c22f9e85b42b",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.RUNumHrsWorked",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "RUNumHrsWorked (E218); source GUID a2f1fc86-b6b3-4734-8f73-e3f803ec86d9",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.ChangeReason",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "ChangeReason (E220); source GUID 689f5ee1-759e-4db1-ad42-806fd74c0389",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.EstablishmeType",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "EstablishmeType (E238); source GUID a8962428-408c-4f85-a90c-b5d65602e5f8",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.EstablishmeName",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "EstablishmeName (E243); source GUID 7f49a072-cee4-4999-8eeb-6abe1317f99b",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.EstablishmtSize",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "EstablishmtSize (E324); source GUID a82aed57-7855-4f18-9ab1-fdf1c69b6bf1",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.SICCode",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "SICCode (E335); source GUID 68a49357-d504-4af5-a22b-09bc278011d6",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.AssociatedOIIs",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "AssociatedOIIs (E339); source GUID d4d44121-35de-45c8-81b0-7762edcc4be6",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.NAICSCode",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "NAICSCode (E343); source GUID 47bb1cfb-ab61-4fa3-8143-2e34999f7042",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.AnyRecrdblIncid",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "AnyRecrdblIncid (E345); source GUID 134ce6e9-7a4b-4375-9809-61b900c1458c",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.OSHA300aID",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "OSHA300aID (E348); source GUID 51f0ddfd-d3c4-4f3a-aafc-1b24503985e3",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.EstablishmentID",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "EstablishmentID (E350); source GUID aafd4e82-84fd-49d0-b28d-007ab5da2b6a",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_EstOSHASummaryObject.InduDescription",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "InduDescription (E352); source GUID 50892a20-7c08-457d-bc3b-d410e1e7036b",
+      "populationOwner": "IMP-09 (stored values); manual overrides retained"
+    },
+    {
+      "element": "TG_OSHAEstablishmentObject.OSHASummaries",
+      "action": "Add",
+      "owner": "IMP-05",
+      "source": "Proposed revision 2",
+      "populationOwner": "Native inverse navigation"
+    }
+  ],
+  "scope": "Configuration build only; migration, tenant verification, formal testing, deployment, training and documentation workstreams excluded."
+}

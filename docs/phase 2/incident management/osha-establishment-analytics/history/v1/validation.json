@@ -1,0 +1,92 @@
+{
+  "status": "Structural validation passed; runtime/build gates remain",
+  "checks": [
+    {
+      "name": "Source field coverage",
+      "pass": true,
+      "detail": "89 source fields; 89 counterparts"
+    },
+    {
+      "name": "Unique source record IDs",
+      "pass": true,
+      "detail": "Field and object IDs checked independently"
+    },
+    {
+      "name": "Target internal names unique per declaration",
+      "pass": true,
+      "detail": "6 object names; each declared field name checked"
+    },
+    {
+      "name": "No inherited redeclaration or ambiguous captions",
+      "pass": true,
+      "detail": "Target names and display captions include inherited fields"
+    },
+    {
+      "name": "Canonical row completeness",
+      "pass": true,
+      "detail": "108 field/grid rows; six populated columns; valid requiredness"
+    },
+    {
+      "name": "Markdown reconciles to model",
+      "pass": true,
+      "detail": "Every target field contract row is present verbatim"
+    },
+    {
+      "name": "Target objects have numbered subsections",
+      "pass": true,
+      "detail": "6 owned object sections"
+    },
+    {
+      "name": "Three location references replaced",
+      "pass": true,
+      "detail": "Only new objects are changed"
+    },
+    {
+      "name": "No target scalar/reference points to system Location",
+      "pass": true,
+      "detail": "Legacy helper internal names are explicitly retained as establishment values"
+    },
+    {
+      "name": "Requiredness preserved on cloned declarations",
+      "pass": true,
+      "detail": "All 89 fields"
+    },
+    {
+      "name": "No calculation expression falsely extracted",
+      "pass": true,
+      "detail": "All 91 Calculation properties are null"
+    },
+    {
+      "name": "Resolved evidence relation targets",
+      "pass": true,
+      "detail": "388 graph edges resolved by identifier; optional module/profile names need not be present"
+    },
+    {
+      "name": "Baseline inheritance acyclic",
+      "pass": true,
+      "detail": "Direct exported SuperType edges checked"
+    },
+    {
+      "name": "Repository evidence links resolve",
+      "pass": true,
+      "detail": [
+        "../../../phase 1/platform administration/ADRs/ADR-009-separate-reporting-locations-from-osha-establishments.md",
+        "../../../phase 1/platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md",
+        "../ADRs/ADR-001-capture-establishment-and-operational-resource.md",
+        "../ADRs/ADR-003-limit-persistent-incident-visibility-and-use-workflow-access.md"
+      ]
+    },
+    {
+      "name": "Native report hard-coded ID is evidenced",
+      "pass": true,
+      "detail": "Six object-specific print links"
+    }
+  ],
+  "limitations": [
+    "Source aggregation and rate definitions not exported",
+    "AssociatedOIIs inverse/storage metadata absent",
+    "Report templates, dashboard and custom-object report support unverified",
+    "Incident attribution implementation deliberately excluded",
+    "No tenant configuration or runtime test performed"
+  ]
+}

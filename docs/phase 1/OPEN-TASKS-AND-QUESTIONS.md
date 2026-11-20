@@ -1,10 +1,14 @@
 # Open Tasks and Material Design Questions
 
+Follow-up: the user confirmed reporting-based Location Structure, separate employee establishment storage with the existing algorithm unchanged, and Intelex hierarchy maintenance with Boomi supplying assignments. Document/training audiences remain open; source-field mappings, implementation bindings and regulatory validation remain work. See the [recorded confirmation](<platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md>). Earlier descriptions of unresolved business choices below refer to the initial review.
+
 Review date: 2026-09-18
 
 Targeted update: 2026-10-23 — reconciled training approval, content traceability, and MARCOM refresh entries with the [MARCOM knowledge-transfer transcript] and proposed ADR-016 through ADR-018. The inventory and repository-wide review findings below retain their original review scope.
 
 Metadata follow-up: analyzed [MARCOM metadata guide] active English/Spanish tabs (552 entries total), excluding both discontinued tabs. Proposed ADR-016 now specifies Entry/Release/Alias objects plus the separately required MARCOM Classification, MARCOM Industry, and MARCOM Topic catalogue objects; source analysis and model decisions remain proposals, not load or compatibility results.
+
+Targeted update: 2026-11-10 — the [asset-hierarchy reconciliation](ADR-RECONCILIATION-2026-11-10.md) adds PA-009/010/011 and clarifies seven drafts. The workshop itself is no longer pending; source dictionary, operating contracts and approval remain open. The proposed reporting Location Structure conflicts with the accepted establishment-based baseline and HomeLocationCode binding, so references below to that accepted baseline remain valid until an approved transition reconciles them. All accepted ADRs remain unchanged. This is a targeted dependency update, not a new full-register review or a change to the historical priority totals below.
 
 This register retains the Phase 1 delivery backlog at its existing path and adds a separate Phase 2 section for material Incident Management work discovered in the repository-wide review. Phase 2 items are not Phase 1 commitments; their priorities apply within Phase 2. Shared foundations and the interim inspection-to-incident handoff remain Phase 1 concerns.
 
@@ -32,15 +36,17 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 ### P0 — Establish the governed site, resource, and asset taxonomy
 
-**Open task:** Convene the deferred asset-hierarchy design workshop; inventory the relevant plants, projects, resources, substations, warehouses, administrative buildings, vehicles, and equipment; define atomic records, types, parent-child relationships, stable identifiers, source systems, ownership, and integration boundaries; and map existing inspection-program lists to the governed taxonomy.
+**Open task:** Review proposed PA-010/011 from the completed November 10 workshop; provide the source-governed SQL asset dictionary, node types, identifiers, aliases, parent/establishment relationships and approved source process; define lifecycle, API sequencing/retry/reconciliation and support ownership; and map existing inspection lists and the conditional Operational Resource interface to that model. The discussed envelope is up to 30 configured fields. Resolve PA-009's reporting-location/separate-establishment transition before changing the accepted regulatory or employee location contracts.
 
-**Unanswered questions:** What is the authoritative source for each class of operational record? What is the lowest atomic unit that must be selectable and reportable? Which records belong to one OSHA establishment, which groupings are only program or regulatory-plan collections, and which data should be integrated versus maintained in Intelex? How will changes be governed?
+**Unanswered questions:** Does the proposed SQL source cover every required asset/facility class, with confirmed owners and approved changes? Which record types are selectable for each program? How are missing/conflicting establishment mappings, hierarchy moves, retirement and historical context handled? Does a parent-level inspection satisfy any resource-level targets? How will the proposed separate-establishment object support regulatory reporting and employee attribution without misusing HomeLocationCode? User-facing production asset maintenance is proposed as read-only; one-time test loads do not transfer master ownership.
 
 **Why material:** This controls incident attribution, inspection scope and frequency, regulatory roll-ups, technology reporting, equipment-specific inspection options, and future asset integration.
 
 **Evidence:** Explicit remaining design or validation work in the cited ADRs; test scenarios and operational completion criteria are derived.
 
 **Sources:** [Platform Administration ADR-001]; [Incident Management ADR-001]; [Inspections ADR-012], [Inspections ADR-016], and [Inspections ADR-017].
+
+**New evidence:** [November 10 call](<platform administration/raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>), 0:02:33–0:22:33 and 0:23:22–0:35:37; [PA-009](<platform administration/ADRs/ADR-009-separate-reporting-locations-from-osha-establishments.md>), [PA-010](<platform administration/ADRs/ADR-010-consume-a-governed-asset-hierarchy-from-terra-gen.md>) and [PA-011](<platform administration/ADRs/ADR-011-synchronize-assets-through-a-parent-first-api-integration.md>), all proposed.
 
 ### P0 — Finalize application access and exceptional employee assignments
 
@@ -360,6 +366,8 @@ The broadest dependencies are the governed operational taxonomy, application acc
 
 ### P1 — Establish the MARCOM content refresh operating model
 
+**November 10 clarification:** Notify the designated client contact after usable library content is available, then adopt through a user-created Course Version under revised ADR-017. Provider/distributor detection, ingestion/publication and notification owner/channel remain unresolved; Matthew was an example contact. Routine acceptance of updates does not authorize automatic course replacement. Library deployment is reported, package loading remains blocked in the discussion, and no successful adaptive-learning or quiz-result test is supplied. See the [reconciliation](ADR-RECONCILIATION-2026-11-10.md), gaps 7–8.
+
 **Open task:** Verify provider distribution capabilities; choose the feasible detection/delivery mechanism; and assign ownership, cadence, validation, replacement, rollback, and completion-history impact procedures. Review ADR-016's language-specific Entry, retained Release, and previous-filename Alias objects, field capacities, full metadata mapping, and source anomalies. Confirm provider Product Code stability and current-release publication authority. Configure ADR-017's non-null-and-changed selection guard on Create/Update and ADR-018's keyed, repeatable active-sheet test load, client course mapping, non-personal-data boundary, and temporary-key deactivation responsibility/evidence. Evaluate the offered content-loading library without assuming production adoption.
 
 **Unanswered questions:** Does the provider expose notifications, feeds, APIs, or only manual downloads? Can updates be automated? Resolved by the user: catalogue arrival/publication cannot create or refresh Training Course Versions; a training user manually creates a Course Version to adopt a new release. Confirm actual field mapping and initial Create ISCHANGED behavior; do not treat the adoption direction as still open. Who designates the usable Current Release, and will the proposed retention model be approved? How will the seven unheaded English regulation-like cells be resolved and actual package/auxiliary assets supplied? Provider SCORM descriptions now explicitly describe chapter test-out; can representative English/Spanish packages demonstrate adaptive navigation, resumption, and correct completion/results in Intelex? Future translation linking requires a verified map, not ID/title matching.
@@ -411,6 +419,8 @@ The broadest dependencies are the governed operational taxonomy, application acc
 **Sources:** [Document Control ADR-003], [Document Control ADR-004], [Document Control ADR-006], [Document Control ADR-008], [Document Control ADR-009], and [Document Control ADR-012].
 
 ### P1 — Complete the representative document migration pilot
+
+**November 10 clarification:** Start the core-team preview with available representative files and enough metadata for registration/display; future revision approvers need not delay that provisional import. Check generated headers/mapping before bulk formatting and correct provisional values on a later run. The accepted representative pilot and later approval/release controls remain; exact preview roster, mandatory import fields and production readiness are unresolved. See revised Document Control ADR-010 and the [reconciliation](ADR-RECONCILIATION-2026-11-10.md), gaps 9–10.
 
 **Open task:** Select approximately 20–30 representative corporate and site documents, upload them to staging with stable identifiers, populate and load the metadata workbook, and exercise revision, periodic review, approval, and change-request behavior. Record defects, configuration changes, acceptance results, and the decision to retain or discard pilot content before production loading.
 
@@ -543,7 +553,7 @@ No whole prior task is marked delivered solely because its architecture is accep
 * **Missing or ambiguous source references:** [Document Control ADR-012] cites “Latest workshop” 00:50:54–01:02:40, but the stored [Day 3 morning transcript] in that interval discusses classification, shortcuts, and administration rather than the 20–30 document pilot. [Training Management ADR-006] and [Training Management ADR-015] cite later qualification decisions without identifying a matching stored workshop; [Day 1 afternoon transcript] at 02:46:50–03:06:26 still discusses the earlier training-linked design, while Day 3 morning ends before the promised competency overflow. Locate and link the later source or recorded approval under the existing ADR closure/traceability work. Accepted ADR status is retained; the supporting transcript trail is incomplete.
 * **Residual terminology:** Proposed Inspections ADR-007 and ADR-016 still mention “findings”; accepted ADR-005 removes the formal Finding layer from current inspections. Interpret report needs as response deficiencies or external-report context and direct actions, and reconcile the wording during those proposals' review rather than silently reintroducing a Finding object.
 * **Unavailable validation and policy artifacts:** The repository contains design evidence and packaged-learning samples, but not production payload examples, completed acceptance tests, signed-off migration inventories, or the governing qualification policies/forms discussed in workshops. Package presence and narrated demonstrations are not proof of implementation closure. Obtain policy evidence through the qualification-definition task; do not infer regulatory requirements from workshop examples.
-* **Publication coverage:** [GitBook configuration] does not currently expose Document Control or the phase-level register. This is a documentation-discoverability limitation, not a new architecture blocker; the repository remains authoritative.
+* **Publication coverage:** The September review cited `gitbook-docs.yaml` for incomplete Document Control/register publication. That file is absent from the current repository, so the historical publication finding cannot establish current hosted coverage. The repository remains authoritative; verify any publication configuration separately.
 
 ## Recommended Resolution Sequence
 
@@ -626,7 +636,6 @@ No whole prior task is marked delivered solely because its architecture is accep
 [Phase 2 overview]: <../phase 2/README.md>
 [Incident Management overview]: <../phase 2/incident management/README.md>
 [Document Control overview]: <document control/README.md>
-[GitBook configuration]: <../../gitbook-docs.yaml>
 [Day 1 morning transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-morning.md>
 [Day 1 afternoon transcript]: <training management/raw artifacts/meeting_transcripts/2026-09-15-terra-gen-summit-ehsq-design-workshop-day-1-afternoon.md>
 [Day 2 morning transcript]: <employee management/raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>

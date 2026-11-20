@@ -1,0 +1,135 @@
+{
+  "planContractVersion": 2,
+  "passed": true,
+  "taskCount": 15,
+  "coverageCount": 258,
+  "errors": [],
+  "limits": "Deterministic structure, snapshot/rendering, input, graph and ownership checks. Not semantic, language-quality, source-completeness or live-tenant certification.",
+  "projectChecks": [
+    {
+      "name": "Current native design and original baseline",
+      "passed": true,
+      "detail": "Plan follows the current specification while preserving extracted baseline identities"
+    },
+    {
+      "name": "Fifteen stable task IDs",
+      "passed": true,
+      "detail": "No hidden retired, discovery or migration task"
+    },
+    {
+      "name": "Appropriate reduced linking role",
+      "passed": true,
+      "detail": "Native GETRELATED assignment replaces the custom concurrent-write processor"
+    },
+    {
+      "name": "126 field dispositions complete",
+      "passed": true,
+      "detail": "Field inventory remains 118 additions, four changes and four reuse"
+    },
+    {
+      "name": "Each added field has a local row",
+      "passed": true,
+      "detail": "No field definitions hidden in source references"
+    },
+    {
+      "name": "Canonical field settings aligned",
+      "passed": true,
+      "detail": "Field snapshots match revised defaults, native calculations and lifecycle"
+    },
+    {
+      "name": "Four native SUM settings owned by field task",
+      "passed": true,
+      "detail": "Native summary calculations, not a new totals writer"
+    },
+    {
+      "name": "Existing hour calculation differences explicit",
+      "passed": true,
+      "detail": "Actual original field settings to native calculations; retain GUID/Float"
+    },
+    {
+      "name": "Exact typed lookup expressions local",
+      "passed": true,
+      "detail": "Date/Month and native ID/.Id pairs remain inline"
+    },
+    {
+      "name": "Example and inferred-name caveats retained",
+      "passed": true,
+      "detail": "No sample object renaming or claim hidden native keys were extracted"
+    },
+    {
+      "name": "Null, delete and hour-edit behavior explicit",
+      "passed": true,
+      "detail": "No blank-dimension find/create; native calculations maintain membership changes"
+    },
+    {
+      "name": "IN-01 resolved, not a task blocker",
+      "passed": true,
+      "detail": "Only narrow ID/default settings remain IN-02; downstream remains IN-09"
+    },
+    {
+      "name": "No source totals processor or rebuild owner",
+      "passed": true,
+      "detail": "Superseded custom architecture is absent from active assignments/coverage"
+    },
+    {
+      "name": "Downstream calculated-change gap remains explicit",
+      "passed": true,
+      "detail": "Do not infer ordinary Update events from native SUM dependency changes"
+    },
+    {
+      "name": "Known monthly/annual rules retained",
+      "passed": true,
+      "detail": "Previous package-driven calculations and source chains preserved"
+    },
+    {
+      "name": "Only real hour feeds remapped",
+      "passed": true,
+      "detail": "Known key-only initializer is not a source of synthetic hours"
+    },
+    {
+      "name": "Source evidence namespace retained",
+      "passed": true,
+      "detail": "Original E-prefixed metadata remains separate from proposed/native-key names"
+    },
+    {
+      "name": "Current artifact links resolve",
+      "passed": true,
+      "detail": "Current specification, model, package and previous-plan links resolve"
+    },
+    {
+      "name": "IN-02 resolved throughout task ownership",
+      "passed": true,
+      "detail": "Field settings and identifier names are actionable configuration"
+    },
+    {
+      "name": "Copied settings retained in assignments",
+      "passed": true,
+      "detail": "Replicated field constraints match the target and baseline"
+    },
+    {
+      "name": "Source entry starts NULL without automatic key generation",
+      "passed": true,
+      "detail": "Existing required-before-first-save rule retained"
+    },
+    {
+      "name": "Field settings, roles and dependencies preserved",
+      "passed": true,
+      "detail": "Language, local readiness and source-rate clarification do not silently change canonical fields or configuration ownership"
+    },
+    {
+      "name": "Latest planner terminology",
+      "passed": true,
+      "detail": "Object and Record retain their established meanings"
+    },
+    {
+      "name": "Deferred security and source-rate reuse explicit",
+      "passed": true,
+      "detail": "The security recommendation remains unapproved; rate formulas are requested from OOTB"
+    },
+    {
+      "name": "Four field modifications separately assigned",
+      "passed": true,
+      "detail": "The fifth row changes object audit; each changed field has its own before/after row"
+    }
+  ]
+}

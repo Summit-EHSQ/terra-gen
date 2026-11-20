@@ -1,0 +1,1691 @@
+{
+  "version": 1,
+  "planRevision": 3,
+  "specificationRevision": 4,
+  "scope": "Full plan: all fifteen tasks and every operative scope/row/step/modification; language, exact technical meaning, ownership and result checks reread by the author.",
+  "reviewType": "Author content review; not independent consultant approval or live tenant verification",
+  "reviewedPlanSha256": "1811861ff0ef92132079eb2674154f55c274cda8d273cfadb6ad33b431967dd9",
+  "reviewedMarkdownSha256": "0ed4058d8fa3082ac2ae92fe18e2e06c0c74ca58332ad13c8442a48dfea6b7b9",
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "taskHash": "37b735e30d18cead1f737dc4c247e2a523049abaacc2832dc47e4b97f6f65996",
+      "renderedTaskHash": "a8259f981f9abec108e6d15ec35765204478ae7372a3bb1db6574a328c802667",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "The current master contract retains sixteen fields. The expanded Type/Size lookup schemas and six existing Value/Caption records now answer the old missing input; Deleted filtering is proposed explicitly without adding catalogue fields or reusing source GUIDs as defaults.",
+      "languageReview": "Read the register title, all sixteen field instructions, administration steps and checks. The text explains a separate company list, clear numeric choices and historical selections; its Ready status is justified because the old source-choice question is answered.",
+      "meaningReview": "Retained Code max 100 and uniqueness, Name max 255, Active default TRUE, all other text limits, Int64 industry codes, optional report IDs and report-time address requirements. Two optional M:1 lookup selectors retain inverse disabled and now use Deleted=FALSE. Code-after-use enforcement stays with IMP-06.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add the standalone master and its selectors using the now-known source domains; leave dependent inverse lists and used-code guards with their assigned tasks.",
+          "mechanism": "TG_OSHAEstablishmentObject, administration views and two optional lookup controls"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Code (Code) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 100 characters. Require a value before a successful save finishes. Leave blank for entry. Require a unique value and do not translate it. Administrators can enter or change it before the establishment is used. The user-access task adds the protection needed once linked records exist.",
+          "mechanism": "TG_OSHAEstablishmentObject.Code field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Name (Name) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 255 characters; use the legal reporting name and do not translate it. Require a value before a successful save finishes. No default value. Establishment administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.Name field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Active? (Active) on OSHA Establishment (TG_OSHAEstablishmentObject). A Yes/No field. Require a value before a successful save finishes. Start new records at TRUE (Yes). Establishment administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.Active field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Company Name (CompanyName) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 255 characters. Require it only under the conditions below. No default value. Administrators may edit it. It is required before generating a report, not before saving an incomplete master record.",
+          "mechanism": "TG_OSHAEstablishmentObject.CompanyName field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Street (Street) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 255 characters. Require it only under the conditions below. No default value. Administrators may edit it. It is required before generating a report, not before saving an incomplete master record.",
+          "mechanism": "TG_OSHAEstablishmentObject.Street field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add City (City) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 100 characters. Require it only under the conditions below. No default value. Administrators may edit it. It is required before generating a report, not before saving an incomplete master record.",
+          "mechanism": "TG_OSHAEstablishmentObject.City field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add State (State) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 100 characters. Require it only under the conditions below. No default value. Administrators may edit it. It is required before generating a report, not before saving an incomplete master record.",
+          "mechanism": "TG_OSHAEstablishmentObject.State field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Postal Code (PostalCode) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 30 characters. Require it only under the conditions below. No default value. Administrators may edit it. It is required before generating a report, not before saving an incomplete master record.",
+          "mechanism": "TG_OSHAEstablishmentObject.PostalCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add EIN Number (EINNumber) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 30 characters. The field is optional. No default value. Administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.EINNumber field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add NAICS Code (NAICSCode) on OSHA Establishment (TG_OSHAEstablishmentObject). A whole-number field (bigint/System.Int64). The field is optional. No default value. Administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.NAICSCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add SIC Code (SICCode) on OSHA Establishment (TG_OSHAEstablishmentObject). A whole-number field (bigint/System.Int64). The field is optional. No default value. Administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.SICCode field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Industry Description (IndustryDescription) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 1000 characters. The field is optional. No default value. Administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.IndustryDescription field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Create optional master EstablishmentType as M:1 to the existing Type lookup, no default, Deleted=FALSE for new choices and inverse off; keep historic references.",
+          "mechanism": "TG_OSHAEstablishmentObject.EstablishmentType metadata and detail selector"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Create optional master EstablishmentSize as M:1 to the existing Size lookup, no default, Deleted=FALSE for new choices and inverse off; do not derive thresholds from headcount.",
+          "mechanism": "TG_OSHAEstablishmentObject.EstablishmentSize metadata and detail selector"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Establishment ID (EstablishmentID) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 100 characters. The field is optional. No default value. Administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.EstablishmentID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add OSHA 300a ID (OSHA300aID) on OSHA Establishment (TG_OSHAEstablishmentObject). Text, up to 100 characters. The field is optional. No default value. Administrators may edit it.",
+          "mechanism": "TG_OSHAEstablishmentObject.OSHA300aID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the independent register and its two administration views with native audit.",
+          "mechanism": "TG_OSHAEstablishmentObject and TG_OSHAEstablishment_Detail/Inventory"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Set Code uniqueness/nontranslation, Active TRUE and both supplied-domain selectors with new-choice filtering, without new catalogue fields.",
+          "mechanism": "Master unique/default settings and Type/Size M:1 controls"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add business-field controls without unconditional address requiredness.",
+          "mechanism": "OSHA Establishment administration form and conditional reporting-data controls"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Configure Type Values 1–3 and Size Values 1–3 against installed matching records and keep manual size selection; no reseeding or fixed source GUID.",
+          "mechanism": "Existing Value/Caption domain binding on the two new master selectors"
+        }
+      ]
+    },
+    {
+      "id": "IMP-02",
+      "taskHash": "4eb42d6e1d58c03bad45afe7f8a9850d7648403f2b7b397f95f80e144d600adf",
+      "renderedTaskHash": "9bb4f4d5f724ad723ddd845d91d78cdf4c1a1cda24be4980509b777a2bf8d44b",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Compared all nineteen added field/grid rows and the three existing modifications with original metadata and the revised target. Source helper GUID and its condition are now known; numeric ActionType=3 still does not establish the new create-event binding.",
+      "languageReview": "Read the hours-entry controls, summary identity rules, source helper explanation and result checks. The partial status names concrete field/screen work that can proceed and the particular event, capacity and editing settings that wait.",
+      "meaningReview": "Preserved eight Hours Worked fields, three modes, required nonnegative Float hours, unique immutable SourceEntryID, exact summary/date links, independent headcounts and navigation-only inverses. Existing hour readonly flags and audit setting change; existing Date/Location controls become creation-only. No inferred live editor behavior or source-helper modification is assigned. Reread the final helper row after replacing its generic writer with Initialize Establishment Monthly Summary; its one-time copy and binding limitation now appear locally.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the input/monthly-summary structures and three inverses, then modify only the stated existing location metadata/controls; synchronization remains separately owned.",
+          "mechanism": "Hours Worked and both summary field/view settings plus identity validation"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Source Entry ID (SourceEntryID) on Hours Worked (TG_HoursWorkedObject). Text, up to 255 characters; keep unique within Hours Worked and do not translate it. Require a value before a successful save finishes. For imports, use a stable reference that identifies the source feed and entry. For manual entry, Synchronize Hours Worked supplies manual: followed by the record identifier before required-field checks, using the supplied supported method. Imports must supply it. After creation it is read only and acts as the displayed record label.",
+          "mechanism": "TG_HoursWorkedObject.SourceEntryID field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Month (Month) on Hours Worked (TG_HoursWorkedObject). A calendar date (Date), with time-zone capture turned off. Require a value before a successful save finishes. Start with the first day of the current month, using MonthStartValueGenerator. Hours editors may edit it and always see it. Reject dates other than the first day of the month.",
+          "mechanism": "TG_HoursWorkedObject.Month field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Location (Location) on Hours Worked (TG_HoursWorkedObject). Select one Location (SysLocationEntity) (M:1). The link can hold zero or one record; the required-field rule below determines when it may be blank. Leave the reverse list disabled on the selected record (inverse relationship off). Require it only under the conditions below. Start blank (NULL). Always show it and allow editing. Require it when OSHA Establishment is blank (NULL). New selections require Deleted=FALSE and the user's existing location access. Do not default it from the login or home location.",
+          "mechanism": "TG_HoursWorkedObject.Location field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Hours Worked (TG_HoursWorkedObject). Select one OSHA Establishment (M:1). The link can hold zero or one record; the required-field rule below determines when it may be blank. Leave the reverse list disabled on the selected record (inverse relationship off). Require it only under the conditions below. Start blank (NULL). Always show it and allow editing. Require it when Location is blank (NULL). New selections require Active?=TRUE. Do not fill it from Location, and retain existing assignments to inactive establishments.",
+          "mechanism": "TG_HoursWorkedObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Employee Hours (EmployeeHours) on Hours Worked (TG_HoursWorkedObject). Hours as a number allowing decimals (Float/System.Double). Require a valid finite value of 0 or greater; no additional fixed precision or decimal-place limit is specified. Require a value before a successful save finishes. Start at 0. Hours editors may edit it and always see it. Allow an intentional zero, but reject a blank value (NULL).",
+          "mechanism": "TG_HoursWorkedObject.EmployeeHours field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Contractor Hours (ContractorHours) on Hours Worked (TG_HoursWorkedObject). Hours as a number allowing decimals (Float/System.Double). Require a valid finite value of 0 or greater; no additional fixed precision or decimal-place limit is specified. Require a value before a successful save finishes. Start at 0. Hours editors may edit it and always see it. Allow an intentional zero, but reject a blank value (NULL).",
+          "mechanism": "TG_HoursWorkedObject.ContractorHours field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add Location Hours and Headcount (LocationHoursHeadcount) on Hours Worked (TG_HoursWorkedObject). Select one Location Hours and Headcount (M:1). The link can hold zero or one record; the required-field rule below determines when it may be blank. Show linked records through its Hours Worked Entries list, using this same link. Require it only under the conditions below. Start blank (NULL); Synchronize Hours Worked fills the correct summary link before a successful save finishes. Show it as read only when Location is selected, and require its correct value before the save finishes. Otherwise keep it blank (NULL) and hide it.",
+          "mechanism": "TG_HoursWorkedObject.LocationHoursHeadcount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Establishment Hours and Headcount (EstablishmentHoursHeadcount) on Hours Worked (TG_HoursWorkedObject). Select one Establishment Hours and Headcount (M:1). The link can hold zero or one record; the required-field rule below determines when it may be blank. Show linked records through its Hours Worked Entries list, using this same link. Require it only under the conditions below. Start blank (NULL); Synchronize Hours Worked fills the correct summary link before a successful save finishes. Show it as read only when OSHA Establishment is selected, and require its correct value before the save finishes. Otherwise keep it blank (NULL) and hide it.",
+          "mechanism": "TG_HoursWorkedObject.EstablishmentHoursHeadcount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Date (Date) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A calendar date (Date), with time-zone capture turned off. Require a value before a successful save finishes. When creating the summary automatically, copy Hours Worked.Month. For headcount-only entry, use MonthStartValueGenerator to start at the first day of the current month. A headcount editor selects it when creating the summary. Make it read only after the first save.",
+          "mechanism": "TG_EstHrsHeadcountObject.Date field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Contractor Headcount (ContractrHCount) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Authorized headcount editors may edit it. Apply the same checks through the API and imports, with the source numeric type and default.",
+          "mechanism": "TG_EstHrsHeadcountObject.ContractrHCount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add Employees Hours (EmployeeHrs) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Synchronize Hours Worked replaces this with the total Employee Hours for the same establishment and Month = Date. Show it as read only and prevent direct user, API or import edits. Only the authorized automatic calculation writes this total.",
+          "mechanism": "TG_EstHrsHeadcountObject.EmployeeHrs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). Select one OSHA Establishment (M:1). Each record requires one selection. Show linked records through its Hours and Headcounts list, using this same link. Require a value before a successful save finishes. No default. The hours-update process supplies the establishment, or an authorized headcount editor selects it when first creating the summary. Require a selection when creating the summary, with Active?=TRUE for new ordinary selections. Make it read only after saving and retain historical inactive assignments.",
+          "mechanism": "TG_EstHrsHeadcountObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add [Helper] Establishment Name (LocNameHelper) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. Copy OSHA Establishment.Name when the responsible process creates the record. Analytics users may view it but cannot edit it. Name Initialize Establishment Monthly Summary as the creation-time name writer, preserve its historical copy and retain the explicit IN-01 event-binding gap.",
+          "mechanism": "Proposed Initialize Establishment Monthly Summary create handler and the LocNameHelper field/control; LocNameHelper"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Employees Headcount (EmployeeHCount) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Authorized headcount editors may edit it. Apply the same checks through the API and imports, with the source numeric type and default.",
+          "mechanism": "TG_EstHrsHeadcountObject.EmployeeHCount field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Record No (RecordNo) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). An automatically assigned record number (AutoNumber/System.Int64). The field is optional. Use Intelex automatic numbering with a new sequence; the source package includes the number generator. Analytics users may view it but cannot edit it.",
+          "mechanism": "TG_EstHrsHeadcountObject.RecordNo field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Contractor Hours (ContractrHrs) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Synchronize Hours Worked replaces this with the total Contractor Hours for the same establishment and Month = Date. Show it as read only and prevent direct user, API or import edits. Only the authorized automatic calculation writes this total.",
+          "mechanism": "TG_EstHrsHeadcountObject.ContractrHrs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Hours Worked Entries (HoursWorkedEntries) on Establishment Hours and Headcount (TG_EstHrsHeadcountObject). A read-only list of records linked through Hours Worked.Establishment Hours and Headcount. Use that existing link; do not store a second relationship. The field is optional. No default value. Authorized hours and analytics users may view the list but cannot edit links through it.",
+          "mechanism": "TG_EstHrsHeadcountObject.HoursWorkedEntries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add Hours Worked Entries (HoursWorkedEntries) on Location Hours and Headcount (SafetyMetrics_HrsandHeadcountObject). A read-only list of records linked through Hours Worked.Location Hours and Headcount. Use that existing link; do not store a second relationship. The field is optional. No default value. Show the list as read only under the existing location-access rules. Separately check access to each underlying hours entry.",
+          "mechanism": "SafetyMetrics_HrsandHeadcountObject.HoursWorkedEntries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Add Hours and Headcounts (HoursHeadcounts) on OSHA Establishment (TG_OSHAEstablishmentObject). A read-only list of records linked through Establishment Hours and Headcount.OSHA Establishment. Use that existing link; do not store a second relationship. The field is optional. No default value. Authorized analytics users may view the list but cannot edit links through it.",
+          "mechanism": "TG_OSHAEstablishmentObject.HoursHeadcounts field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create both new objects and four matching source/summary views.",
+          "mechanism": "TG_HoursWorkedObject, TG_EstHrsHeadcountObject and their detail/inventory views"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add source key/month rules and conditional dimension/link presentation.",
+          "mechanism": "SourceEntryID uniqueness, DAY(Month)=1 and source form controls"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add editable separate employee/contractor source-hour controls without duplicate server logic.",
+          "mechanism": "EmployeeHours and ContractorHours form controls on TG_HoursWorked_Detail"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add new establishment uniqueness and saved-summary identity/delete guard, reusing original validators.",
+          "mechanism": "New establishment validator and proposed Protect Monthly Summary Identity validation"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add a creation-time establishment-name copy, native numbering and zero initial headcounts without resetting existing summaries; use the source helper condition only as evidence and retain its unknown event binding.",
+          "mechanism": "Proposed Initialize Establishment Monthly Summary create Action Handler; IN-01 binding remains open"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Enable headcount-only entry and readonly contribution navigation.",
+          "mechanism": "Monthly summary forms and HoursWorkedEntries inverse grids"
+        },
+        {
+          "path": "modifications.0",
+          "requiredChange": "Enable audit on the exported unaudited location summary.",
+          "mechanism": "SafetyMetrics_HrsandHeadcountObject.IsAuditEnabled FALSE to TRUE"
+        },
+        {
+          "path": "modifications.1",
+          "requiredChange": "Make existing summary hours readonly after the external cutover release.",
+          "mechanism": "EmployeeHrs/ContractrHrs field properties and SafetyMetrics_HrsandHeadcount_Detail controls"
+        },
+        {
+          "path": "modifications.2",
+          "requiredChange": "Add saved-record Date/Location restrictions against the verified source controls.",
+          "mechanism": "Creation-only control rules and Protect Monthly Summary Identity server validation"
+        }
+      ]
+    },
+    {
+      "id": "IMP-03",
+      "taskHash": "b77a1d72fca47b26f7bf62a85659eea922d0fc1e91dffa97146a6ae46bdaa2c7",
+      "renderedTaskHash": "6775ee3258390132a2c59ff4917037d6073ecc4549362fbf852c08bf19038236",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Reviewed the twenty-five incident-rate base declarations, four target declarations and master inverse against the current model. The source remains stored metrics, not calculated rate fields; four stale source-profile properties are intentionally omitted.",
+      "languageReview": "Read all thirty field/list rows and the abstract/child screen instructions. The task explains shared fields once and separate editable targets, with only capacity and numbering waiting; its scope and summary use the same business wording.",
+      "meaningReview": "Preserved direct inheritance, noninstantiable base, no Location binding, unique establishment/date, month-start dates, readonly metrics, four Float goals, helper GUID meaning and TargetDART caption Target DAIR. IMP-08 owns population; this task creates fields and screens. Reread all twenty measure rows and both helper rows after naming IMP-08 as the stored-population owner; no type, default, requiredness or read-only property changed.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Declare the independent monthly base/child, stored measures, goals and views once, leaving metric writes and actual-rate display with separate owners.",
+          "mechanism": "Establishment incident-rate objects, monthly validators and four detail/inventory views"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Record No (RecordNo) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). An automatically assigned record number (AutoNumber/System.Int64). Require a value before a successful save finishes. Use Intelex automatic numbering (AutoNumber). Its default setting still needs to be supplied; do not assume the record number is manually entered. Analytics users may view it but cannot edit it.",
+          "mechanism": "TG_EstIncRateAbstractObject.RecordNo field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Date (Date) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A calendar date (Date), with time-zone capture turned off. Require a value before a successful save finishes. No user-entered default. Refresh Establishment Monthly Metrics supplies the first day of the requested month. Analytics users may view it but cannot edit it.",
+          "mechanism": "TG_EstIncRateAbstractObject.Date field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). Select one OSHA Establishment (M:1). Each record requires one selection. Show linked records through its Incident Rate KPIs list, using this same link. Require a value before a successful save finishes. No default. Creating the record automatically or importing it must supply the establishment. Show it as read only on automatically created records. Refresh Establishment Monthly Metrics supplies it; keep historical inactive assignments.",
+          "mechanism": "TG_EstIncRateAbstractObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Number of Days Away - Rollup (RuNumDaysAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuNumDaysAway"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Number of Recordable/Reportable - Rollup (RuCtRecordable) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuCtRecordable"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Number of Fatalities - Establishment (LoNumFatalities) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoNumFatalities"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add Number of Incidents - Rollup (RuCtIncidents) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuCtIncidents"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add [Helper] Establishment Name (LocNameHelper) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. Copy OSHA Establishment.Name when the responsible process creates the record. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LocNameHelper"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Number of Lost Days - Rollup (RuNumLostDays) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuNumLostDays"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Contractor Worked Hours - Establishment (LoCntrctWrkdHrs) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoCntrctWrkdHrs"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add [Helper] Establishment ID (LocationIdHelp) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A unique record identifier (GUID). Require a value before a successful save finishes. Save the selected establishment record identifier (GUID), filled by the responsible process. Users cannot edit it; hide it on ordinary screens. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LocationIdHelp"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Number of Incidents - Establishment (LoCtIncidents) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoCtIncidents"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add Number of Incidents with Days Away - Rollup (RuNumIncDayAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuNumIncDayAway"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Number of Lost Days - Establishment (LoNumLostDays) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoNumLostDays"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Number of Incidents with Days Away - Establishment (LoNumIncDayAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoNumIncDayAway"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Contractor Worked Hours - Rollup (RuCntrctWrkdHrs) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuCntrctWrkdHrs"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Number of Incidents with Lost Time - Rollup (RuNumIncLostTim) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuNumIncLostTim"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add Employee Worked Hours - Rollup (RuEmplWrkdHours) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuEmplWrkdHours"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Add Number of Incidents with Lost Time - Establishment (LoNumIncLostTim) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoNumIncLostTim"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Add Number of Job Transfer and Restricted Days - Rollup (RuNumTrnsfRstDy) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuNumTrnsfRstDy"
+        },
+        {
+          "path": "configurationRows.20",
+          "requiredChange": "Add Number of Job Transfer and Restricted Days - Establishment (LoNumTrnsfRstDy) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoNumTrnsfRstDy"
+        },
+        {
+          "path": "configurationRows.21",
+          "requiredChange": "Add Number of Days Away - Establishment (LoNumDaysAway) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoNumDaysAway"
+        },
+        {
+          "path": "configurationRows.22",
+          "requiredChange": "Add Number of Recordable/Reportable - Establishment (LoCtRecordable) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoCtRecordable"
+        },
+        {
+          "path": "configurationRows.23",
+          "requiredChange": "Add Employee Worked Hours - Establishment (LoEmplWrkdHours) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; LoEmplWrkdHours"
+        },
+        {
+          "path": "configurationRows.24",
+          "requiredChange": "Add Number of Fatalities - Rollup (RuNumFatalities) on Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the specific type, requiredness, default and read-only control settings above; explicitly name Refresh Establishment Monthly Metrics in IMP-08 as the later stored-value writer, without introducing a continuously calculated field.",
+          "mechanism": "Monthly base field/control declaration; later Refresh Establishment Monthly Metrics population is owned by IMP-08; RuNumFatalities"
+        },
+        {
+          "path": "configurationRows.25",
+          "requiredChange": "Add Target LTIR (TargetLTIR) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Authorized analytics administrators may edit it.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetLTIR field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.26",
+          "requiredChange": "Add Target Severity Rate (TargetSeverRate) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Authorized analytics administrators may edit it.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetSeverRate field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.27",
+          "requiredChange": "Add Target DAIR (TargetDART) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Authorized analytics administrators may edit it.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetDART field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.28",
+          "requiredChange": "Add Target TRIR (TargetTRIR) on Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Authorized analytics administrators may edit it.",
+          "mechanism": "TG_EstIncidentRateKPIObject.TargetTRIR field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.29",
+          "requiredChange": "Add Incident Rate KPIs (IncidentRateKPIs) on OSHA Establishment (TG_OSHAEstablishmentObject). A read-only list of records linked through Establishment Incident Rate KPI.OSHA Establishment (inherited). Use that existing link; do not store a second relationship. The field is optional. No default value. Authorized analytics users may view the list but cannot edit links through it.",
+          "mechanism": "TG_OSHAEstablishmentObject.IncidentRateKPIs field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create independent monthly inheritance and audit configuration.",
+          "mechanism": "TG_EstIncRateAbstractObject and direct child TG_EstIncidentRateKPIObject"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add monthly unique/date checks and new record numbering.",
+          "mechanism": "OSHAEstablishment + Date unique constraint, DAY(Date)=1 and native AutoNumber"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create monthly/KPI views with distinct readonly measures and editable targets.",
+          "mechanism": "TG_EstIncRateAbstract_Detail/Inventory and TG_EstIncidentRateKPI_Detail/Inventory"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Create valid new profiles and master KPI navigation without obsolete fields.",
+          "mechanism": "New view profiles and IncidentRateKPIs inverse navigation"
+        }
+      ]
+    },
+    {
+      "id": "IMP-04",
+      "taskHash": "9103a4782d33766394d358cd84bffe82e58a2cc9d1262578388ca845fa19ce21",
+      "renderedTaskHash": "2fcafcde8a9c6224ea92f9f23136bf4ba8d74a6c13534cacde1b0b02a25fd687",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Reviewed all thirty-five annual-base rows, annual date/uniqueness checks and source metadata. Report evidence now identifies population rules, but this assignment still declares fields; destination OIISettings and copied capacities remain unresolved.",
+      "languageReview": "Read the annual definition, stored header description and result checks without external references. The rationale no longer treats all calculation rules as unknown, and the partial status names which numeric/date/view work can proceed.",
+      "meaningReview": "Preserved annual independent abstract base, January 1, required establishment/date and GUID helper, stored Year, new RecordNo numbering, twenty-four readonly count/day declarations and five frozen header fields. OIISettings default remains destination-specific, not a copied source GUID. Reread the final annual measure, five header and GUID-helper rows after locally naming IMP-09; field creation does not duplicate its population assignments.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Declare the independent annual base, stored header/count/day fields, settings reference and annual checks without inheriting the location object.",
+          "mechanism": "TG_EstOSHAAbstractObject fields, unique/date validators and base views"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Total number of job transfer or restriction days (L) - roll up (RuNumRstOrJobTr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuNumRstOrJobTr"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Total number of days away from work (K) - roll up (RuNumDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuNumDaysAway"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Injuries (M1) - roll up (RuCtInjuries) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtInjuries"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add Respiratory Conditions (M3) - establishment (LoCtRespiratorC) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtRespiratorC"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add OSHA Establishment (OSHAEstablishment) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Select one OSHA Establishment (M:1). Each record requires one selection. Show linked records through its OSHA Summaries list, using this same link. Require a value before a successful save finishes. No default. Creating the record automatically or importing it must supply the establishment. Show it as read only on automatically created records. Refresh Establishment Annual OSHA supplies it; keep historical inactive assignments.",
+          "mechanism": "TG_EstOSHAAbstractObject.OSHAEstablishment field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Other Recordable Cases (J) - roll up (RuCtOthrRecrdbl) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtOthrRecrdbl"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add All other illnesses (M6) - establishment (LoCtAllOtherIln) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtAllOtherIln"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add Other Recordable Cases (J) - establishment (LoCtOthrRecrdbl) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtOthrRecrdbl"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Job Transfer or Restricted Days Cases (I) - roll up (RuCtTrnfrOrRest) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtTrnfrOrRest"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add Establishment Street (LocationStreet) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Street. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LocationStreet"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add Date (Date) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A calendar date (Date), with time-zone capture turned off. Require a value before a successful save finishes. No user-entered default. Refresh Establishment Annual OSHA supplies January 1 of the requested year. Analytics users may view it but cannot edit it.",
+          "mechanism": "TG_EstOSHAAbstractObject.Date field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add Poisonings (M4) - establishment (LoCtPoisonings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtPoisonings"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add Hearing loss (M5) - establishment (LoCtHearingLoss) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtHearingLoss"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add Skin Disorders (M2) - roll up (RuCtSkinDisordr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtSkinDisordr"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add Respiratory Conditions (M3) - roll up (RuCtRespiratorC) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtRespiratorC"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Death (G) - establishment (LoCtFatalities) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtFatalities"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Job Transfer or Restricted Days Cases (I) - establishment (LoCtTrnfrOrRest) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtTrnfrOrRest"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add Injuries (M1) - establishment (LoCtInjuries) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtInjuries"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Add Establishment City (LocationCity) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.City. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LocationCity"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Add Establishment Postal Code (LocationPostal) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Postal Code. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LocationPostal"
+        },
+        {
+          "path": "configurationRows.20",
+          "requiredChange": "Add Death (G) - roll up (RuCtFatalities) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtFatalities"
+        },
+        {
+          "path": "configurationRows.21",
+          "requiredChange": "Add Days Away From Work Cases (H) - roll up (RuCtDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtDaysAway"
+        },
+        {
+          "path": "configurationRows.22",
+          "requiredChange": "Add Establishment State (LocationState) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.State. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LocationState"
+        },
+        {
+          "path": "configurationRows.23",
+          "requiredChange": "Add Record No (RecordNo) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). An automatically assigned record number (AutoNumber/System.Int64). Require a value before a successful save finishes. Use Intelex automatic numbering (AutoNumber). Its default setting still needs to be supplied; do not assume the record number is manually entered. Analytics users may view it but cannot edit it.",
+          "mechanism": "TG_EstOSHAAbstractObject.RecordNo field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.24",
+          "requiredChange": "Add Days Away From Work Cases (H) - establishment (LoCtDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtDaysAway"
+        },
+        {
+          "path": "configurationRows.25",
+          "requiredChange": "Add [Helper] Establishment ID (ReporLocationId) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A unique record identifier (GUID). Require a value before a successful save finishes. Save the selected establishment record identifier (GUID), filled by the responsible process. Users cannot edit it; hide it on ordinary screens. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; ReporLocationId"
+        },
+        {
+          "path": "configurationRows.26",
+          "requiredChange": "Add Year (Year) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Refresh Establishment Annual OSHA saves the calendar year from Date. Do not add a continuously recalculated expression. Analytics users may view it but cannot edit it.",
+          "mechanism": "TG_EstOSHAAbstractObject.Year field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.27",
+          "requiredChange": "Add All other illnesses (M6) - roll up (RuCtAllOtherIln) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtAllOtherIln"
+        },
+        {
+          "path": "configurationRows.28",
+          "requiredChange": "Add Establishment Display Name (LocationName) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Name. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LocationName"
+        },
+        {
+          "path": "configurationRows.29",
+          "requiredChange": "Add OII Settings (OIISettings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). Select one OII Setting (EHSIncidentMang_OIISettingObject) (M:1). The link can hold zero or one record; the required-field rule below determines when it may be blank. Leave the reverse list disabled on the selected record (inverse relationship off). The field is optional. Use the supplied OSHA settings record for the intended environment. This default is waiting for that information; do not copy the source environment record identifier. Users cannot edit it; hide it on ordinary summary screens.",
+          "mechanism": "TG_EstOSHAAbstractObject.OIISettings field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.30",
+          "requiredChange": "Add Total number of days away from work (K) - establishment (LoNumDaysAway) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoNumDaysAway"
+        },
+        {
+          "path": "configurationRows.31",
+          "requiredChange": "Add Hearing loss (M5) - roll up (RuCtHearingLoss) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtHearingLoss"
+        },
+        {
+          "path": "configurationRows.32",
+          "requiredChange": "Add Skin Disorders (M2) - establishment (LoCtSkinDisordr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoCtSkinDisordr"
+        },
+        {
+          "path": "configurationRows.33",
+          "requiredChange": "Add Poisonings (M4) - roll up (RuCtPoisonings) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; RuCtPoisonings"
+        },
+        {
+          "path": "configurationRows.34",
+          "requiredChange": "Add Total number of job transfer or restriction days (L) - establishment (LoNumRstOrJobTr) on Establishment OSHA Abstract (TG_EstOSHAAbstractObject). A whole-number field (bigint/System.Int64). The field is optional. Start at 0. Analytics users may view it but cannot edit it. Keep the particular annual field metadata and initial source value above, and explicitly name Refresh Establishment Annual OSHA in IMP-09 as its stored-population owner. Header/identifier copies occur at creation; ordinary refresh retains historical copies.",
+          "mechanism": "Annual abstract field/control declaration; later annual population/copy assignment belongs to IMP-09; LoNumRstOrJobTr"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the standalone non-location-bound abstract annual base.",
+          "mechanism": "TG_EstOSHAAbstractObject object metadata in Safety Metrics"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add annual unique/date identity restrictions and new numbering.",
+          "mechanism": "OSHAEstablishment + Date uniqueness, year-start validation and RecordNo"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Create base annual views with actual readonly fields and hidden settings.",
+          "mechanism": "TG_EstOSHAAbstract_Detail/Inventory and their new field profiles"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add stored header and year counterparts without continuous master calculations.",
+          "mechanism": "LocationName/Street/City/State/Postal and Year stored-field metadata"
+        }
+      ]
+    },
+    {
+      "id": "IMP-05",
+      "taskHash": "80bb4e42c0081702bd43e7653e9e4a7c0d433bb04521c4b1d8be33c873724db5",
+      "renderedTaskHash": "a9cdeb718ec03e86e9e6ebad2aa84c167fc4725f82be36d5d1570caf79714605",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Checked seventeen child fields, master summary inverse and case controls against the target plus exported OII.OSHASummary/OSHARecord metadata. Existing case link is optional M:1; the new establishment declaring link remains external. Lookup source values and Deleted state are now known.",
+      "languageReview": "Read every child field row, repeated Type/Size values, recordable-injury choices, case-list controls and print instructions. The task explains why cases must appear once and which exact case/template connections still wait; it no longer asks for known lookup lists.",
+      "meaningReview": "Retained inherited annual fields once, seventeen child declarations, separate display/establishment names, allowed annual edits, initial stored copies and optional relationship-valued AnyRecrdblIncid. The collection is readonly navigation with an unresolved new declaring field; original incident links are preserved and no incident-side field is designed. Reread the final four workforce and initial-copy rows after naming IMP-09 locally; the separate new declaring relationship remains an external input.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create the annual child and its controls, reuse known lookup values and add only externally bound readonly case/301 navigation.",
+          "mechanism": "TG_EstOSHASummaryObject child fields, detail/inventory and establishment navigation"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add Total hours worked by all employees this year Establishment (LoNumHrsWorked) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Analytics users may view it but cannot edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; LoNumHrsWorked"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add Company Name (CompanyName) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Company Name. Later master changes must not automatically replace this saved value. Authorized analytics administrators may edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; CompanyName"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add Annual average number of employees Establishment (LoAvgNumEmploye) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Analytics users may view it but cannot edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; LoAvgNumEmploye"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add EIN Number (EINNumber) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.EIN Number. Later master changes must not automatically replace this saved value. Authorized analytics administrators may edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; EINNumber"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Add Annual average number of employees Rollup (RuAvgNumEmploye) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Analytics users may view it but cannot edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; RuAvgNumEmploye"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Add Total hours worked by all employees this year Rollup (RUNumHrsWorked) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A number allowing decimals (Float/System.Double); the package sets no fixed precision or number of decimal places. The field is optional. No default value. Analytics users may view it but cannot edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; RUNumHrsWorked"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Add Change Reason (ChangeReason) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. No default value. Authorized analytics administrators may edit it.",
+          "mechanism": "TG_EstOSHASummaryObject.ChangeReason field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Add optional annual Type selector with initial master copy, allowed regulatory edit, Deleted=FALSE new choices and inverse disabled.",
+          "mechanism": "TG_EstOSHASummaryObject.EstablishmeType field and detail control; initial population in IMP-09"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Add Establishment Name (EstablishmeName) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Name. Later master changes must not automatically replace this saved value. Authorized analytics administrators may edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; EstablishmeName"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Add optional annual Size selector with frozen initial master value, permitted annual edit and Deleted=FALSE new choices, retaining historic references.",
+          "mechanism": "TG_EstOSHASummaryObject.EstablishmtSize field and detail control; initial population in IMP-09"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Add SIC Code (SICCode) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A whole-number field (bigint/System.Int64). The field is optional. When the annual record is first created, copy and save OSHA Establishment.SIC Code. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; SICCode"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Add optional readonly OII navigation without another stored relation, pending the separately owned declaring field/query; case controls deduplicate OSHA case output.",
+          "mechanism": "TG_EstOSHASummaryObject.AssociatedOIIs navigation and summary case grid"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Add NAICS Code (NAICSCode) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A whole-number field (bigint/System.Int64). The field is optional. When the annual record is first created, copy and save OSHA Establishment.NAICS Code. Later master changes must not automatically replace this saved value. Analytics users may view it but cannot edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; NAICSCode"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Add optional relationship-valued recordability selector using existing Value 1/2, no default, Deleted=FALSE new choices and no inverse.",
+          "mechanism": "TG_EstOSHASummaryObject.AnyRecrdblIncid metadata and regulatory-user selector"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Add OSHA 300a ID (OSHA300aID) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.OSHA 300a ID. Later master changes must not automatically replace this saved value. Authorized analytics administrators may edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; OSHA300aID"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Add Establishment ID (EstablishmentID) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Establishment ID. Later master changes must not automatically replace this saved value. Authorized analytics administrators may edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; EstablishmentID"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Add Industry Description (InduDescription) on Establishment OSHA Summary (TG_EstOSHASummaryObject). A text field (nvarchar); its permitted length still needs to be supplied. The field is optional. When the annual record is first created, copy and save OSHA Establishment.Industry Description. Later master changes must not automatically replace this saved value. Authorized analytics administrators may edit it. Keep the particular annual-child field metadata and initial copy above, and name Refresh Establishment Annual OSHA in IMP-09 as the stored writer. Preserve separate employee workforce arithmetic and creation-only master snapshots; allowed annual edits survive refresh.",
+          "mechanism": "Annual summary child field/control declaration; annual arithmetic and master-copy population belong to IMP-09; InduDescription"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Add OSHA Summaries (OSHASummaries) on OSHA Establishment (TG_OSHAEstablishmentObject). A read-only list of records linked through Establishment OSHA Summary.OSHA Establishment (inherited). Use that existing link; do not store a second relationship. The field is optional. No default value. Authorized regulatory users may view the list but cannot edit links through it.",
+          "mechanism": "TG_OSHAEstablishmentObject.OSHASummaries field/reference metadata and its named detail-view control; processor population has its separate assigned owner"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create the annual concrete child without repeating inherited fields.",
+          "mechanism": "TG_EstOSHASummaryObject direct inheritance from TG_EstOSHAAbstractObject"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Create annual forms with readonly totals and permitted metadata edits.",
+          "mechanism": "TG_EstOSHASummary_Detail/Inventory and metadata panels"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Configure a readonly establishment case list through the supplied declaring reference, preserving the known source optional M:1 case link, exact view fields, privacy and single-case display.",
+          "mechanism": "Annual summary AssociatedOIIs.OSHARecord grid; IN-06 declaring binding remains external"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Add case-level 301 control and master annual-summary navigation.",
+          "mechanism": "OSHA301 template control using case identity and OSHASummaries inverse grid"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Bind Type/Size numeric choices and recordability Values 1/2 directly, preserving history and relationship types without new reference records.",
+          "mechanism": "Three annual M:1 selectors to the unchanged source lookup objects"
+        }
+      ]
+    },
+    {
+      "id": "IMP-06",
+      "taskHash": "9e8535626e0403663824d1b67c38f13ac2bdcd869257a21048c14ce1f4eac7ef",
+      "renderedTaskHash": "028be78a7f874a3f4b6db3b19d5e982ee446f1964978c0ea2f9cc5763274a8d5",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "The six security exports inherit permissions with empty explicit rows; they do not provide effective groups or flat-establishment access. The unchanged field graph supports the used-code checks, but native guard binding is still a supported-method input.",
+      "languageReview": "Read responsibilities, access-path rules, corrections and five checks. Waiting replaces the prior blanket partial-ready statement because approved groups and supported guards are absent; no stakeholder is asked to supply a background-processing identity.",
+      "meaningReview": "Preserved independent access to every populated dimension, direct source/summary protection, immutable entry key, historical-correction restrictions and used-establishment deletion/code guards. No new hierarchy or native system-processing permission setup appears. Creation tasks own field metadata; this task owns user access and server restrictions.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure supplied user-group/scope rules and protected fields/used-record guards without making reporting dimensions a security hierarchy.",
+          "mechanism": "Object/record/field access plus proposed establishment-code/deletion guard"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind user roles and deny direct writes to processor-owned fields.",
+          "mechanism": "Application-user object/record/field permission configuration"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add independent location/establishment authorization with a dual-scope AND condition.",
+          "mechanism": "Supported dual-dimension user-access predicate consumed by synchronization"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add immutable source-key and controlled historical/annual correction access.",
+          "mechanism": "SourceEntryID field-write restriction and supplied correction entitlements"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Apply record restrictions across navigation, direct URLs and export/search routes.",
+          "mechanism": "Native user record permissions on source/summary/report access paths"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add referenced-code validation and master deletion protection once reference targets exist.",
+          "mechanism": "Proposed Protect Establishment Code server validation and Code readonly control"
+        }
+      ]
+    },
+    {
+      "id": "IMP-07",
+      "taskHash": "7a1ca98be35497427149986d8d68875448aaad0154409020aa51eeba99cd9a5e",
+      "renderedTaskHash": "dbeec74ca009d52ac60002d7c4d3b587ce51a3971f03fec7d42eeec9053ad8b5",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "The existing eight import settings all have IsTransactional=FALSE, so their sequence cannot establish a shared save transaction. Current source-record, monthly-summary and security outputs still support the proposed A0 contract, whose runtime method remains missing.",
+      "languageReview": "Read each ordered save/correction/delete step and failure check. The wording says save together or keep previous values and explains simultaneous/repeated updates. Waiting is explicit for the whole automatic process rather than implying known executable hooks.",
+      "meaningReview": "Retained manual GUID-key timing, namespaced import key, five watched fields, original/corrected scope union, deterministic lock order, exact link reassignment, full per-scope hour sums, zero for empty contributors and no headcount reset. Postcommit report failure does not change the source transaction requirement.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add one synchronized source-save/rebuild process maintaining both optional summary paths, safe original/corrected totals and all-or-nothing failure behavior.",
+          "mechanism": "Proposed Synchronize Hours Worked and source Create/Update/Delete Action Handlers"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create source hooks and default/replay handling around the existing unique key.",
+          "mechanism": "Proposed Synchronize Hours Worked and source Create/Update/Delete Action Handlers"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Invoke installed permissions and validate source values before persistence.",
+          "mechanism": "Synchronize Hours Worked pre-write branch and existing access/field restrictions"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Capture original scopes and safely acquire/create monthly summary records.",
+          "mechanism": "Synchronization scope union, deterministic locks and native unique-conflict retry branch"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Assign or clear only the matching dimension-specific summary links.",
+          "mechanism": "LocationHoursHeadcount and EstablishmentHoursHeadcount assignment branch"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Replace both summary hour columns from exact current source scope selections.",
+          "mechanism": "Synchronization aggregate replacement branch on both monthly summary types"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Implement all-or-nothing source/link/summary-hour save with retry and conflict protection; explicitly reject nontransactional import sequencing as proof of atomic support.",
+          "mechanism": "Proposed Synchronize Hours Worked protected write mechanism, pending IN-01"
+        },
+        {
+          "path": "steps.6",
+          "requiredChange": "Pass complete original and corrected month/year contexts after a successful source save, including emptied former scopes and no recent-change cutoff.",
+          "mechanism": "Synchronize Hours Worked postcommit output consumed by Dispatch Hours Analytics Refresh"
+        }
+      ]
+    },
+    {
+      "id": "IMP-08",
+      "taskHash": "a9b38ba4e59d90b18d5acb245f9482ce60af75581337a485c32650664a4425bc",
+      "renderedTaskHash": "e08f9da8a1d4613239d843f0dd64f53f7f643155c74c767f308af38b326bd1dc",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Compared all twenty new population rows with report 7d7e7854-b87e-45a5-a3ed-9d3d679d1b61, hours report 25105669-b87c-4561-b948-88428c2a2ef0 and current target. The old request for counting/date/worker rules is superseded; establishment attribution and protected execution are still external.",
+      "languageReview": "Read the twenty output rules, five process steps, partial-ready explanation and observable examples. Business meanings accompany field names, including why overall incident count means OII rows and why recently modified scopes do not limit the month counted.",
+      "meaningReview": "Preserved twenty stored outputs, four manual targets and flat Lo/Ru equality. Counting uses DateUserEntered month, no invented status/worker filters, positive raw combined days for lost-time flags, source string-zero conversions for reportability/fatality, and separate employee/contractor summary hours. IMP-06 now supplies access settings before executable processing.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add a protected monthly result process with the twenty exact OII/day/hour outputs, preserving manual goals and the separate unknown attribution/execution bindings.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics process and stored field writes"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Configure RuNumDaysAway population: Sum raw OII days away, empty values zero. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuNumDaysAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Configure RuCtRecordable population: Sum source nonempty/non-string-zero reportability flags. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuCtRecordable and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Configure LoNumFatalities population: Sum source nonempty/non-string-zero fatality flags. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoNumFatalities and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Configure RuCtIncidents population: Count OII Id rows, not unique cases. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuCtIncidents and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Configure RuNumLostDays population: Sum raw away, transfer and restricted days. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuNumLostDays and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Configure LoCntrctWrkdHrs population: Read matching summary contractor hours only. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoCntrctWrkdHrs and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Configure LoCtIncidents population: Count OII Id rows without a recordable-only population filter. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoCtIncidents and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Configure RuNumIncDayAway population: Count OIIs with positive raw days away. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuNumIncDayAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Configure LoNumLostDays population: Sum raw away, transfer and restricted days. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoNumLostDays and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Configure LoNumIncDayAway population: Count OIIs with positive raw days away. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoNumIncDayAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Configure RuCntrctWrkdHrs population: Read matching summary contractor hours only. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuCntrctWrkdHrs and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Configure RuNumIncLostTim population: Count OIIs with positive combined away/transfer/restricted days. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuNumIncLostTim and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Configure RuEmplWrkdHours population: Read matching summary employee hours only. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuEmplWrkdHours and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Configure LoNumIncLostTim population: Count OIIs with positive combined away/transfer/restricted days. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoNumIncLostTim and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Configure RuNumTrnsfRstDy population: Sum raw transfer plus restricted days. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuNumTrnsfRstDy and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Configure LoNumTrnsfRstDy population: Sum raw transfer plus restricted days. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoNumTrnsfRstDy and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Configure LoNumDaysAway population: Sum raw OII days away, empty values zero. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoNumDaysAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Configure LoCtRecordable population: Sum source nonempty/non-string-zero reportability flags. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoCtRecordable and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Configure LoEmplWrkdHours population: Read matching summary employee hours only. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output LoEmplWrkdHours and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Configure RuNumFatalities population: Sum source nonempty/non-string-zero fatality flags. Use the same complete establishment/month for Lo/Ru and preserve targets.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics report output RuNumFatalities and protected write binding (IN-01)"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add one-result-per-month generation with native record identity and establishment helpers.",
+          "mechanism": "Proposed Refresh Establishment Monthly Metrics operation"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Map four hour outputs to the matching establishment summary, empty report value to zero, preserving worker separation and no raw-hours addition.",
+          "mechanism": "Monthly metrics EmployeeHrs/ContractrHrs read mappings"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Select OII rows by incident-derived month and supplied establishment assignment, without invented incident-subtype, worker, status or recordability population filters.",
+          "mechanism": "Monthly process OII source query and MonthYearHelp join"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Commit the complete twenty-measure set and preserve manual targets through retry/failure.",
+          "mechanism": "Monthly refresh result transaction and native completion outcome"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Add report-context numeric conversion/day calculations and full-month rebuild selection, preserving incident field types and excluding any 36-hour incident-population cutoff.",
+          "mechanism": "New monthly report expression/output configuration; source pattern remains report-specific"
+        }
+      ]
+    },
+    {
+      "id": "IMP-09",
+      "taskHash": "b89cb233edaabf0c5904518b25d399679ea454b957d4403fe7aef2c730cdeda7",
+      "renderedTaskHash": "be7706e8e212b2840bfd36e4d8dd4229abde3ea616696760cadc37402aa71ca3",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Reconciled twenty-four annual sums with the source recordable-data report, four workforce rows with reports 1dfd076d-51c8-4254-8607-77f8ecf93906 and df4a8ed4-400d-44a9-a77c-7442cad754d4, and fifteen header copies with the master. Helper population, month coverage/completeness, output settings and execution remain precise inputs.",
+      "languageReview": "Read all forty-three population/copy rows, nine steps, headcount examples and partial-ready note. The text distinguishes a saved initial copy, allowed correction and metric refresh, and explains count-based headcount averaging without software shorthand.",
+      "meaningReview": "Annual scope uses DateUserEntered year and OSHARecordable=TRUE; G–M totals consume existing helper/capped-day values rather than new classification logic. Employee-only annual hours and SUM(EmployeeHCount)/COUNT(summary Id) include existing zero records, with no invented rounding. Fifteen copies remain creation-only; user edits, header correction and common output checks have separate owned paths. IMP-06 now precedes protected correction.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add annual protected sums, employee workforce arithmetic, frozen copies, explicit correction and output guards; preserve separate helper/membership/execution inputs.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA, Correct Annual OSHA Header and Validate Annual OSHA Output"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Configure RuNumRstOrJobTr population: Sum existing NumJobTAndRest capped values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuNumRstOrJobTr and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Configure RuNumDaysAway population: Sum existing NumDaysAwayOSHA capped values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuNumDaysAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Configure RuCtInjuries population: Sum existing OSHARecord.HlpPiiInjury values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtInjuries and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Configure LoCtRespiratorC population: Sum existing OSHARecord.HlpPiiRsprtryCd values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtRespiratorC and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.4",
+          "requiredChange": "Configure RuCtOthrRecrdbl population: Sum existing OSHARecord.HlpOcOtherRec values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtOthrRecrdbl and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.5",
+          "requiredChange": "Configure LoCtAllOtherIln population: Sum existing OSHARecord.HlpPiiAllOthrIl values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtAllOtherIln and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.6",
+          "requiredChange": "Configure LoCtOthrRecrdbl population: Sum existing OSHARecord.HlpOcOtherRec values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtOthrRecrdbl and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.7",
+          "requiredChange": "Configure RuCtTrnfrOrRest population: Sum existing OSHARecord.HlpOcJobTrRest values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtTrnfrOrRest and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.8",
+          "requiredChange": "Configure LoCtPoisonings population: Sum existing OSHARecord.HlpPiiPoisoning values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtPoisonings and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.9",
+          "requiredChange": "Configure LoCtHearingLoss population: Sum existing OSHARecord.HlpPiiHringLoss values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtHearingLoss and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.10",
+          "requiredChange": "Configure RuCtSkinDisordr population: Sum existing OSHARecord.HlpPiiSkinDsrdr values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtSkinDisordr and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.11",
+          "requiredChange": "Configure RuCtRespiratorC population: Sum existing OSHARecord.HlpPiiRsprtryCd values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtRespiratorC and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.12",
+          "requiredChange": "Configure LoCtFatalities population: Sum existing OSHARecord.HlpOcFatality values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtFatalities and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.13",
+          "requiredChange": "Configure LoCtTrnfrOrRest population: Sum existing OSHARecord.HlpOcJobTrRest values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtTrnfrOrRest and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.14",
+          "requiredChange": "Configure LoCtInjuries population: Sum existing OSHARecord.HlpPiiInjury values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtInjuries and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.15",
+          "requiredChange": "Configure RuCtFatalities population: Sum existing OSHARecord.HlpOcFatality values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtFatalities and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.16",
+          "requiredChange": "Configure RuCtDaysAway population: Sum existing OSHARecord.HlpOcDaysAway values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtDaysAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.17",
+          "requiredChange": "Configure LoCtDaysAway population: Sum existing OSHARecord.HlpOcDaysAway values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtDaysAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.18",
+          "requiredChange": "Configure RuCtAllOtherIln population: Sum existing OSHARecord.HlpPiiAllOthrIl values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtAllOtherIln and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.19",
+          "requiredChange": "Configure LoNumDaysAway population: Sum existing NumDaysAwayOSHA capped values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoNumDaysAway and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.20",
+          "requiredChange": "Configure RuCtHearingLoss population: Sum existing OSHARecord.HlpPiiHringLoss values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtHearingLoss and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.21",
+          "requiredChange": "Configure LoCtSkinDisordr population: Sum existing OSHARecord.HlpPiiSkinDsrdr values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoCtSkinDisordr and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.22",
+          "requiredChange": "Configure RuCtPoisonings population: Sum existing OSHARecord.HlpPiiPoisoning values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuCtPoisonings and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.23",
+          "requiredChange": "Configure LoNumRstOrJobTr population: Sum existing NumJobTAndRest capped values. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoNumRstOrJobTr and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.24",
+          "requiredChange": "Configure LoNumHrsWorked population: Sum employee summary hours, nonpositive/empty sum to zero; exclude contractor hours. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoNumHrsWorked and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.25",
+          "requiredChange": "Configure RUNumHrsWorked population: Sum employee summary hours, nonpositive/empty sum to zero; exclude contractor hours. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RUNumHrsWorked and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.26",
+          "requiredChange": "Configure LoAvgNumEmploye population: Divide summed employee headcount by every present monthly-summary Id, including zero records; no count yields zero. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output LoAvgNumEmploye and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.27",
+          "requiredChange": "Configure RuAvgNumEmploye population: Divide summed employee headcount by every present monthly-summary Id, including zero records; no count yields zero. Keep matching Lo/Ru scope and source empty-value behavior.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA report output RuAvgNumEmploye and protected write binding (IN-01)"
+        },
+        {
+          "path": "configurationRows.28",
+          "requiredChange": "Copy master Name to annual LocationName once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.Name to TG_EstOSHASummaryObject.LocationName"
+        },
+        {
+          "path": "configurationRows.29",
+          "requiredChange": "Copy master Name to annual EstablishmeName once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.Name to TG_EstOSHASummaryObject.EstablishmeName"
+        },
+        {
+          "path": "configurationRows.30",
+          "requiredChange": "Copy master Street to annual LocationStreet once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.Street to TG_EstOSHASummaryObject.LocationStreet"
+        },
+        {
+          "path": "configurationRows.31",
+          "requiredChange": "Copy master City to annual LocationCity once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.City to TG_EstOSHASummaryObject.LocationCity"
+        },
+        {
+          "path": "configurationRows.32",
+          "requiredChange": "Copy master State to annual LocationState once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.State to TG_EstOSHASummaryObject.LocationState"
+        },
+        {
+          "path": "configurationRows.33",
+          "requiredChange": "Copy master PostalCode to annual LocationPostal once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.PostalCode to TG_EstOSHASummaryObject.LocationPostal"
+        },
+        {
+          "path": "configurationRows.34",
+          "requiredChange": "Copy master CompanyName to annual CompanyName once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.CompanyName to TG_EstOSHASummaryObject.CompanyName"
+        },
+        {
+          "path": "configurationRows.35",
+          "requiredChange": "Copy master EINNumber to annual EINNumber once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.EINNumber to TG_EstOSHASummaryObject.EINNumber"
+        },
+        {
+          "path": "configurationRows.36",
+          "requiredChange": "Copy master NAICSCode to annual NAICSCode once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.NAICSCode to TG_EstOSHASummaryObject.NAICSCode"
+        },
+        {
+          "path": "configurationRows.37",
+          "requiredChange": "Copy master SICCode to annual SICCode once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.SICCode to TG_EstOSHASummaryObject.SICCode"
+        },
+        {
+          "path": "configurationRows.38",
+          "requiredChange": "Copy master IndustryDescription to annual InduDescription once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.IndustryDescription to TG_EstOSHASummaryObject.InduDescription"
+        },
+        {
+          "path": "configurationRows.39",
+          "requiredChange": "Copy master EstablishmentType to annual EstablishmeType once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.EstablishmentType to TG_EstOSHASummaryObject.EstablishmeType"
+        },
+        {
+          "path": "configurationRows.40",
+          "requiredChange": "Copy master EstablishmentSize to annual EstablishmtSize once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.EstablishmentSize to TG_EstOSHASummaryObject.EstablishmtSize"
+        },
+        {
+          "path": "configurationRows.41",
+          "requiredChange": "Copy master EstablishmentID to annual EstablishmentID once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.EstablishmentID to TG_EstOSHASummaryObject.EstablishmentID"
+        },
+        {
+          "path": "configurationRows.42",
+          "requiredChange": "Copy master OSHA300aID to annual OSHA300aID once on creation; retain the saved value on metric refresh and preserve permitted annual correction.",
+          "mechanism": "Proposed annual creation branch: OSHAEstablishment.OSHA300aID to TG_EstOSHASummaryObject.OSHA300aID"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create or update one annual result and initialize date/year/GUID/settings identity.",
+          "mechanism": "Proposed Refresh Establishment Annual OSHA operation"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Copy fifteen named master properties into creation-only stored annual values.",
+          "mechanism": "Annual creation snapshot branch with explicit source-to-target mappings"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Select recordable OIIs by DateUserEntered year and supplied establishment, then consume existing helper/capped-day values with matching flat Lo/Ru scope.",
+          "mechanism": "Annual process YearHelp/OSHARecordable query and the 24 output rules"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Apply employee-only annual hours and present-summary-count averaging, link external case membership and retain unresolved month coverage/completeness policy.",
+          "mechanism": "Annual workforce projections and supplied AssociatedOIIs binding"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Persist a complete result without rewriting annual overrides or prior snapshots.",
+          "mechanism": "Annual refresh transaction and metadata-preservation branch"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Add an explicit audited operation to correct seven readonly header/code values.",
+          "mechanism": "Proposed Correct Annual OSHA Header operation"
+        },
+        {
+          "path": "steps.6",
+          "requiredChange": "Add one shared five-field output-metadata validation without making master fields mandatory.",
+          "mechanism": "Proposed Validate Annual OSHA Output invoked by downstream print/merge/export bindings"
+        },
+        {
+          "path": "steps.7",
+          "requiredChange": "Use existing 180-day-prioritized OII annual values rather than recreating missing helper population or classification logic.",
+          "mechanism": "Annual K/L source-field read mappings from NumDaysAwayOSHA and NumJobTAndRest"
+        },
+        {
+          "path": "steps.8",
+          "requiredChange": "Add full original/corrected-year rebuild behavior while keeping header copy initial-only and avoiding a new establishment monthly scheduler.",
+          "mechanism": "Annual recalculation selection and creation/refresh branch separation"
+        }
+      ]
+    },
+    {
+      "id": "IMP-10",
+      "taskHash": "c8690a49ce7562e61f66ed39c66102d331afcce04d4526e7cbf92bade185ad9b",
+      "renderedTaskHash": "64dac444e8b1da880c6cc69340d06dc32bd84eb1af73656b78843bb84be4cde7",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Verified both source Event Handler GUIDs, all seven ordered KPI/OSHA scheduled-import steps, and the current complete report lineage. The recent-change selectors inspect current OII and monthly-summary dates; no supported immediate call, old-scope recovery or completion API is exported.",
+      "languageReview": "Read dispatch, headcount triggers, incident notices, ordered source names and recovery steps. The Waiting note asks only for remaining invocation/recovery/status behavior, not for names already provided. No new scheduler or discovery task is implied.",
+      "meaningReview": "Retained postcommit separation from A0, per-establishment month/year request consolidation, both original/corrected scopes, headcount-only watchers, no recursion and freshness/error behavior. Existing source chains and schedules are reused, while the new adapters and readiness connections have one owner. The 36-hour selector is not an incident filter.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add adapters and status handling between successful source changes and named location/new establishment calculations, preserving full former/current scope.",
+          "mechanism": "Proposed dispatcher, headcount hooks and supported refresh/result-status adapters"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Connect postcommit scope notifications to new establishment processors and the two known location Event Handler identities through the still-supplied scoped call.",
+          "mechanism": "Dispatch Hours Analytics Refresh adapters to ffc98d00-0752-44cf-978e-017c0cc7cc9c and d389a540-b9fd-41ac-ba86-a1cee1074707"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Add headcount-only summary callbacks and creation-time scope-only rebuild wiring.",
+          "mechanism": "Monthly summary EmployeeHCount/ContractrHCount callbacks"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Subscribe only to the supplied incident old/new-scope notifications.",
+          "mechanism": "External incident notification subscription on the dispatcher"
+        },
+        {
+          "path": "steps.3",
+          "requiredChange": "Coalesce/serialize refresh work and apply native success/failure freshness gating.",
+          "mechanism": "Supplied native completion/error gate and scoped refresh dispatch branch"
+        },
+        {
+          "path": "steps.4",
+          "requiredChange": "Bind new refresh requests to the three-step KPI and four-step OSHA scheduled-import sequences without rebuilding those source chains.",
+          "mechanism": "Location-refresh adapters consuming the seven named scheduled imports in source order"
+        },
+        {
+          "path": "steps.5",
+          "requiredChange": "Configure explicit former/current-period recovery independent of current-scope recent-change selection, including emptied scopes and historical periods.",
+          "mechanism": "Dispatcher recovery route using supplied IN-09 invocation, window and result-status mechanism"
+        }
+      ]
+    },
+    {
+      "id": "IMP-11",
+      "taskHash": "56fced833f4a4fc5613f8739107b0b0c359237e09e74052b8d6a51ca5f94881e",
+      "renderedTaskHash": "3f3e397ac6c3aaae750c5c0263fe27e7acc62e233d062209064c4e7be213e84a",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "All four original case-log links and their exact template keys/parameters remain evidenced in the original package. The larger report extract adds no regulatory print template or confirmed custom-object endpoint support; Combined Cal parameter ambiguity remains open.",
+      "languageReview": "Read the four separate print-option rows, pre-output steps, missing-template explanation and checks. Waiting now reflects that the supported method and case/empty templates are needed for every completed print option.",
+      "meaningReview": "Preserved source OSHA/Cal and combined options, new-summary object binding, eligible establishment/year cases, confidential names, empty forms and shared validation/freshness calls. No unverified corrected Cal parameter, source-link rewrite or assumed custom-type endpoint support was introduced.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Create four establishment-specific case-log controls using supplied regulatory templates and supported binding, preserving source links and privacy.",
+          "mechanism": "New annual summary OSHA/Cal and combined print links"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add this link on TG_EstOSHASummaryObject using the supported reporting method, the new summary object's identifier and the selected summary record. Use OSHA300TempId for the case template and OSHA300EmptyId for no cases; use oshaType=OSHA if supported by the supplied method. The source Print OSHA 300 Form (E329) contains the original summary identifier, which must not be copied into the new link.",
+          "mechanism": "New Print OSHA 300 Form link and supplied OSHA report adapter"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add the combined print option using OSHA300TempId/OSHA300EmptyId and the supplied combined-report rules. The source Print Combined OSHA 300 Form (E214) uses oshaType=Combined. Include only the approved establishment/year cases, without adding organizational descendants.",
+          "mechanism": "New Print Combined OSHA 300 Form link"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Add the Cal print option using CALOSHA300TempId/CALOSHA300EmptyId and the supplied reporting method. The source Print Cal/OSHA 300 Form (E203) uses oshaType=OSHA. Use the same selected establishment/year and protect confidential names.",
+          "mechanism": "New Print Cal/OSHA 300 Form link"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Add this option only with the supplied confirmed combined-report behavior. The source Print Combined Cal/OSHA 300 Form (E337) sends oshaType=OSHA even though its name says Combined. Do not assume a corrected parameter or promise combined behavior without that decision.",
+          "mechanism": "New Print Combined Cal/OSHA 300 Form link and supplied combined parameter binding"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Bind the selected case population and call the existing shared metadata validator before rendering.",
+          "mechanism": "New 300 report adapter and Validate Annual OSHA Output invocation"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Bind populated/empty templates, masking and the installed refresh gate before download.",
+          "mechanism": "300 output template controls and native completion gate"
+        }
+      ]
+    },
+    {
+      "id": "IMP-12",
+      "taskHash": "f5d2c81066936fabec4c4b393ba62ba871aa5c3ca7223c23d1fc2d50eb6831c7",
+      "renderedTaskHash": "05ac78781944f75a7e3d6dfe358ca69798b8704846d2cec97102a1178b9a907f",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "Two annual links and all named source measure/header fields remain verified. Email templates in the expanded extract do not answer the OSHA300A/Cal form template requirement or its destination binding.",
+      "languageReview": "Read the two link rows, complete form source list and checks. The task states the selected annual record, saved reporting details and one measure set; its Waiting status no longer suggests a template-free output can be completed.",
+      "meaningReview": "Preserved OSHA300ATempId and CalOSHA300AFormId, all G–M mappings, RuAvgNumEmploye/RUNumHrsWorked, no Lo/Ru addition, frozen historical header and shared pre-print check. Template positions and supported merge remain explicit inputs.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Configure two establishment annual-form outputs from saved headers and one complete annual measure set, subject to supported templates and validation.",
+          "mechanism": "New OSHA300A/Cal templates and annual summary merge links"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Add the new summary's form link using OIISettings.OSHA300ATempId from the intended environment, the new TG_EstOSHASummaryObject identifier and the selected record. The source Print OSHA 300 A Form (E354) contains the original summary identifier; use the new one only on the new link.",
+          "mechanism": "New Print OSHA 300 A Form mail-merge binding"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Add the Cal form link using OIISettings.CalOSHA300AFormId, the new summary identifier and the selected record. Retain the source Print Cal/OSHA 300 A Form (E205) on the original location family.",
+          "mechanism": "New Print Cal/OSHA 300 A Form mail-merge binding"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Map exact annual header, G–M and employment fields to supplied destination merge properties.",
+          "mechanism": "Destination OSHA/Cal 300A template field mappings"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Invoke shared metadata validation and completed-refresh gating before the two merges.",
+          "mechanism": "Validate Annual OSHA Output calls on the 300A output bindings"
+        }
+      ]
+    },
+    {
+      "id": "IMP-13",
+      "taskHash": "c808e5fa224ce66acd4cacf1492bc6a7d6cd79ba128d6a83c12b029d515717ab",
+      "renderedTaskHash": "d6c22bdbe295d9f33dcac008f661a3914bd6a44e4ec9a7b6d30b329f883d4285",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "The actual-rate dashboard remains absent even though all 25 preparation reports and their folder placement are known. Source monthly lost-time numerator is now confirmed and replaces the obsolete classification-rule request.",
+      "languageReview": "Read the four actual-rate rows, period-selection steps and Waiting explanation. Actual rates, targets, hours used for division and scaling are distinct; the supplied-input requests no longer conflate underlying reports with the missing rate display.",
+      "meaningReview": "Retained TargetDART caption Target DAIR, current Ru numerators, separate hourly populations, no stored actual-rate fields and no monthly-rate average. LTIR uses the verified positive combined-days OII flag count; denominator, normalizer, rounding and zero/missing behavior remain IN-05 rather than invented constants.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add a four-rate target-comparison report with supplied actual-rate expressions and period/readiness controls, without stored-rate columns.",
+          "mechanism": "Proposed Establishment Incident Rates report/dashboard"
+        },
+        {
+          "path": "configurationRows.0",
+          "requiredChange": "Calculate actual TRIR from RuCtRecordable divided by the supplied Hours total, multiplied by the supplied scaling number. Compare it with TargetTRIR. Use only supplied, supported calculation settings for the hours, scaling number, rounding and missing/zero values.",
+          "mechanism": "Establishment Incident Rates TRIR expression and TargetTRIR comparison"
+        },
+        {
+          "path": "configurationRows.1",
+          "requiredChange": "Calculate actual DAIR from RuNumIncDayAway using the supplied hours and scaling rules. Compare it with TargetDART, displayed as Target DAIR. Do not change the target label to DART.",
+          "mechanism": "Establishment Incident Rates DAIR expression and Target DAIR comparison"
+        },
+        {
+          "path": "configurationRows.2",
+          "requiredChange": "Calculate actual LTIR from the verified positive combined-days OII count, retaining the target comparison and pending rate-specific hours/scaling/rounding policy.",
+          "mechanism": "Establishment Incident Rates report LTIR expression and TargetLTIR display"
+        },
+        {
+          "path": "configurationRows.3",
+          "requiredChange": "Calculate Severity Rate using RuNumDaysAway plus RuNumTrnsfRstDy under the supplied day-count, hours and scaling rules. Compare it with TargetSeverRate.",
+          "mechanism": "Establishment Incident Rates severity expression and TargetSeverRate comparison"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Create establishment/period report bindings and aggregate-period rate behavior.",
+          "mechanism": "Proposed Establishment Incident Rates report/dashboard query and expressions"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Apply existing record visibility and refresh completeness to actual-rate display.",
+          "mechanism": "Rate report access/filter/completion display configuration"
+        }
+      ]
+    },
+    {
+      "id": "IMP-14",
+      "taskHash": "1e4e210451108cba7f867ff428d9401fb61967497a7e4827aa3b1e3ebaa348e1",
+      "renderedTaskHash": "c3a7ec58c2376533ad4dc674d6d72ae3a74b277ab33d95808ce5cb87b2dc1062",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "The electronic-submission dashboard/file definition is not in the complete event-service report closure. Existing Type, Size and recordability Value domains are known, but do not establish allowed file codes. Expanded source fields support the now-explicit full output source list.",
+      "languageReview": "Read all three export steps, complete source fields, internal recordability check and Waiting explanation. The task asks for file columns and formatting in familiar terms and does not imply a direct submission service.",
+      "meaningReview": "Retained establishment/year selection, exact twelve G–M fields, employee workforce fields, reporting IDs and saved address. Internal Value 1 means some G–J total is positive and Value 2 means all are zero; mismatch blocks output without overwriting the chosen value. File mapping remains IN-12, with no assumption that source values equal submission codes.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Add annual electronic-file selection, explicit source-to-file mappings and pre-export validation without direct regulatory transmission.",
+          "mechanism": "Proposed Establishment OSHA Electronic Export and summary navigation link"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Add separate establishment export navigation without modifying the original Esub link.",
+          "mechanism": "Proposed Establishment OSHA Electronic Export view/report and summary link"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Map the complete named annual header, G–M and employee workforce source set to supplied file columns; never substitute labels or assume lookup-to-file code equality.",
+          "mechanism": "Proposed Establishment OSHA Electronic Export report projections and supplied column mappings"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Add internal recordability Value 1/2 consistency validation alongside shared data/readiness and supplied file-format checks, with rejection rather than silent choice rewriting.",
+          "mechanism": "Electronic-export pre-output validation and supplied permitted-file-value mapping"
+        }
+      ]
+    },
+    {
+      "id": "IMP-15",
+      "taskHash": "986af1d35f7ef4e93574e132306f060ab38e133adca79b2218c6b3eeca8e97c9",
+      "renderedTaskHash": "43a2bc094560414940107a507d20e79c354e75cf960632b1e96004c8acc272c9",
+      "checks": {
+        "standaloneInstructions": true,
+        "exactValuesIncluded": true,
+        "dependenciesDescribeOutputs": true,
+        "inputsAreLocalAndNarrow": true,
+        "acceptanceDescribesChanges": true,
+        "businessLanguageThroughout": true,
+        "technicalMeaningPreserved": true,
+        "coverageOwnershipReviewed": true
+      },
+      "evidenceReview": "All source mappings show the named initializer supplies Location.Id and Date only. It is excluded from remapping; no actual external hours writer is identified, so IN-10 still blocks concrete connection changes.",
+      "languageReview": "Read all three mapping/correction steps and checks. The task names the missing feed information, explains stable source references and corrected contributions, and clearly says Waiting before connection changes can start.",
+      "meaningReview": "Preserved Month first-day mapping, independent optional dimensions, unique namespaced SourceEntryID, replay-safe replacement and no summary-link writes. Headcount mappings remain separate; no inferred establishment, synthetic initializer contribution, historical load or native processing-permission task was added.",
+      "instructions": [
+        {
+          "path": "scope",
+          "requiredChange": "Change only supplied external hour-feed mappings to the shared input/save path, retaining separate headcount mappings and no migration work.",
+          "mechanism": "Identified external import/interface field mappings"
+        },
+        {
+          "path": "steps.0",
+          "requiredChange": "Redirect only identified real hour feeds to shared entry fields, preserving independent source dimensions and excluding the Location+Date-only initializer from hours remapping.",
+          "mechanism": "Named external connection mappings into TG_HoursWorkedObject through Synchronize Hours Worked"
+        },
+        {
+          "path": "steps.1",
+          "requiredChange": "Map stable source/allocation identities and update/retry semantics with explicit input validation.",
+          "mechanism": "Existing integration key/period/dimension/amount mappings and update route"
+        },
+        {
+          "path": "steps.2",
+          "requiredChange": "Disable the concrete direct-hour mappings while retaining separate headcount routes.",
+          "mechanism": "Supplied existing direct-summary hour-target mapping removal/disable changes"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1199 @@
+{
+  "version": "1.0.2.0",
+  "evidenceSha256": "c7716f41d56fcaf1f80991aae602a17b08e8192190004a02d78560adde2724aa",
+  "classification": "Extracted dependency and mapping evidence; runtime capability remains unresolved",
+  "counts": {
+    "reports": 25,
+    "reportReferences": 27,
+    "scheduledImports": 8,
+    "mappings": 75,
+    "eventHandlers": 3,
+    "folders": 5,
+    "reportsReached": 25
+  },
+  "unchangedReportDefinitions": true,
+  "unreachedReports": [],
+  "issues": [],
+  "flows": [
+    {
+      "recordId": "ffc98d00-0752-44cf-978e-017c0cc7cc9c",
+      "name": "[Safety Metrics] Incident Rate KPI Data Update",
+      "steps": [
+        {
+          "order": 1,
+          "scheduledImport": "1149cbde-fdb0-400b-a0aa-f1373864ee9f",
+          "name": "[SM-KPI] 01 - Initialization",
+          "reportId": "c1c3c27c-ca0c-4cee-9431-4031be32dedf"
+        },
+        {
+          "order": 2,
+          "scheduledImport": "a0d81d37-7b7a-4e94-9c49-68995608350a",
+          "name": "[SM-KPI] 04 - Location Data Import",
+          "reportId": "80a10d42-4032-4f8e-a222-41509b97a0d9"
+        },
+        {
+          "order": 3,
+          "scheduledImport": "f566a443-cc20-4122-88ea-95e3fc1780c4",
+          "name": "[SM-KPI] 04 - Rollup Data Import",
+          "reportId": "512fd2ab-40e6-470d-9282-75fffc7b5513"
+        }
+      ]
+    },
+    {
+      "recordId": "d389a540-b9fd-41ac-ba86-a1cee1074707",
+      "name": "[Safety Metrics] OSHA Summary Data Update",
+      "steps": [
+        {
+          "order": 1,
+          "scheduledImport": "b3512beb-c298-41cb-b4c9-0667af8dca41",
+          "name": "[SM-OSHA] 01 - Initialization",
+          "reportId": "f5623fa3-07b1-41a1-bbde-648f2824571c"
+        },
+        {
+          "order": 2,
+          "scheduledImport": "e878e419-caec-4cca-88fa-12bc5d9179b2",
+          "name": "[SM-OSHA] 02 - Relate OII's",
+          "reportId": "eecbcf27-bcfa-4065-a1c0-e0ed27ab7fb2"
+        },
+        {
+          "order": 3,
+          "scheduledImport": "2b22ad45-9bb6-4274-8129-815fc87fff60",
+          "name": "[SM-OSHA] 05 - Location Data Import",
+          "reportId": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6"
+        },
+        {
+          "order": 4,
+          "scheduledImport": "ff25e60b-57f1-4775-8278-817f1f0f5b62",
+          "name": "[SM-OSHA] 05 - Rollup Data Import",
+          "reportId": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad"
+        }
+      ]
+    },
+    {
+      "recordId": "f6fb7c3d-c144-4fd2-a017-7a2995afa57e",
+      "name": "[Safety Metrics] Generate Location Hours and Headcount Records",
+      "steps": [
+        {
+          "order": 1,
+          "scheduledImport": "dd67ef10-c087-4ecb-96b6-4652aed641ad",
+          "name": "[Safety Metrics] Generate Employee Hours and Heacount",
+          "reportId": "1d608ee4-57d7-41c8-bed7-1cffe15d80a3"
+        }
+      ]
+    }
+  ],
+  "imports": [
+    {
+      "scheduledImport": "1149cbde-fdb0-400b-a0aa-f1373864ee9f",
+      "name": "[SM-KPI] 01 - Initialization",
+      "settingsId": "1be6d4a1-9f1b-4a3f-8efe-ac62af79e24b",
+      "sourceReportId": "f24050bc-07e8-4dd3-af36-da764fff2598",
+      "reportId": "c1c3c27c-ca0c-4cee-9431-4031be32dedf",
+      "reportCaption": "[SM-KPI] 01 - Initialization",
+      "targetObject": "SafetyMetrics_IncidentRateKPIObject",
+      "transactional": false,
+      "insert": true,
+      "update": true,
+      "reportClosure": [
+        "c1c3c27c-ca0c-4cee-9431-4031be32dedf",
+        "5659bef0-85f0-4105-86f6-f392271275bb"
+      ],
+      "mappings": [
+        {
+          "recordId": "77cbd2c9-4fc6-4ec9-bec7-d29d69a118fb",
+          "path": ".LocationIdHelp",
+          "matchKey": false,
+          "sourceAlias": "bocx5g",
+          "sourceCaption": "Location Id Helper",
+          "projectionCaption": "Location Id Helper",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "343e57b1-5b5f-44a9-ae7c-6df5646e1025",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "bz2f69",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "9c2453a0-1eb1-4116-8c8e-e364a6ad21cf",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "bzriz3",
+          "sourceCaption": "Location Id",
+          "projectionCaption": "Location Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "2f7a4907-b983-4d29-b656-81bde9402303",
+          "path": ".LocNameHelper",
+          "matchKey": false,
+          "sourceAlias": "bedehf",
+          "sourceCaption": "Location Name",
+          "projectionCaption": "Location Name",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "f566a443-cc20-4122-88ea-95e3fc1780c4",
+      "name": "[SM-KPI] 04 - Rollup Data Import",
+      "settingsId": "5998d334-c3e3-4b72-a68d-3b824ff4737e",
+      "sourceReportId": "d1102629-c7a6-4dc1-a306-657f7ff68f4b",
+      "reportId": "512fd2ab-40e6-470d-9282-75fffc7b5513",
+      "reportCaption": "[SM-KPI] 04 - Rollup Data Import (2/2)",
+      "targetObject": "SafetyMetrics_IncidentRateKPIObject",
+      "transactional": false,
+      "insert": false,
+      "update": true,
+      "reportClosure": [
+        "512fd2ab-40e6-470d-9282-75fffc7b5513",
+        "1c2059ec-a97d-45ef-afc9-81030ab22d67",
+        "80a10d42-4032-4f8e-a222-41509b97a0d9",
+        "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+        "5659bef0-85f0-4105-86f6-f392271275bb",
+        "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+        "25105669-b87c-4561-b948-88428c2a2ef0",
+        "619364dd-17f7-4bcc-8e5a-c1c214b84106",
+        "12ea179a-f422-4d41-9820-7a90799b1b65",
+        "2967c223-2a5f-474b-a880-88cfb66036a8"
+      ],
+      "mappings": [
+        {
+          "recordId": "1ea1ba15-e6ca-4761-a613-6662f1fa0446",
+          "path": ".RuNumFatalities",
+          "matchKey": false,
+          "sourceAlias": "buwew5",
+          "sourceCaption": "Number of Fatalities - Location",
+          "projectionCaption": "Number of Fatalities - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "ed8a9349-d28f-4863-a9b5-134f9b6ee3d1",
+          "path": ".RuCntrctWrkdHrs",
+          "matchKey": false,
+          "sourceAlias": "b15pyu",
+          "sourceCaption": "Contractor Worked Hours - Location",
+          "projectionCaption": "Contractor Worked Hours - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "1e39aecf-d4a4-4f2d-8762-641acee2da54",
+          "path": ".RuEmplWrkdHours",
+          "matchKey": false,
+          "sourceAlias": "b4w5ve",
+          "sourceCaption": "Employee Worked Hours - Location",
+          "projectionCaption": "Employee Worked Hours - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "f8a33c01-8f51-46a0-be1c-0bf2eebd4f31",
+          "path": ".RuNumDaysAway",
+          "matchKey": false,
+          "sourceAlias": "b1pbnr",
+          "sourceCaption": "Number of Days Away - Location",
+          "projectionCaption": "Number of Days Away - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "47fb3b43-0c40-47f9-938e-05311f6320ad",
+          "path": ".RuNumIncLostTim",
+          "matchKey": false,
+          "sourceAlias": "bcp52q",
+          "sourceCaption": "Number of Incidents with Lost Time - Location",
+          "projectionCaption": "Number of Incidents with Lost Time - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "93b3ab7e-f068-4589-9e60-e1ae674b3bc2",
+          "path": ".RuNumIncDayAway",
+          "matchKey": false,
+          "sourceAlias": "b157gy",
+          "sourceCaption": "Number of Incidents with Days Away - Location",
+          "projectionCaption": "Number of Incidents with Days Away - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "4973e751-e5fb-452c-b39d-bbae90cdb49f",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "bejojm",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "c33be7ab-fc24-48a0-a8f5-36fe30b1062a",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "b1cwc8",
+          "sourceCaption": "Parent Location Id",
+          "projectionCaption": "Parent Location Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "c56a59a3-397e-4a14-b885-1df31ba07299",
+          "path": ".RuNumLostDays",
+          "matchKey": false,
+          "sourceAlias": "b70vgs",
+          "sourceCaption": "Number of Lost Days - Location",
+          "projectionCaption": "Number of Lost Days - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "69770aaa-72e0-44e4-9024-dcf20558866b",
+          "path": ".RuCtRecordable",
+          "matchKey": false,
+          "sourceAlias": "baasta",
+          "sourceCaption": "Number of Recordable/Reportable - Location",
+          "projectionCaption": "Number of Recordable/Reportable - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "e779ec00-b75b-495a-a880-e9e22cd1ba72",
+          "path": ".RuNumTrnsfRstDy",
+          "matchKey": false,
+          "sourceAlias": "bytgk3",
+          "sourceCaption": "Number of Job Transfer and Restricted Days - Location",
+          "projectionCaption": "Number of Job Transfer and Restricted Days - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "956dc928-c8d4-4a20-aafc-04adfd6c5282",
+          "path": ".RuCtIncidents",
+          "matchKey": false,
+          "sourceAlias": "b48j7q",
+          "sourceCaption": "Number of Incidents - Location",
+          "projectionCaption": "Number of Incidents - Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "a0d81d37-7b7a-4e94-9c49-68995608350a",
+      "name": "[SM-KPI] 04 - Location Data Import",
+      "settingsId": "a9c9bcbb-7d59-4377-a605-2e789062b763",
+      "sourceReportId": "66203344-0104-4085-8b1e-49f873fa3fdb",
+      "reportId": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "reportCaption": "[SM-KPI] 04 - Location Data Import",
+      "targetObject": "SafetyMetrics_IncidentRateKPIObject",
+      "transactional": false,
+      "insert": false,
+      "update": true,
+      "reportClosure": [
+        "80a10d42-4032-4f8e-a222-41509b97a0d9",
+        "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+        "5659bef0-85f0-4105-86f6-f392271275bb",
+        "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+        "25105669-b87c-4561-b948-88428c2a2ef0"
+      ],
+      "mappings": [
+        {
+          "recordId": "8c6892d4-a222-4960-a878-f37e8ecb1db8",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "b1c7y6",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "7cad3064-2f92-479a-910c-f6ae0c710e4b",
+          "path": ".LoNumIncDayAway",
+          "matchKey": false,
+          "sourceAlias": "bngvmy",
+          "sourceCaption": "Incident Days Away",
+          "projectionCaption": "Incident Days Away",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "81aa1e15-2f5c-438a-abea-d3cd1074eadf",
+          "path": ".LoNumDaysAway",
+          "matchKey": false,
+          "sourceAlias": "blvxsm",
+          "sourceCaption": "Total Days Away",
+          "projectionCaption": "Total Days Away",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "cffc71f4-a5ae-45ea-b564-447cc0f320e8",
+          "path": ".LoCntrctWrkdHrs",
+          "matchKey": false,
+          "sourceAlias": "biypao",
+          "sourceCaption": "Contractor Hours",
+          "projectionCaption": "Contractor Hours",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "f7a6c762-f571-4fa1-9f6d-e9013a6f4f27",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "b35kid",
+          "sourceCaption": "Location Id",
+          "projectionCaption": "Location Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "3dad36d9-65d5-4835-bdbe-80854ba69b11",
+          "path": ".LoNumLostDays",
+          "matchKey": false,
+          "sourceAlias": "bpp8gr",
+          "sourceCaption": "Total Lost Days",
+          "projectionCaption": "Total Lost Days",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "780e65fe-8c53-4b4f-ac2c-d7d5b8989d75",
+          "path": ".LoCtIncidents",
+          "matchKey": false,
+          "sourceAlias": "b9b4gi",
+          "sourceCaption": "Incident Count",
+          "projectionCaption": "Incident Count",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "ba503885-9d49-458b-b51b-4e628bc505b4",
+          "path": ".LoNumIncLostTim",
+          "matchKey": false,
+          "sourceAlias": "bkh7vx",
+          "sourceCaption": "Incident Lost Time",
+          "projectionCaption": "Incident Lost Time",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "b58b7bdc-1baa-429f-ab45-873bc0988a51",
+          "path": ".LoEmplWrkdHours",
+          "matchKey": false,
+          "sourceAlias": "bk16as",
+          "sourceCaption": "Employee Hours",
+          "projectionCaption": "Employee Hours",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "2986ef3f-5f46-4cc4-8b52-6f0fc42e3e8c",
+          "path": ".LoNumFatalities",
+          "matchKey": false,
+          "sourceAlias": "bifuxq",
+          "sourceCaption": "Fatality",
+          "projectionCaption": "Fatality",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "869c4875-f4b3-47b0-bcb4-abfe6bec4300",
+          "path": ".LoNumTrnsfRstDy",
+          "matchKey": false,
+          "sourceAlias": "bxim4x",
+          "sourceCaption": "Total Restricted or Transfer",
+          "projectionCaption": "Total Restricted or Transfer",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "d44981d1-e400-4565-a537-634ca51a37d5",
+          "path": ".LoCtRecordable",
+          "matchKey": false,
+          "sourceAlias": "bjia5x",
+          "sourceCaption": "Recordable",
+          "projectionCaption": "Recordable",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "dd67ef10-c087-4ecb-96b6-4652aed641ad",
+      "name": "[Safety Metrics] Generate Employee Hours and Heacount",
+      "settingsId": "d7fba97e-2449-4ac6-9efc-ebe5384b439d",
+      "sourceReportId": "79e029e0-4b61-4bfd-90e6-e576f4097d35",
+      "reportId": "1d608ee4-57d7-41c8-bed7-1cffe15d80a3",
+      "reportCaption": "[SM-HH] Initialize Head Count and Hours Worked Records",
+      "targetObject": "SafetyMetrics_HrsandHeadcountObject",
+      "transactional": false,
+      "insert": true,
+      "update": false,
+      "reportClosure": [
+        "1d608ee4-57d7-41c8-bed7-1cffe15d80a3"
+      ],
+      "mappings": [
+        {
+          "recordId": "6875a345-4c94-4e70-96cc-d553bb2581fb",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "b9oufa",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "87bd4195-e090-47f7-a592-fe68d75a9b3d",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "bblb9v",
+          "sourceCaption": "Location Id",
+          "projectionCaption": "Location Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "ff25e60b-57f1-4775-8278-817f1f0f5b62",
+      "name": "[SM-OSHA] 05 - Rollup Data Import",
+      "settingsId": "7a4af9f2-9db1-4a7d-87a2-d52038fad826",
+      "sourceReportId": "2ee3384c-e139-44c7-9791-43b40c28bcc8",
+      "reportId": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+      "reportCaption": "[SM-OSHA] 05 - Rollup Data Import (2/2)",
+      "targetObject": "SafetyMetrics_OSHASummaryObject",
+      "transactional": false,
+      "insert": false,
+      "update": true,
+      "reportClosure": [
+        "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+        "1a9f3c5e-bcce-44b4-8efb-f271134ad523",
+        "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+        "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+        "3caddcd4-62a1-4686-bff3-3b037f440119",
+        "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+        "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+        "1dfd076d-51c8-4254-8607-77f8ecf93906",
+        "c997e490-c6d0-4ded-a3b1-db81c2628cfa",
+        "d7afe974-07b9-403c-9ca1-96ac8c33f1d7",
+        "cce6d073-a2aa-497a-8b8f-9e23faf47b52"
+      ],
+      "mappings": [
+        {
+          "recordId": "d383579a-059a-4047-863b-997786133ee4",
+          "path": ".RUNumHrsWorked",
+          "matchKey": false,
+          "sourceAlias": "b7z3o0",
+          "sourceCaption": "Total hours worked by all employees this year Location",
+          "projectionCaption": "Total hours worked by all employees this year Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "757a1b62-944b-44af-8869-2e2013b5fc92",
+          "path": ".RuCtHearingLoss",
+          "matchKey": false,
+          "sourceAlias": "b83cti",
+          "sourceCaption": "Hearing loss (M5) - location",
+          "projectionCaption": "Hearing loss (M5) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "1ad23e3e-99de-4f64-808f-97627a1435de",
+          "path": ".RuCtInjuries",
+          "matchKey": false,
+          "sourceAlias": "bzonh1",
+          "sourceCaption": "Injuries (M1) - location",
+          "projectionCaption": "Injuries (M1) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "d34cf357-ca9b-4f91-a7e8-e4e59c5da0fe",
+          "path": ".RuNumRstOrJobTr",
+          "matchKey": false,
+          "sourceAlias": "bqui3v",
+          "sourceCaption": "Total number of job transfer or restriction days (L) - location",
+          "projectionCaption": "Total number of job transfer or restriction days (L) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "ad39b8d1-92c3-4a53-a189-2e3e6916f8a8",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "bidgf0",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "19a4048b-36e7-46bd-b7f1-2aa5a0f04abc",
+          "path": ".RuAvgNumEmploye",
+          "matchKey": false,
+          "sourceAlias": "b78q6g",
+          "sourceCaption": "Annual average number of employees Location",
+          "projectionCaption": "Annual average number of employees Location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "7334b25d-3602-43e1-944f-d89e3b3b9c59",
+          "path": ".RuCtFatalities",
+          "matchKey": false,
+          "sourceAlias": "b7tn4f",
+          "sourceCaption": "Death (G) - location",
+          "projectionCaption": "Death (G) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "aa902c69-285e-4a31-902e-3d72fa480ff1",
+          "path": ".RuNumDaysAway",
+          "matchKey": false,
+          "sourceAlias": "bbtnvn",
+          "sourceCaption": "Total number of days away from work (K) - location",
+          "projectionCaption": "Total number of days away from work (K) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "4212a71b-b3be-4b45-8089-7962dc6ebf29",
+          "path": ".RuCtAllOtherIln",
+          "matchKey": false,
+          "sourceAlias": "bqm8jy",
+          "sourceCaption": "All other illnesses (M6) - location",
+          "projectionCaption": "All other illnesses (M6) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "e62d8fb7-03b4-491a-a4a5-d7e0f4f7cf8c",
+          "path": ".RuCtPoisonings",
+          "matchKey": false,
+          "sourceAlias": "bvugff",
+          "sourceCaption": "Poisonings (M4) - location",
+          "projectionCaption": "Poisonings (M4) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "a45b914a-1b3d-467b-b829-e9a092de9a01",
+          "path": ".RuCtSkinDisordr",
+          "matchKey": false,
+          "sourceAlias": "b5xz01",
+          "sourceCaption": "Skin Disorders (M2) - location",
+          "projectionCaption": "Skin Disorders (M2) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "05aa6bb5-3f8f-4ff4-a057-7d5bba8405e8",
+          "path": ".RuCtRespiratorC",
+          "matchKey": false,
+          "sourceAlias": "bs0qcw",
+          "sourceCaption": "Respiratory Conditions (M3) - location",
+          "projectionCaption": "Respiratory Conditions (M3) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "f29fc3c0-c7e2-4f11-b01c-dd438b240bac",
+          "path": ".RuCtDaysAway",
+          "matchKey": false,
+          "sourceAlias": "bfju65",
+          "sourceCaption": "Days Away From Work Cases (H) - location",
+          "projectionCaption": "Days Away From Work Cases (H) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "7f10b67f-2189-4847-894b-3736b859e816",
+          "path": ".RuCtTrnfrOrRest",
+          "matchKey": false,
+          "sourceAlias": "b0k30t",
+          "sourceCaption": "Job Transfer or Restricted Days Cases (I) - location",
+          "projectionCaption": "Job Transfer or Restricted Days Cases (I) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "6abda597-977a-4d06-8319-b0da48939239",
+          "path": ".RuCtOthrRecrdbl",
+          "matchKey": false,
+          "sourceAlias": "be2kla",
+          "sourceCaption": "Other Recordable Cases (J) - location",
+          "projectionCaption": "Other Recordable Cases (J) - location",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "5bb197ff-6960-48ad-880b-e4528f9aab97",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "bb7q1k",
+          "sourceCaption": "Parent Location Id",
+          "projectionCaption": "Parent Location Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "2b22ad45-9bb6-4274-8129-815fc87fff60",
+      "name": "[SM-OSHA] 05 - Location Data Import",
+      "settingsId": "2563360c-3bf8-4e61-b543-209a7f5f27fa",
+      "sourceReportId": "65ca7b0b-63ff-4a5d-a932-a7e3149ab458",
+      "reportId": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "reportCaption": "[SM-OSHA] 05 - Location Data Import",
+      "targetObject": "SafetyMetrics_OSHASummaryObject",
+      "transactional": false,
+      "insert": false,
+      "update": true,
+      "reportClosure": [
+        "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+        "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+        "3caddcd4-62a1-4686-bff3-3b037f440119",
+        "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+        "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+        "1dfd076d-51c8-4254-8607-77f8ecf93906"
+      ],
+      "mappings": [
+        {
+          "recordId": "b11b0420-c89f-4f55-bc7c-1a1140b723cf",
+          "path": ".LoCtRespiratorC",
+          "matchKey": false,
+          "sourceAlias": "bfnmbg",
+          "sourceCaption": "Respiratory Condition",
+          "projectionCaption": "Respiratory Condition",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "20ab611c-d7e0-4738-906e-bd4f9bdc1333",
+          "path": ".LoNumDaysAway",
+          "matchKey": false,
+          "sourceAlias": "b839he",
+          "sourceCaption": "Number of Days Away",
+          "projectionCaption": "Number of Days Away",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "6595fcd7-1c61-4568-b38f-83e034705d56",
+          "path": ".LoCtTrnfrOrRest",
+          "matchKey": false,
+          "sourceAlias": "b7sxfo",
+          "sourceCaption": "Job Transfer or Restriction Cases",
+          "projectionCaption": "Job Transfer or Restriction Cases",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "4db03a5f-11f3-4ca1-97b3-703c29b15825",
+          "path": ".LoCtInjuries",
+          "matchKey": false,
+          "sourceAlias": "bv3ggv",
+          "sourceCaption": "Injuries",
+          "projectionCaption": "Injuries",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "87b44b6f-c998-460e-8249-8729298d6de1",
+          "path": ".LoNumHrsWorked",
+          "matchKey": false,
+          "sourceAlias": "b6o71h",
+          "sourceCaption": "Employee Hours",
+          "projectionCaption": "Employee Hours",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "a739d6a4-ffe6-4f47-b350-a3506951b0f4",
+          "path": ".LoCtFatalities",
+          "matchKey": false,
+          "sourceAlias": "bpwo5d",
+          "sourceCaption": "Fatality",
+          "projectionCaption": "Fatality",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "af13c3f2-83d1-475c-89b3-6c1c96bddeb9",
+          "path": ".LoCtOthrRecrdbl",
+          "matchKey": false,
+          "sourceAlias": "b58g1y",
+          "sourceCaption": "Other Recordable Cases",
+          "projectionCaption": "Other Recordable Cases",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "ee590034-76c3-428d-bf74-3c01dce159bf",
+          "path": ".LoAvgNumEmploye",
+          "matchKey": false,
+          "sourceAlias": "bs1mmq",
+          "sourceCaption": "Average Headcount",
+          "projectionCaption": "Average Headcount",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "59dbb601-5063-4a5f-954a-bf1ad9d0334e",
+          "path": ".LoCtDaysAway",
+          "matchKey": false,
+          "sourceAlias": "b5h2o5",
+          "sourceCaption": "Days Away Cases",
+          "projectionCaption": "Days Away Cases",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "e72dd96d-2c14-4a62-830f-4d25209d8ebc",
+          "path": ".LoCtHearingLoss",
+          "matchKey": false,
+          "sourceAlias": "b0guny",
+          "sourceCaption": "Hearing Loss",
+          "projectionCaption": "Hearing Loss",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "1818a6e7-51a1-4159-907d-7b03fb728325",
+          "path": ".LoCtSkinDisordr",
+          "matchKey": false,
+          "sourceAlias": "b7fk9n",
+          "sourceCaption": "Skin Disorder",
+          "projectionCaption": "Skin Disorder",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "92146e45-2c90-4263-836d-d6fb1f4924b0",
+          "path": ".LoCtAllOtherIln",
+          "matchKey": false,
+          "sourceAlias": "bnqip5",
+          "sourceCaption": "All Other Illnesses",
+          "projectionCaption": "All Other Illnesses",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "fbb664db-1122-4eea-9375-ab9985c3f14e",
+          "path": ".LoCtPoisonings",
+          "matchKey": false,
+          "sourceAlias": "bqjum1",
+          "sourceCaption": "Poisoning",
+          "projectionCaption": "Poisoning",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "7d107c46-04ef-4b14-8c1f-16eb50b1dac4",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "be1w6g",
+          "sourceCaption": "Id",
+          "projectionCaption": "Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "edd4facc-280d-42cc-b42e-cad992072a6d",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "b0bgaq",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "6265abcc-7661-48c9-8f14-b694e49b6c1f",
+          "path": ".LoNumRstOrJobTr",
+          "matchKey": false,
+          "sourceAlias": "bxqa9u",
+          "sourceCaption": "Number of Job Transfer or Restriction",
+          "projectionCaption": "Number of Job Transfer or Restriction",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "e878e419-caec-4cca-88fa-12bc5d9179b2",
+      "name": "[SM-OSHA] 02 - Relate OII's",
+      "settingsId": "c40bdb4d-cba7-4dbb-bdc8-3a74bbfb398e",
+      "sourceReportId": "990b72aa-da83-4cec-9129-b09ed02478ab",
+      "reportId": "eecbcf27-bcfa-4065-a1c0-e0ed27ab7fb2",
+      "reportCaption": "[SM-OSHA] 02 - Relate OII's",
+      "targetObject": "EHSIncidentMang_OIIObject",
+      "transactional": false,
+      "insert": false,
+      "update": true,
+      "reportClosure": [
+        "eecbcf27-bcfa-4065-a1c0-e0ed27ab7fb2"
+      ],
+      "mappings": [
+        {
+          "recordId": "6f531add-b5b3-4d7e-a417-08def66f5ed2",
+          "path": ".OSHASummary.Id",
+          "matchKey": false,
+          "sourceAlias": "be9bsx",
+          "sourceCaption": "OSHA Summary Id",
+          "projectionCaption": "OSHA Summary Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "d8daf1af-0b7d-4851-b348-03e608f1f5f3",
+          "path": ".Id",
+          "matchKey": true,
+          "sourceAlias": "b3jako",
+          "sourceCaption": "OIIID",
+          "projectionCaption": "OIIID",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    },
+    {
+      "scheduledImport": "b3512beb-c298-41cb-b4c9-0667af8dca41",
+      "name": "[SM-OSHA] 01 - Initialization",
+      "settingsId": "307ca4f8-e22e-4c73-b222-fb98b3c8d18e",
+      "sourceReportId": "dfbff50b-ebae-4370-ac85-0de6419907a6",
+      "reportId": "f5623fa3-07b1-41a1-bbde-648f2824571c",
+      "reportCaption": "[SM-OSHA] 01 - Initialization",
+      "targetObject": "SafetyMetrics_OSHASummaryObject",
+      "transactional": false,
+      "insert": true,
+      "update": true,
+      "reportClosure": [
+        "f5623fa3-07b1-41a1-bbde-648f2824571c",
+        "3caddcd4-62a1-4686-bff3-3b037f440119"
+      ],
+      "mappings": [
+        {
+          "recordId": "289a977b-87e6-4690-b3b1-bf288fa577c8",
+          "path": ".ReporLocationId",
+          "matchKey": false,
+          "sourceAlias": "bml5e7",
+          "sourceCaption": "Location Id Helper",
+          "projectionCaption": "Location Id Helper",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "b2923542-87f3-4204-814e-ae024f02b987",
+          "path": ".LocationPostal",
+          "matchKey": false,
+          "sourceAlias": "b2s0ht",
+          "sourceCaption": "Zip/Postal Code",
+          "projectionCaption": "Zip/Postal Code",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "4e5b401b-7a64-440c-b667-16c4b1292b42",
+          "path": ".LocationState",
+          "matchKey": false,
+          "sourceAlias": "bstkap",
+          "sourceCaption": "State/Province",
+          "projectionCaption": "State/Province",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "3c4beee8-d468-42c4-aed2-dda40af4a06f",
+          "path": ".Date",
+          "matchKey": true,
+          "sourceAlias": "bz311l",
+          "sourceCaption": "Start Date",
+          "projectionCaption": "Start Date",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "fd814974-5fbd-4d98-8afd-0e9b1d6d55ab",
+          "path": ".Location.Id",
+          "matchKey": true,
+          "sourceAlias": "bf17nz",
+          "sourceCaption": "Id",
+          "projectionCaption": "Id",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "ef38252e-ef9c-4eb9-9606-5215ee29ecc3",
+          "path": ".NAICSCode",
+          "matchKey": false,
+          "sourceAlias": "bgw86p",
+          "sourceCaption": "NAICS Code",
+          "projectionCaption": "NAICS Code",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "82c1a290-1a73-4c88-a599-762023b6ab79",
+          "path": ".LocationCity",
+          "matchKey": false,
+          "sourceAlias": "b89ecw",
+          "sourceCaption": "City",
+          "projectionCaption": "City",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "54c24766-48b8-4557-99ec-878a3bcb3b99",
+          "path": ".LocationStreet",
+          "matchKey": false,
+          "sourceAlias": "bnvhso",
+          "sourceCaption": "Address",
+          "projectionCaption": "Address",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "96a02114-29d4-4862-a4b0-a678db2e2242",
+          "path": ".SICCode",
+          "matchKey": false,
+          "sourceAlias": "bcfc75",
+          "sourceCaption": "SIC Code",
+          "projectionCaption": "SIC Code",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "e11c4b28-b81d-4e5d-abdd-a7d4375da7bb",
+          "path": ".Year",
+          "matchKey": false,
+          "sourceAlias": "beyrnj",
+          "sourceCaption": "Year",
+          "projectionCaption": "Year",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        },
+        {
+          "recordId": "c28c1c43-4053-4a47-b763-cdfaf91b9b79",
+          "path": ".LocationName",
+          "matchKey": false,
+          "sourceAlias": "boqzgf",
+          "sourceCaption": "Name",
+          "projectionCaption": "Name",
+          "mappingRule": "<?xml version=\"1.0\" encoding=\"utf-16\"?><MappingRule xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" i:type=\"DontReplaceWithNullRule\" xmlns=\"http://schemas.intelex.net\"><Enable>true</Enable><Name>Dont Replace With Null</Name></MappingRule>"
+        }
+      ]
+    }
+  ],
+  "reportReferences": [
+    {
+      "report": "512fd2ab-40e6-470d-9282-75fffc7b5513",
+      "source": "1c2059ec-a97d-45ef-afc9-81030ab22d67",
+      "alias": "O2e7mG"
+    },
+    {
+      "report": "512fd2ab-40e6-470d-9282-75fffc7b5513",
+      "source": "619364dd-17f7-4bcc-8e5a-c1c214b84106",
+      "alias": "axjoqr"
+    },
+    {
+      "report": "512fd2ab-40e6-470d-9282-75fffc7b5513",
+      "source": "2967c223-2a5f-474b-a880-88cfb66036a8",
+      "alias": "az6ytl"
+    },
+    {
+      "report": "c1c3c27c-ca0c-4cee-9431-4031be32dedf",
+      "source": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "alias": "ahkjy8"
+    },
+    {
+      "report": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "source": "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+      "alias": "aojlay"
+    },
+    {
+      "report": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "source": "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+      "alias": "a9xi02"
+    },
+    {
+      "report": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "source": "25105669-b87c-4561-b948-88428c2a2ef0",
+      "alias": "a2e6nb"
+    },
+    {
+      "report": "1a9f3c5e-bcce-44b4-8efb-f271134ad523",
+      "source": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "alias": "SrDCE7"
+    },
+    {
+      "report": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "source": "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+      "alias": "ap7496"
+    },
+    {
+      "report": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "source": "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+      "alias": "axp7vp"
+    },
+    {
+      "report": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "source": "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+      "alias": "audx09"
+    },
+    {
+      "report": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+      "source": "1a9f3c5e-bcce-44b4-8efb-f271134ad523",
+      "alias": "Gyythy"
+    },
+    {
+      "report": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+      "source": "c997e490-c6d0-4ded-a3b1-db81c2628cfa",
+      "alias": "agxwsn"
+    },
+    {
+      "report": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+      "source": "cce6d073-a2aa-497a-8b8f-9e23faf47b52",
+      "alias": "a43svo"
+    },
+    {
+      "report": "619364dd-17f7-4bcc-8e5a-c1c214b84106",
+      "source": "12ea179a-f422-4d41-9820-7a90799b1b65",
+      "alias": "a3d71q"
+    },
+    {
+      "report": "f5623fa3-07b1-41a1-bbde-648f2824571c",
+      "source": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "alias": "aro81f"
+    },
+    {
+      "report": "c997e490-c6d0-4ded-a3b1-db81c2628cfa",
+      "source": "d7afe974-07b9-403c-9ca1-96ac8c33f1d7",
+      "alias": "acckhr"
+    },
+    {
+      "report": "cce6d073-a2aa-497a-8b8f-9e23faf47b52",
+      "source": "d7afe974-07b9-403c-9ca1-96ac8c33f1d7",
+      "alias": "agyg9c"
+    },
+    {
+      "report": "2967c223-2a5f-474b-a880-88cfb66036a8",
+      "source": "12ea179a-f422-4d41-9820-7a90799b1b65",
+      "alias": "aq9gu9"
+    },
+    {
+      "report": "1c2059ec-a97d-45ef-afc9-81030ab22d67",
+      "source": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "alias": "QOcBfS"
+    },
+    {
+      "report": "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+      "source": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "alias": "awuq31"
+    },
+    {
+      "report": "25105669-b87c-4561-b948-88428c2a2ef0",
+      "source": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "alias": "arzapt"
+    },
+    {
+      "report": "1dfd076d-51c8-4254-8607-77f8ecf93906",
+      "source": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "alias": "ag9zzk"
+    },
+    {
+      "report": "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+      "source": "1dfd076d-51c8-4254-8607-77f8ecf93906",
+      "alias": "nJvala"
+    },
+    {
+      "report": "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+      "source": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "alias": "ark7g2"
+    },
+    {
+      "report": "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+      "source": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "alias": "a8yo33"
+    },
+    {
+      "report": "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+      "source": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "alias": "a410il"
+    }
+  ],
+  "folders": [
+    {
+      "recordId": "6669c9d4-2af9-4b4a-8d7f-ad0d48e07434",
+      "name": "Applications",
+      "container": null,
+      "order": 1
+    },
+    {
+      "recordId": "8f804dbd-de7e-de62-219a-996f059f75d8",
+      "name": "OOB - OSHA Data Setup",
+      "container": "af433d60-af2e-e66b-509d-510ba3ee42cc",
+      "order": 1
+    },
+    {
+      "recordId": "af433d60-af2e-e66b-509d-510ba3ee42cc",
+      "name": "Safety Metrics",
+      "container": "8f2b3541-1cb5-4aef-9d22-992597c801e3",
+      "order": 0
+    },
+    {
+      "recordId": "8f2b3541-1cb5-4aef-9d22-992597c801e3",
+      "name": "Health & Safety",
+      "container": "6669c9d4-2af9-4b4a-8d7f-ad0d48e07434",
+      "order": 1
+    },
+    {
+      "recordId": "d15c923e-abdd-6481-0115-2a8f37b8432b",
+      "name": "OOB - Incident Rate Data Setup",
+      "container": "af433d60-af2e-e66b-509d-510ba3ee42cc",
+      "order": 0
+    }
+  ],
+  "reportFolders": [
+    {
+      "reportId": "512fd2ab-40e6-470d-9282-75fffc7b5513",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "c1c3c27c-ca0c-4cee-9431-4031be32dedf",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "80a10d42-4032-4f8e-a222-41509b97a0d9",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "1d608ee4-57d7-41c8-bed7-1cffe15d80a3",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "d7afe974-07b9-403c-9ca1-96ac8c33f1d7",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "1a9f3c5e-bcce-44b4-8efb-f271134ad523",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "17e9824e-34e5-4e45-b62d-d4d97bb57ff6",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "5659bef0-85f0-4105-86f6-f392271275bb",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "b8862b4b-e8b2-47f8-a1a1-27db988c96ad",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "619364dd-17f7-4bcc-8e5a-c1c214b84106",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "12ea179a-f422-4d41-9820-7a90799b1b65",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "f5623fa3-07b1-41a1-bbde-648f2824571c",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "c997e490-c6d0-4ded-a3b1-db81c2628cfa",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "cce6d073-a2aa-497a-8b8f-9e23faf47b52",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "2967c223-2a5f-474b-a880-88cfb66036a8",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "1c2059ec-a97d-45ef-afc9-81030ab22d67",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "b6b3f72b-1222-4671-add1-eabfdd2c307a",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "3caddcd4-62a1-4686-bff3-3b037f440119",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "25105669-b87c-4561-b948-88428c2a2ef0",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "1dfd076d-51c8-4254-8607-77f8ecf93906",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "df4a8ed4-400d-44a9-a77c-7442cad754d4",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "eecbcf27-bcfa-4065-a1c0-e0ed27ab7fb2",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "f76200b2-6cc1-4696-9ade-7aef7d45eac6",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    },
+    {
+      "reportId": "c2735e8e-73ea-421b-99ea-bdc6fd07ef1d",
+      "folderId": "8f804dbd-de7e-de62-219a-996f059f75d8"
+    },
+    {
+      "reportId": "7d7e7854-b87e-45a5-a3ed-9d3d679d1b61",
+      "folderId": "d15c923e-abdd-6481-0115-2a8f37b8432b"
+    }
+  ]
+}

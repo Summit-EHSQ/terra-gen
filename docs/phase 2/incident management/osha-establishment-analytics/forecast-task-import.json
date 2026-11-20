@@ -1,0 +1,135 @@
+{
+  "project": "P550",
+  "projectId": 605489,
+  "parent": "T26948",
+  "parentId": 17053734,
+  "planRevision": 7,
+  "sourceSha256": "6c6b6e0cc053f3691387aaa53f7c0eedd4eebea75d9f08cb7cddbd3e78e249b6",
+  "created": 15,
+  "skipped": 0,
+  "failed": 0,
+  "verified": 15,
+  "tasks": [
+    {
+      "sourceId": "IMP-01",
+      "id": 17053736,
+      "taskNumber": "T26949",
+      "title": "IMP-01 — Create the OSHA Establishment register",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-02",
+      "id": 17053737,
+      "taskNumber": "T26950",
+      "title": "IMP-02 — Set up shared hours entry and monthly summaries",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-03",
+      "id": 17053738,
+      "taskNumber": "T26951",
+      "title": "IMP-03 — Set up establishment incident-rate records",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-04",
+      "id": 17053739,
+      "taskNumber": "T26952",
+      "title": "IMP-04 — Set up the shared annual OSHA fields",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-05",
+      "id": 17053740,
+      "taskNumber": "T26953",
+      "title": "IMP-05 — Set up annual OSHA summaries and case lists",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-06",
+      "id": 17053742,
+      "taskNumber": "T26954",
+      "title": "IMP-06 — Set up who can see and change information",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-07",
+      "id": 17053743,
+      "taskNumber": "T26955",
+      "title": "IMP-07 — Link hours entries to their monthly summaries",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-08",
+      "id": 17053744,
+      "taskNumber": "T26956",
+      "title": "IMP-08 — Set up monthly establishment KPI calculations",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-09",
+      "id": 17053745,
+      "taskNumber": "T26957",
+      "title": "IMP-09 — Set up annual OSHA calculations and saved reporting details",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-10",
+      "id": 17053746,
+      "taskNumber": "T26958",
+      "title": "IMP-10 — Connect changes to the KPI and OSHA updates",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-11",
+      "id": 17053747,
+      "taskNumber": "T26959",
+      "title": "IMP-11 — Set up establishment OSHA 300 reports",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-12",
+      "id": 17053748,
+      "taskNumber": "T26960",
+      "title": "IMP-12 — Set up establishment OSHA 300A forms",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-13",
+      "id": 17053749,
+      "taskNumber": "T26961",
+      "title": "IMP-13 — Set up establishment incident-rate reports",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-14",
+      "id": 17053750,
+      "taskNumber": "T26962",
+      "title": "IMP-14 — Set up the establishment OSHA electronic export",
+      "operation": "Created",
+      "verified": true
+    },
+    {
+      "sourceId": "IMP-15",
+      "id": 17053751,
+      "taskNumber": "T26963",
+      "title": "IMP-15 — Update the identified hours-import connections",
+      "operation": "Created",
+      "verified": true
+    }
+  ],
+  "rerunWouldCreate": 0
+}

@@ -1,0 +1,141 @@
+{
+  "scope": "Business-language revision of external inputs and constraints",
+  "globalInputsReviewed": [
+    "IN-01",
+    "IN-02",
+    "IN-03",
+    "IN-04",
+    "IN-05",
+    "IN-06",
+    "IN-07",
+    "IN-08",
+    "IN-09",
+    "IN-10",
+    "IN-11",
+    "IN-12"
+  ],
+  "taskChanges": [
+    {
+      "id": "IMP-01",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-02",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-03",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-04",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-05",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-06",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-07",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-08",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-09",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-10",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-11",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-12",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-13",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-14",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    },
+    {
+      "id": "IMP-15",
+      "changedFields": [
+        "suppliedInputDescriptions",
+        "blockedStatus"
+      ],
+      "operativeContentUnchanged": true
+    }
+  ],
+  "unchanged": "Task objectives, scopes, configuration rows, ordered steps, modifications, deliverables, acceptance criteria, roles, technical prerequisites, input IDs and field coverage",
+  "result": "Rewritten descriptions preserve the requested information, business purpose and affected work. No new implementation or approval requirement introduced."
+}

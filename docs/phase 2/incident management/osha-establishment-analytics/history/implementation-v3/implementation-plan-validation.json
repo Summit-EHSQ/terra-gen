@@ -1,0 +1,110 @@
+{
+  "planContractVersion": 2,
+  "passed": true,
+  "taskCount": 15,
+  "coverageCount": 255,
+  "errors": [],
+  "limits": "Deterministic structure, snapshot/rendering, input, graph and ownership checks. Not semantic, language-quality, source-completeness or live-tenant certification.",
+  "projectChecks": [
+    {
+      "name": "Current specification and evidence",
+      "passed": true,
+      "detail": "Retain original baseline and consume source 1.0.2.0 without claiming tenant implementation"
+    },
+    {
+      "name": "Stable task identities and roles",
+      "passed": true,
+      "detail": "All fifteen stable IDs and minimum-capable implementer/reviewer choices retained"
+    },
+    {
+      "name": "Complete single-owner field inventory",
+      "passed": true,
+      "detail": "126 declared fields/grids assigned once or deliberately reused"
+    },
+    {
+      "name": "Field dispositions preserved",
+      "passed": true,
+      "detail": "118 additions, four field/control modifications, four reused declarations"
+    },
+    {
+      "name": "Added fields have complete local rows",
+      "passed": true,
+      "detail": "Each field has its own row in its creation task, not just a source reference"
+    },
+    {
+      "name": "Field snapshots retain canonical parameters",
+      "passed": true,
+      "detail": "118 addition snapshots retain type, requiredness and current canonical lifecycle contract"
+    },
+    {
+      "name": "Original evidence namespace verified",
+      "passed": true,
+      "detail": "E-prefixed IDs remain tied to original source names; new evidence uses stable GUIDs"
+    },
+    {
+      "name": "Resolved lookup input removed from blockers",
+      "passed": true,
+      "detail": "Known lookup values no longer block register, annual selectors or export consistency checks"
+    },
+    {
+      "name": "Monthly source rules present inline",
+      "passed": true,
+      "detail": "Twenty outputs, OII grain, incident date and raw-day lost-time rules specified without a missing-count-rule request"
+    },
+    {
+      "name": "Annual arithmetic and all initial copies explicit",
+      "passed": true,
+      "detail": "24 case/day outputs, four workforce outputs and fifteen separate initial copies"
+    },
+    {
+      "name": "Known process identities consumed",
+      "passed": true,
+      "detail": "New adapters consume known source chains; only supported calls and recovery/status behavior remain missing"
+    },
+    {
+      "name": "No fictional transactional import support",
+      "passed": true,
+      "detail": "Existing import ordering is not promoted to coordinated-save support"
+    },
+    {
+      "name": "Old-scope recovery remains required",
+      "passed": true,
+      "detail": "Recent-change selection does not restrict full-period metric population or eliminate former scopes"
+    },
+    {
+      "name": "Initializer is not treated as an external hours writer",
+      "passed": true,
+      "detail": "Only supplied real hour feeds are remapped; key-only summary creation is reused"
+    },
+    {
+      "name": "Security outputs precede calculation consumers",
+      "passed": true,
+      "detail": "Both monthly processing and authorized annual correction consume IMP-06 access configuration"
+    },
+    {
+      "name": "Partial readiness names actionable work",
+      "passed": true,
+      "detail": "Blanket partial-ready wording removed where all executable work needs missing decisions/methods"
+    },
+    {
+      "name": "No stale calculation or lookup absence claims",
+      "passed": true,
+      "detail": "Superseded missing-data claims removed from the active plan"
+    },
+    {
+      "name": "Reused source reports are not recreation tasks",
+      "passed": true,
+      "detail": "Unchanged source reports/flows classified as reuse, not additional assignments"
+    },
+    {
+      "name": "Excluded workstreams stay external",
+      "passed": true,
+      "detail": "Incident/employee/asset design, migration, live verification and release remain separate"
+    },
+    {
+      "name": "All current plan artifact links resolve",
+      "passed": true,
+      "detail": "Governing specification, evidence, target and historical-plan links resolve"
+    }
+  ]
+}

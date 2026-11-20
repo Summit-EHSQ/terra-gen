@@ -1,0 +1,87 @@
+{
+  "currentRevision": 5,
+  "baselineSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "previousTarget": "history/v4/technical-specification.md",
+  "refinedRequirements": [
+    "R1",
+    "R2",
+    "R6",
+    "R8",
+    "R9"
+  ],
+  "newRequirements": [
+    "R7",
+    "R8",
+    "R9"
+  ],
+  "supersededDecisions": [
+    "Separate direct-hour entry on the two monthly summary families",
+    "No change to original Location Hours and Headcount hour-entry behavior",
+    "Custom synchronized source/two-summary hours-write processor and cross-object transaction/locks",
+    "Custom Delete totals handler and explicit source-hour summary-rebuild process"
+  ],
+  "incidentDesign": "Excluded; dependency contract retained",
+  "additionalBaselineEvidence": {
+    "version": "1.0.2.0",
+    "sha256": "c7716f41d56fcaf1f80991aae602a17b08e8192190004a02d78560adde2724aa",
+    "file": "package-evidence-v1.0.2.0.json",
+    "classification": "Extracted supplemental source evidence; original baseline and target remain separate"
+  },
+  "evidenceRevisionDecisions": [
+    "Preserve original baseline and both prior target revisions",
+    "Refine monthly OII totals and annual employee workforce arithmetic from source reports",
+    "Reuse existing lookup Value/Caption records",
+    "Identify native process chains without inferring atomic transactions",
+    "Retain source relationship discrepancy and missing outputs as open constraints",
+    "Confirm all 25 unchanged underlying reports and 75 output aliases resolve through the event-service/import chains",
+    "Retain full original/corrected-scope refresh despite the source recent-change selector",
+    "Supersede the five-year interpretation of an enum value; retain exact serialized boundaries as evidence",
+    "Adopt user-confirmed GETRELATED relationship linking and four native grid-SUM fields",
+    "Preserve illustrative-name and matched-type distinctions; verify only native identifier-key spellings",
+    "Remove the custom source/two-summary processor and move downstream calculation notification questions to IN-09"
+  ],
+  "reportLineage": {
+    "file": "report-lineage-v1.0.2.0.json",
+    "reports": 25,
+    "reportReferences": 27,
+    "scheduledImports": 8,
+    "mappings": 75,
+    "eventHandlers": 3,
+    "folders": 5,
+    "reportsReached": 25,
+    "unchangedDefinitions": true,
+    "scopeSelection": "36-hour recent-change selection is not the incident aggregation population; full original/corrected-scope refresh remains required"
+  },
+  "nativeHoursDesign": {
+    "classification": "User-confirmed native mechanism; target expressions proposed against extracted/proposed names",
+    "confirmationDate": "2026-11-12",
+    "getRelatedSignature": "GETRELATED(\"TargetObject\", \"TargetField1\", SourceValue1, \"TargetFieldN\", SourceValueN)",
+    "formulas": {
+      "location": "GETRELATED(\"SafetyMetrics_HrsandHeadcountObject\", \"Date\", Month, \"LocationId\", Location.Id)",
+      "establishment": "GETRELATED(\"TG_EstHrsHeadcountObject\", \"Date\", Month, \"OSHAEstablishmentId\", OSHAEstablishment.Id)",
+      "employee": "SUM(HoursWorkedEntries.EmployeeHours)",
+      "contractor": "SUM(HoursWorkedEntries.ContractorHours)"
+    },
+    "sourceObject": "TG_HoursWorkedObject",
+    "summaryObjects": [
+      "SafetyMetrics_HrsandHeadcountObject",
+      "TG_EstHrsHeadcountObject"
+    ],
+    "targetKeyTypes": {
+      "Date": "Date",
+      "LocationId": "GUID",
+      "OSHAEstablishmentId": "GUID"
+    },
+    "sourceValueTypes": {
+      "Month": "Date",
+      "Location.Id": "GUID",
+      "OSHAEstablishment.Id": "GUID"
+    },
+    "identifierKeyEvidence": "Location/Date are extracted; native LocationId spelling inferred. Establishment object/reference are proposed; native OSHAEstablishmentId spelling inferred and must be confirmed. No extra custom GUID fields.",
+    "linkTrigger": "Create and changes to Month, Location or OSHAEstablishment only",
+    "deleteTotalsHandler": false,
+    "customSummaryTotalsWriter": false,
+    "customSourceSummaryTransaction": false,
+    "downstreamRefreshInput": "IN-09"
+  }
+}

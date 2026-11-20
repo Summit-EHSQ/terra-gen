@@ -1,0 +1,16 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const dir='docs/phase 2/incident management/osha-establishment-analytics';
+const p=JSON.parse(fs.readFileSync(path.join(dir,'implementation-plan.json'),'utf8')),m=JSON.parse(fs.readFileSync(path.join(dir,'target-model.json'),'utf8'));
+if(p.specificationRevision!==m.revision||p.targetModelSha256!==crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,'target-model.json'))).digest('hex'))throw Error('The plan must be reconciled to the current specification before rebuilding; never silently refresh its review.');
+const md=require('./render-current-implementation-plan.cjs')(p);fs.writeFileSync(path.join(dir,'implementation-plan.md'),md);
+const skill=path.join(process.env.USERPROFILE,'.codex/skills/intelex-implementation-planner/scripts');
+const structural=require(path.join(skill,'validate-plan-output-contract.cjs')).validate(p,md);
+structural.projectChecks=require('./validate-current-implementation-plan.cjs')({p,m,dir,md});
+if(structural.projectChecks.some(c=>!c.passed))structural.passed=false;
+fs.writeFileSync(path.join(dir,'implementation-plan-validation.json'),JSON.stringify(structural,null,2)+'\n');
+const reviewFile=path.join(dir,'implementation-content-review.json');
+const review=fs.existsSync(reviewFile)?JSON.parse(fs.readFileSync(reviewFile,'utf8')):null;
+const content=require(path.join(skill,'validate-implementation-task-contract.cjs')).validate(p,md,review);
+fs.writeFileSync(path.join(dir,'implementation-content-validation.json'),JSON.stringify(content,null,2)+'\n');
+console.log(JSON.stringify({tasks:p.tasks.length,fieldDefinitions:p.fieldCoverage.length,coverage:p.coverage.length,structuralPassed:structural.passed,structuralErrors:structural.errors,projectFailures:structural.projectChecks.filter(c=>!c.passed),contentPassed:content.passed,contentErrors:content.errors.map(e=>({task:e.task,path:e.path,code:e.code}))},null,2));
+if(!structural.passed||!content.passed)throw Error('Current artifacts have a failed gate or stale/missing content review. Review and correct the assignments before delivery.');

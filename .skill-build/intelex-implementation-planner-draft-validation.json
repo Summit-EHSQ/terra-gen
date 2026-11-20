@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "regressionChecks": 43,
+  "relativeLinksChecked": 11,
+  "frontmatter": "Equivalent name/description/allowed-key/placeholder checks passed in Node; official Python quick_validate unavailable in this environment.",
+  "approvedPlanFormatCheck": {
+    "planContractVersion": 2,
+    "passed": true,
+    "taskCount": 15,
+    "coverageCount": 126,
+    "errors": [],
+    "limits": "Deterministic structure, snapshot/rendering, input, graph and ownership checks. Not semantic, language-quality, source-completeness or live-tenant certification.",
+    "note": "Test-only legacy adapter; does not renew content or language approval."
+  },
+  "installedSkillModified": false,
+  "limits": "Deterministic checks and author review; no fresh-agent plan-generation trial or live tenant validation."
+}

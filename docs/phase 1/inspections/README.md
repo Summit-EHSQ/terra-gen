@@ -20,6 +20,7 @@ It does not replace Incident Management for near misses or other events that mee
 - Route near misses to Incident Management.
 - Separate inspection completion from corrective-action completion.
 - Proposed: preserve atomic inspection records, consolidate regulatory reporting, and use governed site, resource, equipment, and asset context.
+- Proposed refinement: select the inspected asset at an appropriate hierarchy level and derive its establishment from the asset relationship. Asset reporting slices remain separate from record permissions; the reporting-location/OSHA-establishment transition is unresolved.
 - Proposed: replace SafetyCulture incrementally through a three-program initial release rather than through an unvalidated big-bang cutover.
 
 ## Decision Register
@@ -53,6 +54,7 @@ It does not replace Incident Management for near misses or other events that mee
 
 ## Source Evidence
 
+- [Summit + TG: Asset Hierarchy Setup, November 10, 2026](<raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>) — source-governed assets, selection/defaulting and dashboard context; see the [reconciliation](../ADR-RECONCILIATION-2026-11-10.md).
 - [Inspections Design Prep, August 26, 2026](<raw artifacts/meeting_transcripts/2026-08-26-terra-gen-summit-inspections-design-prep.md>)
 - [Design Workshop Day 2 — Morning, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-morning.md>)
 - [Design Workshop Day 2 — Afternoon, September 16, 2026](<raw artifacts/meeting_transcripts/2026-09-16-terra-gen-summit-ehsq-design-workshop-day-2-afternoon.md>)
@@ -62,7 +64,7 @@ ADR **More Information** sections identify the relevant timestamps.
 ## Open Work
 
 - Approve frequency, portable-record, reporting, migration, regulatory-consolidation, and taxonomy proposals.
-- Define the governed site/resource/asset model and ownership.
+- Approve the proposed shared asset model/integration and define allowed selection types, establishment derivation, historical relationship treatment, frequency matching and the target Operational Resource binding. Parent-level inspection does not establish automatic descendant target credit.
 - Complete mobile/offline synchronization, conflict, attachment, and device-loss design.
 - Configure each initial program's sections, responses, branching, evidence, actions, review, and outcomes.
 - Prototype and govern the official inspection PDF.

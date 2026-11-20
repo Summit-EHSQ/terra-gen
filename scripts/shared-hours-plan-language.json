@@ -1,0 +1,319 @@
+{
+  "IMP-01": {
+    "title": "Create the OSHA Establishment register",
+    "category": "Establishment records and screens",
+    "objective": "Give the company a separate list of OSHA establishments for hours entry and regulatory reporting.",
+    "scope": "Create the establishment register, its sixteen information fields, unique establishment codes, change history and administration screens in Safety Metrics. Set up the existing classification choices. Later tasks add the lists of related records and protect codes once they are in use.",
+    "deliverable": "An establishment register with the specified fields, unique codes and administration screens.",
+    "rationale": "The work uses standard field settings, a simple unique-code check and two administration screens. The more complex access rules have their own assignment.",
+    "steps": [
+      "Create OSHA Establishment (TG_OSHAEstablishmentObject) in Safety Metrics (E36). It must stand on its own, without a Location Structure connection, a shared base record type or a workflow. Set IsAbstract=FALSE and IsLocationBound=FALSE, and enable Intelex change history. Create TG_OSHAEstablishment_Detail and TG_OSHAEstablishment_Inventory; use Name as the record's displayed label.",
+      "Require a unique Code of up to 100 characters. Do not translate Code. Set Active? to TRUE for new records and keep Name as the company's reporting name, without translation. Connect Establishment Type and Establishment Size to the supplied existing choices. Do not add a list of establishments on either classification record; retain past selections when a choice becomes inactive.",
+      "Place the fields below on the administration screen. Company Name, Street, City, State and Postal Code can remain blank while an establishment is being maintained. The report tasks will require this information before producing a report."
+    ],
+    "accept": [
+      "An administrator can create an establishment without selecting a Location Structure record or starting a workflow.",
+      "A duplicate Code is rejected, Active? starts as TRUE and Name appears as the record label.",
+      "An administrator can save the establishment before all reporting-address details are available."
+    ]
+  },
+  "IMP-02": {
+    "title": "Set up shared hours entry and monthly summaries",
+    "category": "Hours entry and monthly summaries",
+    "objective": "Let users enter hours once and maintain headcounts separately on the monthly summaries.",
+    "scope": "Create Hours Worked and Establishment Hours and Headcount with the fields, screens, selection rules and related-record lists below. Update the existing Location Hours and Headcount screen so calculated hours cannot be edited and a saved summary cannot be moved to another location or month. Add change history to that existing object. IMP-07 supplies the automatic update of hours totals.",
+    "deliverable": "Shared hours-entry screens, establishment monthly summaries, related-entry lists and the specified updates to location summaries.",
+    "rationale": "This assignment connects one entry screen to two kinds of monthly summary. A Consultant can keep their field settings, selection rules and screen behavior consistent.",
+    "steps": [
+      "Create Hours Worked (TG_HoursWorkedObject) and Establishment Hours and Headcount (TG_EstHrsHeadcountObject) in Safety Metrics (E36). Both allow their own records, use no shared base record type, have no workflow and are not tied to Location Structure. Enable change history. Create TG_HoursWorked_Detail, TG_HoursWorked_Inventory, TG_EstHrsHeadcount_Detail and TG_EstHrsHeadcount_Inventory.",
+      "Use Source Entry ID (SourceEntryID) as the Hours Worked record label and require it to be unique. Require Month to be the first day of a month, using DAY(Month)=1. Always show both Location and OSHA Establishment. Location is required when OSHA Establishment is blank; OSHA Establishment is required when Location is blank. Show the corresponding summary link when a selection is present. That link must be filled by the automatic update before the save finishes, rather than required before the update can run. Selecting or changing one reporting choice must not fill in or clear the other.",
+      "Show Employee Hours and Contractor Hours as separate editable fields. Require both, start them at 0 and allow zero or fractional hours; reject missing, negative or invalid numeric values. Show summary links for information only. IMP-07 handles the save-time checks and link changes, so do not add a second copy of that logic to the screen.",
+      "On the new establishment summary, allow only one record for each OSHAEstablishment and Date, and require DAY(Date)=1. Add the proposed Protect Monthly Summary Identity check to both summary types: once saved, their location or establishment and Date cannot change, and a summary used by Hours Worked cannot be deleted. The existing location checks Unique Location-Date (E183) and Date on first of month (E80) already cover duplicate periods and first-of-month dates; use them without creating replacements.",
+      "Add the proposed Initialize Establishment Monthly Summary create Action Handler. When the summary is first created, copy OSHAEstablishment.Name into LocNameHelper and use Intelex automatic numbering for RecordNo. Later establishment name changes or deactivation must not replace the saved name. New headcounts start at zero; an update must never reset an existing headcount. This handler does not calculate hours or refresh reports.",
+      "Allow authorized users to create a monthly summary to enter headcount even when it has no hours entries. They must select the location or establishment and the first day of the month when creating it; those selections become read only after saving. Keep employee and contractor headcounts editable and separate. Add the read-only Hours Worked Entries lists using the links already stored on Hours Worked, without storing another relationship."
+    ],
+    "modifications": [
+      "Enable change history on the existing Location Hours and Headcount object by changing IsAuditEnabled from FALSE to TRUE. Its existing Location Structure access rules, links and record identifier stay in place.",
+      "After the separately managed switch to the new entry process is approved and the starting totals are checked, change EmployeeHrs and ContractrHrs from IsReadOnly=FALSE to TRUE. Show both as read only on SafetyMetrics_HrsandHeadcount_Detail (E209). IMP-06 also prevents users and imports from bypassing those restrictions.",
+      "The package shows IsReadOnly=FALSE for Date and Location, a normal Date control and a Location control with DisplayAs=String on the existing detail screen. Add screen rules that allow these selections when creating a summary but make them read only afterward. Do not assume the current live Location editor has been checked. Keep their existing required settings and initial Date default. Protect Monthly Summary Identity prevents the same changes through other save routes."
+    ],
+    "accept": [
+      "The entry screen supports Location only, OSHA Establishment only, or both. Once IMP-07 is in place, saving with neither is rejected.",
+      "Each summary's Hours Worked Entries list shows the entries linked to that summary without a second stored relationship.",
+      "Users can edit headcounts but cannot edit calculated summary hours or move a saved summary to another reporting place or month.",
+      "The existing location-summary records, field identifiers and two period checks remain in use."
+    ]
+  },
+  "IMP-03": {
+    "title": "Set up establishment incident-rate records",
+    "category": "KPI records and screens",
+    "objective": "Store monthly incident measures for each establishment and let authorized users enter their rate targets.",
+    "scope": "Create the shared incident-rate definition and the establishment KPI record type, including twenty saved measures, establishment and month details, supporting fields and four editable targets. Add the screens and related KPI list on the establishment. Later tasks fill the measures and display the actual rates.",
+    "deliverable": "The twenty-nine monthly/KPI fields, period checks, four screens and the establishment's related KPI list.",
+    "rationale": "The source provides a defined set of fields and straightforward monthly checks. A Senior Associate Consultant can configure the shared definition and screens without taking on the calculation design.",
+    "steps": [
+      "Create Establishment Incident Rate Abstract (TG_EstIncRateAbstractObject) as a shared field definition that cannot hold records. Create Establishment Incident Rate KPI (TG_EstIncidentRateKPIObject) directly from it. Put both in Safety Metrics (E36), set IsLocationBound=FALSE, enable change history and add no workflow. Define the shared fields only once on the abstract object and the four target fields only on the KPI object.",
+      "Allow one record per OSHAEstablishment and Date, and require DAY(Date)=1. Monthly generation supplies the establishment and month; users cannot reassign generated records. Use RecordNo as an automatically numbered record label with a new number sequence.",
+      "Create TG_EstIncRateAbstract_Detail/Inventory and TG_EstIncidentRateKPI_Detail/Inventory. Show RecordNo, OSHA Establishment and Date, then sections for editable targets, incident counts, lost days and employee/contractor hours. Show all saved measures as read only. Keep the field name TargetDART with the label Target DAIR. Hide LocationIdHelp on ordinary screens; it stores the establishment's unique record identifier.",
+      "Build the new screens' field lists from the fields that actually exist on these two objects. Leave out the source screen's obsolete DisplayField, Month, RepLocationId and missing OSHA-category fields. Add Incident Rate KPIs to the establishment screen using the KPI object's existing OSHAEstablishment link; do not store a second link."
+    ],
+    "accept": [
+      "Records can be created on the KPI object, but not directly on its abstract definition; shared fields appear only once.",
+      "The four targets can be edited by authorized users and all twenty saved measures are read only.",
+      "A duplicate establishment/month or a date other than the first of the month is rejected.",
+      "Every new screen field exists, and TargetDART is displayed as Target DAIR."
+    ]
+  },
+  "IMP-04": {
+    "title": "Set up the shared annual OSHA fields",
+    "category": "Annual OSHA records and screens",
+    "objective": "Provide the annual case counts, day totals and saved establishment details needed for OSHA reporting.",
+    "scope": "Create the shared annual OSHA definition with thirty-five fields, its January 1 and duplicate-record checks, and its screens. Include the saved report header and link to the correct OSHA settings. IMP-09 fills the annual totals and copies the reporting details when a summary is created.",
+    "deliverable": "Thirty-five annual fields, annual-period checks and two screens for the shared OSHA definition.",
+    "rationale": "The field list and date rules are defined. A Senior Associate Consultant can keep the shared fields and screens consistent without deciding the missing regulatory calculation rules.",
+    "steps": [
+      "Create Establishment OSHA Abstract (TG_EstOSHAAbstractObject) in Safety Metrics (E36) as an independent shared field definition that cannot hold records. Set IsAbstract=TRUE and IsLocationBound=FALSE, enable change history and add no workflow.",
+      "Allow one record per OSHAEstablishment and Date. Require January 1 using AND(MONTH(Date)=1, DAY(Date)=1). Annual generation supplies the required establishment and date, shown read only. Use a new automatic number sequence for RecordNo and the record label. ReporLocationId must hold the establishment's unique record identifier, not a Location Structure identifier.",
+      "Create TG_EstOSHAAbstract_Detail and TG_EstOSHAAbstract_Inventory. Show the case counts, day totals, year, annual date, establishment and saved header fields as read only. Hide OIISettings on ordinary summary screens. Leave related-record lists off on settings and classification records. Include only fields that exist on the shared definition.",
+      "Add LocationName, LocationStreet, LocationCity, LocationState and LocationPostal as saved copies for the annual report header. Later master changes must not continuously rewrite them. Year is also a saved value filled by annual processing. This new definition must not inherit the original location-based OSHA object or contain a Location reference."
+    ],
+    "accept": [
+      "The twenty-four annual count/day fields exist once on the independent establishment definition.",
+      "Dates other than January 1 and duplicate establishment/year records are rejected.",
+      "The annual record keeps its own header values, and ReporLocationId holds the establishment identifier.",
+      "The settings link uses the supplied record for the intended environment, or remains waiting for that information. It does not silently reuse the source environment's reference."
+    ]
+  },
+  "IMP-05": {
+    "title": "Set up annual OSHA summaries and case lists",
+    "category": "Annual summaries and case lists",
+    "objective": "Give users an annual establishment summary with workforce figures, reporting details and access to the correct OSHA cases.",
+    "scope": "Create the annual summary record type with seventeen additional fields, the shared annual fields, its screens and the related-summary list on the establishment. Add a read-only case list and OSHA 301 print link once the separate incident design supplies the required case links. Other report print links have their own tasks.",
+    "deliverable": "Annual establishment summaries, seventeen additional fields, summary screens, the establishment's related-summary list and the OSHA case list.",
+    "rationale": "A Consultant is needed to connect the shared annual fields to case information and case printing while preserving confidential employee details.",
+    "steps": [
+      "Create Establishment OSHA Summary (TG_EstOSHASummaryObject) directly from TG_EstOSHAAbstractObject in Safety Metrics (E36). Enable change history, leave it independent of Location Structure and add no workflow. Add only its seventeen additional fields; use the shared fields without redefining them.",
+      "Create TG_EstOSHASummary_Detail and TG_EstOSHASummary_Inventory with establishment/year details and sections for G–J cases, K/L days, M1–M6 injury/illness types and employment figures. Allow authorized edits to CompanyName, EINNumber, EstablishmeName, InduDescription, EstablishmeType, EstablishmtSize, AnyRecrdblIncid, OSHA300aID, EstablishmentID and ChangeReason. Other saved header/code corrections use the authorized annual-correction process. Hide OIISettings.",
+      "Add AssociatedOIIs only when the separate incident design supplies its exact relationship and permitted number of linked records. Do not invent a new incident field. Add a read-only case list through AssociatedOIIs.OSHARecord, filtered to InjuryIllnes.OSHARecordable=TRUE. Show CaseNo, InjuryIllnes.NameHidden, InjuryIllnes.DateUserEntered, InjuryOutcome, InjuryIllnes.NumDaysAwayOSHA, InjuryIllnes.NumJobTAndRest and PrInjuryIllness. Show each case once and apply the existing confidential-name and case-access rules.",
+      "Add the OSHA 301 print control using InjuryIllnes.OIISetting.OSHA301TempId and OSHAObjectID with the case's record ID. Do not use the annual summary's ID for the case form. Complete the link only after the case/template details are supplied. Add OSHA Summaries to the establishment screen using the summary's OSHAEstablishment link, without storing another relationship."
+    ],
+    "accept": [
+      "The annual summary has its seventeen additional fields and uses each shared field once. Establishment Display Name and Establishment Name remain distinct.",
+      "The case list shows only the eligible cases for that establishment and year, with confidential names protected and editing disabled.",
+      "The OSHA 301 link prints the selected case, rather than the annual summary record.",
+      "Recalculating the measures does not lock or reset reporting details that users are allowed to edit."
+    ]
+  },
+  "IMP-06": {
+    "title": "Set up who can see and change information",
+    "category": "User access",
+    "objective": "Give users the access they need without allowing a location or establishment selection to expose other information.",
+    "scope": "Set user-group, record and field access for all eight new or changed objects. Check location and establishment access separately. Protect calculated hours, summary links, establishment codes already in use and restricted corrections. Apply the rules to screens, links and imports while retaining the existing incident-security rules.",
+    "deliverable": "User access settings, protected fields and establishment codes, and the access check used when an hours entry contains either or both reporting choices.",
+    "rationale": "A Senior Consultant is needed because an entry may involve two independent access rules and must not expose confidential incident or employee information.",
+    "steps": [
+      "Connect the supplied user groups to their responsibilities: establishment administrators maintain establishments; hours editors add/change/delete permitted Hours Worked records; headcount editors maintain summary headcounts; analytics administrators set KPI targets; regulatory administrators maintain annual reporting details and authorized corrections; reporting users see only permitted results. Prevent ordinary users, APIs and imports from writing summary EmployeeHrs/ContractrHrs or source LocationHoursHeadcount/EstablishmentHoursHeadcount directly.",
+      "Set the access check so Location-only entry requires access to that location, establishment-only entry requires access to that establishment, and an entry containing both requires both permissions. Recheck access when selections change. Opening a related record must not grant access to the other reporting choice. Make this check available to the hours-update process; do not create a new security hierarchy.",
+      "Prevent users from changing SourceEntryID after creation. Restrict new assignments to inactive locations or establishments to the approved historical-correction role. Existing inactive assignments remain usable for authorized hours/month corrections and historical reporting. Only the authorized annual-header correction process may change its protected header fields.",
+      "Apply the same user-access rules through screens, direct record URLs, search, exports and related-record lists. Keep the original location summary's Location Structure access rules. Use the supplied independent rules for establishments and Hours Worked, while retaining existing case permissions and confidential-name handling.",
+      "Add the proposed Protect Establishment Code check and make Code read only once the establishment is used by Hours Worked.OSHAEstablishment, Establishment Hours and Headcount.OSHAEstablishment, Establishment Incident Rate KPI.OSHAEstablishment or Establishment OSHA Summary.OSHAEstablishment. Reject later code changes before saving, but allow Name to be updated. Prevent deletion of an establishment already in use and never delete its linked records automatically. Setting Active? to FALSE must retain historical links."
+    ],
+    "accept": [
+      "A user who has access to only one of the two selected reporting places cannot save an entry assigned to both.",
+      "Users and imports cannot directly change calculated summary hours or summary links, while authorized headcount and target changes still work.",
+      "A list, link or export does not expose source entries or cases the user cannot otherwise view.",
+      "Existing inactive assignments remain accessible as permitted without allowing everyone to make new inactive assignments.",
+      "An establishment already in use cannot have its Code changed or be deleted. Its Name can still change, and deactivation retains its history."
+    ]
+  },
+  "IMP-07": {
+    "title": "Set up automatic hours updates and corrections",
+    "category": "Automatic hours updates",
+    "objective": "Keep an hours entry, its summary links and both sets of monthly totals consistent when the entry is added, changed or deleted.",
+    "scope": "Add the proposed Synchronize Hours Worked process and the actions that run it when an entry is created, changed or deleted. Check entries, create or reuse monthly summaries, maintain their links and recalculate affected hours. Save the entry and all related summary changes together, handle repeated or simultaneous updates safely, and allow authorized recalculation. A later task connects successful changes to the KPI and OSHA updates.",
+    "deliverable": "An automatic hours-update process, its create/change/delete actions and an authorized recalculation option with clear failure handling.",
+    "rationale": "A Senior Consultant is needed to ensure simultaneous updates and corrections cannot leave the two reporting views inconsistent. Both summaries must succeed or fail together, so the save process stays in one assignment.",
+    "steps": [
+      "Add the proposed Synchronize Hours Worked process and Create/Update/Delete Action Handlers on TG_HoursWorkedObject. Before checking required fields, give a manual entry its SourceEntryID using manual: followed by the record's unique identifier through the supplied supported method. Imports supply their own stable reference. Use the existing unique-key check: sending the same reference and values again must add nothing; changed values must be an authorized update of the original entry.",
+      "Before saving, run the installed user-access and protected-source-reference checks. Require the first day of the month, valid nonnegative EmployeeHours/ContractorHours and at least one of Location or OSHAEstablishment. Do not accept user-supplied summary links. Run the update when Month, Location, OSHAEstablishment, EmployeeHours or ContractorHours changes. Changes made only to calculated links must not start it again.",
+      "Before changing or deleting an entry, retain its old location, establishment, month and summary links. Include both previous and new reporting places/months in the work to be recalculated. Protect the affected records against conflicting updates in a fixed order: object kind, reporting-place identifier, then month. Reuse each unique monthly summary or create it with the correct selection, Date=Month, automatic RecordNo, saved name and initial headcounts. Do not reset existing headcounts. If another update creates the summary first, use that record and retry safely.",
+      "Set LocationHoursHeadcount to the summary whose Location matches the entry and whose Date matches Month. Set EstablishmentHoursHeadcount in the same way using OSHAEstablishment. Every selected reporting choice must have its correct link before the save finishes. Clearing one choice clears only that link and recalculates its previous summary; it must not change the other choice.",
+      "For every affected location/month, replace EmployeeHrs with the total of EmployeeHours and ContractrHrs with the total of ContractorHours from the resulting matching Hours Worked entries. Do the same for each affected establishment/month. Count an entry once in each selected reporting view. Set the total to zero when no entries remain. Do not add the previous summary total, create entries for higher locations or change headcounts, record identifiers or other saved information.",
+      "Save the entry, any new summaries, their links and both hours totals together. If any part fails, keep all previous values and show the affected reporting place and error in Intelex's processing history. Prevent an older simultaneous update from replacing newer results. Keep a summary when its last hours entry is removed. Add an authorized option to recalculate a selected summary from existing entries without creating an artificial Hours Worked record or SourceEntryID.",
+      "After a successful save, provide the list of previous and new reporting places, months and years to the report-update process. Updates to links or summaries must not create more hours entries or start the same source update repeatedly. Calls to the existing location and report calculations are connected in their separate task; this process adds no separate processing-history object or background-processing account."
+    ],
+    "accept": [
+      "One entry containing both selections contributes 1,200 hours to each matching summary and still counts as one source entry. Changing it to 1,250 replaces its contribution.",
+      "Changing its month or either selection updates the previous and new summaries and only the relevant links.",
+      "Deleting the last contribution sets summary hours to zero without deleting the summary or changing its headcounts.",
+      "A failed or simultaneous update cannot leave just one reporting view changed, a broken link or two summaries for the same place and month."
+    ]
+  },
+  "IMP-08": {
+    "title": "Set up monthly establishment KPI calculations",
+    "category": "Monthly KPI calculations",
+    "objective": "Fill each establishment's monthly incident measures and hours without changing its manually entered targets.",
+    "scope": "Add the proposed Refresh Establishment Monthly Metrics process to create or update one monthly KPI and replace its twenty saved measures. Copy hours only from the matching establishment summary. Use the supplied incident rules and establishment assignments for case-related calculations. Keep actual-rate reporting and target editing separate.",
+    "deliverable": "A monthly establishment recalculation that produces one complete KPI result and can be safely run again.",
+    "rationale": "A Senior Consultant is needed to apply the incident-counting rules correctly and prevent incomplete or conflicting calculations from replacing a complete monthly result.",
+    "steps": [
+      "Add the proposed Refresh Establishment Monthly Metrics process, taking an establishment identifier and a first-of-month Date. Reject other dates. Prevent conflicting updates to that month and create or update one TG_EstIncidentRateKPIObject using OSHAEstablishment + Date. On creation, fill the required establishment/date/RecordNo, set LocationIdHelp to the establishment's unique record identifier and copy its Name into LocNameHelper. Ordinary recalculation retains the saved name and identifier.",
+      "Set LoEmplWrkdHours and RuEmplWrkdHours from TG_EstHrsHeadcountObject.EmployeeHrs for the same establishment and Date. Set LoCntrctWrkdHrs and RuCntrctWrkdHrs from ContractrHrs. Do not add raw Hours Worked amounts or location totals. Apply the supplied rule for missing monthly input rather than treating it as confirmed zero.",
+      "Apply the supplied incident rules and establishment selection to both the Lo and Ru fields for CtIncidents, CtRecordable, NumIncDayAway, NumIncLostTim, NumFatalities, NumDaysAway, NumLostDays and NumTrnsfRstDy. Include dates from the start of the month up to, but not including, the next month. Each Lo/Ru pair uses the same establishment population. Use the supplied rules to distinguish incidents from cases and to classify lost-time/day measures.",
+      "Save all twenty measures together or keep the previous complete set if the calculation fails. Running the process again must recalculate from current data rather than add to old totals. Preserve TargetTRIR, TargetDART, TargetLTIR and TargetSeverRate. Send the result and any error to the installed report-readiness check."
+    ],
+    "accept": [
+      "The four hours measures equal the matching monthly summary, with matching Lo/Ru values and no extra raw-hours contribution.",
+      "The sixteen incident measures use the supplied counting rules for the selected establishment and month.",
+      "Running the process again creates no duplicate KPI and leaves all four targets unchanged.",
+      "A failed calculation retains the previous complete measures and shows which month and establishment failed."
+    ]
+  },
+  "IMP-09": {
+    "title": "Set up annual OSHA calculations and saved reporting details",
+    "category": "Annual OSHA calculations",
+    "objective": "Produce one complete annual establishment summary with the right case totals, workforce figures and saved reporting details.",
+    "scope": "Add the proposed Refresh Establishment Annual OSHA process, copy establishment details when a summary is created, and calculate its twenty-four case/day fields, four workforce fields and case list. Add authorized header correction and one shared check of information needed for reporting. Routine recalculation must retain permitted user changes and historical reporting details.",
+    "deliverable": "Annual recalculation, authorized header correction and shared reporting-information checks, with the complete copy rules and preserved annual history.",
+    "rationale": "A Senior Consultant is needed because classification rules, workforce averaging and saved annual reporting details must work together without changing historical meaning.",
+    "steps": [
+      "Add the proposed Refresh Establishment Annual OSHA process, taking an establishment identifier and year. Set Date to January 1, prevent conflicting updates and create or update one TG_EstOSHASummaryObject using OSHAEstablishment + Date. On creation, set the automatic RecordNo, ReporLocationId to the establishment identifier, Year from Date and OIISettings to the supplied settings record for the intended environment.",
+      "When first creating the annual record, copy master Name to LocationName and EstablishmeName; Street to LocationStreet; City to LocationCity; State to LocationState; PostalCode to LocationPostal; CompanyName to CompanyName; EINNumber to EINNumber; NAICSCode to NAICSCode; SICCode to SICCode; IndustryDescription to InduDescription; EstablishmentType to EstablishmeType; EstablishmentSize to EstablishmtSize; EstablishmentID to EstablishmentID; and OSHA300aID to OSHA300aID. Save these values on the annual record; do not make them continuously follow later master changes.",
+      "For incidents from January 1 up to, but not including, the following January 1, apply the supplied inclusion, classification and day-limit rules. Replace both Lo/Ru values for CtFatalities, CtDaysAway, CtTrnfrOrRest, CtOthrRecrdbl, NumDaysAway, NumRstOrJobTr, CtInjuries, CtSkinDisordr, CtRespiratorC, CtPoisonings, CtHearingLoss and CtAllOtherIln. Both sets cover the same establishment; do not include other records because they sit below a location in the organization.",
+      "Set LoNumHrsWorked and RUNumHrsWorked from the same establishment's monthly EmployeeHrs using the supplied annual inclusion rule. Set LoAvgNumEmploye and RuAvgNumEmploye from monthly EmployeeHCount using the supplied averaging rule, including partial years, missing months and rounding. Do not sum headcounts or automatically divide by the number of months entered. Fill AssociatedOIIs using the supplied case relationship and the same establishment/year selection.",
+      "Save the totals and case-list changes as a complete result, or retain the previous complete result on failure. Do not overwrite permitted changes to CompanyName, EINNumber, EstablishmeName, InduDescription, EstablishmeType, EstablishmtSize, AnyRecrdblIncid, OSHA300aID, EstablishmentID or ChangeReason. Master name changes and deactivation must not replace saved annual header details.",
+      "Add the proposed Correct Annual OSHA Header process for the approved regulatory-administrator group. Allow explicit corrections to LocationName, LocationStreet, LocationCity, LocationState, LocationPostal, SICCode and NAICSCode on the selected annual record. Use Intelex change history to show the old and new values and who changed them. Ordinary recalculation must not run this correction process.",
+      "Add the proposed Validate Annual OSHA Output check before a print, merge or export request. Require CompanyName, LocationStreet, LocationCity, LocationState and LocationPostal on the selected annual record, and return clear messages naming any missing fields without changing data. Allow each output to supply its additional required fields. Do not make these fields mandatory during master maintenance. The electronic-export task adds its own file-format and recordable-case consistency checks."
+    ],
+    "accept": [
+      "Creating an annual summary fills all fifteen copied target fields and its date, year, establishment identifier and reporting settings once.",
+      "Changing the current establishment or recalculating totals does not overwrite saved annual details or permitted user changes.",
+      "The twenty-four case/day fields and four workforce fields follow the supplied annual rules, with matching Lo/Ru establishment totals.",
+      "Authorized header correction appears in change history, leaves master data unchanged and does not allow ordinary users to edit protected fields."
+    ]
+  },
+  "IMP-10": {
+    "title": "Connect changes to the KPI and OSHA updates",
+    "category": "Automatic report updates",
+    "objective": "Recalculate the right location and establishment results after hours, headcounts or incidents change.",
+    "scope": "Add the process that receives successful hours changes and summary headcount changes, then requests the affected monthly and annual calculations. Connect the new establishment calculations and the supplied existing location calculations. Prevent unfinished or failed updates from appearing current. No separate scheduler, processing-history object or incident-side automation is added.",
+    "deliverable": "The proposed Dispatch Hours Analytics Refresh process, headcount-change actions and report-readiness checks.",
+    "rationale": "A Senior Consultant is needed to connect existing and new automatic calculations in the right order and handle failures without presenting old results as current.",
+    "steps": [
+      "Add the proposed Dispatch Hours Analytics Refresh process to receive the affected previous and new places/months after Synchronize Hours Worked saves successfully. Run Refresh Establishment Monthly Metrics once for each affected establishment/month and Refresh Establishment Annual OSHA once for each affected establishment/year. Call the supplied existing location KPI/annual processes for each affected location/month/year and their required organizational roll-ups. Do not create source hours entries for higher locations.",
+      "Add Update actions on both monthly summaries for changes to EmployeeHCount or ContractrHCount only. Establishment headcount changes request the annual establishment workforce update; location changes request the supplied location workforce update. Changes only to calculated hours, saved names or links must not restart the source hours update. When a headcount-only summary is created, recalculate its hours from existing entries before requesting dependent reports.",
+      "Connect to the supplied incident-change notice and use both the previous and corrected establishment and reporting period to request recalculation. Include changes crossing months or years and authorized corrections for inactive reporting places. This task receives notices; it does not add incident fields, defaults or workflow actions.",
+      "Combine repeated requests for the same process, kind of reporting place, record identifier and period. Prevent competing result updates and calculate from the latest successfully saved data. Use Intelex's supplied success/failure information to stop affected KPI or report screens from appearing current while a required update is unfinished or has failed. A report-calculation failure must not undo already consistent hours entries and summaries. A retry recalculates current results instead of adding to old totals."
+    ],
+    "accept": [
+      "Moving an hours entry across years updates both affected annual establishment summaries and all relevant monthly and location results.",
+      "A headcount change updates workforce figures without changing the hours entries or repeatedly starting the source update.",
+      "A failed report update leaves hours consistent and visibly prevents the result from appearing current; retry replaces the result.",
+      "The task adds no scheduler, separate queue/history object or incident-record workflow."
+    ]
+  },
+  "IMP-11": {
+    "title": "Set up establishment OSHA 300 reports",
+    "category": "OSHA 300 reports",
+    "objective": "Print OSHA and Cal/OSHA case logs for the selected establishment and year.",
+    "scope": "Add four print options on the new annual summary: OSHA 300, Combined OSHA 300, Cal/OSHA 300 and Combined Cal/OSHA 300. Use the supported reporting method and templates, the correct cases, protected employee names and reports with or without cases. Call the shared reporting-information check before printing. Existing location report links remain in use.",
+    "deliverable": "Four establishment case-log print options connected to the supplied supported reporting method and templates.",
+    "rationale": "A Senior Consultant is needed to connect reporting tools to the new summary type and handle combined-report behavior correctly.",
+    "configurationRows": [
+      ["Print OSHA 300 Form", "Add this link on TG_EstOSHASummaryObject using the supported reporting method, the new summary object's identifier and the selected summary record. Use OSHA300TempId for the case template and OSHA300EmptyId for no cases; use oshaType=OSHA if supported by the supplied method. The source Print OSHA 300 Form (E329) contains the original summary identifier, which must not be copied into the new link."],
+      ["Print Combined OSHA 300 Form", "Add the combined print option using OSHA300TempId/OSHA300EmptyId and the supplied combined-report rules. The source Print Combined OSHA 300 Form (E214) uses oshaType=Combined. Include only the approved establishment/year cases, without adding organizational descendants."],
+      ["Print Cal/OSHA 300 Form", "Add the Cal print option using CALOSHA300TempId/CALOSHA300EmptyId and the supplied reporting method. The source Print Cal/OSHA 300 Form (E203) uses oshaType=OSHA. Use the same selected establishment/year and protect confidential names."],
+      ["Print Combined Cal/OSHA 300 Form", "Add this option only with the supplied confirmed combined-report behavior. The source Print Combined Cal/OSHA 300 Form (E337) sends oshaType=OSHA even though its name says Combined. Do not assume a corrected parameter or promise combined behavior without that decision."]
+    ],
+    "steps": [
+      "Connect each print option to the selected new annual header and the eligible cases used for its totals. Before preparing the report, run Validate Annual OSHA Output with any additional fields required by that output. This existing shared check owns the company-name/address requirements; master maintenance remains possible before those details are complete.",
+      "Connect both case and no-case templates, confidential-name handling and the installed report-readiness check before download. The original location report links and their identifiers are unchanged."
+    ],
+    "accept": [
+      "All four new options use the new summary and supplied supported report method, rather than the original hard-coded object reference.",
+      "Reports with and without cases use the selected establishment/year and protect confidential employee names.",
+      "Printing is stopped when required details are missing or a necessary calculation has not completed successfully.",
+      "The Combined Cal/OSHA report follows the supplied decision rather than an assumed change to the source setting."
+    ]
+  },
+  "IMP-12": {
+    "title": "Set up establishment OSHA 300A forms",
+    "category": "OSHA 300A forms",
+    "objective": "Print OSHA and Cal/OSHA annual summary forms using the saved annual details and workforce totals.",
+    "scope": "Add the two annual-form print options to the establishment summary and connect the supplied templates to its saved header, case/day totals and workforce figures. Apply the shared required-information check and preserve historical reporting details. Existing location form links remain unchanged.",
+    "deliverable": "Two establishment 300A form templates and print options with the required pre-print checks.",
+    "rationale": "A Consultant is needed to connect the annual fields to the right form entries and ensure the selected summary and year are used.",
+    "configurationRows": [
+      ["Print OSHA 300 A Form", "Add the new summary's form link using OIISettings.OSHA300ATempId from the intended environment, the new TG_EstOSHASummaryObject identifier and the selected record. The source Print OSHA 300 A Form (E354) contains the original summary identifier; use the new one only on the new link."],
+      ["Print Cal/OSHA 300 A Form", "Add the Cal form link using OIISettings.CalOSHA300AFormId, the new summary identifier and the selected record. Retain the source Print Cal/OSHA 300 A Form (E205) on the original location family."]
+    ],
+    "steps": [
+      "Fill the form header from saved LocationName, LocationStreet, LocationCity, LocationState, LocationPostal, EstablishmeName, CompanyName, EINNumber, SICCode, NAICSCode and InduDescription. Use Year and one complete set of measures: RuCtFatalities (G), RuCtDaysAway (H), RuCtTrnfrOrRest (I), RuCtOthrRecrdbl (J), RuNumDaysAway (K), RuNumRstOrJobTr (L), RuCtInjuries (M1), RuCtSkinDisordr (M2), RuCtRespiratorC (M3), RuCtPoisonings (M4), RuCtHearingLoss (M5) and RuCtAllOtherIln (M6). Use RuAvgNumEmploye and RUNumHrsWorked for workforce figures. Do not add the matching Lo values. The supplied template identifies where these values belong on the form.",
+      "Before preparing either form, run Validate Annual OSHA Output with the template's additional required fields and apply the report-readiness check. Do not create another copy of the shared company-name/address checks. Later changes to the establishment master must not replace the saved annual header."
+    ],
+    "accept": [
+      "Each new print option uses the selected annual summary and the supplied template for the intended environment.",
+      "Workforce and G–M values appear once, without adding matching Lo and Ru totals together.",
+      "Updating current establishment details does not silently change the saved annual information used on the form."
+    ]
+  },
+  "IMP-13": {
+    "title": "Set up establishment incident-rate reports",
+    "category": "Incident-rate reports",
+    "objective": "Show each establishment's four actual incident rates beside its manually entered targets.",
+    "scope": "Create the proposed Establishment Incident Rates report/dashboard using monthly KPI measures and the supplied calculation rules. Add establishment and period selection, target comparisons and checks that results are complete and current. Calculate actual rates in the report, without adding new stored-rate fields or combining location and establishment totals.",
+    "deliverable": "An establishment rate report showing the four actual rates, their targets and the selected reporting period.",
+    "rationale": "A Consultant is needed to apply the correct hours, rounding and multi-month calculations and connect them to the report display.",
+    "configurationRows": [
+      ["TRIR and target", "Calculate actual TRIR from RuCtRecordable divided by the supplied Hours total, multiplied by the supplied scaling number. Compare it with TargetTRIR. Use only supplied, supported calculation settings for the hours, scaling number, rounding and missing/zero values."],
+      ["DAIR and target", "Calculate actual DAIR from RuNumIncDayAway using the supplied hours and scaling rules. Compare it with TargetDART, displayed as Target DAIR. Do not change the target label to DART."],
+      ["LTIR and target", "Calculate actual LTIR from RuNumIncLostTim once its days-away or transfer/restricted incident classification follows the supplied rules. Apply the supplied hours and scaling number and compare with TargetLTIR. Count incidents, not day totals."],
+      ["Severity and target", "Calculate Severity Rate using RuNumDaysAway plus RuNumTrnsfRstDy under the supplied day-count, hours and scaling rules. Compare it with TargetSeverRate."]
+    ],
+    "steps": [
+      "Connect the report to TG_EstIncidentRateKPIObject and allow selection of establishment and calendar month or period. For several months, use the applicable total counts/days and hours under the supplied policy; do not average monthly rates. Keep employee and contractor hours distinct and never add matching Lo/Ru values.",
+      "Apply the installed user-access and report-readiness rules. A default zero or missing-input period must not appear as a completed actual rate. Keep the actual-rate calculations in the report rather than adding fields to the object."
+    ],
+    "accept": [
+      "Users see four actual rates and the matching targets for the selected establishment and period.",
+      "Zero or missing hours, rounding and several-month results follow the supplied rules, with no assumed scaling number.",
+      "Selecting a longer period does not average monthly rates or add raw hours to summary hours."
+    ]
+  },
+  "IMP-14": {
+    "title": "Set up the establishment OSHA electronic export",
+    "category": "Electronic OSHA export",
+    "objective": "Produce the required electronic OSHA file using each establishment's annual information and reporting identifiers.",
+    "scope": "Create the proposed Establishment OSHA Electronic Export report using the supplied current export and file requirements. Connect the annual fields to the required file columns, check required values and formatting, and add a link from the summary. This task generates a file; it does not send it directly to the regulator.",
+    "deliverable": "An establishment electronic-export report, its file-column setup and a summary navigation link.",
+    "rationale": "A Consultant is needed to connect annual reporting information to the required file layout and classification codes.",
+    "steps": [
+      "Add a link on TG_EstOSHASummaryObject to the proposed Establishment OSHA Electronic Export report. The source OSHA Esub (E98) links to dashboard 6a9aa80a-174a-415e-b2c3-be5a41c08424; the report details must be supplied separately. This link does not establish a direct submission service. Leave the original link unchanged.",
+      "Connect the export to TG_EstOSHASummaryObject by establishment and year. Fill the supplied file columns from EstablishmentID, OSHA300aID, EINNumber, CompanyName, EstablishmeName, saved address, SICCode, NAICSCode, InduDescription, EstablishmeType, EstablishmtSize, AnyRecrdblIncid, Year, annual G–M measures and workforce totals. Apply the exact required formatting and stable classification codes rather than translated display labels.",
+      "Before export, run Validate Annual OSHA Output with the file's additional required fields. Add the file-format checks and check that AnyRecrdblIncid agrees with the annual totals using the supplied choice codes. Apply the report-readiness check. Export each establishment/year under its own identifiers, without adding organizational descendants or matching Lo/Ru totals. Do not add transmission credentials, scheduled submission or a direct-submit connection."
+    ],
+    "accept": [
+      "The new link selects the new establishment summaries and does not change the original report link.",
+      "The file has the supplied columns, order, values and formatting, including the correct classification codes and reporting identifiers.",
+      "Export is stopped for inconsistent recordability, missing required information or an unfinished calculation."
+    ]
+  },
+  "IMP-15": {
+    "title": "Update the identified hours-import connections",
+    "category": "Hours-import connections",
+    "objective": "Send imported hours through Hours Worked so imports no longer compete with calculated summary totals.",
+    "scope": "Change only the existing imports or connections identified in the supplied information. Send their hours, reporting selections and stable entry references to Hours Worked through the automatic save process. Keep headcount imports separate. Finding connections, loading past data and switching the production system are outside this task.",
+    "deliverable": "The identified import mappings changed to shared hours entry, with safe correction/retry behavior and old direct-hour mappings disabled.",
+    "rationale": "A Consultant is needed to change the field mappings and correction rules without duplicating imported hours or redesigning the shared save process.",
+    "steps": [
+      "For each supplied named hours import or connection, change its target from summary EmployeeHrs/ContractrHrs to TG_HoursWorkedObject.EmployeeHours/ContractorHours through Synchronize Hours Worked. Set Month from the source period using its first calendar day. Fill Location only when supplied by the source, and OSHAEstablishment only when supplied. Do not derive one selection from the other or send the calculated summary-link fields.",
+      "Use the supplied stable feed/allocation-line reference as SourceEntryID. Sending it again must update the same entry or leave an identical entry unchanged, rather than add another record. A correction replaces the original contribution. Split amounts only using an approved allocation that does not overlap; never repeat full hours under several references. Reject missing reporting selections, invalid dates and missing, negative or invalid numeric hours before completing the import.",
+      "Disable the identified old direct-hour mappings as part of the same connection change. Keep any separately supplied headcount mappings pointed at their existing summary fields. Use the installed user-access rules for the connection. Do not invent unidentified interfaces or set up Intelex background-processing permissions. Moving historical data, supplying connection credentials and the production switch remain separate responsibilities."
+    ],
+    "accept": [
+      "Each supplied hours connection writes through Hours Worked and no longer directly changes calculated summary-hour fields.",
+      "Sending the same source reference again creates no extra contribution, and an authorized correction updates its existing entry.",
+      "Headcounts are not imported into Hours Worked, and establishment assignments are not inferred from organizational location."
+    ]
+  }
+}

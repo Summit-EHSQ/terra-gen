@@ -1,0 +1,98 @@
+Rendered 15 tasks; 126 field dispositions. Semantic review is required before delivery.
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Task record schema",
+      "passed": true,
+      "detail": "15 complete records, including separate implementer/reviewer roles"
+    },
+    {
+      "name": "Predecessor integrity",
+      "passed": true,
+      "detail": "All dependencies name active implementation tasks only"
+    },
+    {
+      "name": "Dependency graph acyclic",
+      "passed": true,
+      "detail": "No staffing/approval/input/migration task nodes"
+    },
+    {
+      "name": "Mermaid matches predecessor lists",
+      "passed": true,
+      "detail": "26 strict technical edges"
+    },
+    {
+      "name": "Five-column summary exact",
+      "passed": true,
+      "detail": "IDs/category/title/objective/scope/implementer copied without abbreviation"
+    },
+    {
+      "name": "Task section order",
+      "passed": true,
+      "detail": "Detailed headings match task order exactly"
+    },
+    {
+      "name": "Complete single-owner field coverage",
+      "passed": true,
+      "detail": "126 declarations reconciled once; four original declarations reused"
+    },
+    {
+      "name": "Field disposition counts",
+      "passed": true,
+      "detail": "118 additions + 4 modifications + 4 reuse = 126 declarations"
+    },
+    {
+      "name": "All field additions have task-local rows",
+      "passed": true,
+      "detail": "118 field/grid additions fully described within their owning assignments"
+    },
+    {
+      "name": "Evidence name registry verified",
+      "passed": true,
+      "detail": "Export graph IDs paired with exact object/field/validator/view/link names; module caption Safety Metrics read from supplied JSON"
+    },
+    {
+      "name": "Existing changes have extracted before values",
+      "passed": true,
+      "detail": "Audit FALSE→TRUE and hour readonly FALSE→TRUE supported; Date/Location controls qualify unverified runtime edit behavior"
+    },
+    {
+      "name": "Only supplied missing inputs block tasks",
+      "passed": true,
+      "detail": "Each consuming task has narrow local input descriptions; external inputs excluded from graph"
+    },
+    {
+      "name": "Generation/copy source fields exist",
+      "passed": true,
+      "detail": "Exact master internal names support fifteen initial target assignments"
+    },
+    {
+      "name": "Configuration-only scope",
+      "passed": true,
+      "detail": "Acceptance demonstrations retained; no excluded workstream assigned"
+    },
+    {
+      "name": "Source baseline retained",
+      "passed": true,
+      "detail": "Plan uses target revision 2 without replacing baseline or technical specification"
+    }
+  ],
+  "limits": "Structural/schema/coverage/evidence/dependency review only. Separate content gate and unresolved tenant/runtime inputs remain applicable."
+}
+C:\Users\DaveMcLean\OneDrive - Summit EHSQ Inc\Documents\GitHub\terra-gen\scripts\build-shared-hours-implementation-plan.cjs:238
+if(!contentResult.passed)throw Error('Task-content review is missing, stale or failed; rereview changed tasks before delivery.');
+                         ^
+
+Error: Task-content review is missing, stale or failed; rereview changed tasks before delivery.
+    at Object.<anonymous> (C:\Users\DaveMcLean\OneDrive - Summit EHSQ Inc\Documents\GitHub\terra-gen\scripts\build-shared-hours-implementation-plan.cjs:238:32)
+    at Module._compile (node:internal/modules/cjs/loader:1562:14)
+    at Object..js (node:internal/modules/cjs/loader:1699:10)
+    at Module.load (node:internal/modules/cjs/loader:1313:32)
+    at Function._load (node:internal/modules/cjs/loader:1123:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.13.1

@@ -1,0 +1,49 @@
+{
+  "currentRevision": 4,
+  "baselineSha256": "e9ee1a3f78189c356b522b04d0f08d7cf45b81ab994e27979cd1e52b3446889d",
+  "previousTarget": "history/v3/technical-specification.md",
+  "refinedRequirements": [
+    "R1",
+    "R2",
+    "R6",
+    "R8"
+  ],
+  "newRequirements": [
+    "R7",
+    "R8",
+    "R9"
+  ],
+  "supersededDecisions": [
+    "Separate direct-hour entry on the two monthly summary families",
+    "No change to original Location Hours and Headcount hour-entry behavior"
+  ],
+  "incidentDesign": "Excluded; dependency contract retained",
+  "additionalBaselineEvidence": {
+    "version": "1.0.2.0",
+    "sha256": "c7716f41d56fcaf1f80991aae602a17b08e8192190004a02d78560adde2724aa",
+    "file": "package-evidence-v1.0.2.0.json",
+    "classification": "Extracted supplemental source evidence; original baseline and target remain separate"
+  },
+  "evidenceRevisionDecisions": [
+    "Preserve original baseline and both prior target revisions",
+    "Refine monthly OII totals and annual employee workforce arithmetic from source reports",
+    "Reuse existing lookup Value/Caption records",
+    "Identify native process chains without inferring atomic transactions",
+    "Retain source relationship discrepancy and missing outputs as open constraints",
+    "Confirm all 25 unchanged underlying reports and 75 output aliases resolve through the event-service/import chains",
+    "Retain full original/corrected-scope refresh despite the source recent-change selector",
+    "Supersede the five-year interpretation of an enum value; retain exact serialized boundaries as evidence"
+  ],
+  "reportLineage": {
+    "file": "report-lineage-v1.0.2.0.json",
+    "reports": 25,
+    "reportReferences": 27,
+    "scheduledImports": 8,
+    "mappings": 75,
+    "eventHandlers": 3,
+    "folders": 5,
+    "reportsReached": 25,
+    "unchangedDefinitions": true,
+    "scopeSelection": "36-hour recent-change selection is not the incident aggregation population; full original/corrected-scope refresh remains required"
+  }
+}

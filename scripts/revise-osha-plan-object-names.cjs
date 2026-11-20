@@ -1,0 +1,13 @@
+const fs=require('node:fs'),path=require('node:path');
+const dir='docs/phase 2/incident management/osha-establishment-analytics',history='history/implementation-v6';
+fs.mkdirSync(path.join(dir,history),{recursive:true});
+for(const n of ['implementation-plan.json','implementation-plan.md','implementation-content-review.json','implementation-plan-validation.json','implementation-content-validation.json'])if(!fs.existsSync(path.join(dir,history,n)))fs.copyFileSync(path.join(dir,n),path.join(dir,history,n));
+const {convert}=require('./osha-plan-business-object-names.cjs');
+const prior=JSON.parse(fs.readFileSync(path.join(dir,history,'implementation-plan.json'),'utf8'));
+if(prior.version!==6)throw Error('Expected plan revision 6');
+const p=convert(prior);p.version=7;p.previousPlan=history+'/implementation-plan.md';
+p.namingConvention='New Objects and screens are identified by business name. Assign their actual system names during configuration; no proposed prefix or internal Object identifier is prescribed. Verified OOTB system names remain as configuration locators. GETRELATED instructions targeting a new Object describe its matching rules until its actual system name is assigned.';
+p.revisionDecisions.push('Remove invented new Object and screen system names from the plan. Preserve business names, verified OOTB locators and all field/relationship behavior. Assign actual new system names during configuration.');
+fs.writeFileSync(path.join(dir,'implementation-plan.json'),JSON.stringify(p,null,2)+'\n');
+fs.writeFileSync(path.join(dir,'implementation-plan.md'),require('./render-current-implementation-plan.cjs')(p));
+require('./build-current-implementation-plan.cjs');

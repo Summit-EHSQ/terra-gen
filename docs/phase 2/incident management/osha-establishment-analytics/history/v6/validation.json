@@ -1,0 +1,149 @@
+{
+  "revision": 6,
+  "status": "Structural validation passed; native configuration and downstream gates remain",
+  "checks": [
+    {
+      "name": "Revision, source evidence and preserved baseline",
+      "pass": true,
+      "detail": "Target revision changes; original package evidence remains byte-identical"
+    },
+    {
+      "name": "Latest source hash unchanged",
+      "pass": true,
+      "detail": "User design confirmation does not become a modified source package"
+    },
+    {
+      "name": "All 89 counterpart fields preserved",
+      "pass": true,
+      "detail": "Original analytics fields map once; only summary-hour ownership changes"
+    },
+    {
+      "name": "126 canonical field/grid rows",
+      "pass": true,
+      "detail": "No additional ID helper fields or data-model objects introduced"
+    },
+    {
+      "name": "Every field row rendered",
+      "pass": true,
+      "detail": "Canonical table rows match current model exactly"
+    },
+    {
+      "name": "Names unique and inherited fields not redeclared",
+      "pass": true,
+      "detail": "Direct inheritance and unique declarations retained"
+    },
+    {
+      "name": "All owned objects have subsections",
+      "pass": true,
+      "detail": "Eight separate numbered field sections"
+    },
+    {
+      "name": "Target inheritance acyclic",
+      "pass": true,
+      "detail": "No missing owned base or inheritance cycle"
+    },
+    {
+      "name": "Location summary identities and binding retained",
+      "pass": true,
+      "detail": "Eight original fields/GUIDs retained; no reparenting or location-hierarchy change"
+    },
+    {
+      "name": "Four native calculated hours fields",
+      "pass": true,
+      "detail": "Native calculation, not a manual totals process"
+    },
+    {
+      "name": "Exact employee and contractor grid expressions",
+      "pass": true,
+      "detail": "Separate worker totals on each summary own inverse grid"
+    },
+    {
+      "name": "SUM pattern grounded in package",
+      "pass": true,
+      "detail": "Same extracted collection-field SUM pattern; target fields are proposed"
+    },
+    {
+      "name": "Inverse grids use one source-owned reference",
+      "pass": true,
+      "detail": "No duplicate stored relationship for calculations"
+    },
+    {
+      "name": "Source fields and three modes preserved",
+      "pass": true,
+      "detail": "No mode catalogue, junction or source headcounts added"
+    },
+    {
+      "name": "Headcounts remain independent",
+      "pass": true,
+      "detail": "Headcounts do not SUM entry counts or hours"
+    },
+    {
+      "name": "Typed GETRELATED structure explicit",
+      "pass": true,
+      "detail": "Date and reference identifier keys use matched source types"
+    },
+    {
+      "name": "Illustrative names and ID evidence distinguished",
+      "pass": true,
+      "detail": "Examples not silently renamed; native corresponding-ID keys are not invented custom fields"
+    },
+    {
+      "name": "Null checks and update watch list",
+      "pass": true,
+      "detail": "Create and dimension/month corrections; no blank-dimension lookup"
+    },
+    {
+      "name": "No custom totals subsystem",
+      "pass": true,
+      "detail": "Superseded transaction/total-write/Delete/rebuild requirements removed from active behavior"
+    },
+    {
+      "name": "IN-01 resolved and IN-09 native-change gap retained",
+      "pass": true,
+      "detail": "Hour calculation mechanism is resolved; downstream notification not inferred"
+    },
+    {
+      "name": "Native lifecycle acceptance cases explicit",
+      "pass": true,
+      "detail": "Add/edit/delete/relink, zero after final deletion and type-matching acceptance retained"
+    },
+    {
+      "name": "Prior model and plan snapshots retained",
+      "pass": true,
+      "detail": "Both prior deliverables remain reviewable"
+    },
+    {
+      "name": "Current specification links resolve",
+      "pass": true,
+      "detail": "Source, history and related ADR links resolve"
+    },
+    {
+      "name": "Copied scalar characteristics match OOTB",
+      "pass": true,
+      "detail": "Unset metadata remains unset, with localization, spellcheck, precision and display settings traced to the source"
+    },
+    {
+      "name": "RecordNo is AutoNumber",
+      "pass": true,
+      "detail": "Retain each source generator/default setting"
+    },
+    {
+      "name": "SourceEntryID NULL default and requiredness explicit",
+      "pass": true,
+      "detail": "No automatic manual key generation"
+    },
+    {
+      "name": "IN-02 answered and configuration owner assigned",
+      "pass": true,
+      "detail": "Remaining native names are routine configuration, not an external blocker"
+    }
+  ],
+  "limitations": [
+    "GETRELATED corresponding native ID-key names are set during IMP-07 configuration; examples are not extracted metadata",
+    "Proposed objects/formulas have not been configured or runtime-tested",
+    "Native empty-grid zero result remains an explicit configuration acceptance case",
+    "User access remains a supplied input",
+    "Downstream native-calculation notification, DateModified behavior and KPI/OSHA freshness remain IN-09",
+    "Actual-rate displays, incident attribution, case helper population and regulatory outputs retain their existing gaps"
+  ]
+}

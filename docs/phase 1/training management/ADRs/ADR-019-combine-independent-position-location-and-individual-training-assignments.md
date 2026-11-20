@@ -1,6 +1,7 @@
 ---
 status: proposed
 date: 2026-10-28
+last_revised: 2026-11-10
 deciders: []
 consulted:
   - Dave McLean
@@ -45,7 +46,9 @@ Do not concatenate position and location into the provisioning key or implement 
 
 This approach does not resolve a requirement that depends on a particular position/location intersection. Any such cases must be identified and assessed before assuming the independent streams cover them.
 
-Location-based configuration is conditional on confirming that the employee location used for assignment represents the intended training audience. The call identifies the integrated location as the establishment; it does not define a replacement location model. [Call, 54:47–55:16]
+Location-based configuration is conditional on confirming that the employee location used for assignment represents the intended training audience. The October 28 call identifies the integrated location as the establishment; it does not define a replacement location model. [October 28 call, 54:47–55:16]
+
+The November 10 meeting subsequently proposes using a Paylocity reporting structure for Location Structure while holding OSHA establishments separately. That is a proposed platform transition, not proof that a reporting node, regulatory establishment or actual workplace identifies the required training population. Revalidate the audience relationship and employee payload bindings under [Platform Administration ADR-009](<../../platform administration/ADRs/ADR-009-separate-reporting-locations-from-osha-establishments.md>) before configuring location-based courses against a changed hierarchy. Preserve independent assignment streams; do not introduce a composite position/location key or custom overlay engine merely because the location model is being reconsidered. [November 10 call, 0:26:03–0:27:08]
 
 ## Consequences
 
@@ -57,6 +60,7 @@ The following are architectural analysis:
 - Assignment reconciliation must verify how overlapping sources are handled; this call does not demonstrate native deduplication across all three routes.
 - Establishment mappings may require further design review where administrative establishment and actual work location differ.
 - Transfer, position-change, and assignment-removal behavior remains to be reconciled with the initial-only provisioning design.
+- A reporting-hierarchy transition may change a location-based course's audience, so an existing establishment assignment must not be relabeled or reused without audience reconciliation.
 
 ## More Information
 
@@ -74,3 +78,9 @@ Related decisions:
 - [Platform Administration ADR-001](<../../platform administration/ADRs/ADR-001-use-complementary-location-and-business-hierarchies.md>) and [ADR-003](<../../platform administration/ADRs/ADR-003-separate-employee-home-and-access-assignments.md>): hierarchy and employee attribution.
 
 The described location-assignment capability requires target-configuration verification; the transcript is not an implementation test.
+
+Additional evidence: [November 10 asset-hierarchy call](<../raw artifacts/meeting_transcripts/2026-11-10-summit-tg-asset-hierarchy-setup.md>), 0:26:03–0:27:08. This call does not explicitly select a new training-location property, revise overlap/deduplication behavior or approve a different assignment engine. Its effect on this ADR is an inferred dependency requiring confirmation. The [accepted Employee specification](<../../employee management/ADR-001-004-technical-specification-employee-provisioning.md>), sections 10–10.1, still uses establishment for HomeLocationCode. Original date, ID and proposed status are preserved.
+
+## Follow-up clarification — November 10, 2026
+
+The [user confirmation](<../../platform administration/raw artifacts/2026-11-10-reporting-location-establishment-confirmations.md>) settles the reporting-based Location Structure and separate employee establishment calculation/storage. Intelex maintains the hierarchy; Boomi supplies assignments. Training audience selection remains open, so no assignment dimension or new course-assignment rule is selected by this confirmation.
